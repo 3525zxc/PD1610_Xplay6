@@ -1,0 +1,641 @@
+image 81_aboot_LUN4.bin  size 16777216 (16.0 MB)
+state var 0x91D9DD98 file offset 0x9DD98
+current bytes at that off: 474f5354
+
+[0] state var 静态初值 = 1414745927
+
+[1] 引用了 0x91D9DD98 的指令位置:
+  0x0001A350  (VA 91D1A350)  movw/movt -> 91D9DD98 @ movt 0001A358
+  0x0001A5B4  (VA 91D1A5B4)  movw/movt -> 91D9DD98 @ movt 0001A5BC
+  0x0001A5E8  (VA 91D1A5E8)  movw/movt -> 91D9DD98 @ movt 0001A5EC
+  0x0001AD38  (VA 91D1AD38)  movw/movt -> 91D9DD98 @ movt 0001AD3C
+  0x0001AD38  (VA 91D1AD38)  movw/movt -> 91D9DD98 @ movt 0001AD70
+  0x0001AD6C  (VA 91D1AD6C)  movw/movt -> 91D9DD98 @ movt 0001AD70
+  0x0001AD6C  (VA 91D1AD6C)  movw/movt -> 91D9DD98 @ movt 0001AD84
+  0x0001AD80  (VA 91D1AD80)  movw/movt -> 91D9DD98 @ movt 0001AD84
+  0x0001AD80  (VA 91D1AD80)  movw/movt -> 91D9DD98 @ movt 0001ADBC
+  0x0001ADB8  (VA 91D1ADB8)  movw/movt -> 91D9DD98 @ movt 0001ADBC
+  0x0001B0B8  (VA 91D1B0B8)  movw/movt -> 91D9DD98 @ movt 0001B0BC
+  0x0001B1FC  (VA 91D1B1FC)  movw/movt -> 91D9DD98 @ movt 0001B200
+  0x0001B1FC  (VA 91D1B1FC)  movw/movt -> 91D9DD98 @ movt 0001B230
+  0x0001B228  (VA 91D1B228)  movw/movt -> 91D9DD98 @ movt 0001B230
+
+==============================================================================
+=== Security Error handler  VA 91D131E8  (file 0x131E8)
+==============================================================================
+91D131E8  ldr      r3, [sl]
+91D131EC  cmp      r2, r3
+91D131F0  bne      #0x91d131fc
+91D131F4  add      sp, sp, #0x3c
+91D131F8  pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc}
+91D131FC  bl       #0x91d596c4
+91D13200  andls    r2, r0, #40, #14
+91D13204  andls    r2, r0, #48, #14
+91D13208  push     {r4, lr}
+91D1320C  movw     r3, #0x57dc
+91D13210  ldrb     ip, [r0, #0x10]
+91D13214  movt     r3, #0x9201
+91D13218  mov      r2, #0x1c0
+91D1321C  movt     r2, #0xa080
+91D13220  ldr      r4, [r3]
+91D13224  sub      sp, sp, #8
+91D13228  cmp      r1, #0
+91D1322C  add      r2, r2, ip, lsl #2
+91D13230  str      r4, [sp, #4]
+91D13234  ldr      r1, [r2]
+91D13238  beq      #0x91d13284
+91D1323C  ldrb     r4, [r0, #0x11]
+91D13240  cmp      r4, #0
+91D13244  orrne    r1, r1, #0xc80000
+91D13248  orreq    r1, r1, #0xc8
+91D1324C  cmp      ip, #0
+91D13250  beq      #0x91d13284
+91D13254  movw     r2, #0x2820
+91D13258  movt     r2, #0x9200
+91D1325C  ldr      ip, [r0, #8]
+91D13260  ldr      r2, [r2]
+91D13264  cmp      r2, #0
+91D13268  mov      r2, #0x1c0
+91D1326C  movt     r2, #0xa080
+91D13270  movne    r4, #0x22000000
+91D13274  moveq    r4, #0x20400000
+91D13278  str      r4, [ip]
+91D1327C  ldrb     r0, [r0, #0x10]
+91D13280  add      r2, r2, r0, lsl #2
+91D13284  str      r1, [r2]
+91D13288  ldr      r2, [sp, #4]
+91D1328C  ldr      r3, [r3]
+91D13290  cmp      r2, r3
+91D13294  bne      #0x91d132a0
+91D13298  add      sp, sp, #8
+91D1329C  pop      {r4, pc}
+91D132A0  bl       #0x91d596c4
+91D132A4  push     {r4, r5, r6, r7, r8, sb, lr}
+91D132A8  movw     r7, #0x57dc
+91D132AC  movt     r7, #0x9201
+91D132B0  sub      sp, sp, #0xc
+91D132B4  mov      sb, r0
+91D132B8  mov      r1, #0x14
+91D132BC  ldr      r3, [r7]
+91D132C0  str      r3, [sp, #4]
+91D132C4  bl       #0x91d3e87c
+91D132C8  ldr      r0, [sb, #0xc]
+91D132CC  cmp      r0, #0
+91D132D0  beq      #0x91d13378
+91D132D4  bl       #0x91d0cdc0
+91D132D8  mov      r1, #0x14
+91D132DC  mov      r8, r0
+91D132E0  ldr      r0, [sb, #0xc]
+91D132E4  bl       #0x91d3e87c
+91D132E8  cmp      r8, #0
+91D132EC  beq      #0x91d13378
+91D132F0  ldr      r0, [r8, #0x10]
+91D132F4  bl       #0x91d0cdc0
+91D132F8  mov      r3, #0
+91D132FC  mov      r5, r3
+91D13300  ldr      r6, [r8, #4]
+91D13304  str      r3, [sb, #0xc]
+91D13308  mov      r4, r0
+91D1330C  mov      r0, r4
+91D13310  mov      r1, #0x20
+91D13314  bl       #0x91d3e87c
+91D13318  ldr      r3, [r4, #4]
+91D1331C  tst      r3, #0x80
+91D13320  bne      #0x91d1330c
+91D13324  ldr      r3, [r4, #4]
+91D13328  ands     r2, r3, #0xff
+91D1332C  bne      #0x91d1335c
+91D13330  ldr      r0, [r4]
+91D13334  cmp      r0, #1
+91D13338  beq      #0x91d13390
+91D1333C  lsr      r3, r3, #0x10
+91D13340  rsb      r3, r3, #0x4000
+91D13344  ubfx     r3, r3, #0, #0xf
+91D13348  add      r5, r5, r3
+91D1334C  rsb      r6, r3, r6
+91D13350  bl       #0x91d0cdc0
+91D13354  mov      r4, r0
+91D13358  b        #0x91d1330c
+91D1335C  mvn      r2, #0
+91D13360  ldr      r3, [r8, #8]
+91D13364  cmp      r3, #0
+91D13368  beq      #0x91d13378
+91D1336C  mov      r0, r8
+91D13370  mov      r1, r5
+91D13374  blx      r3
+91D13378  ldr      r2, [sp, #4]
+91D1337C  ldr      r3, [r7]
+91D13380  cmp      r2, r3
+91D13384  bne      #0x91d133a0
+91D13388  add      sp, sp, #0xc
+91D1338C  pop      {r4, r5, r6, r7, r8, sb, pc}
+91D13390  sub      r3, r6, r3, lsr #16
+91D13394  ubfx     r3, r3, #0, #0xf
+91D13398  add      r5, r5, r3
+91D1339C  b        #0x91d13360
+91D133A0  bl       #0x91d596c4
+91D133A4  movw     r2, #0x2800
+91D133A8  movt     r2, #0x9200
+91D133AC  movw     r3, #0x57dc
+91D133B0  movt     r3, #0x9201
+91D133B4  ldr      r2, [r2]
+91D133B8  ldr      r1, [r3]
+91D133BC  str      lr, [sp, #-4]!
+91D133C0  cmp      r2, #0
+91D133C4  sub      sp, sp, #0xc
+91D133C8  str      r1, [sp, #4]
+91D133CC  beq      #0x91d133f8
+91D133D0  cmp      r2, #0x300
+91D133D4  beq      #0x91d13410
+91D133D8  cmp      r2, #0x400
+91D133DC  bne      #0x91d133f8
+91D133E0  mov      r2, #0
+91D133E4  movt     r2, #0xa080
+91D133E8  ldr      r1, [r2, #0x184]
+91D133EC  bic      r1, r1, #0xf0000
+91D133F0  orr      r1, r1, #0x40000
+91D133F4  str      r1, [r2, #0x184]
+91D133F8  ldr      r2, [sp, #4]
+91D133FC  ldr      r3, [r3]
+91D13400  cmp      r2, r3
+91D13404  bne      #0x91d1342c
+91D13408  add      sp, sp, #0xc
+91D1340C  pop      {pc}
+91D13410  mov      r2, #0
+91D13414  movt     r2, #0xa080
+91D13418  ldr      r1, [r2, #0x184]
+91D1341C  bic      r1, r1, #0xf0000
+91D13420  orr      r1, r1, #0x30000
+91D13424  str      r1, [r2, #0x184]
+91D13428  b        #0x91d133f8
+91D1342C  bl       #0x91d596c4
+91D13430  push     {r4, r5, r6, r7, r8, sb, lr}
+91D13434  movw     r6, #0x57dc
+91D13438  movt     r6, #0x9201
+91D1343C  mov      r5, r2
+91D13440  sub      r2, r2, #2
+91D13444  sub      sp, sp, #0x14
+91D13448  ldr      r3, [r6]
+91D1344C  cmp      r2, #0xfd
+91D13450  mov      sb, lr
+91D13454  mov      r7, r0
+91D13458  mov      r8, r1
+91D1345C  str      r3, [sp, #0xc]
+91D13460  bhi      #0x91d134b8
+91D13464  cmp      r0, #0xff
+
+==============================================================================
+=== verify wrapper 0x91D12DD0  VA 91D12DD0  (file 0x12DD0)
+==============================================================================
+91D12DD0  mov      r3, #0x380000
+91D12DD4  and      r3, r3, fp
+91D12DD8  mov      fp, #0
+91D12DDC  lsr      sl, r3, #0x13
+91D12DE0  orrs     ip, sl, fp
+91D12DE4  beq      #0x91d12e50
+91D12DE8  movw     r0, #0x273c
+91D12DEC  movt     r0, #0x9200
+91D12DF0  subs     r8, sl, #1
+91D12DF4  str      fp, [sp]
+91D12DF8  lsl      r3, r8, #0x13
+91D12DFC  ldr      ip, [r0]
+91D12E00  str      r3, [sp, #4]
+91D12E04  mvn      r8, #0
+91D12E08  ldrd     r2, r3, [sp, #8]
+91D12E0C  cmp      ip, #0
+91D12E10  mvn      sb, #0x380000
+91D12E14  and      r8, r8, r2
+91D12E18  and      sb, sb, r3
+91D12E1C  ldrd     r2, r3, [sp]
+91D12E20  orr      r3, r3, sb
+91D12E24  orr      r2, r2, r8
+91D12E28  strd     r2, r3, [r1, #0x40]
+91D12E2C  moveq    r3, #1
+91D12E30  streq    r3, [r0]
+91D12E34  ldr      r2, [sp, #0x1c]
+91D12E38  mov      r0, r6
+91D12E3C  ldr      r3, [r4]
+91D12E40  cmp      r2, r3
+91D12E44  bne      #0x91d12ed0
+91D12E48  add      sp, sp, #0x24
+91D12E4C  pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc}
+91D12E50  bl       #0x91d124e4
+91D12E54  ldr      r1, [r7]
+91D12E58  mov      r3, #0x800000
+91D12E5C  mla      r1, r8, r1, r5
+91D12E60  ldrd     r0, r1, [r1, #0x40]
+91D12E64  and      r1, r1, r3
+91D12E68  mov      r3, fp
+91D12E6C  lsr      r2, r1, #0x17
+91D12E70  orrs     ip, r2, r3
+91D12E74  moveq    r1, fp
+91D12E78  beq      #0x91d12ea4
+91D12E7C  ldr      r1, [r7, #4]
+91D12E80  mov      r3, #0x800000
+91D12E84  mla      r5, r8, r1, r5
+91D12E88  ldrd     r0, r1, [r5, #0x40]
+91D12E8C  and      r1, r1, r3
+91D12E90  mov      r3, fp
+91D12E94  lsr      r2, r1, #0x17
+91D12E98  orrs     r5, r2, r3
+91D12E9C  moveq    r1, #1
+91D12EA0  bne      #0x91d12eb8
+91D12EA4  mov      r0, r6
+91D12EA8  bl       #0x91d12ca8
+91D12EAC  mov      r0, #0
+91D12EB0  bl       #0x91d3d37c
+91D12EB4  b        #0x91d12e34
+91D12EB8  mov      r0, sb
+91D12EBC  movw     r1, #0x9ff8
+91D12EC0  movt     r1, #0x91d7
+91D12EC4  bl       #0x91d5963c
+91D12EC8  mov      r1, fp
+91D12ECC  b        #0x91d12ea4
+91D12ED0  bl       #0x91d596c4
+91D12ED4  movw     r3, #0x57dc
+91D12ED8  movt     r3, #0x9201
+91D12EDC  str      lr, [sp, #-4]!
+91D12EE0  sub      sp, sp, #0xc
+91D12EE4  ldr      r1, [r3]
+91D12EE8  movw     r2, #0x2738
+91D12EEC  movt     r2, #0x9200
+91D12EF0  str      r1, [sp, #4]
+91D12EF4  ldr      r0, [r2]
+91D12EF8  ldr      r2, [sp, #4]
+91D12EFC  ldr      r3, [r3]
+91D12F00  cmp      r2, r3
+91D12F04  bne      #0x91d12f10
+91D12F08  add      sp, sp, #0xc
+91D12F0C  pop      {pc}
+91D12F10  bl       #0x91d596c4
+91D12F14  push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+91D12F18  movw     r3, #0x57dc
+91D12F1C  sub      sp, sp, #0x1c
+91D12F20  movt     r3, #0x9201
+91D12F24  mov      sl, r1
+91D12F28  mov      sb, r0
+91D12F2C  str      r3, [sp, #0xc]
+91D12F30  ldr      r3, [r3]
+91D12F34  str      r2, [sp, #4]
+91D12F38  str      r3, [sp, #0x14]
+91D12F3C  bl       #0x91d10938
+91D12F40  mov      r4, r0
+91D12F44  bl       #0x91d108f8
+91D12F48  cmp      r0, #0
+91D12F4C  str      r0, [sp, #8]
+91D12F50  ble      #0x91d1307c
+91D12F54  mov      r5, #0
+91D12F58  movw     r8, #0xdd7c
+91D12F5C  add      r4, r4, #0x48
+91D12F60  movt     r8, #0x91d9
+91D12F64  mov      r6, r5
+91D12F68  b        #0x91d12fd0
+91D12F6C  movw     r3, #0xdd7c
+91D12F70  movt     r3, #0x91d9
+91D12F74  mov      r0, r4
+91D12F78  ldr      r1, [r3, #4]
+91D12F7C  bl       #0x91d5b5fc
+91D12F80  subs     r3, r0, #0
+91D12F84  bne      #0x91d12ff4
+91D12F88  add      r0, sb, r5, lsl #8
+91D12F8C  mov      r1, r4
+91D12F90  mov      r2, #0x100
+91D12F94  bl       #0x91d5b174
+91D12F98  movw     r1, #0xa054
+91D12F9C  add      r0, sl, r5, lsl #6
+91D12FA0  movt     r1, #0x91d7
+91D12FA4  mov      r2, #0x40
+91D12FA8  add      r5, r5, #1
+91D12FAC  bl       #0x91d5b174
+91D12FB0  ldr      r3, [sp, #4]
+91D12FB4  cmp      r5, r3
+91D12FB8  bge      #0x91d13050
+91D12FBC  ldr      r3, [sp, #8]
+91D12FC0  add      r6, r6, #1
+91D12FC4  add      r4, r4, #0x98
+91D12FC8  cmp      r3, r6
+91D12FCC  beq      #0x91d1305c
+91D12FD0  mov      r0, r4
+91D12FD4  bl       #0x91d5b23c
+91D12FD8  ldr      r7, [r8]
+91D12FDC  mov      r1, r7
+91D12FE0  mov      fp, r0
+91D12FE4  mov      r0, r4
+91D12FE8  bl       #0x91d5b5fc
+91D12FEC  subs     r3, r0, #0
+91D12FF0  beq      #0x91d12f6c
+91D12FF4  mov      r0, r3
+91D12FF8  mov      r1, r7
+91D12FFC  str      r3, [sp]
+91D13000  bl       #0x91d5b038
+91D13004  ldr      r3, [sp]
+91D13008  cmp      r0, #0
+91D1300C  bne      #0x91d12fb0
+91D13010  mov      r0, r3
+91D13014  bl       #0x91d5b23c
+91D13018  mov      r1, r4
+91D1301C  rsb      r2, r0, fp
+91D13020  add      r0, sb, r5, lsl #8
+91D13024  add      r2, r2, #1
+91D13028  bl       #0x91d5b174
+91D1302C  add      r0, sl, r5, lsl #6
+91D13030  movw     r1, #0xa020
+91D13034  mov      r2, #0x40
+91D13038  movt     r1, #0x91d7
+91D1303C  add      r5, r5, #1
+91D13040  bl       #0x91d5b174
+91D13044  ldr      r3, [sp, #4]
+91D13048  cmp      r5, r3
+91D1304C  blt      #0x91d12fbc
+91D13050  movw     r0, #0xa028
+91D13054  movt     r0, #0x91d7
+91D13058  bl       #0x91d59508
+91D1305C  ldr      r1, [sp, #0xc]
+91D13060  mov      r0, r5
+91D13064  ldr      r2, [sp, #0x14]
+91D13068  ldr      r3, [r1]
+91D1306C  cmp      r2, r3
+91D13070  bne      #0x91d13084
+91D13074  add      sp, sp, #0x1c
+91D13078  pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc}
+91D1307C  mov      r5, #0
+91D13080  b        #0x91d1305c
+91D13084  bl       #0x91d596c4
+91D13088  push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+91D1308C  movw     sl, #0x57dc
+91D13090  movt     sl, #0x9201
+91D13094  sub      sp, sp, #0x3c
+91D13098  add      r6, r0, #0x380
+91D1309C  ldr      fp, [pc, #0x15c]
+91D130A0  ldr      r3, [sl]
+91D130A4  movw     r8, #0xa05c
+91D130A8  movw     r7, #0xa058
+91D130AC  movt     r8, #0x91d7
+91D130B0  movt     r7, #0x91d7
+91D130B4  str      r3, [sp, #0x34]
+91D130B8  bl       #0x91d10938
+91D130BC  mov      ip, fp
+91D130C0  str      sl, [sp, #0x28]
+91D130C4  str      r0, [sp, #0x2c]
+91D130C8  ldr      sb, [ip, #4]!
+91D130CC  mov      r1, #0x98
+91D130D0  ldr      r4, [sp, #0x2c]
+91D130D4  mov      r5, #0x800000
+91D130D8  sub      r0, r6, #0x280
+91D130DC  mov      r2, #0x40
+91D130E0  mla      sb, r1, sb, r4
+91D130E4  mov      r4, #0
+91D130E8  ldrd     sl, fp, [sb, #0x40]
+91D130EC  str      ip, [sp, #4]
+
+==============================================================================
+=== writer region around 91D12D6C  VA 91D12D2C  (file 0x12D2C)
+==============================================================================
+91D12D2C  orr      r3, r3, r1
+91D12D30  orr      r2, r2, r0
+91D12D34  strd     r2, r3, [sb, #0x40]
+91D12D38  moveq    r3, #1
+91D12D3C  ldr      r2, [sp, #4]
+91D12D40  streq    r3, [ip]
+91D12D44  ldr      r3, [r8]
+91D12D48  cmp      r2, r3
+91D12D4C  bne      #0x91d12d60
+91D12D50  mov      r0, sl
+91D12D54  add      sp, sp, #8
+91D12D58  pop      {r4, r5, r6, r7, r8, sb, sl, lr}
+91D12D5C  b        #0x91d12894
+91D12D60  bl       #0x91d596c4
+91D12D64  push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+91D12D68  movw     r4, #0x57dc
+91D12D6C  movt     r4, #0x9201
+91D12D70  sub      sp, sp, #0x24
+91D12D74  mov      sb, lr
+91D12D78  ldr      r3, [r4]
+91D12D7C  str      r3, [sp, #0x1c]
+91D12D80  bl       #0x91d10938
+91D12D84  mov      r5, r0
+91D12D88  bl       #0x91d12740
+91D12D8C  cmn      r0, #1
+91D12D90  mov      r6, r0
+91D12D94  beq      #0x91d12e34
+91D12D98  movw     r7, #0x272c
+91D12D9C  movt     r7, #0x9200
+91D12DA0  mov      r8, #0x98
+91D12DA4  mov      r2, #0
+91D12DA8  ldr      r1, [r7, r0, lsl #2]
+91D12DAC  mov      r3, #0x400000
+91D12DB0  mla      r1, r8, r1, r5
+91D12DB4  ldrd     sl, fp, [r1, #0x40]
+91D12DB8  and      r2, r2, sl
+91D12DBC  and      r3, r3, fp
+91D12DC0  strd     sl, fp, [sp, #8]
+91D12DC4  orrs     fp, r2, r3
+91D12DC8  bne      #0x91d12e34
+91D12DCC  ldrd     sl, fp, [sp, #8]
+91D12DD0  mov      r3, #0x380000
+91D12DD4  and      r3, r3, fp
+91D12DD8  mov      fp, #0
+91D12DDC  lsr      sl, r3, #0x13
+91D12DE0  orrs     ip, sl, fp
+91D12DE4  beq      #0x91d12e50
+91D12DE8  movw     r0, #0x273c
+91D12DEC  movt     r0, #0x9200
+91D12DF0  subs     r8, sl, #1
+91D12DF4  str      fp, [sp]
+91D12DF8  lsl      r3, r8, #0x13
+91D12DFC  ldr      ip, [r0]
+91D12E00  str      r3, [sp, #4]
+91D12E04  mvn      r8, #0
+91D12E08  ldrd     r2, r3, [sp, #8]
+91D12E0C  cmp      ip, #0
+91D12E10  mvn      sb, #0x380000
+91D12E14  and      r8, r8, r2
+91D12E18  and      sb, sb, r3
+91D12E1C  ldrd     r2, r3, [sp]
+91D12E20  orr      r3, r3, sb
+91D12E24  orr      r2, r2, r8
+91D12E28  strd     r2, r3, [r1, #0x40]
+91D12E2C  moveq    r3, #1
+91D12E30  streq    r3, [r0]
+91D12E34  ldr      r2, [sp, #0x1c]
+91D12E38  mov      r0, r6
+91D12E3C  ldr      r3, [r4]
+91D12E40  cmp      r2, r3
+91D12E44  bne      #0x91d12ed0
+91D12E48  add      sp, sp, #0x24
+91D12E4C  pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc}
+91D12E50  bl       #0x91d124e4
+91D12E54  ldr      r1, [r7]
+91D12E58  mov      r3, #0x800000
+91D12E5C  mla      r1, r8, r1, r5
+91D12E60  ldrd     r0, r1, [r1, #0x40]
+91D12E64  and      r1, r1, r3
+91D12E68  mov      r3, fp
+
+==============================================================================
+=== writer region around 91D12DB8  VA 91D12D78  (file 0x12D78)
+==============================================================================
+91D12D78  ldr      r3, [r4]
+91D12D7C  str      r3, [sp, #0x1c]
+91D12D80  bl       #0x91d10938
+91D12D84  mov      r5, r0
+91D12D88  bl       #0x91d12740
+91D12D8C  cmn      r0, #1
+91D12D90  mov      r6, r0
+91D12D94  beq      #0x91d12e34
+91D12D98  movw     r7, #0x272c
+91D12D9C  movt     r7, #0x9200
+91D12DA0  mov      r8, #0x98
+91D12DA4  mov      r2, #0
+91D12DA8  ldr      r1, [r7, r0, lsl #2]
+91D12DAC  mov      r3, #0x400000
+91D12DB0  mla      r1, r8, r1, r5
+91D12DB4  ldrd     sl, fp, [r1, #0x40]
+91D12DB8  and      r2, r2, sl
+91D12DBC  and      r3, r3, fp
+91D12DC0  strd     sl, fp, [sp, #8]
+91D12DC4  orrs     fp, r2, r3
+91D12DC8  bne      #0x91d12e34
+91D12DCC  ldrd     sl, fp, [sp, #8]
+91D12DD0  mov      r3, #0x380000
+91D12DD4  and      r3, r3, fp
+91D12DD8  mov      fp, #0
+91D12DDC  lsr      sl, r3, #0x13
+91D12DE0  orrs     ip, sl, fp
+91D12DE4  beq      #0x91d12e50
+91D12DE8  movw     r0, #0x273c
+91D12DEC  movt     r0, #0x9200
+91D12DF0  subs     r8, sl, #1
+91D12DF4  str      fp, [sp]
+91D12DF8  lsl      r3, r8, #0x13
+91D12DFC  ldr      ip, [r0]
+91D12E00  str      r3, [sp, #4]
+91D12E04  mvn      r8, #0
+91D12E08  ldrd     r2, r3, [sp, #8]
+91D12E0C  cmp      ip, #0
+91D12E10  mvn      sb, #0x380000
+91D12E14  and      r8, r8, r2
+91D12E18  and      sb, sb, r3
+91D12E1C  ldrd     r2, r3, [sp]
+91D12E20  orr      r3, r3, sb
+91D12E24  orr      r2, r2, r8
+91D12E28  strd     r2, r3, [r1, #0x40]
+91D12E2C  moveq    r3, #1
+91D12E30  streq    r3, [r0]
+91D12E34  ldr      r2, [sp, #0x1c]
+91D12E38  mov      r0, r6
+91D12E3C  ldr      r3, [r4]
+91D12E40  cmp      r2, r3
+91D12E44  bne      #0x91d12ed0
+91D12E48  add      sp, sp, #0x24
+91D12E4C  pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc}
+91D12E50  bl       #0x91d124e4
+91D12E54  ldr      r1, [r7]
+91D12E58  mov      r3, #0x800000
+91D12E5C  mla      r1, r8, r1, r5
+91D12E60  ldrd     r0, r1, [r1, #0x40]
+91D12E64  and      r1, r1, r3
+91D12E68  mov      r3, fp
+91D12E6C  lsr      r2, r1, #0x17
+91D12E70  orrs     ip, r2, r3
+91D12E74  moveq    r1, fp
+91D12E78  beq      #0x91d12ea4
+91D12E7C  ldr      r1, [r7, #4]
+91D12E80  mov      r3, #0x800000
+91D12E84  mla      r5, r8, r1, r5
+91D12E88  ldrd     r0, r1, [r5, #0x40]
+91D12E8C  and      r1, r1, r3
+91D12E90  mov      r3, fp
+91D12E94  lsr      r2, r1, #0x17
+91D12E98  orrs     r5, r2, r3
+91D12E9C  moveq    r1, #1
+91D12EA0  bne      #0x91d12eb8
+91D12EA4  mov      r0, r6
+91D12EA8  bl       #0x91d12ca8
+91D12EAC  mov      r0, #0
+91D12EB0  bl       #0x91d3d37c
+91D12EB4  b        #0x91d12e34
+
+==============================================================================
+=== writer region around 91D130B8  VA 91D13078  (file 0x13078)
+==============================================================================
+91D13078  pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc}
+91D1307C  mov      r5, #0
+91D13080  b        #0x91d1305c
+91D13084  bl       #0x91d596c4
+91D13088  push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+91D1308C  movw     sl, #0x57dc
+91D13090  movt     sl, #0x9201
+91D13094  sub      sp, sp, #0x3c
+91D13098  add      r6, r0, #0x380
+91D1309C  ldr      fp, [pc, #0x15c]
+91D130A0  ldr      r3, [sl]
+91D130A4  movw     r8, #0xa05c
+91D130A8  movw     r7, #0xa058
+91D130AC  movt     r8, #0x91d7
+91D130B0  movt     r7, #0x91d7
+91D130B4  str      r3, [sp, #0x34]
+91D130B8  bl       #0x91d10938
+91D130BC  mov      ip, fp
+91D130C0  str      sl, [sp, #0x28]
+91D130C4  str      r0, [sp, #0x2c]
+91D130C8  ldr      sb, [ip, #4]!
+91D130CC  mov      r1, #0x98
+91D130D0  ldr      r4, [sp, #0x2c]
+91D130D4  mov      r5, #0x800000
+91D130D8  sub      r0, r6, #0x280
+91D130DC  mov      r2, #0x40
+91D130E0  mla      sb, r1, sb, r4
+91D130E4  mov      r4, #0
+91D130E8  ldrd     sl, fp, [sb, #0x40]
+91D130EC  str      ip, [sp, #4]
+91D130F0  and      fp, fp, r5
+91D130F4  and      sl, sl, r4
+91D130F8  strd     sl, fp, [sp, #8]
+91D130FC  mov      sl, #0
+91D13100  lsr      r5, fp, #0x17
+91D13104  str      sl, [sp, #0x14]
+91D13108  str      r5, [sp, #0x10]
+91D1310C  ldrd     r4, r5, [sp, #0x10]
+91D13110  orrs     r5, r4, r5
+91D13114  mov      r4, #0
+91D13118  mov      r5, #0x40000
+91D1311C  movne    r1, r8
+91D13120  moveq    r1, r7
+91D13124  bl       #0x91d5b174
+91D13128  ldrd     sl, fp, [sb, #0x40]
+91D1312C  sub      r0, r6, #0x140
+91D13130  mov      r2, #0x40
+91D13134  and      sl, sl, r4
+91D13138  and      fp, fp, r5
+91D1313C  strd     sl, fp, [sp, #8]
+91D13140  ldr      sl, [sp, #0x14]
+91D13144  lsr      r5, fp, #0x12
+91D13148  str      r5, [sp, #0x18]
+91D1314C  str      sl, [sp, #0x1c]
+91D13150  ldrd     r4, r5, [sp, #0x18]
+91D13154  orrs     r5, r4, r5
+91D13158  mov      r5, #0x400000
+91D1315C  movne    r1, r8
+91D13160  moveq    r1, r7
+91D13164  bl       #0x91d5b174
+91D13168  ldrd     r2, r3, [sb, #0x40]
+91D1316C  ldr      fp, [sp, #0x14]
+91D13170  mov      r0, r6
+91D13174  and      r5, r5, r3
+91D13178  mov      r2, #0x40
+91D1317C  lsr      sl, r5, #0x16
+91D13180  str      fp, [sp, #0x24]
+91D13184  str      sl, [sp, #0x20]
+91D13188  ldrd     r4, r5, [sp, #0x20]
+91D1318C  ldr      sl, [pc, #0x70]
+91D13190  orrs     r5, r4, r5
+91D13194  movne    r1, r8
+91D13198  moveq    r1, r7
+91D1319C  bl       #0x91d5b174
+91D131A0  ldrd     r4, r5, [sb, #0x40]
+91D131A4  mov      r3, #0x380000
+91D131A8  add      r1, sp, #0x30
+91D131AC  and      r5, r5, r3
+91D131B0  mov      r2, #2
+91D131B4  mov      r3, #0xa

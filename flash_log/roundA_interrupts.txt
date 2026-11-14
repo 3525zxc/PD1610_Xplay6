@@ -1,0 +1,194 @@
+           CPU0       CPU1       CPU2       CPU3       
+  3:       9426       6303       7100       9930     GICv3  27  arch_timer
+  5:        103         96        105         93     GICv3  62  arch_mem_timer
+  6:       1288          0          0          0     GICv3 115  MDSS
+  7:          5          0          0          0     GICv3 483  smp2p
+  8:          3          0          0          0     GICv3 190  smp2p
+  9:          4          0          0          0     GICv3 210  smp2p
+ 10:          0          0          0          0     GICv3 224  spdm_bw_hyp
+ 13:         43          0          0          0     GICv3 138  i2c-msm-v2-irq
+ 14:          0          0          0          0     GICv3 270  sps
+ 16:          0          0          0          0     GICv3 129  i2c-msm-v2-irq
+ 17:          0          0          0          0     GICv3 132  i2c-msm-v2-irq
+ 18:          0          0          0          0     GICv3 133  i2c-msm-v2-irq
+ 19:          2          0          0          0     GICv3 134  i2c-msm-v2-irq
+ 21:       1082          0          0          0     GICv3 215  408000.qcom,cpu-bwmon
+ 26:         97          0          0          0     GICv3 195  ngd_slim_irq
+ 27:         37          0          0          0     GICv3 196  sps
+ 30:          0          0          0          0     GICv3 157  mmc0
+ 31:          2          0          0          0     GICv3 253  74a4900.sdhci
+ 32:          0          0          0          0     GICv3 290  630000.ufsice
+ 33:          0          0          0          0     GICv3 493  7443000.sdcc1ice
+ 34:      10138          0          0          0     GICv3 297  ufshcd
+ 35:          0          0          0          0     GICv3 437  int_msi
+ 42:          0          0          0          0     GICv3 283  int_pls_err
+ 43:          0          0          0          0     GICv3 284  int_aer_legacy
+ 45:          0          0          0          0     GICv3 286  int_pls_link_down
+ 79:          0          0          0          0     GICv3 445  int_msi
+ 86:          0          0          0          0     GICv3 310  int_pls_err
+ 87:          0          0          0          0     GICv3 311  int_aer_legacy
+ 89:          0          0          0          0     GICv3 313  int_pls_link_down
+123:          0          0          0          0     GICv3 453  int_msi
+130:          0          0          0          0     GICv3 180  int_pls_err
+131:          0          0          0          0     GICv3 181  int_aer_legacy
+133:          0          0          0          0     GICv3 293  int_pls_link_down
+167:        854          0          0          0     GICv3 481  qcom,smd-modem
+168:        309          0          0          0     GICv3 188  qcom,smd-adsp
+169:       1060          0          0          0     GICv3 208  qcom,smd-dsps
+170:       3154          0          0          0     GICv3 200  qcom,smd-rpm, qcom,glink-smem-native-xprt-rpm
+171:          0          0          0          0     GICv3  60  apps_wdog_bark
+173:          0          0          0          0     GICv3 379  hs_phy_irq
+174:          0          0          0          0     GICv3 275  ss_phy_irq
+175:          2          0          0          0     GICv3 212  msm_dwc3
+176:        327          0          0          0     GICv3 358  400f000.qcom,spmi
+177:          0          0          0          0  qpnp-int 288  pm8994_tz
+178:          0          0          0          0  qpnp-int  64  qpnp_kpdpwr_status
+179:          0          0          0          0  qpnp-int  65  qpnp_resin_status
+181:          0          0          0          0  qpnp-int  69  qpnp_kpdpwr_resin_bark
+184:          0          0          0          0  qpnp-int 419  qpnp_adc_tm_high_interrupt
+185:          0          0          0          0  qpnp-int 420  qpnp_adc_tm_low_interrupt
+186:          0          0          0          0  qpnp-int 777  qpnp_rtc_alarm
+187:          0          0          0          0  qpnp-int 4624  bcl_ibat_interrupt
+188:          0          0          0          0  qpnp-int 4625  bcl_vbat_interrupt
+190:          0          0          0          0  qpnp-int 4491  qpnp_vadc_high_interrupt
+191:          0          0          0          0  qpnp-int 4492  qpnp_vadc_low_interrupt
+192:          0          0          0          0  qpnp-int 4224  chg-error
+196:          0          0          0          0  qpnp-int 4228  chg-p2f-thr
+197:          0          0          0          0  qpnp-int 4229  chg-rechg-thr
+198:          0          0          0          0  qpnp-int 4230  chg-taper-thr
+199:          0          0          0          0  qpnp-int 4231  chg-tcc-thr
+200:          0          0          0          0  qpnp-int 4240  batt-hot
+201:          0          0          0          0  qpnp-int 4241  batt-warm
+202:          0          0          0          0  qpnp-int 4242  batt-cold
+203:          0          0          0          0  qpnp-int 4243  batt-cool
+205:          0          0          0          0  qpnp-int 4245  batt-low
+206:          0          0          0          0  qpnp-int 4246  batt-missing
+208:          0          0          0          0  qpnp-int 4248  usbin-uv
+209:          0          0          0          0  qpnp-int 4249  usbin-ov
+210:          0          0          0          0  qpnp-int 4250  usbin-src-det
+211:          0          0          0          0  qpnp-int 4251  otg-fail
+212:          0          0          0          0  qpnp-int 4252  otg-oc
+213:          0          0          0          0  qpnp-int 4253  aicl-done
+214:          0          0          0          0  qpnp-int 4254  usbid-change
+215:          0          0          0          0  qpnp-int 4256  dcin-uv
+217:          0          0          0          0  qpnp-int 4272  power-ok
+218:          0          0          0          0  qpnp-int 4273  temp-shutdown
+219:          0          0          0          0  qpnp-int 4274  wdog-timeout
+225:          0          0          0          0  qpnp-int 4610  full-soc
+226:          0          0          0          0  qpnp-int 4611  empty-soc
+227:          1          0          0          0  qpnp-int 4612  delta-soc
+228:          0          0          0          0  qpnp-int 4613  first-est-done
+231:          0          0          0          0  qpnp-int 4616  soft-cold
+232:          0          0          0          0  qpnp-int 4617  soft-hot
+233:          0          0          0          0  qpnp-int 4618  vbatt-low
+237:          0          0          0          0  qpnp-int 4622  batt-missing
+239:        326          0          0          0  qpnp-int 4640  mem-avail
+241:          0          0          0          0  qpnp-int 7874  qpnp_wled_sc_irq
+242:          0          0          0          0     GICv3 194  adsp
+243:          0          0          0          0     GICv3 422  slpi
+244:          0          0          0          0     GICv3 480  modem
+245:         41          0          0          0     GICv3 490  tsens_interrupt
+246:          0          0          0          0     GICv3 477  tsens_critical_interrupt
+247:          0          0          0          0     GICv3 127  7575000.spi
+249:          0          0          0          0     GICv3 238  sps
+250:          2          1          5          4     GICv3  23  arm-pmu
+251:          7          0          0          0     GICv3 484  qcom,glink-smem-native-xprt-modem
+252:          7          0          0          0     GICv3 189  qcom,glink-smem-native-xprt-adsp
+253:          7          0          0          0     GICv3 211  qcom,glink-smem-native-xprt-dsps
+254:          0          0          0          0     GICv3  16  l1_irq
+255:          0          0          0          0     GICv3  33  l2_irq_info_0
+256:          0          0          0          0     GICv3  41  l2_irq_info_1
+257:          0          0          0          0     GICv3  34  l2_irq_err_0
+258:          0          0          0          0     GICv3  42  l2_irq_err_1
+259:          0          0          0          0     GICv3  49  l3_irq
+260:          0          0          0          0     GICv3  54  m4m_irq
+261:        141          0          0          0     GICv3  55  lmh-interrupt
+262:       2133          0          0          0     GICv3  80  cpr3
+263:          0          0          0          0     GICv3  79  cpr3_ceiling
+264:         11          0          0          0     GICv3 198  cpr3
+265:          0          0          0          0     GICv3 110  csiphy
+266:          0          0          0          0     GICv3 111  csiphy
+267:          0          0          0          0     GICv3 112  csiphy
+268:          0          0          0          0     GICv3 328  csid
+269:          0          0          0          0     GICv3 329  csid
+270:          0          0          0          0     GICv3 330  csid
+271:          0          0          0          0     GICv3 331  csid
+272:          0          0          0          0     GICv3 341  ispif
+273:          6          0          0          0     GICv3 346  vfe
+274:          6          0          0          0     GICv3 347  vfe
+279:          0          0          0          0     GICv3 325  fd
+280:          0          0          0          0     GICv3 327  cci
+281:        707          0          0          0     GICv3 332  kgsl-3d0
+282:          0          0          0          0     GICv3 203  681b8.qcom,mpm
+283:          0          0          0          0     GICv3  99  arm-smmu global fault
+287:          0          0          0          0     GICv3 366  arm-smmu global fault
+288:          0          0          0          0     GICv3 361  arm-smmu-context-fault
+289:          0          0          0          0     GICv3 362  arm-smmu-context-fault
+290:          0          0          0          0     GICv3 108  arm-smmu global fault
+293:          0          0          0          0     GICv3 318  arm-smmu global fault
+294:          0          0          0          0     GICv3 367  arm-smmu-context-fault
+295:          0          0          0          0     GICv3 368  arm-smmu-context-fault
+296:          0          0          0          0     GICv3 369  arm-smmu-context-fault
+297:          0          0          0          0     GICv3 370  arm-smmu-context-fault
+301:          0          0          0          0     GICv3 105  arm-smmu global fault
+302:          0          0          0          0     GICv3 352  arm-smmu-context-fault
+303:          0          0          0          0     GICv3 353  arm-smmu-context-fault
+304:          0          0          0          0     GICv3 385  arm-smmu global fault
+305:          0          0          0          0     GICv3 380  arm-smmu-context-fault
+306:          0          0          0          0     GICv3 381  arm-smmu-context-fault
+307:          0          0          0          0     GICv3 296  arm-smmu global fault
+311:          0          0          0          0     GICv3 436  arm-smmu global fault
+312:          0          0          0          0     GICv3 258  arm-smmu-context-fault
+313:          0          0          0          0     GICv3 425  arm-smmu-context-fault
+314:          0          0          0          0     GICv3 426  arm-smmu-context-fault
+315:          0          0          0          0     GICv3 427  arm-smmu-context-fault
+316:          0          0          0          0     GICv3 428  arm-smmu-context-fault
+317:          0          0          0          0     GICv3 429  arm-smmu-context-fault
+318:          0          0          0          0     GICv3 430  arm-smmu-context-fault
+319:          0          0          0          0     GICv3 431  arm-smmu-context-fault
+320:          0          0          0          0     GICv3 432  arm-smmu-context-fault
+324:          0          0          0          0     GICv3 394  arm-smmu global fault
+332:          0          0          0          0     GICv3 403  arm-smmu global fault
+337:          0          0          0          0     GICv3 413  arm-smmu global fault
+346:        260          0          0          0     GICv3 319  msm_vidc
+347:          0          0          0          0     GICv3 461  vmem
+349:          0          0          0          0     GICv3  32  l2-cache-pmu
+350:          0          0          0          0     GICv3  40  l2-cache-pmu
+351:          3          0          0          0     GICv3 365  ipa
+352:         27          0          0          0     GICv3 464  sps
+354:          0          0          0          0     GICv3 216  tsens_interrupt
+355:          0          0          0          0     GICv3 462  tsens_critical_interrupt
+356:          1          0          0          0     GICv3 240
+367:          0          0          0          0   msmgpio  10  VSYNC_GPIO
+394:          0          0          0          0   msmgpio  37  msm_pcie_wake
+411:          1          0          0          0   msmgpio  54  wcd9xxx
+452:          0          0          0          0   msmgpio  95  74a4900.sdhci cd
+473:          0          0          0          0   msmgpio 116  msm_pcie_wake
+482:          5          0          0          0   msmgpio 125  fts
+636:          0          0          0          0  smp2p_gpio   0  modem
+637:          1          0          0          0  smp2p_gpio   1  error_ready_interrupt
+638:          1          0          0          0  smp2p_gpio   2  modem
+639:          0          0          0          0  smp2p_gpio   3  modem
+668:          0          0          0          0  smp2p_gpio   0  adsp
+669:          1          0          0          0  smp2p_gpio   1  error_ready_interrupt
+670:          1          0          0          0  smp2p_gpio   2  adsp
+671:          0          0          0          0  smp2p_gpio   3  adsp
+700:          0          0          0          0  smp2p_gpio   0  slpi
+701:          1          0          0          0  smp2p_gpio   1  error_ready_interrupt
+702:          1          0          0          0  smp2p_gpio   2  slpi
+703:          0          0          0          0  smp2p_gpio   3  slpi
+796:       1621          0          0          0     GICv3 163  dwc3
+797:          0          0          0          0     GICv3 164  sps
+798:          0          0          0          0  qpnp-int 1544  volume_up
+799:          0          0          0          0  qpnp-int 1560  cam_snapshot
+800:          0          0          0          0  qpnp-int 1568  home_key
+821:          0          0          0          1   wcd9xxx  20  Tasha SWR Master
+IPI0:     14173      18752      15469      17391       Rescheduling interrupts
+IPI1:       268        274        569        584       Function call interrupts
+IPI2:      2036       1627       4742       4356       Single function call interrupts
+IPI3:         0          0          0          0       CPU stop interrupts
+IPI4:         1          0          2          0       Timer broadcast interrupts
+IPI5:         0          0          0          0       IRQ work interrupts
+IPI6:         0          0          0          0       CPU wakeup interrupts
+IPI7:         0          0          0          0       CPU backtrace
+Err:          1

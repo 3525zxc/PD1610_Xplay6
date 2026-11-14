@@ -1,0 +1,3735 @@
+=== loop state [0x92002738] 0x92002738 ===
+  literal pool entries (val in [0x920026F8..0x92002778]): 2
+    91D0B09C ldr    fp, [pc, #0x15c]         pool@0x91D0B200 val=0x92002728  ; +0x10 -> reaches 0x92002738? (offset 16)
+    91D0B18C ldr    sl, [pc, #0x70]          pool@0x91D0B204 val=0x92002730  ; +0x8 -> reaches 0x92002738? (offset 8)
+  pool-referenced: 2
+  movw/movt materialisations: 1
+    @0x91D0AEE8 (r2)
+    91D0AEF4 ldr    r0, [r2]
+
+=== canary global [0x920157DC] 0x920157DC ===
+  literal pool entries (val in [0x9201579C..0x9201581C]): 0
+  pool-referenced: 0
+  movw/movt materialisations: 1653
+    @0x91D0014C (r5)
+    91D0015C ldr    r2, [r5]
+    @0x91D00280 (r4)
+    91D0028C ldr    r3, [r4]
+    91D0029C ldr    r3, [r4]
+    @0x91D002B8 (r3)
+    91D002C8 ldr    r2, [r3]
+    91D002D4 ldr    r3, [r3]
+    @0x91D002F0 (r3)
+    91D00300 ldr    r2, [r3]
+    91D0030C ldr    r3, [r3]
+    @0x91D00344 (r4)
+    91D00358 ldr    r2, [r4]
+    @0x91D003D0 (r3)
+    91D003E0 ldr    r2, [r3]
+    91D003EC ldr    r3, [r3]
+    @0x91D0040C (r4)
+    91D0041C ldr    r3, [r4]
+    @0x91D0055C (r4)
+    91D00568 ldr    r3, [r4]
+    @0x91D005EC (r4)
+    91D00600 ldr    r1, [r4]
+    @0x91D00724 (r4)
+    91D00730 ldr    r3, [r4]
+    @0x91D00770 (r3)
+    91D00780 ldr    r2, [r3]
+    91D00790 ldr    r3, [r3]
+    @0x91D007A8 (r3)
+    91D007B8 ldr    r2, [r3]
+    91D007C4 ldr    r3, [r3]
+    @0x91D007E8 (r4)
+    91D007F8 ldr    r3, [r4]
+    @0x91D00864 (r3)
+    91D00874 ldr    r1, [r3]
+    @0x91D008A8 (r4)
+    91D008BC ldr    r2, [r4]
+    @0x91D00A90 (r3)
+    91D00AA0 ldr    r2, [r3]
+    91D00AAC ldr    r3, [r3]
+    @0x91D00ACC (r4)
+    91D00ADC ldr    r3, [r4]
+    @0x91D00B40 (r3)
+    91D00B50 ldr    r2, [r3]
+    91D00B5C ldr    r3, [r3]
+    @0x91D00B7C (r5)
+    91D00B90 ldr    r3, [r5]
+    @0x91D00C50 (r3)
+    91D00C60 ldr    r2, [r3]
+    @0x91D00C90 (r4)
+    91D00C9C ldr    r3, [r4]
+    91D00CAC ldr    r3, [r4]
+    @0x91D00CD0 (r3)
+    91D00CE0 ldr    r2, [r3]
+    91D00CF0 ldr    r3, [r3]
+    @0x91D00D0C (r4)
+    91D00D20 ldr    ip, [r4]
+    @0x91D00DA0 (r4)
+    91D00DB0 ldr    r3, [r4]
+    @0x91D01018 (r4)
+    91D01024 ldr    r3, [r4]
+    @0x91D010A4 (r3)
+    91D010B4 ldr    r2, [r3]
+    91D010C0 ldr    r3, [r3]
+    @0x91D010DC (r3)
+    91D010EC ldr    r2, [r3]
+    91D010F8 ldr    r3, [r3]
+    @0x91D01118 (r4)
+    91D01128 ldr    r3, [r4]
+    @0x91D011D8 (r6)
+    91D011EC ldr    r3, [r6]
+    @0x91D012E4 (r3)
+    91D012F4 ldr    r2, [r3]
+    @0x91D01320 (r3)
+    91D01330 ldr    r2, [r3]
+    91D01340 ldr    r3, [r3]
+    @0x91D0135C (r6)
+    91D01374 ldr    r3, [r6]
+    @0x91D0145C (r4)
+    91D01470 ldr    r3, [r4]
+    @0x91D01514 (r6)
+    91D01528 ldr    ip, [r6]
+    @0x91D015F8 (r4)
+    91D0160C ldr    r3, [r4]
+    @0x91D01670 (r4)
+    91D01680 ldr    r3, [r4]
+    @0x91D01770 (r5)
+    91D01780 ldr    r3, [r5]
+    @0x91D0186C (r4)
+    91D0187C ldr    r3, [r4]
+    @0x91D01900 (r7)
+    91D01914 ldr    r3, [r7]
+    @0x91D01ACC (r5)
+    91D01AE0 ldr    r3, [r5]
+    @0x91D01B74 (r4)
+    91D01B88 ldr    r3, [r4]
+    @0x91D01D8C (r2)
+    91D01D9C ldr    r0, [r2]
+    @0x91D01E1C (r4)
+    91D01E30 ldr    r3, [r4]
+    @0x91D01E94 (r4)
+    91D01EA8 ldr    r3, [r4]
+    @0x91D01FE8 (r4)
+    91D01FFC ldr    ip, [r4]
+    @0x91D02070 (r4)
+    91D0207C ldr    r3, [r4]
+    @0x91D021F0 (r4)
+    91D021FC ldr    r3, [r4]
+    @0x91D0227C (r3)
+    91D0228C ldr    r2, [r3]
+    91D0229C ldr    r3, [r3]
+    @0x91D022C0 (r4)
+    91D022D0 ldr    r2, [r4]
+    @0x91D02338 (r3)
+    91D02348 ldr    r2, [r3]
+    91D02358 ldr    r3, [r3]
+    @0x91D02374 (r4)
+    91D02388 ldr    r3, [r4]
+    @0x91D02400 (r3)
+    91D02410 ldr    r2, [r3]
+    91D02420 ldr    r3, [r3]
+    @0x91D0243C (r6)
+    91D02450 ldr    r1, [r6]
+    @0x91D038F4 (r8)
+    91D03908 ldr    r2, [r8]
+    @0x91D03A4C (r8)
+    91D03A60 ldr    r2, [r8]
+    @0x91D03C28 (r7)
+    91D03C3C ldr    r2, [r7]
+    @0x91D03E0C (r0)
+    91D03E1C ldr    r2, [r0]
+    @0x91D04004 (r5)
+    91D04010 ldr    r3, [r5]
+    @0x91D04440 (r4)
+    91D0444C ldr    r3, [r4]
+    @0x91D044E8 (r4)
+    91D044FC ldr    r3, [r4]
+    @0x91D045B0 (r5)
+    91D045C4 ldr    lr, [r5]
+    @0x91D046F0 (r5)
+    91D04704 ldr    r1, [r5]
+    @0x91D04848 (r4)
+    91D04858 ldr    r3, [r4]
+    @0x91D048A8 (r4)
+    91D048BC ldr    r3, [r4]
+    @0x91D04964 (r5)
+    91D04978 ldr    r3, [r5]
+    @0x91D04A48 (r5)
+    91D04A5C ldr    r3, [r5]
+    @0x91D04B2C (r4)
+    91D04B3C ldr    r2, [r4]
+    @0x91D04B94 (r4)
+    91D04BA0 ldr    r3, [r4]
+    @0x91D04BD8 (r3)
+    91D04BE8 ldr    r2, [r3]
+    91D04BF4 ldr    r3, [r3]
+    @0x91D04C10 (r4)
+    91D04C1C ldr    r3, [r4]
+    91D04C2C ldr    r3, [r4]
+    @0x91D04C4C (r7)
+    91D04C5C ldr    r3, [r7]
+    @0x91D04D8C (r4)
+    91D04D98 ldr    r3, [r4]
+    91D04DA8 ldr    r3, [r4]
+    @0x91D04DC0 (r3)
+    91D04DD0 ldr    r2, [r3]
+    91D04DDC ldr    r3, [r3]
+    @0x91D04DFC (r3)
+    91D04E0C ldr    r1, [r3]
+    @0x91D04E3C (r3)
+    91D04E4C ldr    r2, [r3]
+    @0x91D04E78 (r2)
+    91D04E88 ldr    r1, [r2]
+    @0x91D04ED4 (r3)
+    91D04EE4 ldr    r2, [r3]
+    91D04EF4 ldr    r3, [r3]
+    @0x91D04F10 (r4)
+    91D04F1C ldr    r3, [r4]
+    91D04F2C ldr    r3, [r4]
+    @0x91D04F54 (r4)
+    91D04F60 ldr    r3, [r4]
+    91D04F74 ldr    r3, [r4]
+    @0x91D04F9C (r4)
+    91D04FA8 ldr    r3, [r4]
+    @0x91D05000 (r3)
+    91D05010 ldr    ip, [r3]
+    @0x91D05044 (r4)
+    91D05050 ldr    r3, [r4]
+    @0x91D05098 (r4)
+    91D050A4 ldr    r3, [r4]
+    91D050B4 ldr    r3, [r4]
+    @0x91D050DC (r4)
+    91D050E8 ldr    r3, [r4]
+    91D050FC ldr    r1, [r4]
+    @0x91D05130 (r4)
+    91D0513C ldr    r3, [r4]
+    91D05150 ldr    r1, [r4]
+    @0x91D05184 (r4)
+    91D05190 ldr    r3, [r4]
+    91D051A4 ldr    r1, [r4]
+    @0x91D051D8 (r4)
+    91D051E4 ldr    r3, [r4]
+    91D051F4 ldr    r3, [r4]
+    @0x91D0521C (r4)
+    91D05230 ldr    ip, [r4]
+    @0x91D052C0 (r5)
+    91D052D4 ldr    ip, [r5]
+    @0x91D05438 (r4)
+    91D0544C ldr    ip, [r4]
+    @0x91D0554C (r4)
+    91D05560 ldr    r3, [r4]
+    @0x91D055F0 (r4)
+    91D05604 ldr    r3, [r4]
+    @0x91D05694 (r4)
+    91D056A8 ldr    r3, [r4]
+    @0x91D0574C (r4)
+    91D05760 ldr    r3, [r4]
+    @0x91D058D8 (r4)
+    91D058EC ldr    r3, [r4]
+    @0x91D05B7C (r4)
+    91D05B90 ldr    r3, [r4]
+    @0x91D05C04 (r4)
+    91D05C18 ldr    r3, [r4]
+    @0x91D05E08 (r1)
+    91D05E18 ldr    r2, [r1]
+    @0x91D05ED8 (r0)
+    91D05EE8 ldr    r2, [r0]
+    @0x91D05F78 (r1)
+    91D05F88 ldr    r2, [r1]
+    @0x91D06014 (r0)
+    91D06024 ldr    r2, [r0]
+    @0x91D06094 (r4)
+    91D060A8 ldr    r3, [r4]
+    @0x91D06274 (r4)
+    91D06288 ldr    r3, [r4]
+    @0x91D062F8 (r4)
+    91D0630C ldr    r3, [r4]
+    @0x91D0653C (r4)
+    91D06550 ldr    r3, [r4]
+    @0x91D065D0 (r4)
+    91D065E4 ldr    r3, [r4]
+    @0x91D06710 (r4)
+    91D06724 ldr    r3, [r4]
+    @0x91D067A4 (r4)
+    91D067B8 ldr    ip, [r4]
+    @0x91D06884 (r4)
+    91D06898 ldr    r3, [r4]
+    @0x91D06964 (r4)
+    91D06978 ldr    r3, [r4]
+    @0x91D069EC (r4)
+    91D06A00 ldr    r3, [r4]
+    @0x91D06A30 (r4)
+    91D06A44 ldr    r3, [r4]
+    @0x91D06A80 (r3)
+    91D06A90 ldr    r2, [r3]
+    91D06A9C ldr    r3, [r3]
+    @0x91D06B1C (r3)
+    91D06B2C ldr    ip, [r3]
+    @0x91D06B5C (r3)
+    91D06B6C ldr    r1, [r3]
+    @0x91D06BA0 (r3)
+    91D06BB0 ldr    ip, [r3]
+    @0x91D06BF4 (r4)
+    91D06C08 ldr    r2, [r4]
+    @0x91D06DA0 (r3)
+    91D06DB0 ldr    r2, [r3]
+    91D06DBC ldr    r3, [r3]
+    @0x91D06DD4 (r3)
+    91D06DE4 ldr    r2, [r3]
+    91D06DF0 ldr    r3, [r3]
+    @0x91D06E14 (r3)
+    91D06E24 ldr    r3, [r3]
+    @0x91D06E58 (r4)
+    91D06E6C ldr    r3, [r4]
+    @0x91D06F38 (r4)
+    91D06F4C ldr    r3, [r4]
+    @0x91D07014 (r4)
+    91D07028 ldr    r3, [r4]
+    @0x91D070AC (r4)
+    91D070C0 ldr    r1, [r4]
+    @0x91D0716C (r4)
+    91D07180 ldr    r3, [r4]
+    @0x91D073FC (r4)
+    91D07410 ldr    ip, [r4]
+    @0x91D07508 (r3)
+    91D07518 ldr    r2, [r3]
+    91D07524 ldr    r3, [r3]
+    @0x91D07558 (r3)
+    91D07568 ldr    r1, [r3]
+    @0x91D07598 (r3)
+    91D075A8 ldr    r1, [r3]
+    @0x91D075DC (r6)
+    91D075EC ldr    r3, [r6]
+    @0x91D07708 (sb)
+    91D07718 ldr    r3, [sb]
+    @0x91D0780C (r4)
+    91D07820 ldr    r3, [r4]
+    @0x91D07CAC (fp)
+    91D07CC0 ldr    r1, [fp]
+    @0x91D08570 (r4)
+    91D08580 ldr    r3, [r4]
+    @0x91D085D4 (r6)
+    91D085E8 ldr    r3, [r6]
+    @0x91D088F8 (r3)
+    91D08908 ldr    r1, [r3]
+    @0x91D08938 (r3)
+    91D08948 ldr    r1, [r3]
+    @0x91D0897C (r4)
+    91D08990 ldr    r3, [r4]
+    @0x91D09230 (r6)
+    91D09240 ldr    r3, [r6]
+    @0x91D09304 (r8)
+    91D09318 ldr    r3, [r8]
+    @0x91D09C8C (fp)
+    91D09CA0 ldr    r3, [fp]
+    @0x91D09DA0 (r3)
+    91D09DB0 ldr    r2, [r3]
+    @0x91D09ED8 (r4)
+    91D09EE8 ldr    r3, [r4]
+    @0x91D09F50 (r4)
+    91D09F60 ldr    r3, [r4]
+    @0x91D09FCC (r3)
+    91D09FDC ldr    r2, [r3]
+    @0x91D0A010 (r3)
+    91D0A020 ldr    r2, [r3]
+    91D0A02C ldr    r3, [r3]
+    @0x91D0A044 (r3)
+    91D0A054 ldr    r1, [r3]
+    @0x91D0A0E0 (sb)
+    91D0A0F0 ldr    r3, [sb]
+    @0x91D0A240 (r5)
+    91D0A250 ldr    r3, [r5]
+    @0x91D0A4E8 (r4)
+    91D0A4FC ldr    r3, [r4]
+    @0x91D0A560 (r4)
+    91D0A574 ldr    r3, [r4]
+    @0x91D0A744 (r8)
+    91D0A758 ldr    r3, [r8]
+    @0x91D0AC18 (r8)
+    91D0AC2C ldr    r3, [r8]
+    @0x91D0ACAC (r8)
+    91D0ACC0 ldr    r3, [r8]
+    @0x91D0AD68 (r4)
+    91D0AD78 ldr    r3, [r4]
+    @0x91D0AED4 (r3)
+    91D0AEE4 ldr    r1, [r3]
+    @0x91D0B08C (sl)
+    91D0B0A0 ldr    r3, [sl]
+    @0x91D0B2A8 (r7)
+    91D0B2BC ldr    r3, [r7]
+    @0x91D0B3AC (r3)
+    91D0B3B8 ldr    r1, [r3]
+    @0x91D0B434 (r6)
+    91D0B448 ldr    r3, [r6]
+    @0x91D0B52C (r5)
+    91D0B540 ldr    r3, [r5]
+    @0x91D0B5F0 (r3)
+    91D0B600 ldr    r2, [r3]
+    91D0B60C ldr    r3, [r3]
+    @0x91D0B628 (r5)
+    91D0B63C ldr    r3, [r5]
+    @0x91D0B754 (r5)
+    91D0B768 ldr    r3, [r5]
+    @0x91D0B7FC (r5)
+    91D0B810 ldr    r3, [r5]
+    @0x91D0B890 (r3)
+    91D0B8A0 ldr    r2, [r3]
+    91D0B8AC ldr    r3, [r3]
+    @0x91D0BAFC (r5)
+    91D0BB10 ldr    r3, [r5]
+    @0x91D0BB88 (r3)
+    91D0BB98 ldr    r1, [r3]
+    @0x91D0BBF8 (r3)
+    91D0BC08 ldr    ip, [r3]
+    @0x91D0BC60 (r6)
+    91D0BC74 ldr    r2, [r6]
+    @0x91D0C15C (r6)
+    91D0C170 ldr    r3, [r6]
+    @0x91D0C330 (r4)
+    91D0C340 ldr    r1, [r4]
+    @0x91D0C38C (r6)
+    91D0C3A0 ldr    r3, [r6]
+    @0x91D0C6CC (r5)
+    91D0C6E0 ldr    r1, [r5]
+    @0x91D0C748 (r4)
+    91D0C75C ldr    r3, [r4]
+    @0x91D0C828 (ip)
+    91D0C838 ldr    r3, [ip]
+    @0x91D0C920 (r4)
+    91D0C92C ldr    r3, [r4]
+    91D0C93C ldr    r3, [r4]
+    @0x91D0C95C (r4)
+    91D0C968 ldr    r3, [r4]
+    @0x91D0C9C8 (r3)
+    91D0C9D8 ldr    r2, [r3]
+    91D0C9E8 ldr    r3, [r3]
+    @0x91D0CAD0 (r5)
+    91D0CAE4 ldr    r3, [r5]
+    @0x91D0CBA4 (r4)
+    91D0CBB8 ldr    r6, [r4]
+    @0x91D0CC84 (r4)
+    91D0CC94 ldr    r3, [r4]
+    @0x91D0CCE4 (r3)
+    91D0CCF4 ldr    r3, [r3]
+    @0x91D0CD1C (r4)
+    91D0CD30 ldr    r1, [r4]
+    @0x91D0CDE0 (r4)
+    91D0CDF4 ldr    r3, [r4]
+    @0x91D0CE5C (r3)
+    91D0CE6C ldr    r1, [r3]
+    @0x91D0CEA0 (r4)
+    91D0CEB4 ldr    ip, [r4]
+    @0x91D0CF30 (r4)
+    91D0CF44 ldr    ip, [r4]
+    @0x91D0CFBC (r3)
+    91D0CFCC ldr    r1, [r3]
+    @0x91D0D000 (r6)
+    91D0D00C ldr    r3, [r6]
+    @0x91D0D098 (r7)
+    91D0D0AC ldr    r3, [r7]
+    @0x91D0D1AC (r3)
+    91D0D1BC ldr    r3, [r3]
+    @0x91D0D1CC (r3)
+    91D0D1D8 ldr    r3, [r3]
+    @0x91D0D1F0 (r3)
+    91D0D200 ldr    r3, [r3]
+    @0x91D0D210 (r3)
+    91D0D21C ldr    r3, [r3]
+    @0x91D0D238 (r7)
+    91D0D24C ldr    r2, [r7]
+    @0x91D0D2DC (r8)
+    91D0D2F0 ldr    r3, [r8]
+    @0x91D0D3A0 (r5)
+    91D0D3B4 ldr    ip, [r5]
+    @0x91D0D4B8 (r4)
+    91D0D4CC ldr    r0, [r4]
+    @0x91D0D540 (r8)
+    91D0D554 ldr    r2, [r8]
+    @0x91D0DD78 (r5)
+    91D0DD8C ldr    r3, [r5]
+    @0x91D0DEE4 (r4)
+    91D0DEF8 ldr    r2, [r4]
+    @0x91D0DF3C (r3)
+    91D0DF4C ldr    ip, [r3]
+    @0x91D0E044 (r6)
+    91D0E04C ldr    r8, [r6]
+    @0x91D0E148 (r6)
+    91D0E15C ldr    r1, [r6]
+    @0x91D0E334 (r6)
+    91D0E348 ldr    ip, [r6]
+    @0x91D0E468 (r3)
+    91D0E478 ldr    r2, [r3]
+    @0x91D0E514 (r3)
+    91D0E524 ldr    r1, [r3]
+    @0x91D0E56C (r5)
+    91D0E580 ldr    r3, [r5]
+    @0x91D0EDAC (r4)
+    91D0EDBC ldr    r3, [r4]
+    @0x91D0EEA8 (r4)
+    91D0EEBC ldr    r3, [r4]
+    @0x91D0EF44 (r4)
+    91D0EF58 ldr    r3, [r4]
+    @0x91D0EFDC (r4)
+    91D0EFF0 ldr    ip, [r4]
+    @0x91D0F0F4 (r4)
+    91D0F104 ldr    ip, [r4]
+    @0x91D0F158 (r4)
+    91D0F16C ldr    ip, [r4]
+    @0x91D0F1D8 (r4)
+    91D0F1EC ldr    r3, [r4]
+    @0x91D0F260 (r4)
+    91D0F274 ldr    ip, [r4]
+    @0x91D0F2DC (r4)
+    91D0F2F0 ldr    r3, [r4]
+    @0x91D0F354 (r4)
+    91D0F368 ldr    r3, [r4]
+    @0x91D0F43C (r4)
+    91D0F450 ldr    r3, [r4]
+    @0x91D0F620 (r4)
+    91D0F634 ldr    r3, [r4]
+    @0x91D0F7C0 (r8)
+    91D0F7D4 ldr    r3, [r8]
+    @0x91D0F968 (r4)
+    91D0F97C ldr    r3, [r4]
+    @0x91D0FA18 (r5)
+    91D0FA2C ldr    r3, [r5]
+    @0x91D0FAC4 (r5)
+    91D0FAD8 ldr    r3, [r5]
+    @0x91D10A6C (r4)
+    91D10A80 ldr    r3, [r4]
+    @0x91D10B70 (r4)
+    91D10B84 ldr    r3, [r4]
+    @0x91D11250 (r4)
+    91D11264 ldr    r3, [r4]
+    @0x91D1132C (r7)
+    91D11340 ldr    r3, [r7]
+    @0x91D114FC (r4)
+    91D11508 ldr    r3, [r4]
+    @0x91D11584 (r4)
+    91D11590 ldr    r3, [r4]
+    @0x91D115D8 (r4)
+    91D115E4 ldr    r3, [r4]
+    @0x91D1162C (r4)
+    91D11638 ldr    r3, [r4]
+    @0x91D1167C (ip)
+    91D1168C ldr    r1, [ip]
+    @0x91D118B8 (ip)
+    91D118C8 ldr    r1, [ip]
+    @0x91D11B28 (r4)
+    91D11B3C ldr    r3, [r4]
+    @0x91D11BEC (r8)
+    91D11C00 ldr    r1, [r8]
+    @0x91D11EB4 (r4)
+    91D11EC0 ldr    r3, [r4]
+    @0x91D11F04 (r4)
+    91D11F14 ldr    r3, [r4]
+    @0x91D11F50 (r4)
+    91D11F5C ldr    r3, [r4]
+    @0x91D11F9C (r6)
+    91D11FB0 ldr    r3, [r6]
+    @0x91D120A8 (r8)
+    91D120BC ldr    r3, [r8]
+    @0x91D121EC (r4)
+    91D12200 ldr    r2, [r4]
+    @0x91D12264 (sb)
+    91D12278 ldr    r2, [sb]
+    @0x91D1239C (r3)
+    91D123AC ldr    r2, [r3]
+    @0x91D12408 (r5)
+    91D1241C ldr    lr, [r5]
+    @0x91D12598 (r4)
+    91D125A4 ldr    r3, [r4]
+    91D125B8 ldr    r2, [r4]
+    @0x91D125DC (r5)
+    91D125F0 ldr    r2, [r5]
+    @0x91D12CB0 (r3)
+    91D12CC0 ldr    ip, [r3]
+    @0x91D12CFC (r3)
+    91D12D0C ldr    r2, [r3]
+    @0x91D12DD4 (r4)
+    91D12DE8 ldr    r3, [r4]
+    @0x91D131E8 (r3)
+    91D131F8 ldr    r1, [r3]
+    @0x91D13290 (r4)
+    91D132A4 ldr    r2, [r4]
+    @0x91D13328 (r3)
+    91D13338 ldr    r2, [r3]
+    @0x91D133B8 (r5)
+    91D133D4 ldr    r2, [r5]
+    @0x91D134A8 (r5)
+    91D134B8 ldr    r2, [r5]
+    @0x91D13598 (r4)
+    91D135AC ldr    r3, [r4]
+    @0x91D1370C (r3)
+    91D1371C ldr    r1, [r3]
+    @0x91D13824 (r3)
+    91D13834 ldr    r1, [r3]
+    91D13844 ldr    r3, [r3]
+    @0x91D13868 (r5)
+    91D1387C ldr    r2, [r5]
+    @0x91D138E0 (r6)
+    91D138F4 ldr    r3, [r6]
+    @0x91D1396C (r8)
+    91D13980 ldr    r3, [r8]
+    @0x91D13AD4 (r5)
+    91D13AE8 ldr    r3, [r5]
+    @0x91D13B6C (r4)
+    91D13B78 ldr    r3, [r4]
+    @0x91D13C00 (r8)
+    91D13C14 ldr    r3, [r8]
+    @0x91D13CE4 (r4)
+    91D13CF4 ldr    r3, [r4]
+    @0x91D13D34 (r4)
+    91D13D48 ldr    ip, [r4]
+    @0x91D13DCC (r3)
+    91D13DDC ldr    r2, [r3]
+    91D13DE8 ldr    r3, [r3]
+    @0x91D13E08 (r5)
+    91D13E1C ldr    r3, [r5]
+    @0x91D13E60 (r5)
+    91D13E74 ldr    r3, [r5]
+    @0x91D141DC (sl)
+    91D141F0 ldr    r3, [sl]
+    @0x91D14310 (r6)
+    91D14324 ldr    r3, [r6]
+    @0x91D14738 (r5)
+    91D14744 ldr    r3, [r5]
+    @0x91D147E4 (r5)
+    91D147F4 ldr    r3, [r5]
+    @0x91D1488C (r3)
+    91D1489C ldr    r2, [r3]
+    91D148A8 ldr    r3, [r3]
+    @0x91D148C4 (r6)
+    91D148D8 ldr    r3, [r6]
+    @0x91D14A1C (r4)
+    91D14A34 ldr    r2, [r4]
+    @0x91D14B38 (r4)
+    91D14B48 ldr    lr, [r4]
+    @0x91D14B84 (r6)
+    91D14B98 ldr    r3, [r6]
+    @0x91D14C34 (r4)
+    91D14C44 ldr    r3, [r4]
+    @0x91D14CD0 (r4)
+    91D14CE4 ldr    r3, [r4]
+    @0x91D14D84 (r4)
+    91D14D98 ldr    r3, [r4]
+    @0x91D14DF8 (r4)
+    91D14E0C ldr    ip, [r4]
+    @0x91D14E5C (r5)
+    91D14E70 ldr    r3, [r5]
+    @0x91D150E0 (r4)
+    91D150F4 ldr    r3, [r4]
+    @0x91D1552C (r4)
+    91D15540 ldr    r3, [r4]
+    @0x91D15694 (r4)
+    91D156A4 ldr    r2, [r4]
+    @0x91D156EC (r4)
+    91D15700 ldr    r3, [r4]
+    @0x91D15810 (r4)
+    91D15828 ldr    r3, [r4]
+    @0x91D158B0 (r4)
+    91D158C4 ldr    r3, [r4]
+    @0x91D15930 (r8)
+    91D15944 ldr    r3, [r8]
+    @0x91D159D8 (r3)
+    91D159E4 ldr    r2, [r3]
+    @0x91D15A24 (r5)
+    91D15A38 ldr    r3, [r5]
+    @0x91D15ABC (r5)
+    91D15AD0 ldr    r3, [r5]
+    @0x91D15B54 (sl)
+    91D15B68 ldr    r3, [sl]
+    @0x91D15CA4 (r7)
+    91D15CB8 ldr    r3, [r7]
+    @0x91D15D0C (sb)
+    91D15D20 ldr    r1, [sb]
+    @0x91D15DCC (r8)
+    91D15DDC ldr    r3, [r8]
+    @0x91D15E88 (sb)
+    91D15E9C ldr    r1, [sb]
+    @0x91D15F60 (r4)
+    91D15F74 ldr    lr, [r4]
+    @0x91D15FC8 (r4)
+    91D15FDC ldr    r1, [r4]
+    @0x91D16070 (r4)
+    91D16084 ldr    r3, [r4]
+    @0x91D160CC (r7)
+    91D160E4 ldr    r3, [r7]
+    @0x91D16284 (r3)
+    91D16294 ldr    r2, [r3]
+    91D162A0 ldr    r3, [r3]
+    @0x91D162D4 (r4)
+    91D162E8 ldr    r3, [r4]
+    @0x91D16668 (r3)
+    91D16678 ldr    r2, [r3]
+    91D16684 ldr    r3, [r3]
+    @0x91D1669C (r3)
+    91D166AC ldr    r2, [r3]
+    91D166B8 ldr    r3, [r3]
+    @0x91D166DC (r4)
+    91D166EC ldr    r3, [r4]
+    @0x91D1675C (r3)
+    91D1676C ldr    r2, [r3]
+    91D1677C ldr    r3, [r3]
+    @0x91D16794 (r3)
+    91D167A4 ldr    r2, [r3]
+    @0x91D167D8 (r4)
+    91D167F4 ldr    r6, [r4]
+    @0x91D16840 (r4)
+    91D16854 ldr    lr, [r4]
+    @0x91D1689C (r3)
+    91D168AC ldr    r2, [r3]
+    @0x91D168D8 (r2)
+    91D168E8 ldr    r4, [r2]
+    @0x91D16950 (r3)
+    91D16960 ldr    r2, [r3]
+    91D16970 ldr    r3, [r3]
+    @0x91D16988 (r3)
+    91D16998 ldr    r2, [r3]
+    91D169A8 ldr    r3, [r3]
+    @0x91D169C8 (r3)
+    91D169D4 ldr    r0, [r3]
+    @0x91D16A2C (r2)
+    91D16A38 ldr    r0, [r2]
+    @0x91D16A8C (r4)
+    91D16A9C ldr    r3, [r4]
+    @0x91D16ADC (r3)
+    91D16AEC ldr    r2, [r3]
+    91D16AF8 ldr    r3, [r3]
+    @0x91D16B18 (r4)
+    91D16B28 ldr    r3, [r4]
+    @0x91D16B54 (r3)
+    91D16B64 ldr    r2, [r3]
+    91D16B70 ldr    r3, [r3]
+    @0x91D16B90 (r4)
+    91D16B9C ldr    r3, [r4]
+    91D16BB0 ldr    r3, [r4]
+    @0x91D16BCC (r4)
+    91D16BD8 ldr    r3, [r4]
+    91D16BEC ldr    r3, [r4]
+    @0x91D16C08 (r4)
+    91D16C14 ldr    r3, [r4]
+    91D16C28 ldr    r3, [r4]
+    @0x91D16C40 (r3)
+    91D16C54 ldr    ip, [r3]
+    @0x91D16CB4 (r3)
+    91D16CC8 ldr    ip, [r3]
+    @0x91D16D64 (r3)
+    91D16D74 ldr    r2, [r3]
+    91D16D84 ldr    r3, [r3]
+    @0x91D16D9C (r3)
+    91D16DAC ldr    r2, [r3]
+    91D16DBC ldr    r3, [r3]
+    @0x91D16DD4 (r3)
+    91D16DE0 ldr    r1, [r3]
+    @0x91D16E54 (r6)
+    91D16E68 ldr    r3, [r6]
+    @0x91D16ED4 (fp)
+    91D16EE8 ldr    r2, [fp]
+    @0x91D1734C (r4)
+    91D17360 ldr    r2, [r4]
+    @0x91D173BC (r6)
+    91D173CC ldr    ip, [r6]
+    @0x91D1747C (r5)
+    91D17490 ldr    ip, [r5]
+    @0x91D175B8 (r4)
+    91D175CC ldr    ip, [r4]
+    @0x91D1760C (r4)
+    91D17620 ldr    r6, [r4]
+    @0x91D17678 (r4)
+    91D1768C ldr    lr, [r4]
+    @0x91D176D4 (r4)
+    91D176E8 ldr    r3, [r4]
+    @0x91D17744 (r4)
+    91D17758 ldr    r5, [r4]
+    @0x91D177E8 (r4)
+    91D177FC ldr    r5, [r4]
+    @0x91D17890 (r4)
+    91D178A4 ldr    ip, [r4]
+    @0x91D17918 (r4)
+    91D1792C ldr    ip, [r4]
+    @0x91D17E0C (r3)
+    91D17E1C ldr    r1, [r3]
+    @0x91D17E54 (r3)
+    91D17E64 ldr    r1, [r3]
+    @0x91D17E94 (ip)
+    91D17EA4 ldr    r3, [ip]
+    @0x91D17EF4 (ip)
+    91D17F04 ldr    r3, [ip]
+    @0x91D17F6C (r3)
+    91D17F7C ldr    r2, [r3]
+    91D17F8C ldr    r3, [r3]
+    @0x91D17FA4 (r3)
+    91D17FB4 ldr    r2, [r3]
+    91D17FC4 ldr    r3, [r3]
+    @0x91D17FDC (r3)
+    91D17FEC ldr    r2, [r3]
+    91D17FFC ldr    r3, [r3]
+    @0x91D18014 (r3)
+    91D18024 ldr    r2, [r3]
+    91D18030 ldr    r3, [r3]
+    @0x91D1804C (r6)
+    91D18060 ldr    r3, [r6]
+    @0x91D180D8 (r4)
+    91D180EC ldr    r3, [r4]
+    @0x91D18240 (r3)
+    91D18250 ldr    r0, [r3]
+    91D18260 ldr    r3, [r3]
+    @0x91D18298 (r3)
+    91D182A8 ldr    r0, [r3]
+    91D182B8 ldr    r3, [r3]
+    @0x91D182F4 (r4)
+    91D18308 ldr    r3, [r4]
+    @0x91D18538 (r4)
+    91D18548 ldr    r3, [r4]
+    @0x91D185AC (r7)
+    91D185BC ldr    r2, [r7]
+    @0x91D186F0 (r7)
+    91D18700 ldr    r2, [r7]
+    @0x91D18830 (r4)
+    91D18844 ldr    r3, [r4]
+    @0x91D18930 (r6)
+    91D18944 ldr    r3, [r6]
+    @0x91D18A6C (r3)
+    91D18A7C ldr    r2, [r3]
+    91D18A8C ldr    r3, [r3]
+    @0x91D18AA8 (r4)
+    91D18ABC ldr    r3, [r4]
+    @0x91D18B40 (r3)
+    91D18B4C ldr    r2, [r3]
+    @0x91D18B98 (r4)
+    91D18BAC ldr    r3, [r4]
+    @0x91D18BFC (sl)
+    91D18C10 ldr    r3, [sl]
+    @0x91D18CC0 (r5)
+    91D18CD4 ldr    ip, [r5]
+    @0x91D18D48 (r3)
+    91D18D58 ldr    r2, [r3]
+    91D18D64 ldr    r3, [r3]
+    @0x91D18D80 (r3)
+    91D18D90 ldr    r2, [r3]
+    91D18D9C ldr    r3, [r3]
+    @0x91D18DB8 (r3)
+    91D18DC8 ldr    r1, [r3]
+    @0x91D18E0C (r3)
+    91D18E1C ldr    r1, [r3]
+    @0x91D18E68 (r4)
+    91D18E74 ldr    r3, [r4]
+    91D18E88 ldr    r2, [r4]
+    @0x91D18EA8 (r3)
+    91D18EB8 ldr    r1, [r3]
+    @0x91D18EE8 (r3)
+    91D18EF8 ldr    ip, [r3]
+    @0x91D18F64 (r3)
+    91D18F70 ldr    r3, [r3]
+    @0x91D18F88 (ip)
+    91D18F98 ldr    ip, [ip]
+    @0x91D19058 (r3)
+    91D19064 ldr    r3, [r3]
+    @0x91D1907C (r3)
+    91D1908C ldr    r2, [r3]
+    @0x91D190B8 (r2)
+    91D190C8 ldr    r2, [r2]
+    @0x91D190EC (r3)
+    91D190F8 ldr    r3, [r3]
+    @0x91D19110 (ip)
+    91D19120 ldr    r2, [ip]
+    @0x91D1916C (r3)
+    91D1917C ldr    r1, [r3]
+    @0x91D191AC (r3)
+    91D191BC ldr    r2, [r3]
+    91D191C8 ldr    r3, [r3]
+    @0x91D191E4 (r3)
+    91D191F4 ldr    r2, [r3]
+    91D19200 ldr    r3, [r3]
+    @0x91D1921C (r3)
+    91D1922C ldr    r2, [r3]
+    91D19238 ldr    r3, [r3]
+    @0x91D19254 (r3)
+    91D19264 ldr    r2, [r3]
+    91D19270 ldr    r3, [r3]
+    @0x91D1928C (r3)
+    91D1929C ldr    ip, [r3]
+    91D192A8 ldr    r3, [r3]
+    @0x91D192C8 (r4)
+    91D192D8 ldr    r2, [r4]
+    @0x91D19320 (r4)
+    91D19330 ldr    r3, [r4]
+    @0x91D193B4 (r4)
+    91D193C4 ldr    r3, [r4]
+    @0x91D19474 (r4)
+    91D19484 ldr    r2, [r4]
+    @0x91D194BC (r3)
+    91D194CC ldr    r2, [r3]
+    @0x91D19510 (r8)
+    91D19524 ldr    r3, [r8]
+    @0x91D195BC (r4)
+    91D195D0 ldr    r3, [r4]
+    @0x91D19694 (ip)
+    91D196A4 ldr    r4, [ip]
+    @0x91D196F4 (r3)
+    91D19704 ldr    r1, [r3]
+    @0x91D19740 (r3)
+    91D1974C ldr    ip, [r3]
+    @0x91D19794 (sl)
+    91D197A8 ldr    r2, [sl]
+    @0x91D198CC (r6)
+    91D198DC ldr    r3, [r6]
+    @0x91D19C7C (r3)
+    91D19C8C ldr    r1, [r3]
+    @0x91D19CB4 (r3)
+    91D19CC0 ldr    r3, [r3]
+    @0x91D19CD8 (r3)
+    91D19CE8 ldr    r2, [r3]
+    91D19CF8 ldr    r3, [r3]
+    @0x91D19D10 (r3)
+    91D19D20 ldr    r2, [r3]
+    91D19D2C ldr    r3, [r3]
+    @0x91D19D4C (r6)
+    91D19D5C ldr    r2, [r6]
+    @0x91D19DD8 (r1)
+    91D19DE4 ldr    r3, [r1]
+    @0x91D19E38 (r3)
+    91D19E4C ldr    r2, [r3]
+    @0x91D19E98 (r3)
+    91D19EA8 ldr    r2, [r3]
+    91D19EB8 ldr    r3, [r3]
+    @0x91D19EDC (r5)
+    91D19EF0 ldr    r2, [r5]
+    @0x91D19FA8 (ip)
+    91D19FB8 ldr    r4, [ip]
+    @0x91D1A044 (ip)
+    91D1A050 ldr    r2, [ip]
+    @0x91D1A0B0 (r2)
+    91D1A0C0 ldr    r4, [r2]
+    @0x91D1A108 (r3)
+    91D1A118 ldr    r1, [r3]
+    @0x91D1A154 (r3)
+    91D1A164 ldr    r2, [r3]
+    @0x91D1A1D4 (r3)
+    91D1A1E4 ldr    r2, [r3]
+    @0x91D1A470 (r6)
+    91D1A484 ldr    r3, [r6]
+    @0x91D1A5F0 (r4)
+    91D1A604 ldr    r2, [r4]
+    @0x91D1A660 (r7)
+    91D1A674 ldr    r3, [r7]
+    @0x91D1A820 (r3)
+    91D1A830 ldr    r1, [r3]
+    @0x91D1A860 (r3)
+    91D1A870 ldr    r1, [r3]
+    @0x91D1A8A0 (r3)
+    91D1A8B0 ldr    r1, [r3]
+    @0x91D1A8E0 (r3)
+    91D1A8F0 ldr    r1, [r3]
+    @0x91D1A920 (r3)
+    91D1A930 ldr    r1, [r3]
+    @0x91D1A960 (r3)
+    91D1A970 ldr    r1, [r3]
+    @0x91D1A9A0 (r3)
+    91D1A9B0 ldr    r1, [r3]
+    @0x91D1A9E0 (r3)
+    91D1A9F0 ldr    r1, [r3]
+    @0x91D1AA28 (r2)
+    91D1AA34 ldr    r1, [r2]
+    @0x91D1AAB4 (r3)
+    91D1AAC0 ldr    r1, [r3]
+    @0x91D1AB60 (r3)
+    91D1AB70 ldr    r1, [r3]
+    @0x91D1ABA4 (r6)
+    91D1ABB4 ldr    r3, [r6]
+    @0x91D1AC7C (r4)
+    91D1AC90 ldr    ip, [r4]
+    @0x91D1B0F4 (r4)
+    91D1B100 ldr    r3, [r4]
+    @0x91D1B140 (r2)
+    91D1B150 ldr    ip, [r2]
+    @0x91D1B310 (r4)
+    91D1B324 ldr    r2, [r4]
+    @0x91D1B448 (r5)
+    91D1B45C ldr    r2, [r5]
+    @0x91D1B5B4 (r4)
+    91D1B5C8 ldr    r2, [r4]
+    @0x91D1B714 (r3)
+    91D1B724 ldr    r1, [r3]
+    @0x91D1B754 (r3)
+    91D1B764 ldr    r2, [r3]
+    91D1B774 ldr    r3, [r3]
+    @0x91D1B794 (r3)
+    91D1B7AC ldr    r6, [r3]
+    @0x91D1B8B0 (r4)
+    91D1B8C0 ldr    r6, [r4]
+    @0x91D1B958 (r3)
+    91D1B968 ldr    r2, [r3]
+    91D1B974 ldr    r3, [r3]
+    @0x91D1B998 (r6)
+    91D1B9AC ldr    r1, [r6]
+    @0x91D1BB9C (r3)
+    91D1BBB4 ldr    r4, [r3]
+    @0x91D1BC3C (r3)
+    91D1BC4C ldr    ip, [r3]
+    @0x91D1BC94 (r4)
+    91D1BCA8 ldr    r1, [r4]
+    @0x91D1BDF8 (r8)
+    91D1BE10 ldr    r3, [r8]
+    @0x91D1BF0C (r4)
+    91D1BF20 ldr    r5, [r4]
+    @0x91D1C014 (r4)
+    91D1C028 ldr    r3, [r4]
+    @0x91D1C080 (r4)
+    91D1C094 ldr    r3, [r4]
+    @0x91D1C0DC (r5)
+    91D1C0F0 ldr    r3, [r5]
+    @0x91D1C280 (r4)
+    91D1C294 ldr    r3, [r4]
+    @0x91D1C31C (r4)
+    91D1C330 ldr    r3, [r4]
+    @0x91D1C390 (r4)
+    91D1C3A4 ldr    r2, [r4]
+    @0x91D1C4F4 (r4)
+    91D1C508 ldr    r3, [r4]
+    @0x91D1C744 (r5)
+    91D1C758 ldr    r3, [r5]
+    @0x91D1CFE0 (r3)
+    91D1CFF8 ldr    r3, [r3]
+    @0x91D1D160 (r5)
+    91D1D170 ldr    ip, [r5]
+    @0x91D1D4C8 (r4)
+    91D1D4DC ldr    r3, [r4]
+    @0x91D1D538 (r4)
+    91D1D54C ldr    r2, [r4]
+    @0x91D1D770 (r3)
+    91D1D780 ldr    r1, [r3]
+    @0x91D1D7B0 (r3)
+    91D1D7C0 ldr    r1, [r3]
+    @0x91D1D7F0 (r3)
+    91D1D800 ldr    r1, [r3]
+    @0x91D1DA68 (r7)
+    91D1DA7C ldr    r3, [r7]
+    @0x91D1DB24 (ip)
+    @0x91D1DD4C (r5)
+    91D1DD60 ldr    r3, [r5]
+    @0x91D1DDDC (sb)
+    91D1DDF0 ldr    r3, [sb]
+    @0x91D1E018 (sb)
+    91D1E02C ldr    r2, [sb]
+    @0x91D1E300 (r4)
+    91D1E314 ldr    r3, [r4]
+    @0x91D1E50C (r5)
+    91D1E520 ldr    r3, [r5]
+    @0x91D1F3E8 (r6)
+    91D1F3FC ldr    r1, [r6]
+    @0x91D1F85C (r5)
+    91D1F870 ldr    ip, [r5]
+    @0x91D1FDF4 (r4)
+    91D1FE0C ldr    r3, [r4]
+    @0x91D1FE8C (r6)
+    91D1FE9C ldr    r3, [r6]
+    @0x91D1FF2C (r6)
+    91D1FF3C ldr    r3, [r6]
+    @0x91D1FFD8 (r3)
+    91D1FFE0 ldr    r3, [r3]
+    @0x91D1FFFC (r3)
+    91D20008 ldr    r3, [r3]
+    @0x91D20030 (r3)
+    91D20038 ldr    r3, [r3]
+    @0x91D2004C (r3)
+    91D20058 ldr    r3, [r3]
+    @0x91D20080 (r3)
+    91D20088 ldr    r3, [r3]
+    @0x91D200A4 (r3)
+    91D200B0 ldr    r3, [r3]
+    @0x91D200D8 (r3)
+    91D200E0 ldr    r3, [r3]
+    @0x91D200F0 (r3)
+    91D200FC ldr    r3, [r3]
+    @0x91D20128 (r3)
+    91D20130 ldr    r3, [r3]
+    @0x91D201C0 (r3)
+    91D201CC ldr    r3, [r3]
+    @0x91D201F4 (r3)
+    91D201FC ldr    r3, [r3]
+    @0x91D20228 (r3)
+    91D20234 ldr    r3, [r3]
+    @0x91D20264 (r3)
+    91D2026C ldr    r3, [r3]
+    @0x91D202B4 (r3)
+    91D202C0 ldr    r3, [r3]
+    @0x91D202F4 (r3)
+    91D202FC ldr    r3, [r3]
+    @0x91D20348 (r3)
+    91D20354 ldr    r3, [r3]
+    @0x91D20398 (r3)
+    91D203A0 ldr    r3, [r3]
+    @0x91D204C8 (r3)
+    91D204D4 ldr    r3, [r3]
+    @0x91D20520 (r3)
+    91D20528 ldr    r3, [r3]
+    @0x91D20594 (r3)
+    91D205A0 ldr    r3, [r3]
+    @0x91D205D0 (r3)
+    91D205D8 ldr    r3, [r3]
+    @0x91D20794 (r3)
+    91D207A0 ldr    r3, [r3]
+    @0x91D207CC (r3)
+    91D207D4 ldr    r3, [r3]
+    @0x91D20884 (r3)
+    91D20890 ldr    r3, [r3]
+    @0x91D208BC (r3)
+    91D208C4 ldr    r3, [r3]
+    @0x91D20900 (r3)
+    91D2090C ldr    r3, [r3]
+    @0x91D20930 (r3)
+    91D20938 ldr    r3, [r3]
+    91D20948 ldr    r3, [r3]
+    @0x91D20990 (r3)
+    91D2099C ldr    r3, [r3]
+    @0x91D209C0 (r3)
+    91D209C8 ldr    r3, [r3]
+    91D209D8 ldr    r3, [r3]
+    @0x91D209F8 (r3)
+    91D20A04 ldr    r3, [r3]
+    @0x91D20A2C (r3)
+    91D20A34 ldr    r3, [r3]
+    @0x91D20B10 (r3)
+    91D20B1C ldr    r3, [r3]
+    @0x91D20B48 (r3)
+    91D20B50 ldr    r3, [r3]
+    @0x91D20C5C (r3)
+    91D20C68 ldr    r3, [r3]
+    @0x91D20CA8 (r3)
+    91D20CB0 ldr    r3, [r3]
+    @0x91D20EAC (r3)
+    91D20EB8 ldr    r3, [r3]
+    @0x91D20EDC (r3)
+    91D20EE4 ldr    r3, [r3]
+    @0x91D20FE8 (r3)
+    91D20FF4 ldr    r3, [r3]
+    @0x91D21024 (r3)
+    91D2102C ldr    r3, [r3]
+    @0x91D21148 (r3)
+    91D21154 ldr    r3, [r3]
+    @0x91D21180 (r3)
+    91D21188 ldr    r3, [r3]
+    @0x91D212EC (r3)
+    91D212F8 ldr    r3, [r3]
+    @0x91D2131C (r3)
+    91D21324 ldr    r3, [r3]
+    @0x91D21368 (r3)
+    91D21374 ldr    r3, [r3]
+    @0x91D2139C (r3)
+    91D213A4 ldr    r3, [r3]
+    @0x91D21588 (r3)
+    91D21594 ldr    r3, [r3]
+    @0x91D215B8 (r3)
+    91D215C0 ldr    r3, [r3]
+    91D215D4 ldr    r3, [r3]
+    @0x91D215DC (r3)
+    91D215E8 ldr    r3, [r3]
+    @0x91D21610 (r3)
+    91D21618 ldr    r3, [r3]
+    @0x91D216E4 (r3)
+    91D216F0 ldr    r3, [r3]
+    @0x91D2171C (r3)
+    91D21724 ldr    r3, [r3]
+    @0x91D217E8 (r3)
+    91D217F4 ldr    r3, [r3]
+    @0x91D21828 (r3)
+    91D21830 ldr    r3, [r3]
+    @0x91D21904 (r3)
+    91D21910 ldr    r3, [r3]
+    @0x91D21934 (r3)
+    91D2193C ldr    r3, [r3]
+    @0x91D219B4 (r3)
+    91D219C0 ldr    r3, [r3]
+    @0x91D219E8 (r3)
+    91D219F0 ldr    r3, [r3]
+    @0x91D21AB8 (r3)
+    91D21AC4 ldr    r3, [r3]
+    @0x91D21AE8 (r3)
+    91D21AF0 ldr    r3, [r3]
+    @0x91D21BDC (r3)
+    91D21BE8 ldr    r3, [r3]
+    @0x91D21C04 (r5)
+    91D21C18 ldr    r3, [r5]
+    @0x91D21CF4 (r4)
+    91D21D04 ldr    r3, [r4]
+    @0x91D21D90 (r8)
+    91D21DA0 ldr    r2, [r8]
+    @0x91D22474 (r5)
+    91D22484 ldr    r3, [r5]
+    @0x91D22508 (r8)
+    91D22518 ldr    r3, [r8]
+    @0x91D22A4C (r7)
+    91D22A60 ldr    r1, [r7]
+    @0x91D22CB8 (r6)
+    91D22CCC ldr    r3, [r6]
+    @0x91D22F30 (r5)
+    91D22F44 ldr    r3, [r5]
+    @0x91D23060 (r5)
+    91D23074 ldr    lr, [r5]
+    @0x91D231BC (r5)
+    91D231D0 ldr    ip, [r5]
+    @0x91D23284 (r3)
+    91D23294 ldr    r1, [r3]
+    @0x91D232D0 (r4)
+    91D232E0 ldr    r3, [r4]
+    @0x91D23330 (r3)
+    91D23340 ldr    r2, [r3]
+    91D2334C ldr    r3, [r3]
+    @0x91D2336C (r5)
+    91D23380 ldr    r3, [r5]
+    @0x91D2362C (r3)
+    91D2363C ldr    r1, [r3]
+    @0x91D2366C (r3)
+    91D2367C ldr    r2, [r3]
+    91D2368C ldr    r3, [r3]
+    @0x91D236A4 (r3)
+    91D236B4 ldr    r2, [r3]
+    91D236C4 ldr    r3, [r3]
+    @0x91D236DC (r3)
+    91D236EC ldr    r2, [r3]
+    91D236FC ldr    r3, [r3]
+    @0x91D23714 (r3)
+    91D23724 ldr    r2, [r3]
+    91D23734 ldr    r3, [r3]
+    @0x91D23750 (r6)
+    91D23760 ldr    r2, [r6]
+    @0x91D23AA8 (r4)
+    91D23ABC ldr    ip, [r4]
+    @0x91D23B0C (ip)
+    91D23B1C ldr    r4, [ip]
+    91D23B2C ldr    ip, [ip]
+    @0x91D23B5C (r4)
+    91D23B6C ldr    r3, [r4]
+    @0x91D23C58 (r5)
+    91D23C70 ldr    r7, [r5]
+    @0x91D23CF4 (r0)
+    @0x91D23E98 (r4)
+    91D23EAC ldr    ip, [r4]
+    @0x91D24068 (r3)
+    91D24078 ldr    r1, [r3]
+    @0x91D240AC (r4)
+    91D240C0 ldr    r3, [r4]
+    @0x91D2411C (r5)
+    91D24130 ldr    ip, [r5]
+    @0x91D2418C (r4)
+    91D241A0 ldr    ip, [r4]
+    @0x91D24260 (r6)
+    91D24274 ldr    r0, [r6]
+    @0x91D24388 (r5)
+    91D2439C ldr    r3, [r5]
+    @0x91D244A4 (sl)
+    91D244B8 ldr    r3, [sl]
+    @0x91D24684 (r6)
+    91D24698 ldr    r3, [r6]
+    @0x91D24910 (r5)
+    91D24924 ldr    ip, [r5]
+    @0x91D24A6C (r3)
+    91D24A78 ldr    r0, [r3]
+    @0x91D24ABC (r3)
+    91D24ACC ldr    ip, [r3]
+    @0x91D24B00 (r3)
+    91D24B10 ldr    r2, [r3]
+    91D24B1C ldr    r3, [r3]
+    @0x91D24B44 (r3)
+    91D24B54 ldr    r2, [r3]
+    91D24B60 ldr    r3, [r3]
+    @0x91D24B84 (r3)
+    91D24B94 ldr    r2, [r3]
+    91D24BA0 ldr    r3, [r3]
+    @0x91D24BC8 (r3)
+    91D24BD8 ldr    r2, [r3]
+    91D24BE4 ldr    r3, [r3]
+    @0x91D24BFC (r3)
+    91D24C0C ldr    r2, [r3]
+    91D24C18 ldr    r3, [r3]
+    @0x91D24CB4 (r4)
+    91D24CC8 ldr    r3, [r4]
+    @0x91D24D04 (r4)
+    91D24D18 ldr    r3, [r4]
+    @0x91D24D4C (r3)
+    91D24D5C ldr    r2, [r3]
+    91D24D68 ldr    r3, [r3]
+    @0x91D24D90 (r3)
+    91D24DA0 ldr    r2, [r3]
+    91D24DAC ldr    r3, [r3]
+    @0x91D24DD0 (r3)
+    91D24DE8 ldr    r5, [r3]
+    @0x91D251A0 (r8)
+    91D251B0 ldr    ip, [r8]
+    @0x91D25290 (r4)
+    91D252A4 ldr    r1, [r4]
+    @0x91D25330 (r6)
+    91D25344 ldr    r4, [r6]
+    @0x91D25618 (r4)
+    91D2562C ldr    r1, [r4]
+    @0x91D25700 (r5)
+    91D25714 ldr    r3, [r5]
+    @0x91D25780 (r5)
+    91D25794 ldr    r3, [r5]
+    @0x91D2588C (r3)
+    91D2589C ldr    r1, [r3]
+    @0x91D258CC (r3)
+    91D258DC ldr    r1, [r3]
+    @0x91D2590C (r3)
+    91D2591C ldr    ip, [r3]
+    @0x91D259B4 (r4)
+    91D259C8 ldr    r0, [r4]
+    @0x91D25A5C (r6)
+    91D25A70 ldr    r3, [r6]
+    @0x91D25CB0 (r5)
+    91D25CC4 ldr    r2, [r5]
+    @0x91D25E04 (ip)
+    91D25E18 ldr    r5, [ip]
+    @0x91D25F50 (r3)
+    91D25F60 ldr    r1, [r3]
+    @0x91D26024 (r5)
+    91D26038 ldr    r1, [r5]
+    @0x91D261B0 (r5)
+    91D261C4 ldr    ip, [r5]
+    @0x91D26568 (r5)
+    91D2657C ldr    r3, [r5]
+    @0x91D266B8 (r5)
+    91D266CC ldr    r3, [r5]
+    @0x91D26838 (r5)
+    91D2684C ldr    r3, [r5]
+    @0x91D26C2C (r4)
+    91D26C40 ldr    r3, [r4]
+    @0x91D26CD0 (r4)
+    91D26CE4 ldr    r1, [r4]
+    @0x91D26D64 (r4)
+    91D26D70 ldr    r3, [r4]
+    @0x91D26DC4 (r4)
+    91D26DD8 ldr    r3, [r4]
+    @0x91D26F58 (r4)
+    91D26F6C ldr    r3, [r4]
+    @0x91D26FC0 (r4)
+    91D26FD4 ldr    r3, [r4]
+    @0x91D27028 (r4)
+    91D27034 ldr    r3, [r4]
+    @0x91D270A4 (r4)
+    91D270B0 ldr    r3, [r4]
+    @0x91D2712C (r5)
+    91D2713C ldr    r3, [r5]
+    @0x91D27500 (r5)
+    91D27510 ldr    r3, [r5]
+    @0x91D276B4 (r5)
+    91D276C4 ldr    r3, [r5]
+    @0x91D27858 (r6)
+    91D27868 ldr    r3, [r6]
+    @0x91D27AAC (r4)
+    91D27ABC ldr    r3, [r4]
+    @0x91D27C7C (ip)
+    91D27C8C ldr    r1, [ip]
+    @0x91D27EE0 (r6)
+    91D27EF0 ldr    ip, [r6]
+    @0x91D27FB0 (ip)
+    91D27FC4 ldr    r4, [ip]
+    @0x91D2819C (r1)
+    91D281B0 ldr    r0, [r1]
+    @0x91D282A4 (r5)
+    91D282B8 ldr    r3, [r5]
+    @0x91D2844C (r4)
+    91D28464 ldr    r1, [r4]
+    @0x91D28744 (r5)
+    91D28754 ldr    r3, [r5]
+    @0x91D28908 (r4)
+    91D2891C ldr    r2, [r4]
+    @0x91D28978 (r5)
+    91D28984 ldr    r1, [r5]
+    @0x91D28B1C (r4)
+    91D28B30 ldr    r2, [r4]
+    @0x91D28BB4 (r4)
+    91D28BC4 ldr    r3, [r4]
+    @0x91D28C34 (r3)
+    91D28C44 ldr    r2, [r3]
+    91D28C54 ldr    r3, [r3]
+    @0x91D28C6C (r3)
+    91D28C7C ldr    r2, [r3]
+    91D28C8C ldr    r3, [r3]
+    @0x91D28F4C (r7)
+    91D28F5C ldr    r1, [r7]
+    @0x91D2934C (r4)
+    91D29360 ldr    r5, [r4]
+    @0x91D29568 (r3)
+    91D29578 ldr    ip, [r3]
+    @0x91D29608 (r6)
+    91D29618 ldr    ip, [r6]
+    @0x91D29714 (r3)
+    91D29724 ldr    r3, [r3]
+    @0x91D29758 (r3)
+    91D29764 ldr    r3, [r3]
+    @0x91D298FC (r8)
+    91D29910 ldr    r1, [r8]
+    @0x91D29B5C (r4)
+    91D29B70 ldr    r2, [r4]
+    @0x91D29BC4 (r4)
+    91D29BD8 ldr    r1, [r4]
+    @0x91D29C9C (r3)
+    91D29CA8 ldr    ip, [r3]
+    @0x91D29D90 (r3)
+    91D29D9C ldr    r3, [r3]
+    @0x91D29DB4 (r3)
+    91D29DC0 ldr    ip, [r3]
+    @0x91D29E34 (r7)
+    91D29E48 ldr    r2, [r7]
+    @0x91D29F90 (r6)
+    91D29FA4 ldr    r1, [r6]
+    @0x91D2A0B0 (r1)
+    91D2A0C0 ldr    r3, [r1]
+    @0x91D2A4C8 (r4)
+    91D2A4D8 ldr    r3, [r4]
+    @0x91D2A564 (r6)
+    91D2A578 ldr    r3, [r6]
+    @0x91D2A65C (r3)
+    91D2A66C ldr    r2, [r3]
+    91D2A678 ldr    r3, [r3]
+    @0x91D2A6A0 (r2)
+    91D2A6B4 ldr    r4, [r2]
+    @0x91D2A730 (r5)
+    91D2A740 ldr    r3, [r5]
+    @0x91D2A85C (r5)
+    91D2A870 ldr    r2, [r5]
+    @0x91D2A8F0 (r4)
+    91D2A904 ldr    r3, [r4]
+    @0x91D2A96C (r3)
+    @0x91D2B0BC (r5)
+    91D2B0D0 ldr    r3, [r5]
+    @0x91D2B13C (r4)
+    91D2B150 ldr    ip, [r4]
+    @0x91D2B210 (r4)
+    91D2B224 ldr    r3, [r4]
+    @0x91D2B25C (r4)
+    91D2B270 ldr    r0, [r4]
+    @0x91D2B31C (r3)
+    91D2B32C ldr    ip, [r3]
+    @0x91D2B388 (r4)
+    91D2B39C ldr    ip, [r4]
+    @0x91D2B434 (r4)
+    91D2B448 ldr    ip, [r4]
+    @0x91D2B4B0 (r7)
+    91D2B4C4 ldr    r5, [r7]
+    @0x91D2B550 (r4)
+    91D2B564 ldr    r3, [r4]
+    @0x91D2B5CC (ip)
+    91D2B5DC ldr    r3, [ip]
+    @0x91D2B758 (r4)
+    91D2B76C ldr    r3, [r4]
+    @0x91D2B7B0 (r4)
+    91D2B7C4 ldr    r3, [r4]
+    @0x91D2B808 (r4)
+    91D2B81C ldr    r3, [r4]
+    @0x91D2B89C (r6)
+    91D2B8B0 ldr    r2, [r6]
+    @0x91D2B930 (r4)
+    91D2B944 ldr    r3, [r4]
+    @0x91D2BEBC (r6)
+    91D2BECC ldr    r3, [r6]
+    @0x91D2C064 (r7)
+    91D2C078 ldr    r2, [r7]
+    @0x91D2C298 (r4)
+    91D2C2AC ldr    r3, [r4]
+    @0x91D2C310 (r2)
+    91D2C320 ldr    r4, [r2]
+    @0x91D2C390 (sb)
+    91D2C3A4 ldr    r3, [sb]
+    @0x91D2C4AC (r4)
+    91D2C4C0 ldr    r3, [r4]
+    @0x91D2C648 (r7)
+    91D2C658 ldr    r3, [r7]
+    @0x91D2CDA8 (r2)
+    91D2CDB8 ldr    r3, [r2]
+    @0x91D2CE44 (r6)
+    91D2CE58 ldr    r2, [r6]
+    @0x91D2D380 (r7)
+    91D2D394 ldr    r2, [r7]
+    @0x91D2D4A8 (r4)
+    91D2D4BC ldr    r2, [r4]
+    @0x91D2D4F8 (r4)
+    91D2D50C ldr    r3, [r4]
+    @0x91D2D590 (r4)
+    91D2D5A4 ldr    lr, [r4]
+    @0x91D2D66C (r3)
+    91D2D67C ldr    r2, [r3]
+    91D2D68C ldr    r3, [r3]
+    @0x91D2D6A4 (r3)
+    91D2D6B4 ldr    r2, [r3]
+    91D2D6C4 ldr    r3, [r3]
+    @0x91D2D6E0 (r7)
+    91D2D6F8 ldr    r3, [r7]
+    @0x91D2D7FC (r4)
+    91D2D814 ldr    r3, [r4]
+    @0x91D2D8A4 (r5)
+    91D2D8B8 ldr    r3, [r5]
+    @0x91D2DA7C (r4)
+    91D2DA8C ldr    r3, [r4]
+    @0x91D2DAD8 (r7)
+    91D2DAEC ldr    r3, [r7]
+    @0x91D2DD74 (r6)
+    91D2DD88 ldr    r2, [r6]
+    @0x91D2DECC (r8)
+    91D2DEE0 ldr    r2, [r8]
+    @0x91D2E564 (r4)
+    91D2E574 ldr    r2, [r4]
+    @0x91D2E5C4 (r4)
+    91D2E5D4 ldr    r3, [r4]
+    @0x91D2E610 (r7)
+    91D2E624 ldr    r3, [r7]
+    @0x91D2E804 (r3)
+    91D2E81C ldr    r2, [r3]
+    @0x91D2E950 (r3)
+    91D2E968 ldr    r2, [r3]
+    @0x91D2EA9C (r6)
+    91D2EAAC ldr    r3, [r6]
+    @0x91D2EE1C (r8)
+    91D2EE30 ldr    r3, [r8]
+    @0x91D2F0B8 (r4)
+    91D2F0CC ldr    r3, [r4]
+    @0x91D2F120 (r4)
+    91D2F130 ldr    r3, [r4]
+    @0x91D2F17C (r4)
+    91D2F190 ldr    r6, [r4]
+    @0x91D2F1E8 (r7)
+    91D2F1FC ldr    r3, [r7]
+    @0x91D2F3A4 (r7)
+    91D2F3B4 ldr    r3, [r7]
+    @0x91D2F500 (r6)
+    91D2F514 ldr    ip, [r6]
+    @0x91D2F640 (r4)
+    91D2F654 ldr    r3, [r4]
+    @0x91D2F6FC (r5)
+    91D2F710 ldr    lr, [r5]
+    @0x91D2F84C (r4)
+    91D2F85C ldr    r3, [r4]
+    @0x91D2F8EC (r4)
+    91D2F900 ldr    r2, [r4]
+    @0x91D2F9E0 (r6)
+    91D2F9F4 ldr    r3, [r6]
+    @0x91D2FBE8 (r4)
+    91D2FBF8 ldr    r2, [r4]
+    @0x91D2FC34 (r3)
+    91D2FC44 ldr    r1, [r3]
+    @0x91D2FC74 (r3)
+    91D2FC84 ldr    r1, [r3]
+    @0x91D2FCC4 (r4)
+    91D2FCD8 ldr    r3, [r4]
+    @0x91D2FDCC (r5)
+    91D2FDE0 ldr    r3, [r5]
+    @0x91D2FEA8 (r7)
+    91D2FEBC ldr    r3, [r7]
+    @0x91D30008 (sb)
+    91D3001C ldr    r3, [sb]
+    @0x91D304FC (r5)
+    91D30510 ldr    r3, [r5]
+    @0x91D30594 (r5)
+    91D305A8 ldr    r3, [r5]
+    @0x91D30648 (r5)
+    91D3065C ldr    r3, [r5]
+    @0x91D30748 (r4)
+    91D3075C ldr    r5, [r4]
+    @0x91D30A9C (r6)
+    91D30AB0 ldr    r3, [r6]
+    @0x91D30BFC (r3)
+    91D30C0C ldr    r1, [r3]
+    @0x91D30C40 (r8)
+    91D30C54 ldr    r2, [r8]
+    @0x91D30DD0 (r7)
+    91D30DE4 ldr    r2, [r7]
+    @0x91D31BB8 (r5)
+    91D31BCC ldr    r3, [r5]
+    @0x91D31F20 (r7)
+    91D31F34 ldr    r3, [r7]
+    @0x91D32028 (r5)
+    91D3203C ldr    r8, [r5]
+    @0x91D32160 (r3)
+    91D32170 ldr    r2, [r3]
+    91D32180 ldr    r3, [r3]
+    @0x91D321A4 (r4)
+    91D321BC ldr    r2, [r4]
+    @0x91D3224C (r4)
+    91D3225C ldr    lr, [r4]
+    @0x91D322A4 (r4)
+    91D322B8 ldr    lr, [r4]
+    @0x91D3239C (r4)
+    91D323B0 ldr    ip, [r4]
+    @0x91D323F0 (r4)
+    91D32404 ldr    ip, [r4]
+    @0x91D32444 (r4)
+    91D32458 ldr    ip, [r4]
+    @0x91D3249C (r4)
+    91D324B0 ldr    r0, [r4]
+    @0x91D3258C (r3)
+    91D3259C ldr    ip, [r3]
+    @0x91D325D8 (ip)
+    91D325E8 ldr    r0, [ip]
+    @0x91D32630 (r3)
+    91D32640 ldr    ip, [r3]
+    @0x91D3267C (r3)
+    91D3268C ldr    r0, [r3]
+    @0x91D326C0 (r3)
+    91D326D0 ldr    r4, [r3]
+    @0x91D32714 (r3)
+    91D32724 ldr    ip, [r3]
+    @0x91D32760 (r3)
+    91D32770 ldr    ip, [r3]
+    @0x91D327AC (r3)
+    91D327BC ldr    r0, [r3]
+    @0x91D32800 (r3)
+    91D32810 ldr    r0, [r3]
+    @0x91D32844 (r3)
+    91D32854 ldr    r0, [r3]
+    @0x91D32888 (r3)
+    91D3289C ldr    r1, [r3]
+    @0x91D328F8 (r5)
+    91D3290C ldr    r2, [r5]
+    @0x91D32AA8 (r3)
+    91D32AB8 ldr    ip, [r3]
+    @0x91D32AE8 (r3)
+    91D32AF8 ldr    ip, [r3]
+    @0x91D32B2C (r4)
+    91D32B40 ldr    r1, [r4]
+    @0x91D32BD4 (r4)
+    91D32BE4 ldr    r3, [r4]
+    @0x91D32C34 (r4)
+    91D32C44 ldr    r3, [r4]
+    @0x91D32C8C (r3)
+    91D32C9C ldr    r0, [r3]
+    @0x91D32CCC (r3)
+    91D32CDC ldr    r0, [r3]
+    @0x91D32D10 (r3)
+    91D32D20 ldr    r0, [r3]
+    @0x91D32D58 (r3)
+    91D32D68 ldr    ip, [r3]
+    @0x91D32DA4 (r3)
+    91D32DB4 ldr    ip, [r3]
+    @0x91D32DF8 (r1)
+    91D32E08 ldr    r0, [r1]
+    @0x91D32E9C (r4)
+    91D32EB0 ldr    r0, [r4]
+    @0x91D32EE8 (r6)
+    91D32EFC ldr    r2, [r6]
+    @0x91D32FE0 (r5)
+    91D32FF4 ldr    r3, [r5]
+    @0x91D330AC (r7)
+    91D330C0 ldr    r3, [r7]
+    @0x91D332DC (r4)
+    91D332F0 ldr    r3, [r4]
+    @0x91D33AD4 (r4)
+    91D33AE8 ldr    r3, [r4]
+    @0x91D33B1C (ip)
+    91D33B28 ldr    r2, [ip]
+    @0x91D33B8C (r4)
+    91D33B9C ldr    r3, [r4]
+    @0x91D33C14 (r4)
+    91D33C28 ldr    r3, [r4]
+    @0x91D33D70 (r3)
+    91D33D80 ldr    r2, [r3]
+    91D33D90 ldr    r3, [r3]
+    @0x91D33DAC (fp)
+    91D33DC0 ldr    r3, [fp]
+    @0x91D343C4 (ip)
+    91D343D4 ldr    r3, [ip]
+    @0x91D34668 (r4)
+    91D3467C ldr    r3, [r4]
+    @0x91D346B8 (r4)
+    91D346CC ldr    r3, [r4]
+    @0x91D34788 (r5)
+    91D3479C ldr    r2, [r5]
+    @0x91D34928 (r5)
+    91D3493C ldr    r3, [r5]
+    @0x91D349B0 (r3)
+    91D349C0 ldr    r2, [r3]
+    91D349CC ldr    r3, [r3]
+    @0x91D349F4 (r4)
+    91D34A08 ldr    r3, [r4]
+    @0x91D34A38 (r3)
+    91D34A48 ldr    r2, [r3]
+    @0x91D34A84 (r3)
+    91D34A94 ldr    r0, [r3]
+    @0x91D34AC8 (r4)
+    91D34ADC ldr    r2, [r4]
+    @0x91D34B28 (r4)
+    91D34B3C ldr    r2, [r4]
+    @0x91D34BB8 (r3)
+    91D34BC8 ldr    r2, [r3]
+    91D34BD4 ldr    r3, [r3]
+    @0x91D34BEC (r3)
+    91D34BF8 ldr    r1, [r3]
+    @0x91D34C3C (r3)
+    91D34C4C ldr    r0, [r3]
+    @0x91D34C84 (r4)
+    91D34C94 ldr    r3, [r4]
+    @0x91D34CDC (r3)
+    91D34CEC ldr    r2, [r3]
+    91D34CF8 ldr    r3, [r3]
+    @0x91D34D10 (r3)
+    91D34D1C ldr    r1, [r3]
+    @0x91D34D5C (r4)
+    91D34D70 ldr    r2, [r4]
+    @0x91D34DE0 (r4)
+    91D34DF4 ldr    r3, [r4]
+    @0x91D34E74 (r3)
+    91D34E84 ldr    r0, [r3]
+    @0x91D34EB8 (r4)
+    91D34ECC ldr    r2, [r4]
+    @0x91D34F3C (sb)
+    91D34F50 ldr    r2, [sb]
+    @0x91D352E4 (r3)
+    91D352F4 ldr    r0, [r3]
+    @0x91D35330 (r4)
+    91D35340 ldr    r3, [r4]
+    @0x91D35380 (r4)
+    91D35390 ldr    r3, [r4]
+    @0x91D35460 (r4)
+    91D35474 ldr    r3, [r4]
+    @0x91D354F8 (r4)
+    91D3550C ldr    r3, [r4]
+    @0x91D35608 (r3)
+    91D35618 ldr    r2, [r3]
+    @0x91D35648 (r4)
+    91D3565C ldr    r1, [r4]
+    @0x91D356DC (r4)
+    91D356F0 ldr    r1, [r4]
+    @0x91D3577C (r4)
+    91D3578C ldr    r3, [r4]
+    @0x91D357F8 (r5)
+    91D3580C ldr    r3, [r5]
+    @0x91D35988 (r4)
+    91D3599C ldr    ip, [r4]
+    @0x91D35A08 (r4)
+    91D35A14 ldr    r3, [r4]
+    @0x91D35C50 (r4)
+    91D35C64 ldr    ip, [r4]
+    @0x91D35D68 (r5)
+    91D35D78 ldr    r1, [r5]
+    @0x91D3603C (ip)
+    91D36054 ldr    r1, [ip]
+    @0x91D364C8 (r3)
+    91D364D8 ldr    r3, [r3]
+    @0x91D36534 (r3)
+    91D36540 ldr    r3, [r3]
+    @0x91D36558 (r3)
+    91D36568 ldr    r2, [r3]
+    91D36574 ldr    r3, [r3]
+    @0x91D36604 (r3)
+    91D36614 ldr    r2, [r3]
+    91D36624 ldr    r3, [r3]
+    @0x91D36AD8 (r5)
+    91D36AE8 ldr    ip, [r5]
+    @0x91D36D40 (ip)
+    91D36D60 ldr    ip, [ip]
+    @0x91D36D94 (r3)
+    91D36DA4 ldr    r3, [r3]
+    @0x91D36DBC (r3)
+    91D36DCC ldr    r3, [r3]
+    @0x91D36DE4 (r3)
+    91D36DF4 ldr    r3, [r3]
+    @0x91D36E0C (r3)
+    91D36E1C ldr    r3, [r3]
+    @0x91D36E3C (r2)
+    91D36E48 ldr    r1, [r2]
+    @0x91D36EF8 (r3)
+    91D36F08 ldr    r2, [r3]
+    91D36F14 ldr    r3, [r3]
+    @0x91D36F38 (ip)
+    91D36F48 ldr    r3, [ip]
+    @0x91D37254 (r4)
+    91D37260 ldr    r3, [r4]
+    @0x91D372DC (r3)
+    91D372EC ldr    r3, [r3]
+    @0x91D37304 (r3)
+    91D37310 ldr    r3, [r3]
+    @0x91D37340 (r6)
+    91D37354 ldr    ip, [r6]
+    @0x91D3742C (r8)
+    91D37444 ldr    ip, [r8]
+    @0x91D375B8 (r3)
+    91D375C8 ldr    r2, [r3]
+    91D375D4 ldr    r3, [r3]
+    @0x91D375EC (r3)
+    91D375FC ldr    r2, [r3]
+    91D37608 ldr    r3, [r3]
+    @0x91D37620 (r3)
+    91D37630 ldr    r2, [r3]
+    91D37640 ldr    r3, [r3]
+    @0x91D37658 (r3)
+    91D37668 ldr    r2, [r3]
+    91D37678 ldr    r3, [r3]
+    @0x91D37690 (r3)
+    91D376A0 ldr    r2, [r3]
+    91D376B0 ldr    r3, [r3]
+    @0x91D376C8 (r3)
+    91D376D8 ldr    r2, [r3]
+    91D376E8 ldr    r3, [r3]
+    @0x91D37700 (r3)
+    91D37710 ldr    r2, [r3]
+    91D37720 ldr    r3, [r3]
+    @0x91D37738 (r3)
+    91D37748 ldr    r2, [r3]
+    91D37758 ldr    r3, [r3]
+    @0x91D37770 (r3)
+    91D37780 ldr    r2, [r3]
+    91D37790 ldr    r3, [r3]
+    @0x91D377A8 (r3)
+    91D377B8 ldr    r2, [r3]
+    91D377C8 ldr    r3, [r3]
+    @0x91D377E0 (r3)
+    91D377F0 ldr    r2, [r3]
+    91D377FC ldr    r3, [r3]
+    @0x91D37814 (r3)
+    91D37824 ldr    r2, [r3]
+    91D37834 ldr    r3, [r3]
+    @0x91D3784C (r3)
+    91D3785C ldr    r2, [r3]
+    91D37868 ldr    r3, [r3]
+    @0x91D37880 (r3)
+    91D37890 ldr    r2, [r3]
+    91D3789C ldr    r3, [r3]
+    @0x91D378B4 (r3)
+    91D378C4 ldr    r2, [r3]
+    91D378D0 ldr    r3, [r3]
+    @0x91D378E8 (r3)
+    91D378F8 ldr    r2, [r3]
+    91D37908 ldr    r3, [r3]
+    @0x91D37920 (r3)
+    91D37930 ldr    r2, [r3]
+    91D37940 ldr    r3, [r3]
+    @0x91D37958 (r3)
+    91D37968 ldr    r2, [r3]
+    91D37978 ldr    r3, [r3]
+    @0x91D37990 (r3)
+    91D379A0 ldr    r2, [r3]
+    @0x91D379D0 (r4)
+    91D379DC ldr    r3, [r4]
+    @0x91D37B1C (r4)
+    91D37B2C ldr    r3, [r4]
+    @0x91D37B78 (r3)
+    91D37B88 ldr    r2, [r3]
+    91D37B98 ldr    r3, [r3]
+    @0x91D37BB0 (r3)
+    91D37BC0 ldr    r2, [r3]
+    91D37BD0 ldr    r3, [r3]
+    @0x91D37BE8 (r3)
+    91D37BF8 ldr    r2, [r3]
+    91D37C08 ldr    r3, [r3]
+    @0x91D37C20 (r3)
+    91D37C30 ldr    r2, [r3]
+    91D37C40 ldr    r3, [r3]
+    @0x91D37C58 (r3)
+    91D37C68 ldr    r2, [r3]
+    91D37C78 ldr    r3, [r3]
+    @0x91D37C90 (r3)
+    91D37CA0 ldr    r2, [r3]
+    91D37CB0 ldr    r3, [r3]
+    @0x91D37CC8 (r3)
+    91D37CD8 ldr    r2, [r3]
+    91D37CE8 ldr    r3, [r3]
+    @0x91D37D00 (r3)
+    91D37D10 ldr    r2, [r3]
+    91D37D20 ldr    r3, [r3]
+    @0x91D37D38 (r3)
+    91D37D48 ldr    r2, [r3]
+    91D37D58 ldr    r3, [r3]
+    @0x91D37D70 (r3)
+    91D37D80 ldr    r2, [r3]
+    91D37D8C ldr    r3, [r3]
+    @0x91D37DA4 (r3)
+    91D37DB4 ldr    r2, [r3]
+    91D37DC4 ldr    r3, [r3]
+    @0x91D37DDC (r3)
+    91D37DEC ldr    r2, [r3]
+    91D37DFC ldr    r3, [r3]
+    @0x91D37E14 (r3)
+    91D37E24 ldr    r2, [r3]
+    91D37E34 ldr    r3, [r3]
+    @0x91D37E4C (r3)
+    91D37E5C ldr    r2, [r3]
+    91D37E6C ldr    r3, [r3]
+    @0x91D37E84 (r3)
+    91D37E94 ldr    r3, [r3]
+    @0x91D37F58 (r4)
+    91D37F6C ldr    r3, [r4]
+    @0x91D37FEC (r6)
+    91D38000 ldr    r3, [r6]
+    @0x91D380AC (r3)
+    91D380BC ldr    r4, [r3]
+    @0x91D38104 (r5)
+    91D38114 ldr    r2, [r5]
+    @0x91D381A8 (r3)
+    91D381B8 ldr    r2, [r3]
+    91D381C4 ldr    r3, [r3]
+    @0x91D381F0 (r5)
+    91D38204 ldr    r2, [r5]
+    @0x91D382B4 (r5)
+    91D382C4 ldr    r2, [r5]
+    @0x91D38330 (r4)
+    91D3833C ldr    r3, [r4]
+    @0x91D38374 (r6)
+    91D38384 ldr    r3, [r6]
+    @0x91D38458 (r3)
+    91D38468 ldr    ip, [r3]
+    @0x91D384B4 (r5)
+    91D384C8 ldr    r2, [r5]
+    @0x91D38550 (r6)
+    91D38564 ldr    r3, [r6]
+    @0x91D38634 (r6)
+    91D38648 ldr    r3, [r6]
+    @0x91D3879C (r6)
+    91D387B0 ldr    r2, [r6]
+    @0x91D3884C (r2)
+    91D38860 ldr    r3, [r2]
+    @0x91D38958 (r6)
+    91D3896C ldr    ip, [r6]
+    @0x91D38AA4 (r2)
+    91D38AB4 ldr    ip, [r2]
+    @0x91D38B30 (r5)
+    91D38B40 ldr    r2, [r5]
+    @0x91D38C10 (r5)
+    91D38C20 ldr    r3, [r5]
+    @0x91D38CF8 (r5)
+    91D38D08 ldr    r2, [r5]
+    @0x91D38E20 (r5)
+    91D38E30 ldr    r2, [r5]
+    @0x91D38EA8 (r3)
+    91D38EB8 ldr    r2, [r3]
+    @0x91D38F10 (r5)
+    91D38F24 ldr    r3, [r5]
+    @0x91D38FBC (r6)
+    91D38FD0 ldr    r1, [r6]
+    @0x91D39090 (r3)
+    91D390A0 ldr    r2, [r3]
+    91D390AC ldr    r3, [r3]
+    @0x91D3911C (r3)
+    91D3912C ldr    r4, [r3]
+    @0x91D39174 (r5)
+    91D39184 ldr    r3, [r5]
+    @0x91D39248 (r4)
+    91D3925C ldr    r5, [r4]
+    @0x91D3956C (r4)
+    91D39580 ldr    r3, [r4]
+    @0x91D395BC (r5)
+    91D395CC ldr    ip, [r5]
+    @0x91D396E4 (r4)
+    91D396F8 ldr    r3, [r4]
+    @0x91D39738 (r5)
+    91D39748 ldr    r1, [r5]
+    @0x91D397EC (r6)
+    91D39800 ldr    r1, [r6]
+    @0x91D398D0 (r4)
+    91D398E4 ldr    r3, [r4]
+    @0x91D399B8 (r2)
+    91D399C8 ldr    ip, [r2]
+    @0x91D39A18 (r4)
+    91D39A28 ldr    ip, [r4]
+    @0x91D39A6C (r5)
+    91D39A7C ldr    r2, [r5]
+    @0x91D39B28 (r2)
+    91D39B38 ldr    r1, [r2]
+    @0x91D39B84 (r4)
+    91D39B98 ldr    r2, [r4]
+    @0x91D39BC8 (r7)
+    91D39BDC ldr    r3, [r7]
+    @0x91D39CC0 (r6)
+    91D39CD4 ldr    r3, [r6]
+    @0x91D39E1C (r4)
+    91D39E30 ldr    r3, [r4]
+    @0x91D39E8C (r3)
+    91D39E9C ldr    r2, [r3]
+    91D39EA8 ldr    r3, [r3]
+    @0x91D39ECC (r3)
+    91D39EDC ldr    r2, [r3]
+    91D39EE8 ldr    r3, [r3]
+    @0x91D39F10 (r4)
+    91D39F20 ldr    r3, [r4]
+    @0x91D3A02C (r4)
+    91D3A040 ldr    r3, [r4]
+    @0x91D3A0EC (r4)
+    91D3A100 ldr    r3, [r4]
+    @0x91D3A200 (r4)
+    91D3A210 ldr    r2, [r4]
+    @0x91D3A29C (r4)
+    91D3A2AC ldr    r2, [r4]
+    @0x91D3A338 (r4)
+    91D3A348 ldr    r2, [r4]
+    @0x91D3A3D4 (r7)
+    91D3A3E8 ldr    ip, [r7]
+    @0x91D3A514 (r4)
+    91D3A528 ldr    r3, [r4]
+    @0x91D3A55C (r4)
+    91D3A570 ldr    r3, [r4]
+    @0x91D3A5AC (r7)
+    91D3A5BC ldr    r3, [r7]
+    @0x91D3A7F0 (r5)
+    91D3A804 ldr    r3, [r5]
+    @0x91D3A938 (r3)
+    91D3A948 ldr    r2, [r3]
+    91D3A954 ldr    r3, [r3]
+    @0x91D3A984 (r4)
+    91D3A99C ldr    r3, [r4]
+    @0x91D3AA6C (r4)
+    91D3AA7C ldr    r3, [r4]
+    @0x91D3AAEC (r4)
+    91D3AAFC ldr    r3, [r4]
+    @0x91D3AB54 (r3)
+    91D3AB64 ldr    r1, [r3]
+    @0x91D3ABA8 (r7)
+    91D3ABB8 ldr    r3, [r7]
+    @0x91D3BCC4 (sb)
+    91D3BCD8 ldr    r1, [sb]
+    @0x91D3C218 (r3)
+    91D3C228 ldr    r2, [r3]
+    @0x91D3C29C (r6)
+    91D3C2B0 ldr    r3, [r6]
+    @0x91D3C348 (r4)
+    91D3C358 ldr    r3, [r4]
+    @0x91D3C3F4 (r6)
+    91D3C408 ldr    r2, [r6]
+    @0x91D3CEDC (r8)
+    91D3CEF0 ldr    r2, [r8]
+    @0x91D3CFF4 (r8)
+    91D3D008 ldr    r3, [r8]
+    @0x91D3D130 (r4)
+    91D3D144 ldr    r3, [r4]
+    @0x91D3D280 (r4)
+    91D3D290 ldr    r3, [r4]
+    @0x91D3D874 (r4)
+    91D3D888 ldr    r3, [r4]
+    @0x91D3D8E8 (r4)
+    91D3D8FC ldr    r3, [r4]
+    @0x91D3DA78 (r4)
+    91D3DA8C ldr    r3, [r4]
+    @0x91D3DBC0 (r4)
+    91D3DBD4 ldr    r2, [r4]
+    @0x91D3DC18 (r4)
+    91D3DC2C ldr    r2, [r4]
+    @0x91D3DC78 (r4)
+    91D3DC88 ldr    r3, [r4]
+    @0x91D3DD3C (r4)
+    91D3DD50 ldr    r3, [r4]
+    @0x91D3DEAC (r4)
+    91D3DEC0 ldr    r3, [r4]
+    @0x91D3DF00 (r4)
+    91D3DF14 ldr    r3, [r4]
+    @0x91D3DF54 (r4)
+    91D3DF68 ldr    r3, [r4]
+    @0x91D3DFC8 (r3)
+    91D3DFD8 ldr    r2, [r3]
+    91D3DFE8 ldr    r3, [r3]
+    @0x91D3E004 (r4)
+    91D3E018 ldr    r1, [r4]
+    @0x91D3E638 (r4)
+    91D3E648 ldr    r3, [r4]
+    @0x91D3E6F4 (r8)
+    91D3E708 ldr    r3, [r8]
+    @0x91D3E974 (r4)
+    91D3E988 ldr    ip, [r4]
+    @0x91D3EA20 (r8)
+    91D3EA34 ldr    r3, [r8]
+    @0x91D3ECE8 (r6)
+    91D3ECFC ldr    r3, [r6]
+    @0x91D3EF38 (r6)
+    91D3EF4C ldr    r3, [r6]
+    @0x91D3F65C (r4)
+    91D3F670 ldr    r3, [r4]
+    @0x91D3F748 (r4)
+    91D3F75C ldr    r3, [r4]
+    @0x91D3F83C (r6)
+    91D3F850 ldr    r3, [r6]
+    @0x91D3FBD8 (r4)
+    91D3FBEC ldr    r3, [r4]
+    @0x91D3FC54 (r4)
+    91D3FC68 ldr    r3, [r4]
+    @0x91D3FD08 (r4)
+    91D3FD18 ldr    r2, [r4]
+    @0x91D3FD6C (r5)
+    91D3FD80 ldr    r3, [r5]
+    @0x91D3FF0C (r4)
+    91D3FF1C ldr    r3, [r4]
+    @0x91D3FF74 (r4)
+    91D3FF84 ldr    r3, [r4]
+    @0x91D3FFE4 (r7)
+    91D3FFF8 ldr    lr, [r7]
+    @0x91D400CC (r4)
+    91D400E0 ldr    r3, [r4]
+    @0x91D40160 (r4)
+    91D40174 ldr    r3, [r4]
+    @0x91D40224 (r4)
+    91D40238 ldr    r3, [r4]
+    @0x91D40298 (r5)
+    91D402A4 ldr    r3, [r5]
+    @0x91D404E8 (sl)
+    91D404FC ldr    r3, [sl]
+    @0x91D407F4 (r4)
+    91D40800 ldr    r3, [r4]
+    91D40810 ldr    r3, [r4]
+    @0x91D40848 (r3)
+    91D40858 ldr    r2, [r3]
+    91D40864 ldr    r3, [r3]
+    @0x91D40894 (r3)
+    91D408A4 ldr    r2, [r3]
+    91D408B0 ldr    r3, [r3]
+    @0x91D408E0 (r3)
+    91D408F0 ldr    r2, [r3]
+    91D408FC ldr    r3, [r3]
+    @0x91D4092C (r3)
+    91D4093C ldr    r1, [r3]
+    @0x91D4097C (r1)
+    @0x91D40FD8 (r6)
+    91D40FE4 ldr    r3, [r6]
+    @0x91D415D8 (r3)
+    91D415E8 ldr    r1, [r3]
+    @0x91D41618 (r3)
+    91D41628 ldr    r4, [r3]
+    @0x91D4167C (r3)
+    @0x91D417C0 (r3)
+    @0x91D4190C (r4)
+    91D41920 ldr    r3, [r4]
+    @0x91D41A6C (sl)
+    91D41A80 ldr    r3, [sl]
+    @0x91D41C34 (r4)
+    91D41C48 ldr    r3, [r4]
+    @0x91D41CE0 (r3)
+    91D41CF0 ldr    r2, [r3]
+    91D41D00 ldr    r3, [r3]
+    @0x91D41D40 (r5)
+    91D41D54 ldr    r3, [r5]
+    @0x91D41DB4 (r4)
+    91D41DC8 ldr    r3, [r4]
+    @0x91D41E2C (r4)
+    91D41E3C ldr    r2, [r4]
+    @0x91D41ED0 (r4)
+    91D41EE4 ldr    r3, [r4]
+    @0x91D4212C (r5)
+    91D42140 ldr    r3, [r5]
+    @0x91D42388 (r4)
+    91D42398 ldr    r2, [r4]
+    @0x91D42418 (r6)
+    91D42428 ldr    r3, [r6]
+    @0x91D42520 (r3)
+    91D42530 ldr    r2, [r3]
+    91D4253C ldr    r3, [r3]
+    @0x91D42564 (r3)
+    91D42574 ldr    r2, [r3]
+    91D42580 ldr    r3, [r3]
+    @0x91D425B4 (r4)
+    91D425C8 ldr    ip, [r4]
+    @0x91D42648 (r3)
+    91D42658 ldr    r3, [r3]
+    @0x91D42830 (r4)
+    91D42844 ldr    r3, [r4]
+    @0x91D428F8 (r4)
+    91D4290C ldr    r3, [r4]
+    @0x91D429D4 (r4)
+    91D429E8 ldr    r2, [r4]
+    @0x91D42A5C (r4)
+    91D42A68 ldr    r3, [r4]
+    @0x91D42BCC (r4)
+    91D42BE0 ldr    r2, [r4]
+    @0x91D42C30 (r7)
+    91D42C44 ldr    ip, [r7]
+    @0x91D43044 (r4)
+    91D43058 ldr    r2, [r4]
+    @0x91D43088 (r7)
+    91D43098 ldr    r3, [r7]
+    @0x91D431B8 (r4)
+    91D431C8 ldr    r3, [r4]
+    @0x91D4328C (r4)
+    91D4329C ldr    r3, [r4]
+    @0x91D43390 (r4)
+    91D433A4 ldr    r3, [r4]
+    @0x91D4341C (r7)
+    91D4342C ldr    r3, [r7]
+    @0x91D434E4 (r4)
+    91D434F4 ldr    r3, [r4]
+    @0x91D43574 (r6)
+    91D43584 ldr    r3, [r6]
+    @0x91D43648 (r8)
+    91D4365C ldr    r3, [r8]
+    @0x91D43734 (r4)
+    91D43748 ldr    r3, [r4]
+    @0x91D439D8 (r7)
+    91D439EC ldr    r3, [r7]
+    @0x91D43E4C (r5)
+    91D43E60 ldr    r3, [r5]
+    @0x91D440A8 (sb)
+    91D440B8 ldr    r3, [sb]
+    @0x91D44288 (r4)
+    91D4429C ldr    r3, [r4]
+    @0x91D442DC (r4)
+    91D442F0 ldr    r3, [r4]
+    @0x91D44330 (fp)
+    91D44344 ldr    r3, [fp]
+    @0x91D443D8 (r4)
+    91D443EC ldr    r3, [r4]
+    @0x91D44498 (r5)
+    91D444AC ldr    r0, [r5]
+    @0x91D445E8 (r3)
+    91D445F8 ldr    r1, [r3]
+    @0x91D4462C (r5)
+    91D44640 ldr    r3, [r5]
+    @0x91D4476C (r6)
+    91D44780 ldr    r1, [r6]
+    @0x91D44CCC (r6)
+    91D44CE0 ldr    r3, [r6]
+    @0x91D45798 (r3)
+    91D457A8 ldr    r1, [r3]
+    @0x91D457F4 (r5)
+    91D45804 ldr    r1, [r5]
+    @0x91D4586C (r4)
+    91D45880 ldr    r3, [r4]
+    @0x91D458F4 (r6)
+    91D45908 ldr    ip, [r6]
+    @0x91D45A34 (r4)
+    91D45A44 ldr    r3, [r4]
+    @0x91D45A7C (r3)
+    91D45A8C ldr    r3, [r3]
+    @0x91D45AD8 (r7)
+    91D45AE8 ldr    r3, [r7]
+    @0x91D45C78 (r4)
+    91D45C88 ldr    r2, [r4]
+    @0x91D45D6C (r4)
+    91D45D80 ldr    lr, [r4]
+    @0x91D45F54 (r4)
+    91D45F64 ldr    r3, [r4]
+    @0x91D45FD0 (r4)
+    91D45FE0 ldr    r3, [r4]
+    @0x91D46050 (r4)
+    91D46064 ldr    ip, [r4]
+    @0x91D460D0 (r4)
+    91D460E0 ldr    r3, [r4]
+    @0x91D46140 (r4)
+    91D46154 ldr    r3, [r4]
+    @0x91D46208 (r3)
+    @0x91D46890 (r3)
+    91D468A0 ldr    r3, [r3]
+    @0x91D46918 (r4)
+    91D4692C ldr    r2, [r4]
+    @0x91D46A88 (r6)
+    91D46A98 ldr    r3, [r6]
+    @0x91D46BE4 (r3)
+    91D46BF4 ldr    r1, [r3]
+    @0x91D46C2C (r3)
+    91D46C3C ldr    r1, [r3]
+    @0x91D46C74 (r3)
+    91D46C84 ldr    r1, [r3]
+    @0x91D46CBC (r3)
+    91D46CCC ldr    r1, [r3]
+    @0x91D46D00 (r5)
+    91D46D10 ldr    r3, [r5]
+    @0x91D46E80 (r4)
+    91D46E94 ldr    r3, [r4]
+    @0x91D46ED8 (r4)
+    91D46EEC ldr    r2, [r4]
+    @0x91D46FB0 (r4)
+    91D46FC4 ldr    r1, [r4]
+    @0x91D4702C (r4)
+    91D47040 ldr    r3, [r4]
+    @0x91D47594 (r5)
+    91D475A8 ldr    r3, [r5]
+    @0x91D47614 (r3)
+    91D47624 ldr    r2, [r3]
+    91D47630 ldr    r3, [r3]
+    @0x91D47654 (r5)
+    91D47664 ldr    r1, [r5]
+    @0x91D477B4 (sl)
+    @0x91D47A04 (r8)
+    @0x91D47AD0 (r4)
+    91D47AE4 ldr    ip, [r4]
+    @0x91D47E2C (r3)
+    91D47E3C ldr    r1, [r3]
+    @0x91D47E6C (r3)
+    91D47E7C ldr    r1, [r3]
+    @0x91D47EAC (r3)
+    91D47EBC ldr    r1, [r3]
+    @0x91D47EF0 (r4)
+    91D47F04 ldr    r3, [r4]
+    @0x91D4805C (r3)
+    91D4806C ldr    r1, [r3]
+    @0x91D480A4 (r2)
+    91D480B8 ldr    r3, [r2]
+    @0x91D4820C (r6)
+    91D48220 ldr    r3, [r6]
+    @0x91D48360 (r6)
+    91D48374 ldr    r3, [r6]
+    @0x91D484C8 (r6)
+    91D484D8 ldr    r3, [r6]
+    @0x91D4861C (r7)
+    91D4862C ldr    r3, [r7]
+    @0x91D48714 (r4)
+    91D48720 ldr    r3, [r4]
+    91D48730 ldr    r3, [r4]
+    @0x91D4876C (r4)
+    91D48780 ldr    r3, [r4]
+    @0x91D4883C (r3)
+    91D4884C ldr    r2, [r3]
+    91D48858 ldr    r3, [r3]
+    @0x91D48874 (r3)
+    91D48884 ldr    r2, [r3]
+    91D48890 ldr    r3, [r3]
+    @0x91D488B8 (r4)
+    91D488C8 ldr    r1, [r4]
+    @0x91D48954 (r4)
+    91D48968 ldr    r3, [r4]
+    @0x91D48A5C (r4)
+    91D48A70 ldr    r3, [r4]
+    @0x91D48ADC (r7)
+    91D48AEC ldr    r3, [r7]
+    @0x91D48E08 (r4)
+    91D48E18 ldr    r3, [r4]
+    @0x91D48E84 (r3)
+    91D48E94 ldr    ip, [r3]
+    @0x91D48EF8 (r4)
+    91D48F08 ldr    r3, [r4]
+    @0x91D48F64 (r4)
+    91D48F78 ldr    ip, [r4]
+    @0x91D48FA8 (r6)
+    91D48FBC ldr    ip, [r6]
+    @0x91D49470 (r4)
+    91D49484 ldr    r3, [r4]
+    @0x91D494E8 (r6)
+    91D494F8 ldr    ip, [r6]
+    @0x91D49594 (r4)
+    91D495A8 ldr    ip, [r4]
+    @0x91D495D4 (r3)
+    91D495E4 ldr    r2, [r3]
+    @0x91D49614 (r5)
+    91D49628 ldr    r3, [r5]
+    @0x91D499CC (r6)
+    91D499EC ldr    r7, [r6]
+    @0x91D4A398 (r3)
+    91D4A3A8 ldr    r2, [r3]
+    91D4A3B4 ldr    r3, [r3]
+    @0x91D4A3D0 (r3)
+    91D4A3E0 ldr    r2, [r3]
+    91D4A3EC ldr    r3, [r3]
+    @0x91D4A40C (r4)
+    91D4A418 ldr    r3, [r4]
+    91D4A428 ldr    r3, [r4]
+    @0x91D4A460 (r4)
+    91D4A46C ldr    r3, [r4]
+    91D4A47C ldr    r3, [r4]
+    @0x91D4A4B0 (r3)
+    91D4A4C0 ldr    r2, [r3]
+    91D4A4CC ldr    r3, [r3]
+    @0x91D4A4F4 (r3)
+    @0x91D4ABEC (r6)
+    91D4AC00 ldr    r3, [r6]
+    @0x91D4AE40 (r6)
+    91D4AE54 ldr    r3, [r6]
+    @0x91D4AFC0 (r3)
+    91D4AFD0 ldr    r2, [r3]
+    @0x91D4B044 (r8)
+    91D4B058 ldr    r3, [r8]
+    @0x91D4B0E0 (r6)
+    91D4B0F4 ldr    r3, [r6]
+    @0x91D4B83C (r3)
+    91D4B84C ldr    r2, [r3]
+    91D4B858 ldr    r3, [r3]
+    @0x91D4B884 (r3)
+    91D4B894 ldr    r2, [r3]
+    @0x91D4B92C (r3)
+    91D4B93C ldr    r2, [r3]
+    @0x91D4B998 (r3)
+    91D4B9A8 ldr    r1, [r3]
+    @0x91D4B9DC (r4)
+    91D4B9F0 ldr    r2, [r4]
+    @0x91D4BA54 (r4)
+    91D4BA68 ldr    lr, [r4]
+    @0x91D4BAB8 (r4)
+    91D4BACC ldr    lr, [r4]
+    @0x91D4BB1C (r4)
+    91D4BB30 ldr    ip, [r4]
+    @0x91D4BB8C (r4)
+    91D4BBA0 ldr    ip, [r4]
+    @0x91D4BC04 (r7)
+    91D4BC18 ldr    r3, [r7]
+    @0x91D4BCE4 (r4)
+    91D4BCF8 ldr    r3, [r4]
+    @0x91D4BD40 (r7)
+    91D4BD54 ldr    r3, [r7]
+    @0x91D4BE10 (r4)
+    91D4BE24 ldr    r3, [r4]
+    @0x91D4BE78 (r4)
+    91D4BE8C ldr    r3, [r4]
+    @0x91D4BEBC (r6)
+    91D4BECC ldr    r3, [r6]
+    @0x91D4BF50 (r4)
+    91D4BF64 ldr    r3, [r4]
+    @0x91D4BFEC (r4)
+    91D4BFFC ldr    r3, [r4]
+    @0x91D4C048 (r4)
+    91D4C05C ldr    r3, [r4]
+    @0x91D4C0A8 (r4)
+    91D4C0B8 ldr    r3, [r4]
+    91D4C0C8 ldr    r3, [r4]
+    @0x91D4C0E8 (r4)
+    91D4C0F8 ldr    r3, [r4]
+    91D4C108 ldr    r3, [r4]
+    @0x91D4C128 (r4)
+    91D4C13C ldr    r3, [r4]
+    @0x91D4C1C4 (r3)
+    91D4C1D4 ldr    r2, [r3]
+    91D4C1E0 ldr    r3, [r3]
+    @0x91D4C204 (r4)
+    91D4C218 ldr    r3, [r4]
+    @0x91D4C25C (r4)
+    91D4C270 ldr    r3, [r4]
+    @0x91D4C2EC (r4)
+    91D4C2FC ldr    r3, [r4]
+    @0x91D4C390 (r6)
+    91D4C3A0 ldr    r3, [r6]
+    @0x91D4C448 (r4)
+    91D4C45C ldr    r3, [r4]
+    @0x91D4C4DC (r4)
+    91D4C4EC ldr    r3, [r4]
+    @0x91D4C65C (r5)
+    91D4C670 ldr    r2, [r5]
+    @0x91D4C7D8 (r4)
+    91D4C7EC ldr    r3, [r4]
+    @0x91D4C868 (r4)
+    91D4C87C ldr    r3, [r4]
+    @0x91D4C8F4 (r3)
+    91D4C904 ldr    r2, [r3]
+    91D4C914 ldr    r3, [r3]
+    @0x91D4C96C (r4)
+    91D4C980 ldr    r3, [r4]
+    @0x91D4C9BC (r3)
+    91D4C9D0 ldr    ip, [r3]
+    @0x91D4CA20 (r3)
+    91D4CA34 ldr    r1, [r3]
+    @0x91D4CA7C (r3)
+    91D4CA8C ldr    r1, [r3]
+    @0x91D4CAC0 (r4)
+    91D4CAD4 ldr    r3, [r4]
+    @0x91D4CB1C (r5)
+    91D4CB30 ldr    r3, [r5]
+    @0x91D4CC84 (r4)
+    91D4CC98 ldr    r3, [r4]
+    @0x91D4CD10 (r4)
+    91D4CD24 ldr    r3, [r4]
+    @0x91D4CD6C (r4)
+    91D4CD80 ldr    r3, [r4]
+    @0x91D4CDC8 (fp)
+    91D4CDDC ldr    r3, [fp]
+    @0x91D4CEB8 (r5)
+    91D4CECC ldr    r3, [r5]
+    @0x91D4CF60 (r5)
+    91D4CF74 ldr    ip, [r5]
+    @0x91D4D060 (r3)
+    91D4D080 ldr    ip, [r3]
+    @0x91D4D0E4 (r4)
+    @0x91D4D964 (r3)
+    91D4D974 ldr    r1, [r3]
+    @0x91D4D9A4 (r3)
+    91D4D9B4 ldr    r2, [r3]
+    91D4D9C0 ldr    r3, [r3]
+    @0x91D4D9E4 (r3)
+    91D4D9F4 ldr    r2, [r3]
+    @0x91D4DA20 (r3)
+    91D4DA30 ldr    r2, [r3]
+    @0x91D4DA60 (r4)
+    91D4DA70 ldr    r3, [r4]
+    @0x91D4DAF8 (r4)
+    91D4DB0C ldr    r3, [r4]
+    @0x91D4DB94 (r4)
+    91D4DBA4 ldr    r2, [r4]
+    @0x91D4DC50 (r4)
+    91D4DC64 ldr    r1, [r4]
+    @0x91D4DD48 (r4)
+    91D4DD5C ldr    r1, [r4]
+    @0x91D4DE44 (r4)
+    91D4DE54 ldr    r3, [r4]
+    @0x91D4DF04 (r4)
+    91D4DF18 ldr    ip, [r4]
+    @0x91D4DF88 (r4)
+    91D4DF98 ldr    ip, [r4]
+    @0x91D4DFEC (r4)
+    91D4E000 ldr    ip, [r4]
+    @0x91D4E06C (r4)
+    91D4E080 ldr    ip, [r4]
+    @0x91D4E130 (r4)
+    91D4E140 ldr    r2, [r4]
+    @0x91D4E1B0 (r4)
+    91D4E1C4 ldr    r3, [r4]
+    @0x91D4E238 (r6)
+    91D4E24C ldr    r3, [r6]
+    @0x91D4E324 (r4)
+    91D4E338 ldr    r3, [r4]
+    @0x91D4E3A8 (r4)
+    91D4E3BC ldr    r2, [r4]
+    @0x91D4E44C (r3)
+    91D4E45C ldr    r1, [r3]
+    @0x91D4E4B4 (r3)
+    91D4E4C4 ldr    r2, [r3]
+    @0x91D4E504 (r4)
+    91D4E514 ldr    r3, [r4]
+    @0x91D4E594 (r4)
+    91D4E5A4 ldr    r3, [r4]
+    @0x91D4E654 (r4)
+    91D4E664 ldr    r2, [r4]
+    @0x91D4E700 (r4)
+    91D4E710 ldr    r2, [r4]
+    @0x91D4E7B4 (r4)
+    91D4E7CC ldr    ip, [r4]
+    @0x91D4E810 (r3)
+    91D4E820 ldr    r2, [r3]
+    @0x91D4E85C (r4)
+    91D4E870 ldr    r1, [r4]
+    @0x91D4E8F8 (r4)
+    91D4E90C ldr    r1, [r4]
+    @0x91D4E9EC (r4)
+    91D4EA00 ldr    ip, [r4]
+    @0x91D4EA84 (r4)
+    91D4EA98 ldr    r5, [r4]
+    @0x91D4EB0C (r4)
+    91D4EB20 ldr    r2, [r4]
+    @0x91D4EB94 (r4)
+    91D4EBA8 ldr    r3, [r4]
+    @0x91D4ED28 (r4)
+    91D4ED3C ldr    r3, [r4]
+    @0x91D4EFDC (r5)
+    91D4EFF0 ldr    r3, [r5]
+    @0x91D4F104 (r4)
+    91D4F114 ldr    r2, [r4]
+    @0x91D4F180 (r4)
+    91D4F190 ldr    r2, [r4]
+    @0x91D4F228 (r4)
+    91D4F238 ldr    r2, [r4]
+    @0x91D4F2E0 (r4)
+    91D4F2F4 ldr    r2, [r4]
+    @0x91D4F35C (r5)
+    91D4F36C ldr    r2, [r5]
+    @0x91D4F474 (r4)
+    91D4F484 ldr    r3, [r4]
+    @0x91D4F4E4 (r3)
+    91D4F4F4 ldr    r2, [r3]
+    91D4F500 ldr    r3, [r3]
+    @0x91D4F520 (r5)
+    91D4F534 ldr    r2, [r5]
+    @0x91D4F5DC (r5)
+    91D4F5F0 ldr    ip, [r5]
+    @0x91D4F6F8 (r4)
+    91D4F70C ldr    ip, [r4]
+    @0x91D4F7A8 (r4)
+    91D4F7BC ldr    ip, [r4]
+    @0x91D4F824 (r7)
+    91D4F838 ldr    r3, [r7]
+    @0x91D4F990 (r7)
+    91D4F9A4 ldr    r3, [r7]
+    @0x91D4FC40 (r4)
+    91D4FC50 ldr    r3, [r4]
+    @0x91D4FD38 (r4)
+    91D4FD4C ldr    r3, [r4]
+    @0x91D4FDEC (r4)
+    91D4FDFC ldr    r3, [r4]
+    @0x91D4FE80 (r5)
+    91D4FE94 ldr    r3, [r5]
+    @0x91D50524 (r4)
+    91D50538 ldr    r3, [r4]
+    @0x91D505C0 (r4)
+    91D505D4 ldr    r3, [r4]
+    @0x91D5061C (r4)
+    91D50630 ldr    r3, [r4]
+    @0x91D50698 (r5)
+    91D506AC ldr    r2, [r5]
+    @0x91D51224 (r5)
+    91D51234 ldr    r2, [r5]
+    @0x91D512A8 (r3)
+    91D512B8 ldr    r2, [r3]
+    91D512C4 ldr    r3, [r3]
+    @0x91D512EC (r4)
+    91D51300 ldr    r2, [r4]
+    @0x91D51430 (r5)
+    91D51440 ldr    r2, [r5]
+    @0x91D514B4 (r5)
+    91D514C8 ldr    r3, [r5]
+    @0x91D51510 (r5)
+    91D5151C ldr    r3, [r5]
+    @0x91D515D0 (r5)
+    91D515E4 ldr    ip, [r5]
+    @0x91D5164C (r4)
+    91D5165C ldr    r3, [r4]
+    @0x91D516C4 (r3)
+    91D516D4 ldr    r3, [r3]
+    @0x91D516F4 (sl)
+    91D51708 ldr    r3, [sl]
+    @0x91D517DC (ip)
+    91D517F4 ldr    r4, [ip]
+    @0x91D5190C (r5)
+    91D51920 ldr    r3, [r5]
+    @0x91D51B0C (r5)
+    91D51B1C ldr    r3, [r5]
+    @0x91D51BB0 (r4)
+    91D51BC4 ldr    r3, [r4]
+    @0x91D51C40 (r2)
+    91D51C50 ldr    r4, [r2]
+    @0x91D51CA8 (r3)
+    91D51CB4 ldr    r1, [r3]
+    @0x91D51D18 (r6)
+    91D51D2C ldr    r3, [r6]
+    @0x91D51E18 (r3)
+    91D51E28 ldr    r2, [r3]
+    91D51E34 ldr    r3, [r3]
+    @0x91D51E50 (r3)
+    91D51E60 ldr    r2, [r3]
+    @0x91D51EA0 (r3)
+    91D51EB0 ldr    r2, [r3]
+    @0x91D51EE4 (r3)
+    91D51EF4 ldr    r2, [r3]
+    @0x91D51F2C (r3)
+    91D51F38 ldr    r2, [r3]
+    @0x91D51F84 (r3)
+    91D51F94 ldr    r2, [r3]
+    @0x91D51FC4 (r3)
+    91D51FD4 ldr    r2, [r3]
+    @0x91D52008 (r5)
+    91D5201C ldr    r3, [r5]
+    @0x91D5208C (sl)
+    91D520A0 ldr    r0, [sl]
+    @0x91D52148 (sb)
+    91D52158 ldr    r1, [sb]
+    @0x91D52264 (r4)
+    91D52274 ldr    r2, [r4]
+    @0x91D522B0 (ip)
+    91D522C0 ldr    r0, [ip]
+    @0x91D529B4 (r4)
+    91D529C4 ldr    lr, [r4]
+    @0x91D52A0C (r4)
+    91D52A1C ldr    lr, [r4]
+    @0x91D52A58 (r3)
+    91D52A68 ldr    r2, [r3]
+    91D52A74 ldr    r3, [r3]
+    @0x91D52A98 (r4)
+    91D52AAC ldr    r3, [r4]
+    @0x91D52B44 (r3)
+    91D52B54 ldr    r2, [r3]
+    91D52B60 ldr    r3, [r3]
+    @0x91D52B7C (r3)
+    91D52B8C ldr    r2, [r3]
+    91D52B98 ldr    r3, [r3]
+    @0x91D52BB4 (r2)
+    91D52BC4 ldr    r1, [r2]
+    @0x91D52C04 (r3)
+    91D52C14 ldr    r2, [r3]
+    91D52C24 ldr    r3, [r3]
+    @0x91D52DEC (r4)
+    91D52E00 ldr    r3, [r4]
+    @0x91D52E6C (r4)
+    91D52E7C ldr    r5, [r4]
+    @0x91D52F00 (r4)
+    91D52F1C ldr    r3, [r4]
+    @0x91D52F50 (r4)
+    91D52F60 ldr    r2, [r4]
+    @0x91D52FBC (ip)
+    91D52FD4 ldr    r3, [ip]
+    @0x91D53038 (ip)
+    91D53048 ldr    r3, [ip]
+    @0x91D530A0 (r6)
+    91D530B4 ldr    r3, [r6]
+    @0x91D53178 (r5)
+    91D5318C ldr    r3, [r5]
+    @0x91D5323C (r1)
+    91D53250 ldr    r2, [r1]
+    @0x91D532A0 (r5)
+    91D532B0 ldr    r3, [r5]
+    @0x91D53334 (r4)
+    91D53348 ldr    r3, [r4]
+    @0x91D5338C (r4)
+    91D5339C ldr    r5, [r4]
+    @0x91D53434 (sb)
+    91D53448 ldr    r3, [sb]
+    @0x91D534DC (r5)
+    91D534F0 ldr    r3, [r5]
+    @0x91D53568 (r6)
+    91D53578 ldr    r3, [r6]
+    @0x91D53600 (r8)
+    91D53614 ldr    r3, [r8]
+    @0x91D53698 (r8)
+    91D536A8 ldr    r3, [r8]
+    @0x91D53944 (r5)
+    91D53958 ldr    r3, [r5]
+    @0x91D53A98 (r4)
+    91D53AA8 ldr    r3, [r4]
+    @0x91D53AFC (r4)
+    91D53B0C ldr    r3, [r4]
+    @0x91D53B60 (r6)
+    91D53B74 ldr    r3, [r6]
+    @0x91D53C4C (r8)
+    91D53C60 ldr    r3, [r8]
+    @0x91D53CD8 (r4)
+    91D53CEC ldr    r3, [r4]
+    @0x91D53D84 (r4)
+    91D53D98 ldr    r3, [r4]
+    @0x91D53DE8 (r6)
+    91D53DFC ldr    r3, [r6]
+    @0x91D53E64 (r4)
+    91D53E78 ldr    r3, [r4]
+    @0x91D53EE4 (r1)
+    91D53EF4 ldr    r3, [r1]
+    @0x91D54030 (r7)
+    91D54044 ldr    r2, [r7]
+    @0x91D54128 (r4)
+    91D5413C ldr    r3, [r4]
+    @0x91D54184 (r4)
+    91D54198 ldr    ip, [r4]
+    @0x91D54244 (r4)
+    91D54254 ldr    r3, [r4]
+    91D54264 ldr    r3, [r4]
+    @0x91D542A0 (r4)
+    91D542B0 ldr    r3, [r4]
+    91D542C0 ldr    r3, [r4]
+    @0x91D542FC (r4)
+    91D54310 ldr    r2, [r4]
+    @0x91D543B0 (r8)
+    91D543C4 ldr    r3, [r8]
+    @0x91D544BC (r4)
+    91D544D0 ldr    r2, [r4]
+    @0x91D54520 (r4)
+    91D54534 ldr    r2, [r4]
+    @0x91D5458C (r4)
+    91D545A0 ldr    ip, [r4]
+    @0x91D5460C (r7)
+    91D54620 ldr    r3, [r7]
+    @0x91D54734 (r4)
+    91D54744 ldr    ip, [r4]
+    @0x91D54A94 (r5)
+    91D54AA4 ldr    r3, [r5]
+    @0x91D54C54 (r4)
+    91D54C68 ldr    ip, [r4]
+    @0x91D54D2C (r4)
+    91D54D40 ldr    r3, [r4]
+    @0x91D54FA0 (r4)
+    91D54FB4 ldr    ip, [r4]
+    @0x91D550B4 (r4)
+    91D550C8 ldr    ip, [r4]
+    @0x91D551E4 (r4)
+    91D551F8 ldr    ip, [r4]
+    @0x91D55678 (r4)
+    91D55688 ldr    r3, [r4]
+    @0x91D55760 (r8)
+    91D55774 ldr    r3, [r8]
+    @0x91D559F8 (r4)
+    91D55A0C ldr    r2, [r4]
+    @0x91D55BE0 (ip)
+    @0x91D55FFC (r4)
+    @0x91D5708C (r4)
+    91D5709C ldr    ip, [r4]
+    @0x91D57114 (r4)
+    91D57124 ldr    lr, [r4]
+    @0x91D5716C (r4)
+    91D57180 ldr    r3, [r4]
+    @0x91D571FC (r3)
+    91D5720C ldr    r2, [r3]
+    91D57218 ldr    r3, [r3]
+    @0x91D57238 (r3)
+    91D57248 ldr    r2, [r3]
+    91D57254 ldr    r3, [r3]
+    @0x91D57274 (r3)
+    91D57284 ldr    r2, [r3]
+    91D57294 ldr    r3, [r3]
+    @0x91D572F8 (r4)
+    91D5730C ldr    ip, [r4]
+    @0x91D573D8 (r4)
+    91D573EC ldr    r3, [r4]
+    @0x91D57548 (r4)
+    91D5755C ldr    r3, [r4]
+    @0x91D57620 (r4)
+    91D57634 ldr    lr, [r4]
+    @0x91D576B8 (ip)
+    91D576C8 ldr    r4, [ip]
+    @0x91D5770C (r4)
+    91D57720 ldr    r2, [r4]
+    @0x91D57750 (r4)
+    91D57764 ldr    r2, [r4]
+    @0x91D5779C (r4)
+    91D577B0 ldr    r2, [r4]
+    @0x91D57814 (r4)
+    91D57828 ldr    r3, [r4]
+    @0x91D57914 (r4)
+    91D57928 ldr    r1, [r4]
+    @0x91D57A18 (r4)
+    91D57A2C ldr    r1, [r4]
+    @0x91D57B4C (r4)
+    91D57B60 ldr    r2, [r4]
+    @0x91D57BC4 (r6)
+    91D57BD8 ldr    r3, [r6]
+    @0x91D57C40 (r3)
+    91D57C50 ldr    r2, [r3]
+    91D57C5C ldr    r3, [r3]
+    @0x91D57C7C (r4)
+    91D57C88 ldr    r3, [r4]
+    91D57C9C ldr    ip, [r4]
+    @0x91D57CDC (r6)
+    91D57CEC ldr    r3, [r6]
+    @0x91D57D9C (r4)
+    91D57DAC ldr    r3, [r4]
+    @0x91D57E40 (r4)
+    91D57E54 ldr    ip, [r4]
+    @0x91D5801C (r4)
+    91D58030 ldr    ip, [r4]
+    @0x91D58128 (r4)
+    91D58138 ldr    r3, [r4]
+    @0x91D58198 (r3)
+    91D581A8 ldr    r2, [r3]
+    91D581B8 ldr    r3, [r3]
+    @0x91D581D0 (r3)
+    91D581E0 ldr    ip, [r3]
+    @0x91D58214 (r4)
+    91D58228 ldr    ip, [r4]
+    @0x91D58294 (r4)
+    91D582A8 ldr    ip, [r4]
+    @0x91D5830C (r3)
+    91D5831C ldr    r2, [r3]
+    91D58328 ldr    r3, [r3]
+    @0x91D58348 (r4)
+    91D5835C ldr    ip, [r4]
+    @0x91D583F4 (r4)
+    91D58408 ldr    r2, [r4]
+    @0x91D58538 (r5)
+    91D58548 ldr    r3, [r5]
+    @0x91D585B4 (r4)
+    91D585C8 ldr    r3, [r4]
+    @0x91D58604 (r7)
+    91D58618 ldr    r2, [r7]
+    @0x91D58768 (r4)
+    91D58778 ldr    r2, [r4]
+    @0x91D587C4 (r4)
+    91D587D4 ldr    ip, [r4]
+    @0x91D58838 (r4)
+    91D58848 ldr    ip, [r4]
+    @0x91D588A4 (r8)
+    91D588B8 ldr    r3, [r8]
+    @0x91D5897C (r4)
+    91D58990 ldr    r2, [r4]
+    @0x91D589F8 (r8)
+    91D58A0C ldr    r3, [r8]
+    @0x91D58BA8 (sb)
+    91D58BBC ldr    r2, [sb]
+    @0x91D58D84 (r8)
+    91D58D98 ldr    r3, [r8]
+    @0x91D58F24 (r5)
+    91D58F38 ldr    r0, [r5]
+    @0x91D58FA0 (r5)
+    91D58FB4 ldr    r3, [r5]
+    @0x91D590E4 (r5)
+    91D590F8 ldr    r3, [r5]
+    @0x91D59268 (r4)
+    91D5927C ldr    lr, [r4]
+    @0x91D592F8 (r6)
+    91D5930C ldr    r2, [r6]
+    @0x91D59538 (r7)
+    91D5954C ldr    r3, [r7]
+    @0x91D59778 (r5)
+    91D5978C ldr    r2, [r5]
+    @0x91D598B8 (ip)
+    91D598C8 ldr    r3, [ip]
+    @0x91D59970 (r3)
+    91D59980 ldr    r2, [r3]
+    @0x91D599B4 (r3)
+    91D599C0 ldr    r2, [r3]
+    @0x91D59A00 (r3)
+    91D59A18 ldr    r4, [r3]
+    @0x91D59A58 (r3)
+    91D59A70 ldr    r4, [r3]
+    @0x91D59AC4 (r4)
+    91D59AD8 ldr    r3, [r4]
+    @0x91D59B1C (r4)
+    91D59B30 ldr    r3, [r4]
+    @0x91D59B74 (r5)
+    91D59B88 ldr    r3, [r5]
+    @0x91D59C4C (ip)
+    91D59C5C ldr    r1, [ip]
+    @0x91D5A268 (r4)
+    91D5A278 ldr    lr, [r4]
+    @0x91D5A2A8 (r3)
+    91D5A2B8 ldr    ip, [r3]
+    91D5A2C4 ldr    r3, [r3]
+    @0x91D5A2E8 (r5)
+    91D5A2FC ldr    r3, [r5]
+    @0x91D5A380 (r5)
+    91D5A390 ldr    r3, [r5]
+    @0x91D5A448 (r4)
+    91D5A45C ldr    r3, [r4]
+    @0x91D5A60C (r4)
+    91D5A620 ldr    r3, [r4]
+    @0x91D5A6B4 (r3)
+    91D5A6C8 ldr    r2, [r3]
+    @0x91D5A708 (r4)
+    91D5A71C ldr    r1, [r4]
+    @0x91D5A788 (r3)
+    91D5A798 ldr    ip, [r3]
+    @0x91D5AA38 (r3)
+    91D5AA44 ldr    r0, [r3]
+    @0x91D5AC90 (r3)
+    91D5ACA0 ldr    r2, [r3]
+    @0x91D5ACD8 (r3)
+    91D5ACE8 ldr    r2, [r3]
+    @0x91D5AD60 (r7)
+    91D5AD74 ldr    r3, [r7]
+    @0x91D5AE24 (r8)
+    91D5AE38 ldr    r3, [r8]
+    @0x91D5AF10 (r4)
+    91D5AF20 ldr    r0, [r4]
+    @0x91D5B20C (r3)
+    91D5B21C ldr    r4, [r3]
+    @0x91D5B260 (ip)
+    91D5B270 ldr    r4, [ip]
+    @0x91D5B2F8 (r6)
+    91D5B30C ldr    r3, [r6]
+    @0x91D5B41C (r5)
+    91D5B430 ldr    r3, [r5]
+    @0x91D5B4AC (r4)
+    91D5B4BC ldr    r3, [r4]
+    @0x91D5B528 (r4)
+    91D5B53C ldr    r0, [r4]
+    @0x91D5B6CC (r4)
+    91D5B6E0 ldr    r7, [r4]
+    @0x91D5B8FC (r4)
+    91D5B910 ldr    ip, [r4]
+    @0x91D5BA38 (r4)
+    91D5BA4C ldr    r1, [r4]
+    @0x91D5BE1C (r4)
+    91D5BE30 ldr    r1, [r4]
+    @0x91D5BEE4 (r3)
+    91D5BEF4 ldr    ip, [r3]
+    91D5BF00 ldr    r3, [r3]
+    @0x91D5BF24 (sb)
+    91D5BF38 ldr    r1, [sb]
+    @0x91D5C3E4 (r5)
+    91D5C404 ldr    r1, [r5]
+    @0x91D5C904 (r3)
+    91D5C910 ldr    r2, [r3]
+    @0x91D5C954 (r4)
+    91D5C964 ldr    r7, [r4]
+    @0x91D5CCB0 (r4)
+    91D5CCC4 ldr    r1, [r4]
+    @0x91D5D1DC (r5)
+    91D5D1F0 ldr    r3, [r5]
+    @0x91D5DB28 (r4)
+    91D5DB3C ldr    r0, [r4]
+    @0x91D5DBA0 (r6)
+    91D5DBB4 ldr    r1, [r6]
+    @0x91D5DED8 (r4)
+    91D5DEEC ldr    ip, [r4]
+    @0x91D5E100 (r4)
+    91D5E114 ldr    r3, [r4]
+    @0x91D5E220 (r4)
+    91D5E234 ldr    r3, [r4]
+    @0x91D5E2A0 (r4)
+    91D5E2B4 ldr    r3, [r4]
+    @0x91D5E510 (r4)
+    91D5E520 ldr    r3, [r4]
+    @0x91D5E550 (r3)
+    91D5E560 ldr    r2, [r3]
+    91D5E56C ldr    r3, [r3]
+    @0x91D5E590 (r7)
+    91D5E5A4 ldr    r3, [r7]
+    @0x91D5E634 (r4)
+    91D5E648 ldr    r3, [r4]
+    @0x91D5E6C0 (r4)
+    91D5E6CC ldr    r3, [r4]
+    @0x91D5E78C (r4)
+    91D5E7A0 ldr    r3, [r4]
+    @0x91D5E8EC (r5)
+    91D5E900 ldr    r2, [r5]
+    @0x91D5EBB8 (r3)
+    91D5EBC8 ldr    r2, [r3]
+    91D5EBD4 ldr    r3, [r3]
+    @0x91D5EBF8 (r4)
+    91D5EC0C ldr    ip, [r4]
+    @0x91D5EC54 (r4)
+    91D5EC68 ldr    r3, [r4]
+    @0x91D5ED2C (r3)
+    91D5ED3C ldr    r2, [r3]
+    91D5ED48 ldr    r3, [r3]
+    @0x91D5ED6C (r3)
+    91D5ED7C ldr    r2, [r3]
+    91D5ED88 ldr    r3, [r3]
+    @0x91D5EDAC (r3)
+    91D5EDBC ldr    r2, [r3]
+    91D5EDC8 ldr    r3, [r3]
+    @0x91D5EDEC (r3)
+    91D5EDFC ldr    r2, [r3]
+    91D5EE08 ldr    r3, [r3]
+    @0x91D5EE2C (r3)
+    91D5EE3C ldr    r2, [r3]
+    @0x91D5EE6C (r3)
+    91D5EE78 ldr    r0, [r3]
+    @0x91D5EEB4 (r4)
+    91D5EEC8 ldr    ip, [r4]
+    @0x91D5EF54 (r3)
+    91D5EF64 ldr    r2, [r3]
+    @0x91D5EFD4 (r4)
+    91D5EFE4 ldr    r3, [r4]
+    @0x91D5F064 (r4)
+    91D5F078 ldr    r1, [r4]
+    @0x91D5F130 (r4)
+    91D5F144 ldr    r0, [r4]
+    @0x91D5F208 (r3)
+    91D5F214 ldr    ip, [r3]
+    @0x91D5F250 (r5)
+    91D5F264 ldr    ip, [r5]
+    @0x91D5F35C (r4)
+    91D5F370 ldr    r0, [r4]
+    @0x91D5F428 (r3)
+    91D5F438 ldr    r2, [r3]
+    91D5F444 ldr    r3, [r3]
+    @0x91D5F46C (r4)
+    91D5F480 ldr    r3, [r4]
+    @0x91D5F508 (r4)
+    91D5F51C ldr    r3, [r4]
+    @0x91D5F56C (r4)
+    91D5F57C ldr    r3, [r4]
+    @0x91D5F5B4 (r4)
+    91D5F5C8 ldr    r0, [r4]
+    @0x91D5F648 (r3)
+    91D5F658 ldr    r2, [r3]
+    91D5F668 ldr    r3, [r3]
+    @0x91D5F688 (r3)
+    91D5F698 ldr    r2, [r3]
+    91D5F6A8 ldr    r3, [r3]
+    @0x91D5F6C4 (r3)
+    91D5F6D4 ldr    r2, [r3]
+    91D5F6E4 ldr    r3, [r3]
+    @0x91D5F700 (r6)
+    91D5F714 ldr    ip, [r6]
+    @0x91D5F7D8 (r5)
+    91D5F7E8 ldr    r3, [r5]
+    @0x91D5F8BC (r3)
+    91D5F8CC ldr    r2, [r3]
+    91D5F8DC ldr    r3, [r3]
+    @0x91D5F8F4 (r3)
+    91D5F904 ldr    r2, [r3]
+    91D5F910 ldr    r3, [r3]
+    @0x91D5F938 (sb)
+    91D5F94C ldr    r3, [sb]
+    @0x91D5F9D0 (r3)
+    91D5F9E0 ldr    r2, [r3]
+    91D5F9EC ldr    r3, [r3]
+    @0x91D5FA10 (r3)
+    91D5FA20 ldr    r2, [r3]
+    91D5FA2C ldr    r3, [r3]
+    @0x91D5FA4C (r4)
+    91D5FA5C ldr    r3, [r4]
+    @0x91D5FACC (r5)
+    91D5FAE0 ldr    r3, [r5]
+    @0x91D5FBC4 (r3)
+    91D5FBD8 ldr    r3, [r3]
+    @0x91D60128 (r6)
+    @0x91D602D8 (r3)
+    91D602E8 ldr    r2, [r3]
+    91D602F4 ldr    r3, [r3]
+    @0x91D6031C (r4)
+    91D6032C ldr    r3, [r4]
+    @0x91D6036C (r4)
+    91D6037C ldr    r3, [r4]
+    @0x91D60500 (r4)
+    91D60514 ldr    ip, [r4]
+    @0x91D60594 (r4)
+    91D605A8 ldr    ip, [r4]
+    @0x91D60634 (r4)
+    91D60648 ldr    ip, [r4]
+    @0x91D6073C (r3)
+    91D6074C ldr    ip, [r3]
+    91D60758 ldr    r3, [r3]
+    @0x91D6077C (r3)
+    91D6078C ldr    r2, [r3]
+    91D60798 ldr    r3, [r3]
+    @0x91D607BC (r3)
+    91D607CC ldr    r2, [r3]
+    91D607D8 ldr    r3, [r3]
+    @0x91D60800 (r5)
+    91D60814 ldr    r3, [r5]
+    @0x91D60914 (r3)
+    91D60924 ldr    r2, [r3]
+    91D60930 ldr    r3, [r3]
+    @0x91D60AA8 (r8)
+    91D60AC4 ldr    r3, [r8]
+    @0x91D60CE4 (r4)
+    91D60CF8 ldr    ip, [r4]
+    @0x91D60DB4 (r4)
+    91D60DC8 ldr    r2, [r4]
+    @0x91D611A4 (r6)
+    91D611B4 ldr    r3, [r6]
+    @0x91D6128C (r7)
+    91D612A0 ldr    r3, [r7]
+    @0x91D61418 (r4)
+    91D61428 ldr    ip, [r4]
+    @0x91D615B4 (r6)
+    91D615C8 ldr    ip, [r6]
+    @0x91D62C10 (r5)
+    91D62C20 ldr    r3, [r5]
+    @0x91D62CAC (r5)
+    91D62CC0 ldr    r3, [r5]
+    @0x91D62D54 (r7)
+    91D62D64 ldr    r3, [r7]
+    @0x91D62E18 (r4)
+    91D62E2C ldr    r2, [r4]
+    @0x91D62F34 (r1)
+    91D62F40 ldr    r2, [r1]
+    @0x91D62FE8 (r5)
+    91D62FFC ldr    r3, [r5]
+    @0x91D63168 (sl)
+    91D6317C ldr    r1, [sl]
+    @0x91D63CE4 (r5)
+    91D63CF8 ldr    r2, [r5]
+    @0x91D63DE0 (r4)
+    91D63DF8 ldr    r1, [r4]
+    @0x91D6441C (r4)
+    91D64430 ldr    fp, [r4]
+    @0x91D652B8 (r7)
+    91D652CC ldr    r3, [r7]
+    @0x91D65444 (r3)
+    91D65454 ldr    r2, [r3]
+    @0x91D65480 (r3)
+    91D6548C ldr    r2, [r3]
+    @0x91D654F0 (r4)
+    91D65504 ldr    r2, [r4]
+    @0x91D65548 (r5)
+    91D65558 ldr    r3, [r5]
+    @0x91D655EC (r4)
+    91D655FC ldr    r3, [r4]
+    @0x91D6567C (r3)
+    91D6568C ldr    r2, [r3]
+    91D65698 ldr    r3, [r3]
+    @0x91D656C0 (r5)
+    91D656D4 ldr    r3, [r5]
+    @0x91D65754 (r4)
+    91D65768 ldr    r3, [r4]
+    @0x91D657D4 (sl)
+    91D657E8 ldr    r3, [sl]
+    @0x91D658EC (r4)
+    91D658FC ldr    r3, [r4]
+    @0x91D65960 (r4)
+    91D65974 ldr    r3, [r4]
+    @0x91D659C0 (r4)
+    91D659D4 ldr    r2, [r4]
+    @0x91D65A3C (r8)
+    91D65A50 ldr    r3, [r8]
+    @0x91D65B6C (r6)
+    91D65B80 ldr    r3, [r6]
+    @0x91D65C0C (r4)
+    91D65C20 ldr    ip, [r4]
+    @0x91D65CB0 (r3)
+    91D65CC4 ldr    r2, [r3]
+    @0x91D65DCC (r4)
+    91D65DE0 ldr    r3, [r4]
+    @0x91D65E9C (r3)
+    91D65EAC ldr    r2, [r3]
+    @0x91D65F04 (r3)
+    91D65F14 ldr    r2, [r3]
+    @0x91D65F64 (r4)
+    91D65F78 ldr    r3, [r4]
+    @0x91D6600C (r5)
+    91D6601C ldr    ip, [r5]
+    @0x91D660B8 (r4)
+    91D660CC ldr    ip, [r4]
+    @0x91D6655C (r4)
+    91D66570 ldr    r3, [r4]
+    @0x91D666C4 (r4)
+    91D666D8 ldr    r3, [r4]
+    @0x91D66758 (r6)
+    91D6676C ldr    r3, [r6]
+    @0x91D667B8 (r4)
+    91D667CC ldr    r3, [r4]
+    @0x91D66818 (r4)
+    91D66828 ldr    r3, [r4]
+    @0x91D66898 (r4)
+    91D668AC ldr    r3, [r4]
+    @0x91D66AF8 (r4)
+    91D66B0C ldr    ip, [r4]
+    @0x91D66C08 (r5)
+    91D66C1C ldr    r3, [r5]
+    @0x91D66EB0 (ip)
+    91D66EC0 ldr    r2, [ip]
+    @0x91D6702C (r6)
+    91D6703C ldr    r3, [r6]
+    @0x91D67A88 (r5)
+    91D67A9C ldr    r3, [r5]
+    @0x91D67E0C (r8)
+    91D67E20 ldr    r3, [r8]
+    @0x91D68078 (sb)
+    91D6808C ldr    r3, [sb]
+    @0x91D68178 (r6)
+    91D6818C ldr    r3, [r6]
+    @0x91D683F8 (r4)
+    91D6840C ldr    r1, [r4]
+    @0x91D68568 (sb)
+    91D6857C ldr    r2, [sb]
+    @0x91D68664 (r5)
+    91D68678 ldr    r8, [r5]
+    @0x91D6885C (r4)
+    91D68870 ldr    r3, [r4]
+    @0x91D68A44 (r4)
+    91D68A58 ldr    r3, [r4]
+    @0x91D68B38 (r5)
+    91D68B4C ldr    r3, [r5]
+    @0x91D68C50 (r5)
+    91D68C64 ldr    r3, [r5]
+    @0x91D68DBC (r4)
+    91D68DD0 ldr    ip, [r4]
+    @0x91D68E6C (r4)
+    91D68E80 ldr    r3, [r4]
+    @0x91D68EF4 (r4)
+    91D68F04 ldr    r3, [r4]
+    @0x91D68F70 (r6)
+    91D68F84 ldr    r2, [r6]
+    @0x91D6908C (r6)
+    91D690A0 ldr    r2, [r6]
+    @0x91D691CC (r5)
+    91D691DC ldr    r3, [r5]
+    @0x91D6927C (r5)
+    91D6928C ldr    r3, [r5]
+    @0x91D69370 (r3)
+    91D69380 ldr    ip, [r3]
+    @0x91D693B4 (r4)
+    91D693C8 ldr    ip, [r4]
+    @0x91D69430 (r4)
+    91D69444 ldr    ip, [r4]
+    @0x91D694B4 (r4)
+    91D694C4 ldr    r3, [r4]
+    @0x91D6952C (r4)
+    91D69540 ldr    ip, [r4]
+    @0x91D6960C (r4)
+    91D69620 ldr    ip, [r4]
+    @0x91D696D4 (r3)
+    91D696E4 ldr    r2, [r3]
+    91D696F0 ldr    r3, [r3]
+    @0x91D69710 (r4)
+    91D6971C ldr    r3, [r4]
+    91D6972C ldr    r3, [r4]
+    @0x91D69750 (r4)
+    91D69764 ldr    ip, [r4]
+    @0x91D697D8 (r4)
+    91D697EC ldr    r2, [r4]
+    @0x91D69890 (r7)
+    91D698A4 ldr    r2, [r7]
+    @0x91D699F4 (r5)
+    91D69A08 ldr    r2, [r5]
+    @0x91D69ABC (r4)
+    91D69AD0 ldr    r2, [r4]
+    @0x91D69B74 (r5)
+    91D69B88 ldr    r2, [r5]
+    @0x91D69C3C (r4)
+    91D69C50 ldr    r2, [r4]
+    @0x91D69CE8 (r3)
+    91D69CF8 ldr    r2, [r3]
+    91D69D04 ldr    r3, [r3]
+    @0x91D69D20 (r4)
+    91D69D34 ldr    r3, [r4]
+    @0x91D69DA8 (r4)
+    91D69DBC ldr    r2, [r4]
+    @0x91D69E18 (fp)
+    91D69E2C ldr    r3, [fp]
+    @0x91D69F14 (r5)
+    91D69F28 ldr    r3, [r5]
+    @0x91D6A068 (r5)
+    91D6A07C ldr    r2, [r5]
+    @0x91D6A130 (r5)
+    91D6A144 ldr    r2, [r5]
+    @0x91D6A21C (r4)
+    91D6A230 ldr    ip, [r4]
+    @0x91D6A2E4 (r4)
+    91D6A2F4 ldr    r3, [r4]
+    @0x91D6A348 (r3)
+    91D6A358 ldr    ip, [r3]
+    @0x91D6A388 (r3)
+    91D6A398 ldr    ip, [r3]
+    @0x91D6A3C8 (r3)
+    91D6A3D8 ldr    r2, [r3]
+    @0x91D6A404 (r3)
+    91D6A414 ldr    r2, [r3]
+    91D6A420 ldr    r3, [r3]
+    @0x91D6A440 (r5)
+    91D6A454 ldr    r3, [r5]
+    @0x91D6A490 (r3)
+    91D6A4A0 ldr    r2, [r3]
+    91D6A4B0 ldr    r3, [r3]
+    @0x91D6A4D4 (r3)
+    91D6A4E4 ldr    ip, [r3]
+    91D6A4F0 ldr    r3, [r3]
+    @0x91D6A510 (r3)
+    91D6A520 ldr    r2, [r3]
+    91D6A52C ldr    r3, [r3]
+    @0x91D6A54C (r3)
+    91D6A55C ldr    r2, [r3]
+    @0x91D6A588 (r3)
+    91D6A598 ldr    r2, [r3]
+    91D6A5A4 ldr    r3, [r3]
+    @0x91D6A5C8 (r4)
+    91D6A5D8 ldr    r3, [r4]
+    @0x91D6A640 (r5)
+    91D6A654 ldr    r1, [r5]
+    @0x91D6A758 (r5)
+    91D6A76C ldr    r3, [r5]
+    @0x91D6A7F4 (r3)
+    91D6A804 ldr    r2, [r3]
+    91D6A810 ldr    r3, [r3]
+    @0x91D6A838 (r4)
+    91D6A84C ldr    ip, [r4]
+    @0x91D6A894 (r4)
+    91D6A8A8 ldr    r3, [r4]
+    @0x91D6A90C (r4)
+    91D6A91C ldr    r3, [r4]
+    @0x91D6A9C8 (r4)
+    91D6A9D8 ldr    r3, [r4]
+    @0x91D6AA60 (r4)
+    91D6AA70 ldr    ip, [r4]
+    @0x91D6ABB4 (r6)
+    91D6ABC8 ldr    r1, [r6]
+    @0x91D6AC98 (r5)
+    91D6ACA8 ldr    r3, [r5]
+    @0x91D6AD1C (r5)
+    91D6AD30 ldr    r3, [r5]
+    @0x91D6AE68 (r7)
+    91D6AE78 ldr    r3, [r7]
+    @0x91D6AF18 (r6)
+    91D6AF34 ldr    r3, [r6]
+    @0x91D6B138 (r5)
+    91D6B14C ldr    r3, [r5]
+    @0x91D6B2E0 (r4)
+    91D6B2F4 ldr    r3, [r4]
+    @0x91D6B34C (sb)
+    91D6B360 ldr    r3, [sb]
+    @0x91D6B3D0 (r3)
+    91D6B3E0 ldr    r2, [r3]
+    @0x91D6B410 (r5)
+    91D6B424 ldr    r3, [r5]
+    @0x91D6C0F8 (r6)
+    91D6C10C ldr    r3, [r6]
+    @0x91D6C3AC (r4)
+    91D6C3C0 ldr    ip, [r4]
+    @0x91D6C434 (r3)
+    91D6C444 ldr    r0, [r3]
+    @0x91D6C480 (r3)
+    91D6C490 ldr    r1, [r3]
+    91D6C4A0 ldr    r3, [r3]
+    @0x91D6C4D0 (r4)
+    91D6C4E0 ldr    r1, [r4]
+    @0x91D6C530 (r3)
+    91D6C550 ldr    r4, [r3]
+    @0x91D6C5AC (r4)
+    91D6C5BC ldr    r2, [r4]
+    @0x91D6C644 (r4)
+    91D6C658 ldr    r2, [r4]
+    @0x91D6C72C (r4)
+    91D6C740 ldr    r2, [r4]
+    @0x91D6C81C (r4)
+    91D6C830 ldr    r2, [r4]
+    @0x91D6CA48 (r4)
+    91D6CA58 ldr    ip, [r4]
+    @0x91D6CA8C (r4)
+    91D6CA9C ldr    r3, [r4]
+    @0x91D6CB68 (r8)
+    91D6CB78 ldr    r2, [r8]
+    @0x91D6CF38 (r5)
+    91D6CF48 ldr    r3, [r5]
+    @0x91D6D130 (r3)
+    91D6D140 ldr    r2, [r3]
+    91D6D14C ldr    r3, [r3]
+    @0x91D6D174 (r4)
+    91D6D184 ldr    r3, [r4]
+    @0x91D6D1E8 (r4)
+    91D6D204 ldr    r2, [r4]
+    @0x91D6D29C (r4)
+    91D6D2B0 ldr    r2, [r4]
+    @0x91D6D318 (r3)
+    91D6D328 ldr    r2, [r3]
+    91D6D334 ldr    r3, [r3]
+    @0x91D6D354 (r4)
+    91D6D368 ldr    r3, [r4]
+    @0x91D6D3C4 (r8)
+    91D6D3D4 ldr    r3, [r8]
+    @0x91D6D498 (r4)
+    91D6D4AC ldr    r3, [r4]
+    @0x91D6D554 (r3)
+    91D6D564 ldr    r2, [r3]
+    @0x91D6D5DC (r4)
+    91D6D5F0 ldr    r2, [r4]
+    @0x91D6D680 (ip)
+    91D6D690 ldr    r4, [ip]
+    @0x91D6D6D8 (r3)
+    91D6D6E8 ldr    r2, [r3]
+    @0x91D6D718 (r3)
+    91D6D728 ldr    r2, [r3]
+    91D6D734 ldr    r3, [r3]
+    @0x91D6D758 (r4)
+    91D6D76C ldr    ip, [r4]
+    @0x91D6D824 (r3)
+    91D6D834 ldr    r2, [r3]
+    91D6D840 ldr    r3, [r3]
+    @0x91D6D860 (r3)
+    91D6D870 ldr    r2, [r3]
+    91D6D87C ldr    r3, [r3]
+    @0x91D6D8A0 (r3)
+    91D6D8B0 ldr    r2, [r3]
+    91D6D8BC ldr    r3, [r3]
+    @0x91D6D8E0 (r4)
+    91D6D8F4 ldr    r3, [r4]
+    @0x91D6D97C (r4)
+    91D6D990 ldr    r3, [r4]
+    @0x91D6DA00 (r4)
+    91D6DA14 ldr    ip, [r4]
+    @0x91D6DA68 (r4)
+    91D6DA7C ldr    r2, [r4]
+    @0x91D6DB24 (r4)
+    91D6DB38 ldr    r3, [r4]
+    @0x91D6DB9C (r4)
+    91D6DBB0 ldr    ip, [r4]
+    @0x91D6DC4C (r4)
+    91D6DC60 ldr    r3, [r4]
+    @0x91D6DCC4 (r3)
+    91D6DCD4 ldr    ip, [r3]
+    91D6DCE0 ldr    r3, [r3]
+    @0x91D6DD04 (r3)
+    91D6DD14 ldr    r2, [r3]
+    91D6DD20 ldr    r3, [r3]
+    @0x91D6DD44 (r3)
+    91D6DD54 ldr    ip, [r3]
+    91D6DD60 ldr    r3, [r3]
+    @0x91D6DD84 (r3)
+    91D6DD94 ldr    r2, [r3]
+    91D6DDA0 ldr    r3, [r3]
+    @0x91D6DDC4 (r3)
+    91D6DDD4 ldr    r1, [r3]
+    @0x91D6DE10 (r4)
+    91D6DE24 ldr    r3, [r4]
+    @0x91D6DE7C (r6)
+    91D6DE90 ldr    r3, [r6]
+    @0x91D6EFC0 (r5)
+    91D6EFD0 ldr    r3, [r5]
+    @0x91D6F2DC (r3)
+    91D6F2EC ldr    r2, [r3]
+    @0x91D6F31C (r5)
+    91D6F330 ldr    r3, [r5]
+    @0x91D6F46C (r3)
+    91D6F47C ldr    r2, [r3]
+    91D6F488 ldr    r3, [r3]
+    @0x91D6F4AC (r5)
+    91D6F4BC ldr    r3, [r5]
+    @0x91D6F608 (r4)
+    91D6F61C ldr    ip, [r4]
+    @0x91D6F668 (r4)
+    91D6F678 ldr    r3, [r4]
+    @0x91D6F6B8 (r4)
+    91D6F6C8 ldr    lr, [r4]
+    @0x91D6F700 (r4)
+    91D6F710 ldr    lr, [r4]
+    @0x91D6F744 (r4)
+    91D6F754 ldr    ip, [r4]
+    @0x91D6F7E4 (r4)
+    91D6F7F8 ldr    r3, [r4]
+    @0x91D6F87C (r4)
+    91D6F890 ldr    ip, [r4]
+    @0x91D6F93C (r5)
+    91D6F94C ldr    lr, [r5]
+    @0x91D6FAD8 (r4)
+    91D6FAEC ldr    r3, [r4]
+    @0x91D6FB20 (r6)
+    91D6FB30 ldr    lr, [r6]
+    @0x91D6FC7C (r4)
+    91D6FC8C ldr    lr, [r4]
+    @0x91D6FEF0 (r4)
+    91D6FF00 ldr    ip, [r4]
+    @0x91D702B0 (r4)
+    91D702C0 ldr    lr, [r4]
+    @0x91D70344 (r4)
+    91D70358 ldr    lr, [r4]
+    @0x91D70420 (r4)
+    91D7042C ldr    r1, [r4]
+    @0x91D7058C (r4)
+    91D705A0 ldr    ip, [r4]
+    @0x91D70618 (r6)
+    91D7062C ldr    r3, [r6]
+    @0x91D708EC (r5)
+    91D70900 ldr    r3, [r5]
+    @0x91D70970 (r6)
+    91D70984 ldr    r1, [r6]
+    @0x91D70AB0 (r5)
+    91D70AC4 ldr    r3, [r5]
+    @0x91D70B60 (r4)
+    91D70B70 ldr    r3, [r4]
+    @0x91D70D80 (r4)
+    91D70D94 ldr    ip, [r4]
+    @0x91D70E0C (r5)
+    91D70E20 ldr    r3, [r5]
+    @0x91D70ECC (r3)
+    91D70EDC ldr    r2, [r3]
+    91D70EE8 ldr    r3, [r3]
+    @0x91D70F0C (r5)
+    91D70F20 ldr    r3, [r5]
+    @0x91D70FFC (r6)
+    91D71014 ldr    r2, [r6]
+    @0x91D710A8 (r3)
+    91D710B8 ldr    r2, [r3]
+    91D710C4 ldr    r3, [r3]
+    @0x91D710E4 (r3)
+    91D710F4 ldr    r2, [r3]
+    @0x91D71154 (r4)
+    91D71164 ldr    r3, [r4]
+    @0x91D711C0 (r7)
+    91D711D4 ldr    r3, [r7]
+    @0x91D71250 (r3)
+    91D71260 ldr    r2, [r3]
+    @0x91D71290 (r3)
+    91D712A4 ldr    ip, [r3]
+    @0x91D712FC (r3)
+    91D71314 ldr    r4, [r3]
+    @0x91D7136C (r3)
+    91D7137C ldr    r2, [r3]
+    @0x91D717DC (r4)
+    91D717F0 ldr    ip, [r4]
+    @0x91D7182C (r4)
+    91D7183C ldr    r3, [r4]
+    @0x91D718B0 (r5)
+    91D718C4 ldr    r3, [r5]
+    @0x91D71920 (r3)
+    91D71930 ldr    r2, [r3]
+    91D7193C ldr    r3, [r3]
+    @0x91D71960 (r3)
+    91D71970 ldr    r2, [r3]
+    91D7197C ldr    r3, [r3]
+    @0x91D719A4 (r4)
+    91D719B8 ldr    r3, [r4]
+    @0x91D71A08 (r3)
+    91D71A18 ldr    r2, [r3]
+    91D71A24 ldr    r3, [r3]
+    @0x91D71A48 (r3)
+    91D71A58 ldr    r2, [r3]
+    91D71A64 ldr    r3, [r3]
+    @0x91D71A88 (r3)
+    91D71A98 ldr    r2, [r3]
+    91D71AA4 ldr    r3, [r3]
+    @0x91D73280 (r3)
+    91D73290 ldr    ip, [r3]
+    91D7329C ldr    r3, [r3]
+    @0x91D732BC (r3)
+    91D732CC ldr    r2, [r3]
+    91D732D8 ldr    r3, [r3]
+    @0x91D732FC (r6)
+    91D73310 ldr    ip, [r6]
+    @0x91D73664 (r4)
+    91D73674 ldr    r6, [r4]
+    @0x91D73D50 (r1)
+    91D73D60 ldr    r3, [r1]
+    @0x91D73E14 (r3)
+    91D73E24 ldr    r2, [r3]
+    @0x91D73E90 (r6)
+    91D73EA4 ldr    r3, [r6]
+    @0x91D73F5C (r5)
+    91D73F70 ldr    r0, [r5]
+    @0x91D74068 (r8)
+    91D74078 ldr    r3, [r8]
+    @0x91D75384 (r5)
+    91D75394 ldr    r3, [r5]
+    @0x91D75A10 (r3)
+    91D75A20 ldr    ip, [r3]
+    91D75A2C ldr    r3, [r3]
+    @0x91D75A4C (r3)
+    91D75A5C ldr    r2, [r3]
+    91D75A68 ldr    r3, [r3]
+    @0x91D75A8C (r5)
+    91D75AA0 ldr    ip, [r5]
+    @0x91D75BF0 (r3)
+    91D75C04 ldr    r2, [r3]
+
+=== 0x91D0A4E4 (called with r4 mid-loop) ===
+  91D0A4E4  push     {r4, r5, r6, r7, lr}
+  91D0A4E8  movw     r4, #0x57dc
+  91D0A4EC  movt     r4, #0x9201
+  91D0A4F0  sub      sp, sp, #0xc
+  91D0A4F4  mov      r5, r0
+  91D0A4F8  mvn      r6, #0
+  91D0A4FC  ldr      r3, [r4]
+  91D0A500  mvn      r7, #0x7f0000
+  91D0A504  str      r3, [sp, #4]
+  91D0A508  bl       #0x91d08938
+  91D0A50C  movw     r3, #0x272c
+  91D0A510  movt     r3, #0x9200
+  91D0A514  mov      r2, #0x98
+  91D0A518  ldr      ip, [sp, #4]
+  91D0A51C  ldr      r3, [r3, r5, lsl #2]
+  91D0A520  mov      r5, #0x800000
+  91D0A524  ldr      r1, [r4]
+  91D0A528  mov      r4, #0
+  91D0A52C  cmp      ip, r1
+  91D0A530  mla      r0, r2, r3, r0
+  91D0A534  ldrd     r2, r3, [r0, #0x40]
+  91D0A538  and      r2, r2, r6
+  91D0A53C  and      r3, r3, r7
+
+=== 0x91D0A894 (called before cmn r4,#1) ===
+  91D0A894  movw     r3, #0x2734
+  91D0A898  movt     r3, #0x9200
+  91D0A89C  push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+  91D0A8A0  movw     r1, #0x57dc
+  91D0A8A4  sub      sp, sp, #0x3c
+  91D0A8A8  movt     r1, #0x9201
+  91D0A8AC  ldr      sb, [r3]
+  91D0A8B0  str      r3, [sp, #0x28]
+  91D0A8B4  ldr      r3, [r1]
+  91D0A8B8  cmp      sb, r0
+  91D0A8BC  str      r1, [sp, #0x24]
+  91D0A8C0  str      r0, [sp, #8]
+  91D0A8C4  str      r3, [sp, #0x34]
+  91D0A8C8  beq      #0x91d0a9f4
+  91D0A8CC  cmn      r0, #1
+  91D0A8D0  beq      #0x91d0a9e8
+  91D0A8D4  bl       #0x91d088f8
+  91D0A8D8  mov      r6, r0
+  91D0A8DC  bl       #0x91d08938
+  91D0A8E0  cmp      r6, #0
+  91D0A8E4  str      r0, [sp, #0x20]
+  91D0A8E8  beq      #0x91d0a9e0
+  91D0A8EC  ldr      r3, [sp, #0x20]
+  91D0A8F0  movw     r7, #0xdd7c
+  91D0A8F4  movt     r7, #0x91d9
+  91D0A8F8  add      r3, r3, #0xe0
+  91D0A8FC  str      r3, [sp, #0x1c]
+  91D0A900  mov      r3, #1
+  91D0A904  str      r3, [sp, #0x14]
+  91D0A908  ldr      r3, [sp, #8]
+  91D0A90C  ldr      r5, [r7, r3, lsl #2]
+
+=== 0x91D0AD64 (r4 = its ret) ===
+  91D0AD64  push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+  91D0AD68  movw     r4, #0x57dc
+  91D0AD6C  movt     r4, #0x9201
+  91D0AD70  sub      sp, sp, #0x24
+  91D0AD74  mov      sb, lr
+  91D0AD78  ldr      r3, [r4]
+  91D0AD7C  str      r3, [sp, #0x1c]
+  91D0AD80  bl       #0x91d08938
+  91D0AD84  mov      r5, r0
+  91D0AD88  bl       #0x91d0a740
+  91D0AD8C  cmn      r0, #1
+  91D0AD90  mov      r6, r0
+  91D0AD94  beq      #0x91d0ae34
+  91D0AD98  movw     r7, #0x272c
+  91D0AD9C  movt     r7, #0x9200
+  91D0ADA0  mov      r8, #0x98
+  91D0ADA4  mov      r2, #0
+  91D0ADA8  ldr      r1, [r7, r0, lsl #2]
+  91D0ADAC  mov      r3, #0x400000
+  91D0ADB0  mla      r1, r8, r1, r5
+  91D0ADB4  ldrd     sl, fp, [r1, #0x40]
+  91D0ADB8  and      r2, r2, sl
+  91D0ADBC  and      r3, r3, fp
+  91D0ADC0  strd     sl, fp, [sp, #8]
+  91D0ADC4  orrs     fp, r2, r3
+  91D0ADC8  bne      #0x91d0ae34
+  91D0ADCC  ldrd     sl, fp, [sp, #8]
+  91D0ADD0  mov      r3, #0x380000
+  91D0ADD4  and      r3, r3, fp
+  91D0ADD8  mov      fp, #0
+  91D0ADDC  lsr      sl, r3, #0x13
+  91D0ADE0  orrs     ip, sl, fp
+  91D0ADE4  beq      #0x91d0ae50
+  91D0ADE8  movw     r0, #0x273c
+  91D0ADEC  movt     r0, #0x9200
+  91D0ADF0  subs     r8, sl, #1
+  91D0ADF4  str      fp, [sp]
+  91D0ADF8  lsl      r3, r8, #0x13
+  91D0ADFC  ldr      ip, [r0]
+  91D0AE00  str      r3, [sp, #4]
+  91D0AE04  mvn      r8, #0
+  91D0AE08  ldrd     r2, r3, [sp, #8]
+  91D0AE0C  cmp      ip, #0
+  91D0AE10  mvn      sb, #0x380000
+  91D0AE14  and      r8, r8, r2
+  91D0AE18  and      sb, sb, r3
+  91D0AE1C  ldrd     r2, r3, [sp]
+  91D0AE20  orr      r3, r3, sb
+  91D0AE24  orr      r2, r2, r8
+  91D0AE28  strd     r2, r3, [r1, #0x40]
+  91D0AE2C  moveq    r3, #1
+  91D0AE30  streq    r3, [r0]
+  91D0AE34  ldr      r2, [sp, #0x1c]
+  91D0AE38  mov      r0, r6
+  91D0AE3C  ldr      r3, [r4]
+  91D0AE40  cmp      r2, r3
+  91D0AE44  bne      #0x91d0aed0
+  91D0AE48  add      sp, sp, #0x24
+  91D0AE4C  pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc}
+  91D0AE50  bl       #0x91d0a4e4
+  91D0AE54  ldr      r1, [r7]
+  91D0AE58  mov      r3, #0x800000
+  91D0AE5C  mla      r1, r8, r1, r5
+  91D0AE60  ldrd     r0, r1, [r1, #0x40]
+  91D0AE64  and      r1, r1, r3
+  91D0AE68  mov      r3, fp
+  91D0AE6C  lsr      r2, r1, #0x17
+  91D0AE70  orrs     ip, r2, r3
+  91D0AE74  moveq    r1, fp
+  91D0AE78  beq      #0x91d0aea4
+  91D0AE7C  ldr      r1, [r7, #4]
+  91D0AE80  mov      r3, #0x800000
+  91D0AE84  mla      r5, r8, r1, r5
+  91D0AE88  ldrd     r0, r1, [r5, #0x40]
+  91D0AE8C  and      r1, r1, r3
+  91D0AE90  mov      r3, fp
+  91D0AE94  lsr      r2, r1, #0x17
+  91D0AE98  orrs     r5, r2, r3
+  91D0AE9C  moveq    r1, #1
+  91D0AEA0  bne      #0x91d0aeb8
+  91D0AEA4  mov      r0, r6
+  91D0AEA8  bl       #0x91d0aca8
+  91D0AEAC  mov      r0, #0
+  91D0AEB0  bl       #0x91d3537c
+  91D0AEB4  b        #0x91d0ae34
+  91D0AEB8  mov      r0, sb
+  91D0AEBC  movw     r1, #0x9ff8
+  91D0AEC0  movt     r1, #0x91d7
+  91D0AEC4  bl       #0x91d5163c
+  91D0AEC8  mov      r1, fp
+  91D0AECC  b        #0x91d0aea4
+  91D0AED0  bl       #0x91d516c4
+
+=== 0x91D0AF10 (canary-mismatch path of 0x91D0AED4) ===
+  91D0AF10  bl       #0x91d516c4
+  91D0AF14  push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+  91D0AF18  movw     r3, #0x57dc
+  91D0AF1C  sub      sp, sp, #0x1c
+  91D0AF20  movt     r3, #0x9201
+  91D0AF24  mov      sl, r1
+  91D0AF28  mov      sb, r0
+  91D0AF2C  str      r3, [sp, #0xc]
+  91D0AF30  ldr      r3, [r3]
+  91D0AF34  str      r2, [sp, #4]
+  91D0AF38  str      r3, [sp, #0x14]
+  91D0AF3C  bl       #0x91d08938
+  91D0AF40  mov      r4, r0
+  91D0AF44  bl       #0x91d088f8
+  91D0AF48  cmp      r0, #0
+  91D0AF4C  str      r0, [sp, #8]
+
+=== loop exits region 0x91D41414..0x91D41440 ===
+  91D41414  bl       #0x91d43730
+  91D41418  bl       #0x91d3d27c
+  91D4141C  movw     r0, #0x56e4 <<<
+  91D41420  movt     r0, #0x91d8
+  91D41424  bl       #0x91d51508
+  91D41428  b        #0x91d411b8
+  91D4142C  movw     r7, #0x7db0
+  91D41430  movt     r7, #0x9200
+  91D41434  mov      r3, #1
+  91D41438  str      r3, [r7]
+  91D4143C  b        #0x91d41108
+
+=== xrefs into key loop addresses ===
+  target 0x91D412AC <- 0x91D412E4, 0x91D412F8
+  target 0x91D412C8 <- (fallthrough only)
+  target 0x91D4141C <- 0x91D412B8, 0x91D412C4, 0x91D412D0
+  target 0x91D41414 <- 0x91D4129C
+  target 0x91D411B8 <- 0x91D41184, 0x91D412FC, 0x91D4140C, 0x91D41428, 0x91D414E8
+
+=== callers of 0x91D0AED4 / 0x91D0A894 / 0x91D0AD64 / 0x91D0A4E4 ===
+  0x91D0AED4 <- 0x91D09D30, 0x91D09E60, 0x91D39DF8, 0x91D3AF3C, 0x91D3C77C, 0x91D3C7DC, 0x91D3CB34, 0x91D3EB68, 0x91D40BC0, 0x91D410F0, 0x91D412C8, 0x91D412DC
+  0x91D0A894 <- 0x91D3EC18, 0x91D412F0, 0x91D413B8
+  0x91D0AD64 <- 0x91D412E8
+  0x91D0A4E4 <- 0x91D0AE50, 0x91D412D8
+written work\round3_loop_part2.txt

@@ -1,0 +1,347 @@
+PD1610 8.1 system partition - offline ext4 extraction
+image : D:\16\PD1610_81\backup\81_system_LUN4.bin
+geometry: block=4096 first=0 inodes/group=8080 inode_size=256 gd_size=32
+
+=== / (24 entries, htree=False) ===
+  lost+found                         inode=11     type=2
+  app                                inode=12     type=2
+  bin                                inode=1131   type=2
+  build-in-app                       inode=1515   type=2
+  build.prop                         inode=1518   type=1
+  compatibility_matrix.xml           inode=1519   type=1
+  data                               inode=1520   type=2
+  etc                                inode=1522   type=2
+  fake-libs                          inode=2074   type=2
+  fake-libs64                        inode=2076   type=2
+  fonts                              inode=2078   type=2
+  framework                          inode=2269   type=2
+  lib                                inode=2739   type=2
+  lib64                              inode=3366   type=2
+  manifest.xml                       inode=3983   type=1
+  media                              inode=3984   type=2
+  priv-app                           inode=4112   type=2
+  recovery-from-boot.p               inode=4438   type=1
+  res                                inode=4439   type=2
+  tts                                inode=4521   type=2
+  usr                                inode=4535   type=2
+  vendor                             inode=4665   type=2
+  wwh                                inode=6921   type=1
+  xbin                               inode=6922   type=2
+
+=== /etc (97 entries, htree=False) ===
+  BBKLEGAL.html.gz                         inode=1523   type=1
+  BVE_Call_Module.xml                      inode=1524   type=1
+  Cinfo.conf                               inode=1525   type=1
+  EN_BBKLEGAL.html.gz                      inode=1526   type=1
+  Google_supl_certificate_Geo.cer          inode=1527   type=1
+  M_Liveness_Antispoofing_General_half.model inode=1528   type=1
+  M_Verify_MimicRes_Common_half.model      inode=1529   type=1
+  MotorModeWhitelist.xml                   inode=1530   type=1
+  NOTICE.html.gz                           inode=1531   type=1
+  TelephonyEmergencyNumber.xml             inode=1532   type=1
+  VAPIBlackWhitelist.xml                   inode=1533   type=1
+  VivoVideoBlackWhitelist.xml              inode=1534   type=1
+  ZenModeBlackWhitelist.xml                inode=1535   type=1
+  afs_config.xml                           inode=1536   type=1
+  amapconfig.ini                           inode=1537   type=1
+  apns-conf.xml                            inode=1538   type=1
+  appops_policy.xml                        inode=1539   type=1
+  audio_effects.conf                       inode=1540   type=1
+  autorun.iso                              inode=1541   type=1
+  banyeah                                  inode=1542   type=1
+  bluetooth                                inode=1543   type=2
+  camera                                   inode=1550   type=2
+  cdma_call_conf.xml                       inode=1558   type=1
+  clatd.conf                               inode=1559   type=1
+  cne                                      inode=1560   type=2
+  compiled-classes                         inode=1563   type=1
+  complete_format.sh                       inode=1564   type=1
+  custom_plmn_operator.xml                 inode=1565   type=1
+  data_clear_path.xml                      inode=1566   type=1
+  diag.cfg                                 inode=1567   type=1
+  dirty-image-objects                      inode=1568   type=1
+  dpm                                      inode=1569   type=2
+  em_features.xml                          inode=1573   type=1
+  ethertypes                               inode=1574   type=1
+  event-log-tags                           inode=1575   type=1
+  firmware                                 inode=1576   type=2
+  fonts.xml                                inode=1635   type=1
+  fs_config_dirs                           inode=1636   type=1
+  fs_config_files                          inode=1637   type=1
+  gamedwhitelist.xml                       inode=1638   type=1
+  group                                    inode=1639   type=1
+  hostapd                                  inode=1640   type=2
+  hosts                                    inode=1644   type=1
+  init                                     inode=1645   type=2
+  install_apps.sh                          inode=1684   type=1
+  launcher                                 inode=1685   type=2
+  ld.config.txt                            inode=1688   type=1
+  listen_platform_info.xml                 inode=1689   type=1
+  lockscreen                               inode=1690   type=2
+  lockscreen_black_panel.png               inode=1692   type=1
+  media_profiles.xml                       inode=1693   type=1
+  media_profiles_V1_0.dtd                  inode=1694   type=1
+  mke2fs.conf                              inode=1695   type=1
+  mkshrc                                   inode=1696   type=1
+  mmi                                      inode=1697   type=2
+  mtconfig.ini                             inode=1766   type=1
+  passwd                                   inode=1767   type=1
+  perf                                     inode=1768   type=2
+  permissions                              inode=1770   type=2
+  powerhint.xml                            inode=1811   type=1
+  ... 37 more
+
+=== /vendor (16 entries, htree=False) ===
+  app                                      inode=4666   type=2
+  bin                                      inode=4720   type=2
+  com.vivo.arcsoft                         inode=5035   type=2
+  compatibility_matrix.xml                 inode=5042   type=1
+  etc                                      inode=5043   type=2
+  firmware                                 inode=5322   type=2
+  framework                                inode=5399   type=2
+  lib                                      inode=5423   type=2
+  lib64                                    inode=6224   type=2
+  manifest.xml                             inode=6669   type=1
+  overlay                                  inode=6670   type=2
+  package                                  inode=6675   type=2
+  radio                                    inode=6845   type=2
+  rfs                                      inode=6848   type=2
+  speccfg                                  inode=6918   type=2
+  ueventd.rc                               inode=6920   type=1
+
+=== /etc/init (38 entries, htree=False) ===
+  android.hidl.allocator@1.0-service.rc          inode=1646   type=1
+  atrace.rc                                      inode=1647   type=1
+  audioserver.rc                                 inode=1648   type=1
+  bootanim.rc                                    inode=1649   type=1
+  bootstat.rc                                    inode=1650   type=1
+  cameraserver.rc                                inode=1651   type=1
+  dpmd.rc                                        inode=1652   type=1
+  drmserver.rc                                   inode=1653   type=1
+  dumpstate.rc                                   inode=1654   type=1
+  gatekeeperd.rc                                 inode=1655   type=1
+  hwservicemanager.rc                            inode=1656   type=1
+  init.qti.fm.rc                                 inode=1657   type=1
+  installd.rc                                    inode=1658   type=1
+  keystore.rc                                    inode=1659   type=1
+  lmkd.rc                                        inode=1660   type=1
+  logd.rc                                        inode=1661   type=1
+  mdnsd.rc                                       inode=1662   type=1
+  mediadrmserver.rc                              inode=1663   type=1
+  mediaextractor.rc                              inode=1664   type=1
+  mediametrics.rc                                inode=1665   type=1
+  mediaserver.rc                                 inode=1666   type=1
+  mtpd.rc                                        inode=1667   type=1
+  netd.rc                                        inode=1668   type=1
+  racoon.rc                                      inode=1669   type=1
+  roundphone.rc                                  inode=1670   type=1
+  servicemanager.rc                              inode=1671   type=1
+  storaged.rc                                    inode=1672   type=1
+  surfaceflinger.rc                              inode=1673   type=1
+  thermalservice.rc                              inode=1674   type=1
+  tombstoned.rc                                  inode=1675   type=1
+  uncrypt.rc                                     inode=1676   type=1
+  vdc.rc                                         inode=1677   type=1
+  vold.rc                                        inode=1678   type=1
+  webview_zygote32.rc                            inode=1679   type=1
+  webview_zygote64.rc                            inode=1680   type=1
+  wfdservice.rc                                  inode=1681   type=1
+  wifi-events.rc                                 inode=1682   type=1
+  wificond.rc                                    inode=1683   type=1
+
+=== /etc/permissions (40 entries, htree=False) ===
+  LteDirectDiscovery.xml                         inode=1771   type=1
+  RemoteSimlock.xml                              inode=1772   type=1
+  android.software.live_wallpaper.xml            inode=1773   type=1
+  android.software.webview.xml                   inode=1774   type=1
+  audiosphere.xml                                inode=1775   type=1
+  btmultisim.xml                                 inode=1776   type=1
+  cneapiclient.xml                               inode=1777   type=1
+  com.android.location.provider.xml              inode=1778   type=1
+  com.android.media.remotedisplay.xml            inode=1779   type=1
+  com.android.mediadrm.signer.xml                inode=1780   type=1
+  com.google.android.maps.xml                    inode=1781   type=1
+  com.qrd.wappush.xml                            inode=1782   type=1
+  com.qti.dpmframework.xml                       inode=1783   type=1
+  com.qti.location.sdk.xml                       inode=1784   type=1
+  com.qti.snapdragon.sdk.display.xml             inode=1785   type=1
+  com.qualcomm.location.xml                      inode=1786   type=1
+  com.qualcomm.qmapbridge.xml                    inode=1787   type=1
+  com.qualcomm.qti.imscmservice.xml              inode=1788   type=1
+  com.qualcomm.qti.imscmservice_1_1.xml          inode=1789   type=1
+  com.quicinc.cne.xml                            inode=1790   type=1
+  com.wapi.wapicertstore.xml                     inode=1791   type=1
+  dpmapi.xml                                     inode=1792   type=1
+  embms.xml                                      inode=1793   type=1
+  handheld_core_hardware.xml                     inode=1794   type=1
+  izat.xt.srv.xml                                inode=1795   type=1
+  lpa.xml                                        inode=1796   type=1
+  platform.xml                                   inode=1797   type=1
+  privapp-permissions-com.qualcomm.location.xml  inode=1798   type=1
+  privapp-permissions-platform.xml               inode=1799   type=1
+  privapp-permissions-qti.xml                    inode=1800   type=1
+  qcom_logkit.xml                                inode=1801   type=1
+  qcrilhook.xml                                  inode=1802   type=1
+  qti-vzw-ims-internal.xml                       inode=1803   type=1
+  qti_libpermissions.xml                         inode=1804   type=1
+  qti_permissions.xml                            inode=1805   type=1
+  rcs_service_aidl.xml                           inode=1806   type=1
+  rcs_service_api.xml                            inode=1807   type=1
+  softsimclient.xml                              inode=1808   type=1
+  telephonyservice.xml                           inode=1809   type=1
+  vendor-qti-hardware-alarm.xml                  inode=1810   type=1
+
+=== /vendor/etc (76 entries, htree=False) ===
+  IPACM_cfg.xml                                  inode=5044   type=1
+  a2dp_audio_policy_configuration.xml            inode=5045   type=1
+  acdbdata                                       inode=5046   type=2
+  analysis_rule.xml                              inode=5089   type=1
+  apdr.conf                                      inode=5090   type=1
+  audio                                          inode=5091   type=2
+  audio_effects.conf                             inode=5093   type=1
+  audio_output_policy.conf                       inode=5094   type=1
+  audio_platform_info.PD1610.xml                 inode=5095   type=1
+  audio_platform_info.xml                        inode=5096   type=1
+  audio_platform_info_i2s.xml                    inode=5097   type=1
+  audio_policy.conf                              inode=5098   type=1
+  audio_policy_configuration                     inode=5099   type=2
+  audio_policy_configuration.xml                 inode=5103   type=1
+  audio_policy_volumes.xml                       inode=5104   type=1
+  audio_tuning_mixer.txt                         inode=5105   type=1
+  cacert_location.pem                            inode=5106   type=1
+  cne                                            inode=5107   type=2
+  data                                           inode=5139   type=2
+  default_volume_tables.xml                      inode=5142   type=1
+  drc                                            inode=5143   type=2
+  firmware                                       inode=5146   type=2
+  flp.conf                                       inode=5151   type=1
+  fstab.qcom                                     inode=5152   type=1
+  ftm-mixerpath.PD1610.xml                       inode=5153   type=1
+  ftm_test_config                                inode=5154   type=1
+  ftm_test_config_msm8996-dtp-tasha-snd-card     inode=5155   type=1
+  gps.conf                                       inode=5156   type=1
+  init                                           inode=5157   type=2
+  izat.conf                                      inode=5203   type=1
+  lowi.conf                                      inode=5204   type=1
+  media_codecs.xml                               inode=5205   type=1
+  media_codecs_google_audio.xml                  inode=5206   type=1
+  media_codecs_google_telephony.xml              inode=5207   type=1
+  media_codecs_google_video.xml                  inode=5208   type=1
+  media_codecs_google_video_le.xml               inode=5209   type=1
+  media_codecs_performance.xml                   inode=5210   type=1
+  media_codecs_vendor_audio.xml                  inode=5211   type=1
+  media_codecs_vivo_audio.xml                    inode=5212   type=1
+  media_codecs_vivo_video.xml                    inode=5213   type=1
+  media_profiles.xml                             inode=5214   type=1
+  media_profiles_V1_0.xml                        inode=5215   type=1
+  media_profiles_vendor.xml                      inode=5216   type=1
+  mixer_paths.xml                                inode=5217   type=1
+  mixer_paths_dtp.xml                            inode=5218   type=1
+  mixer_paths_i2s.xml                            inode=5219   type=1
+  mixer_paths_tasha.PD1610.xml                   inode=5220   type=1
+  mixer_paths_tasha.xml                          inode=5221   type=1
+  mkshrc                                         inode=5222   type=1
+  msm_irqbalance.conf                            inode=5223   type=1
+  perf                                           inode=5224   type=2
+  permissions                                    inode=5234   type=2
+  public.libraries.txt                           inode=5264   type=1
+  qdcm_calib_data_mdss_dsi_pd1610_SW43404_wqhd_dsc_wqxga_cmd.xml inode=5265   type=1
+  qdcm_calib_data_mdss_dsi_pd1610_s6e3fh4_wqhd_dsc_wqxga_cmd.xml inode=5266   type=1
+  qdcm_calib_data_samsung_WQHD_cmd_mode_dsi_panel.xml inode=5267   type=1
+  qti-logkit                                     inode=5268   type=2
+  qvop                                           inode=5279   type=2
+  qvr                                            inode=5284   type=2
+  r_submix_audio_policy_configuration.xml        inode=5291   type=1
+  ... 16 more
+
+=== extracted files ===
+  /build.prop                                             12374 B  sha=b15ab733ed4e75b2
+  /compatibility_matrix.xml                               74747 B  sha=63a292d290d0f9b2
+  /manifest.xml                                            2946 B  sha=1968877d003054f4
+  /vendor/compatibility_matrix.xml                         1886 B  sha=313fd4b296af88c0
+  /vendor/manifest.xml                                    21609 B  sha=b0978348bacb287f
+  /vendor/ueventd.rc                                      15446 B  sha=250952c6120075bb
+  /etc/init/android.hidl.allocator@1.0-service.rc           117 B  sha=a56e76ce0cb3933d
+  /etc/init/atrace.rc                                      9731 B  sha=f584eab33293f3b8
+  /etc/init/audioserver.rc                                  499 B  sha=19705b54f8f69b19
+  /etc/init/bootanim.rc                                     187 B  sha=99f42407051fc4ba
+  /etc/init/bootstat.rc                                    3981 B  sha=46f55c25fb7a6626
+  /etc/init/cameraserver.rc                                 224 B  sha=f7872d8200b54cf5
+  /etc/init/dpmd.rc                                         225 B  sha=f53a427b2426727a
+  /etc/init/drmserver.rc                                    146 B  sha=451b25385321fe93
+  /etc/init/dumpstate.rc                                    832 B  sha=3202aea47af0a8a5
+  /etc/init/gatekeeperd.rc                                  152 B  sha=59b31eb1590b763c
+  /etc/init/hwservicemanager.rc                             334 B  sha=1135f1685167622d
+  /etc/init/init.qti.fm.rc                                  120 B  sha=bf511ef4ca873230
+  /etc/init/installd.rc                                    4674 B  sha=4d81a436ef00b406
+  /etc/init/keystore.rc                                     168 B  sha=cbe364270c16bbc2
+  /etc/init/lmkd.rc                                         176 B  sha=1d4d866fa7fc66fe
+  /etc/init/logd.rc                                         631 B  sha=875d695e139b5914
+  /etc/init/mdnsd.rc                                        142 B  sha=6dcc3f787ed0bb94
+  /etc/init/mediadrmserver.rc                               158 B  sha=641ecb76d7962693
+  /etc/init/mediaextractor.rc                               166 B  sha=7c5a7de2e3e8b6b4
+  /etc/init/mediametrics.rc                                 178 B  sha=9577f9b48e8672cd
+  /etc/init/mediaserver.rc                                  239 B  sha=187317dbf336b073
+  /etc/init/mtpd.rc                                         178 B  sha=242323dcf2fa1517
+  /etc/init/netd.rc                                         209 B  sha=40cfb87974def06a
+  /etc/init/racoon.rc                                       230 B  sha=c58b0ffdf22e92b5
+  /etc/init/roundphone.rc                                   157 B  sha=860131f67c91ad91
+  /etc/init/servicemanager.rc                               520 B  sha=044ab296b26ea962
+  /etc/init/storaged.rc                                     191 B  sha=7fb704d74330d280
+  /etc/init/surfaceflinger.rc                               559 B  sha=c31a17738008b717
+  /etc/init/thermalservice.rc                                66 B  sha=6036f3d473581e9d
+  /etc/init/tombstoned.rc                                   399 B  sha=1224a6de9b2708d6
+  /etc/init/uncrypt.rc                                      390 B  sha=63b33e2a2271d0c5
+  /etc/init/vdc.rc                                          546 B  sha=74e0fb97a1795f19
+  /etc/init/vold.rc                                         378 B  sha=f2b3972ab886cba4
+  /etc/init/webview_zygote32.rc                             805 B  sha=0938c22d79bde4b8
+  /etc/init/webview_zygote64.rc                             805 B  sha=64449ed8e20ee4b9
+  /etc/init/wfdservice.rc                                   374 B  sha=3a54afae93aea727
+  /etc/init/wifi-events.rc                                 3577 B  sha=3ccbfdac0927cb7a
+  /etc/init/wificond.rc                                     100 B  sha=a77470328f37df89
+  /etc/permissions/LteDirectDiscovery.xml                   338 B  sha=ce5abbf0f956321f
+  /etc/permissions/RemoteSimlock.xml                        348 B  sha=7cc1c590add1e259
+  /etc/permissions/android.software.live_wallpaper.xml     1050 B  sha=055df9cecfb48a0d
+  /etc/permissions/android.software.webview.xml             748 B  sha=2e293ff6ea02063e
+  /etc/permissions/audiosphere.xml                          343 B  sha=7ecaedd091d6cbf1
+  /etc/permissions/btmultisim.xml                           504 B  sha=15b62f0049852b2a
+  /etc/permissions/cneapiclient.xml                         298 B  sha=d272a0fbfca5c48c
+  /etc/permissions/com.android.location.provider.xml        828 B  sha=9ccb80158de3aa3d
+  /etc/permissions/com.android.media.remotedisplay.xml      828 B  sha=4aab4f7a0d722018
+  /etc/permissions/com.android.mediadrm.signer.xml          820 B  sha=d1f05b025acc4a39
+  /etc/permissions/com.google.android.maps.xml             1025 B  sha=b5ace5e5eb205ccc
+  /etc/permissions/com.qrd.wappush.xml                      332 B  sha=448a3142b0c7b4ba
+  /etc/permissions/com.qti.dpmframework.xml                 421 B  sha=0108892af2ef9b8c
+  /etc/permissions/com.qti.location.sdk.xml                 578 B  sha=f4f0ca672868b71f
+  /etc/permissions/com.qti.snapdragon.sdk.display.xml       541 B  sha=7083451a9fb449e1
+  /etc/permissions/com.qualcomm.location.xml                673 B  sha=2f078a616af9183c
+  /etc/permissions/com.qualcomm.qmapbridge.xml              799 B  sha=428e4851d46e0310
+  /etc/permissions/com.qualcomm.qti.imscmservice.xml        358 B  sha=95bcfaaaea96fd74
+  /etc/permissions/com.qualcomm.qti.imscmservice_1_1.xml      357 B  sha=65397f4f4110ef72
+  /etc/permissions/com.quicinc.cne.xml                      249 B  sha=cb2fc79343a21b22
+  /etc/permissions/com.wapi.wapicertstore.xml               171 B  sha=4b20133e7b22b93d
+  /etc/permissions/dpmapi.xml                               277 B  sha=0cc8b478601f8cd0
+  /etc/permissions/embms.xml                                165 B  sha=69fdc0cd9ae4a49d
+  /etc/permissions/handheld_core_hardware.xml              4798 B  sha=679d6b51319288b0
+  /etc/permissions/izat.xt.srv.xml                          295 B  sha=45f49ab0063793b0
+  /etc/permissions/lpa.xml                                  318 B  sha=05f690b7b4c11ec0
+  /etc/permissions/platform.xml                            8916 B  sha=9900f7584016814c
+  /etc/permissions/privapp-permissions-com.qualcomm.location.xml      859 B  sha=cc4c44edcb756eef
+  /etc/permissions/privapp-permissions-platform.xml       37237 B  sha=e2a0f17e97777e43
+  /etc/permissions/privapp-permissions-qti.xml             1562 B  sha=b8bc8c25ee4f2963
+  /etc/permissions/qcom_logkit.xml                          367 B  sha=953b73e276309d0b
+  /etc/permissions/qcrilhook.xml                            159 B  sha=5bb32dde7b49fd3a
+  /etc/permissions/qti-vzw-ims-internal.xml                 332 B  sha=1599040f19177560
+  /etc/permissions/qti_libpermissions.xml                   341 B  sha=78b94d836339b46d
+  /etc/permissions/qti_permissions.xml                      400 B  sha=888a73574ad91867
+  /etc/permissions/rcs_service_aidl.xml                     360 B  sha=1c2ebfac53987bbd
+  /etc/permissions/rcs_service_api.xml                      358 B  sha=a289762930295819
+  /etc/permissions/softsimclient.xml                        338 B  sha=79f35c3ccc38cc5b
+  /etc/permissions/telephonyservice.xml                     326 B  sha=215e3a6b6b5ce2da
+  /etc/permissions/vendor-qti-hardware-alarm.xml            346 B  sha=8f029b963c46d23b
+  /vendor/etc/fstab.qcom                                   2879 B  sha=a15206bf61691314
+
+kernel config: 4616 lines, 1410 CONFIG_=y, copied
+kernel config diff vs TB8703 (LOS17.1) copied
+
+[written] D:\16\PD1610_81\evidence\system_81_extract

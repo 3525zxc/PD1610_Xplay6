@@ -1,0 +1,187 @@
+========================================================================
+A. fastboot 命令分发 / UDC 关键函数引用
+========================================================================
+  'unknown command' 所在函数 : 函数起点~0x91D42650
+
+  'udc_start()' 所在函数 : 函数起点~0x91D0C388
+
+  'udc_handle_setup: SET_CONFIGURATION' 所在函数 : 函数起点~0x91D332D8
+        movw/movt @0x91D33ED0
+
+  'fastboot mode...' 所在函数 : 函数起点~(未定位)
+
+  'fastboot mode.' 所在函数 : 函数起点~(未定位)
+
+========================================================================
+B. udc_start() 函数体与调用者
+========================================================================
+=== udc_start ~0x91D0C388 @0x91D0C388 ===
+  91D0C388  push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+  91D0C38C  movw     r6, #0x57dc   ; = 0x920157DC
+  91D0C390  movt     r6, #0x9201
+  91D0C394  sub      sp, sp, #0x14
+  91D0C398  movw     r5, #0x2828   ; = 0x92002828
+  91D0C39C  movt     r5, #0x9200
+  91D0C3A0  ldr      r3, [r6]
+  91D0C3A4  movw     r0, #0xa0ec   ; = 0x91D7A0EC = 'udc_start()\n'
+  91D0C3A8  movt     r0, #0x91d7
+  91D0C3AC  mov      sl, lr
+  91D0C3B0  str      r3, [sp, #0xc]
+  91D0C3B4  bl       #0x91d51508
+  91D0C3B8  ldr      r3, [r5]
+  91D0C3BC  cmp      r3, #0
+  91D0C3C0  beq      #0x91d0c6b0
+  91D0C3C4  movw     r8, #0x2808   ; = 0x92002808
+  91D0C3C8  movt     r8, #0x9200
+  91D0C3CC  ldr      r3, [r8]
+  91D0C3D0  cmp      r3, #0
+  91D0C3D4  beq      #0x91d0c69c
+  91D0C3D8  mov      r0, #1
+  91D0C3DC  mov      r1, #0
+  91D0C3E0  mov      r2, #0x12
+  91D0C3E4  bl       #0x91d0b430
+  91D0C3E8  subs     r4, r0, #0
+  91D0C3EC  beq      #0x91d0c62c
+  91D0C3F0  mov      sb, #2
+  91D0C3F4  mov      fp, #0
+  91D0C3F8  mov      r3, #0x40
+  91D0C3FC  mov      r2, sb
+  91D0C400  strb     r3, [r4, #0xf]
+  91D0C404  add      r0, r4, #0x10
+  91D0C408  ldr      r1, [r5]
+  91D0C40C  movw     r7, #0x2824
+  91D0C410  strb     sb, [r4, #0xb]
+  91D0C414  movt     r7, #0x9200
+  91D0C418  strb     fp, [r4, #0xa]
+  91D0C41C  strb     fp, [r4, #0xc]
+  91D0C420  strb     fp, [r4, #0xd]
+  91D0C424  strb     fp, [r4, #0xe]
+  91D0C428  bl       #0x91d52c48
+  91D0C42C  ldr      r1, [r5]
+  91D0C430  mov      r2, sb
+  91D0C434  add      r0, r4, #0x12
+  91D0C438  add      r1, r1, sb
+  91D0C43C  bl       #0x91d52c48
+  91D0C440  ldr      r1, [r5]
+  91D0C444  mov      r2, sb
+  91D0C448  add      r0, r4, #0x14
+  91D0C44C  add      r1, r1, #4
+  91D0C450  bl       #0x91d52c48
+  91D0C454  ldr      r3, [r5]
+  91D0C458  ldr      r0, [r3, #8]
+  91D0C45C  bl       #0x91d0b520
+  91D0C460  ldr      r3, [r5]
+  91D0C464  strb     r0, [r4, #0x16]
+  91D0C468  ldr      r0, [r3, #0xc]
+  91D0C46C  bl       #0x91d0b520
+  91D0C470  ldr      r3, [r5]
+  91D0C474  strb     r0, [r4, #0x17]
+  91D0C478  ldr      r0, [r3, #0x10]
+  91D0C47C  bl       #0x91d0b520
+  91D0C480  ldr      r3, [r7]
+  91D0C484  ldr      r2, [r8]
+  91D0C488  mov      r1, #1
+  91D0C48C  strb     r1, [r4, #0x19]
+  91D0C490  mov      ip, #7
+  91D0C494  str      r3, [r4]
+  91D0C498  mov      r3, #9
+  91D0C49C  mov      r1, fp
+  91D0C4A0  str      r4, [r7]
+  91D0C4A4  strb     r0, [r4, #0x18]
+
+  callers of 0x91D0C388: (none)
+
+========================================================================
+C. udc_handle_setup 函数（USB 事件入口）
+========================================================================
+=== udc_handle_setup ~0x91D332D8 @0x91D332D8 ===
+  91D332D8  push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+  91D332DC  movw     r4, #0x57dc   ; = 0x920157DC
+  91D332E0  movt     r4, #0x9201
+  91D332E4  sub      sp, sp, #0x2c
+  91D332E8  subs     r5, r0, #0
+  91D332EC  mov      fp, r1
+  91D332F0  ldr      r3, [r4]
+  91D332F4  mov      sb, lr
+  91D332F8  str      r3, [sp, #0x24]
+  91D332FC  beq      #0x91d33aa4
+  91D33300  ldr      r7, [r5, #4]
+  91D33304  cmp      r7, #0
+  91D33308  beq      #0x91d33a78
+  91D3330C  ldrb     sl, [fp]
+  91D33310  movw     r1, #0x103
+  91D33314  ldrb     r8, [fp, #1]
+  91D33318  ldrh     r2, [fp, #4]
+  91D3331C  orr      r3, r8, sl, lsl #8
+  91D33320  ldrh     r6, [fp, #2]
+  91D33324  cmp      r3, r1
+  91D33328  ldrh     ip, [fp, #6]
+  91D3332C  uxth     fp, r2
+  91D33330  beq      #0x91d33530
+  91D33334  cmp      r3, #0x104
+  91D33338  bge      #0x91d3339c
+  91D3333C  cmp      r3, #5
+  91D33340  beq      #0x91d33484
+  91D33344  ble      #0x91d334dc
+  91D33348  cmp      r3, #0x30
+  91D3334C  beq      #0x91d334a0
+  91D33350  cmp      r3, #0x31
+  91D33354  beq      #0x91d33544
+  91D33358  cmp      r3, #9
+  91D3335C  beq      #0x91d336ac
+  91D33360  cmp      r8, #0x30
+  91D33364  stm      sp, {r6, fp}
+  91D33368  mov      r2, sl
+  91D3336C  str      ip, [sp, #8]
+  91D33370  movwls   r3, #0x2a90
+  91D33374  movtls   r3, #0x91d8
+  91D33378  movwhi   r1, #0x28d8
+  91D3337C  movw     r0, #0x2930
+  91D33380  ldrls    r1, [r3, r8, lsl #2]
+  91D33384  movthi   r1, #0x91d8
+  91D33388  mov      r3, r8
+  91D3338C  movt     r0, #0x91d8
+  91D33390  bl       #0x91d51508
+  91D33394  mvn      r0, #0
+  91D33398  b        #0x91d333f4
+  91D3339C  movw     r2, #0x8006
+  91D333A0  cmp      r3, r2
+  91D333A4  beq      #0x91d3354c
+  91D333A8  bgt      #0x91d3340c
+  91D333AC  movw     r2, #0x203
+  91D333B0  cmp      r3, r2
+  91D333B4  beq      #0x91d33678
+  91D333B8  cmp      r3, #0x8000
+  91D333BC  beq      #0x91d33600
+  91D333C0  movw     r2, #0x201
+  91D333C4  cmp      r3, r2
+  91D333C8  bne      #0x91d33360
+  91D333CC  and      r1, fp, #0xf
+  91D333D0  ubfx     fp, fp, #7, #1
+  91D333D4  mov      r0, r7
+  91D333D8  orr      r1, fp, r1, lsl #1
+  91D333DC  bl       #0x91d323ec
+  91D333E0  movw     r3, #0x5944   ; = 0x92005944
+  91D333E4  movt     r3, #0x9200
+  91D333E8  mov      r0, #2
+  91D333EC  mov      r2, #0
+  91D333F0  str      r2, [r3]
+  91D333F4  ldr      r2, [sp, #0x24]
+  91D333F8  ldr      r3, [r4]
+  91D333FC  cmp      r2, r3
+  91D33400  bne      #0x91d33a74
+  91D33404  add      sp, sp, #0x2c
+  91D33408  pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc}
+  91D3340C  cmp      r3, #0x8100
+  91D33410  beq      #0x91d33600
+  91D33414  cmp      r3, #0x8200
+  91D33418  beq      #0x91d33600
+  91D3341C  movw     r2, #0x8008
+  91D33420  cmp      r3, r2
+  91D33424  bne      #0x91d33360
+  91D33428  cmp      r6, #0
+  91D3342C  bne      #0x91d33998
+  91D33430  cmp      fp, #0
+  91D33434  bne      #0x91d33998
+
+  callers of 0x91D332D8: (none)

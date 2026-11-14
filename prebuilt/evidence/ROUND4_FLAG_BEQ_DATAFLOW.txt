@@ -1,0 +1,126 @@
+# Round-4 定点复核：BL→BEQ 标志来源、fastboot 回退路径、G 调用者数据流、flag 生命周期重闭合
+
+日期：2026-11-11 ｜ 对象：aboot 8.19.16（emmc_appsboot.mbn，V=0x91D00000，O=0x8000，FSZ=0x2FED40）
+性质：纯离线反汇编复核，零设备写入。工具：scripts\round4_flag_and_dataflow.py 及 part2–part8。
+证据：work\round4_flag_dataflow.txt（原始字节级）、round4_part2..part8.txt
+
+---
+
+## 一、P0：`BL getter; BEQ` 条件标志来源 —— 已闭合（评审引用的指令对不存在）
+
+评审引用：
+```
+0x91D412D8    bl  0x91D0AED4
+0x91D412DC    beq 0x91D412AC
+```
+实际原始字节（work\round4_flag_dataflow.txt 第 1–22 行，逐字核验）：
+```
+91D412AC  4fecffeb  bl   0x91d3c3f0        ; 启动主函数
+91D412B0  040040e2  sub  r0, r0, #4
+91D412B4  050050e3  cmp  r0, #5            ; <<< 设 NZCV
+91D412B8  5700008a  bhi  0x91d4141c        ; 测试 B4 的 cmp
+91D412BC  1530a0e1  lsl  r3, r5, r0
+91D412C0  270013e3  tst  r3, #0x27         ; <<< 设 NZCV
+91D412C4  5400000a  beq  0x91d4141c        ; 测试 C0 的 tst
+91D412C8  0127ffeb  bl   0x91d0aed4        ; getter（读 [0x92002738]）
+91D412CC  000050e3  cmp  r0, #0            ; <<< 设 NZCV
+91D412D0  5100000a  beq  0x91d4141c        ; 测试 CC 的 cmp
+91D412D4  0400a0e1  mov  r0, r4
+91D412D8  8124ffeb  bl   0x91d0a4e4        ; ← 不是 getter，是 0x91D0A4E4
+91D412DC  fc26ffeb  bl   0x91d0aed4        ; ← 是 BL，不是 BEQ
+91D412E0  000050e3  cmp  r0, #0            ; <<< 设 NZCV
+91D412E4  f0ffff0a  beq  0x91d412ac        ; 测试 E0 的 cmp；r0==0 → 回循环头
+91D412E8  9d26ffeb  bl   0x91d0ad64
+91D412EC  0040a0e1  mov  r4, r0
+91D412F0  6725ffeb  bl   0x91d0a894
+91D412F4  010074e3  cmn  r4, #1            ; <<< 设 NZCV
+91D412F8  ebffff1a  bne  0x91d412ac        ; 测试 F4 的 cmn
+91D412FC  adffffea  b    0x91d411b8
+```
+结论：
+1. **评审的引用整体错位 8 字节**。`0x91D412D8` 实际调用 `0x91D0A4E4`；`0x91D412DC` 是 `bl 0x91D0AED4`（BL，非 BEQ）；真正的条件跳转在 `0x91D412E4`，其前 4 字节有显式 `cmp r0,#0`。
+2. 循环核心内**每个条件分支前 4 字节都有显式 `cmp`/`tst`/`cmn`**，无一处裸 `BL;BEQ`。Z 标志来源唯一、明确。
+3. **评审指出的机制本身对 getter 成立**：`0x91D0AED4` 尾部最后一条改标志指令是 canary 比较 `cmp r2, r3`（0x91D0AF00），随后 `bne`/`add sp`/`pop {pc}` 不改标志。若某处真的裸 `BL getter; BEQ`，Z 将来自 canary 比较。本 build 中**不存在**这种用法（getter 的 12 个调用点已核对，见 round4_flag_dataflow.txt 调用者列表），但该机制作为已知风险记录在案。
+
+### 循环逻辑（★Round-5 已修正：本文档原第 48 行方向写反，以 Round-5 证据文件为准★，r5=1）
+- `bl 0x91D3C3F0` 返回 ret：
+  - `ret-4 > 5`（无符号；即 ret<4 或 ret>9）→ 退出到 0x91D4141C
+  - `tst r3, #0x27` 中 r3 = `1 << (ret-4)`：**与 0x27 按位与为零 ⇒ Z=1 ⇒ BEQ 跳 0x91D4141C 退出**
+    ⇒ **ret ∈ {7,8}（bit3/bit4 不在掩码内）→ 退出**；**ret ∈ {4,5,6,9}（bit0/1/2/5）→ 不跳，继续进入状态检查**
+  - r5=1 已在两条进入路径确认：0x91D412A4 `mov r5,#1`；0x91D4115C 分派路径 r5==1 才走到循环（`check_hard_reboot_mode` 正常路径）
+- 继续后读状态 `[0x92002738]`（getter）：
+  - **状态==0 → beq 0x91D4141C 退出**（ERROR 打印 + fastboot 收尾）
+  - 状态≠0 → `bl 0x91D0A4E4(r4)` → 重读状态：==0 → 回循环头（重新跑 boot 主函数）；≠0 → `bl 0x91D0AD64` → `bl 0x91D0A894` → `cmn r4,#1`，r4≠-1 → 回循环头；==-1 → 0x91D411B8（fastboot 收尾）
+- 即：**重试路径存在且真实，但以状态数组≠0 为前提**；默认初始值 0 时不进入重试分支。
+- 修正依据：`scripts\round5_task1_task2.py` 对 ret=0..12 逐一枚举并 **ASSERT**（CONTINUE=[4,5,6,9]、TST-EXIT=[7,8]、BHI-EXIT=其余），原文表格与断言见 `work\round5_task1_task2.txt`。
+
+## 二、状态数组写入者：结论分两层（按评审要求改写）
+
+- A 层（静态已证实）：PT_LOAD 静态扫描范围内无 `[0x9200272C]` 数组的直接写入者（round-3 工具已覆盖常量物化+literal pool）；位于 .bss，crt0 清零 ⇒ **正常启动时初始值为 0**。
+- B 层（不宣称）：运行期间是否存在间接/计算地址/DMA 写入**未完全排除**。故本轮不再使用「状态恒 0 ⇒ 必然退出」的强表述，改为：
+  > 在已扫描的 aboot 静态代码范围内未发现状态数组写入者；结合 .bss 初始化，正常启动时初始值为零。运行期间接写入尚未完全排除；在 B 层闭合前，不将「默认一次尝试后退出」标为已闭合。
+
+## 三、fastboot 回退路径：从字符串到实际初始化调用，已闭合
+
+1. 字符串 `0x91D856E4` = `"ERROR: Could not do normal boot. Reverting to fastboot mode.\n"`（raw 已核）。
+2. 退出点 `0x91D4141C`：`movw r0,#0x56e4; movt; bl 0x91D51508`（printf 族）→ `b 0x91D411B8`。
+3. `0x91D411B8` 收尾序列（round4_part4.txt）：
+   - `bl 0x91D40974` = **fastboot_init**：循环调用 `0x91D41D3C` = fastboot_register(name, handler)，注册 `'oem device-name'`(0x91D85288)、`'trust'`、`'getid'` 等命令表（handler 均为 0x91D3xxxx/0x91D4xxxx 代码地址）
+   - `bl 0x91D0A010`；print `"Display Init: Start\n"`；`bl 0x91D0206C`（面板检测，比较 `'none'`/`'sim_video_panel'`）；print `"Display Init: Done\n"`
+   - `bl 0x91D012E4`（返回 0x92500000，FB 基址）、`bl 0x91D01320`（返回 0x20000000）→ `bl 0x91D42C2C` 写入全局 [0x9203160C]/[0x92012860]
+   - canary 校验 → `mov r0,#1; pop {...,lr}; b 0x91D48E70` = 背光使能门控（[0x92031628+0x24]≠0 时尾调用 0x91D01868，串 `'backlight structure is not available\n'`）→ 返回调用者
+4. 旁证：`check_hard_reboot_mode` 分派（0x91D4115C）中 r5==2（fastboot 重启模式）**同样直接 b 0x91D411B8** ⇒ 0x91D411B8 即"进入 fastboot 模式"的公共收尾，与 ERROR 路径复用同一入口。
+5. 调用层级：aboot_init = `0x91D40FCC`，静态无直接 bl/b 调用者；实为**模块表间接调用**：
+   - 表 `0x91D98FAC`，每项 0x10 字节 `{name, fn1, main, NULL}`：
+     - `"aboot"`  @0x91D98FAC: fn1=0x91D3A938(打印横幅), **main=0x91D40FCC**
+     - `"charger"` @0x91D98FBC: 0x91D46E7C / 0x91D47028
+     - `"tests"`  @0x91D98FCC: 0x91D47614
+   - 遍历器 `0x91D39BC4`（r4=0x91D98FAC..0x91D98FDC，逐项 blx [entry+4]），调用者 0x91D38350
+   - 通用调用器 `0x91D39B80`：`ldr r3,[entry+8]; blx r3` ⇒ aboot_init 经 blx 进入
+
+## 四、三个 G 调用者的返回值数据流（round4_flag_dataflow.txt 第 239–339 行）
+
+| 调用点 | G 返回值 r0 | 后续 |
+|---|---|---|
+| 0x91D3C84C | **未消费** | `bl 0x91D445E8`（helper，恒返回 [0x92013AC0]=0）→ `cmp r0,#0` → `beq 0x91D3C870` **恒跳** ⇒ flag 检查（0x91D3C85C/64/68）死代码；继续 `bl 0x91D131E8`（cmp #1/#2 分派）→ `bl 0x91D37B10` → `bl 0x91D75BF0`（装载） |
+| 0x91D3D764 | **未消费** | `b 0x91D3D5E0`（无条件，打印后继续装载） |
+| 0x91D3E380 | **未消费** | `b 0x91D3E1F8`（无条件，继续装载） |
+
+三处调用点均不检查 G 的 r0，也无独立装载门控。**验签失败后继续装载的结论在调用者层面闭合**（默认配置）。
+
+## 五、flag 生命周期重闭合（round-3 有一处错误，修正）
+
+全二进制物化点 3 处（movw/movt）：`0x91D39DA0`（G 内，写入）、`0x91D3AD38`（读#1）、`0x91D3C85C`（读#2）。**round-3「flag 全二进制仅 1 处读取」错误；round-2 的 0x91D3AD40 是真实读取**（非 literal pool 误识别，round4_flag_dataflow.txt 第 341–356 行原始字节）。
+
+- **写入**（G 内 0x91D39D9C..0x91D39DB8）：G 调 `0x91D131E8` 分派，返回值既非 2 也非 3 时，`str r1(=1), [0x92007DAC]` 无条件置 1，返回值 `([r5]!=0)`。
+- **读#2** `0x91D3C864`（调用点 1 第二门控）：前置 `bl 0x91D445E8` = 4 指令纯 getter，返回 `[0x92013AC0]`；该地址全二进制无写入者 ⇒ 恒 0 ⇒ `beq 0x91D3C870` 恒跳 ⇒ **读#2 死代码**。
+- **读#1** `0x91D3AD40`（活）：前置 `bl 0x91D37814` = **恒返回 1 的 getter**（`mov r0,#1` + canary，无内存读取）⇒ `cmp r0,#0; beq` 恒不跳 ⇒ flag 检查必然执行。flag≠0 → `0x91D3B710`：strstr(cmdline, `' androidboot.authorized_kernel=true'`)，命中则打 `"%s return %d!"`(`'update_cmdline'`) + dprintf，**随后 `b 0x91D3AD4C` 与 flag==0 路径汇合** ⇒ 仅诊断打印，不阻断装载。
+- 修正后表述：flag = 1 写 + 2 读；读#2 死（helper 恒 0），读#1 活但消费面是 update_cmdline 内的诊断打印且两分支汇合；**两个读点都不构成装载阻断门控**。原「默认配置下无消费者」应改为「无阻断性消费者」。
+- 边界：flag 残留生命周期（首次失败置 1 后无清零写）维持 round-3 结论。
+
+## 六、栈保护结论修正（按评审意见）
+
+- `[0x920157DC]` = `__stack_chk_guard`：维持（1653 处序言 + 统一尾部模式，证据充分）。
+- 「guard=0 ⇒ fail 不可达」**撤回**。正确表述：guard 恒 0 时，正常执行下帧内副本同为 0、比较通过；但帧内副本被破坏时比较仍可失败并跳 `__stack_chk_fail`。安全性评价改为：栈保护检查存在但随机性弱（guard 恒 0），部分覆盖模式可能绕过。
+- guard 的初始化来源（lld 恒 0 还是本应有随机化）另行核实，不宣称。
+
+## 七、结论分级（对应评审表）
+
+| 结论 | 状态 |
+|---|---|
+| 0x91D445E8 是纯 getter | ✅ 维持（4 指令 + canary 壳） |
+| 慢路径 0/-1 属相邻 MDTP 函数 0x91D44628 | ✅ 维持 |
+| 0x920157DC 属栈保护 | ✅ 维持 |
+| guard=0 ⇒ 栈保护失败不可达 | ❌ 撤回（检查存在，随机性弱；fail 原则可达） |
+| 状态数组在 aboot 静态范围无直接写入者 | ✅ 维持（A 层） |
+| 状态值恒 0 ⇒ 循环退出 | ⏸ 降级为「初始值 0；运行期写入未排除；B 层闭合前不作为已闭合结论」 |
+| 最终一定回到 fastboot | ⏸ 路径本体已闭合（0x91D4141C→ERROR 串→0x91D411B8→fastboot_init 0x91D40974→显示/背光→返回），但"是否被执行"仍依赖循环退出条件（第二节 B 层） |
+| 验签失败后一定可以继续装载 | ✅ 调用者层面闭合：三调用点均不消费 G 返回值，两处 flag 读点均非阻断（一处死、一处诊断打印后汇合） |
+| 未签名 boot 实际进入 kernel | ⏸ 未刷设备，维持不宣称 |
+
+## 八、残余边界
+
+- 运行时计算地址写状态数组/flag/DMA 写：静态工具覆盖不了，未排除。
+- `0x91D39B80`（模块调用器）静态无直接 bl 调用者，main 层如何分派未追完（不影响本轮四问闭合）。
+- `0x91D37814` 恒 1 的语义（为何先调用再丢弃返回值 @0x91D412A0）未深究，属编译器/宏痕迹。
+- 未刷设备。本轮全部为纯离线反汇编，无任何镜像写入。

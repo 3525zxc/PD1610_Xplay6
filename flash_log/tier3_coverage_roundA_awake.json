@@ -1,0 +1,101 @@
+{
+  "score_lower": 55,
+  "score_upper": 55,
+  "score_note": "lower = verified PASS only; upper = PASS + UNVERIFIED",
+  "gates": [
+    {
+      "id": "boot",
+      "criterion": "3 consecutive cold boots reach sys.boot_completed=1, no bootloop",
+      "weight": 20,
+      "state": "PASS"
+    },
+    {
+      "id": "touch_cold",
+      "criterion": "touch usable within 30s of cold boot: ABS_MT + real getevent events",
+      "weight": 15,
+      "state": "PASS"
+    },
+    {
+      "id": "nav_keys",
+      "criterion": "3-0028 bound, virtual_key input present, 3 key events observed",
+      "weight": 8,
+      "state": "FAIL"
+    },
+    {
+      "id": "input_parity",
+      "criterion": "every stock input device present with same name",
+      "weight": 12,
+      "state": "FAIL"
+    },
+    {
+      "id": "i2c_parity",
+      "criterion": "every stock I2C device that had a driver is bound",
+      "weight": 15,
+      "state": "FAIL"
+    },
+    {
+      "id": "hal",
+      "criterion": "key HAL services running (vibrator / fingerprint / audio / wifi)",
+      "weight": 10,
+      "state": "FAIL"
+    },
+    {
+      "id": "firmware_inventory",
+      "criterion": "vendor firmware blob dependency inventory written",
+      "weight": 5,
+      "state": "PASS"
+    },
+    {
+      "id": "reproducible",
+      "criterion": "one-command rebuild + 40/40 build + 17/17 preflight + verified rollback",
+      "weight": 15,
+      "state": "PASS"
+    }
+  ],
+  "evidence": {
+    "input": {
+      "stock": 9,
+      "candidate": 5,
+      "coverage": 0.5556,
+      "missing": [
+        "vivo_virtual_key",
+        "goodixfp",
+        "msm8996-tasha-cdp-snd-card Headset Jack",
+        "msm8996-tasha-cdp-snd-card Button Jack"
+      ],
+      "extra": []
+    },
+    "i2c": {
+      "stock_devices": 11,
+      "stock_with_driver": 9,
+      "candidate_bound": 4,
+      "missing": [
+        "3-0028",
+        "3-0067",
+        "3-006b",
+        "7-0050",
+        "8-0048"
+      ],
+      "coverage": 0.4444
+    },
+    "hal": {
+      "checked": [
+        "init.svc.audio-hal-2-0",
+        "init.svc.audioserver",
+        "init.svc.vendor.wifi_hal_legacy",
+        "init.svc.vibrator-1-0",
+        "init.svc.vivo-fingerprint-sh",
+        "init.svc.vivo-wifiap-hal-1-0",
+        "init.svc.wificond"
+      ],
+      "running": [
+        "init.svc.audio-hal-2-0",
+        "init.svc.audioserver",
+        "init.svc.vendor.wifi_hal_legacy",
+        "init.svc.vibrator-1-0",
+        "init.svc.vivo-wifiap-hal-1-0",
+        "init.svc.wificond"
+      ]
+    }
+  }
+}

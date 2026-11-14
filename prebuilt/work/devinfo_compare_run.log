@@ -1,0 +1,84 @@
+PD1610 devinfo: 6.0.1 (C:\qfilx\backup) vs 8.1 (D:\16\PD1610_81\backup)
+PURE OFFLINE - no device access, no writes
+
+6.0.1 : 4096 B  sha256 0d6aba43cf7ec113461b738c8fb540fcbab35cd9acba673681dab91043bdc49b
+8.1   : 4096 B  sha256 ef77f178acf1b280865c9068464f2cd5e86f01b8cbbb7ddf40c66c1dd8da62bd
+differing bytes: 3792 / 4096
+differing offsets (first 12): ['0x10', '0xe4', '0xe5', '0xe6', '0xe7', '0xe8', '0xe9', '0xea', '0xeb', '0xec', '0xed', '0xee']
+
+=== header bytes 0..0x1F ===
+  +0x00  6.0.1=0x41  8.1=0x41
+  +0x01  6.0.1=0x4E  8.1=0x4E
+  +0x02  6.0.1=0x44  8.1=0x44
+  +0x03  6.0.1=0x52  8.1=0x52
+  +0x04  6.0.1=0x4F  8.1=0x4F
+  +0x05  6.0.1=0x49  8.1=0x49
+  +0x06  6.0.1=0x44  8.1=0x44
+  +0x07  6.0.1=0x2D  8.1=0x2D
+  +0x08  6.0.1=0x42  8.1=0x42
+  +0x09  6.0.1=0x4F  8.1=0x4F
+  +0x0A  6.0.1=0x4F  8.1=0x4F
+  +0x0B  6.0.1=0x54  8.1=0x54
+  +0x0C  6.0.1=0x21  8.1=0x21
+  +0x0D  6.0.1=0x00  8.1=0x00
+  +0x0E  6.0.1=0x00  8.1=0x00
+  +0x0F  6.0.1=0x00  8.1=0x00
+  +0x10  6.0.1=0x01  8.1=0x00  <-- ONLY HEADER DIFF
+  +0x11  6.0.1=0x00  8.1=0x00
+  +0x12  6.0.1=0x00  8.1=0x00
+  +0x13  6.0.1=0x00  8.1=0x00
+  +0x14  6.0.1=0x00  8.1=0x00
+  +0x15  6.0.1=0x00  8.1=0x00
+  +0x16  6.0.1=0x00  8.1=0x00
+  +0x17  6.0.1=0x00  8.1=0x00
+  +0x18  6.0.1=0x01  8.1=0x01
+  +0x19  6.0.1=0x00  8.1=0x00
+  +0x1A  6.0.1=0x00  8.1=0x00
+  +0x1B  6.0.1=0x00  8.1=0x00
+  +0x1C  6.0.1=0x00  8.1=0x00
+  +0x1D  6.0.1=0x00  8.1=0x00
+  +0x1E  6.0.1=0x00  8.1=0x00
+  +0x1F  6.0.1=0x00  8.1=0x00
+
+=== verified struct fields (from aboot disassembly) ===
+  +0x10  is_unlocked            6.0.1=1  8.1=0  CHANGED
+  +0x14  is_tampered            6.0.1=0  8.1=0  same
+  +0x18  is_unlock_critical     6.0.1=1  8.1=1  same
+  +0x1C  charger/verified       6.0.1=0  8.1=0  same
+  magic @0 = b'ANDROID-BOOT!' (both)
+
+=== correlates with fastboot oem device-info on 8.1 ===
+  Device tampered: false          <- +0x14 = 0
+  Device unlocked: false          <- +0x10 = 0   (was 1 in 6.0.1)
+  Device critical unlocked: true  <- +0x18 = 1
+  Charger screen enabled: false   <- +0x1C = 0
+  getvar unlocked: no
+
+=== trailing region 0xE4..0xFFF (228..4095) ===
+  6.0.1  len=3868 entropy=6.678 bit/B distinct=234 DER=-1 first16=7b441b681b78b3b1adb9d6e9000112f0
+  8.1    len=3868 entropy=6.670 bit/B distinct=247 DER=-1 first16=d4f88821d4f81852aa426ed121460020
+  => high-entropy blob, no DER/PEM, completely different between builds.
+     Identical runs: (0,16) and (17,228) are the only large ones.
+     Interpretation (hypothesis): vivo attestation / encrypted blob rewritten
+     on each devinfo write. NOT verified. Whether it covers +0x10 is unknown.
+
+=== CONCLUSION ===
+1. The ONLY semantic difference in the struct is +0x10 is_unlocked:
+   6.0.1 = 1 (unlocked)  ->  8.1 = 0 (locked).
+   This is why fastboot flash now fails with "device is lock", while the
+   6.0.1-era fastboot could write partitions. 17:05's extra "unlocked:yes"
+   getvar line is consistent with the earlier unlocked state.
+2. How devinfo was cleared: NOT established. Candidate: an official OTA /
+   recovery step rewrote devinfo; no log proves which. Mark as open.
+3. Restoring fastboot write access would be a 1-byte change (+0x10 = 1),
+   which matches exactly what vivo_bsp unlock_vivo writes officially.
+   This is a STRONG INFERENCE from verified disassembly + the 6.0.1 backup,
+   NOT a live-verified result. No device write performed.
+4. Risk: if the 0xE4+ blob is a signature/hash covering the struct, a raw
+   byte patch could invalidate devinfo (tampered / reset / FDE key mismatch,
+   cf. the X9 tutorial password screen). The X9s devinfo.img (16 MB, 0xFF)
+   is a different device and must NOT be flashed here.
+5. EDL/9008 does not consult is_unlocked at all (47-partition read/write
+   already verified), so this patch is optional - a convenience, not a gate.
+
+[written] D:\16\PD1610_81\evidence\devinfo_601_vs_81.txt

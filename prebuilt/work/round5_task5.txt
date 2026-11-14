@@ -1,0 +1,255 @@
+========================================================================
+A. fastboot 命令处理区 0x91D42500 附近
+========================================================================
+=== 0x91D424E0..0x91D42590 @0x91D424E0 ===
+  91D424E0  add      r0, sp, #4
+  91D424E4  bl       #0x91d42374
+  91D424E8  add      r0, sp, #4
+  91D424EC  mov      r1, #0
+  91D424F0  mov      r2, #0x100
+  91D424F4  bl       #0x91d52d54
+  91D424F8  ldr      r4, [r4]
+  91D424FC  cmp      r4, #0
+  91D42500  bne      #0x91d424ac
+  91D42504  b        #0x91d42480
+  91D42508  ldr      r1, [r4, #8]
+  91D4250C  movw     r0, #0x5940   ; = 0x91D85940 = 'OKAY'
+  91D42510  movt     r0, #0x91d8
+  91D42514  bl       #0x91d41e18
+  91D42518  b        #0x91d42494
+  91D4251C  bl       #0x91d516c4
+  91D42520  movw     r3, #0x57dc   ; = 0x920157DC
+  91D42524  movt     r3, #0x9201
+  91D42528  str      lr, [sp, #-4]!
+  91D4252C  sub      sp, sp, #0xc
+  91D42530  ldr      r2, [r3]
+  91D42534  str      r2, [sp, #4]
+  91D42538  ldr      r2, [sp, #4]
+  91D4253C  ldr      r3, [r3]
+  91D42540  cmp      r2, r3
+  91D42544  bne      #0x91d42560
+  91D42548  mov      r1, r0
+  91D4254C  movw     r0, #0x5948   ; = 0x91D85948 = 'FAIL'
+  91D42550  movt     r0, #0x91d8
+  91D42554  add      sp, sp, #0xc
+  91D42558  pop      {lr}
+  91D4255C  b        #0x91d41e18
+  91D42560  bl       #0x91d516c4
+  91D42564  movw     r3, #0x57dc   ; = 0x920157DC
+  91D42568  movt     r3, #0x9201
+  91D4256C  str      lr, [sp, #-4]!
+  91D42570  sub      sp, sp, #0xc
+  91D42574  ldr      r2, [r3]
+  91D42578  str      r2, [sp, #4]
+  91D4257C  ldr      r2, [sp, #4]
+  91D42580  ldr      r3, [r3]
+  91D42584  cmp      r2, r3
+  91D42588  bne      #0x91d425a4
+  91D4258C  mov      r1, r0
+
+=== 0x91D42740..0x91D427C0 @0x91D42740 ===
+  91D42740  str      r3, [r6]
+  91D42744  beq      #0x91d42770
+  91D42748  ldr      fp, [sb, #8]
+  91D4274C  mov      r0, r4
+  91D42750  ldr      r1, [sb, #4]
+  91D42754  mov      r2, fp
+  91D42758  bl       #0x91d52e68
+  91D4275C  cmp      r0, #0
+  91D42760  beq      #0x91d427a8
+  91D42764  ldr      sb, [sb]
+  91D42768  cmp      sb, #0
+  91D4276C  bne      #0x91d42748
+  91D42770  movw     r0, #0x5948
+  91D42774  movw     r1, #0x59cc   ; = 0x91D859CC = 'unknown command or device is lock'
+  91D42778  movt     r0, #0x91d8
+  91D4277C  movt     r1, #0x91d8
+  91D42780  str      r5, [r7]
+  91D42784  bl       #0x91d425a8
+  91D42788  ldr      r3, [r6]
+  91D4278C  cmp      r3, #3
+  91D42790  bne      #0x91d426f0
+  91D42794  mov      r0, r4
+  91D42798  mov      r3, #0
+  91D4279C  str      r3, [r6]
+  91D427A0  bl       #0x91d52b44
+  91D427A4  b        #0x91d426b4
+  91D427A8  ldr      ip, [sp, #0x10]
+  91D427AC  add      r0, r4, fp
+  91D427B0  ldr      r3, [sb, #0xc]
+  91D427B4  ldr      r1, [ip]
+  91D427B8  ldr      ip, [sp, #0xc]
+  91D427BC  ldr      r2, [ip]
+
+  fastboot-handler 函数起点 ~0x91D42414  callers: (none)
+
+========================================================================
+B. "FASTBOOT MODE" 打印处 0x91D143D8 上下文
+========================================================================
+=== 0x91D143A0..0x91D14440 @0x91D143A0 ===
+  91D143A0  movt     r4, #0x91d9
+  91D143A4  mov      r0, sb
+  91D143A8  movw     r8, #0xd008
+  91D143AC  bl       #0x91d478bc
+  91D143B0  ldr      sb, [r4]
+  91D143B4  movt     r8, #0x91d7
+  91D143B8  mov      r0, #0xa
+  91D143BC  mov      r1, #0
+  91D143C0  mov      r2, sb
+  91D143C4  bl       #0x91d47ac4
+  91D143C8  ldrb     r0, [r8, #1]!
+  91D143CC  cmp      r0, #0
+  91D143D0  bne      #0x91d143bc
+  91D143D4  ldr      sb, [r4]
+  91D143D8  movw     r8, #0xd048   ; = 0x91D7D048 = 'FASTBOOT MODE\n'
+  91D143DC  movt     r8, #0x91d7
+  91D143E0  mov      r0, #0x46
+  91D143E4  mov      r1, #6
+  91D143E8  mov      r2, sb
+  91D143EC  bl       #0x91d47ac4
+  91D143F0  ldrb     r0, [r8, #1]!
+  91D143F4  cmp      r0, #0
+  91D143F8  bne      #0x91d143e4
+  91D143FC  add      r0, sp, #0xc
+  91D14400  bl       #0x91d40848
+  91D14404  add      r3, sp, #0xc
+  91D14408  add      r0, sp, #0x4c
+  91D1440C  movw     r2, #0xcf70
+  91D14410  mov      r1, #0x80
+  91D14414  movt     r2, #0x91d7
+  91D14418  bl       #0x91d529ac
+  91D1441C  ldrb     r0, [sp, #0x4c]
+  91D14420  ldr      sb, [r4]
+  91D14424  cmp      r0, #0
+  91D14428  addne    r8, sp, #0x4c
+  91D1442C  beq      #0x91d14448
+  91D14430  mov      r1, #0
+  91D14434  mov      r2, sb
+  91D14438  bl       #0x91d47ac4
+  91D1443C  ldrb     r0, [r8, #1]!
+
+  banner 函数起点 ~0x91D1430C  callers: 0x91D13498(b), 0x91D13554(b), 0x91D14788(bl)
+
+========================================================================
+C. update_cmdline 时序：0x91D3BD58 所在函数与调用者
+========================================================================
+=== 0x91D3BD40..0x91D3BD90 @0x91D3BD40 ===
+  91D3BD40  cmp      r5, #0
+  91D3BD44  str      r3, [r7]
+  91D3BD48  moveq    r1, r5
+  91D3BD4C  mov      r8, r0
+  91D3BD50  ldmne    r5, {r0, r1}
+  91D3BD54  moveq    r0, r1
+  91D3BD58  bl       #0x91d3ab94
+  91D3BD5C  mov      r2, r8
+  91D3BD60  mov      r3, r6
+  91D3BD64  mov      r5, r0
+  91D3BD68  mov      r0, r4
+  91D3BD6C  mov      r1, r5
+  91D3BD70  bl       #0x91d1f858
+  91D3BD74  cmp      r0, #0
+  91D3BD78  bne      #0x91d3c150
+  91D3BD7C  ldr      r3, [r7]
+  91D3BD80  add      r7, sp, #0x30
+  91D3BD84  mov      r2, #0
+  91D3BD88  mov      r0, r4
+  91D3BD8C  cmp      r3, r2
+
+  0x91D3BD58 所在函数 ~0x91D3BCC0  callers: 0x91D3CB2C(bl), 0x91D3D308(bl), 0x91D3E5F4(bl)
+
+=== 该函数头 0x91D3BCC0 @0x91D3BCC0 ===
+  91D3BCC0  push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+  91D3BCC4  movw     sb, #0x57dc   ; = 0x920157DC
+  91D3BCC8  movt     sb, #0x9201
+  91D3BCCC  mov      r4, r1
+  91D3BCD0  sub      sp, sp, #0x34
+  91D3BCD4  mov      r5, r2
+  91D3BCD8  ldr      r1, [sb]
+  91D3BCDC  movw     r7, #0x768
+  91D3BCE0  str      lr, [sp, #0x20]
+  91D3BCE4  movt     r7, #0x91da
+  91D3BCE8  str      r3, [sp, #0x1c]
+  91D3BCEC  str      r1, [sp, #0x2c]
+  91D3BCF0  ldr      r8, [sp, #0x58]
+  91D3BCF4  ldr      r6, [sp, #0x5c]
+  91D3BCF8  str      r0, [sp, #0xc]
+  91D3BCFC  bl       #0x91d04d88
+  91D3BD00  str      r0, [sp, #0x18]
+  91D3BD04  mov      r0, r4
+  91D3BD08  bl       #0x91d04d88
+  91D3BD0C  str      r0, [sp, #0x10]
+  91D3BD10  ldr      r0, [sp, #0xc]
+  91D3BD14  bl       #0x91d04d88
+  91D3BD18  str      r0, [sp, #8]
+  91D3BD1C  mov      r0, r8
+  91D3BD20  bl       #0x91d04d88
+  91D3BD24  ldr      r3, [sp, #8]
+  91D3BD28  ldr      r2, [r3, #0x38]
+  91D3BD2C  movw     r3, #0x5241   ; = 0x644D5241
+
+  该函数内部被调函数：
+    0x91D3BCFC bl #0x91d04d88
+    0x91D3BD08 bl #0x91d04d88
+    0x91D3BD14 bl #0x91d04d88
+    0x91D3BD20 bl #0x91d04d88
+    0x91D3BD58 bl #0x91d3ab94
+    0x91D3BD70 bl #0x91d1f858
+    0x91D3BDA0 bl #0x91d1fdf0
+    0x91D3BDB8 bl #0x91d5323c
+    0x91D3BDD0 bl #0x91d51508
+    0x91D3BDD8 bl #0x91d514b0
+    0x91D3BDE0 bl #0x91d06dd4
+    0x91D3BE40 bl #0x91d52b44
+    0x91D3BE44 bl #0x91d11f4c
+    0x91D3BE54 bl #0x91d09c88
+    0x91D3BE5C bl #0x91d09f4c
+    0x91D3BE74 bl #0x91d09fc4
+    0x91D3BE78 bl #0x91d11f00
+    0x91D3BE7C bl #0x91d11628
+    0x91D3BEA4 bl #0x91d52a94
+    0x91D3BEC0 bl #0x91d118b8
+    0x91D3BED8 bl #0x91d52c48
+    0x91D3BEF8 bl #0x91d52a94
+    0x91D3BF14 bl #0x91d09c88
+    0x91D3BF1C bl #0x91d09f4c
+    0x91D3BF34 bl #0x91d09fc4
+    0x91D3BF38 bl #0x91d11f00
+    0x91D3BF4C bl #0x91d118b8
+    0x91D3BF64 bl #0x91d52c48
+    0x91D3BF88 bl #0x91d52c48
+    0x91D3BF9C bl #0x91d1167c
+    0x91D3BFC4 bl #0x91d52b44
+    0x91D3BFCC bl #0x91d52b44
+    0x91D3BFD4 bl #0x91d11f00
+    0x91D3BFE0 bl #0x91d021ec
+    0x91D3BFE4 bl #0x91d00408
+    0x91D3C004 bl #0x91d04c0c
+    0x91D3C00C bl #0x91d3664c
+    0x91D3C010 bl #0x91d372dc
+    0x91D3C018 bl #0x91d0c744
+    0x91D3C044 blx r3
+    0x91D3C064 bl #0x91d11f00
+    0x91D3C0A4 bl #0x91d37b78
+
+========================================================================
+D. boot 主函数两个入口的上下文
+========================================================================
+=== 0x91D3D8B0..0x91D3D8F0 @0x91D3D8B0 ===
+  91D3D8B0  bne      #0x91d3d8e0
+  91D3D8B4  add      sp, sp, #8
+  91D3D8B8  pop      {r4, lr}
+  91D3D8BC  b        #0x91d3d27c
+  91D3D8C0  bl       #0x91d13e04
+  91D3D8C4  ldr      r2, [sp, #4]
+  91D3D8C8  ldr      r3, [r4]
+  91D3D8CC  cmp      r2, r3
+  91D3D8D0  bne      #0x91d3d8e0
+  91D3D8D4  add      sp, sp, #8
+  91D3D8D8  pop      {r4, lr}
+  91D3D8DC  b        #0x91d3c3f0
+  91D3D8E0  bl       #0x91d516c4
+  91D3D8E4  push     {r4, r5, r6, r7, lr}
+  91D3D8E8  movw     r4, #0x57dc   ; = 0x920157DC
+  91D3D8EC  movt     r4, #0x9201
+
+  0x91D3D8DC 所在函数 ~0x91D3D870  callers: (none)

@@ -1,0 +1,97 @@
+﻿10:45:10.723 | === BLM BOOT-ONLY FLASH 20261114 ===
+10:45:10.733 | candidate=D:\xplay6\evidence\kernel_re\out\stage2\bootloop_monitor\images\boot_los16_blm_20261114011739.img
+10:45:10.888 | candidate_sha256=c6cad0507b7c4a4abee07e6561da936e40af1f7fc941f63b0148139b76c19e64
+10:45:10.891 | candidate_bytes=58483968
+10:45:10.892 | rollback=D:\16\PD1610_81\release\PD1610_LOS16_20261112\images\boot.img
+10:45:10.999 | rollback_sha256=929fda9985478078f0614a9c3709af69fe3b1c9c8badc50e783261f91ab241ae
+10:45:11.000 | command=fastboot -s 5fccbfeb flash boot <candidate>
+10:45:51.094 | flash_output=fastboot.exe : Warning: skip copying boot image avb footer (boot partition size: 0, boot image size: 58483968). / 所在位置 行:1 字符: 1044 / + ... andidate>'; $flash = (& $fb -s 5fccbfeb flash boot $cand 2>&1 | Out-S ... / +                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ /     + CategoryInfo          : NotSpecified: (Warning: skip c...ize: 58483968).:String) [], RemoteException /     + FullyQualifiedErrorId : NativeCommandError /   / Sending 'boot' (57113 KB)                          FAILED (AdbWriteEndpointSync failed: 淇″彿鐏秴鏃舵椂闂村凡鍒?(121)) / fastboot: error: Command failed
+10:45:51.095 | FLASH_FAIL_STOP - no reboot, no rollback
+10:59:57.687 | === BLM FLASH RETRY 20261114 ===
+10:59:57.804 | candidate_sha256=c6cad0507b7c4a4abee07e6561da936e40af1f7fc941f63b0148139b76c19e64
+10:59:57.862 | rollback_sha256=929fda9985478078f0614a9c3709af69fe3b1c9c8badc50e783261f91ab241ae
+10:59:59.949 | flash_output=
+10:59:59.951 | flash=OKAY
+10:59:59.989 | reboot_output=
+11:00:00.067 | t=0s | fastboot=[] | adb=[]
+11:00:10.188 | t=10s | fastboot=[] | adb=[]
+11:00:20.307 | t=20s | fastboot=[] | adb=[]
+11:00:30.417 | t=30s | fastboot=[] | adb=[]
+11:00:40.531 | t=40s | fastboot=[] | adb=[]
+11:00:50.647 | t=50s | fastboot=[] | adb=[]
+11:01:00.762 | t=60s | fastboot=[] | adb=[]
+11:01:10.875 | t=70s | fastboot=[] | adb=[]
+11:01:22.162 | t=80s | fastboot=[] | adb=[]
+11:01:32.281 | t=90s | fastboot=[] | adb=[]
+11:01:42.388 | t=100s | fastboot=[] | adb=[]
+11:01:52.507 | t=110s | fastboot=[] | adb=[]
+11:07:26.736 | === ROLLBACK AFTER BLM BOOTLOOP 20261114 ===
+11:07:26.846 | rollback_sha256=929fda9985478078f0614a9c3709af69fe3b1c9c8badc50e783261f91ab241ae
+11:07:26.879 | pre_rollback_fastboot_devices=5fccbfeb	 fastboot
+11:07:28.933 | rollback_flash_output=fastboot.exe : Sending 'boot' (57113 KB)                          OKAY [  1.522s]
+所在位置 行:1 字符: 1049
++ ... back'; exit 2 }; $f = (& $fb -s $serial flash boot $roll 2>&1 | Out-S ...
++                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Sending 'boot' ...OKAY [  1.522s]:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Writing 'boot'                                     OKAY [  0.390s]
+Finished. Total time: 2.022s
+11:07:28.946 | rollback_flash=OKAY
+11:07:28.980 | rollback_reboot_output=fastboot.exe : Rebooting                                          OKAY [  0.007s]
+所在位置 行:1 字符: 1281
++ ... ; W 'rollback_flash=OKAY'; $r = (& $fb -s $serial reboot 2>&1 | Out-S ...
++                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Rebooting      ...OKAY [  0.007s]:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Finished. Total time: 0.008s
+11:08:24.018 | rollback_adb_devices=List of devices attached
+5fccbfeb	device
+11:08:24.109 | rollback_uname=Linux localhost 3.18.71-perf-g8a8c60dd #1 SMP PREEMPT Wed Nov 7 16:08:09 CST 2018 aarch64
+11:08:24.176 | rollback_kernel_release=3.18.71-perf-g8a8c60dd
+11:08:24.236 | rollback_fingerprint=vivo/lineage_pd1610/pd1610:9/PQ3A.190801.002/builder11112246:userdebug/test-keys
+11:08:24.307 | rollback_uptime=03:46:46 up 0 min,  0 users,  load average: 2.75, 0.74, 0.25
+11:08:24.308 | ROLLBACK_VERIFIED
+11:08:24.398 | blm_dd=adb.exe : /system/bin/sh: su: not found
+所在位置 行:1 字符: 2050
++ ... ng); $dd = (& $adb -s $serial shell su -c 'dd if=/dev/mem bs=4096 ski ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (/system/bin/sh: su: not found:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+11:08:24.441 | blm_pull=adb.exe : adb: error: failed to stat remote object '/sdcard/blm_ram.bin': No such file or directory
+所在位置 行:1 字符: 2204
++ ... ); $pull = (& $adb -s $serial pull /sdcard/blm_ram.bin $dump 2>&1 | O ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (adb: error: fai...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+11:08:24.442 | blm_dump=MISSING
+11:08:24.443 | === ROLLBACK END ===
+11:09:28.835 | === BLM ROOT /DEV/MEM READ ===
+11:09:29.461 | adb_root=restarting adbd as root
+11:09:29.492 | adb_wait_for_device=
+11:09:29.555 | adb_id=uid=0(root) gid=0(root) groups=0(root),1004(input),1007(log),1011(adb),1015(sdcard_rw),1028(sdcard_r),3001(net_bt_admin),3002(net_bt),3003(inet),3006(net_bw_stats),3009(readproc),3011(uhid) context=u:r:su:s0
+11:09:29.737 | blm_root_dd=adb.exe : dd: /dev/mem: No such file or directory
+所在位置 行:1 字符: 858
++ ... ng); $dd = (& $adb -s $serial shell 'dd if=/dev/mem bs=4096 skip=8448 ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (dd: /dev/mem: No such file or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+11:09:29.786 | blm_root_pull=adb.exe : adb: error: failed to stat remote object '/sdcard/blm_ram.bin': No such file or directory
+所在位置 行:1 字符: 1062
++ ... }; $pull = (& $adb -s $serial pull /sdcard/blm_ram.bin $dump 2>&1 | O ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (adb: error: fai...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+11:09:29.786 | blm_root_dump=MISSING
+11:09:29.787 | === BLM ROOT READ END ===
+11:28:38 | === EDL FIREHOSE PEEK PROBE (READ ONLY) ===
+11:28:38 | device=adb 5fccbfeb online, stock 3.18.71 / LOS16; edl CLI MISSING on Windows+WSL; firehose=prog_ufs_firehose_8996_ddr.elf PRESENT; QFIL QSaharaServer.exe/fh_loader.exe PRESENT
+11:28:38 | firehose capability from prior port_trace: "Supported Functions: ... erase peek poke" => peek supported
+11:28:38 | peek XML from bkerler/edl firehose.py cmd_peek: <peek address64="<dec>" size_in_bytes="<len>" />; reply is <log value="0x22 0x00 ..."> XML text (no bulk data)
+11:31:57 | adb reboot edl OK; PNP_9008=Qualcomm HS-USB QDLoader 9008 (COM5) Status=OK InstanceId=USB\VID_05C6&PID_9008\6&1CB21114&0&1
+11:32:xx | SAHARA_UPLOAD OK; PEEK_BLOCK 1/1 addr=0x42100000 got=256 rc=OK; out=flash_log/blm_ram_probe_256.bin bytes=256 nonzero=236 sha256=b206feef0bd5223f7b74e94ceede4adc52a6c2f31778806c1c17365880f95255 head=e99b42f9ea4b42f9490100f9490140f9 failed_blocks=0
+11:32:xx | verdict=CHANNEL_OK: DDR content survives 9008 + Sahara programmer upload. NOT BLM log (stock system had been running ~25 min); head is not BLM magic.
+11:32:xx | reset OK; ADB_UP t=30s; uname=3.18.71-perf-g8a8c60dd
+11:34:xx | LOOP VALIDATION: 2 x 0x1000 blocks in one firehose session => PEEK_BLOCK 1/2 got=4096, 2/2 got=4096, failed_blocks=0, PEEK_2BLOCK_RC=0, 8192 B sha256=88aa049d97e5a6a5c778f8ec4c03b2948873226fbc89a0f835c960004ab18af1; reset OK; ADB_UP t=30s; uname=3.18.71-perf-g8a8c60dd
+11:34:xx | === PEEK PROBE END ===

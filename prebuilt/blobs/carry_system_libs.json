@@ -1,0 +1,21 @@
+{
+ "32": [
+  "com.qualcomm.qti.ant@1.0.so",
+  "libtrueportrait.so",
+  "libvraudio.so",
+  "vendor.qti.hardware.factory@1.0.so",
+  "vendor.qti.hardware.fm@1.0.so",
+  "vendor.qti.hardware.iop@1.0.so",
+  "vendor.vivo.hardware.bbkts@1.0.so",
+  "vendor.vivo.hardware.light@1.0.so"
+ ],
+ "64": [
+  "com.qualcomm.qti.ant@1.0.so",
+  "libvraudio.so",
+  "vendor.qti.hardware.factory@1.0.so",
+  "vendor.qti.hardware.fm@1.0.so",
+  "vendor.qti.hardware.iop@1.0.so",
+  "vendor.vivo.hardware.bbkts@1.0.so",
+  "vendor.vivo.hardware.light@1.0.so"
+ ]
+}

@@ -1,0 +1,11 @@
+[
+  "msm_restart_probe",
+  "bootloader",
+  "silent",
+  "survival",
+  "recovery",
+  "dm-verity device corrupted",
+  "dm-verity enforcing",
+  "keys clear",
+  "bsptmode"
+]

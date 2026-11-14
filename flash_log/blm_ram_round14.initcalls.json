@@ -1,0 +1,1804 @@
+{
+  "input": "flash_log/blm_ram_round14.bin",
+  "system_map": "build/trace-20261114140000/System.map",
+  "bank_index": 0,
+  "generation": 1,
+  "last_stage_id": 12,
+  "last_stage_name": "KERNEL_INIT",
+  "symbol_count": 124663,
+  "line_count": 377,
+  "initcall_count": 191,
+  "initcalls": [
+    {
+      "seq": 1215,
+      "jiffies": 4294892561,
+      "addr": 18446743798857042548,
+      "addr_hex": "0xffffffc001838a74",
+      "raw": "ffffffc001838a74",
+      "symbol": "qcota_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1216,
+      "jiffies": 4294892561,
+      "addr": 18446743798857042852,
+      "addr_hex": "0xffffffc001838ba4",
+      "raw": "ffffffc001838ba4",
+      "symbol": "qcom_ice_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1220,
+      "jiffies": 4294892562,
+      "addr": 18446743798857045180,
+      "addr_hex": "0xffffffc0018394bc",
+      "raw": "ffffffc0018394bc",
+      "symbol": "ufs_qcom_pltform_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1221,
+      "jiffies": 4294892562,
+      "addr": 18446743798857046328,
+      "addr_hex": "0xffffffc001839938",
+      "raw": "ffffffc001839938",
+      "symbol": "ufshcd_pltfrm_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1229,
+      "jiffies": 4294892566,
+      "addr": 18446743798857046360,
+      "addr_hex": "0xffffffc001839958",
+      "raw": "ffffffc001839958",
+      "symbol": "init_sd",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1230,
+      "jiffies": 4294892566,
+      "addr": 18446743798857046776,
+      "addr_hex": "0xffffffc001839af8",
+      "raw": "ffffffc001839af8",
+      "symbol": "init_sg",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1231,
+      "jiffies": 4294892566,
+      "addr": 18446743798857047100,
+      "addr_hex": "0xffffffc001839c3c",
+      "raw": "ffffffc001839c3c",
+      "symbol": "init_ch_module",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1234,
+      "jiffies": 4294892566,
+      "addr": 18446743798857048136,
+      "addr_hex": "0xffffffc00183a048",
+      "raw": "ffffffc00183a048",
+      "symbol": "msm_spi_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1238,
+      "jiffies": 4294892568,
+      "addr": 18446743798857048376,
+      "addr_hex": "0xffffffc00183a138",
+      "raw": "ffffffc00183a138",
+      "symbol": "bonding_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1240,
+      "jiffies": 4294892568,
+      "addr": 18446743798857050928,
+      "addr_hex": "0xffffffc00183ab30",
+      "raw": "ffffffc00183ab30",
+      "symbol": "dummy_init_module",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1241,
+      "jiffies": 4294892568,
+      "addr": 18446743798857051252,
+      "addr_hex": "0xffffffc00183ac74",
+      "raw": "ffffffc00183ac74",
+      "symbol": "net_olddevs_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1242,
+      "jiffies": 4294892568,
+      "addr": 18446743798857051560,
+      "addr_hex": "0xffffffc00183ada8",
+      "raw": "ffffffc00183ada8",
+      "symbol": "tun_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1245,
+      "jiffies": 4294892568,
+      "addr": 18446743798857051732,
+      "addr_hex": "0xffffffc00183ae54",
+      "raw": "ffffffc00183ae54",
+      "symbol": "atl1c_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1246,
+      "jiffies": 4294892568,
+      "addr": 18446743798857051772,
+      "addr_hex": "0xffffffc00183ae7c",
+      "raw": "ffffffc00183ae7c",
+      "symbol": "rmnet_mhi_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1247,
+      "jiffies": 4294892569,
+      "addr": 18446743798857051988,
+      "addr_hex": "0xffffffc00183af54",
+      "raw": "ffffffc00183af54",
+      "symbol": "ppp_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1249,
+      "jiffies": 4294892569,
+      "addr": 18446743798857052252,
+      "addr_hex": "0xffffffc00183b05c",
+      "raw": "ffffffc00183b05c",
+      "symbol": "ppp_async_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1250,
+      "jiffies": 4294892569,
+      "addr": 18446743798857052320,
+      "addr_hex": "0xffffffc00183b0a0",
+      "raw": "ffffffc00183b0a0",
+      "symbol": "bsdcomp_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1252,
+      "jiffies": 4294892569,
+      "addr": 18446743798857052380,
+      "addr_hex": "0xffffffc00183b0dc",
+      "raw": "ffffffc00183b0dc",
+      "symbol": "deflate_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1254,
+      "jiffies": 4294892569,
+      "addr": 18446743798857052452,
+      "addr_hex": "0xffffffc00183b124",
+      "raw": "ffffffc00183b124",
+      "symbol": "ppp_mppe_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1256,
+      "jiffies": 4294892569,
+      "addr": 18446743798857052652,
+      "addr_hex": "0xffffffc00183b1ec",
+      "raw": "ffffffc00183b1ec",
+      "symbol": "ppp_sync_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1257,
+      "jiffies": 4294892569,
+      "addr": 18446743798857052720,
+      "addr_hex": "0xffffffc00183b230",
+      "raw": "ffffffc00183b230",
+      "symbol": "pppox_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1260,
+      "jiffies": 4294892569,
+      "addr": 18446743798857052916,
+      "addr_hex": "0xffffffc00183b2f4",
+      "raw": "ffffffc00183b2f4",
+      "symbol": "pppolac_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1261,
+      "jiffies": 4294892569,
+      "addr": 18446743798857053044,
+      "addr_hex": "0xffffffc00183b374",
+      "raw": "ffffffc00183b374",
+      "symbol": "pppopns_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1262,
+      "jiffies": 4294892569,
+      "addr": 18446743798857053172,
+      "addr_hex": "0xffffffc00183b3f4",
+      "raw": "ffffffc00183b3f4",
+      "symbol": "cnss_initialize",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1283,
+      "jiffies": 4294892604,
+      "addr": 18446743798857053208,
+      "addr_hex": "0xffffffc00183b418",
+      "raw": "ffffffc00183b418",
+      "symbol": "wcnss_pre_alloc_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1284,
+      "jiffies": 4294892604,
+      "addr": 18446743798857053420,
+      "addr_hex": "0xffffffc00183b4ec",
+      "raw": "ffffffc00183b4ec",
+      "symbol": "cnss_utils_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1285,
+      "jiffies": 4294892604,
+      "addr": 18446743798857053524,
+      "addr_hex": "0xffffffc00183b554",
+      "raw": "ffffffc00183b554",
+      "symbol": "asix_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1287,
+      "jiffies": 4294892604,
+      "addr": 18446743798857053564,
+      "addr_hex": "0xffffffc00183b57c",
+      "raw": "ffffffc00183b57c",
+      "symbol": "asix_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1289,
+      "jiffies": 4294892604,
+      "addr": 18446743798857053604,
+      "addr_hex": "0xffffffc00183b5a4",
+      "raw": "ffffffc00183b5a4",
+      "symbol": "cdc_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1291,
+      "jiffies": 4294892604,
+      "addr": 18446743798857053644,
+      "addr_hex": "0xffffffc00183b5cc",
+      "raw": "ffffffc00183b5cc",
+      "symbol": "net1080_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1293,
+      "jiffies": 4294892604,
+      "addr": 18446743798857053684,
+      "addr_hex": "0xffffffc00183b5f4",
+      "raw": "ffffffc00183b5f4",
+      "symbol": "cdc_subset_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1295,
+      "jiffies": 4294892604,
+      "addr": 18446743798857053724,
+      "addr_hex": "0xffffffc00183b61c",
+      "raw": "ffffffc00183b61c",
+      "symbol": "zaurus_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1297,
+      "jiffies": 4294892604,
+      "addr": 18446743798857053764,
+      "addr_hex": "0xffffffc00183b644",
+      "raw": "ffffffc00183b644",
+      "symbol": "usbnet_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1298,
+      "jiffies": 4294892604,
+      "addr": 18446743798857053908,
+      "addr_hex": "0xffffffc00183b6d4",
+      "raw": "ffffffc00183b6d4",
+      "symbol": "cdc_ncm_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1300,
+      "jiffies": 4294892604,
+      "addr": 18446743798857053948,
+      "addr_hex": "0xffffffc00183b6fc",
+      "raw": "ffffffc00183b6fc",
+      "symbol": "qmi_wwan_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1302,
+      "jiffies": 4294892604,
+      "addr": 18446743798857053988,
+      "addr_hex": "0xffffffc00183b724",
+      "raw": "ffffffc00183b724",
+      "symbol": "uio_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1303,
+      "jiffies": 4294892604,
+      "addr": 18446743798857054304,
+      "addr_hex": "0xffffffc00183b860",
+      "raw": "ffffffc00183b860",
+      "symbol": "msm_sharedmem_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1306,
+      "jiffies": 4294892606,
+      "addr": 18446743798857055040,
+      "addr_hex": "0xffffffc00183bb40",
+      "raw": "ffffffc00183bb40",
+      "symbol": "msm_ssphy_qmp_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1307,
+      "jiffies": 4294892606,
+      "addr": 18446743798857055072,
+      "addr_hex": "0xffffffc00183bb60",
+      "raw": "ffffffc00183bb60",
+      "symbol": "qusb_phy_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1310,
+      "jiffies": 4294892607,
+      "addr": 18446743798857055104,
+      "addr_hex": "0xffffffc00183bb80",
+      "raw": "ffffffc00183bb80",
+      "symbol": "qusb_phy_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1311,
+      "jiffies": 4294892607,
+      "addr": 18446743798857055136,
+      "addr_hex": "0xffffffc00183bba0",
+      "raw": "ffffffc00183bba0",
+      "symbol": "dwc3_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1312,
+      "jiffies": 4294892607,
+      "addr": 18446743798857056272,
+      "addr_hex": "0xffffffc00183c010",
+      "raw": "ffffffc00183c010",
+      "symbol": "dwc3_pci_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1313,
+      "jiffies": 4294892607,
+      "addr": 18446743798839943176,
+      "addr_hex": "0xffffffc0007ea008",
+      "raw": "ffffffc0007ea008",
+      "symbol": "dwc3_msm_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1315,
+      "jiffies": 4294892608,
+      "addr": 18446743798857056312,
+      "addr_hex": "0xffffffc00183c038",
+      "raw": "ffffffc00183c038",
+      "symbol": "msm_dbm_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1316,
+      "jiffies": 4294892608,
+      "addr": 18446743798857056344,
+      "addr_hex": "0xffffffc00183c058",
+      "raw": "ffffffc00183c058",
+      "symbol": "mon_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1317,
+      "jiffies": 4294892608,
+      "addr": 18446743798857056900,
+      "addr_hex": "0xffffffc00183c284",
+      "raw": "ffffffc00183c284",
+      "symbol": "xhci_pci_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1318,
+      "jiffies": 4294892608,
+      "addr": 18446743798857056996,
+      "addr_hex": "0xffffffc00183c2e4",
+      "raw": "ffffffc00183c2e4",
+      "symbol": "xhci_plat_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1319,
+      "jiffies": 4294892609,
+      "addr": 18446743798857057072,
+      "addr_hex": "0xffffffc00183c330",
+      "raw": "ffffffc00183c330",
+      "symbol": "ehci_hcd_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1321,
+      "jiffies": 4294892609,
+      "addr": 18446743798857057184,
+      "addr_hex": "0xffffffc00183c3a0",
+      "raw": "ffffffc00183c3a0",
+      "symbol": "ehci_pci_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1323,
+      "jiffies": 4294892609,
+      "addr": 18446743798857057320,
+      "addr_hex": "0xffffffc00183c428",
+      "raw": "ffffffc00183c428",
+      "symbol": "xhci_hcd_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1324,
+      "jiffies": 4294892609,
+      "addr": 18446743798857057956,
+      "addr_hex": "0xffffffc00183c6a4",
+      "raw": "ffffffc00183c6a4",
+      "symbol": "wdm_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1326,
+      "jiffies": 4294892609,
+      "addr": 18446743798857058000,
+      "addr_hex": "0xffffffc00183c6d0",
+      "raw": "ffffffc00183c6d0",
+      "symbol": "usb_storage_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1328,
+      "jiffies": 4294892609,
+      "addr": 18446743798857058040,
+      "addr_hex": "0xffffffc00183c6f8",
+      "raw": "ffffffc00183c6f8",
+      "symbol": "alauda_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1330,
+      "jiffies": 4294892609,
+      "addr": 18446743798857058080,
+      "addr_hex": "0xffffffc00183c720",
+      "raw": "ffffffc00183c720",
+      "symbol": "cypress_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1332,
+      "jiffies": 4294892609,
+      "addr": 18446743798857058120,
+      "addr_hex": "0xffffffc00183c748",
+      "raw": "ffffffc00183c748",
+      "symbol": "datafab_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1334,
+      "jiffies": 4294892609,
+      "addr": 18446743798857058160,
+      "addr_hex": "0xffffffc00183c770",
+      "raw": "ffffffc00183c770",
+      "symbol": "freecom_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1336,
+      "jiffies": 4294892609,
+      "addr": 18446743798857058200,
+      "addr_hex": "0xffffffc00183c798",
+      "raw": "ffffffc00183c798",
+      "symbol": "isd200_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1338,
+      "jiffies": 4294892609,
+      "addr": 18446743798857058240,
+      "addr_hex": "0xffffffc00183c7c0",
+      "raw": "ffffffc00183c7c0",
+      "symbol": "jumpshot_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1342,
+      "jiffies": 4294892609,
+      "addr": 18446743798857058320,
+      "addr_hex": "0xffffffc00183c810",
+      "raw": "ffffffc00183c810",
+      "symbol": "sddr09_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1344,
+      "jiffies": 4294892609,
+      "addr": 18446743798857058360,
+      "addr_hex": "0xffffffc00183c838",
+      "raw": "ffffffc00183c838",
+      "symbol": "sddr55_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1346,
+      "jiffies": 4294892609,
+      "addr": 18446743798857058400,
+      "addr_hex": "0xffffffc00183c860",
+      "raw": "ffffffc00183c860",
+      "symbol": "usbat_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1348,
+      "jiffies": 4294892609,
+      "addr": 18446743798857058440,
+      "addr_hex": "0xffffffc00183c888",
+      "raw": "ffffffc00183c888",
+      "symbol": "usb_serial_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1350,
+      "jiffies": 4294892609,
+      "addr": 18446743798857058880,
+      "addr_hex": "0xffffffc00183ca40",
+      "raw": "ffffffc00183ca40",
+      "symbol": "ehset_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1352,
+      "jiffies": 4294892609,
+      "addr": 18446743798857058920,
+      "addr_hex": "0xffffffc00183ca68",
+      "raw": "ffffffc00183ca68",
+      "symbol": "ksb_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1355,
+      "jiffies": 4294892609,
+      "addr": 18446743798857059748,
+      "addr_hex": "0xffffffc00183cda4",
+      "raw": "ffffffc00183cda4",
+      "symbol": "acmmod_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1356,
+      "jiffies": 4294892609,
+      "addr": 18446743798840185940,
+      "addr_hex": "0xffffffc000825454",
+      "raw": "ffffffc000825454",
+      "symbol": "userial_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1357,
+      "jiffies": 4294892609,
+      "addr": 18446743798857059776,
+      "addr_hex": "0xffffffc00183cdc0",
+      "raw": "ffffffc00183cdc0",
+      "symbol": "gsermod_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1358,
+      "jiffies": 4294892609,
+      "addr": 18446743798857059804,
+      "addr_hex": "0xffffffc00183cddc",
+      "raw": "ffffffc00183cddc",
+      "symbol": "ncmmod_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1359,
+      "jiffies": 4294892609,
+      "addr": 18446743798857059836,
+      "addr_hex": "0xffffffc00183cdfc",
+      "raw": "ffffffc00183cdfc",
+      "symbol": "ecmmod_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1360,
+      "jiffies": 4294892609,
+      "addr": 18446743798857059864,
+      "addr_hex": "0xffffffc00183ce18",
+      "raw": "ffffffc00183ce18",
+      "symbol": "mass_storagemod_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1361,
+      "jiffies": 4294892609,
+      "addr": 18446743798857059896,
+      "addr_hex": "0xffffffc00183ce38",
+      "raw": "ffffffc00183ce38",
+      "symbol": "ffsmod_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1362,
+      "jiffies": 4294892609,
+      "addr": 18446743798857059928,
+      "addr_hex": "0xffffffc00183ce58",
+      "raw": "ffffffc00183ce58",
+      "symbol": "uac1mod_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1363,
+      "jiffies": 4294892609,
+      "addr": 18446743798857059960,
+      "addr_hex": "0xffffffc00183ce78",
+      "raw": "ffffffc00183ce78",
+      "symbol": "uac2mod_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1365,
+      "jiffies": 4294892609,
+      "addr": 18446743798857060020,
+      "addr_hex": "0xffffffc00183ceb4",
+      "raw": "ffffffc00183ceb4",
+      "symbol": "audio_sourcemod_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1366,
+      "jiffies": 4294892609,
+      "addr": 18446743798840410800,
+      "addr_hex": "0xffffffc00085c2b0",
+      "raw": "ffffffc00085c2b0",
+      "symbol": "fgsi_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1367,
+      "jiffies": 4294892609,
+      "addr": 18446743798857061632,
+      "addr_hex": "0xffffffc00183d500",
+      "raw": "ffffffc00183d500",
+      "symbol": "gether_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1368,
+      "jiffies": 4294892609,
+      "addr": 18446743798857061796,
+      "addr_hex": "0xffffffc00183d5a4",
+      "raw": "ffffffc00183d5a4",
+      "symbol": "rndis_mod_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1369,
+      "jiffies": 4294892609,
+      "addr": 18446743798857061600,
+      "addr_hex": "0xffffffc00183d4e0",
+      "raw": "ffffffc00183d4e0",
+      "symbol": "accessorymod_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1370,
+      "jiffies": 4294892609,
+      "addr": 18446743798857061568,
+      "addr_hex": "0xffffffc00183d4c0",
+      "raw": "ffffffc00183d4c0",
+      "symbol": "mtpmod_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1371,
+      "jiffies": 4294892609,
+      "addr": 18446743798857060452,
+      "addr_hex": "0xffffffc00183d064",
+      "raw": "ffffffc00183d064",
+      "symbol": "ghsic_data_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1372,
+      "jiffies": 4294892609,
+      "addr": 18446743798857060320,
+      "addr_hex": "0xffffffc00183cfe0",
+      "raw": "ffffffc00183cfe0",
+      "symbol": "gctrl_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1373,
+      "jiffies": 4294892609,
+      "addr": 18446743798857060184,
+      "addr_hex": "0xffffffc00183cf58",
+      "raw": "ffffffc00183cf58",
+      "symbol": "gsmd_ctrl_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1374,
+      "jiffies": 4294892609,
+      "addr": 18446743798857060828,
+      "addr_hex": "0xffffffc00183d1dc",
+      "raw": "ffffffc00183d1dc",
+      "symbol": "gbridge_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1376,
+      "jiffies": 4294892609,
+      "addr": 18446743798857060052,
+      "addr_hex": "0xffffffc00183ced4",
+      "raw": "ffffffc00183ced4",
+      "symbol": "glink_ctrl_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1377,
+      "jiffies": 4294892609,
+      "addr": 18446743798857061920,
+      "addr_hex": "0xffffffc00183d620",
+      "raw": "ffffffc00183d620",
+      "symbol": "serport_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1378,
+      "jiffies": 4294892609,
+      "addr": 18446743798857062284,
+      "addr_hex": "0xffffffc00183d78c",
+      "raw": "ffffffc00183d78c",
+      "symbol": "mousedev_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1380,
+      "jiffies": 4294892609,
+      "addr": 18446743798857062452,
+      "addr_hex": "0xffffffc00183d834",
+      "raw": "ffffffc00183d834",
+      "symbol": "evdev_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1381,
+      "jiffies": 4294892609,
+      "addr": 18446743798857062556,
+      "addr_hex": "0xffffffc00183d89c",
+      "raw": "ffffffc00183d89c",
+      "symbol": "atkbd_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1382,
+      "jiffies": 4294892609,
+      "addr": 18446743798857062640,
+      "addr_hex": "0xffffffc00183d8f0",
+      "raw": "ffffffc00183d8f0",
+      "symbol": "xpad_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1384,
+      "jiffies": 4294892609,
+      "addr": 18446743798857062744,
+      "addr_hex": "0xffffffc00183d958",
+      "raw": "ffffffc00183d958",
+      "symbol": "vkeys_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1385,
+      "jiffies": 4294892610,
+      "addr": 18446743798857062776,
+      "addr_hex": "0xffffffc00183d978",
+      "raw": "ffffffc00183d978",
+      "symbol": "synaptics_rmi4_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1386,
+      "jiffies": 4294892610,
+      "addr": 18446743798857062816,
+      "addr_hex": "0xffffffc00183d9a0",
+      "raw": "ffffffc00183d9a0",
+      "symbol": "rmidev_module_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1387,
+      "jiffies": 4294892610,
+      "addr": 18446743798857062852,
+      "addr_hex": "0xffffffc00183d9c4",
+      "raw": "ffffffc00183d9c4",
+      "symbol": "rmi4_fw_update_module_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1388,
+      "jiffies": 4294892610,
+      "addr": 18446743798857062888,
+      "addr_hex": "0xffffffc00183d9e8",
+      "raw": "ffffffc00183d9e8",
+      "symbol": "gpio_event_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1389,
+      "jiffies": 4294892610,
+      "addr": 18446743798857062920,
+      "addr_hex": "0xffffffc00183da08",
+      "raw": "ffffffc00183da08",
+      "symbol": "hbtp_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1390,
+      "jiffies": 4294892610,
+      "addr": 18446743798857063192,
+      "addr_hex": "0xffffffc00183db18",
+      "raw": "ffffffc00183db18",
+      "symbol": "hbtp_vm_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1392,
+      "jiffies": 4294892610,
+      "addr": 18446743798857063516,
+      "addr_hex": "0xffffffc00183dc5c",
+      "raw": "ffffffc00183dc5c",
+      "symbol": "keychord_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1393,
+      "jiffies": 4294892610,
+      "addr": 18446743798857063544,
+      "addr_hex": "0xffffffc00183dc78",
+      "raw": "ffffffc00183dc78",
+      "symbol": "uinput_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1395,
+      "jiffies": 4294892610,
+      "addr": 18446743798857063604,
+      "addr_hex": "0xffffffc00183dcb4",
+      "raw": "ffffffc00183dcb4",
+      "symbol": "keycombo_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1396,
+      "jiffies": 4294892611,
+      "addr": 18446743798857063636,
+      "addr_hex": "0xffffffc00183dcd4",
+      "raw": "ffffffc00183dcd4",
+      "symbol": "bosch_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1397,
+      "jiffies": 4294892611,
+      "addr": 18446743798857063708,
+      "addr_hex": "0xffffffc00183dd1c",
+      "raw": "ffffffc00183dd1c",
+      "symbol": "SMI_ACC2X2_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1400,
+      "jiffies": 4294892611,
+      "addr": 18446743798857063740,
+      "addr_hex": "0xffffffc00183dd3c",
+      "raw": "ffffffc00183dd3c",
+      "symbol": "SMI_GYRO_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1403,
+      "jiffies": 4294892611,
+      "addr": 18446743798857063772,
+      "addr_hex": "0xffffffc00183dd5c",
+      "raw": "ffffffc00183dd5c",
+      "symbol": "SMI_i2c_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1404,
+      "jiffies": 4294892611,
+      "addr": 18446743798857064316,
+      "addr_hex": "0xffffffc00183df7c",
+      "raw": "ffffffc00183df7c",
+      "symbol": "qpnp_rtc_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1406,
+      "jiffies": 4294892611,
+      "addr": 18446743798857066920,
+      "addr_hex": "0xffffffc00183e9a8",
+      "raw": "ffffffc00183e9a8",
+      "symbol": "i2c_dev_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1408,
+      "jiffies": 4294892611,
+      "addr": 18446743798857069016,
+      "addr_hex": "0xffffffc00183f1d8",
+      "raw": "ffffffc00183f1d8",
+      "symbol": "soc_camera_pdrv_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1409,
+      "jiffies": 4294892611,
+      "addr": 18446743798857069048,
+      "addr_hex": "0xffffffc00183f1f8",
+      "raw": "ffffffc00183f1f8",
+      "symbol": "soc_mbus_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1410,
+      "jiffies": 4294892611,
+      "addr": 18446743798857069056,
+      "addr_hex": "0xffffffc00183f200",
+      "raw": "ffffffc00183f200",
+      "symbol": "soc_camera_platform_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1411,
+      "jiffies": 4294892611,
+      "addr": 18446743798857069088,
+      "addr_hex": "0xffffffc00183f220",
+      "raw": "ffffffc00183f220",
+      "symbol": "msm_vidc_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1412,
+      "jiffies": 4294892619,
+      "addr": 18446743798857070672,
+      "addr_hex": "0xffffffc00183f850",
+      "raw": "ffffffc00183f850",
+      "symbol": "msm_vidc_bw_gov_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1413,
+      "jiffies": 4294892619,
+      "addr": 18446743798857070908,
+      "addr_hex": "0xffffffc00183f93c",
+      "raw": "ffffffc00183f93c",
+      "symbol": "msm_vidc_bus_table_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1414,
+      "jiffies": 4294892619,
+      "addr": 18446743798857070992,
+      "addr_hex": "0xffffffc00183f990",
+      "raw": "ffffffc00183f990",
+      "symbol": "vmem_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1416,
+      "jiffies": 4294892620,
+      "addr": 18446743798857071024,
+      "addr_hex": "0xffffffc00183f9b0",
+      "raw": "ffffffc00183f9b0",
+      "symbol": "cam_smmu_init_module",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1417,
+      "jiffies": 4294892621,
+      "addr": 18446743798857071056,
+      "addr_hex": "0xffffffc00183f9d0",
+      "raw": "ffffffc00183f9d0",
+      "symbol": "msm_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1418,
+      "jiffies": 4294892622,
+      "addr": 18446743798857071088,
+      "addr_hex": "0xffffffc00183f9f0",
+      "raw": "ffffffc00183f9f0",
+      "symbol": "msm_cci_init_module",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1419,
+      "jiffies": 4294892623,
+      "addr": 18446743798857071120,
+      "addr_hex": "0xffffffc00183fa10",
+      "raw": "ffffffc00183fa10",
+      "symbol": "msm_csiphy_init_module",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1420,
+      "jiffies": 4294892624,
+      "addr": 18446743798857071152,
+      "addr_hex": "0xffffffc00183fa30",
+      "raw": "ffffffc00183fa30",
+      "symbol": "msm_csid_init_module",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1421,
+      "jiffies": 4294892625,
+      "addr": 18446743798857071184,
+      "addr_hex": "0xffffffc00183fa50",
+      "raw": "ffffffc00183fa50",
+      "symbol": "msm_actuator_init_module",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1424,
+      "jiffies": 4294892625,
+      "addr": 18446743798857071240,
+      "addr_hex": "0xffffffc00183fa88",
+      "raw": "ffffffc00183fa88",
+      "symbol": "msm_eeprom_init_module",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1429,
+      "jiffies": 4294892626,
+      "addr": 18446743798857071304,
+      "addr_hex": "0xffffffc00183fac8",
+      "raw": "ffffffc00183fac8",
+      "symbol": "msm_ois_init_module",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1431,
+      "jiffies": 4294892627,
+      "addr": 18446743798857071376,
+      "addr_hex": "0xffffffc00183fb10",
+      "raw": "ffffffc00183fb10",
+      "symbol": "msm_flash_init_module",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1432,
+      "jiffies": 4294892627,
+      "addr": 18446743798857071516,
+      "addr_hex": "0xffffffc00183fb9c",
+      "raw": "ffffffc00183fb9c",
+      "symbol": "msm_led_trigger_add_driver",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1437,
+      "jiffies": 4294892627,
+      "addr": 18446743798857071548,
+      "addr_hex": "0xffffffc00183fbbc",
+      "raw": "ffffffc00183fbbc",
+      "symbol": "msm_flash_adp1660_init_module",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1439,
+      "jiffies": 4294892628,
+      "addr": 18446743798857071672,
+      "addr_hex": "0xffffffc00183fc38",
+      "raw": "ffffffc00183fc38",
+      "symbol": "msm_ir_led_init_module",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1440,
+      "jiffies": 4294892628,
+      "addr": 18446743798857071756,
+      "addr_hex": "0xffffffc00183fc8c",
+      "raw": "ffffffc00183fc8c",
+      "symbol": "msm_ir_cut_init_module",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1441,
+      "jiffies": 4294892628,
+      "addr": 18446743798857071836,
+      "addr_hex": "0xffffffc00183fcdc",
+      "raw": "ffffffc00183fcdc",
+      "symbol": "msm_sensor_init_module",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1442,
+      "jiffies": 4294892628,
+      "addr": 18446743798857072144,
+      "addr_hex": "0xffffffc00183fe10",
+      "raw": "ffffffc00183fe10",
+      "symbol": "msm_sensor_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1446,
+      "jiffies": 4294892629,
+      "addr": 18446743798857072272,
+      "addr_hex": "0xffffffc00183fe90",
+      "raw": "ffffffc00183fe90",
+      "symbol": "msm_cpp_init_module",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1449,
+      "jiffies": 4294892631,
+      "addr": 18446743798857075248,
+      "addr_hex": "0xffffffc001840a30",
+      "raw": "ffffffc001840a30",
+      "symbol": "msm_vfe47_init_module",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1457,
+      "jiffies": 4294892632,
+      "addr": 18446743798857075284,
+      "addr_hex": "0xffffffc001840a54",
+      "raw": "ffffffc001840a54",
+      "symbol": "msm_vfe46_init_module",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1459,
+      "jiffies": 4294892633,
+      "addr": 18446743798857075320,
+      "addr_hex": "0xffffffc001840a78",
+      "raw": "ffffffc001840a78",
+      "symbol": "msm_vfe44_init_module",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1461,
+      "jiffies": 4294892633,
+      "addr": 18446743798857075356,
+      "addr_hex": "0xffffffc001840a9c",
+      "raw": "ffffffc001840a9c",
+      "symbol": "msm_vfe40_init_module",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1464,
+      "jiffies": 4294892633,
+      "addr": 18446743798857075392,
+      "addr_hex": "0xffffffc001840ac0",
+      "raw": "ffffffc001840ac0",
+      "symbol": "msm_ispif_init_module",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1471,
+      "jiffies": 4294892634,
+      "addr": 18446743798857075424,
+      "addr_hex": "0xffffffc001840ae0",
+      "raw": "ffffffc001840ae0",
+      "symbol": "msm_jpeg_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1480,
+      "jiffies": 4294892636,
+      "addr": 18446743798857075456,
+      "addr_hex": "0xffffffc001840b00",
+      "raw": "ffffffc001840b00",
+      "symbol": "msm_jpegdma_init_module",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1482,
+      "jiffies": 4294892636,
+      "addr": 18446743798857075488,
+      "addr_hex": "0xffffffc001840b20",
+      "raw": "ffffffc001840b20",
+      "symbol": "msm_buf_mngr_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1483,
+      "jiffies": 4294892636,
+      "addr": 18446743798857075988,
+      "addr_hex": "0xffffffc001840d14",
+      "raw": "ffffffc001840d14",
+      "symbol": "msm_fd_init_module",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1493,
+      "jiffies": 4294892662,
+      "addr": 18446743798857076148,
+      "addr_hex": "0xffffffc001840db4",
+      "raw": "ffffffc001840db4",
+      "symbol": "smb1351_charger_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1494,
+      "jiffies": 4294892662,
+      "addr": 18446743798857076180,
+      "addr_hex": "0xffffffc001840dd4",
+      "raw": "ffffffc001840dd4",
+      "symbol": "fg_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1497,
+      "jiffies": 4294892663,
+      "addr": 18446743798857076212,
+      "addr_hex": "0xffffffc001840df4",
+      "raw": "ffffffc001840df4",
+      "symbol": "smbchg_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1498,
+      "jiffies": 4294892663,
+      "addr": 18446743798857077076,
+      "addr_hex": "0xffffffc001841154",
+      "raw": "ffffffc001841154",
+      "symbol": "msm_restart_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1501,
+      "jiffies": 4294892666,
+      "addr": 18446743798857078348,
+      "addr_hex": "0xffffffc00184164c",
+      "raw": "ffffffc00184164c",
+      "symbol": "epm_adc_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1502,
+      "jiffies": 4294892666,
+      "addr": 18446743798857078420,
+      "addr_hex": "0xffffffc001841694",
+      "raw": "ffffffc001841694",
+      "symbol": "qpnp_vadc_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1503,
+      "jiffies": 4294892666,
+      "addr": 18446743798857078452,
+      "addr_hex": "0xffffffc0018416b4",
+      "raw": "ffffffc0018416b4",
+      "symbol": "qpnp_iadc_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1504,
+      "jiffies": 4294892666,
+      "addr": 18446743798857081152,
+      "addr_hex": "0xffffffc001842140",
+      "raw": "ffffffc001842140",
+      "symbol": "tsens_thermal_register",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1505,
+      "jiffies": 4294892668,
+      "addr": 18446743798857082580,
+      "addr_hex": "0xffffffc0018426d4",
+      "raw": "ffffffc0018426d4",
+      "symbol": "qpnp_tm_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1506,
+      "jiffies": 4294892672,
+      "addr": 18446743798857082608,
+      "addr_hex": "0xffffffc0018426f0",
+      "raw": "ffffffc0018426f0",
+      "symbol": "qpnp_adc_tm_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1507,
+      "jiffies": 4294892674,
+      "addr": 18446743798857085496,
+      "addr_hex": "0xffffffc001843238",
+      "raw": "ffffffc001843238",
+      "symbol": "lmh_mon_init_call",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1508,
+      "jiffies": 4294892674,
+      "addr": 18446743798857086328,
+      "addr_hex": "0xffffffc001843578",
+      "raw": "ffffffc001843578",
+      "symbol": "dm_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1511,
+      "jiffies": 4294892674,
+      "addr": 18446743798857087300,
+      "addr_hex": "0xffffffc001843944",
+      "raw": "ffffffc001843944",
+      "symbol": "dm_bufio_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1512,
+      "jiffies": 4294892674,
+      "addr": 18446743798857087616,
+      "addr_hex": "0xffffffc001843a80",
+      "raw": "ffffffc001843a80",
+      "symbol": "dm_crypt_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1513,
+      "jiffies": 4294892674,
+      "addr": 18446743798857087680,
+      "addr_hex": "0xffffffc001843ac0",
+      "raw": "ffffffc001843ac0",
+      "symbol": "dm_verity_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1514,
+      "jiffies": 4294892674,
+      "addr": 18446743798857087744,
+      "addr_hex": "0xffffffc001843b00",
+      "raw": "ffffffc001843b00",
+      "symbol": "req_dm_crypt_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1517,
+      "jiffies": 4294892674,
+      "addr": 18446743798857087828,
+      "addr_hex": "0xffffffc001843b54",
+      "raw": "ffffffc001843b54",
+      "symbol": "bluetooth_power_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1521,
+      "jiffies": 4294892675,
+      "addr": 18446743798857088012,
+      "addr_hex": "0xffffffc001843c0c",
+      "raw": "ffffffc001843c0c",
+      "symbol": "cpufreq_stats_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1522,
+      "jiffies": 4294892675,
+      "addr": 18446743798857088864,
+      "addr_hex": "0xffffffc001843f60",
+      "raw": "ffffffc001843f60",
+      "symbol": "cpufreq_gov_powersave_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1523,
+      "jiffies": 4294892675,
+      "addr": 18446743798857088892,
+      "addr_hex": "0xffffffc001843f7c",
+      "raw": "ffffffc001843f7c",
+      "symbol": "cpufreq_gov_userspace_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1524,
+      "jiffies": 4294892675,
+      "addr": 18446743798857088920,
+      "addr_hex": "0xffffffc001843f98",
+      "raw": "ffffffc001843f98",
+      "symbol": "cpufreq_gov_dbs_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1525,
+      "jiffies": 4294892675,
+      "addr": 18446743798857088952,
+      "addr_hex": "0xffffffc001843fb8",
+      "raw": "ffffffc001843fb8",
+      "symbol": "cpufreq_gov_dbs_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1526,
+      "jiffies": 4294892675,
+      "addr": 18446743798857089136,
+      "addr_hex": "0xffffffc001844070",
+      "raw": "ffffffc001844070",
+      "symbol": "cpufreq_interactive_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1527,
+      "jiffies": 4294892675,
+      "addr": 18446743798857093360,
+      "addr_hex": "0xffffffc0018450f0",
+      "raw": "ffffffc0018450f0",
+      "symbol": "mmc_blk_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1528,
+      "jiffies": 4294892675,
+      "addr": 18446743798857093512,
+      "addr_hex": "0xffffffc001845188",
+      "raw": "ffffffc001845188",
+      "symbol": "sdhci_drv_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1531,
+      "jiffies": 4294892675,
+      "addr": 18446743798857093556,
+      "addr_hex": "0xffffffc0018451b4",
+      "raw": "ffffffc0018451b4",
+      "symbol": "sdhci_pltfm_drv_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1533,
+      "jiffies": 4294892675,
+      "addr": 18446743798857093588,
+      "addr_hex": "0xffffffc0018451d4",
+      "raw": "ffffffc0018451d4",
+      "symbol": "sdhci_msm_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1534,
+      "jiffies": 4294892675,
+      "addr": 18446743798857093712,
+      "addr_hex": "0xffffffc001845250",
+      "raw": "ffffffc001845250",
+      "symbol": "qpnp_led_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1535,
+      "jiffies": 4294892675,
+      "addr": 18446743798857093768,
+      "addr_hex": "0xffffffc001845288",
+      "raw": "ffffffc001845288",
+      "symbol": "qpnp_wled_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1538,
+      "jiffies": 4294892676,
+      "addr": 18446743798857093796,
+      "addr_hex": "0xffffffc0018452a4",
+      "raw": "ffffffc0018452a4",
+      "symbol": "switch_class_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1539,
+      "jiffies": 4294892676,
+      "addr": 18446743798857100056,
+      "addr_hex": "0xffffffc001846b18",
+      "raw": "ffffffc001846b18",
+      "symbol": "tz_log_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1540,
+      "jiffies": 4294892676,
+      "addr": 18446743798857102272,
+      "addr_hex": "0xffffffc0018473c0",
+      "raw": "ffffffc0018473c0",
+      "symbol": "hid_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1542,
+      "jiffies": 4294892676,
+      "addr": 18446743798857102652,
+      "addr_hex": "0xffffffc00184753c",
+      "raw": "ffffffc00184753c",
+      "symbol": "uhid_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1543,
+      "jiffies": 4294892676,
+      "addr": 18446743798857102680,
+      "addr_hex": "0xffffffc001847558",
+      "raw": "ffffffc001847558",
+      "symbol": "hid_generic_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1544,
+      "jiffies": 4294892676,
+      "addr": 18446743798857102720,
+      "addr_hex": "0xffffffc001847580",
+      "raw": "ffffffc001847580",
+      "symbol": "apple_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1545,
+      "jiffies": 4294892676,
+      "addr": 18446743798857102760,
+      "addr_hex": "0xffffffc0018475a8",
+      "raw": "ffffffc0018475a8",
+      "symbol": "elecom_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1546,
+      "jiffies": 4294892676,
+      "addr": 18446743798857102800,
+      "addr_hex": "0xffffffc0018475d0",
+      "raw": "ffffffc0018475d0",
+      "symbol": "magicmouse_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1547,
+      "jiffies": 4294892676,
+      "addr": 18446743798857102844,
+      "addr_hex": "0xffffffc0018475fc",
+      "raw": "ffffffc0018475fc",
+      "symbol": "ms_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1548,
+      "jiffies": 4294892676,
+      "addr": 18446743798857102884,
+      "addr_hex": "0xffffffc001847624",
+      "raw": "ffffffc001847624",
+      "symbol": "mt_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1549,
+      "jiffies": 4294892676,
+      "addr": 18446743798857102924,
+      "addr_hex": "0xffffffc00184764c",
+      "raw": "ffffffc00184764c",
+      "symbol": "hid_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1552,
+      "jiffies": 4294892676,
+      "addr": 18446743798857110252,
+      "addr_hex": "0xffffffc0018492ec",
+      "raw": "ffffffc0018492ec",
+      "symbol": "staging_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1553,
+      "jiffies": 4294892676,
+      "addr": 18446743798857110504,
+      "addr_hex": "0xffffffc0018493e8",
+      "raw": "ffffffc0018493e8",
+      "symbol": "ion_page_pool_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1554,
+      "jiffies": 4294892676,
+      "addr": 18446743798857110544,
+      "addr_hex": "0xffffffc001849410",
+      "raw": "ffffffc001849410",
+      "symbol": "binder_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1555,
+      "jiffies": 4294892677,
+      "addr": 18446743798857113684,
+      "addr_hex": "0xffffffc00184a054",
+      "raw": "ffffffc00184a054",
+      "symbol": "ashmem_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1557,
+      "jiffies": 4294892677,
+      "addr": 18446743798857113876,
+      "addr_hex": "0xffffffc00184a114",
+      "raw": "ffffffc00184a114",
+      "symbol": "timed_output_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1558,
+      "jiffies": 4294892677,
+      "addr": 18446743798857113984,
+      "addr_hex": "0xffffffc00184a180",
+      "raw": "ffffffc00184a180",
+      "symbol": "timed_gpio_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1560,
+      "jiffies": 4294892677,
+      "addr": 18446743798857114016,
+      "addr_hex": "0xffffffc00184a1a0",
+      "raw": "ffffffc00184a1a0",
+      "symbol": "lowmem_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1561,
+      "jiffies": 4294892677,
+      "addr": 18446743798857115100,
+      "addr_hex": "0xffffffc00184a5dc",
+      "raw": "ffffffc00184a5dc",
+      "symbol": "sw_sync_device_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1562,
+      "jiffies": 4294892677,
+      "addr": 18446743798842913580,
+      "addr_hex": "0xffffffc000abf32c",
+      "raw": "ffffffc000abf32c",
+      "symbol": "mhi_uci_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1563,
+      "jiffies": 4294892677,
+      "addr": 18446743798857119400,
+      "addr_hex": "0xffffffc00184b6a8",
+      "raw": "ffffffc00184b6a8",
+      "symbol": "qpnp_coincell_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1568,
+      "jiffies": 4294892690,
+      "addr": 18446743798857121120,
+      "addr_hex": "0xffffffc00184bd60",
+      "raw": "ffffffc00184bd60",
+      "symbol": "seemp_logk_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1569,
+      "jiffies": 4294892690,
+      "addr": 18446743798857121776,
+      "addr_hex": "0xffffffc00184bff0",
+      "raw": "ffffffc00184bff0",
+      "symbol": "qpnp_haptic_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1570,
+      "jiffies": 4294892690,
+      "addr": 18446743798857121804,
+      "addr_hex": "0xffffffc00184c00c",
+      "raw": "ffffffc00184c00c",
+      "symbol": "gpio_usbdetect_driver_init",
+      "symbol_offset": 0
+    },
+    {
+      "seq": 1571,
+      "jiffies": 4294892691,
+      "addr": 18446743798857121836,
+      "addr_hex": "0xffffffc00184c02c",
+      "raw": "ffffffc00184c02c",
+      "symbol": "init",
+      "symbol_offset": 0
+    }
+  ],
+  "milestones": [],
+  "console_tail": [
+    {
+      "seq": 1532,
+      "jiffies": 4294892675,
+      "text": "[    1.518710] sdhci-pltfm: SDHCI platform and OF driver helper"
+    },
+    {
+      "seq": 1536,
+      "jiffies": 4294892676,
+      "text": "[    1.521061] qcom_ice_get]pdevice: found ice device ffffffc0b6201200"
+    },
+    {
+      "seq": 1537,
+      "jiffies": 4294892676,
+      "text": "[    1.521076] qcom_ice_get_pdevice: matching platform device ffffffc175836c00"
+    },
+    {
+      "seq": 1541,
+      "jiffies": 4294892676,
+      "text": "[    1.523415] hidraw: raw HID events driver (C) Jiri Kosina"
+    },
+    {
+      "seq": 1550,
+      "jiffies": 4294892676,
+      "text": "[    1.523807] usbcore: registered new interface driver usbhid"
+    },
+    {
+      "seq": 1551,
+      "jiffies": 4294892676,
+      "text": "[    1.523813] usbhid: USB HID core driver"
+    },
+    {
+      "seq": 1556,
+      "jiffies": 4294892677,
+      "text": "[    1.5\u00124595] ashmem: initialized"
+    },
+    {
+      "seq": 1559,
+      "jiffies": 4294892677,
+      "text": "[    1.525272] sdhci_msm 74a4900.sdhci: sdhci_msm_probe: ICE device is not enabled"
+    },
+    {
+      "seq": 1564,
+      "jiffies": 4294892681,
+      "text": "[    1.541130] sdhci_msm 74a4900.sdhci: No vmmc regulator found"
+    },
+    {
+      "seq": 1565,
+      "jiffies": 4294892681,
+      "text": "[    1.541152] sdhci_msm 74a4900.sdhci: No vqmmc regulator found"
+    },
+    {
+      "seq": 1566,
+      "jiffies": 4294892681,
+      "text": "[    1.541697] mmc0: SDHCI controller on 74a4900.sdhci [74a4900.sdhci] using 64-bit ADMA in legacy mode"
+    },
+    {
+      "seq": 1567,
+      "jiffies": 4294892690,
+      "text": "[    1.577887] qpnp_coincell_charger_show_state: enabled=Y, voltage=3200 mV, resistance=2100 ohm"
+    }
+  ],
+  "suspected_stall": {
+    "seq": 1571,
+    "jiffies": 4294892691,
+    "addr": 18446743798857121836,
+    "addr_hex": "0xffffffc00184c02c",
+    "raw": "ffffffc00184c02c",
+    "symbol": "init",
+    "symbol_offset": 0
+  }
+}

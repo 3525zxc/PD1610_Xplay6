@@ -1,0 +1,38 @@
+source      : D:\16\PD1610_81\backup\81_boot_LUN4.bin (first 58729728 bytes = official boot.img)
+boot sha256 : 5a03236df43fb4badeb234e6c9b2ffeead9161ca77e71115b6c923c613d48a52
+DTB count   : 122
+vivo PD1610 DTBs: 1
+  idx=79 off=0x02615836 size=409557 model=vivo MSM 8996 v3 + PMI8996 PD1610
+
+vivo DTB sha256      : 6e919bc1d65e0e73c1bc7334f0014589376a2ea0e2d6e927776fb05c3175eca9
+historical extract   : 6e919bc1d65e0e73c1bc7334f0014589  409557 B  MATCH
+
+--- root identity ---
+  model        = vivo MSM 8996 v3 + PMI8996 PD1610
+  compatible    = "qcom,msm8996-cdp", "qcom,msm8996", "qcom,cdp"
+  qcom,msm-id   = <0xf6 0x30001>
+  qcom,board-id = <0x1 0xa 0x1000001 0x0>
+  qcom,pmic-id  = <0x20009 0x10013 0x0 0x0>
+  interrupt-parent = <0x1>
+  #address-cells = <0x2>
+  #size-cells   = <0x2>
+
+nodes=1983  props=12829  dts_lines=16797
+compatible distinct=303 occurrences=691 vivo-private=['vivo,charger-monitor', 'vivo,hifi-codec-pd1610a', 'vivo,touchscreen-config']
+DTS written  : 16797 lines, phandle preserved, string-lists readable
+fstab nodes  : 19 property lines written
+
+diff 7.7.6 -> 8.19.16 : +137 / -19 nodes
+  added sample: /firmware, /firmware/android, /firmware/android/fstab, /firmware/android/fstab/system, /firmware/android/fstab/vendor, /soc/android_usb1
+  removed sample: /soc/dsi_panel_pwr_supply_amoled/qcom,panel-supply-entry@1, /soc/dsi_panel_pwr_supply_amoled/qcom,panel-supply-entry@2, /soc/dsi_panel_pwr_supply_amoled/qcom,panel-supply-entry@3, /soc/pinctrl@01010000/fpc_irq, /soc/pinctrl@01010000/fpc_irq/fpc_irq_active, /soc/pinctrl@01010000/fpc_irq/fpc_irq_active/config
+
+USAGE
+  pd1610_81916_vivo.dtb  - exact DTB selected by aboot for this board
+  pd1610_81916_vivo.dts  - decompiled source (phandle preserved)
+  board_ids.txt          - qcom,msm-id / board-id / pmic-id / compatible
+  node_inventory.txt     - all node paths
+  compatible_inventory.txt - all compatible strings + vivo-private ones
+  fstab_nodes.txt        - fstab lives IN the DTB: system=wait,verify / vendor=disabled
+                           -> for a custom ROM, edit the DTB (drop "verify") and repack boot
+  diff_776_to_81916.txt  - node-level delta vs 7.7.6
+  reproduce: python D:\16\PD1610_81\scripts\build_dtb_baseline.py

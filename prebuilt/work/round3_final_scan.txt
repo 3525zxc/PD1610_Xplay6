@@ -1,0 +1,65 @@
+=== gate-selector [0x92013AC0] 0x92013AC0 (full PT_LOAD scan) ===
+  movw/movt: 1
+    @0x91D445FC (r2) read
+        91D44608 ldr r0, [r2]
+  literal pools: 1
+    pool@0x91D4688C refs=2
+        91D46378 ldr r7, [pc, #0x50c]
+        91D463BC ldr r8, [pc, #0x4c8]
+
+=== boot-state [0x92002738] 0x92002738 (full PT_LOAD scan) ===
+  movw/movt: 1
+    @0x91D0AEE8 (r2) read
+        91D0AEF4 ldr r0, [r2]
+  literal pools: 0
+
+=== boot-state-1 [0x92002734] 0x92002734 (full PT_LOAD scan) ===
+  movw/movt: 3
+    @0x91D0A750 (sb) read
+        91D0A768 ldr r0, [sb]
+    @0x91D0A894 (r3) read
+        91D0A8AC ldr sb, [r3]
+    @0x91D0AC8C (r3) read
+        91D0AC94 ldr r0, [r3]
+  literal pools: 0
+
+=== boot-state-4 [0x9200273C] 0x9200273C (full PT_LOAD scan) ===
+  movw/movt: 4
+    @0x91D0A9F4 (r3) read
+        91D0A9FC ldr r3, [r3]
+    @0x91D0AC48 (r1) read
+        91D0AC50 ldr r2, [r1]
+    @0x91D0ACE0 (ip) read
+        91D0ACF8 ldr r5, [ip]
+    @0x91D0ADE8 (r0) read
+        91D0ADFC ldr ip, [r0]
+  literal pools: 0
+
+=== writes to guard 0x920157DC (canary init) ===
+  guard stores: 0
+
+=== callers of getter 0x91D445E8 ===
+  0x91D3C850, 0x91D3CC68
+
+=== who branches into 0x91D44628..0x91D44640 (the -1 fn) ===
+  0x91D44628 <- (none)
+  0x91D44624 <- 0x91D44618
+  0x91D4463C <- (none)
+  0x91D4464C <- (none)
+  0x91D44650 <- 0x91D44764
+
+=== callers of 0x91D44628 (-1 fn) ===
+  0x91D44D68, 0x91D44D74, 0x91D44D80, 0x91D45304
+
+=== G body: flash/partition read calls inside 0x91D39CB4..0x91D39E30 ===
+  91D39D1C bl #0x91d12dd0
+  91D39D24 bl #0x91d13228
+  91D39D6C bl #0x91d44cc8
+  91D39D70 bl #0x91d131e8
+  91D39DD0 bl #0x91d147e0
+  91D39DD8 bl #0x91d18db8
+  91D39DDC bl #0x91d3545c
+  91D39DE8 bl #0x91d147e0
+  91D39DEC bl #0x91d13dcc
+  91D39DF8 bl #0x91d0aed4
+  91D39E14 bl #0x91d516c4

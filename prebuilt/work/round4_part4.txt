@@ -1,0 +1,163 @@
+=== tail FULL 0x91D411B8..0x91D412A0  0x91D411B8..0x91D412A0 ===
+  91D411B8  bl       #0x91d40974
+  91D411BC  bl       #0x91d0a010
+  91D411C0  movw     r0, #0x56b8   ; 0x91D856B8 = 'Display Init: Start\n'
+  91D411C4  movt     r0, #0x91d8
+  91D411C8  bl       #0x91d51508
+  91D411CC  ldr      r0, [pc, #0x3fc]   ; pool@0x91D415D0=0x91DA1338
+  91D411D0  bl       #0x91d0206c
+  91D411D4  movw     r0, #0x56d0   ; 0x91D856D0 = 'Display Init: Done\n'
+  91D411D8  movt     r0, #0x91d8
+  91D411DC  bl       #0x91d51508
+  91D411E0  bl       #0x91d012e4
+  91D411E4  mov      r4, r0
+  91D411E8  bl       #0x91d01320
+  91D411EC  mov      r1, r0
+  91D411F0  mov      r0, r4
+  91D411F4  bl       #0x91d42c2c
+  91D411F8  ldr      r2, [fp, #-0x28]
+  91D411FC  ldr      r3, [r6]
+  91D41200  cmp      r2, r3
+  91D41204  bne      #0x91d415cc
+  91D41208  mov      r0, #1
+  91D4120C  sub      sp, fp, #0x20
+  91D41210  pop      {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+  91D41214  b        #0x91d48e70
+  91D41218  bl       #0x91d1d770
+  91D4121C  movw     r2, #0x83c
+  91D41220  movw     r3, #0x7b98   ; 0x92017B98
+  91D41224  movt     r2, #0x9201
+  91D41228  movt     r3, #0x9200
+  91D4122C  sub      r1, r0, #1
+  91D41230  str      r0, [r2]
+  91D41234  str      r1, [r3]
+  91D41238  b        #0x91d4103c
+  91D4123C  movw     r0, #0x5664   ; 0x91D85664 = 'charger wait\n'
+  91D41240  movt     r0, #0x91d8
+  91D41244  bl       #0x91d51508
+  91D41248  bl       #0x91d47590
+  91D4124C  movw     r3, #0x7b80   ; 0x92007B80
+  91D41250  movt     r3, #0x9200
+  91D41254  ldr      r3, [r3]
+  91D41258  cmp      r3, #0
+  91D4125C  bne      #0x91d41480
+  91D41260  bl       #0x91d377a8
+  91D41264  cmp      r0, #0
+  91D41268  bne      #0x91d41464
+  91D4126C  movw     r0, #0x56b8   ; 0x91D856B8 = 'Display Init: Start\n'
+  91D41270  movt     r0, #0x91d8
+  91D41274  bl       #0x91d51508
+  91D41278  ldr      r0, [pc, #0x350]   ; pool@0x91D415D0=0x91DA1338
+  91D4127C  bl       #0x91d0206c
+  91D41280  movw     r0, #0x56d0   ; 0x91D856D0 = 'Display Init: Done\n'
+  91D41284  movt     r0, #0x91d8
+  91D41288  bl       #0x91d51508
+  91D4128C  mov      r0, #1
+  91D41290  bl       #0x91d48e70
+  91D41294  bl       #0x91d377a8
+  91D41298  cmp      r0, #0
+  91D4129C  beq      #0x91d41414
+
+=== 0x91D48E70 head (fastboot entry candidate)  0x91D48E70..0x91D48F00 ===
+  91D48E70  movw     r1, #0x7b94   ; 0x92007B94
+  91D48E74  movt     r1, #0x9200
+  91D48E78  movw     r2, #0x1628   ; 0x92031628
+  91D48E7C  movt     r2, #0x9203
+  91D48E80  ldr      r1, [r1]
+  91D48E84  movw     r3, #0x57dc   ; 0x920157DC
+  91D48E88  movt     r3, #0x9201
+  91D48E8C  ldr      r2, [r2, #0x24]
+  91D48E90  cmp      r1, #0
+  91D48E94  ldr      ip, [r3]
+  91D48E98  str      lr, [sp, #-4]!
+  91D48E9C  moveq    r1, r0
+  91D48EA0  sub      sp, sp, #0xc
+  91D48EA4  movne    r1, #0
+  91D48EA8  cmp      r2, #0
+  91D48EAC  str      ip, [sp, #4]
+  91D48EB0  beq      #0x91d48ed4
+  91D48EB4  ldr      r0, [sp, #4]
+  91D48EB8  ldr      r3, [r3]
+  91D48EBC  cmp      r0, r3
+  91D48EC0  bne      #0x91d48ef0
+  91D48EC4  mov      r0, r2
+  91D48EC8  add      sp, sp, #0xc
+  91D48ECC  pop      {lr}
+  91D48ED0  b        #0x91d01868
+  91D48ED4  ldr      r1, [sp, #4]
+  91D48ED8  mov      r0, r2
+  91D48EDC  ldr      r3, [r3]
+  91D48EE0  cmp      r1, r3
+  91D48EE4  bne      #0x91d48ef0
+  91D48EE8  add      sp, sp, #0xc
+  91D48EEC  pop      {pc}
+  91D48EF0  bl       #0x91d516c4
+  91D48EF4  push     {r4, r5, r6, lr}
+  91D48EF8  movw     r4, #0x57dc   ; 0x920157DC
+  91D48EFC  movt     r4, #0x9201
+
+  xrefs to 0x91D48E70: 0x91D41214(b), 0x91D41290(bl), 0x91D48F10(bl)
+
+pool@0x91D415D0 = 0x91DA1338  str=''
+
+=== switch table @0x91D3AD5C (12 entries) ===
+  [0] 0x91D3AD5C -> 0x91D3AE8C
+  [1] 0x91D3AD60 -> 0x91D3B6A4
+  [2] 0x91D3AD64 -> 0x91D3B698
+  [3] 0x91D3AD68 -> 0x91D3AEE0
+  [4] 0x91D3AD6C -> 0x91D3B704
+  [5] 0x91D3AD70 -> 0x91D3B6F8
+  [6] 0x91D3AD74 -> 0x91D3B6EC
+  [7] 0x91D3AD78 -> 0x91D3B6E0
+  [8] 0x91D3AD7C -> 0x91D3B6D4
+  [9] 0x91D3AD80 -> 0x91D3B6C8
+  [10] 0x91D3AD84 -> 0x91D3B6BC
+  [11] 0x91D3AD88 -> 0x91D3B6B0
+
+=== branches into 0x91D40FCC..0x91D41000 ===
+(end)
+
+=== 0x91D1D770 head  0x91D1D770..0x91D1D7B0 ===
+  91D1D770  movw     r3, #0x57dc   ; 0x920157DC
+  91D1D774  movt     r3, #0x9201
+  91D1D778  str      lr, [sp, #-4]!
+  91D1D77C  sub      sp, sp, #0xc
+  91D1D780  ldr      r1, [r3]
+  91D1D784  movw     r2, #0x3a40   ; 0x92003A40
+  91D1D788  movt     r2, #0x9200
+  91D1D78C  str      r1, [sp, #4]
+  91D1D790  ldr      r0, [r2, #0x14]
+  91D1D794  ldr      r2, [sp, #4]
+  91D1D798  ldr      r3, [r3]
+  91D1D79C  cmp      r2, r3
+  91D1D7A0  bne      #0x91d1d7ac
+  91D1D7A4  add      sp, sp, #0xc
+  91D1D7A8  pop      {pc}
+  91D1D7AC  bl       #0x91d516c4
+
+=== 0x91D47590 head  0x91D47590..0x91D475D0 ===
+  91D47590  push     {r4, r5, lr}
+  91D47594  movw     r5, #0x57dc   ; 0x920157DC
+  91D47598  movt     r5, #0x9201
+  91D4759C  sub      sp, sp, #0xc
+  91D475A0  movw     r4, #0x4b14   ; 0x92014B14
+  91D475A4  movt     r4, #0x9201
+  91D475A8  ldr      r3, [r5]
+  91D475AC  movw     r0, #0x3ac8
+  91D475B0  movw     r1, #0x736c   ; 0x91D8736C = 'charger_wait'
+  91D475B4  movt     r0, #0x91d8
+  91D475B8  movt     r1, #0x91d8
+  91D475BC  str      r3, [sp, #4]
+  91D475C0  bl       #0x91d5225c
+  91D475C4  ldr      r3, [r4, #0x30]
+  91D475C8  cmp      r3, #0
+  91D475CC  beq      #0x91d475e4
+
+str 0x91D85288: 'oem device-name'
+str 0x91D775CC: 'none'
+str 0x91D775D4: 'sim_video_panel'
+str 0x91D85664: 'charger wait\n'
+
+=== who references 0x91D85A88 "fastboot" ===
+  (no pool refs)
+  (no movw/movt refs)

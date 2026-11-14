@@ -1,0 +1,313 @@
+========================================================================
+A. 0x9200272C..0x92002740 每个物化点的读写方向与上下文
+========================================================================
+--- 0x9200272C ---
+   MAT@0x91D0A50C movw r3, #0x272c  [?]
+   MAT@0x91D0A584 movw r3, #0x272c  [?]
+   MAT@0x91D0A668 movw ip, #0x272c  [?]
+   MAT@0x91D0A78C movw ip, #0x272c  [?]
+   MAT@0x91D0ACD8 movw r3, #0x272c  [?]
+   MAT@0x91D0AD98 movw r7, #0x272c  [?]
+
+--- 0x92002730 ---
+   MAT@0x91D0B18C ldr sl, [pc, #0x70]  [?]
+
+--- 0x92002734 ---
+   MAT@0x91D0A624 movw r3, #0x2734  [WRITE]
+        0x91D0A640 str r1, [r3]
+   MAT@0x91D0A750 movw sb, #0x2734  [READ]
+        0x91D0A768 ldr r0, [sb]
+   MAT@0x91D0A894 movw r3, #0x2734  [READ]
+        0x91D0A8AC ldr sb, [r3]
+   MAT@0x91D0AC8C movw r3, #0x2734  [READ]
+        0x91D0AC94 ldr r0, [r3]
+
+--- 0x92002738 ---
+   MAT@0x91D0AEE8 movw r2, #0x2738  [READ]
+        0x91D0AEF4 ldr r0, [r2]
+
+--- 0x9200273C ---
+   MAT@0x91D0A9F4 movw r3, #0x273c  [READ]
+        0x91D0A9FC ldr r3, [r3]
+   MAT@0x91D0AC48 movw r1, #0x273c  [READ]
+        0x91D0AC50 ldr r2, [r1]
+   MAT@0x91D0ACE0 movw ip, #0x273c  [READ]
+        0x91D0ACF8 ldr r5, [ip]
+   MAT@0x91D0ADE8 movw r0, #0x273c  [READ]
+        0x91D0ADFC ldr ip, [r0]
+
+--- 0x92002740 ---
+   MAT@0x91D0BBD8 movw r3, #0x2740  [READ]
+        0x91D0BBE4 ldr r0, [r3]
+   MAT@0x91D0BDF0 movw r3, #0x2740  [READ]
+        0x91D0BDFC ldr r5, [r3]
+   MAT@0x91D0C244 movw r3, #0x2740  [WRITE]
+        0x91D0C254 str r0, [r3]
+
+========================================================================
+B. fastboot_init 0x91D40974 全函数尾部（找是否有轮询循环）
+========================================================================
+=== 0x91D40974 @0x91D40974 ===
+  91D40974  push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+  91D40978  sub      sp, sp, #0x64
+  91D4097C  movw     r1, #0x57dc   ; = 0x920157DC
+  91D40980  movt     r1, #0x9201
+  91D40984  str      r1, [sp, #0xc]
+  91D40988  movw     r0, #0x5288
+  91D4098C  ldr      r2, [sp, #0xc]
+  91D40990  movt     r0, #0x91d8
+  91D40994  movw     r1, #0xff70   ; = 0x91D3FF70
+  91D40998  movt     r1, #0x91d3
+  91D4099C  movw     sl, #0x1318   ; = 0x91DA1318
+  91D409A0  movt     sl, #0x91da
+  91D409A4  ldr      r3, [r2]
+  91D409A8  str      r3, [sp, #0x5c]
+  91D409AC  bl       #0x91d41d3c
+  91D409B0  movw     r0, #0x5298
+  91D409B4  movw     r1, #0xc8   ; = 0x91D800C8
+  91D409B8  movt     r0, #0x91d8
+  91D409BC  movt     r1, #0x91d4
+  91D409C0  bl       #0x91d41d3c
+  91D409C4  movw     r0, #0x52a8
+  91D409C8  movw     r1, #0x15c   ; = 0x91D8015C
+  91D409CC  movt     r0, #0x91d8
+  91D409D0  movt     r1, #0x91d4
+  91D409D4  bl       #0x91d41d3c
+  91D409D8  movw     r0, #0x52b4
+  91D409DC  movw     r1, #0xa028   ; = 0x91D8A028
+  91D409E0  movt     r0, #0x91d8
+  91D409E4  movt     r1, #0x91d3
+  91D409E8  bl       #0x91d41d3c
+  91D409EC  movw     r0, #0x52c8
+  91D409F0  movw     r1, #0xa0e8   ; = 0x91D8A0E8
+  91D409F4  movt     r0, #0x91d8
+  91D409F8  movt     r1, #0x91d3
+  91D409FC  bl       #0x91d41d3c
+  91D40A00  movw     r0, #0x52d8
+  91D40A04  movw     r1, #0xa1f4   ; = 0x91D8A1F4
+  91D40A08  movt     r0, #0x91d8
+  91D40A0C  movt     r1, #0x91d3
+  91D40A10  bl       #0x91d41d3c
+  91D40A14  movw     r0, #0x52e8
+  91D40A18  movw     r1, #0xa32c   ; = 0x91D8A32C
+  91D40A1C  movt     r0, #0x91d8
+  91D40A20  movt     r1, #0x91d3
+  91D40A24  bl       #0x91d41d3c
+  91D40A28  movw     r0, #0x52f8
+  91D40A2C  movw     r1, #0xa290   ; = 0x91D8A290
+  91D40A30  movt     r0, #0x91d8
+  91D40A34  movt     r1, #0x91d3
+  91D40A38  bl       #0x91d41d3c
+  91D40A3C  movw     r0, #0x530c
+  91D40A40  movw     r1, #0xff08   ; = 0x91D8FF08
+  91D40A44  movt     r0, #0x91d8
+  91D40A48  movt     r1, #0x91d3
+  91D40A4C  bl       #0x91d41d3c
+  91D40A50  movw     r0, #0x531c
+  91D40A54  movw     r1, #0x9f0c   ; = 0x91D89F0C
+  91D40A58  movt     r0, #0x91d8
+  91D40A5C  movt     r1, #0x91d3
+  91D40A60  bl       #0x91d41d3c
+  91D40A64  movw     r0, #0x532c
+  91D40A68  movw     r1, #0xdc6c   ; = 0x91D8DC6C
+  91D40A6C  movt     r0, #0x91d8
+  91D40A70  movt     r1, #0x91d3
+  91D40A74  bl       #0x91d41d3c
+  91D40A78  ldr      r3, [sl, #0x10]
+  91D40A7C  cmp      r3, #0
+  91D40A80  beq      #0x91d40d54
+  91D40A84  movw     r0, #0x533c
+  91D40A88  movw     r1, #0xfbd4   ; = 0x91D8FBD4
+  91D40A8C  movt     r0, #0x91d8
+  91D40A90  movt     r1, #0x91d3
+  91D40A94  bl       #0x91d41d3c
+  91D40A98  movw     r0, #0x5344
+  91D40A9C  movw     r1, #0xe968   ; = 0x91D8E968
+  91D40AA0  movt     r0, #0x91d8
+  91D40AA4  movt     r1, #0x91d3
+  91D40AA8  bl       #0x91d41d3c
+  91D40AAC  movw     r0, #0x5a8c
+  91D40AB0  movw     r1, #0xe000   ; = 0x91D8E000
+  91D40AB4  movt     r0, #0x91d8
+  91D40AB8  movt     r1, #0x91d3
+  91D40ABC  bl       #0x91d41d3c
+  91D40AC0  movw     r0, #0x534c
+  91D40AC4  movw     r1, #0xd870   ; = 0x91D8D870
+  91D40AC8  movt     r0, #0x91d8
+  91D40ACC  movt     r1, #0x91d3
+  91D40AD0  bl       #0x91d41d3c
+  91D40AD4  movw     r0, #0x5358
+  91D40AD8  movw     r1, #0xa510   ; = 0x91D8A510
+  91D40ADC  movt     r0, #0x91d8
+  91D40AE0  movt     r1, #0x91d3
+  91D40AE4  bl       #0x91d41d3c
+  91D40AE8  movw     r0, #0x5360
+  91D40AEC  movw     r1, #0xa558   ; = 0x91D8A558
+  91D40AF0  movt     r0, #0x91d8
+  91D40AF4  movt     r1, #0x91d3
+  91D40AF8  bl       #0x91d41d3c
+  91D40AFC  movw     r0, #0x5374
+  91D40B00  movw     r1, #0x9e8c   ; = 0x91D89E8C
+  91D40B04  movt     r0, #0x91d8
+  91D40B08  movt     r1, #0x91d3
+  91D40B0C  bl       #0x91d41d3c
+  91D40B10  bl       #0x91d44284
+  91D40B14  movw     r0, #0x5384
+  91D40B18  movw     r1, #0xa3c8   ; = 0x91D8A3C8
+  91D40B1C  movt     r0, #0x91d8
+  91D40B20  movt     r1, #0x91d3
+  91D40B24  bl       #0x91d41d3c
+  91D40B28  movw     r0, #0x5394
+  91D40B2C  movw     r1, #0x9ecc   ; = 0x91D89ECC
+  91D40B30  movt     r0, #0x91d8
+  91D40B34  movt     r1, #0x91d3
+  91D40B38  bl       #0x91d41d3c
+  91D40B3C  movw     r0, #0x53a0
+  91D40B40  movw     r1, #0xdbbc   ; = 0x91D8DBBC
+  91D40B44  movt     r0, #0x91d8
+  91D40B48  movt     r1, #0x91d3
+  91D40B4C  bl       #0x91d41d3c
+  91D40B50  movw     r0, #0x53bc
+  91D40B54  movw     r1, #0xdc14   ; = 0x91D8DC14
+  91D40B58  movt     r0, #0x91d8
+  91D40B5C  movt     r1, #0x91d3
+  91D40B60  bl       #0x91d41d3c
+  91D40B64  movw     r0, #0x53d8
+  91D40B68  movw     r1, #0x3438   ; = 0x91D83438
+  91D40B6C  movt     r0, #0x91d8
+  91D40B70  movt     r1, #0x91d8
+  91D40B74  bl       #0x91d41db0
+  91D40B78  movw     r0, #0x53e0
+  91D40B7C  movw     r1, #0x90fc   ; = 0x91D890FC
+  91D40B80  movt     r0, #0x91d8
+  91D40B84  movt     r1, #0x91d7
+  91D40B88  bl       #0x91d41db0
+  91D40B8C  movw     r0, #0x53e8
+  91D40B90  movw     r1, #0x1448   ; = 0x91D81448
+  91D40B94  movt     r0, #0x91d8
+  91D40B98  movt     r1, #0x9203
+  91D40B9C  bl       #0x91d41db0
+  91D40BA0  movw     r0, #0x53f4
+  91D40BA4  movw     r1, #0xa7ec   ; = 0x91D8A7EC
+  91D40BA8  movt     r0, #0x91d8
+  91D40BAC  movt     r1, #0x91d3
+  91D40BB0  bl       #0x91d41d3c
+  91D40BB4  bl       #0x91d377a8
+  91D40BB8  cmp      r0, #0
+  91D40BBC  bne      #0x91d40ddc
+  91D40BC0  bl       #0x91d0aed4
+  91D40BC4  cmp      r0, #0
+  91D40BC8  bne      #0x91d40f88
+  91D40BCC  bl       #0x91d01320
+  91D40BD0  mov      r1, #0x40
+  91D40BD4  movw     r2, #0x54b8   ; = 0x91D854B8
+  91D40BD8  movt     r2, #0x91d8
+  91D40BDC  movw     r5, #0x2b84
+  91D40BE0  movw     r4, #0x5284   ; = 0x91D85284
+  91D40BE4  movt     r5, #0x91d8
+  91D40BE8  movt     r4, #0x91d8
+  91D40BEC  mov      r3, r0
+  91D40BF0  movw     r0, #0x15a0   ; = 0x920315A0
+  91D40BF4  movt     r0, #0x9203
+  91D40BF8  bl       #0x91d529ac
+  91D40BFC  movw     r0, #0x54c0
+  91D40C00  movw     r1, #0x15a0   ; = 0x91D815A0
+  91D40C04  movt     r0, #0x91d8
+  91D40C08  movt     r1, #0x9203
+  91D40C0C  bl       #0x91d41db0
+  91D40C10  ldr      r3, [sl, #0x1c]
+  91D40C14  mov      r1, #0x40
+  91D40C18  movw     r0, #0x155c
+  91D40C1C  movw     r2, #0xfe3c   ; = 0x9203FE3C
+  91D40C20  movt     r0, #0x9203
+  91D40C24  movt     r2, #0x91d7
+  91D40C28  bl       #0x91d529ac
+  91D40C2C  movw     r0, #0x54d4
+  91D40C30  movw     r1, #0x155c   ; = 0x91D8155C
+  91D40C34  movt     r0, #0x91d8
+  91D40C38  movt     r1, #0x9203
+  91D40C3C  bl       #0x91d41db0
+  91D40C40  movw     r0, #0x54ec
+  91D40C44  movw     r1, #0x155c   ; = 0x91D8155C
+  91D40C48  movt     r0, #0x91d8
+  91D40C4C  movt     r1, #0x9203
+  91D40C50  bl       #0x91d41db0
+  91D40C54  ldr      r3, [pc, #0x360]
+  91D40C58  mov      r1, #0x40
+  91D40C5C  movw     r0, #0x1408
+  91D40C60  movw     r2, #0x39b8   ; = 0x920339B8
+  91D40C64  movt     r0, #0x9203
+  91D40C68  movt     r2, #0x91d8
+  91D40C6C  bl       #0x91d529ac
+  91D40C70  movw     r0, #0x54fc
+  91D40C74  movw     r1, #0x1408   ; = 0x91D81408
+  91D40C78  movt     r0, #0x91d8
+  91D40C7C  movt     r1, #0x9203
+  91D40C80  bl       #0x91d41db0
+  91D40C84  ldr      r1, [pc, #0x334]
+  91D40C88  movw     r0, #0x550c   ; = 0x91D8550C
+  91D40C8C  movt     r0, #0x91d8
+  91D40C90  bl       #0x91d41db0
+  91D40C94  ldr      r1, [pc, #0x328]
+  91D40C98  movw     r0, #0x5520   ; = 0x91D85520
+  91D40C9C  movt     r0, #0x91d8
+  91D40CA0  bl       #0x91d41db0
+  91D40CA4  bl       #0x91d215ac
+  91D40CA8  cmp      r0, #0
+  91D40CAC  movw     r0, #0x5534   ; = 0x91D85534
+  91D40CB0  movt     r0, #0x91d8
+  91D40CB4  moveq    r1, r5
+  91D40CB8  movne    r1, r4
+  91D40CBC  bl       #0x91d41db0
+  91D40CC0  ldr      r1, [sl, #0x10]
+  91D40CC4  movw     r0, #0xcf64   ; = 0x91D7CF64
+  91D40CC8  movt     r0, #0x91d7
+  91D40CCC  cmp      r1, #0
+  91D40CD0  moveq    r1, r5
+  91D40CD4  movne    r1, r4
+  91D40CD8  bl       #0x91d41db0
+  91D40CDC  mov      r1, #0x40
+  91D40CE0  add      r0, sp, #0x1c
+  91D40CE4  bl       #0x91d07168
+  91D40CE8  bl       #0x91d377a8
+  91D40CEC  movw     lr, #0xcf44   ; = 0x91D7CF44
+  91D40CF0  movt     lr, #0x91d7
+  91D40CF4  add      r3, sp, #0x1c
+  91D40CF8  mov      r1, #0x40
+  91D40CFC  movw     ip, #0xcf3c
+  91D40D00  movw     r2, #0x553c   ; = 0x91D7553C
+  91D40D04  movt     ip, #0x91d7
+  91D40D08  movt     r2, #0x91d8
+  91D40D0C  cmp      r0, #0
+  91D40D10  movw     r0, #0x1458   ; = 0x92031458
+  91D40D14  movt     r0, #0x9203
+  91D40D18  moveq    ip, lr
+  91D40D1C  str      ip, [sp]
+  91D40D20  bl       #0x91d529ac
+  91D40D24  movw     r0, #0x5544
+  91D40D28  movw     r1, #0x1458   ; = 0x91D81458
+  91D40D2C  movt     r0, #0x91d8
+  91D40D30  movt     r1, #0x9203
+  91D40D34  bl       #0x91d41db0
+  91D40D38  ldr      r1, [sp, #0xc]
+  91D40D3C  ldr      r2, [sp, #0x5c]
+  91D40D40  ldr      r3, [r1]
+  91D40D44  cmp      r2, r3
+  91D40D48  bne      #0x91d40fb8
+  91D40D4C  add      sp, sp, #0x64
+  91D40D50  pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc}
+
+callers of 0x91D40974: 0x91D411B8
+
+========================================================================
+C. 模块框架：0x91D38350 函数（调用遍历器）上下文
+========================================================================
+=== 0x91D38350 @0x91D38350 ===
+  91D38350  bl       #0x91d39bc4
+  91D38354  ldr      r2, [sp, #4]
+  91D38358  ldr      r3, [r4]
+  91D3835C  mov      r0, #0
+  91D38360  cmp      r2, r3
+  91D38364  bne      #0x91d38370
+  91D38368  add      sp, sp, #8
+  91D3836C  pop      {r4, pc}

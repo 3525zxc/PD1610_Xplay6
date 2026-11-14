@@ -1,0 +1,35 @@
+{
+  "input": "flash_log/blm_ram_round16.bin",
+  "system_map": "build/probe-20261114150000/System.map",
+  "bank_index": 0,
+  "generation": 1,
+  "last_stage_id": 12,
+  "last_stage_name": "KERNEL_INIT",
+  "found": {
+    "0": {
+      "id": 0,
+      "expected_name": "LAST_INITCALL",
+      "tag": "IC",
+      "seq": 4026531840,
+      "jiffies": 4294892693,
+      "value": 18446743798857121872,
+      "value_hex": "0xffffffc00184c050",
+      "symbol": "qpnp_vibrator_init",
+      "symbol_offset": 0
+    }
+  },
+  "missing": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    15
+  ]
+}

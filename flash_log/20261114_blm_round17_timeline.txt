@@ -1,0 +1,67 @@
+﻿16:14:30.957 | === ROUND17 QPNP_VIBRATOR PROBE TRACE ===
+16:14:31.072 | candidate_sha256=47034aafbfc355d184b363c7bd5d390fe83f3319b0b43b7a55a2fbf582a174a2
+16:14:31.131 | rollback_sha256=929fda9985478078f0614a9c3709af69fe3b1c9c8badc50e783261f91ab241ae
+16:14:31.131 | PREFLIGHT=SAFE_TO_FLASH 17/17 end_phys=0x41e09000 margin=0x1f7000
+16:14:31.133 | NEW=32 fixed trace slots (0..31), 11 vibrator milestones id16..26, usb_bam slots 1..11 retained
+16:14:31.165 | fastboot_devices=5fccbfeb	 fastboot /
+16:14:31.170 | STEP2 flash attempt 1
+16:14:32.953 | flash_1_output=fastboot.exe : Sending 'boot' (57113 KB)                          OKAY [  1.542s] / 所在位置 行:1 字符: 1219 / + ... attempt ' + $i); $f = (& $fb -s $serial flash boot $cand 2>&1 | Out-S ... / +                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ /     + CategoryInfo          : NotSpecified: (Sending 'boot' ...OKAY [  1.542s]:String) [], RemoteException /     + FullyQualifiedErrorId : NativeCommandError /   / Writing 'boot'                                     FAILED (usb_read failed: 杩炲埌绯荤粺涓婄殑璁惧娌℃湁鍙戞尌浣滅敤銆?(31)) / fastboot: error: Command failed /
+16:14:35.963 | STEP2 flash attempt 2
+16:15:16.013 | flash_2_output=fastboot.exe : Warning: skip copying boot image avb footer (boot partition size: 0, boot image size: 58483968). / 所在位置 行:1 字符: 1219 / + ... attempt ' + $i); $f = (& $fb -s $serial flash boot $cand 2>&1 | Out-S ... / +                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ /     + CategoryInfo          : NotSpecified: (Warning: skip c...ize: 58483968).:String) [], RemoteException /     + FullyQualifiedErrorId : NativeCommandError /   / Sending 'boot' (57113 KB)                          FAILED (AdbWriteEndpointSync failed: 淇″彿鐏秴鏃舵椂闂村凡鍒?(121)) / fastboot: error: Command failed /
+16:15:19.018 | STEP2 flash attempt 3
+16:15:59.066 | flash_3_output=fastboot.exe : Warning: skip copying boot image avb footer (boot partition size: 0, boot image size: 58483968). / 所在位置 行:1 字符: 1219 / + ... attempt ' + $i); $f = (& $fb -s $serial flash boot $cand 2>&1 | Out-S ... / +                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ /     + CategoryInfo          : NotSpecified: (Warning: skip c...ize: 58483968).:String) [], RemoteException /     + FullyQualifiedErrorId : NativeCommandError /   / Sending 'boot' (57113 KB)                          FAILED (AdbWriteEndpointSync failed: 淇″彿鐏秴鏃舵椂闂村凡鍒?(121)) / fastboot: error: Command failed /
+16:16:02.072 | FLASH_RETRY_EXHAUSTED - restoring stock boot, no reboot on candidate
+16:16:42.121 | rollback_flash_output=fastboot.exe : Warning: skip copying boot image avb footer (boot partition size: 0, boot image size: 58483968). / 所在位置 行:1 字符: 1522 / + ...  on candidate'; $rf = (& $fb -s $serial flash boot $roll 2>&1 | Out-S ... / +                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ /     + CategoryInfo          : NotSpecified: (Warning: skip c...ize: 58483968).:String) [], RemoteException /     + FullyQualifiedErrorId : NativeCommandError /   / Sending 'boot' (57113 KB)                          FAILED (AdbWriteEndpointSync failed: 淇″彿鐏秴鏃舵椂闂村凡鍒?(121)) / fastboot: error: Command failed /
+16:18:40.331 | === ENDPOINT RECOVERY WAIT (safety rollback on success) ===
+16:18:57.471 | t=0s endpoint=OK
+16:18:57.572 | rollback_sha256=929fda9985478078f0614a9c3709af69fe3b1c9c8badc50e783261f91ab241ae
+16:18:59.613 | rollback_flash_1=fastboot.exe : Sending 'boot' (57113 KB)                          OKAY [  1.502s] / 所在位置 行:1 字符: 1258 / + ...  -le 3; $i++) { $rf = (& $fb -s $serial flash boot $roll 2>&1 | Out-S ... / +                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ /     + CategoryInfo          : NotSpecified: (Sending 'boot' ...OKAY [  1.502s]:String) [], RemoteException /     + FullyQualifiedErrorId : NativeCommandError /   / Writing 'boot'                                     OKAY [  0.391s] / Finished. Total time: 2.011s /
+16:18:59.649 | rollback_reboot_output=fastboot.exe : Rebooting                                          OKAY [  0.008s] / 所在位置 行:1 字符: 1577 / + ... s in fastboot'; exit 5 }; $rr = (& $fb -s $serial reboot 2>&1 | Out-S ... / +                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ /     + CategoryInfo          : NotSpecified: (Rebooting      ...OKAY [  0.008s]:String) [], RemoteException /     + FullyQualifiedErrorId : NativeCommandError /   / Finished. Total time: 0.009s /
+16:19:49.684 | rollback_adb_up t=0s
+16:19:49.806 | rollback_kernel_release=3.18.71-perf-g8a8c60dd /
+16:19:49.868 | rollback_fingerprint=vivo/lineage_pd1610/pd1610:9/PQ3A.190801.002/builder11112246:userdebug/test-keys /
+16:19:49.870 | ROLLBACK_VERIFIED
+16:19:49.870 | === SAFETY ROLLBACK END ===
+16:20:07.649 | === ROUND17 RETRY AFTER SAFETY ROLLBACK ===
+16:20:07.752 | pre_kernel=3.18.71-perf-g8a8c60dd /
+16:20:07.753 | STEP1 adb reboot bootloader
+16:20:18.371 | fastboot_devices=5fccbfeb	 fastboot /
+16:20:18.444 | endpoint_ok_try=1
+16:20:18.446 | STEP2 flash attempt 1
+16:20:20.483 | flash_1_output=fastboot.exe : Sending 'boot' (57113 KB)                          OKAY [  1.513s] / 所在位置 行:1 字符: 1752 / + ... attempt ' + $i); $f = (& $fb -s $serial flash boot $cand 2>&1 | Out-S ... / +                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ /     + CategoryInfo          : NotSpecified: (Sending 'boot' ...OKAY [  1.513s]:String) [], RemoteException /     + FullyQualifiedErrorId : NativeCommandError /   / Writing 'boot'                                     OKAY [  0.388s] / Finished. Total time: 2.009s /
+16:20:20.484 | flash=OKAY
+16:20:20.513 | reboot_output=fastboot.exe : Rebooting                                          OKAY [  0.002s] / 所在位置 行:1 字符: 2070 / + ...  exit 4 }; W 'flash=OKAY'; $r = (& $fb -s $serial reboot 2>&1 | Out-S ... / +                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ /     + CategoryInfo          : NotSpecified: (Rebooting      ...OKAY [  0.002s]:String) [], RemoteException /     + FullyQualifiedErrorId : NativeCommandError /   / Finished. Total time: 0.002s /
+16:20:20.513 | === FLASH DONE, OBSERVATION NEXT ===
+16:20:31.173 | STEP3 observe
+16:20:31.830 | t=0s fastboot=[] adb=[List of devices attached /  /] com9008=0
+16:20:37.378 | t=5s fastboot=[] adb=[List of devices attached /  /] com9008=0
+16:20:42.889 | t=10s fastboot=[] adb=[List of devices attached /  /] com9008=0
+16:20:48.413 | t=15s fastboot=[] adb=[List of devices attached /  /] com9008=0
+16:20:53.940 | t=20s fastboot=[] adb=[List of devices attached /  /] com9008=0
+16:20:59.474 | t=25s fastboot=[] adb=[List of devices attached /  /] com9008=0
+16:21:04.982 | t=30s fastboot=[] adb=[List of devices attached /  /] com9008=0
+16:21:10.498 | t=35s fastboot=[] adb=[List of devices attached /  /] com9008=0
+16:21:16.021 | t=40s fastboot=[] adb=[List of devices attached /  /] com9008=0
+16:21:21.537 | t=45s fastboot=[] adb=[List of devices attached /  /] com9008=0
+16:21:27.026 | t=50s fastboot=[] adb=[List of devices attached /  /] com9008=0
+16:21:32.533 | t=55s fastboot=[] adb=[List of devices attached /  /] com9008=0
+16:21:38.024 | t=60s fastboot=[] adb=[List of devices attached /  /] com9008=5
+16:21:38.027 | OBSERVE_RESULT com9008=5 adb_seen=False
+16:21:48.247 | STEP4 DUAL PEEK (NO RESET): FDT head then BLM log
+16:21:51.314 | fdt_peek=SAHARA_UPLOAD OK / PEEK_BLOCK 1/1 addr=0x42000000 got=65536 rc=OK / PEEK_DONE out=D:\xplay6\evidence\kernel_re\out\stage2\bootloop_monitor\flash_log\fdt_round17.bin bytes=65536 nonzero=31506 sha256=9a0f83d8073be2ef0b8b19fe5401e633dc6a19f87d87b72fa79c55b7f0535384 head=d00dfeed000643a5000000380005b53c failed_blocks=0 /
+16:21:57.520 | blm_peek=PEEK_BLOCK 1/4 addr=0x42100000 got=65536 rc=OK / PEEK_BLOCK 2/4 addr=0x42110000 got=65536 rc=OK / PEEK_BLOCK 3/4 addr=0x42120000 got=65536 rc=OK / PEEK_BLOCK 4/4 addr=0x42130000 got=65536 rc=OK / PEEK_DONE out=D:\xplay6\evidence\kernel_re\out\stage2\bootloop_monitor\flash_log\blm_ram_round17.bin bytes=262144 nonzero=132636 sha256=88ef0c4262dc7b2ab02b86093f984186332232acff03482a03a7e857e363b89d head=314154454d4d4c420100000000000000 failed_blocks=0 /
+16:21:57.577 | fdt_round17.bin_bytes=65536 sha256=9a0f83d8073be2ef0b8b19fe5401e633dc6a19f87d87b72fa79c55b7f0535384
+16:21:57.584 | blm_ram_round17.bin_bytes=262144 sha256=88ef0c4262dc7b2ab02b86093f984186332232acff03482a03a7e857e363b89d
+16:22:29.489 | STEP5 DIAGNOSIS: LAST_VIB_MILESTONE=VIB_READ1 (first SPMI read qpnp_vib_read_u8); WATCHDOG_BARK at 20.34s
+16:22:29.496 | STEP6 RESET -> WAIT FASTBOOT FOR ROLLBACK
+16:22:29.783 | power_reset=POWER_CMD mode=reset rc=OK ack=True nak=False / -------------------------------------------------------------------------------------- /  / 16:22:29: DEBUG: Response was 'ACK' / 16:22:29: DEBUG: Got the ACK / 16:22:29: INFO: ============================================================== / 16:22:29: INFO: Files used and their paths / 16:22:29: INFO:   1 'D:\xplay6\evidence\kernel_re\out\stage2\bootloop_monitor\edl_probe/port_trace.txt' / 16:22:29: INFO:   2 'D:\xplay6\evidence\kernel_re\out\stage2\bootloop_monitor\edl_probe\power_cmd.xml' / 16:22:29: INFO:      _             (done) / 16:22:29: INFO:     | |                  / 16:22:29: INFO:   __| | ___  _ __   ___  / 16:22:29: INFO:  / _` |/ _ \| '_ \ / _ \ / 16:22:29: INFO: | (_| | (_) | | | |  __/ / 16:22:29: INFO:  \__,_|\___/|_| |_|\___| / 16:22:29: INFO: {All Finished Successfully} /  / 16:22:29: INFO: FILE ACCESS SLOW!!     0.00 B in  0.015 seconds (    0.00 Bps) --- Overall to target  0.047 seconds (0.00 Bps) /
+16:23:20.145 | fastboot_ready t=50s
+16:23:20.245 | rollback_sha256=929fda9985478078f0614a9c3709af69fe3b1c9c8badc50e783261f91ab241ae
+16:23:22.296 | rollback_flash_1=fastboot.exe : Sending 'boot' (57113 KB)                          OKAY [  1.502s] / 所在位置 行:1 字符: 1602 / + ...  -le 3; $i++) { $rf = (& $fb -s $serial flash boot $roll 2>&1 | Out-S ... / +                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ /     + CategoryInfo          : NotSpecified: (Sending 'boot' ...OKAY [  1.502s]:String) [], RemoteException /     + FullyQualifiedErrorId : NativeCommandError /   / Writing 'boot'                                     OKAY [  0.409s] / Finished. Total time: 2.021s /
+16:23:22.325 | rollback_reboot_output=fastboot.exe : Rebooting                                          OKAY [  0.002s] / 所在位置 行:1 字符: 1895 / + ... D - no reboot'; exit 5 }; $rr = (& $fb -s $serial reboot 2>&1 | Out-S ... / +                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ /     + CategoryInfo          : NotSpecified: (Rebooting      ...OKAY [  0.002s]:String) [], RemoteException /     + FullyQualifiedErrorId : NativeCommandError /   / Finished. Total time: 0.002s /
+16:24:12.361 | rollback_adb_up t=0s
+16:24:12.482 | rollback_kernel_release=3.18.71-perf-g8a8c60dd /
+16:24:12.545 | rollback_fingerprint=vivo/lineage_pd1610/pd1610:9/PQ3A.190801.002/builder11112246:userdebug/test-keys /
+16:24:12.545 | ROLLBACK_VERIFIED
+16:24:12.545 | === ROUND17 END ===
+16:25:26 | USER CORRECTION: fastboot at t=50s was entered MANUALLY by user; script polling cannot distinguish auto vs manual. Earlier claim "auto fastboot, no manual intervention" is retracted.

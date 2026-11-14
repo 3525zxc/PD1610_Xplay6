@@ -1,0 +1,69 @@
+PD1610 8.1 ROM 打包工具链（离线构建，2026-11-10 23:1x）
+======================================================================
+全部产物在 D:\16\PD1610_81\{scripts,work,evidence}\，未对设备做任何写入。
+
+1. 工具链清单
+----------------------------------------------------------------------
+scripts\boot_tool.py          boot.img 解包 / 去 verify 补丁 / 重打包
+  info            打印 header、122 份 DTB、vivo idx79、fsmgr_flags 位置
+  unpack          拆出 kernel.bin / ramdisk.gz / vivo_dtb_79.dtb /
+                  signature_area.bin / boot_header.bin / header.json
+  patch-noverify  生成 work\boot_81_noverify.img
+  repack          从 boot_parts 重组
+scripts\updater-script.template   定制 edify 模板（17 分区顺序 + oem 分支）
+scripts\make_rom_zip.py           组装 OTA 风格 zip（可自签 testkey）
+scripts\flash_custom_rom.xml      EDL/9008 直刷 XML 模板（system + boot）
+work\threshold_test_unsigned.zip  最小自洽测试包（只刷 boot，21.6 MB）
+
+2. 去 dm-verity 的原理（关键，已在真机 DTB 上验证）
+----------------------------------------------------------------------
+vivo DTB idx79 内 /firmware/android/fstab/system 的
+  fsmgr_flags = "wait,verify\0"  (len=12, DTB 内偏移 0x5A1A8,
+                                  boot.img 绝对偏移 0x0266F9DE)
+等长替换为 "wait\0" + 7 个 NUL，属性 len 字段保持 12 不变：
+  => FDT 结构 / 122 份 DTB 链 / boot.img 大小(58,729,728 B) 全部不变
+  => 实测只改 7 字节，重解析仍是 1,983 节点，fsmgr_flags 读作 "wait"
+  => sha256 5a03236d… -> bed2b186…
+注意：改动落在签名覆盖区 boot[:L]，boot 签名必然失配；但任务 1 已
+指令级证明 8.19.16 aboot 验签失败不阻断（G 返回、调用者继续装载）。
+=> boot_81_noverify.img 比之前那个 padding 1 字节的测试镜像更有意义，
+   建议作为以后门槛实验的正式测试镜像。
+
+3. 三条刷入途径（只有前两条可行）
+----------------------------------------------------------------------
+[A] EDL / 9008 直刷 —— 推荐，本机已验证 47 分区可靠读写
+    scripts\flash_custom_rom.xml：boot(start_sector 47370) +
+    system(start_sector 71946, 786432 扇区)。把 system.img 换成自编译镜像，
+    用 scripts\write_boot_edl.bat <xml> <COM号> 刷入。
+    绕过 fastboot 的 "device is lock" 与官方 recovery 的签名校验。
+    注意：只刷 boot+system 会卡 logo（11-10 实测），改 system 时要保留
+    其余 15 个 radio/bootloader 分区的官方 8.19.16 版本，顺序照模板。
+[B] 第三方 recovery（TWRP 等，需另行获取/编译）
+    用 make_rom_zip.py 出包；模板里 package_extract_file 直写 raw ext4。
+    3 GB raw system 在部分 recovery 会受尺寸/时间限制，必要时改
+    block_image_update + transfer.list，或退回 [A]。
+[C] 官方 vivo recovery —— 不可用
+    它用 /system/etc/security/otacerts.zip 里的 vivo 证书验包；
+    本机只有 Java 1.8（keytool + jarsigner），没有 signapk / vivo 私钥，
+    自签 testkey 包一定被拒。脚本 --no-sign 默认可出未签包，
+    不给 --no-sign 会生成 testkey.jks 并做 v1 签名，仅供自定义 recovery。
+
+4. 等有类原生 system.img 之后的命令
+----------------------------------------------------------------------
+# 打包（recovery 途径）
+python scripts\make_rom_zip.py --boot work\boot_81_noverify.img ^
+       --system <custom_system.img> --extra <官方17分区文件目录> ^
+       --name "MyROM" --out work\myrom.zip --no-sign
+# 或 EDL 途径：把 custom_system.img 复制/改名为 system.img 放到
+# work\，然后执行 write_boot_edl.bat flash_custom_rom.xml 5
+
+5. 校验记录
+----------------------------------------------------------------------
+threshold_test_unsigned.zip：21,614,607 B，内含 boot.img(58,729,728)、
+  update-binary(2,087,048，取自官方 8.1 包)、updater-script(2,950 B / 68 行)、
+  metadata；未打包的 system/radio/oem 行已自动替换为 ui_print("skip …")，
+  脚本自洽，可直接作为「只刷 boot」的门槛测试包（走 TWRP 或拆包走 EDL）。
+boot_tool.py unpack：kernel 56,551,493 B、ramdisk 2,162,779 B、
+  vivo DTB 409,557 B、签名区 5,376 B。
+
+边界：全程离线；门槛实验仍零写入；设备当前状态未改变。

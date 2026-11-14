@@ -1,0 +1,116 @@
+=== helper candidate 0x91D37814  0x91D37814..0x91D37860 ===
+  91D37814  movw     r3, #0x57dc
+  91D37818  movt     r3, #0x9201
+  91D3781C  str      lr, [sp, #-4]!
+  91D37820  sub      sp, sp, #0xc
+  91D37824  ldr      r2, [r3]
+  91D37828  mov      r0, #1
+  91D3782C  str      r2, [sp, #4]
+  91D37830  ldr      r2, [sp, #4]
+  91D37834  ldr      r3, [r3]
+  91D37838  cmp      r2, r3
+  91D3783C  bne      #0x91d37848
+  91D37840  add      sp, sp, #0xc
+  91D37844  pop      {pc}
+  91D37848  bl       #0x91d516c4
+  91D3784C  movw     r3, #0x57dc
+  91D37850  movt     r3, #0x9201
+  91D37854  str      lr, [sp, #-4]!
+  91D37858  sub      sp, sp, #0xc
+  91D3785C  ldr      r2, [r3]
+
+  callers of 0x91D37814: 0x91D00E04, 0x91D3AD2C, 0x91D3C7E8, 0x91D3D5C0, 0x91D3D660, 0x91D3E164, 0x91D3E1D8, 0x91D412A0
+
+=== strings near 0x91D856E4 ===
+  raw: b'Init: Start\n\x00\x00\x00\x00Display Init: Done\n\x00ERROR: Could not do normal boot. Reverting to fastboot mode.\n\x00\x00\x00sbl\x00sdi\x00xbl\x00hyp\x00pmic\x00\x00\x00\x00green\x00\x00\x00orange\x00\x00yellow\x00\x00red\x00eio\x00enfo'
+  VA 0x91D856E4 pool hits: (none)
+  VA 0x91D856F4 pool hits: (none)
+  VA 0x91D856F4 pool hits: (none)
+  VA 0x91D856D0 pool hits: (none)
+
+=== tail 0x91D411B8..0x91D41200  0x91D411B8..0x91D41200 ===
+  91D411B8  bl       #0x91d40974
+  91D411BC  bl       #0x91d0a010
+  91D411C0  movw     r0, #0x56b8
+  91D411C4  movt     r0, #0x91d8
+  91D411C8  bl       #0x91d51508
+  91D411CC  ldr      r0, [pc, #0x3fc]
+  91D411D0  bl       #0x91d0206c
+  91D411D4  movw     r0, #0x56d0
+  91D411D8  movt     r0, #0x91d8
+  91D411DC  bl       #0x91d51508
+  91D411E0  bl       #0x91d012e4
+  91D411E4  mov      r4, r0
+  91D411E8  bl       #0x91d01320
+  91D411EC  mov      r1, r0
+  91D411F0  mov      r0, r4
+  91D411F4  bl       #0x91d42c2c
+  91D411F8  ldr      r2, [fp, #-0x28]
+  91D411FC  ldr      r3, [r6]
+
+=== 0x91D41414..0x91D4141C  0x91D41414..0x91D4141C ===
+  91D41414  bl       #0x91d43730
+  91D41418  bl       #0x91d3d27c
+
+  callers of 0x91D40FCC: 
+
+  function containing flag-read#1 starts ~0x91D3AB94
+=== flag-read#1 nonzero target 0x91D3B710..0x91D3B780  0x91D3B710..0x91D3B780 ===
+  91D3B710  movw     r1, #0x3ec8
+  91D3B714  mov      r0, r4
+  91D3B718  movt     r1, #0x91d8
+  91D3B71C  bl       #0x91d3a980
+  91D3B720  subs     r2, r0, #0
+  91D3B724  beq      #0x91d3ad4c
+  91D3B728  movw     r0, #0x3d08
+  91D3B72C  movw     r1, #0x5778
+  91D3B730  movt     r0, #0x91d8
+  91D3B734  movt     r1, #0x91d8
+  91D3B738  bl       #0x91d51508
+  91D3B73C  movw     r3, #0x270c
+  91D3B740  movw     r1, #0x71c8
+  91D3B744  movt     r3, #0x91d8
+  91D3B748  movt     r1, #0x91d7
+  91D3B74C  str      r3, [sp]
+  91D3B750  movw     r2, #0x3a34
+  91D3B754  mov      r0, r8
+  91D3B758  movt     r2, #0x91d8
+  91D3B75C  movw     r3, #0x333
+  91D3B760  bl       #0x91d5163c
+  91D3B764  b        #0x91d3ad4c
+  91D3B768  movw     r0, #0x3d08
+  91D3B76C  movw     r1, #0x5778
+  91D3B770  movt     r0, #0x91d8
+  91D3B774  movt     r1, #0x91d8
+  91D3B778  bl       #0x91d51508
+  91D3B77C  movw     r3, #0x270c
+
+=== G write site 0x91D39D80..0x91D39DC0  0x91D39D80..0x91D39DC0 ===
+  91D39D80  beq      #0x91d39dcc
+  91D39D84  ldr      r2, [sp, #0x1c]
+  91D39D88  ldr      r3, [r6]
+  91D39D8C  cmp      r2, r3
+  91D39D90  bne      #0x91d39e14
+  91D39D94  add      sp, sp, #0x24
+  91D39D98  pop      {r4, r5, r6, r7, pc}
+  91D39D9C  ldr      r0, [r5]
+  91D39DA0  movw     r2, #0x7dac
+  91D39DA4  movt     r2, #0x9200
+  91D39DA8  mov      r1, #1
+  91D39DAC  adds     r0, r0, #0
+  91D39DB0  mov      r3, r1
+  91D39DB4  str      r1, [r2]
+  91D39DB8  mov      r2, #0
+  91D39DBC  movne    r0, #1
+
+=== 0x91D51508 (print fn?) head  0x91D51508..0x91D51530 ===
+  91D51508  push     {r0, r1, r2, r3}
+  91D5150C  push     {r4, r5, r6, lr}
+  91D51510  movw     r5, #0x57dc
+  91D51514  movt     r5, #0x9201
+  91D51518  sub      sp, sp, #0x118
+  91D5151C  ldr      r3, [r5]
+  91D51520  ldr      r6, [sp, #0x128]
+  91D51524  str      r3, [sp, #0x114]
+  91D51528  bl       #0x91d18d48
+  91D5152C  movw     r2, #0x8f94

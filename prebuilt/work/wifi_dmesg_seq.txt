@@ -1,0 +1,855 @@
+=== T1 00:04:33 ===
+[  677.121821] @2[11-11 03:57:18]SMBCHG: dump_reg: DC Status - 1410 = 01
+[  677.121860] @2[11-11 03:57:18]SMBCHG: dump_reg: AICL Status - 1307 = 10
+[  677.121899] @2[11-11 03:57:18]SMBCHG: dump_reg: AICL Status2 - 1309 = 22
+[  677.121937] @2[11-11 03:57:18]SMBCHG: dump_reg: MISC trim Status - 16F5 = B8
+[  677.121976] @2[11-11 03:57:18]SMBCHG: dump_reg: IL CFG - 13F2 = 00
+[  677.122014] @2[11-11 03:57:18]SMBCHG: dump_reg: CMD IL - 1340 = 02
+[  677.122053] @2[11-11 03:57:18]SMBCHG: dump_reg: USBIN CHGR CFG - 13F1 = 02
+[  677.122091] @2[11-11 03:57:18]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  677.122130] @2[11-11 03:57:18]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  677.122168] @2[11-11 03:57:18]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  677.124188] @2[11-11 03:57:18]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  677.124250] @2[11-11 03:57:18]SMBCHG: set_fastchg_current_vote_cb: fcc_ma=3631 parallel.current_max_ma=0
+[  677.124283] @2[11-11 03:57:18]SMBCHG: smbchg_set_fastchg_current_raw: current_ma=3631 more than 2000
+[  677.124315] @2[11-11 03:57:18]SMBCHG: smbchg_set_fastchg_current_raw: skipping fastchg current request: 2000
+[  677.124364] @2[11-11 03:57:18]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  677.124402] @2[11-11 03:57:18]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  677.124446] @2[11-11 03:57:18]CMS: cms_main_work: vbat=4052710,continue_count=17,nr_work=10,temp=310,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  677.193868] @2[11-11 03:57:18]logd: logdr: UID=2000 GID=2000 PID=3883 b tail=0 logMask=ff pid=0 start=0ns timeout=0ns
+=== T2 00:04:36 ===
+[  677.124283] @2[11-11 03:57:21]SMBCHG: smbchg_set_fastchg_current_raw: current_ma=3631 more than 2000
+[  677.124315] @2[11-11 03:57:21]SMBCHG: smbchg_set_fastchg_current_raw: skipping fastchg current request: 2000
+[  677.124364] @2[11-11 03:57:21]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  677.124402] @2[11-11 03:57:21]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  677.124446] @2[11-11 03:57:21]CMS: cms_main_work: vbat=4052710,continue_count=17,nr_work=10,temp=310,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  677.193868] @2[11-11 03:57:21]logd: logdr: UID=2000 GID=2000 PID=3883 b tail=0 logMask=ff pid=0 start=0ns timeout=0ns
+[  677.310171] @2[11-11 03:57:21]type=1400 audit(1794409038.449:418): avc: denied { getattr } for pid=1041 comm="memtrack@1.0-se" path="/sys/kernel/debug/kgsl/proc/1699/mem" dev="debugfs" ino=30892 scontext=u:r:hal_memtrack_default:s0 tcontext=u:object_r:debugfs:s0 tclass=file permissive=1
+[  677.310529] @2[11-11 03:57:21]type=1400 audit(1794409038.819:419): avc: denied { syslog_read } for pid=3888 comm="dmesg" scontext=u:r:shell:s0 tcontext=u:r:kernel:s0 tclass=system permissive=1
+[  677.630149] @2[11-11 03:57:21]SMBCHG: smbchg_parallel_usb_en_work: AICL at 1700
+[  677.630201] @2[11-11 03:57:21]SMBCHG: smbchg_is_parallel_usb_ok: fcc_ma=3631 fcc_voter_id=1 usb_icl_ma=500
+[  677.630231] @2[11-11 03:57:21]SMBCHG: get_prop_charge_type: reg=0x100E,value=0x05
+[  677.630251] @2[11-11 03:57:21]SMBCHG: smbchg_is_parallel_usb_ok: SDP adapter, skipping
+[  678.971148] @2[11-11 03:57:21]init: starting service 'configstore-hal-1-0'...
+[  679.012490] @2[11-11 03:57:21]init: Service 'configstore-hal-1-0' (pid 3891) received signal 31
+[  679.012528] @2[11-11 03:57:21]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 3891) process group...
+[  679.012622] @2[11-11 03:57:21][1:1:init] sig 9 to [3891:3891:android.hardwar] stat=x
+[  679.012627] @2[11-11 03:57:21]v_sig send_signal init to android.hardwar ,pid: 3891  sig: 9 @@@ 
+[  679.012673] @2[11-11 03:57:21]libprocessgroup: Successfully killed process cgroup uid 1000 pid 3891 in 0ms
+=== T3 00:04:38 ===
+[  677.124364] @3[11-11 03:57:23]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  677.124402] @3[11-11 03:57:23]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  677.124446] @3[11-11 03:57:23]CMS: cms_main_work: vbat=4052710,continue_count=17,nr_work=10,temp=310,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  677.193868] @3[11-11 03:57:23]logd: logdr: UID=2000 GID=2000 PID=3883 b tail=0 logMask=ff pid=0 start=0ns timeout=0ns
+[  677.310171] @3[11-11 03:57:23]type=1400 audit(1794409038.449:418): avc: denied { getattr } for pid=1041 comm="memtrack@1.0-se" path="/sys/kernel/debug/kgsl/proc/1699/mem" dev="debugfs" ino=30892 scontext=u:r:hal_memtrack_default:s0 tcontext=u:object_r:debugfs:s0 tclass=file permissive=1
+[  677.310529] @3[11-11 03:57:23]type=1400 audit(1794409038.819:419): avc: denied { syslog_read } for pid=3888 comm="dmesg" scontext=u:r:shell:s0 tcontext=u:r:kernel:s0 tclass=system permissive=1
+[  677.630149] @3[11-11 03:57:23]SMBCHG: smbchg_parallel_usb_en_work: AICL at 1700
+[  677.630201] @3[11-11 03:57:23]SMBCHG: smbchg_is_parallel_usb_ok: fcc_ma=3631 fcc_voter_id=1 usb_icl_ma=500
+[  677.630231] @3[11-11 03:57:23]SMBCHG: get_prop_charge_type: reg=0x100E,value=0x05
+[  677.630251] @3[11-11 03:57:23]SMBCHG: smbchg_is_parallel_usb_ok: SDP adapter, skipping
+[  678.971148] @3[11-11 03:57:23]init: starting service 'configstore-hal-1-0'...
+[  679.012490] @3[11-11 03:57:23]init: Service 'configstore-hal-1-0' (pid 3891) received signal 31
+[  679.012528] @3[11-11 03:57:23]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 3891) process group...
+[  679.012622] @3[11-11 03:57:23][1:1:init] sig 9 to [3891:3891:android.hardwar] stat=x
+[  679.012627] @3[11-11 03:57:23]v_sig send_signal init to android.hardwar ,pid: 3891  sig: 9 @@@ 
+[  679.012673] @3[11-11 03:57:23]libprocessgroup: Successfully killed process cgroup uid 1000 pid 3891 in 0ms
+[  680.611410] @3[11-11 03:57:23]FG: check_sanity_work: current: 10, prev: 4
+[  680.612171] @3[11-11 03:57:23]FG: fg_ki_coeff_read: read [00 82 00 8a] from ki_coeff_medc
+=== T4 00:04:40 ===
+[  682.859041] @3[11-11 03:57:26]SMBCHG: smbchg_handle_soc: ui_soc=64,soc=64,is_charging_change=0,chg_status=1 
+[  682.859136] @3[11-11 03:57:26]SMBCHG: smbchg_calc_max_flash_current: avail_iflash=2796350, ocv=3987250, ibat=-183060, rbatt=205041
+[  682.859307] @3[11-11 03:57:26]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+[  682.863728] @3[11-11 03:57:26]SMBCHG: smbchg_get_hvdcp_type: vbus_mv=4547 min_mv=4150,max_mv=7800
+[  682.865978] @3[11-11 03:57:26]SMBCHG: smbchg_get_board_temp: board_temp=33
+[  682.866044] @3[11-11 03:57:26]SMBCHG: smbchg_get_parallel_board_temp: board_version=version_invalid
+[  682.869548] @3[11-11 03:57:26]SMBCHG: smbchg_find_parallel_board_temp_from_adc: find parallel board temp from adc 799854, get temp 31 
+[  682.869587] @3[11-11 03:57:26]SMBCHG: smbchg_get_parallel_board_temp: #### parallel_board_temp=31 ####
+[  682.870410] @3[11-11 03:57:26]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+[  682.870425] @3[11-11 03:57:26]SMBCHG: smbchg_handle_soc: ui_soc=64,soc=64,is_charging_change=0,chg_status=1 
+[  682.871936] @3[11-11 03:57:26]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+[  683.320702] @3[11-11 03:57:26]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+[  683.981439] @3[11-11 03:57:26]init: starting service 'configstore-hal-1-0'...
+[  684.023532] @3[11-11 03:57:26]init: Service 'configstore-hal-1-0' (pid 3918) received signal 31
+[  684.023570] @3[11-11 03:57:26]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 3918) process group...
+[  684.023663] @3[11-11 03:57:26][1:1:init] sig 9 to [3918:3918:android.hardwar] stat=x
+[  684.023669] @3[11-11 03:57:26]v_sig send_signal init to android.hardwar ,pid: 3918  sig: 9 @@@ 
+[  684.023703] @3[11-11 03:57:26]libprocessgroup: Successfully killed process cgroup uid 1000 pid 3918 in 0ms
+=== T5 00:04:43 ===
+[  684.023570] @3[11-11 03:57:28]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 3918) process group...
+[  684.023663] @3[11-11 03:57:28][1:1:init] sig 9 to [3918:3918:android.hardwar] stat=x
+[  684.023669] @3[11-11 03:57:28]v_sig send_signal init to android.hardwar ,pid: 3918  sig: 9 @@@ 
+[  684.023703] @3[11-11 03:57:28]libprocessgroup: Successfully killed process cgroup uid 1000 pid 3918 in 0ms
+[  685.620536] @3[11-11 03:57:28]FG: check_sanity_work: current: 0, prev: 10
+[  685.622002] @3[11-11 03:57:28]FG: fg_ki_coeff_read: read [00 82 00 8a] from ki_coeff_medc
+[  686.662124] @3[11-11 03:57:28]BQ24192:bq24192_dump_register: reg=0x00,value=0xA0
+[  686.662585] @3[11-11 03:57:28]BQ24192:bq24192_dump_register: reg=0x01,value=0x0A
+[  686.663077] @3[11-11 03:57:28]BQ24192:bq24192_dump_register: reg=0x02,value=0x60
+[  686.663529] @3[11-11 03:57:28]BQ24192:bq24192_dump_register: reg=0x03,value=0x00
+[  686.664017] @3[11-11 03:57:28]BQ24192:bq24192_dump_register: reg=0x04,value=0xD2
+[  686.664464] @3[11-11 03:57:28]BQ24192:bq24192_dump_register: reg=0x05,value=0x80
+[  686.664948] @3[11-11 03:57:28]BQ24192:bq24192_dump_register: reg=0x06,value=0xFF
+[  686.665401] @3[11-11 03:57:28]BQ24192:bq24192_dump_register: reg=0x07,value=0x4B
+[  686.665883] @3[11-11 03:57:28]BQ24192:bq24192_dump_register: reg=0x08,value=0x00
+[  686.666329] @3[11-11 03:57:28]BQ24192:bq24192_dump_register: reg=0x09,value=0x00
+[  686.666815] @3[11-11 03:57:28]BQ24192:bq24192_dump_register: reg=0x0A,value=0x2B
+[  686.666857] @3[11-11 03:57:28]BQ24192:bq24192_vbat_work: !qc2p0_detect_support
+=== T6 00:04:45 ===
+[  687.065677] @3[11-11 03:57:30]SMBCHG: dump_reg: AICL Status2 - 1309 = 22
+[  687.065715] @3[11-11 03:57:30]SMBCHG: dump_reg: MISC trim Status - 16F5 = B8
+[  687.065752] @3[11-11 03:57:30]SMBCHG: dump_reg: IL CFG - 13F2 = 00
+[  687.065789] @3[11-11 03:57:30]SMBCHG: dump_reg: CMD IL - 1340 = 02
+[  687.065826] @3[11-11 03:57:30]SMBCHG: dump_reg: USBIN CHGR CFG - 13F1 = 02
+[  687.065863] @3[11-11 03:57:30]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  687.065900] @3[11-11 03:57:30]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  687.065937] @3[11-11 03:57:30]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  687.067610] @3[11-11 03:57:30]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  687.067657] @3[11-11 03:57:30]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  687.067692] @3[11-11 03:57:30]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  687.067737] @3[11-11 03:57:30]CMS: cms_main_work: vbat=4052710,continue_count=18,nr_work=11,temp=307,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  688.991422] @3[11-11 03:57:30]init: starting service 'configstore-hal-1-0'...
+[  689.032572] @3[11-11 03:57:30]init: Service 'configstore-hal-1-0' (pid 3927) received signal 31
+[  689.032606] @3[11-11 03:57:30]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 3927) process group...
+[  689.032696] @3[11-11 03:57:30][1:1:init] sig 9 to [3927:3927:android.hardwar] stat=x
+[  689.032701] @3[11-11 03:57:30]v_sig send_signal init to android.hardwar ,pid: 3927  sig: 9 @@@ 
+[  689.032735] @3[11-11 03:57:30]libprocessgroup: Successfully killed process cgroup uid 1000 pid 3927 in 0ms
+=== T7 00:04:48 ===
+[  687.065863] @3[11-11 03:57:33]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  687.065900] @3[11-11 03:57:33]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  687.065937] @3[11-11 03:57:33]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  687.067610] @3[11-11 03:57:33]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  687.067657] @3[11-11 03:57:33]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  687.067692] @3[11-11 03:57:33]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  687.067737] @3[11-11 03:57:33]CMS: cms_main_work: vbat=4052710,continue_count=18,nr_work=11,temp=307,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  688.991422] @3[11-11 03:57:33]init: starting service 'configstore-hal-1-0'...
+[  689.032572] @3[11-11 03:57:33]init: Service 'configstore-hal-1-0' (pid 3927) received signal 31
+[  689.032606] @3[11-11 03:57:33]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 3927) process group...
+[  689.032696] @3[11-11 03:57:33][1:1:init] sig 9 to [3927:3927:android.hardwar] stat=x
+[  689.032701] @3[11-11 03:57:33]v_sig send_signal init to android.hardwar ,pid: 3927  sig: 9 @@@ 
+[  689.032735] @3[11-11 03:57:33]libprocessgroup: Successfully killed process cgroup uid 1000 pid 3927 in 0ms
+[  690.630696] @3[11-11 03:57:33]FG: check_sanity_work: current: 8, prev: 0
+[  690.631375] @3[11-11 03:57:33]FG: fg_ki_coeff_read: read [00 82 00 8a] from ki_coeff_medc
+[  691.287460] @3[11-11 03:57:33]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+[  691.287532] @3[11-11 03:57:33]SMBCHG: smbchg_handle_soc: ui_soc=64,soc=64,is_charging_change=0,chg_status=1 
+[  691.289826] @3[11-11 03:57:33]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+=== T8 00:04:50 ===
+[  691.861624] @3[11-11 03:57:35]SMBCHG: smbchg_handle_soc: ui_soc=64,soc=64,is_charging_change=0,chg_status=1 
+[  691.861662] @3[11-11 03:57:35]SMBCHG: smbchg_calc_max_flash_current: avail_iflash=2541690, ocv=3989234, ibat=125430, rbatt=210473
+[  691.862582] @3[11-11 03:57:35]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+[  691.864624] @3[11-11 03:57:35]SMBCHG: smbchg_get_hvdcp_type: vbus_mv=4550 min_mv=4150,max_mv=7800
+[  691.866164] @3[11-11 03:57:35]SMBCHG: smbchg_get_board_temp: board_temp=33
+[  691.866196] @3[11-11 03:57:35]SMBCHG: smbchg_get_parallel_board_temp: board_version=version_invalid
+[  691.869943] @3[11-11 03:57:35]SMBCHG: smbchg_find_parallel_board_temp_from_adc: find parallel board temp from adc 800345, get temp 31 
+[  691.869962] @3[11-11 03:57:35]SMBCHG: smbchg_get_parallel_board_temp: #### parallel_board_temp=31 ####
+[  691.871071] @3[11-11 03:57:35]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+[  691.871088] @3[11-11 03:57:35]SMBCHG: smbchg_handle_soc: ui_soc=64,soc=64,is_charging_change=0,chg_status=1 
+[  691.872924] @3[11-11 03:57:35]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+[  693.320647] @3[11-11 03:57:35]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+[  694.002803] @3[11-11 03:57:35]init: starting service 'configstore-hal-1-0'...
+[  694.053027] @3[11-11 03:57:35]init: Service 'configstore-hal-1-0' (pid 3936) received signal 31
+[  694.053067] @3[11-11 03:57:35]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 3936) process group...
+[  694.053169] @3[11-11 03:57:35][1:1:init] sig 9 to [3936:3936:android.hardwar] stat=R
+[  694.053175] @3[11-11 03:57:35]v_sig send_signal init to android.hardwar ,pid: 3936  sig: 9 @@@ 
+[  694.053211] @3[11-11 03:57:35]libprocessgroup: Successfully killed process cgroup uid 1000 pid 3936 in 0ms
+=== T9 00:04:52 ===
+[  691.862582] @3[11-11 03:57:37]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+[  691.864624] @3[11-11 03:57:37]SMBCHG: smbchg_get_hvdcp_type: vbus_mv=4550 min_mv=4150,max_mv=7800
+[  691.866164] @3[11-11 03:57:37]SMBCHG: smbchg_get_board_temp: board_temp=33
+[  691.866196] @3[11-11 03:57:37]SMBCHG: smbchg_get_parallel_board_temp: board_version=version_invalid
+[  691.869943] @3[11-11 03:57:37]SMBCHG: smbchg_find_parallel_board_temp_from_adc: find parallel board temp from adc 800345, get temp 31 
+[  691.869962] @3[11-11 03:57:37]SMBCHG: smbchg_get_parallel_board_temp: #### parallel_board_temp=31 ####
+[  691.871071] @3[11-11 03:57:37]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+[  691.871088] @3[11-11 03:57:37]SMBCHG: smbchg_handle_soc: ui_soc=64,soc=64,is_charging_change=0,chg_status=1 
+[  691.872924] @3[11-11 03:57:37]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+[  693.320647] @3[11-11 03:57:37]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+[  694.002803] @3[11-11 03:57:37]init: starting service 'configstore-hal-1-0'...
+[  694.053027] @3[11-11 03:57:37]init: Service 'configstore-hal-1-0' (pid 3936) received signal 31
+[  694.053067] @3[11-11 03:57:37]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 3936) process group...
+[  694.053169] @3[11-11 03:57:37][1:1:init] sig 9 to [3936:3936:android.hardwar] stat=R
+[  694.053175] @3[11-11 03:57:37]v_sig send_signal init to android.hardwar ,pid: 3936  sig: 9 @@@ 
+[  694.053211] @3[11-11 03:57:37]libprocessgroup: Successfully killed process cgroup uid 1000 pid 3936 in 0ms
+[  695.640712] @3[11-11 03:57:37]FG: check_sanity_work: current: 14, prev: 8
+[  695.642191] @3[11-11 03:57:37]FG: fg_ki_coeff_read: read [00 82 00 8a] from ki_coeff_medc
+=== T10 00:04:55 ===
+[  697.066243] @3[11-11 03:57:40]SMBCHG: dump_reg: CMD_CHG_REG - 1242 = 00
+[  697.066281] @3[11-11 03:57:40]SMBCHG: dump_reg: USB Status - 1310 = 04
+[  697.066320] @3[11-11 03:57:40]SMBCHG: dump_reg: MISC Status - 1610 = 01
+[  697.066359] @3[11-11 03:57:40]SMBCHG: dump_reg: SRC DETECT STS - 1608 = 10
+[  697.066397] @3[11-11 03:57:40]SMBCHG: dump_reg: DC Status - 1410 = 01
+[  697.066437] @3[11-11 03:57:40]SMBCHG: dump_reg: AICL Status - 1307 = 10
+[  697.066475] @3[11-11 03:57:40]SMBCHG: dump_reg: AICL Status2 - 1309 = 22
+[  697.066513] @3[11-11 03:57:40]SMBCHG: dump_reg: MISC trim Status - 16F5 = B8
+[  697.066551] @3[11-11 03:57:40]SMBCHG: dump_reg: IL CFG - 13F2 = 00
+[  697.066589] @3[11-11 03:57:40]SMBCHG: dump_reg: CMD IL - 1340 = 02
+[  697.066628] @3[11-11 03:57:40]SMBCHG: dump_reg: USBIN CHGR CFG - 13F1 = 02
+[  697.066666] @3[11-11 03:57:40]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  697.066705] @3[11-11 03:57:40]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  697.066743] @3[11-11 03:57:40]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  697.068608] @3[11-11 03:57:40]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  697.068659] @3[11-11 03:57:40]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  697.068696] @3[11-11 03:57:40]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  697.068742] @3[11-11 03:57:40]CMS: cms_main_work: vbat=4046912,continue_count=19,nr_work=12,temp=310,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+=== T11 00:04:57 ===
+[  697.066551] @2[11-11 03:57:42]SMBCHG: dump_reg: IL CFG - 13F2 = 00
+[  697.066589] @2[11-11 03:57:42]SMBCHG: dump_reg: CMD IL - 1340 = 02
+[  697.066628] @2[11-11 03:57:42]SMBCHG: dump_reg: USBIN CHGR CFG - 13F1 = 02
+[  697.066666] @2[11-11 03:57:42]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  697.066705] @2[11-11 03:57:42]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  697.066743] @2[11-11 03:57:42]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  697.068608] @2[11-11 03:57:42]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  697.068659] @2[11-11 03:57:42]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  697.068696] @2[11-11 03:57:42]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  697.068742] @2[11-11 03:57:42]CMS: cms_main_work: vbat=4046912,continue_count=19,nr_work=12,temp=310,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  699.012359] @2[11-11 03:57:42]init: starting service 'configstore-hal-1-0'...
+[  699.039237] @2[11-11 03:57:42]init: Service 'configstore-hal-1-0' (pid 3949) received signal 31
+[  699.039468] @2[11-11 03:57:42]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 3949) process group...
+[  699.039811] @2[11-11 03:57:42][1:1:init] sig 9 to [3949:3949:android.hardwar] stat=x
+[  699.039850] @2[11-11 03:57:42]v_sig send_signal init to android.hardwar ,pid: 3949  sig: 9 @@@ 
+[  699.040215] @2[11-11 03:57:42]libprocessgroup: Successfully killed process cgroup uid 1000 pid 3949 in 0ms
+[  700.650714] @2[11-11 03:57:42]FG: check_sanity_work: current: 5, prev: 14
+[  700.672969] @2[11-11 03:57:42]FG: fg_ki_coeff_read: read [00 82 00 8a] from ki_coeff_medc
+=== T12 00:05:00 ===
+[  697.066589] @3[11-11 03:57:45]SMBCHG: dump_reg: CMD IL - 1340 = 02
+[  697.066628] @3[11-11 03:57:45]SMBCHG: dump_reg: USBIN CHGR CFG - 13F1 = 02
+[  697.066666] @3[11-11 03:57:45]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  697.066705] @3[11-11 03:57:45]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  697.066743] @3[11-11 03:57:45]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  697.068608] @3[11-11 03:57:45]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  697.068659] @3[11-11 03:57:45]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  697.068696] @3[11-11 03:57:45]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  697.068742] @3[11-11 03:57:45]CMS: cms_main_work: vbat=4046912,continue_count=19,nr_work=12,temp=310,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  699.012359] @3[11-11 03:57:45]init: starting service 'configstore-hal-1-0'...
+[  699.039237] @3[11-11 03:57:45]init: Service 'configstore-hal-1-0' (pid 3949) received signal 31
+[  699.039468] @3[11-11 03:57:45]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 3949) process group...
+[  699.039811] @3[11-11 03:57:45][1:1:init] sig 9 to [3949:3949:android.hardwar] stat=x
+[  699.039850] @3[11-11 03:57:45]v_sig send_signal init to android.hardwar ,pid: 3949  sig: 9 @@@ 
+[  699.040215] @3[11-11 03:57:45]libprocessgroup: Successfully killed process cgroup uid 1000 pid 3949 in 0ms
+[  700.650714] @3[11-11 03:57:45]FG: check_sanity_work: current: 5, prev: 14
+[  700.672969] @3[11-11 03:57:45]FG: fg_ki_coeff_read: read [00 82 00 8a] from ki_coeff_medc
+[  703.320730] @3[11-11 03:57:45]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+=== T13 00:05:02 ===
+[  697.068742] @3[11-11 03:57:47]CMS: cms_main_work: vbat=4046912,continue_count=19,nr_work=12,temp=310,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  699.012359] @3[11-11 03:57:47]init: starting service 'configstore-hal-1-0'...
+[  699.039237] @3[11-11 03:57:47]init: Service 'configstore-hal-1-0' (pid 3949) received signal 31
+[  699.039468] @3[11-11 03:57:47]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 3949) process group...
+[  699.039811] @3[11-11 03:57:47][1:1:init] sig 9 to [3949:3949:android.hardwar] stat=x
+[  699.039850] @3[11-11 03:57:47]v_sig send_signal init to android.hardwar ,pid: 3949  sig: 9 @@@ 
+[  699.040215] @3[11-11 03:57:47]libprocessgroup: Successfully killed process cgroup uid 1000 pid 3949 in 0ms
+[  700.650714] @3[11-11 03:57:47]FG: check_sanity_work: current: 5, prev: 14
+[  700.672969] @3[11-11 03:57:47]FG: fg_ki_coeff_read: read [00 82 00 8a] from ki_coeff_medc
+[  703.320730] @3[11-11 03:57:47]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+[  704.021912] @3[11-11 03:57:47]init: starting service 'configstore-hal-1-0'...
+[  704.072575] @3[11-11 03:57:47]init: Service 'configstore-hal-1-0' (pid 3958) received signal 31
+[  704.072772] @3[11-11 03:57:47]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 3958) process group...
+[  704.073124] @3[11-11 03:57:47][1:1:init] sig 9 to [3958:3958:android.hardwar] stat=x
+[  704.073167] @3[11-11 03:57:47]v_sig send_signal init to android.hardwar ,pid: 3958  sig: 9 @@@ 
+[  704.073437] @3[11-11 03:57:47]libprocessgroup: Successfully killed process cgroup uid 1000 pid 3958 in 0ms
+[  705.680927] @3[11-11 03:57:47]FG: check_sanity_work: current: 12, prev: 5
+[  705.681538] @3[11-11 03:57:47]FG: fg_ki_coeff_read: read [00 82 00 8a] from ki_coeff_medc
+=== T14 00:05:04 ===
+[  707.065974] @3[11-11 03:57:49]SMBCHG: dump_reg: CMD_CHG_REG - 1242 = 00
+[  707.066014] @3[11-11 03:57:49]SMBCHG: dump_reg: USB Status - 1310 = 04
+[  707.066053] @3[11-11 03:57:49]SMBCHG: dump_reg: MISC Status - 1610 = 01
+[  707.066093] @3[11-11 03:57:49]SMBCHG: dump_reg: SRC DETECT STS - 1608 = 10
+[  707.066133] @3[11-11 03:57:49]SMBCHG: dump_reg: DC Status - 1410 = 01
+[  707.066172] @3[11-11 03:57:49]SMBCHG: dump_reg: AICL Status - 1307 = 10
+[  707.066211] @3[11-11 03:57:49]SMBCHG: dump_reg: AICL Status2 - 1309 = 22
+[  707.066250] @3[11-11 03:57:49]SMBCHG: dump_reg: MISC trim Status - 16F5 = B8
+[  707.066288] @3[11-11 03:57:49]SMBCHG: dump_reg: IL CFG - 13F2 = 00
+[  707.066327] @3[11-11 03:57:49]SMBCHG: dump_reg: CMD IL - 1340 = 02
+[  707.066366] @3[11-11 03:57:49]SMBCHG: dump_reg: USBIN CHGR CFG - 13F1 = 02
+[  707.066405] @3[11-11 03:57:49]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  707.066444] @3[11-11 03:57:49]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  707.066482] @3[11-11 03:57:49]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  707.068447] @3[11-11 03:57:49]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  707.068499] @3[11-11 03:57:49]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  707.068540] @3[11-11 03:57:49]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  707.068586] @3[11-11 03:57:49]CMS: cms_main_work: vbat=4046912,continue_count=20,nr_work=13,temp=310,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+=== T15 00:05:07 ===
+[  707.066288] @3[11-11 03:57:52]SMBCHG: dump_reg: IL CFG - 13F2 = 00
+[  707.066327] @3[11-11 03:57:52]SMBCHG: dump_reg: CMD IL - 1340 = 02
+[  707.066366] @3[11-11 03:57:52]SMBCHG: dump_reg: USBIN CHGR CFG - 13F1 = 02
+[  707.066405] @3[11-11 03:57:52]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  707.066444] @3[11-11 03:57:52]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  707.066482] @3[11-11 03:57:52]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  707.068447] @3[11-11 03:57:52]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  707.068499] @3[11-11 03:57:52]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  707.068540] @3[11-11 03:57:52]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  707.068586] @3[11-11 03:57:52]CMS: cms_main_work: vbat=4046912,continue_count=20,nr_work=13,temp=310,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  709.032612] @3[11-11 03:57:52]init: starting service 'configstore-hal-1-0'...
+[  709.073584] @3[11-11 03:57:52]init: Service 'configstore-hal-1-0' (pid 3967) received signal 31
+[  709.073622] @3[11-11 03:57:52]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 3967) process group...
+[  709.073705] @3[11-11 03:57:52][1:1:init] sig 9 to [3967:3967:android.hardwar] stat=x
+[  709.073711] @3[11-11 03:57:52]v_sig send_signal init to android.hardwar ,pid: 3967  sig: 9 @@@ 
+[  709.073744] @3[11-11 03:57:52]libprocessgroup: Successfully killed process cgroup uid 1000 pid 3967 in 0ms
+[  710.690160] @3[11-11 03:57:52]FG: check_sanity_work: current: 2, prev: 12
+[  710.690571] @3[11-11 03:57:52]FG: fg_ki_coeff_read: read [00 82 00 8a] from ki_coeff_medc
+=== T16 00:05:09 ===
+[  707.066288] @3[11-11 03:57:54]SMBCHG: dump_reg: IL CFG - 13F2 = 00
+[  707.066327] @3[11-11 03:57:54]SMBCHG: dump_reg: CMD IL - 1340 = 02
+[  707.066366] @3[11-11 03:57:54]SMBCHG: dump_reg: USBIN CHGR CFG - 13F1 = 02
+[  707.066405] @3[11-11 03:57:54]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  707.066444] @3[11-11 03:57:54]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  707.066482] @3[11-11 03:57:54]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  707.068447] @3[11-11 03:57:54]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  707.068499] @3[11-11 03:57:54]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  707.068540] @3[11-11 03:57:54]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  707.068586] @3[11-11 03:57:54]CMS: cms_main_work: vbat=4046912,continue_count=20,nr_work=13,temp=310,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  709.032612] @3[11-11 03:57:54]init: starting service 'configstore-hal-1-0'...
+[  709.073584] @3[11-11 03:57:54]init: Service 'configstore-hal-1-0' (pid 3967) received signal 31
+[  709.073622] @3[11-11 03:57:54]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 3967) process group...
+[  709.073705] @3[11-11 03:57:54][1:1:init] sig 9 to [3967:3967:android.hardwar] stat=x
+[  709.073711] @3[11-11 03:57:54]v_sig send_signal init to android.hardwar ,pid: 3967  sig: 9 @@@ 
+[  709.073744] @3[11-11 03:57:54]libprocessgroup: Successfully killed process cgroup uid 1000 pid 3967 in 0ms
+[  710.690160] @3[11-11 03:57:54]FG: check_sanity_work: current: 2, prev: 12
+[  710.690571] @3[11-11 03:57:54]FG: fg_ki_coeff_read: read [00 82 00 8a] from ki_coeff_medc
+=== T17 00:05:11 ===
+[  707.068499] @3[11-11 03:57:57]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  707.068540] @3[11-11 03:57:57]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  707.068586] @3[11-11 03:57:57]CMS: cms_main_work: vbat=4046912,continue_count=20,nr_work=13,temp=310,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  709.032612] @3[11-11 03:57:57]init: starting service 'configstore-hal-1-0'...
+[  709.073584] @3[11-11 03:57:57]init: Service 'configstore-hal-1-0' (pid 3967) received signal 31
+[  709.073622] @3[11-11 03:57:57]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 3967) process group...
+[  709.073705] @3[11-11 03:57:57][1:1:init] sig 9 to [3967:3967:android.hardwar] stat=x
+[  709.073711] @3[11-11 03:57:57]v_sig send_signal init to android.hardwar ,pid: 3967  sig: 9 @@@ 
+[  709.073744] @3[11-11 03:57:57]libprocessgroup: Successfully killed process cgroup uid 1000 pid 3967 in 0ms
+[  710.690160] @3[11-11 03:57:57]FG: check_sanity_work: current: 2, prev: 12
+[  710.690571] @3[11-11 03:57:57]FG: fg_ki_coeff_read: read [00 82 00 8a] from ki_coeff_medc
+[  713.330589] @3[11-11 03:57:57]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+[  714.043855] @3[11-11 03:57:57]init: starting service 'configstore-hal-1-0'...
+[  714.091218] @3[11-11 03:57:57]init: Service 'configstore-hal-1-0' (pid 3976) received signal 31
+[  714.091255] @3[11-11 03:57:57]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 3976) process group...
+[  714.091342] @3[11-11 03:57:57][1:1:init] sig 9 to [3976:3976:android.hardwar] stat=x
+[  714.091347] @3[11-11 03:57:57]v_sig send_signal init to android.hardwar ,pid: 3976  sig: 9 @@@ 
+[  714.091380] @3[11-11 03:57:57]libprocessgroup: Successfully killed process cgroup uid 1000 pid 3976 in 0ms
+=== T18 00:05:14 ===
+[  717.066145] @3[11-11 03:57:59]SMBCHG: dump_reg: CMD_CHG_REG - 1242 = 00
+[  717.066183] @3[11-11 03:57:59]SMBCHG: dump_reg: USB Status - 1310 = 04
+[  717.066222] @3[11-11 03:57:59]SMBCHG: dump_reg: MISC Status - 1610 = 01
+[  717.066261] @3[11-11 03:57:59]SMBCHG: dump_reg: SRC DETECT STS - 1608 = 10
+[  717.066300] @3[11-11 03:57:59]SMBCHG: dump_reg: DC Status - 1410 = 01
+[  717.066339] @3[11-11 03:57:59]SMBCHG: dump_reg: AICL Status - 1307 = 10
+[  717.066377] @3[11-11 03:57:59]SMBCHG: dump_reg: AICL Status2 - 1309 = 22
+[  717.066416] @3[11-11 03:57:59]SMBCHG: dump_reg: MISC trim Status - 16F5 = B8
+[  717.066455] @3[11-11 03:57:59]SMBCHG: dump_reg: IL CFG - 13F2 = 00
+[  717.066493] @3[11-11 03:57:59]SMBCHG: dump_reg: CMD IL - 1340 = 02
+[  717.066532] @3[11-11 03:57:59]SMBCHG: dump_reg: USBIN CHGR CFG - 13F1 = 02
+[  717.066573] @3[11-11 03:57:59]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  717.066612] @3[11-11 03:57:59]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  717.066650] @3[11-11 03:57:59]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  717.068620] @3[11-11 03:57:59]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  717.068673] @3[11-11 03:57:59]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  717.068711] @3[11-11 03:57:59]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  717.068760] @3[11-11 03:57:59]CMS: cms_main_work: vbat=4046912,continue_count=21,nr_work=14,temp=310,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+=== T19 00:05:16 ===
+[  717.066377] @3[11-11 03:58:01]SMBCHG: dump_reg: AICL Status2 - 1309 = 22
+[  717.066416] @3[11-11 03:58:01]SMBCHG: dump_reg: MISC trim Status - 16F5 = B8
+[  717.066455] @3[11-11 03:58:01]SMBCHG: dump_reg: IL CFG - 13F2 = 00
+[  717.066493] @3[11-11 03:58:01]SMBCHG: dump_reg: CMD IL - 1340 = 02
+[  717.066532] @3[11-11 03:58:01]SMBCHG: dump_reg: USBIN CHGR CFG - 13F1 = 02
+[  717.066573] @3[11-11 03:58:01]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  717.066612] @3[11-11 03:58:01]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  717.066650] @3[11-11 03:58:01]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  717.068620] @3[11-11 03:58:01]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  717.068673] @3[11-11 03:58:01]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  717.068711] @3[11-11 03:58:01]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  717.068760] @3[11-11 03:58:01]CMS: cms_main_work: vbat=4046912,continue_count=21,nr_work=14,temp=310,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  719.054536] @3[11-11 03:58:01]init: starting service 'configstore-hal-1-0'...
+[  719.093182] @3[11-11 03:58:01]init: Service 'configstore-hal-1-0' (pid 3985) received signal 31
+[  719.093217] @3[11-11 03:58:01]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 3985) process group...
+[  719.093297] @3[11-11 03:58:01][1:1:init] sig 9 to [3985:3985:android.hardwar] stat=x
+[  719.093303] @3[11-11 03:58:01]v_sig send_signal init to android.hardwar ,pid: 3985  sig: 9 @@@ 
+[  719.093335] @3[11-11 03:58:01]libprocessgroup: Successfully killed process cgroup uid 1000 pid 3985 in 0ms
+=== T20 00:05:19 ===
+[  717.066573] @3[11-11 03:58:04]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  717.066612] @3[11-11 03:58:04]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  717.066650] @3[11-11 03:58:04]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  717.068620] @3[11-11 03:58:04]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  717.068673] @3[11-11 03:58:04]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  717.068711] @3[11-11 03:58:04]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  717.068760] @3[11-11 03:58:04]CMS: cms_main_work: vbat=4046912,continue_count=21,nr_work=14,temp=310,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  719.054536] @3[11-11 03:58:04]init: starting service 'configstore-hal-1-0'...
+[  719.093182] @3[11-11 03:58:04]init: Service 'configstore-hal-1-0' (pid 3985) received signal 31
+[  719.093217] @3[11-11 03:58:04]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 3985) process group...
+[  719.093297] @3[11-11 03:58:04][1:1:init] sig 9 to [3985:3985:android.hardwar] stat=x
+[  719.093303] @3[11-11 03:58:04]v_sig send_signal init to android.hardwar ,pid: 3985  sig: 9 @@@ 
+[  719.093335] @3[11-11 03:58:04]libprocessgroup: Successfully killed process cgroup uid 1000 pid 3985 in 0ms
+[  720.710675] @3[11-11 03:58:04]FG: check_sanity_work: current: 0, prev: 10
+[  720.711425] @3[11-11 03:58:04]FG: fg_ki_coeff_read: read [00 82 00 8a] from ki_coeff_medc
+[  721.920658] @3[11-11 03:58:04]FG: fg_is_batt_id_valid: fg batt sts 0x2c
+[  721.920763] @3[11-11 03:58:04]FG: fg_is_batt_id_valid_from_cms: is_valid:1
+[  721.937222] @3[11-11 03:58:04]FG: update_sram_data: batt_temp=310,ocv=3989234,vbat=4061408 ibat=-398099 batid=695mv,batid_info=0x2a,soc=64,batt_soc=0xa4fda5,monotonic_soc=0xa4
+=== T21 00:05:21 ===
+[  719.054536] @3[11-11 03:58:06]init: starting service 'configstore-hal-1-0'...
+[  719.093182] @3[11-11 03:58:06]init: Service 'configstore-hal-1-0' (pid 3985) received signal 31
+[  719.093217] @3[11-11 03:58:06]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 3985) process group...
+[  719.093297] @3[11-11 03:58:06][1:1:init] sig 9 to [3985:3985:android.hardwar] stat=x
+[  719.093303] @3[11-11 03:58:06]v_sig send_signal init to android.hardwar ,pid: 3985  sig: 9 @@@ 
+[  719.093335] @3[11-11 03:58:06]libprocessgroup: Successfully killed process cgroup uid 1000 pid 3985 in 0ms
+[  720.710675] @3[11-11 03:58:06]FG: check_sanity_work: current: 0, prev: 10
+[  720.711425] @3[11-11 03:58:06]FG: fg_ki_coeff_read: read [00 82 00 8a] from ki_coeff_medc
+[  721.920658] @3[11-11 03:58:06]FG: fg_is_batt_id_valid: fg batt sts 0x2c
+[  721.920763] @3[11-11 03:58:06]FG: fg_is_batt_id_valid_from_cms: is_valid:1
+[  721.937222] @3[11-11 03:58:06]FG: update_sram_data: batt_temp=310,ocv=3989234,vbat=4061408 ibat=-398099 batid=695mv,batid_info=0x2a,soc=64,batt_soc=0xa4fda5,monotonic_soc=0xa4
+[  723.330690] @3[11-11 03:58:06]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+[  724.065472] @3[11-11 03:58:06]init: starting service 'configstore-hal-1-0'...
+[  724.111538] @3[11-11 03:58:06]init: Service 'configstore-hal-1-0' (pid 3994) received signal 31
+[  724.111574] @3[11-11 03:58:06]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 3994) process group...
+[  724.111671] @3[11-11 03:58:06][1:1:init] sig 9 to [3994:3994:android.hardwar] stat=x
+[  724.111676] @3[11-11 03:58:06]v_sig send_signal init to android.hardwar ,pid: 3994  sig: 9 @@@ 
+[  724.111713] @3[11-11 03:58:06]libprocessgroup: Successfully killed process cgroup uid 1000 pid 3994 in 0ms
+=== T22 00:05:23 ===
+[  727.066189] @3[11-11 03:58:08]SMBCHG: dump_reg: CMD_CHG_REG - 1242 = 00
+[  727.066227] @3[11-11 03:58:08]SMBCHG: dump_reg: USB Status - 1310 = 04
+[  727.066266] @3[11-11 03:58:08]SMBCHG: dump_reg: MISC Status - 1610 = 01
+[  727.066305] @3[11-11 03:58:08]SMBCHG: dump_reg: SRC DETECT STS - 1608 = 10
+[  727.066344] @3[11-11 03:58:08]SMBCHG: dump_reg: DC Status - 1410 = 01
+[  727.066382] @3[11-11 03:58:08]SMBCHG: dump_reg: AICL Status - 1307 = 10
+[  727.066421] @3[11-11 03:58:08]SMBCHG: dump_reg: AICL Status2 - 1309 = 22
+[  727.066461] @3[11-11 03:58:08]SMBCHG: dump_reg: MISC trim Status - 16F5 = B8
+[  727.066499] @3[11-11 03:58:08]SMBCHG: dump_reg: IL CFG - 13F2 = 00
+[  727.066538] @3[11-11 03:58:08]SMBCHG: dump_reg: CMD IL - 1340 = 02
+[  727.066575] @3[11-11 03:58:08]SMBCHG: dump_reg: USBIN CHGR CFG - 13F1 = 02
+[  727.066614] @3[11-11 03:58:08]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  727.066652] @3[11-11 03:58:08]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  727.066691] @3[11-11 03:58:08]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  727.068664] @3[11-11 03:58:08]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  727.068716] @3[11-11 03:58:08]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  727.068754] @3[11-11 03:58:08]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  727.068800] @3[11-11 03:58:08]CMS: cms_main_work: vbat=4061408,continue_count=22,nr_work=15,temp=310,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+=== T23 00:05:26 ===
+[  727.066421] @3[11-11 03:58:11]SMBCHG: dump_reg: AICL Status2 - 1309 = 22
+[  727.066461] @3[11-11 03:58:11]SMBCHG: dump_reg: MISC trim Status - 16F5 = B8
+[  727.066499] @3[11-11 03:58:11]SMBCHG: dump_reg: IL CFG - 13F2 = 00
+[  727.066538] @3[11-11 03:58:11]SMBCHG: dump_reg: CMD IL - 1340 = 02
+[  727.066575] @3[11-11 03:58:11]SMBCHG: dump_reg: USBIN CHGR CFG - 13F1 = 02
+[  727.066614] @3[11-11 03:58:11]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  727.066652] @3[11-11 03:58:11]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  727.066691] @3[11-11 03:58:11]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  727.068664] @3[11-11 03:58:11]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  727.068716] @3[11-11 03:58:11]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  727.068754] @3[11-11 03:58:11]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  727.068800] @3[11-11 03:58:11]CMS: cms_main_work: vbat=4061408,continue_count=22,nr_work=15,temp=310,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  729.076846] @3[11-11 03:58:11]init: starting service 'configstore-hal-1-0'...
+[  729.113413] @3[11-11 03:58:11]init: Service 'configstore-hal-1-0' (pid 4003) received signal 31
+[  729.113563] @3[11-11 03:58:11]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 4003) process group...
+[  729.113879] @3[11-11 03:58:11][1:1:init] sig 9 to [4003:4003:android.hardwar] stat=x
+[  729.113917] @3[11-11 03:58:11]v_sig send_signal init to android.hardwar ,pid: 4003  sig: 9 @@@ 
+[  729.114341] @3[11-11 03:58:11]libprocessgroup: Successfully killed process cgroup uid 1000 pid 4003 in 0ms
+=== T24 00:05:28 ===
+[  727.066499] @3[11-11 03:58:13]SMBCHG: dump_reg: IL CFG - 13F2 = 00
+[  727.066538] @3[11-11 03:58:13]SMBCHG: dump_reg: CMD IL - 1340 = 02
+[  727.066575] @3[11-11 03:58:13]SMBCHG: dump_reg: USBIN CHGR CFG - 13F1 = 02
+[  727.066614] @3[11-11 03:58:13]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  727.066652] @3[11-11 03:58:13]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  727.066691] @3[11-11 03:58:13]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  727.068664] @3[11-11 03:58:13]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  727.068716] @3[11-11 03:58:13]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  727.068754] @3[11-11 03:58:13]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  727.068800] @3[11-11 03:58:13]CMS: cms_main_work: vbat=4061408,continue_count=22,nr_work=15,temp=310,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  729.076846] @3[11-11 03:58:13]init: starting service 'configstore-hal-1-0'...
+[  729.113413] @3[11-11 03:58:13]init: Service 'configstore-hal-1-0' (pid 4003) received signal 31
+[  729.113563] @3[11-11 03:58:13]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 4003) process group...
+[  729.113879] @3[11-11 03:58:13][1:1:init] sig 9 to [4003:4003:android.hardwar] stat=x
+[  729.113917] @3[11-11 03:58:13]v_sig send_signal init to android.hardwar ,pid: 4003  sig: 9 @@@ 
+[  729.114341] @3[11-11 03:58:13]libprocessgroup: Successfully killed process cgroup uid 1000 pid 4003 in 0ms
+[  730.730738] @3[11-11 03:58:13]FG: check_sanity_work: current: 14, prev: 6
+[  730.731474] @3[11-11 03:58:13]FG: fg_ki_coeff_read: read [00 82 00 8a] from ki_coeff_medc
+=== T25 00:05:30 ===
+[  727.068716] @2[11-11 03:58:16]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  727.068754] @2[11-11 03:58:16]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  727.068800] @2[11-11 03:58:16]CMS: cms_main_work: vbat=4061408,continue_count=22,nr_work=15,temp=310,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  729.076846] @2[11-11 03:58:16]init: starting service 'configstore-hal-1-0'...
+[  729.113413] @2[11-11 03:58:16]init: Service 'configstore-hal-1-0' (pid 4003) received signal 31
+[  729.113563] @2[11-11 03:58:16]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 4003) process group...
+[  729.113879] @2[11-11 03:58:16][1:1:init] sig 9 to [4003:4003:android.hardwar] stat=x
+[  729.113917] @2[11-11 03:58:16]v_sig send_signal init to android.hardwar ,pid: 4003  sig: 9 @@@ 
+[  729.114341] @2[11-11 03:58:16]libprocessgroup: Successfully killed process cgroup uid 1000 pid 4003 in 0ms
+[  730.730738] @2[11-11 03:58:16]FG: check_sanity_work: current: 14, prev: 6
+[  730.731474] @2[11-11 03:58:16]FG: fg_ki_coeff_read: read [00 82 00 8a] from ki_coeff_medc
+[  733.330923] @2[11-11 03:58:16]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+[  734.087664] @2[11-11 03:58:16]init: starting service 'configstore-hal-1-0'...
+[  734.131944] @2[11-11 03:58:16]init: Service 'configstore-hal-1-0' (pid 4012) received signal 31
+[  734.131981] @2[11-11 03:58:16]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 4012) process group...
+[  734.132078] @2[11-11 03:58:16][1:1:init] sig 9 to [4012:4012:android.hardwar] stat=x
+[  734.132083] @2[11-11 03:58:16]v_sig send_signal init to android.hardwar ,pid: 4012  sig: 9 @@@ 
+[  734.132118] @2[11-11 03:58:16]libprocessgroup: Successfully killed process cgroup uid 1000 pid 4012 in 0ms
+=== T26 00:05:33 ===
+[  734.131981] @3[11-11 03:58:18]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 4012) process group...
+[  734.132078] @3[11-11 03:58:18][1:1:init] sig 9 to [4012:4012:android.hardwar] stat=x
+[  734.132083] @3[11-11 03:58:18]v_sig send_signal init to android.hardwar ,pid: 4012  sig: 9 @@@ 
+[  734.132118] @3[11-11 03:58:18]libprocessgroup: Successfully killed process cgroup uid 1000 pid 4012 in 0ms
+[  735.740712] @3[11-11 03:58:18]FG: check_sanity_work: current: 4, prev: 14
+[  735.741328] @3[11-11 03:58:18]FG: fg_ki_coeff_read: read [00 82 00 8a] from ki_coeff_medc
+[  736.762761] @3[11-11 03:58:18]BQ24192:bq24192_dump_register: reg=0x00,value=0xA0
+[  736.763221] @3[11-11 03:58:18]BQ24192:bq24192_dump_register: reg=0x01,value=0x0A
+[  736.763728] @3[11-11 03:58:18]BQ24192:bq24192_dump_register: reg=0x02,value=0x60
+[  736.764186] @3[11-11 03:58:18]BQ24192:bq24192_dump_register: reg=0x03,value=0x00
+[  736.764679] @3[11-11 03:58:18]BQ24192:bq24192_dump_register: reg=0x04,value=0xD2
+[  736.765131] @3[11-11 03:58:18]BQ24192:bq24192_dump_register: reg=0x05,value=0x80
+[  736.765635] @3[11-11 03:58:18]BQ24192:bq24192_dump_register: reg=0x06,value=0xFF
+[  736.766091] @3[11-11 03:58:18]BQ24192:bq24192_dump_register: reg=0x07,value=0x4B
+[  736.766579] @3[11-11 03:58:18]BQ24192:bq24192_dump_register: reg=0x08,value=0x00
+[  736.767028] @3[11-11 03:58:18]BQ24192:bq24192_dump_register: reg=0x09,value=0x00
+[  736.767521] @3[11-11 03:58:18]BQ24192:bq24192_dump_register: reg=0x0A,value=0x2B
+[  736.767562] @3[11-11 03:58:18]BQ24192:bq24192_vbat_work: !qc2p0_detect_support
+=== T27 00:05:35 ===
+[  737.066672] @2[11-11 03:58:20]SMBCHG: dump_reg: AICL Status2 - 1309 = 22
+[  737.066703] @2[11-11 03:58:20]SMBCHG: dump_reg: MISC trim Status - 16F5 = B8
+[  737.066734] @2[11-11 03:58:20]SMBCHG: dump_reg: IL CFG - 13F2 = 00
+[  737.066766] @2[11-11 03:58:20]SMBCHG: dump_reg: CMD IL - 1340 = 02
+[  737.066798] @2[11-11 03:58:20]SMBCHG: dump_reg: USBIN CHGR CFG - 13F1 = 02
+[  737.066829] @2[11-11 03:58:20]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  737.066860] @2[11-11 03:58:20]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  737.066890] @2[11-11 03:58:20]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  737.072945] @2[11-11 03:58:20]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  737.072993] @2[11-11 03:58:20]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  737.073023] @2[11-11 03:58:20]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  737.073057] @2[11-11 03:58:20]CMS: cms_main_work: vbat=4061408,continue_count=23,nr_work=16,temp=307,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  739.099154] @2[11-11 03:58:20]init: starting service 'configstore-hal-1-0'...
+[  739.152900] @2[11-11 03:58:20]init: Service 'configstore-hal-1-0' (pid 4021) received signal 31
+[  739.152940] @2[11-11 03:58:20]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 4021) process group...
+[  739.153053] @2[11-11 03:58:20][1:1:init] sig 9 to [4021:4021:android.hardwar] stat=R
+[  739.153058] @2[11-11 03:58:20]v_sig send_signal init to android.hardwar ,pid: 4021  sig: 9 @@@ 
+[  739.153097] @2[11-11 03:58:20]libprocessgroup: Successfully killed process cgroup uid 1000 pid 4021 in 0ms
+=== T28 00:05:37 ===
+[  737.066734] @3[11-11 03:58:23]SMBCHG: dump_reg: IL CFG - 13F2 = 00
+[  737.066766] @3[11-11 03:58:23]SMBCHG: dump_reg: CMD IL - 1340 = 02
+[  737.066798] @3[11-11 03:58:23]SMBCHG: dump_reg: USBIN CHGR CFG - 13F1 = 02
+[  737.066829] @3[11-11 03:58:23]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  737.066860] @3[11-11 03:58:23]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  737.066890] @3[11-11 03:58:23]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  737.072945] @3[11-11 03:58:23]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  737.072993] @3[11-11 03:58:23]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  737.073023] @3[11-11 03:58:23]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  737.073057] @3[11-11 03:58:23]CMS: cms_main_work: vbat=4061408,continue_count=23,nr_work=16,temp=307,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  739.099154] @3[11-11 03:58:23]init: starting service 'configstore-hal-1-0'...
+[  739.152900] @3[11-11 03:58:23]init: Service 'configstore-hal-1-0' (pid 4021) received signal 31
+[  739.152940] @3[11-11 03:58:23]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 4021) process group...
+[  739.153053] @3[11-11 03:58:23][1:1:init] sig 9 to [4021:4021:android.hardwar] stat=R
+[  739.153058] @3[11-11 03:58:23]v_sig send_signal init to android.hardwar ,pid: 4021  sig: 9 @@@ 
+[  739.153097] @3[11-11 03:58:23]libprocessgroup: Successfully killed process cgroup uid 1000 pid 4021 in 0ms
+[  740.750719] @3[11-11 03:58:23]FG: check_sanity_work: current: 11, prev: 4
+[  740.780450] @3[11-11 03:58:23]FG: fg_ki_coeff_read: read [00 82 00 8a] from ki_coeff_medc
+=== T29 00:05:40 ===
+[  737.066766] @3[11-11 03:58:25]SMBCHG: dump_reg: CMD IL - 1340 = 02
+[  737.066798] @3[11-11 03:58:25]SMBCHG: dump_reg: USBIN CHGR CFG - 13F1 = 02
+[  737.066829] @3[11-11 03:58:25]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  737.066860] @3[11-11 03:58:25]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  737.066890] @3[11-11 03:58:25]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  737.072945] @3[11-11 03:58:25]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  737.072993] @3[11-11 03:58:25]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  737.073023] @3[11-11 03:58:25]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  737.073057] @3[11-11 03:58:25]CMS: cms_main_work: vbat=4061408,continue_count=23,nr_work=16,temp=307,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  739.099154] @3[11-11 03:58:25]init: starting service 'configstore-hal-1-0'...
+[  739.152900] @3[11-11 03:58:25]init: Service 'configstore-hal-1-0' (pid 4021) received signal 31
+[  739.152940] @3[11-11 03:58:25]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 4021) process group...
+[  739.153053] @3[11-11 03:58:25][1:1:init] sig 9 to [4021:4021:android.hardwar] stat=R
+[  739.153058] @3[11-11 03:58:25]v_sig send_signal init to android.hardwar ,pid: 4021  sig: 9 @@@ 
+[  739.153097] @3[11-11 03:58:25]libprocessgroup: Successfully killed process cgroup uid 1000 pid 4021 in 0ms
+[  740.750719] @3[11-11 03:58:25]FG: check_sanity_work: current: 11, prev: 4
+[  740.780450] @3[11-11 03:58:25]FG: fg_ki_coeff_read: read [00 82 00 8a] from ki_coeff_medc
+[  743.330703] @3[11-11 03:58:25]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+=== T30 00:05:42 ===
+[  737.073057] @3[11-11 03:58:27]CMS: cms_main_work: vbat=4061408,continue_count=23,nr_work=16,temp=307,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  739.099154] @3[11-11 03:58:27]init: starting service 'configstore-hal-1-0'...
+[  739.152900] @3[11-11 03:58:27]init: Service 'configstore-hal-1-0' (pid 4021) received signal 31
+[  739.152940] @3[11-11 03:58:27]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 4021) process group...
+[  739.153053] @3[11-11 03:58:27][1:1:init] sig 9 to [4021:4021:android.hardwar] stat=R
+[  739.153058] @3[11-11 03:58:27]v_sig send_signal init to android.hardwar ,pid: 4021  sig: 9 @@@ 
+[  739.153097] @3[11-11 03:58:27]libprocessgroup: Successfully killed process cgroup uid 1000 pid 4021 in 0ms
+[  740.750719] @3[11-11 03:58:27]FG: check_sanity_work: current: 11, prev: 4
+[  740.780450] @3[11-11 03:58:27]FG: fg_ki_coeff_read: read [00 82 00 8a] from ki_coeff_medc
+[  743.330703] @3[11-11 03:58:27]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+[  744.110883] @3[11-11 03:58:27]init: starting service 'configstore-hal-1-0'...
+[  744.137283] @3[11-11 03:58:27]init: Service 'configstore-hal-1-0' (pid 4034) received signal 31
+[  744.137436] @3[11-11 03:58:27]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 4034) process group...
+[  744.137785] @3[11-11 03:58:27][1:1:init] sig 9 to [4034:4034:android.hardwar] stat=x
+[  744.137823] @3[11-11 03:58:27]v_sig send_signal init to android.hardwar ,pid: 4034  sig: 9 @@@ 
+[  744.138025] @3[11-11 03:58:27]libprocessgroup: Successfully killed process cgroup uid 1000 pid 4034 in 0ms
+[  745.790678] @3[11-11 03:58:27]FG: check_sanity_work: current: 2, prev: 11
+[  745.791371] @3[11-11 03:58:27]FG: fg_ki_coeff_read: read [00 82 00 8a] from ki_coeff_medc
+=== T31 00:05:45 ===
+[  747.066003] @3[11-11 03:58:30]SMBCHG: dump_reg: CMD_CHG_REG - 1242 = 00
+[  747.066044] @3[11-11 03:58:30]SMBCHG: dump_reg: USB Status - 1310 = 04
+[  747.066083] @3[11-11 03:58:30]SMBCHG: dump_reg: MISC Status - 1610 = 01
+[  747.066122] @3[11-11 03:58:30]SMBCHG: dump_reg: SRC DETECT STS - 1608 = 10
+[  747.066161] @3[11-11 03:58:30]SMBCHG: dump_reg: DC Status - 1410 = 01
+[  747.066200] @3[11-11 03:58:30]SMBCHG: dump_reg: AICL Status - 1307 = 10
+[  747.066241] @3[11-11 03:58:30]SMBCHG: dump_reg: AICL Status2 - 1309 = 22
+[  747.066280] @3[11-11 03:58:30]SMBCHG: dump_reg: MISC trim Status - 16F5 = B8
+[  747.066318] @3[11-11 03:58:30]SMBCHG: dump_reg: IL CFG - 13F2 = 00
+[  747.066357] @3[11-11 03:58:30]SMBCHG: dump_reg: CMD IL - 1340 = 02
+[  747.066395] @3[11-11 03:58:30]SMBCHG: dump_reg: USBIN CHGR CFG - 13F1 = 02
+[  747.066434] @3[11-11 03:58:30]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  747.066473] @3[11-11 03:58:30]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  747.066511] @3[11-11 03:58:30]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  747.068470] @3[11-11 03:58:30]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  747.068523] @3[11-11 03:58:30]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  747.068562] @3[11-11 03:58:30]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  747.068609] @3[11-11 03:58:30]CMS: cms_main_work: vbat=4061408,continue_count=24,nr_work=17,temp=307,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+=== T32 00:05:47 ===
+[  747.066318] @3[11-11 03:58:32]SMBCHG: dump_reg: IL CFG - 13F2 = 00
+[  747.066357] @3[11-11 03:58:32]SMBCHG: dump_reg: CMD IL - 1340 = 02
+[  747.066395] @3[11-11 03:58:32]SMBCHG: dump_reg: USBIN CHGR CFG - 13F1 = 02
+[  747.066434] @3[11-11 03:58:32]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  747.066473] @3[11-11 03:58:32]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  747.066511] @3[11-11 03:58:32]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  747.068470] @3[11-11 03:58:32]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  747.068523] @3[11-11 03:58:32]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  747.068562] @3[11-11 03:58:32]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  747.068609] @3[11-11 03:58:32]CMS: cms_main_work: vbat=4061408,continue_count=24,nr_work=17,temp=307,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  749.121316] @3[11-11 03:58:32]init: starting service 'configstore-hal-1-0'...
+[  749.171259] @3[11-11 03:58:32]init: Service 'configstore-hal-1-0' (pid 4043) received signal 31
+[  749.171292] @3[11-11 03:58:32]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 4043) process group...
+[  749.171380] @3[11-11 03:58:32][1:1:init] sig 9 to [4043:4043:android.hardwar] stat=x
+[  749.171385] @3[11-11 03:58:32]v_sig send_signal init to android.hardwar ,pid: 4043  sig: 9 @@@ 
+[  749.171418] @3[11-11 03:58:32]libprocessgroup: Successfully killed process cgroup uid 1000 pid 4043 in 0ms
+[  750.800715] @3[11-11 03:58:32]FG: check_sanity_work: current: 8, prev: 2
+[  750.801343] @3[11-11 03:58:32]FG: fg_ki_coeff_read: read [00 82 00 8a] from ki_coeff_medc
+=== T33 00:05:49 ===
+[  747.068523] @2[11-11 03:58:35]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  747.068562] @2[11-11 03:58:35]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  747.068609] @2[11-11 03:58:35]CMS: cms_main_work: vbat=4061408,continue_count=24,nr_work=17,temp=307,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  749.121316] @2[11-11 03:58:35]init: starting service 'configstore-hal-1-0'...
+[  749.171259] @2[11-11 03:58:35]init: Service 'configstore-hal-1-0' (pid 4043) received signal 31
+[  749.171292] @2[11-11 03:58:35]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 4043) process group...
+[  749.171380] @2[11-11 03:58:35][1:1:init] sig 9 to [4043:4043:android.hardwar] stat=x
+[  749.171385] @2[11-11 03:58:35]v_sig send_signal init to android.hardwar ,pid: 4043  sig: 9 @@@ 
+[  749.171418] @2[11-11 03:58:35]libprocessgroup: Successfully killed process cgroup uid 1000 pid 4043 in 0ms
+[  750.800715] @2[11-11 03:58:35]FG: check_sanity_work: current: 8, prev: 2
+[  750.801343] @2[11-11 03:58:35]FG: fg_ki_coeff_read: read [00 82 00 8a] from ki_coeff_medc
+[  751.287097] @2[11-11 03:58:35]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+[  751.287151] @2[11-11 03:58:35]SMBCHG: smbchg_handle_soc: ui_soc=64,soc=64,is_charging_change=0,chg_status=1 
+[  751.289831] @2[11-11 03:58:35]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+[  752.000837] @2[11-11 03:58:35]FG: fg_is_batt_id_valid: fg batt sts 0x2c
+[  752.000941] @2[11-11 03:58:35]FG: fg_is_batt_id_valid_from_cms: is_valid:1
+[  752.024498] @2[11-11 03:58:35]FG: update_sram_data: batt_temp=307,ocv=3991065,vbat=4044318 ibat=-203398 batid=695mv,batid_info=0x2a,soc=64,batt_soc=0xa5485d,monotonic_soc=0xa4
+[  753.330723] @2[11-11 03:58:35]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+=== T34 00:05:52 ===
+[  749.171418] @3[11-11 03:58:37]libprocessgroup: Successfully killed process cgroup uid 1000 pid 4043 in 0ms
+[  750.800715] @3[11-11 03:58:37]FG: check_sanity_work: current: 8, prev: 2
+[  750.801343] @3[11-11 03:58:37]FG: fg_ki_coeff_read: read [00 82 00 8a] from ki_coeff_medc
+[  751.287097] @3[11-11 03:58:37]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+[  751.287151] @3[11-11 03:58:37]SMBCHG: smbchg_handle_soc: ui_soc=64,soc=64,is_charging_change=0,chg_status=1 
+[  751.289831] @3[11-11 03:58:37]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+[  752.000837] @3[11-11 03:58:37]FG: fg_is_batt_id_valid: fg batt sts 0x2c
+[  752.000941] @3[11-11 03:58:37]FG: fg_is_batt_id_valid_from_cms: is_valid:1
+[  752.024498] @3[11-11 03:58:37]FG: update_sram_data: batt_temp=307,ocv=3991065,vbat=4044318 ibat=-203398 batid=695mv,batid_info=0x2a,soc=64,batt_soc=0xa5485d,monotonic_soc=0xa4
+[  753.330723] @3[11-11 03:58:37]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+[  754.132515] @3[11-11 03:58:37]init: starting service 'configstore-hal-1-0'...
+[  754.173302] @3[11-11 03:58:37]init: Service 'configstore-hal-1-0' (pid 4052) received signal 31
+[  754.173339] @3[11-11 03:58:37]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 4052) process group...
+[  754.173448] @3[11-11 03:58:37][1:1:init] sig 9 to [4052:4052:android.hardwar] stat=x
+[  754.173454] @3[11-11 03:58:37]v_sig send_signal init to android.hardwar ,pid: 4052  sig: 9 @@@ 
+[  754.173488] @3[11-11 03:58:37]libprocessgroup: Successfully killed process cgroup uid 1000 pid 4052 in 0ms
+[  755.810436] @3[11-11 03:58:37]FG: check_sanity_work: current: 0, prev: 8
+[  755.811161] @3[11-11 03:58:37]FG: fg_ki_coeff_read: read [00 82 00 8a] from ki_coeff_medc
+=== T35 00:05:54 ===
+[  757.065831] @2[11-11 03:58:39]SMBCHG: dump_reg: CMD_CHG_REG - 1242 = 00
+[  757.065870] @2[11-11 03:58:39]SMBCHG: dump_reg: USB Status - 1310 = 04
+[  757.065909] @2[11-11 03:58:39]SMBCHG: dump_reg: MISC Status - 1610 = 01
+[  757.065948] @2[11-11 03:58:39]SMBCHG: dump_reg: SRC DETECT STS - 1608 = 10
+[  757.065989] @2[11-11 03:58:39]SMBCHG: dump_reg: DC Status - 1410 = 01
+[  757.066029] @2[11-11 03:58:39]SMBCHG: dump_reg: AICL Status - 1307 = 10
+[  757.066067] @2[11-11 03:58:39]SMBCHG: dump_reg: AICL Status2 - 1309 = 22
+[  757.066106] @2[11-11 03:58:39]SMBCHG: dump_reg: MISC trim Status - 16F5 = B8
+[  757.066145] @2[11-11 03:58:39]SMBCHG: dump_reg: IL CFG - 13F2 = 00
+[  757.066184] @2[11-11 03:58:39]SMBCHG: dump_reg: CMD IL - 1340 = 02
+[  757.066223] @2[11-11 03:58:39]SMBCHG: dump_reg: USBIN CHGR CFG - 13F1 = 02
+[  757.066261] @2[11-11 03:58:39]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  757.066300] @2[11-11 03:58:39]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  757.066339] @2[11-11 03:58:39]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  757.068305] @2[11-11 03:58:39]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  757.068355] @2[11-11 03:58:39]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  757.068394] @2[11-11 03:58:39]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  757.068440] @2[11-11 03:58:39]CMS: cms_main_work: vbat=4044318,continue_count=25,nr_work=18,temp=307,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+=== T36 00:05:57 ===
+[  757.066067] @3[11-11 03:58:42]SMBCHG: dump_reg: AICL Status2 - 1309 = 22
+[  757.066106] @3[11-11 03:58:42]SMBCHG: dump_reg: MISC trim Status - 16F5 = B8
+[  757.066145] @3[11-11 03:58:42]SMBCHG: dump_reg: IL CFG - 13F2 = 00
+[  757.066184] @3[11-11 03:58:42]SMBCHG: dump_reg: CMD IL - 1340 = 02
+[  757.066223] @3[11-11 03:58:42]SMBCHG: dump_reg: USBIN CHGR CFG - 13F1 = 02
+[  757.066261] @3[11-11 03:58:42]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  757.066300] @3[11-11 03:58:42]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  757.066339] @3[11-11 03:58:42]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  757.068305] @3[11-11 03:58:42]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  757.068355] @3[11-11 03:58:42]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  757.068394] @3[11-11 03:58:42]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  757.068440] @3[11-11 03:58:42]CMS: cms_main_work: vbat=4044318,continue_count=25,nr_work=18,temp=307,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  759.143618] @3[11-11 03:58:42]init: starting service 'configstore-hal-1-0'...
+[  759.191255] @3[11-11 03:58:42]init: Service 'configstore-hal-1-0' (pid 4061) received signal 31
+[  759.191291] @3[11-11 03:58:42]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 4061) process group...
+[  759.191381] @3[11-11 03:58:42][1:1:init] sig 9 to [4061:4061:android.hardwar] stat=x
+[  759.191386] @3[11-11 03:58:42]v_sig send_signal init to android.hardwar ,pid: 4061  sig: 9 @@@ 
+[  759.191419] @3[11-11 03:58:42]libprocessgroup: Successfully killed process cgroup uid 1000 pid 4061 in 0ms
+=== T37 00:05:59 ===
+[  757.066145] @2[11-11 03:58:44]SMBCHG: dump_reg: IL CFG - 13F2 = 00
+[  757.066184] @2[11-11 03:58:44]SMBCHG: dump_reg: CMD IL - 1340 = 02
+[  757.066223] @2[11-11 03:58:44]SMBCHG: dump_reg: USBIN CHGR CFG - 13F1 = 02
+[  757.066261] @2[11-11 03:58:44]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  757.066300] @2[11-11 03:58:44]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  757.066339] @2[11-11 03:58:44]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  757.068305] @2[11-11 03:58:44]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  757.068355] @2[11-11 03:58:44]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  757.068394] @2[11-11 03:58:44]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  757.068440] @2[11-11 03:58:44]CMS: cms_main_work: vbat=4044318,continue_count=25,nr_work=18,temp=307,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  759.143618] @2[11-11 03:58:44]init: starting service 'configstore-hal-1-0'...
+[  759.191255] @2[11-11 03:58:44]init: Service 'configstore-hal-1-0' (pid 4061) received signal 31
+[  759.191291] @2[11-11 03:58:44]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 4061) process group...
+[  759.191381] @2[11-11 03:58:44][1:1:init] sig 9 to [4061:4061:android.hardwar] stat=x
+[  759.191386] @2[11-11 03:58:44]v_sig send_signal init to android.hardwar ,pid: 4061  sig: 9 @@@ 
+[  759.191419] @2[11-11 03:58:44]libprocessgroup: Successfully killed process cgroup uid 1000 pid 4061 in 0ms
+[  760.821258] @2[11-11 03:58:44]FG: check_sanity_work: current: 6, prev: 0
+[  760.821659] @2[11-11 03:58:44]FG: fg_ki_coeff_read: read [00 82 00 8a] from ki_coeff_medc
+=== T38 00:06:01 ===
+[  757.068355] @3[11-11 03:58:47]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  757.068394] @3[11-11 03:58:47]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  757.068440] @3[11-11 03:58:47]CMS: cms_main_work: vbat=4044318,continue_count=25,nr_work=18,temp=307,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  759.143618] @3[11-11 03:58:47]init: starting service 'configstore-hal-1-0'...
+[  759.191255] @3[11-11 03:58:47]init: Service 'configstore-hal-1-0' (pid 4061) received signal 31
+[  759.191291] @3[11-11 03:58:47]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 4061) process group...
+[  759.191381] @3[11-11 03:58:47][1:1:init] sig 9 to [4061:4061:android.hardwar] stat=x
+[  759.191386] @3[11-11 03:58:47]v_sig send_signal init to android.hardwar ,pid: 4061  sig: 9 @@@ 
+[  759.191419] @3[11-11 03:58:47]libprocessgroup: Successfully killed process cgroup uid 1000 pid 4061 in 0ms
+[  760.821258] @3[11-11 03:58:47]FG: check_sanity_work: current: 6, prev: 0
+[  760.821659] @3[11-11 03:58:47]FG: fg_ki_coeff_read: read [00 82 00 8a] from ki_coeff_medc
+[  763.330456] @3[11-11 03:58:47]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+[  764.154462] @3[11-11 03:58:47]init: starting service 'configstore-hal-1-0'...
+[  764.193022] @3[11-11 03:58:47]init: Service 'configstore-hal-1-0' (pid 4070) received signal 31
+[  764.193167] @3[11-11 03:58:47]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 4070) process group...
+[  764.193556] @3[11-11 03:58:47][1:1:init] sig 9 to [4070:4070:android.hardwar] stat=x
+[  764.193593] @3[11-11 03:58:47]v_sig send_signal init to android.hardwar ,pid: 4070  sig: 9 @@@ 
+[  764.193763] @3[11-11 03:58:47]libprocessgroup: Successfully killed process cgroup uid 1000 pid 4070 in 0ms
+=== T39 00:06:04 ===
+[  767.066127] @3[11-11 03:58:49]SMBCHG: dump_reg: CMD_CHG_REG - 1242 = 00
+[  767.066166] @3[11-11 03:58:49]SMBCHG: dump_reg: USB Status - 1310 = 04
+[  767.066205] @3[11-11 03:58:49]SMBCHG: dump_reg: MISC Status - 1610 = 01
+[  767.066244] @3[11-11 03:58:49]SMBCHG: dump_reg: SRC DETECT STS - 1608 = 10
+[  767.066283] @3[11-11 03:58:49]SMBCHG: dump_reg: DC Status - 1410 = 01
+[  767.066322] @3[11-11 03:58:49]SMBCHG: dump_reg: AICL Status - 1307 = 10
+[  767.066360] @3[11-11 03:58:49]SMBCHG: dump_reg: AICL Status2 - 1309 = 22
+[  767.066399] @3[11-11 03:58:49]SMBCHG: dump_reg: MISC trim Status - 16F5 = B8
+[  767.066437] @3[11-11 03:58:49]SMBCHG: dump_reg: IL CFG - 13F2 = 00
+[  767.066476] @3[11-11 03:58:49]SMBCHG: dump_reg: CMD IL - 1340 = 02
+[  767.066514] @3[11-11 03:58:49]SMBCHG: dump_reg: USBIN CHGR CFG - 13F1 = 02
+[  767.066554] @3[11-11 03:58:49]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  767.066593] @3[11-11 03:58:49]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  767.066631] @3[11-11 03:58:49]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  767.068592] @3[11-11 03:58:49]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  767.068645] @3[11-11 03:58:49]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  767.068684] @3[11-11 03:58:49]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  767.068730] @3[11-11 03:58:49]CMS: cms_main_work: vbat=4044318,continue_count=26,nr_work=19,temp=307,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+=== T40 00:06:06 ===
+[  767.066360] @3[11-11 03:58:51]SMBCHG: dump_reg: AICL Status2 - 1309 = 22
+[  767.066399] @3[11-11 03:58:51]SMBCHG: dump_reg: MISC trim Status - 16F5 = B8
+[  767.066437] @3[11-11 03:58:51]SMBCHG: dump_reg: IL CFG - 13F2 = 00
+[  767.066476] @3[11-11 03:58:51]SMBCHG: dump_reg: CMD IL - 1340 = 02
+[  767.066514] @3[11-11 03:58:51]SMBCHG: dump_reg: USBIN CHGR CFG - 13F1 = 02
+[  767.066554] @3[11-11 03:58:51]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  767.066593] @3[11-11 03:58:51]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  767.066631] @3[11-11 03:58:51]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  767.068592] @3[11-11 03:58:51]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  767.068645] @3[11-11 03:58:51]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  767.068684] @3[11-11 03:58:51]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  767.068730] @3[11-11 03:58:51]CMS: cms_main_work: vbat=4044318,continue_count=26,nr_work=19,temp=307,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  769.165204] @3[11-11 03:58:51]init: starting service 'configstore-hal-1-0'...
+[  769.212120] @3[11-11 03:58:51]init: Service 'configstore-hal-1-0' (pid 4079) received signal 31
+[  769.212157] @3[11-11 03:58:51]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 4079) process group...
+[  769.212255] @3[11-11 03:58:51][1:1:init] sig 9 to [4079:4079:android.hardwar] stat=x
+[  769.212260] @3[11-11 03:58:51]v_sig send_signal init to android.hardwar ,pid: 4079  sig: 9 @@@ 
+[  769.212298] @3[11-11 03:58:51]libprocessgroup: Successfully killed process cgroup uid 1000 pid 4079 in 0ms
+=== T41 00:06:09 ===
+[  767.066437] @3[11-11 03:58:54]SMBCHG: dump_reg: IL CFG - 13F2 = 00
+[  767.066476] @3[11-11 03:58:54]SMBCHG: dump_reg: CMD IL - 1340 = 02
+[  767.066514] @3[11-11 03:58:54]SMBCHG: dump_reg: USBIN CHGR CFG - 13F1 = 02
+[  767.066554] @3[11-11 03:58:54]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  767.066593] @3[11-11 03:58:54]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  767.066631] @3[11-11 03:58:54]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  767.068592] @3[11-11 03:58:54]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  767.068645] @3[11-11 03:58:54]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  767.068684] @3[11-11 03:58:54]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  767.068730] @3[11-11 03:58:54]CMS: cms_main_work: vbat=4044318,continue_count=26,nr_work=19,temp=307,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  769.165204] @3[11-11 03:58:54]init: starting service 'configstore-hal-1-0'...
+[  769.212120] @3[11-11 03:58:54]init: Service 'configstore-hal-1-0' (pid 4079) received signal 31
+[  769.212157] @3[11-11 03:58:54]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 4079) process group...
+[  769.212255] @3[11-11 03:58:54][1:1:init] sig 9 to [4079:4079:android.hardwar] stat=x
+[  769.212260] @3[11-11 03:58:54]v_sig send_signal init to android.hardwar ,pid: 4079  sig: 9 @@@ 
+[  769.212298] @3[11-11 03:58:54]libprocessgroup: Successfully killed process cgroup uid 1000 pid 4079 in 0ms
+[  770.840690] @3[11-11 03:58:54]FG: check_sanity_work: current: 4, prev: 12
+[  770.841366] @3[11-11 03:58:54]FG: fg_ki_coeff_read: read [00 82 00 8a] from ki_coeff_medc
+=== T42 00:06:11 ===
+[  773.488439] @3[11-11 03:58:56]SMBCHG: smbchg_get_board_temp: board_temp=33
+[  773.488570] @3[11-11 03:58:56]SMBCHG: smbchg_get_parallel_board_temp: board_version=version_invalid
+[  773.489588] @3[11-11 03:58:56]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+[  773.489685] @3[11-11 03:58:56]SMBCHG: smbchg_handle_soc: ui_soc_delta_time_s=0,time_change_limit=20
+[  773.489719] @3[11-11 03:58:56]SMBCHG: smbchg_handle_soc: ui_soc=64,soc=65,is_charging_change=1,chg_status=1 
+[  773.491844] @3[11-11 03:58:56]SMBCHG: smbchg_find_parallel_board_temp_from_adc: find parallel board temp from adc 802112, get temp 31 
+[  773.491864] @3[11-11 03:58:56]SMBCHG: smbchg_get_parallel_board_temp: #### parallel_board_temp=31 ####
+[  773.495145] @3[11-11 03:58:56]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+[  773.499416] @3[11-11 03:58:56]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+[  773.499517] @3[11-11 03:58:56]SMBCHG: smbchg_handle_soc: ui_soc_delta_time_s=0,time_change_limit=20
+[  773.499552] @3[11-11 03:58:56]SMBCHG: smbchg_handle_soc: ui_soc=64,soc=65,is_charging_change=1,chg_status=1 
+[  773.502577] @3[11-11 03:58:56]SMBCHG: get_prop_batt_status: CHGR_STS = 0x05
+[  774.176167] @3[11-11 03:58:56]init: starting service 'configstore-hal-1-0'...
+[  774.212659] @3[11-11 03:58:56]init: Service 'configstore-hal-1-0' (pid 4089) received signal 31
+[  774.212696] @3[11-11 03:58:56]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 4089) process group...
+[  774.212785] @3[11-11 03:58:56][1:1:init] sig 9 to [4089:4089:android.hardwar] stat=x
+[  774.212791] @3[11-11 03:58:56]v_sig send_signal init to android.hardwar ,pid: 4089  sig: 9 @@@ 
+[  774.212826] @3[11-11 03:58:56]libprocessgroup: Successfully killed process cgroup uid 1000 pid 4089 in 0ms
+=== T43 00:06:13 ===
+[  777.066114] @3[11-11 03:58:58]SMBCHG: dump_reg: CMD_CHG_REG - 1242 = 00
+[  777.066153] @3[11-11 03:58:58]SMBCHG: dump_reg: USB Status - 1310 = 04
+[  777.066192] @3[11-11 03:58:58]SMBCHG: dump_reg: MISC Status - 1610 = 01
+[  777.066232] @3[11-11 03:58:58]SMBCHG: dump_reg: SRC DETECT STS - 1608 = 10
+[  777.066270] @3[11-11 03:58:58]SMBCHG: dump_reg: DC Status - 1410 = 01
+[  777.066309] @3[11-11 03:58:58]SMBCHG: dump_reg: AICL Status - 1307 = 10
+[  777.066348] @3[11-11 03:58:58]SMBCHG: dump_reg: AICL Status2 - 1309 = 22
+[  777.066388] @3[11-11 03:58:58]SMBCHG: dump_reg: MISC trim Status - 16F5 = B8
+[  777.066427] @3[11-11 03:58:58]SMBCHG: dump_reg: IL CFG - 13F2 = 00
+[  777.066465] @3[11-11 03:58:58]SMBCHG: dump_reg: CMD IL - 1340 = 02
+[  777.066504] @3[11-11 03:58:58]SMBCHG: dump_reg: USBIN CHGR CFG - 13F1 = 02
+[  777.066543] @3[11-11 03:58:58]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  777.066581] @3[11-11 03:58:58]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  777.066621] @3[11-11 03:58:58]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  777.068582] @3[11-11 03:58:58]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  777.068631] @3[11-11 03:58:58]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  777.068671] @3[11-11 03:58:58]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  777.068726] @3[11-11 03:58:58]CMS: cms_main_work: vbat=4065070,continue_count=27,nr_work=20,temp=307,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+=== T44 00:06:16 ===
+[  777.066348] @3[11-11 03:59:01]SMBCHG: dump_reg: AICL Status2 - 1309 = 22
+[  777.066388] @3[11-11 03:59:01]SMBCHG: dump_reg: MISC trim Status - 16F5 = B8
+[  777.066427] @3[11-11 03:59:01]SMBCHG: dump_reg: IL CFG - 13F2 = 00
+[  777.066465] @3[11-11 03:59:01]SMBCHG: dump_reg: CMD IL - 1340 = 02
+[  777.066504] @3[11-11 03:59:01]SMBCHG: dump_reg: USBIN CHGR CFG - 13F1 = 02
+[  777.066543] @3[11-11 03:59:01]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  777.066581] @3[11-11 03:59:01]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  777.066621] @3[11-11 03:59:01]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  777.068582] @3[11-11 03:59:01]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  777.068631] @3[11-11 03:59:01]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  777.068671] @3[11-11 03:59:01]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  777.068726] @3[11-11 03:59:01]CMS: cms_main_work: vbat=4065070,continue_count=27,nr_work=20,temp=307,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  779.187107] @3[11-11 03:59:01]init: starting service 'configstore-hal-1-0'...
+[  779.232968] @3[11-11 03:59:01]init: Service 'configstore-hal-1-0' (pid 4098) received signal 31
+[  779.233138] @3[11-11 03:59:01]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 4098) process group...
+[  779.233611] @3[11-11 03:59:01][1:1:init] sig 9 to [4098:4098:android.hardwar] stat=x
+[  779.233647] @3[11-11 03:59:01]v_sig send_signal init to android.hardwar ,pid: 4098  sig: 9 @@@ 
+[  779.233924] @3[11-11 03:59:01]libprocessgroup: Successfully killed process cgroup uid 1000 pid 4098 in 0ms
+=== T45 00:06:18 ===
+[  777.066543] @3[11-11 03:59:03]SMBCHG: dump_reg: USBIN CHGR CFG - 13F3 = 04
+[  777.066581] @3[11-11 03:59:03]SMBCHG: dump_reg: USB CHGPTH CFG - 13F4 = 19
+[  777.066621] @3[11-11 03:59:03]SMBCHG: dump_reg: safe timer - 10FD = 1B
+[  777.068582] @3[11-11 03:59:03]SMBCHG: smbchg_set_fastchg_current_user: User setting FCC to 3631
+[  777.068631] @3[11-11 03:59:03]CMS: cms_scale_chg_current: full design=4080,scale chg current to 3631 mA
+[  777.068671] @3[11-11 03:59:03]CMS: cms_check_fastchg_current: usb_type=4,!DCP || !HVDCP
+[  777.068726] @3[11-11 03:59:03]CMS: cms_main_work: vbat=4065070,continue_count=27,nr_work=20,temp=307,primary_board_temp=330,parallel_board_temp=310,input_scale=100,batt_scale=89,batid=1,health=0x0
+[  779.187107] @3[11-11 03:59:03]init: starting service 'configstore-hal-1-0'...
+[  779.232968] @3[11-11 03:59:03]init: Service 'configstore-hal-1-0' (pid 4098) received signal 31
+[  779.233138] @3[11-11 03:59:03]init: Sending signal 9 to service 'configstore-hal-1-0' (pid 4098) process group...
+[  779.233611] @3[11-11 03:59:03][1:1:init] sig 9 to [4098:4098:android.hardwar] stat=x
+[  779.233647] @3[11-11 03:59:03]v_sig send_signal init to android.hardwar ,pid: 4098  sig: 9 @@@ 
+[  779.233924] @3[11-11 03:59:03]libprocessgroup: Successfully killed process cgroup uid 1000 pid 4098 in 0ms
+[  780.860710] @3[11-11 03:59:03]FG: check_sanity_work: current: 1, prev: 10
+[  780.882975] @3[11-11 03:59:03]FG: fg_ki_coeff_read: read [00 82 00 8a] from ki_coeff_medc
+[  782.080626] @3[11-11 03:59:03]FG: fg_is_batt_id_valid: fg batt sts 0x2c
+[  782.080727] @3[11-11 03:59:03]FG: fg_is_batt_id_valid_from_cms: is_valid:1
+[  782.096157] @3[11-11 03:59:03]FG: update_sram_data: batt_temp=307,ocv=3991065,vbat=4066290 ibat=-419614 batid=695mv,batid_info=0x2a,soc=65,batt_soc=0xa59b0b,monotonic_soc=0xa5

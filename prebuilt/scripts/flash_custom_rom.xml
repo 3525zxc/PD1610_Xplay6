@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<!-- PD1610 custom ROM: EDL/9008 direct flash template (bypasses fastboot lock
+     and the official recovery's vivo-only OTA signature check).
+     Sector numbers are taken from the verified GPT table used by
+     restore_81_all.xml / readback_81_all.xml.
+     Place the .img files in --search_path (default D:\16\PD1610_81\work). -->
+<data>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="boot_81_noverify.img" label="boot" num_partition_sectors="24576" partofsingleimage="false" physical_partition_number="4" readbackverify="false" size_in_KB="98304.0" sparse="false" start_sector="47370"/>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="system.img" label="system" num_partition_sectors="786432" partofsingleimage="false" physical_partition_number="4" readbackverify="false" size_in_KB="3145728.0" sparse="false" start_sector="71946"/>
+</data>

@@ -1,0 +1,36 @@
+total 0
+crw-rw---- 1 root input 13,  64 1970-01-04 12:22 event0
+crw-rw---- 1 root input 13,  65 1970-01-04 12:22 event1
+crw-rw---- 1 root input 13,  66 1970-01-04 12:22 event2
+crw-rw---- 1 root input 13,  67 1970-01-04 12:22 event3
+crw-rw---- 1 root input 13,  68 1970-01-04 12:22 event4
+crw-rw---- 1 root input 13,  69 1970-01-04 12:22 event5
+crw-rw---- 1 root input 13,  70 1970-01-04 12:22 event6
+crw-rw---- 1 root input 13,  71 1970-01-04 12:22 event7
+crw-rw---- 1 root input 13,  72 1970-01-04 12:22 event8
+crw-rw---- 1 root input 13,  63 1970-01-04 12:22 mice
+crw-rw---- 1 root input 13,  32 1970-01-04 12:22 mouse0
+crw-rw---- 1 root input 13,  33 1970-01-04 12:22 mouse1
+---CLASS---
+total 0
+lrwxrwxrwx 1 root root 0 2026-11-11 23:31 event0 -> ../../devices/virtual/input/input0/event0
+lrwxrwxrwx 1 root root 0 2026-11-11 23:31 event1 -> ../../devices/virtual/input/input1/event1
+lrwxrwxrwx 1 root root 0 2026-11-11 23:31 event2 -> ../../devices/virtual/input/input2/event2
+lrwxrwxrwx 1 root root 0 2026-11-11 23:31 event3 -> ../../devices/soc/soc:gpio_keys/input/input3/event3
+lrwxrwxrwx 1 root root 0 2026-11-11 23:31 event4 -> ../../devices/soc/7577000.i2c/i2c-3/3-0028/input/input4/event4
+lrwxrwxrwx 1 root root 0 2026-11-11 23:31 event5 -> ../../devices/virtual/input/input5/event5
+lrwxrwxrwx 1 root root 0 2026-11-11 23:31 event6 -> ../../devices/soc/75ba000.i2c/i2c-12/12-0049/input/input6/event6
+lrwxrwxrwx 1 root root 0 2026-11-11 23:31 event7 -> ../../devices/soc/soc:sound-9335/sound/card0/input7/event7
+lrwxrwxrwx 1 root root 0 2026-11-11 23:31 event8 -> ../../devices/soc/soc:sound-9335/sound/card0/input8/event8
+lrwxrwxrwx 1 root root 0 2026-11-11 23:31 input0 -> ../../devices/virtual/input/input0
+lrwxrwxrwx 1 root root 0 2026-11-11 23:31 input1 -> ../../devices/virtual/input/input1
+lrwxrwxrwx 1 root root 0 2026-11-11 23:31 input2 -> ../../devices/virtual/input/input2
+lrwxrwxrwx 1 root root 0 2026-11-11 23:31 input3 -> ../../devices/soc/soc:gpio_keys/input/input3
+lrwxrwxrwx 1 root root 0 2026-11-11 23:31 input4 -> ../../devices/soc/7577000.i2c/i2c-3/3-0028/input/input4
+lrwxrwxrwx 1 root root 0 2026-11-11 23:31 input5 -> ../../devices/virtual/input/input5
+lrwxrwxrwx 1 root root 0 2026-11-11 23:31 input6 -> ../../devices/soc/75ba000.i2c/i2c-12/12-0049/input/input6
+lrwxrwxrwx 1 root root 0 2026-11-11 23:31 input7 -> ../../devices/soc/soc:sound-9335/sound/card0/input7
+lrwxrwxrwx 1 root root 0 2026-11-11 23:31 input8 -> ../../devices/soc/soc:sound-9335/sound/card0/input8
+lrwxrwxrwx 1 root root 0 2026-11-11 23:31 mice -> ../../devices/virtual/input/mice
+lrwxrwxrwx 1 root root 0 2026-11-11 23:31 mouse0 -> ../../devices/virtual/input/input1/mouse0
+lrwxrwxrwx 1 root root 0 2026-11-11 23:31 mouse1 -> ../../devices/virtual/input/input2/mouse1

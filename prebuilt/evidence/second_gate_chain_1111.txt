@@ -1,0 +1,230 @@
+=== 8.19.16 aboot: second-gate chain closure ===
+binary D:\16\PD1610_81\migrated_from_C\qfilx\firmware\81916\emmc_appsboot.mbn (3173696 B)  PT_LOAD vaddr=0x91D00000 off=0x8000 filesz=0x2FED40 memsz=0x331814
+
+--- 1. callers of 0x91D445E8 (helper) ---
+  bl @0x91D3C850
+  bl @0x91D3CC68
+  total = 2
+
+--- 2. callers of G = 0x91D39CB4 (verify wrapper) ---
+  bl @0x91D3C84C
+  bl @0x91D3D764
+  bl @0x91D3E380
+  total = 3
+
+--- 3. helper 0x91D445E8 full body 0x91D445E8..0x91D44768 ---
+  91D445E8  movw     r3, #0x57dc
+  91D445EC  movt     r3, #0x9201
+  91D445F0  str      lr, [sp, #-4]!
+  91D445F4  sub      sp, sp, #0xc
+  91D445F8  ldr      r1, [r3]
+  91D445FC  movw     r2, #0x3ac0
+  91D44600  movt     r2, #0x9201
+  91D44604  str      r1, [sp, #4]
+  91D44608  ldr      r0, [r2] <<<
+  91D4460C  ldr      r2, [sp, #4]
+  91D44610  ldr      r3, [r3]
+  91D44614  cmp      r2, r3
+  91D44618  bne      #0x91d44624 <<<
+  91D4461C  add      sp, sp, #0xc
+  91D44620  pop      {pc} <<<
+  91D44624  bl       #0x91d516c4
+  91D44628  push     {r4, r5, r6, r7, lr}
+  91D4462C  movw     r5, #0x57dc
+  91D44630  movt     r5, #0x9201
+  91D44634  sub      sp, sp, #0x84
+  91D44638  subs     r4, r0, #0
+  91D4463C  mov      r7, lr
+  91D44640  ldr      r3, [r5]
+  91D44644  mov      r6, r1
+  91D44648  str      r3, [sp, #0x7c]
+  91D4464C  beq      #0x91d4473c
+  91D44650  cmp      r6, #0
+  91D44654  beq      #0x91d44710
+  91D44658  add      r0, sp, #0xc
+  91D4465C  bl       #0x91d70aac
+  91D44660  mov      r1, r4
+  91D44664  add      r0, sp, #0xc
+  91D44668  movw     r2, #0x3cb0
+  91D4466C  movt     r2, #1
+  91D44670  bl       #0x91d70b5c
+  91D44674  add      r0, r4, #0x13c00
+  91D44678  add      r1, sp, #0xc
+  91D4467C  add      r0, r0, #0xb0
+  91D44680  bl       #0x91d70ba0
+  91D44684  mov      r0, r4
+  91D44688  movw     r1, #0x3cd0
+  91D4468C  movt     r1, #1
+  91D44690  bl       #0x91d36854
+  91D44694  mov      r0, r6
+  91D44698  movw     r1, #0x3cd0
+  91D4469C  movt     r1, #1
+  91D446A0  bl       #0x91d3687c
+  91D446A4  movw     r1, #0x3cd0
+  91D446A8  movt     r1, #1
+  91D446AC  mov      r0, r4
+  91D446B0  mov      ip, #0
+  91D446B4  mov      r2, r6
+  91D446B8  mov      r3, r1
+  91D446BC  str      ip, [sp]
+  91D446C0  bl       #0x91d20c80
+  91D446C4  subs     r4, r0, #0
+  91D446C8  bne      #0x91d446f8
+  91D446CC  mov      r0, r6
+  91D446D0  movw     r1, #0x3cd0
+  91D446D4  movt     r1, #1
+  91D446D8  bl       #0x91d3687c
+  91D446DC  mov      r0, r4
+  91D446E0  ldr      r2, [sp, #0x7c]
+  91D446E4  ldr      r3, [r5]
+  91D446E8  cmp      r2, r3
+  91D446EC  bne      #0x91d4470c
+  91D446F0  add      sp, sp, #0x84
+  91D446F4  pop      {r4, r5, r6, r7, pc} <<<
+  91D446F8  movw     r0, #0x632c
+  91D446FC  movt     r0, #0x91d8
+  91D44700  bl       #0x91d51508
+  91D44704  mvn      r0, #0 <<<
+  91D44708  b        #0x91d446e0 <<<
+  91D4470C  bl       #0x91d516c4
+  91D44710  mov      r0, r7
+  91D44714  movw     r3, #0x631c
+  91D44718  movw     r1, #0x71c8
+  91D4471C  movt     r3, #0x91d8
+  91D44720  movt     r1, #0x91d7
+  91D44724  str      r3, [sp]
+  91D44728  movw     r2, #0x62f8
+  91D4472C  movw     r3, #0x351
+  91D44730  movt     r2, #0x91d8
+  91D44734  bl       #0x91d5163c
+  91D44738  b        #0x91d44658
+  91D4473C  movw     r3, #0x630c
+  91D44740  movw     r1, #0x71c8
+  91D44744  movt     r3, #0x91d8
+  91D44748  movt     r1, #0x91d7
+  91D4474C  str      r3, [sp]
+  91D44750  movw     r2, #0x62f8
+  91D44754  mov      r0, lr
+  91D44758  movt     r2, #0x91d8
+  91D4475C  mov      r3, #0x350
+  91D44760  bl       #0x91d5163c
+  91D44764  b        #0x91d44650
+
+--- 4. variable A [0x92013AC0] direct references ---
+  materialise @0x91D445FC reg r2
+     91D44608 ldr    r0, [r2]
+  direct materialisations = 1
+
+--- 5. variable B [0x920157DC] direct writes ---
+  WRITE @0x91D19050 str    r2, [r3, #0x2c]  (base @0x91D19058)
+  WRITE @0x91D190E4 str    r2, [r3, #0x2c]  (base @0x91D190EC)
+  WRITE @0x91D2098C str    r2, [r3]  (base @0x91D20990)
+  WRITE @0x91D47E24 str    r2, [r3]  (base @0x91D47E2C)
+  materialisations = 1653, direct writes = 4
+
+--- 6. function containing early-return 0x91D3C58C ---
+  candidate entries (nearest push{...,lr}): 0x91D3C3F0, 0x91D3C344, 0x91D3C298, 0x91D3BCC0, 0x91D3AB94, 0x91D3AAE8
+  entry 0x91D3C3F0 -> bl callers = 1 0x91D412AC
+  entry 0x91D3C344 -> bl callers = 0 
+  entry 0x91D3C298 -> bl callers = 9 0x91D3C9A8, 0x91D3C9F0, 0x91D3CA68, 0x91D3D4A8, 0x91D3D4EC, 0x91D3D558, 0x91D3E2F8, 0x91D3E33C, 0x91D3E574
+
+  --- disassembly 0x91D3C570..0x91D3C5B0 (return value setup) ---
+  91D3C570  mov      r3, r2
+  91D3C574  str      r2, [r0]
+  91D3C578  b        #0x91d3c670
+  91D3C57C  movw     r0, #0x41f4
+  91D3C580  movt     r0, #0x91d8
+  91D3C584  bl       #0x91d51508
+  91D3C588  mov      sb, #4 <<<
+  91D3C58C  ldr      r2, [sp, #0x5c]
+  91D3C590  mov      r0, sb <<<
+  91D3C594  ldr      r3, [r6]
+  91D3C598  cmp      r2, r3
+  91D3C59C  bne      #0x91d3ce8c
+  91D3C5A0  add      sp, sp, #0x64
+  91D3C5A4  pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc} <<<
+  91D3C5A8  movw     r5, #0x83c
+  91D3C5AC  movt     r5, #0x9201
+
+--- 7. consumers of the enclosing function return value ---
+  caller bl @0x91D412AC, following 8 insns:
+  91D412AC  bl       #0x91d3c3f0
+  91D412B0  sub      r0, r0, #4
+  91D412B4  cmp      r0, #5
+  91D412B8  bhi      #0x91d4141c
+  91D412BC  lsl      r3, r5, r0
+  91D412C0  tst      r3, #0x27
+  91D412C4  beq      #0x91d4141c
+  91D412C8  bl       #0x91d0aed4
+  91D412CC  cmp      r0, #0
+  caller bl @0x91D3C9A8, following 8 insns:
+  91D3C9A8  bl       #0x91d3c298
+  91D3C9AC  cmp      r0, #0
+  91D3C9B0  bne      #0x91d3cc04
+  91D3C9B4  ldr      r0, [r4, #0x14]
+  91D3C9B8  ldr      r1, [sp, #0x1c]
+  91D3C9BC  mvn      r3, r0
+  91D3C9C0  cmp      r1, r3
+  91D3C9C4  bhi      #0x91d3cc04
+  91D3C9C8  movw     r3, #0xffff
+  caller bl @0x91D3C9F0, following 8 insns:
+  91D3C9F0  bl       #0x91d3c298
+  91D3C9F4  cmp      r0, #0
+  91D3C9F8  bne      #0x91d3cc04
+  91D3C9FC  mov      r1, r8
+  91D3CA00  mov      r2, fp
+  91D3CA04  ldr      r0, [r4, #0xc]
+  91D3CA08  bl       #0x91d52c48
+  91D3CA0C  ldr      r2, [sp, #0x18]
+  91D3CA10  ldr      r1, [r5]
+  caller bl @0x91D3CA68, following 8 insns:
+  91D3CA68  bl       #0x91d3c298
+  91D3CA6C  cmp      r0, #0
+  91D3CA70  bne      #0x91d3cc54
+  91D3CA74  ldr      r3, [r5]
+  91D3CA78  ldr      r1, [r4, #8]
+  91D3CA7C  add      r0, sb, r3
+  91D3CA80  ldr      r2, [sp, #0x44]
+  91D3CA84  ldr      r3, [r4, #0x20]
+  91D3CA88  add      r0, sl, r0
+  caller bl @0x91D3D4A8, following 8 insns:
+  91D3D4A8  bl       #0x91d3c298
+  91D3D4AC  cmp      r0, #0
+  91D3D4B0  bne      #0x91d3d6b0
+  91D3D4B4  ldr      r0, [fp, #0x14]
+  91D3D4B8  mvn      r3, r0
+  91D3D4BC  cmp      sl, r3
+  91D3D4C0  bhi      #0x91d3d6b0
+  91D3D4C4  movw     r3, #0xffff
+  91D3D4C8  movt     r3, #0x91cf
+  caller bl @0x91D3D4EC, following 8 insns:
+  91D3D4EC  bl       #0x91d3c298
+  91D3D4F0  subs     lr, r0, #0
+  91D3D4F4  bne      #0x91d3d6b0
+  91D3D4F8  ldr      ip, [r5]
+  91D3D4FC  mov      r3, #0
+  91D3D500  movw     sb, #0x83c
+  91D3D504  movt     sb, #0x9201
+  91D3D508  adds     r2, ip, r6
+  91D3D50C  adc      r3, r3, #0
+  caller bl @0x91D3D558, following 8 insns:
+  91D3D558  bl       #0x91d3c298
+  91D3D55C  cmp      r0, #0
+  91D3D560  str      r0, [sp, #0x1c]
+  91D3D564  bne      #0x91d3d6d0
+  91D3D568  mov      r0, #4
+  91D3D56C  bl       #0x91d0c744
+  91D3D570  ldr      r3, [sb]
+  91D3D574  mvn      r3, r3
+  91D3D578  cmp      sl, r3
+
+--- 8. .bss classification ---
+  .bss 0x91FFED40 .. 0x92031814
+  0x92007DAC in .bss: True
+  0x92013AC0 in .bss: True
+  0x920157DC in .bss: True
+
+=== Boundary ===
+Direct movw/movt + aligned-word decoding only. Indirect writes through
+computed pointers / bulk memset / other segments are NOT fully excluded.
+Static analysis only; no device operation, no flashing.

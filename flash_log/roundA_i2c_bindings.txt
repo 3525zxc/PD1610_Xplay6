@@ -1,0 +1,16 @@
+DEV 12-0020: name=dsx driver= modalias=i2c:dsx
+DEV 12-0049: name=fts driver=../../../../../bus/i2c/drivers/fts modalias=i2c:fts
+DEV 3-0028: name=cyttsp-button driver= modalias=i2c:cyttsp-button
+DEV 3-0067: name=lm3646 driver= modalias=i2c:lm3646
+DEV 3-006b: name=bq24192-bq25892-hyb driver= modalias=i2c:bq24192-bq25892-hyb
+DEV 7-0002: name=camera driver=../../../../../bus/i2c/drivers/camera modalias=i2c:camera
+DEV 7-0011: name=si4705 driver= modalias=i2c:si4705
+DEV 7-0050: name=eeprom driver= modalias=i2c:eeprom
+DEV 7-0072: name=actuator driver=../../../../../bus/i2c/drivers/qcom,actuator modalias=i2c:actuator
+DEV 8-0034: name=tfa98xx driver=../../../../../bus/i2c/drivers/tfa98xx modalias=i2c:tfa98xx
+DEV 8-0048: name=es9038 driver= modalias=i2c:es9038
+DEV i2c-12: name=MSM-I2C-v2-adapter driver= modalias=
+DEV i2c-3: name=MSM-I2C-v2-adapter driver= modalias=
+DEV i2c-6: name=MSM-I2C-v2-adapter driver= modalias=
+DEV i2c-7: name=MSM-I2C-v2-adapter driver= modalias=
+DEV i2c-8: name=MSM-I2C-v2-adapter driver= modalias=

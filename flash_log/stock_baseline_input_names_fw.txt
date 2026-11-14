@@ -1,0 +1,70 @@
+input0 name=qpnp_pon
+input1 name=qbt1000_key_input
+input2 name=hbtp_vm
+input3 name=gpio-keys
+input4 name=vivo_virtual_key
+input5 name=goodixfp
+input6 name=fts
+input7 name=msm8996-tasha-cdp-snd-card Headset Jack
+input8 name=msm8996-tasha-cdp-snd-card Button Jack
+---FW---
+total 4108
+-rw-r--r-- 1 root root     1156 2026-11-11 19:07 a225_pfp.fw
+-rw-r--r-- 1 root root     9220 2026-11-11 19:07 a225_pm4.fw
+-rw-r--r-- 1 root root     9220 2026-11-11 19:07 a225p5_pm4.fw
+-rw-r--r-- 1 root root     1156 2026-11-11 19:07 a300_pfp.fw
+-rw-r--r-- 1 root root     9220 2026-11-11 19:07 a300_pm4.fw
+-rw-r--r-- 1 root root     2212 2026-11-11 19:07 a330_pfp.fw
+-rw-r--r-- 1 root root     9220 2026-11-11 19:07 a330_pm4.fw
+-rw-r--r-- 1 root root     4292 2026-11-11 19:07 a420_pfp.fw
+-rw-r--r-- 1 root root     9556 2026-11-11 19:07 a420_pm4.fw
+-rw-r--r-- 1 root root     8052 2026-11-11 19:07 a530_gpmu.fw2
+-rw-r--r-- 1 root root    15876 2026-11-11 19:07 a530_pfp.fw
+-rw-r--r-- 1 root root    19572 2026-11-11 19:07 a530_pm4.fw
+-rw-r--r-- 1 root root      148 2026-11-11 19:07 a530_zap.b00
+-rw-r--r-- 1 root root     6536 2026-11-11 19:07 a530_zap.b01
+-rw-r--r-- 1 root root     4900 2026-11-11 19:07 a530_zap.b02
+-rw-r--r-- 1 root root    17188 2026-11-11 19:07 a530_zap.elf
+-rw-r--r-- 1 root root     6684 2026-11-11 19:07 a530_zap.mdt
+-rw-r--r-- 1 root root    11388 2026-11-11 19:07 a530v1_pfp.fw
+-rw-r--r-- 1 root root    15424 2026-11-11 19:07 a530v1_pm4.fw
+-rw-r--r-- 1 root root     2604 2026-11-11 19:07 a530v2_seq.fw2
+-rw-r--r-- 1 root root     8184 2026-11-11 19:07 a530v3_gpmu.fw2
+-rw-r--r-- 1 root root     2604 2026-11-11 19:07 a530v3_seq.fw2
+-rw-r--r-- 1 root root    11736 2026-11-11 19:07 a540_gpmu.fw2
+-rw-r--r-- 1 root root      276 2026-11-11 19:07 alipay.b00
+-rw-r--r-- 1 root root     6664 2026-11-11 19:07 alipay.b01
+-rw-r--r-- 1 root root   103293 2026-11-11 19:07 alipay.b02
+-rw-r--r-- 1 root root    26868 2026-11-11 19:07 alipay.b03
+-rw-r--r-- 1 root root      164 2026-11-11 19:07 alipay.b04
+-rw-r--r-- 1 root root       88 2026-11-11 19:07 alipay.b05
+-rw-r--r-- 1 root root      360 2026-11-11 19:07 alipay.b06
+-rw-r--r-- 1 root root   151656 2026-11-11 19:07 alipay.mbn
+-rw-r--r-- 1 root root     6940 2026-11-11 19:07 alipay.mdt
+-rw-r--r-- 1 root root      276 2026-11-11 19:07 facedetect.b00
+-rw-r--r-- 1 root root     6664 2026-11-11 19:07 facedetect.b01
+-rw-r--r-- 1 root root    75836 2026-11-11 19:07 facedetect.b02
+-rw-r--r-- 1 root root    35036 2026-11-11 19:07 facedetect.b03
+-rw-r--r-- 1 root root      128 2026-11-11 19:07 facedetect.b04
+-rw-r--r-- 1 root root       88 2026-11-11 19:07 facedetect.b05
+-rw-r--r-- 1 root root      272 2026-11-11 19:07 facedetect.b06
+-rw-r--r-- 1 root root   135184 2026-11-11 19:07 facedetect.mbn
+-rw-r--r-- 1 root root     6940 2026-11-11 19:07 facedetect.mdt
+-rw-r--r-- 1 root root      276 2026-11-11 19:07 fpcapp.b00
+-rw-r--r-- 1 root root     6664 2026-11-11 19:07 fpcapp.b01
+-rw-r--r-- 1 root root   586882 2026-11-11 19:07 fpcapp.b02
+-rw-r--r-- 1 root root   311416 2026-11-11 19:07 fpcapp.b03
+-rw-r--r-- 1 root root      316 2026-11-11 19:07 fpcapp.b04
+-rw-r--r-- 1 root root       88 2026-11-11 19:07 fpcapp.b05
+-rw-r--r-- 1 root root     1688 2026-11-11 19:07 fpcapp.b06
+-rw-r--r-- 1 root root      427 2026-11-11 19:07 fpcapp.flist
+-rw-r--r-- 1 root root   923032 2026-11-11 19:07 fpcapp.mbn
+-rw-r--r-- 1 root root     6940 2026-11-11 19:07 fpcapp.mdt
+-rw-r--r-- 1 root root      276 2026-11-11 19:07 gf5116.b00
+-rw-r--r-- 1 root root     6664 2026-11-11 19:07 gf5116.b01
+-rw-r--r-- 1 root root   520851 2026-11-11 19:07 gf5116.b02
+-rw-r--r-- 1 root root   756148 2026-11-11 19:07 gf5116.b03
+-rw-r--r-- 1 root root      500 2026-11-11 19:07 gf5116.b04
+-rw-r--r-- 1 root root       88 2026-11-11 19:07 gf5116.b05
+-rw-r--r-- 1 root root     1160 2026-11-11 19:07 gf5116.b06
+-rw-r--r-- 1 root root  1299336 2026-11-11 19:07 gf5116.mbn

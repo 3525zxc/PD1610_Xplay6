@@ -1,0 +1,72 @@
+==============================================================================
+A. fastboot_register 调用点（回溯 r0=name, r1=handler）
+==============================================================================
+  91D409AC  name='oem device-name'                                handler=?
+  91D409C0  name='oem device-id'                                  handler=?
+  91D409D4  name='oem ufs-id'                                     handler=?
+  91D409E8  name='oem product-model'                              handler=?
+  91D409FC  name='oem op-entry'                                   handler=?
+  91D40A10  name='oem optr-flag'                                  handler=?
+  91D40A24  name='oem device-imei'                                handler=?
+  91D40A38  name='oem device-oemname'                             handler=?
+  91D40A4C  name='oem device-sdk'                                 handler=?
+  91D40A60  name='oem get-info'                                   handler=?
+  91D40A74  name='oem reboot-edl'                                 handler=?
+  91D40A94  name='flash:'                                         handler=?
+  91D40AA8  name='erase:'                                         handler=?
+  91D40ABC  name='boot'                                           handler=?
+  91D40AD0  name='continue'                                       handler=?
+  91D40AE4  name='reboot'                                         handler=?
+  91D40AF8  name='reboot-bootloader'                              handler=?
+  91D40B0C  name='bbk lock_vivo'                                  handler=?
+  91D40B24  name='oem device-info'                                handler=?
+  91D40B38  name='preflash'                                       handler=?
+  91D40B4C  name='oem enable-charger-screen'                      handler=?
+  91D40B60  name='oem disable-charger-screen'                     handler=?
+  91D40BB0  name='oem update-app'                                 handler=?
+  91D40D64  name='reboot'                                         handler=?
+  91D40D78  name='reboot-bootloader'                              handler=?
+  91D40D8C  name='continue'                                       handler=?
+  91D40DA0  name='bbk unlock_vivo'                                handler=?
+  91D40DB8  name='oem device-info'                                handler=?
+  91D42E80  name='getvar:'                                        handler=?
+  91D42E94  name='download:'                                      handler=?
+  91D42EBC  name='getid'                                          handler=?
+  91D42ED0  name='oem reboot-edl'                                 handler=?
+
+  共 32 处 fastboot_register
+
+==============================================================================
+B. 关键命令的 handler
+==============================================================================
+  oem device-name    registered@91D409AC  handler=?
+  oem device-id      registered@91D409C0  handler=?
+  oem ufs-id         registered@91D409D4  handler=?
+  oem product-model  registered@91D409E8  handler=?
+  oem op-entry       registered@91D409FC  handler=?
+  oem optr-flag      registered@91D40A10  handler=?
+  oem device-imei    registered@91D40A24  handler=?
+  oem device-oemname registered@91D40A38  handler=?
+  oem device-sdk     registered@91D40A4C  handler=?
+  oem get-info       registered@91D40A60  handler=?
+  oem reboot-edl     registered@91D40A74  handler=?
+  oem reboot-edl     registered@91D42ED0  handler=?
+  flash:             registered@91D40A94  handler=?
+  erase:             registered@91D40AA8  handler=?
+  boot               registered@91D40ABC  handler=?
+  continue           registered@91D40AD0  handler=?
+  continue           registered@91D40D8C  handler=?
+  reboot             registered@91D40AE4  handler=?
+  reboot             registered@91D40D64  handler=?
+  reboot-bootloader  registered@91D40AF8  handler=?
+  reboot-bootloader  registered@91D40D78  handler=?
+  oem device-info    registered@91D40B24  handler=?
+  oem device-info    registered@91D40DB8  handler=?
+  preflash           registered@91D40B38  handler=?
+  oem enable-charger-screen registered@91D40B4C  handler=?
+  oem disable-charger-screen registered@91D40B60  handler=?
+  oem update-app     registered@91D40BB0  handler=?
+
+==============================================================================
+C. 各 handler 是否调用验签 0x91D12DD0 / 外层 G 0x91D39CB4
+==============================================================================

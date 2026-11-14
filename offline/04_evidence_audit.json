@@ -1,0 +1,92 @@
+{
+  "scope": "offline evidence ledger (local, no cross-model reviewer)",
+  "reports_scanned": [
+    "01_reboot_root_cause.md",
+    "02_input_parity_gap.md",
+    "03_firmware_inventory.md",
+    "05_experiment_queue.md",
+    "06_prior_art.md",
+    "07_handoff_baseline.md",
+    "08_roundA_result.md",
+    "ROUND10_BLM_RESULT.md",
+    "ROUND11_AB_RESULT.md",
+    "ROUND12_ROOT_CAUSE.md",
+    "ROUND13_SHRUNK_BOOT_RESULT.md",
+    "ROUND14_INITCALL_TRACE_RESULT.md",
+    "ROUND15_WATCHDOG_RESULT.md",
+    "ROUND16_PROBE_TRACE_RESULT.md",
+    "ROUND17_READY.md",
+    "ROUND17_VIBRATOR_SPMI_RESULT.md",
+    "ROUND18_BYPASS_READY.md",
+    "ROUND18_BYPASS_RESULT.md",
+    "ROUND19_FIX_READY.md",
+    "ROUND19_FULL_BOOT_RESULT.md"
+  ],
+  "findings": [
+    {
+      "id": "hash_ledger",
+      "images_indexed": 52,
+      "hash_mentions_checked": 48,
+      "unresolved": [
+        {
+          "doc": "ROUND18_BYPASS_READY.md",
+          "fragment": "62f2b0af"
+        }
+      ],
+      "state": "WARN"
+    },
+    {
+      "id": "observation_hypothesis_labels",
+      "reports": {
+        "01_reboot_root_cause.md": {
+          "O": 1,
+          "H": 1
+        },
+        "02_input_parity_gap.md": {
+          "O": 1,
+          "H": 1
+        },
+        "03_firmware_inventory.md": {
+          "O": 1,
+          "H": 1
+        },
+        "06_prior_art.md": {
+          "O": 0,
+          "H": 1
+        },
+        "07_handoff_baseline.md": {
+          "O": 0,
+          "H": 1
+        },
+        "08_roundA_result.md": {
+          "O": 5,
+          "H": 1
+        }
+      },
+      "reports_without_labels": [],
+      "state": "PASS"
+    },
+    {
+      "id": "completion_gates",
+      "state": "INFO",
+      "detail": {
+        "score_lower": 50,
+        "score_upper": 50,
+        "unverified": [],
+        "failed": [
+          "touch_cold",
+          "nav_keys",
+          "input_parity",
+          "i2c_parity"
+        ]
+      }
+    },
+    {
+      "id": "firmware_inventory",
+      "entries": 332,
+      "state": "PASS"
+    }
+  ],
+  "verdict": "WARN",
+  "note": "A clean sweep is recorded as NO_NEW_BLOCKER, not an acquittal."
+}

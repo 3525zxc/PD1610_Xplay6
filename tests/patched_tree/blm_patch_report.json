@@ -1,0 +1,231 @@
+{
+  "source_tree_modified": false,
+  "operations": [
+    [
+      "main_include",
+      "inserted"
+    ],
+    [
+      "main_do_one_initcall",
+      "inserted"
+    ],
+    [
+      "main_pre_smp_initcalls",
+      "inserted"
+    ],
+    [
+      "main_smp_init",
+      "inserted"
+    ],
+    [
+      "main_sched_init_smp",
+      "inserted"
+    ],
+    [
+      "main_rootfs_check",
+      "inserted"
+    ],
+    [
+      "main_load_default_modules",
+      "inserted"
+    ],
+    [
+      "main_start_kernel",
+      "inserted"
+    ],
+    [
+      "main_before_setup_arch",
+      "inserted"
+    ],
+    [
+      "main_console_init",
+      "inserted"
+    ],
+    [
+      "main_rest_init",
+      "inserted"
+    ],
+    [
+      "main_kernel_init",
+      "inserted"
+    ],
+    [
+      "main_do_basic_setup",
+      "inserted"
+    ],
+    [
+      "main_prepare_namespace",
+      "inserted"
+    ],
+    [
+      "main_user_init",
+      "inserted"
+    ],
+    [
+      "setup_include",
+      "inserted"
+    ],
+    [
+      "setup_arch_entry",
+      "inserted"
+    ],
+    [
+      "setup_fdt_scan",
+      "inserted"
+    ],
+    [
+      "setup_early_ioremap",
+      "inserted"
+    ],
+    [
+      "setup_paging_init",
+      "inserted"
+    ],
+    [
+      "setup_unflatten_dt",
+      "inserted"
+    ],
+    [
+      "panic_include",
+      "inserted"
+    ],
+    [
+      "panic_entry",
+      "inserted"
+    ],
+    [
+      "panic_message",
+      "inserted"
+    ],
+    [
+      "kernel_makefile",
+      "inserted"
+    ],
+    [
+      "usb_bam_include",
+      "inserted"
+    ],
+    [
+      "bam_enter",
+      "inserted"
+    ],
+    [
+      "bam_dt_before",
+      "inserted"
+    ],
+    [
+      "bam_dt_after",
+      "inserted"
+    ],
+    [
+      "bam_wq",
+      "inserted"
+    ],
+    [
+      "bam_enable_before",
+      "inserted"
+    ],
+    [
+      "bam_enable_after",
+      "inserted"
+    ],
+    [
+      "bam_ipa_before",
+      "inserted"
+    ],
+    [
+      "bam_ipa_after",
+      "inserted"
+    ],
+    [
+      "bam_panic_hdlr",
+      "inserted"
+    ],
+    [
+      "ebam_init_before",
+      "inserted"
+    ],
+    [
+      "ebam_init_after",
+      "inserted"
+    ],
+    [
+      "vibrator_include",
+      "inserted"
+    ],
+    [
+      "vib_enter",
+      "inserted"
+    ],
+    [
+      "vib_spmi_set",
+      "inserted"
+    ],
+    [
+      "vib_res_before",
+      "inserted"
+    ],
+    [
+      "vib_res_after",
+      "inserted"
+    ],
+    [
+      "vib_dt_before",
+      "inserted"
+    ],
+    [
+      "vib_config_before",
+      "inserted"
+    ],
+    [
+      "vib_read1",
+      "inserted"
+    ],
+    [
+      "vib_read2",
+      "inserted"
+    ],
+    [
+      "vib_pwm",
+      "inserted"
+    ],
+    [
+      "vib_config_done",
+      "inserted"
+    ],
+    [
+      "vib_timed",
+      "inserted"
+    ]
+  ],
+  "outputs": [
+    "/mnt/d/xplay6/evidence/kernel_re/out/stage2/bootloop_monitor/tests/patched_tree/init/main.c",
+    "/mnt/d/xplay6/evidence/kernel_re/out/stage2/bootloop_monitor/tests/patched_tree/arch/arm64/kernel/setup.c",
+    "/mnt/d/xplay6/evidence/kernel_re/out/stage2/bootloop_monitor/tests/patched_tree/kernel/panic.c",
+    "/mnt/d/xplay6/evidence/kernel_re/out/stage2/bootloop_monitor/tests/patched_tree/kernel/Makefile",
+    "/mnt/d/xplay6/evidence/kernel_re/out/stage2/bootloop_monitor/tests/patched_tree/drivers/platform/msm/usb_bam.c",
+    "/mnt/d/xplay6/evidence/kernel_re/out/stage2/bootloop_monitor/tests/patched_tree/drivers/platform/msm/qpnp-vibrator.c",
+    "/mnt/d/xplay6/evidence/kernel_re/out/stage2/bootloop_monitor/tests/patched_tree/kernel/bootloop_monitor.c",
+    "/mnt/d/xplay6/evidence/kernel_re/out/stage2/bootloop_monitor/tests/patched_tree/include/linux/bootloop_monitor.h",
+    "/mnt/d/xplay6/evidence/kernel_re/out/stage2/bootloop_monitor/tests/patched_tree/include/linux/blm_layout.h"
+  ],
+  "spmi_stub": false,
+  "marker_check": {
+    "blm_early_init(__fdt_pointer);": true,
+    "blm_reserve_logmem();": true,
+    "blm_mark(BLM_STAGE_PANIC_ENTER);": true,
+    "blm_write_text(buf);": true,
+    "blm_note_initcall((unsigned long)fn);": true,
+    "blm_trace_note(0, \"IC\"": true,
+    "BLM do_basic_setup enter": true,
+    "BLM prepare_namespace enter": true,
+    "BLM kernel_init_freeable done": true,
+    "BAM_ENTER": true,
+    "BAM_IPA_AFTER": true,
+    "EBAM_INIT_AFTER": true,
+    "VIB_ENTER": true,
+    "VIB_TIMED": true,
+    "obj-y += bootloop_monitor.o": true
+  },
+  "status": "OK"
+}

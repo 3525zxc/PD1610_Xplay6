@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+<!-- 还原：写回官方 8.1 boot（与分区回读前 58,729,728 B 逐字节一致） -->
+<data>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="boot_81_official.img" label="boot" num_partition_sectors="24576" partofsingleimage="false" physical_partition_number="4" readbackverify="false" size_in_KB="98304.0" sparse="false" start_sector="47370"/>
+</data>

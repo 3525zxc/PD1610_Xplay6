@@ -1,0 +1,101 @@
+========================================================================
+A. reboot / verif / tamper / unlock 相关字符串及其引用
+========================================================================
+  0x91D82D6C : 'Rebooting failed\n'
+  0x91D7968C : 'HALT: reboot into dload mode...\n'
+        <- movw@0x91D06E30  函数起点~0x91D06BF0
+  0x91D82DB0 : 'platform/msm_shared/reboot.c'
+  0x91D83B2C : 'get_reboot_mode is silent_mode %d\n'
+        <- movw@0x91D3AB3C  函数起点~0x91D3AAE8
+  0x91D83B50 : 'get_reboot_mode is not silent_mode %d\n'
+  0x91D84624 : 'device is unlocked , rebooting edl'
+        <- movw@0x91D3DC98  函数起点~0x91D3DC6C
+        <- movw@0x91D42928  函数起点~0x91D428F4
+  0x91D8466C : 'Failed to reboot into dload mode\n'
+  0x91D84EF4 : ' rebooting bootloader'
+        <- movw@0x91D3FCA0  函数起点~0x91D3FC50
+  0x91D8532C : 'oem reboot-edl'
+  0x91D85358 : 'reboot'
+  0x91D85360 : 'reboot-bootloader'
+  0x91D855F4 : '=====check_hard_reboot_mode========== %x\n'
+        <- movw@0x91D41150  函数起点~0x91D40FCC
+  0x91D85A58 : 'reboot_check'
+  0x91D873A0 : 'reboot_mode=0x%x\n'
+        <- movw@0x91D47060  函数起点~0x91D47028
+  0x91D87C7C : ':silent_reboot=1'
+  0x91D7C4C8 : 'boot_verifier: Calloc failed during verification\n'
+        <- movw@0x91D1257C  函数起点~0x91D12404
+  0x91D7C79C : 'boot_verifier: verification failure due to target name mismatch\n'
+        <- movw@0x91D12F14  函数起点~0x91D12DD0
+        <- movw@0x91D13080  函数起点~0x91D12DD0
+  0x91D7F868 : 'ERROR: Calloc failed during verification\n'
+  0x91D840C4 : 'Device is unlocked! Skipping verification...\n'
+        <- movw@0x91D3C39C  函数起点~0x91D3C344
+  0x91D840F4 : 'Keystore verification failed! Continuing anyways...\n'
+        <- movw@0x91D3C3D8  函数起点~0x91D3C344
+  0x91D86420 : 'mdtp: verify_partition_single_hash: %s: Failed partition hash verification\n'
+        <- movw@0x91D448B8  函数起点~0x91D44768
+  0x91D86548 : 'mdtp: verify_partition_block_hash: %s: skipped verification of block %d\n'
+  0x91D865D0 : 'mdtp: verify_partition_block_hash: %s: Failed partition hash[%d] verification\n'
+        <- movw@0x91D44BC8  函数起点~0x91D44954
+  0x91D86A28 : 'mdtp: verify_ext_partition: image %s verification failed in MDTP.\n'
+        <- movw@0x91D450A0  函数起点~0x91D44CC8
+  0x91D86A6C : 'mdtp: verify_all_partitions: Failed partition verification\n'
+        <- movw@0x91D450C4  函数起点~0x91D44CC8
+  0x91D94AB8 : 'additional verification'
+  0x91D8393D : 'Device tampered: %s'
+  0x91D7CF64 : 'unlocked'
+        <- movw@0x91D40CC4  函数起点~0x91D40974
+  0x91D83955 : 'Device unlocked: %s'
+  0x91D8396D : 'Device critical unlocked: %s'
+  0x91D846C4 : 'unlocked!'
+  0x91D7CBB0 : 'Unlock bootloader?\n'
+  0x91D7CDBC : 'Unlock bootloader(may void warranty)\n'
+  0x91D79AD0 : 'MBR signature does not match.\n'
+        <- movw@0x91D08590  函数起点~0x91D0856C
+  0x91D79BE4 : 'GPT: Primary and backup signatures invalid\n'
+        <- movw@0x91D091F0  函数起点~0x91D08978
+  0x91D79D50 : 'GPT: Primary signature invalid cannot write GPT\n'
+        <- movw@0x91D09AAC  函数起点~0x91D09300
+  0x91D79D84 : 'GPT: Backup signature invalid cannot write GPT\n'
+        <- movw@0x91D09B54  函数起点~0x91D09300
+  0x91D7C718 : 'signature'
+  0x91D7C724 : 'boot_verifier: Error while reading signature length.\n'
+        <- movw@0x91D12E34  函数起点~0x91D12DD0
+  0x91D7C75C : 'boot_verifier: Signature length exceeds size signature buffer\n'
+        <- movw@0x91D12F88  函数起点~0x91D12DD0
+  0x91D7F8F0 : 'ERROR: VB: Image Invalid! signature check failed! ret %d\n'
+  0x91D7F98C : 'ERROR: Image Invalid! signature check failed! ret %d\n'
+  0x91D8004C : 'mdss_dsi_read_panel_signature: response_value is 0x%x and lcm id is 0x%x, ret is %x\n'
+  0x91D842C8 : 'ERROR: Cannot read boot image signature\n'
+        <- movw@0x91D3CE64  函数起点~0x91D3C3F0
+        <- movw@0x91D3D858  函数起点~0x91D3D27C
+  0x91D869E4 : 'ERROR: Cannot read %s image signature\n'
+        <- movw@0x91D45558  函数起点~0x91D44CC8
+  0x91D919D0 : 'countersignature'
+  0x91D92D44 : 'id-smime-aa-signatureType'
+  0x91D94D70 : 'ICC or token signature'
+  0x91D94D9C : 'secure device signature'
+  0x91D7C4FC : 'boot_verifier: Signature decrypt failed! Signature invalid = %d\n'
+        <- movw@0x91D12520  函数起点~0x91D12404
+  0x91D84144 : 'Signature: 0x%08x or version: 0x%08x mismatched of /bootselect\n'
+        <- movw@0x91D3C620  函数起点~0x91D3C3F0
+  0x91D843EC : 'Signature read buffer address overlaps with aboot addresses.\n'
+        <- movw@0x91D3CBE0  函数起点~0x91D3C3F0
+  0x91D84648 : 'fastboot check Signature fail...\n'
+        <- movw@0x91D3DD0C  函数起点~0x91D3DC6C
+        <- movw@0x91D4299C  函数起点~0x91D428F4
+  0x91D84EB0 : 'fastboot unlock check Signature fail...\n'
+        <- movw@0x91D3FCC8  函数起点~0x91D3FC50
+  0x91D84EDC : ' check Signature Fail'
+        <- movw@0x91D3FCE4  函数起点~0x91D3FC50
+  0x91D8697C : 'ERROR: Signature read buffer address overlaps with aboot addresses.\n'
+        <- movw@0x91D456B8  函数起点~0x91D44CC8
+  0x91D928C8 : 'id-smime-mod-ets-eSignature-88'
+  0x91D928E8 : 'id-smime-mod-ets-eSignature-97'
+  0x91D9345C : 'id-alg-noSignature'
+  0x91D938E0 : 'rsaSignature'
+  0x91D9420C : 'personalSignature'
+  0x91D856E4 : 'ERROR: Could not do normal boot. Reverting to fastboot mode.\n'
+        <- movw@0x91D4141C  函数起点~0x91D40FCC
+  0x91D7E5D0 : 'ERROR: Bad magic in device tree table \n'

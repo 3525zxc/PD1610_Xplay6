@@ -1,0 +1,116 @@
+========================================================================
+A. fastboot 协议字符串与代码引用
+========================================================================
+  str 0x91D7D048: 'FASTBOOT MODE\n'
+      <- movw/movt @0x91D143D8 (r8, #0xd048 | r8, #0x91d7)
+  str 0x91D85940: 'OKAY'
+      <- movw/movt @0x91D4250C (r0, #0x5940 | r0, #0x91d8)
+      <- movw/movt @0x91D42590 (r0, #0x5940 | r0, #0x91d8)
+  str 0x91D771CF: 'FAILED at (%s:%d): %s\n'
+  str 0x91D79AA5: 'FAILED to write the partition entry array\n'
+  str 0x91D7EC6B: 'FAILED at (%s:%d): %s\n'
+  str 0x91D8590C: 'FAILED'
+  str 0x91D85933: 'FAILED...'
+  str 0x91D85948: 'FAIL'
+      <- movw/movt @0x91D4254C (r0, #0x5948 | r0, #0x91d8)
+  str 0x91D85967: 'FAIL...'
+  str 0x91D859CC: 'unknown command or device is lock'
+      <- movw/movt @0x91D42774 (r1, #0x59cc | r0, #0x91d8)
+  str 0x91D85A70: 'download:'
+  str 0x91D772F1: 'boot:%d\n'
+  str 0x91D84A64: 'flash: image header corrupt'
+  str 0x91D84AE8: 'flash: image size mismatch'
+  str 0x91D84DC3: 'flash: image header corrupt'
+  str 0x91D8533C: 'flash:'
+  str 0x91D83DB2: 'continue booting\n'
+
+========================================================================
+B. 模块框架：0x91D39B80 / 0x91D39BC4 的引用来源
+========================================================================
+  target 0x91D39B80:
+      branch: (none)
+  target 0x91D39BC4:
+      branch: 0x91D38350(bl)
+  target 0x91D40FCC:
+      branch: (none)
+
+=== 0x91D39B40..0x91D39BC4 region @0x91D39B40 ===
+  91D39B40  movt     r3, #0x9200
+  91D39B44  str      r1, [sp, #4]
+  91D39B48  ldr      r1, [sp, #4]
+  91D39B4C  str      r3, [r3, #4]
+  91D39B50  str      r3, [r3]
+  91D39B54  ldr      r3, [r2]
+  91D39B58  cmp      r1, r3
+  91D39B5C  bne      #0x91d39b7c
+  91D39B60  movw     r0, #0x98cc
+  91D39B64  mov      r1, #0
+  91D39B68  movt     r0, #0x91d3
+  91D39B6C  mov      r2, #0xa
+  91D39B70  add      sp, sp, #0xc
+  91D39B74  pop      {lr}
+  91D39B78  b        #0x91d18cb4
+  91D39B7C  bl       #0x91d516c4
+  91D39B80  push     {r4, lr}
+  91D39B84  movw     r4, #0x57dc   ; = 0x920157DC
+  91D39B88  movt     r4, #0x9201
+  91D39B8C  sub      sp, sp, #8
+  91D39B90  ldr      r3, [r0, #8]
+  91D39B94  mov      r1, #0
+  91D39B98  ldr      r2, [r4]
+  91D39B9C  str      r2, [sp, #4]
+  91D39BA0  blx      r3
+  91D39BA4  ldr      r2, [sp, #4]
+  91D39BA8  mov      r0, #0
+  91D39BAC  ldr      r3, [r4]
+  91D39BB0  cmp      r2, r3
+  91D39BB4  bne      #0x91d39bc0
+  91D39BB8  add      sp, sp, #8
+  91D39BBC  pop      {r4, pc}
+  91D39BC0  bl       #0x91d516c4
+  91D39BC4  push     {r4, r5, r6, r7, r8, lr}
+  91D39BC8  movw     r7, #0x57dc   ; = 0x920157DC
+  91D39BCC  movt     r7, #0x9201
+
+========================================================================
+C. flag 活读点 0x91D3AD40 所在函数与调用者（时序）
+========================================================================
+  prologue candidates before 0x91D3AD40: 0x91D3A980, 0x91D3AA68, 0x91D3AAE8, 0x91D3AB94
+  function start = 0x91D3AB94
+  callers of 0x91D3AB94:
+      branch: 0x91D3BD58(bl)
+=== function head 0x91D3AB94 @0x91D3AB94 ===
+  91D3AB94  push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+  91D3AB98  add      fp, sp, #0x20
+  91D3AB9C  sub      sp, sp, #0x24
+  91D3ABA0  movw     r3, #0x768   ; = 0x91DA0768 = '\x01'
+  91D3ABA4  movt     r3, #0x91da
+  91D3ABA8  movw     r7, #0x57dc   ; = 0x920157DC
+  91D3ABAC  movt     r7, #0x9201
+  91D3ABB0  ldr      r5, [r3]
+  91D3ABB4  mov      sl, r0
+  91D3ABB8  ldr      r3, [r7]
+  91D3ABBC  mov      r8, lr
+  91D3ABC0  cmp      r5, #0
+  91D3ABC4  mov      r6, r1
+  91D3ABC8  moveq    r5, #0x400
+  91D3ABCC  movne    r5, #0x800
+  91D3ABD0  mov      r0, r5
+  91D3ABD4  str      r3, [fp, #-0x28]
+  91D3ABD8  bl       #0x91d52a58
+  91D3ABDC  subs     r4, r0, #0
+  91D3ABE0  beq      #0x91d3bbf4
+  91D3ABE4  mov      r2, r5
+  91D3ABE8  mov      r1, #0
+  91D3ABEC  bl       #0x91d52d54
+  91D3ABF0  cmp      sl, #0
+
+
+========================================================================
+D. boot 主函数 0x91D3C3F0 与 G 调用点的相对位置
+========================================================================
+  0x91D3C3F0 branch-calls: 0x91D3D8DC(b), 0x91D412AC(bl)
+  0x91D3C84C branch-calls: (none)
+  0x91D3D764 branch-calls: (none)
+  0x91D3E380 branch-calls: (none)
+  0x91D39CB4 branch-calls: 0x91D3C84C(bl), 0x91D3D764(bl), 0x91D3E380(bl)

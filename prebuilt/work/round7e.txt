@@ -1,0 +1,260 @@
+##########################################################################
+# 1. 原始 4 字节指针搜索
+##########################################################################
+unlock gate                91D3C344  raw hits=0  []
+unlock gate+1(thumb)       91D3C345  raw hits=0  []
+state setter               91D12CFC  raw hits=0  []
+verify func                91D12594  raw hits=0  []
+
+##########################################################################
+# 2. setter 0x91D12CFC 跳表解析
+##########################################################################
+table bytes: 6c2dd191b82dd191802dd1916c2dd1919c2dd191382dd191982d0de3d92149e3
+  entry[0] = 91D12D6C  -> VA 91D12D6C
+  entry[1] = 91D12DB8  -> VA 91D12DB8
+  entry[2] = 91D12D80  -> VA 91D12D80
+  entry[3] = 91D12D6C  -> VA 91D12D6C
+  entry[4] = 91D12D9C  -> VA 91D12D9C
+  entry[5] = 91D12D38  -> VA 91D12D38
+
+==========================================================================
+=== setter call ctx 91D13078  VA 91D13054  off 0x1B054
+==========================================================================
+91D13054  ldr     r2, [sl, #0x10]
+91D13058  mov     r1, r6
+91D1305C  mov     r0, r7
+91D13060  mov     r3, sb
+91D13064  ldr     r2, [r2, #8]
+91D13068  bl      #0x91d12404
+91D1306C  subs    r6, r0, #0
+91D13070  beq     #0x91d130cc
+91D13074  mov     r0, #2
+91D13078  bl      #0x91d12cfc
+91D1307C  b       #0x91d12f28
+91D13080  movw    r0, #0xc79c
+91D13084  movt    r0, #0x91d7
+91D13088  bl      #0x91d51508
+91D1308C  movw    r3, #0x270c
+91D13090  movw    r1, #0x71c8
+91D13094  movt    r3, #0x91d8
+91D13098  movt    r1, #0x91d7
+91D1309C  str     r3, [sp]
+91D130A0  movw    r2, #0xc564
+91D130A4  ldr     r0, [sp, #8]
+91D130A8  movt    r2, #0x91d7
+91D130AC  movw    r3, #0x289
+91D130B0  bl      #0x91d5163c
+
+==========================================================================
+=== setter call ctx 91D45040  VA 91D4501C  off 0x4D01C
+==========================================================================
+91D4501C  ldrb    r3, [sb, #1]
+91D45020  cmp     r3, #2
+91D45024  beq     #0x91d45654
+91D45028  cmp     r3, #1
+91D4502C  beq     #0x91d45134
+91D45030  bl      #0x91d12594
+91D45034  bl      #0x91d131e8
+91D45038  mov     fp, r0
+91D4503C  mov     r0, #0
+91D45040  bl      #0x91d12cfc
+91D45044  ldrb    r1, [sb]
+91D45048  cmp     r1, #1
+91D4504C  bhi     #0x91d456a8
+91D45050  ldr     r3, [sb, #0x10]
+91D45054  cmp     r3, #0
+91D45058  beq     #0x91d454e4
+91D4505C  cmp     r1, #0
+91D45060  movw    r3, #0x3820
+91D45064  movt    r3, #0x91d8
+91D45068  movw    r2, #0x3808
+91D4506C  ldr     r0, [sb, #8]
+91D45070  movt    r2, #0x91d8
+91D45074  ldr     r1, [sb, #0xc]
+91D45078  moveq   r2, r3
+
+==========================================================================
+=== setter call ctx 91D45574  VA 91D45550  off 0x4D550
+==========================================================================
+91D45550  beq     #0x91d4505c
+91D45554  cmp     r1, #0
+91D45558  movw    r0, #0x69e4
+91D4555C  movt    r0, #0x91d8
+91D45560  movne   r1, r5
+91D45564  moveq   r1, r4
+91D45568  bl      #0x91d51508
+91D4556C  b       #0x91d450c4
+91D45570  mov     r0, fp
+91D45574  bl      #0x91d12cfc
+91D45578  b       #0x91d450bc
+91D4557C  movw    r0, #0x6750
+91D45580  movt    r0, #0x91d8
+91D45584  bl      #0x91d51508
+91D45588  mov     r1, #0
+91D4558C  mov     r0, r8
+91D45590  movw    r2, #0x3cd0
+91D45594  movt    r2, #1
+91D45598  add     sl, sp, #0x3c
+91D4559C  bl      #0x91d52d54
+91D455A0  movw    r0, #0x678c
+91D455A4  movt    r0, #0x91d8
+91D455A8  bl      #0x91d51508
+91D455AC  bl      #0x91d45a7c
+
+==========================================================================
+=== G 0x91D39CB4  VA 91D39CB4  off 0x41CB4
+==========================================================================
+91D39CB4  push    {r4, r5, r6, r7, lr}
+91D39CB8  movw    r5, #0x3abc
+91D39CBC  movt    r5, #0x9201
+91D39CC0  movw    r6, #0x57dc
+91D39CC4  movt    r6, #0x9201
+91D39CC8  sub     sp, sp, #0x24
+91D39CCC  ldr     r2, [r5]
+91D39CD0  movw    r4, #0x1318
+91D39CD4  ldr     r3, [r6]
+91D39CD8  movt    r4, #0x91da
+91D39CDC  cmp     r2, #0
+91D39CE0  mov     r7, r0
+91D39CE4  mov     r2, #1
+91D39CE8  str     r2, [r4, #0x14]
+91D39CEC  str     r3, [sp, #0x1c]
+91D39CF0  bne     #0x91d39df4
+91D39CF4  movw    ip, #0x2ab8
+91D39CF8  movt    ip, #0x9201
+91D39CFC  movw    r3, #0x3820
+91D39D00  movt    r3, #0x91d8
+91D39D04  ldr     r0, [ip]
+91D39D08  movw    r2, #0x3814
+91D39D0C  movt    r2, #0x91d8
+91D39D10  cmp     r0, #0
+91D39D14  moveq   r2, r3
+91D39D18  mov     r0, r7
+91D39D1C  bl      #0x91d12dd0
+91D39D20  mov     r7, r0
+91D39D24  bl      #0x91d13228
+91D39D28  cmp     r7, #0
+91D39D2C  bne     #0x91d39d9c
+91D39D30  ldr     r2, [r5]
+91D39D34  ldr     r3, [r4, #0x14]
+91D39D38  adds    r2, r2, #0
+91D39D3C  movne   r2, #1
+91D39D40  cmp     r3, #0
+91D39D44  strb    r2, [sp, #8]
+91D39D48  movne   r3, #2
+91D39D4C  moveq   r3, #1
+91D39D50  add     r0, sp, #8
+91D39D54  mov     r4, #0
+91D39D58  strb    r3, [sp, #9]
+91D39D5C  str     r4, [sp, #0xc]
+91D39D60  str     r4, [sp, #0x10]
+91D39D64  str     r4, [sp, #0x14]
+91D39D68  str     r4, [sp, #0x18]
+91D39D6C  bl      #0x91d44cc8
+91D39D70  bl      #0x91d131e8
+91D39D74  cmp     r0, #2
+91D39D78  beq     #0x91d39de4
+91D39D7C  cmp     r0, #3
+91D39D80  beq     #0x91d39dcc
+91D39D84  ldr     r2, [sp, #0x1c]
+91D39D88  ldr     r3, [r6]
+91D39D8C  cmp     r2, r3
+91D39D90  bne     #0x91d39e14
+91D39D94  add     sp, sp, #0x24
+91D39D98  pop     {r4, r5, r6, r7, pc}
+91D39D9C  ldr     r0, [r5]
+91D39DA0  movw    r2, #0x7dac
+91D39DA4  movt    r2, #0x9200
+91D39DA8  mov     r1, #1
+91D39DAC  adds    r0, r0, #0
+91D39DB0  mov     r3, r1
+91D39DB4  str     r1, [r2]
+91D39DB8  mov     r2, #0
+91D39DBC  movne   r0, #1
+91D39DC0  str     r2, [r4, #0x14]
+91D39DC4  strb    r0, [sp, #8]
+91D39DC8  b       #0x91d39d50
+91D39DCC  mov     r0, #2
+91D39DD0  bl      #0x91d147e0
+91D39DD4  movw    r0, #0x7530
+91D39DD8  bl      #0x91d18db8
+91D39DDC  bl      #0x91d3545c
+91D39DE0  b       #0x91d39d84
+91D39DE4  mov     r0, r4
+91D39DE8  bl      #0x91d147e0
+91D39DEC  bl      #0x91d13dcc
+91D39DF0  b       #0x91d39d84
+91D39DF4  str     r1, [sp, #4]
+91D39DF8  bl      #0x91d0aed4
+91D39DFC  ldr     r1, [sp, #4]
+91D39E00  cmp     r0, #0
+91D39E04  bne     #0x91d39cf4
+91D39E08  movw    r2, #0x3808
+91D39E0C  movt    r2, #0x91d8
+91D39E10  b       #0x91d39d18
+91D39E14  bl      #0x91d516c4
+91D39E18  push    {r4, r5, lr}
+
+==========================================================================
+=== verify func 0x91D12594  VA 91D12594  off 0x1A594
+==========================================================================
+91D12594  push    {r4, lr}
+91D12598  movw    r4, #0x57dc
+91D1259C  movt    r4, #0x9201
+91D125A0  sub     sp, sp, #8
+91D125A4  ldr     r3, [r4]
+91D125A8  str     r3, [sp, #4]
+91D125AC  bl      #0x91d121e0
+91D125B0  ldr     r1, [sp, #4]
+91D125B4  movw    r3, #0xdd98
+91D125B8  ldr     r2, [r4]
+91D125BC  movt    r3, #0x91d9
+91D125C0  cmp     r1, r2
+91D125C4  ldr     r0, [r3]
+91D125C8  bne     #0x91d125d4
+91D125CC  add     sp, sp, #8
+91D125D0  pop     {r4, pc}
+91D125D4  bl      #0x91d516c4
+91D125D8  push    {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+91D125DC  movw    r5, #0x57dc
+91D125E0  movt    r5, #0x9201
+91D125E4  sub     sp, sp, #0x84
+91D125E8  movw    r6, #0xdd98
+91D125EC  movt    r6, #0x91d9
+91D125F0  ldr     r2, [r5]
+91D125F4  mov     r3, #0
+91D125F8  str     lr, [sp, #0x14]
+91D125FC  mov     sl, r0
+91D12600  ldr     r4, [r6]
+91D12604  str     r3, [sp, #0x58]
+91D12608  str     r2, [sp, #0x7c]
+91D1260C  str     r3, [sp, #0x5c]
+91D12610  str     r3, [sp, #0x60]
+91D12614  str     r3, [sp, #0x64]
+91D12618  str     r3, [sp, #0x68]
+91D1261C  str     r3, [sp, #0x6c]
+91D12620  str     r3, [sp, #0x70]
+91D12624  str     r3, [sp, #0x74]
+91D12628  str     r3, [sp, #0x78]
+91D1262C  str     r3, [sp, #0x38]
+91D12630  str     r3, [sp, #0x3c]
+91D12634  str     r3, [sp, #0x40]
+91D12638  str     r3, [sp, #0x44]
+91D1263C  str     r3, [sp, #0x48]
+91D12640  str     r3, [sp, #0x4c]
+91D12644  str     r3, [sp, #0x50]
+91D12648  str     r3, [sp, #0x54]
+91D1264C  bl      #0x91d0ce5c
+91D12650  mov     fp, r0
+91D12654  cmp     r4, #3
+91D12658  ldrls   pc, [pc, r4, lsl #2]
+91D1265C  b       #0x91d12ca4
+91D12660  bicsls  r2, r1, r4, lsr #18
+91D12664  bicsls  r2, r1, r8, lsl #14
+91D12668  bicsls  r2, r1, r0, ror r6
+91D1266C  bicsls  r2, r1, r0, ror r6
+91D12670  movw    r4, #0x3780
+91D12674  movt    r4, #0x9200
+91D12678  ldr     r3, [r4]
+91D1267C  cmp     r3, #0
+91D12680  beq     #0x91d12c38

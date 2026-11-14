@@ -1,0 +1,9 @@
+total 0
+crw-rw---- 1 root input 13,  64 1970-01-04 16:05 event0
+crw-rw---- 1 root input 13,  65 1970-01-04 16:05 event1
+crw-rw---- 1 root input 13,  66 1970-01-04 16:05 event2
+crw-rw---- 1 root input 13,  67 1970-01-04 16:05 event3
+crw-rw---- 1 root input 13,  68 1970-01-04 16:05 event4
+crw-rw---- 1 root input 13,  63 1970-01-04 16:05 mice
+crw-rw---- 1 root input 13,  32 1970-01-04 16:05 mouse0
+crw-rw---- 1 root input 13,  33 1970-01-04 16:05 mouse1

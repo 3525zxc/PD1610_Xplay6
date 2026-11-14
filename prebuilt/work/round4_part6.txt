@@ -1,0 +1,39 @@
+bl targets in 0x91D3F000..0x91D40FCC: 0x91D3FD60, 0x91D3FFD8, 0x91D40220, 0x91D407F0, 0x91D40848, 0x91D40894, 0x91D408E0, 0x91D4092C, 0x91D40974
+candidate aboot_init start: 0x91D3FD60
+  callers/branches: 0x91D3FF24(bl), 0x91D3FF8C(bl)
+=== head  0x91D3FD60..0x91D3FDA0 ===
+  91D3FD60  movw     r3, #0x3abc
+  91D3FD64  movt     r3, #0x9201
+  91D3FD68  push     {r4, r5, r6, lr}
+  91D3FD6C  movw     r5, #0x57dc
+  91D3FD70  movt     r5, #0x9201
+  91D3FD74  ldr      r6, [r3]
+  91D3FD78  sub      sp, sp, #8
+  91D3FD7C  mov      r4, r0
+  91D3FD80  ldr      r3, [r5]
+  91D3FD84  cmp      r6, #0
+  91D3FD88  str      r3, [sp, #4]
+  91D3FD8C  bne      #0x91d3fe68
+  91D3FD90  movw     r0, #0x5a8c
+  91D3FD94  movt     r0, #0x91d8
+  91D3FD98  bl       #0x91d09c88
+  91D3FD9C  bl       #0x91d09f4c
+
+
+=== 0x91D41D3C head (fastboot_register?)  0x91D41D3C..0x91D41D70 ===
+  91D41D3C  push     {r4, r5, r6, r7, lr}
+  91D41D40  movw     r5, #0x57dc
+  91D41D44  movt     r5, #0x9201
+  91D41D48  sub      sp, sp, #0xc
+  91D41D4C  mov      r6, r0
+  91D41D50  mov      r0, #0x10
+  91D41D54  ldr      r3, [r5]
+  91D41D58  mov      r7, r1
+  91D41D5C  str      r3, [sp, #4]
+  91D41D60  bl       #0x91d52a58
+  91D41D64  subs     r4, r0, #0
+  91D41D68  beq      #0x91d41d94
+  91D41D6C  str      r6, [r4, #4]
+
+=== all bl targets inside 0x91D40FCC..0x91D41600 (block entries) ===
+  0x91D415D8 <- 0x91D440C4, 0x91D440FC

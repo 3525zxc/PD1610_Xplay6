@@ -1,0 +1,57 @@
+# PD1610 增量 init 配置（非 Treble 布局）
+#
+# 只做三件原厂 init.qcom.rc / AOSP init.rc 都没覆盖的事。其余（41 个 service、
+# /persist 挂载、/dev/socket 目录、vold 触发器等）都走原厂
+# /system/vendor/etc/init/hw/init.qcom.rc，不在这里重复。
+
+on early-init
+    # 兜底：正常路径由 BoardConfig.mk 的 BOARD_ROOT_EXTRA_SYMLINKS 在制作
+    # system 镜像时建好 /vendor -> /system/vendor。若该变量在当前分支被移除，
+    # 这一行保证 init 仍能在 /vendor/etc/init/ 下找到厂商 rc。
+    # 已存在时 symlink 会返回 EEXIST，只打一条 warning，不影响启动。
+    symlink /system/vendor /vendor
+
+on post-fs-data
+    # vendor 侧 HAL 的运行时目录（原厂 init.qcom.rc 也建，这里做幂等补充）
+    mkdir /data/vendor 0771 root root
+    mkdir /data/vendor/wifi 0770 wifi wifi
+    mkdir /data/vendor/wifi/sockets 0770 wifi wifi
+    mkdir /data/vendor/bluetooth 0770 bluetooth bluetooth
+
+    # WiFi：补 vivo 8.1 wpa_supplicant 需要的配置。
+    # /vendor/etc/init/hw/init.qcom.rc 的 service wpa_supplicant 用
+    #   -c/data/misc/wifi/p2p_supplicant.conf -c/data/misc/wifi/wpa_supplicant.conf
+    # 启动；擦过 data 后这两个文件不存在，supplicant 解析失败立即退出，
+    # init.svc.wpa_supplicant 恒 stopped → WifiStateMachine 一 enable 就回退
+    # StaDisabledState（表现为「WiFi 打不开」）。
+    # 用户保存的网络由 Android 9 框架的 WifiConfigStore.xml 负责，重写 conf 不影响。
+    mkdir /data/misc/wifi 0770 wifi wifi
+    mkdir /data/misc/wifi/sockets 0770 wifi wifi
+    mkdir /data/misc/wifi/wpa_supplicant 0770 wifi wifi
+
+    # 注意：init 的 write 不解释 \n，写成多行字面量会让 wpa_supplicant 把
+    # 整串当成一行（实测报 "Line 1: invalid number ...\\n..."），必须用单行合法配置。
+    write /data/misc/wifi/wpa_supplicant.conf "update_config=1"
+    chown wifi wifi /data/misc/wifi/wpa_supplicant.conf
+    chmod 0660 /data/misc/wifi/wpa_supplicant.conf
+
+    write /data/misc/wifi/p2p_supplicant.conf "ctrl_interface=/data/misc/wifi/sockets"
+    chown wifi wifi /data/misc/wifi/p2p_supplicant.conf
+    chmod 0660 /data/misc/wifi/p2p_supplicant.conf
+
+on boot
+    # 首启阶段把内核 printk 拉满，方便从 dmesg 里看到 first stage / fs_mgr 的失败点
+    write /proc/sys/kernel/printk "7 7 7 7"
+
+    # WiFi 驱动：Android 8.1 由框架的 WifiNative.loadDriver() 调
+    # libwifi-hal.so::wifi_load_driver() 去 insmod wlan.ko；Android 9 把驱动加载
+    # 移进了 wifi HAL 的 start()。我们用的是原厂 8.1 wifi HAL（不含该逻辑），
+    # 于是 P 框架下没有任何人加载 wlan.ko：开机 lsmod 无 wlan、无 wlan0/p2p0，
+    # supplicant 报 "Could not read interface wlan0 flags: No such device"，
+    # WifiScanningService 报 "wifi driver unloaded"。
+    # 这里在 boot 完成后自行 insmod，并置 wlan.driver.status，让 P 的
+    # WifiNative.isDriverLoaded() 与 8.1 HAL 的 wifi_load_driver() 都认为已加载。
+
+# wlan.ko 由 AOSP9 wifi HAL 的 DriverTool::LoadDriver() 加载（其 rc 带
+# SYS_MODULE capability），wifi_load_driver() 成功后会自己把
+# wlan.driver.status 置 ok。这里不要再手动 insmod，避免重复加载。

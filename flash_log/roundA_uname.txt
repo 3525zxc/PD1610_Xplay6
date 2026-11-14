@@ -1,0 +1,4 @@
+Linux localhost 3.18.120-perf #9 SMP PREEMPT Sat Nov 14 19:24:41 CST 2026 aarch64
+---CMDLINE---
+---UPTIME---
+ 22:46:49 up 0 min,  0 users,  load average: 2.92, 0.81, 0.28

@@ -1,0 +1,48 @@
+# PD1610 属性覆盖
+#
+# 除标注外，全部取自原厂 /system/build.prop 的实测值（blobs/_system_build.prop），
+# 不是通用 msm8996 模板。带 persist.vendor.* 的项在 Pie 里属于 vendor 属性域，
+# 非 Treble 下最终落在 /system/vendor/build.prop，写在这里只是省一个文件。
+
+# 显示：5.46 英寸 1440x2560 → 640 dpi
+ro.sf.lcd_density=640
+
+# 平台 / 图形
+ro.board.platform=msm8996
+# 196610 = OpenGL ES 3.1
+ro.opengles.version=196610
+
+# SurfaceFlinger（原厂值；Adreno 530 + HWC2）
+debug.sf.hw=1
+debug.sf.enable_hwc_vds=1
+debug.sf.latch_unsignaled=1
+debug.sf.disable_backpressure=1
+debug.sf.recomputecrop=0
+
+# RIL
+rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
+ro.telephony.default_network=10
+persist.radio.multisim.config=dsds
+persist.radio.cs_srv_type=true
+persist.vendor.radio.cs_srv_type=true
+persist.vendor.radio.apm_sim_not_pwdn=1
+persist.vendor.radio.sib16_support=1
+persist.vendor.radio.custom_ecc=1
+persist.vendor.radio.rat_on=combine
+persist.vendor.radio.start_ota_daemon=1
+
+# 蓝牙（原厂 qcom.bluetooth.soc=rome，对应 QCA Rome）
+qcom.bluetooth.soc=rome
+ro.bluetooth.emb_wp_mode=true
+ro.bluetooth.wipower=true
+
+# WiFi
+wifi.interface=wlan0
+
+# 音频（msm8996 + TASHA codec，Fluence 双麦降噪）
+ro.qc.sdk.audio.fluencetype=fluence
+persist.audio.fluence.voicecall=true
+persist.audio.fluence.voicerec=false
+persist.audio.fluence.speaker=true
+use.dedicated.device.for.voip=true
+use.voice.path.for.pcm.voip=true

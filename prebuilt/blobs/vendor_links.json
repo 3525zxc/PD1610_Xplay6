@@ -1,0 +1,846 @@
+[
+{
+"path": "vendor/app/Qmmi/lib/arm64/libmmi_jni.so",
+"linkname": "/system/vendor/lib64/libmmi_jni.so"
+},
+{
+"path": "vendor/bin/acpi",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/base64",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/basename",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/blockdev",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/cal",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/cat",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/chcon",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/chgrp",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/chmod",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/chown",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/chroot",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/chrt",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/cksum",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/clear",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/cmp",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/comm",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/cp",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/cpio",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/cut",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/date",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/dd",
+"linkname": "toolbox_vendor"
+},
+{
+"path": "vendor/bin/df",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/diff",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/dirname",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/dmesg",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/dos2unix",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/du",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/echo",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/egrep",
+"linkname": "grep"
+},
+{
+"path": "vendor/bin/env",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/expand",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/expr",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/fallocate",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/false",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/fgrep",
+"linkname": "grep"
+},
+{
+"path": "vendor/bin/file",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/find",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/flock",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/free",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/getenforce",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/getevent",
+"linkname": "toolbox_vendor"
+},
+{
+"path": "vendor/bin/getprop",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/groups",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/gunzip",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/gzip",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/head",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/hostname",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/hwclock",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/id",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/ifconfig",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/inotifyd",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/insmod",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/ionice",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/iorenice",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/kill",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/killall",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/ln",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/load_policy",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/log",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/logname",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/losetup",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/ls",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/lsmod",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/lsof",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/lspci",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/lsusb",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/md5sum",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/microcom",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/mkdir",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/mkfifo",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/mknod",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/mkswap",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/mktemp",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/modinfo",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/modprobe",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/more",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/mount",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/mountpoint",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/mv",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/netstat",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/newfs_msdos",
+"linkname": "toolbox_vendor"
+},
+{
+"path": "vendor/bin/nice",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/nl",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/nohup",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/od",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/paste",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/patch",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/pgrep",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/pidof",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/pkill",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/pmap",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/printenv",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/printf",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/ps",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/pwd",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/readlink",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/realpath",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/renice",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/restorecon",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/rm",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/rmdir",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/rmmod",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/runcon",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/sed",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/sendevent",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/seq",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/setenforce",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/setprop",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/setsid",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/sha1sum",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/sha224sum",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/sha256sum",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/sha384sum",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/sha512sum",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/sleep",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/sort",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/split",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/start",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/stat",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/stop",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/strings",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/swapoff",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/swapon",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/sync",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/sysctl",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/tac",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/tail",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/tar",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/taskset",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/tee",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/time",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/timeout",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/top",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/touch",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/tr",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/true",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/truncate",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/tty",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/ulimit",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/umount",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/uname",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/uniq",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/unix2dos",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/uptime",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/usleep",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/uudecode",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/uuencode",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/vmstat",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/wc",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/which",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/whoami",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/xargs",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/xxd",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/yes",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/bin/zcat",
+"linkname": "toybox_vendor"
+},
+{
+"path": "vendor/etc/firmware/wcd9320/wcd9320_anc.bin",
+"linkname": "/data/vendor/misc/audio/wcd9320_anc.bin"
+},
+{
+"path": "vendor/etc/firmware/wcd9320/wcd9320_mad_audio.bin",
+"linkname": "/data/vendor/misc/audio/wcd9320_mad_audio.bin"
+},
+{
+"path": "vendor/etc/firmware/wcd9320/wcd9320_mbhc.bin",
+"linkname": "/data/vendor/misc/audio/mbhc.bin"
+},
+{
+"path": "vendor/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini",
+"linkname": "/vendor/etc/wifi/WCNSS_qcom_cfg.ini"
+},
+{
+"path": "vendor/firmware/wlan/qca_cld/wlan_mac.bin",
+"linkname": "/persist/wlan_mac.bin"
+},
+{
+"path": "vendor/framework/oat/arm/qti-vzw-ims-internal.vdex",
+"linkname": "/system/vendor/framework/oat/arm64/qti-vzw-ims-internal.vdex"
+},
+{
+"path": "vendor/framework/oat/arm/vendor.qti.hardware.alarm-V1.0-java.vdex",
+"linkname": "/system/vendor/framework/oat/arm64/vendor.qti.hardware.alarm-V1.0-java.vdex"
+},
+{
+"path": "vendor/framework/oat/arm/vendor.qti.hardware.factory-V1.0-java.vdex",
+"linkname": "/system/vendor/framework/oat/arm64/vendor.qti.hardware.factory-V1.0-java.vdex"
+},
+{
+"path": "vendor/framework/oat/arm/vendor.qti.hardware.sensorscalibrate-V1.0-java.vdex",
+"linkname": "/system/vendor/framework/oat/arm64/vendor.qti.hardware.sensorscalibrate-V1.0-java.vdex"
+},
+{
+"path": "vendor/lib/modules/wlan.ko",
+"linkname": "/system/vendor/lib/modules/qca_cld/qca_cld_wlan.ko"
+},
+{
+"path": "vendor/rfs/apq/gnss/hlos",
+"linkname": "/persist/hlos_rfs/shared"
+},
+{
+"path": "vendor/rfs/apq/gnss/ramdumps",
+"linkname": "/data/vendor/tombstones/rfs/modem"
+},
+{
+"path": "vendor/rfs/apq/gnss/readonly/firmware",
+"linkname": "/firmware"
+},
+{
+"path": "vendor/rfs/apq/gnss/readonly/vendor/firmware",
+"linkname": "/vendor/firmware"
+},
+{
+"path": "vendor/rfs/apq/gnss/readwrite",
+"linkname": "/persist/rfs/apq/gnss"
+},
+{
+"path": "vendor/rfs/apq/gnss/shared",
+"linkname": "/persist/rfs/shared"
+},
+{
+"path": "vendor/rfs/mdm/adsp/hlos",
+"linkname": "/persist/hlos_rfs/shared"
+},
+{
+"path": "vendor/rfs/mdm/adsp/ramdumps",
+"linkname": "/data/vendor/tombstones/rfs/lpass"
+},
+{
+"path": "vendor/rfs/mdm/adsp/readonly/firmware",
+"linkname": "/firmware"
+},
+{
+"path": "vendor/rfs/mdm/adsp/readonly/vendor/firmware",
+"linkname": "/vendor/firmware"
+},
+{
+"path": "vendor/rfs/mdm/adsp/readwrite",
+"linkname": "/persist/rfs/mdm/adsp"
+},
+{
+"path": "vendor/rfs/mdm/adsp/shared",
+"linkname": "/persist/rfs/shared"
+},
+{
+"path": "vendor/rfs/mdm/mpss/hlos",
+"linkname": "/persist/hlos_rfs/shared"
+},
+{
+"path": "vendor/rfs/mdm/mpss/ramdumps",
+"linkname": "/data/vendor/tombstones/rfs/modem"
+},
+{
+"path": "vendor/rfs/mdm/mpss/readonly/firmware",
+"linkname": "/firmware"
+},
+{
+"path": "vendor/rfs/mdm/mpss/readonly/vendor/firmware",
+"linkname": "/vendor/firmware"
+},
+{
+"path": "vendor/rfs/mdm/mpss/readwrite",
+"linkname": "/persist/rfs/mdm/mpss"
+},
+{
+"path": "vendor/rfs/mdm/mpss/shared",
+"linkname": "/persist/rfs/shared"
+},
+{
+"path": "vendor/rfs/mdm/slpi/hlos",
+"linkname": "/persist/hlos_rfs/shared"
+},
+{
+"path": "vendor/rfs/mdm/slpi/ramdumps",
+"linkname": "/data/vendor/tombstones/rfs/slpi"
+},
+{
+"path": "vendor/rfs/mdm/slpi/readonly/firmware",
+"linkname": "/firmware"
+},
+{
+"path": "vendor/rfs/mdm/slpi/readwrite",
+"linkname": "/persist/rfs/mdm/slpi"
+},
+{
+"path": "vendor/rfs/mdm/slpi/shared",
+"linkname": "/persist/rfs/shared"
+},
+{
+"path": "vendor/rfs/mdm/tn/hlos",
+"linkname": "/persist/hlos_rfs/shared"
+},
+{
+"path": "vendor/rfs/mdm/tn/ramdumps",
+"linkname": "/data/vendor/tombstones/rfs/tn"
+},
+{
+"path": "vendor/rfs/mdm/tn/readonly/firmware",
+"linkname": "/firmware"
+},
+{
+"path": "vendor/rfs/mdm/tn/readwrite",
+"linkname": "/persist/rfs/mdm/tn"
+},
+{
+"path": "vendor/rfs/mdm/tn/shared",
+"linkname": "/persist/rfs/shared"
+},
+{
+"path": "vendor/rfs/msm/adsp/hlos",
+"linkname": "/persist/hlos_rfs/shared"
+},
+{
+"path": "vendor/rfs/msm/adsp/ramdumps",
+"linkname": "/data/vendor/tombstones/rfs/lpass"
+},
+{
+"path": "vendor/rfs/msm/adsp/readonly/firmware",
+"linkname": "/firmware"
+},
+{
+"path": "vendor/rfs/msm/adsp/readonly/vendor/firmware",
+"linkname": "/vendor/firmware"
+},
+{
+"path": "vendor/rfs/msm/adsp/readwrite",
+"linkname": "/persist/rfs/msm/adsp"
+},
+{
+"path": "vendor/rfs/msm/adsp/shared",
+"linkname": "/persist/rfs/shared"
+},
+{
+"path": "vendor/rfs/msm/mpss/hlos",
+"linkname": "/persist/hlos_rfs/shared"
+},
+{
+"path": "vendor/rfs/msm/mpss/ramdumps",
+"linkname": "/data/vendor/tombstones/rfs/modem"
+},
+{
+"path": "vendor/rfs/msm/mpss/readonly/firmware",
+"linkname": "/firmware"
+},
+{
+"path": "vendor/rfs/msm/mpss/readonly/vendor/firmware",
+"linkname": "/vendor/firmware"
+},
+{
+"path": "vendor/rfs/msm/mpss/readwrite",
+"linkname": "/persist/rfs/msm/mpss"
+},
+{
+"path": "vendor/rfs/msm/mpss/shared",
+"linkname": "/persist/rfs/shared"
+},
+{
+"path": "vendor/rfs/msm/slpi/hlos",
+"linkname": "/persist/hlos_rfs/shared"
+},
+{
+"path": "vendor/rfs/msm/slpi/ramdumps",
+"linkname": "/data/vendor/tombstones/rfs/slpi"
+},
+{
+"path": "vendor/rfs/msm/slpi/readonly/firmware",
+"linkname": "/firmware"
+},
+{
+"path": "vendor/rfs/msm/slpi/readwrite",
+"linkname": "/persist/rfs/msm/slpi"
+},
+{
+"path": "vendor/rfs/msm/slpi/shared",
+"linkname": "/persist/rfs/shared"
+}
+]

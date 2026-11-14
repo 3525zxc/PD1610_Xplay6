@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<!-- PD1610 system 分区 EDL 刷写（fastboot 失败时兜底）
+     分区参数取自已验证 GPT：LUN4 / start_sector=71946 / 786432 扇区 × 4096 B = 3 GB
+     镜像必须是 raw（由 simg2img 从 sparse 展开），文件名 system_raw.img
+     放置目录与 --search_path 一致：D:\16\PD1610_81\out -->
+<data>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="system_raw.img" label="system" num_partition_sectors="786432" partofsingleimage="false" physical_partition_number="4" readbackverify="false" size_in_KB="3145728.0" sparse="false" start_sector="71946"/>
+</data>

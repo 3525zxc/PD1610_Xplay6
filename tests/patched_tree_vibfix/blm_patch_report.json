@@ -1,0 +1,246 @@
+{
+  "source_tree_modified": false,
+  "operations": [
+    [
+      "main_include",
+      "inserted"
+    ],
+    [
+      "main_do_one_initcall",
+      "inserted"
+    ],
+    [
+      "main_pre_smp_initcalls",
+      "inserted"
+    ],
+    [
+      "main_smp_init",
+      "inserted"
+    ],
+    [
+      "main_sched_init_smp",
+      "inserted"
+    ],
+    [
+      "main_rootfs_check",
+      "inserted"
+    ],
+    [
+      "main_load_default_modules",
+      "inserted"
+    ],
+    [
+      "main_start_kernel",
+      "inserted"
+    ],
+    [
+      "main_before_setup_arch",
+      "inserted"
+    ],
+    [
+      "main_console_init",
+      "inserted"
+    ],
+    [
+      "main_rest_init",
+      "inserted"
+    ],
+    [
+      "main_kernel_init",
+      "inserted"
+    ],
+    [
+      "main_do_basic_setup",
+      "inserted"
+    ],
+    [
+      "main_prepare_namespace",
+      "inserted"
+    ],
+    [
+      "main_user_init",
+      "inserted"
+    ],
+    [
+      "setup_include",
+      "inserted"
+    ],
+    [
+      "setup_arch_entry",
+      "inserted"
+    ],
+    [
+      "setup_fdt_scan",
+      "inserted"
+    ],
+    [
+      "setup_early_ioremap",
+      "inserted"
+    ],
+    [
+      "setup_paging_init",
+      "inserted"
+    ],
+    [
+      "setup_unflatten_dt",
+      "inserted"
+    ],
+    [
+      "panic_include",
+      "inserted"
+    ],
+    [
+      "panic_entry",
+      "inserted"
+    ],
+    [
+      "panic_message",
+      "inserted"
+    ],
+    [
+      "kernel_makefile",
+      "inserted"
+    ],
+    [
+      "usb_bam_include",
+      "inserted"
+    ],
+    [
+      "bam_enter",
+      "inserted"
+    ],
+    [
+      "bam_dt_before",
+      "inserted"
+    ],
+    [
+      "bam_dt_after",
+      "inserted"
+    ],
+    [
+      "bam_wq",
+      "inserted"
+    ],
+    [
+      "bam_enable_before",
+      "inserted"
+    ],
+    [
+      "bam_enable_after",
+      "inserted"
+    ],
+    [
+      "bam_ipa_before",
+      "inserted"
+    ],
+    [
+      "bam_ipa_after",
+      "inserted"
+    ],
+    [
+      "bam_panic_hdlr",
+      "inserted"
+    ],
+    [
+      "ebam_init_before",
+      "inserted"
+    ],
+    [
+      "ebam_init_after",
+      "inserted"
+    ],
+    [
+      "vibrator_include",
+      "inserted"
+    ],
+    [
+      "vib_enter",
+      "inserted"
+    ],
+    [
+      "vib_spmi_set",
+      "inserted"
+    ],
+    [
+      "vib_res_before",
+      "inserted"
+    ],
+    [
+      "vib_res_after",
+      "inserted"
+    ],
+    [
+      "vib_dt_before",
+      "inserted"
+    ],
+    [
+      "vib_config_before",
+      "inserted"
+    ],
+    [
+      "vib_read1",
+      "inserted"
+    ],
+    [
+      "vib_read2",
+      "inserted"
+    ],
+    [
+      "vib_pwm",
+      "inserted"
+    ],
+    [
+      "vib_config_done",
+      "inserted"
+    ],
+    [
+      "vib_timed",
+      "inserted"
+    ],
+    [
+      "vibrator_spmi_stub",
+      "inserted"
+    ],
+    [
+      "vibrator_spmi_read_stub",
+      "inserted"
+    ],
+    [
+      "vibrator_spmi_write_stub",
+      "inserted"
+    ]
+  ],
+  "outputs": [
+    "tests/patched_tree_vibfix/init/main.c",
+    "tests/patched_tree_vibfix/arch/arm64/kernel/setup.c",
+    "tests/patched_tree_vibfix/kernel/panic.c",
+    "tests/patched_tree_vibfix/kernel/Makefile",
+    "tests/patched_tree_vibfix/drivers/platform/msm/usb_bam.c",
+    "tests/patched_tree_vibfix/drivers/platform/msm/qpnp-vibrator.c",
+    "tests/patched_tree_vibfix/kernel/bootloop_monitor.c",
+    "tests/patched_tree_vibfix/include/linux/bootloop_monitor.h",
+    "tests/patched_tree_vibfix/include/linux/blm_layout.h"
+  ],
+  "spmi_stub": true,
+  "marker_check": {
+    "blm_early_init(__fdt_pointer);": true,
+    "blm_reserve_logmem();": true,
+    "blm_mark(BLM_STAGE_PANIC_ENTER);": true,
+    "blm_write_text(buf);": true,
+    "blm_note_initcall((unsigned long)fn);": true,
+    "blm_trace_note(0, \"IC\"": true,
+    "BLM do_basic_setup enter": true,
+    "BLM prepare_namespace enter": true,
+    "BLM kernel_init_freeable done": true,
+    "BAM_ENTER": true,
+    "BAM_IPA_AFTER": true,
+    "EBAM_INIT_AFTER": true,
+    "VIB_ENTER": true,
+    "VIB_TIMED": true,
+    "obj-y += bootloop_monitor.o": true,
+    "BLM_SPMI_STUB_ACTIVE": true,
+    "VIB_STUB_READ": true,
+    "VIB_STUB_WRITE": true
+  },
+  "status": "OK"
+}

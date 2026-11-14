@@ -1,0 +1,51 @@
+﻿17:29:43.796 | === ROUND19 SPMI STUB FIX + VIBRATOR NODE RESTORED ===
+17:29:43.925 | candidate_sha256=35f8a2e6607227b5a8fefcf82d97dc9d484330e34f70f4e8ef22ede1dcbd2052
+17:29:43.999 | rollback_sha256=929fda9985478078f0614a9c3709af69fe3b1c9c8badc50e783261f91ab241ae
+17:29:44.000 | PREFLIGHT=SAFE_TO_FLASH 17/17 end_phys=0x41e09000 margin=0x1f7000
+17:29:44.001 | FIX=spmi_ext_register_readl/writel stubs in qpnp-vibrator.c; DT vibrator node restored (1984 nodes)
+17:29:49.124 | pre_adb=adb.exe : * daemon not running; starting now at tcp:5037 / 所在位置 行:1 字符: 1077 / + ... brator node restored (1984 nodes)'; $a = (& $adb devices 2>&1 | Out-S ... / +                                               ~~~~~~~~~~~~~~~~~~~ /     + CategoryInfo          : NotSpecified: (* daemon not ru...now at tcp:5037:String) [], RemoteException /     + FullyQualifiedErrorId : NativeCommandError /   / * daemon started successfully / List of devices attached / 5fccbfeb	device
+17:29:49.206 | pre_kernel=3.18.71-perf-g8a8c60dd /
+17:29:49.277 | pre_boot_completed=[1 /]
+17:29:52.643 | STEP1 adb reboot bootloader sent
+17:29:58.856 | fastboot_detected=True state=[5fccbfeb	 fastboot]
+17:29:58.885 | getvar=fastboot.exe : product: QC_REFERENCE_PHONE / 所在位置 行:1 字符: 1774 / + ... NO_FASTBOOT'; exit 2 }; $g = (& $fb -s $s getvar product 2>&1 | Out-S ... / +                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ /     + CategoryInfo          : NotSpecified: (product: QC_REFERENCE_PHONE:String) [], RemoteException /     + FullyQualifiedErrorId : NativeCommandError /   / Finished. Total time: 0.000s
+17:30:17.926 | STEP2 flash_1=fastboot.exe : Sending 'boot' (57113 KB)                          OKAY [  1.552s] / 所在位置 行:1 字符: 582 / + ...  1; $i -le 3; $i++) { $f = (& $fb -s $s flash boot $cand 2>&1 | Out-S ... / +                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ /     + CategoryInfo          : NotSpecified: (Sending 'boot' ...OKAY [  1.552s]:String) [], RemoteException /     + FullyQualifiedErrorId : NativeCommandError /   / Writing 'boot'                                     OKAY [  0.389s] / Finished. Total time: 2.047s /
+17:30:17.933 | flash=OKAY
+17:30:17.961 | reboot_output=fastboot.exe : Rebooting                                          OKAY [  0.001s] / 所在位置 行:1 字符: 869 / + ... oot'; exit 3 }; W 'flash=OKAY'; $r = (& $fb -s $s reboot 2>&1 | Out-S ... / +                                           ~~~~~~~~~~~~~~~~~~~~~~~ /     + CategoryInfo          : NotSpecified: (Rebooting      ...OKAY [  0.001s]:String) [], RemoteException /     + FullyQualifiedErrorId : NativeCommandError /   / Finished. Total time: 0.002s /
+17:30:17.962 | === FLASH DONE, OBSERVATION NEXT ===
+17:30:41.648 | STEP3 observe (adb success branch included)
+17:30:42.337 | t=0s adb=[List of devices attached / 5fccbfeb	device] fastboot=[] com9008=0
+17:30:42.457 | ADB_UP kernel_release=3.18.120-perf / boot_completed=[/]
+17:30:42.515 | ADB_UP uname=Linux localhost 3.18.120-perf #5 SMP PREEMPT Sat Nov 14 17:22:43 CST 2026 aarch64 /
+17:30:42.573 | ADB_UP bootanim=running /
+17:30:42.632 | ADB_UP vibrator_svc=running /
+17:30:42.705 | ADB_UP timed_output=total 0 / lrwxrwxrwx 1 root root 0 1970-01-04 11:46 vibrator -> ../../devices/virtual/timed_output/vibrator /
+17:30:48.272 | t=5s adb=[List of devices attached / 5fccbfeb	device] fastboot=[] com9008=0
+17:30:48.399 | ADB_UP kernel_release=adb.exe : error: closed / 所在位置 行:1 字符: 1213 / + ... bSeen = $true; $kr = (Flat ((& $adb -s $s shell uname -r 2>&1 | Out-S ... / +                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ /     + CategoryInfo          : NotSpecified: (error: closed:String) [], RemoteException /     + FullyQualifiedErrorId : NativeCommandError /   / boot_completed=[adb.exe : adb.exe: device '5fccbfeb' not found / 所在位置 行:1 字符: 1277 / + ... c = (Flat ((& $adb -s $s shell getprop sys.boot_completed 2>&1 | Out- ... / +                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ /     + CategoryInfo          : NotSpecified: (adb.exe: device '5fccbfeb' not found:String) [], RemoteException /     + FullyQualifiedErrorId : NativeCommandError /   /]
+17:30:53.925 | t=10s adb=[List of devices attached / 5fccbfeb	device] fastboot=[] com9008=0
+17:30:54.078 | ADB_UP kernel_release=3.18.120-perf / boot_completed=[1 /]
+17:30:54.155 | ADB_UP uname=Linux localhost 3.18.120-perf #5 SMP PREEMPT Sat Nov 14 17:22:43 CST 2026 aarch64 /
+17:30:54.216 | ADB_UP bootanim=stopped /
+17:30:54.294 | ADB_UP vibrator_svc=running /
+17:30:54.366 | ADB_UP timed_output=total 0 / lrwxrwxrwx 1 root root 0 1970-01-04 11:46 vibrator -> ../../devices/virtual/timed_output/vibrator /
+17:30:54.366 | BOOT_COMPLETED=1 - LAUNCHER REACHED
+17:30:54.366 | OBSERVE_RESULT com9008=0 adb_seen=True boot_completed=True
+17:31:25.998 | === ROUND19 SUCCESS: FULL BOOT WITH SELF-COMPILED KERNEL ===
+17:31:26.086 | prop ro.build.fingerprint=vivo/lineage_pd1610/pd1610:9/PQ3A.190801.002/builder11112246:userdebug/test-keys /
+17:31:26.153 | prop sys.boot_completed=1 /
+17:31:26.205 | prop init.svc.bootanim=stopped /
+17:31:26.267 | prop init.svc.surfaceflinger=running /
+17:31:26.332 | prop init.svc.zygote=running /
+17:31:26.396 | prop init.svc.vold=running /
+17:31:26.477 | prop init.svc.vibrator-1-0=running /
+17:31:26.538 | prop vold.decrypt=/
+17:31:26.618 | prop ro.crypto.state=unencrypted /
+17:31:26.682 | uname=Linux localhost 3.18.120-perf #5 SMP PREEMPT Sat Nov 14 17:22:43 CST 2026 aarch64 /
+17:31:26.752 | uptime=22:47:00 up 0 min,  0 users,  load average: 6.73, 2.16, 0.75 /
+17:31:26.819 | timed_output_dir=total 0 / lrwxrwxrwx 1 root root 0 1970-01-04 11:46 vibrator -> ../../devices/virtual/timed_output/vibrator /
+17:31:26.898 | timed_output_vibrator=total 0 / -rw-r--r-- 1 system system 4096 1970-01-04 11:46 enable / drwxr-xr-x 2 root   root      0 1970-01-04 11:46 power / lrwxrwxrwx 1 root   root      0 2026-11-11 22:47 subsystem -> ../../../../class/timed_output / -rw-r--r-- 1 root   root   4096 1970-01-04 11:46 uevent /
+17:31:27.365 | dmesg_file_bytes=63923
+17:31:27.368 | logcat_file_bytes=372331
+17:31:27.370 | getprop_file_bytes=19923
+17:31:27.372 | ps_file_bytes=42784
+17:31:27.373 | === SUCCESS EVIDENCE END ===

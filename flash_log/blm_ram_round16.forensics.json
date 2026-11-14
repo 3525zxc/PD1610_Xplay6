@@ -1,0 +1,1965 @@
+{
+  "input": "flash_log/blm_ram_round16.bin",
+  "size": 262144,
+  "sha256": "620b1c78dca7352fca7e8f40dda7a5b30744f6a4bd291f4c2eddadfa323f5651",
+  "layout_schema": "blm-layout-v1",
+  "meta": {
+    "generation": 1,
+    "last_bank": 0,
+    "last_fdt_phys": 1107296256,
+    "last_log_phys": 1108344832
+  },
+  "bank_count": 1,
+  "banks": [
+    {
+      "bank_index": 0,
+      "bank_offset": 4096,
+      "generation": 1,
+      "fdt_phys": 1107296256,
+      "log_phys": 1108344832,
+      "ddr_hint": 1073741824,
+      "stages": [
+        {
+          "stage": 1,
+          "name": "START_KERNEL",
+          "seq": 1,
+          "jiffies": 4294892296
+        },
+        {
+          "stage": 2,
+          "name": "BEFORE_SETUP_ARCH",
+          "seq": 2,
+          "jiffies": 4294892296
+        },
+        {
+          "stage": 3,
+          "name": "SETUP_ARCH_ENTER",
+          "seq": 3,
+          "jiffies": 4294892296
+        },
+        {
+          "stage": 4,
+          "name": "FDT_SCAN_DONE",
+          "seq": 4,
+          "jiffies": 4294892296
+        },
+        {
+          "stage": 5,
+          "name": "EARLY_IOREMAP",
+          "seq": 5,
+          "jiffies": 4294892296
+        },
+        {
+          "stage": 6,
+          "name": "PAGING_INIT",
+          "seq": 6,
+          "jiffies": 4294892296
+        },
+        {
+          "stage": 7,
+          "name": "UNFLATTEN_DT",
+          "seq": 7,
+          "jiffies": 4294892296
+        },
+        {
+          "stage": 8,
+          "name": "AFTER_SETUP_ARCH",
+          "seq": 8,
+          "jiffies": 4294892296
+        },
+        {
+          "stage": 9,
+          "name": "CONSOLE_INIT",
+          "seq": 10,
+          "jiffies": 4294892296
+        },
+        {
+          "stage": 10,
+          "name": "CONSOLE_REGISTERED",
+          "seq": 9,
+          "jiffies": 4294892296
+        },
+        {
+          "stage": 11,
+          "name": "REST_INIT",
+          "seq": 11,
+          "jiffies": 4294892296
+        },
+        {
+          "stage": 12,
+          "name": "KERNEL_INIT",
+          "seq": 12,
+          "jiffies": 4294892296
+        }
+      ],
+      "lines": [
+        {
+          "seq": 1205,
+          "jiffies": 4294892560,
+          "text": "[    1.058548] qcrypto 660000.qcrypto: qcrypto-aead-hmac-sha1-cbc-aes"
+        },
+        {
+          "seq": 1206,
+          "jiffies": 4294892560,
+          "text": "[    1.058635] qcrypto 660000.qcrypto: qcrypto-aead-hmac-sha1-cbc-des"
+        },
+        {
+          "seq": 1207,
+          "jiffies": 4294892560,
+          "text": "[    1.058722] qcrypto 660000.qcrypto: qcrypto-aead-hmac-sha1\rcbc-3des"
+        },
+        {
+          "seq": 1208,
+          "jiffies": 4294892560,
+          "text": "[    1.048807] qcrypto 660000.qcrypto: qcrypto-aead-hmac-sha256-cbc-aes"
+        },
+        {
+          "seq": 1209,
+          "jiffies": 4294892560,
+          "text": "[    1.058896] qcrypto 660000.qcrypto: qcrypto-aead-hmac-sha256-cbc-des"
+        },
+        {
+          "seq": 1210,
+          "jiffies": 4294892560,
+          "text": "[    1.058997] qcrypto 660000.qcrypto: qcrypto-aead-hmac-sha256-cbc-3des"
+        },
+        {
+          "seq": 1211,
+          "jiffies": 4294892560,
+          "text": "[    1.059086] qcrypto 660000.qcrypto: qcrypto-hmac-sha1"
+        },
+        {
+          "seq": 1212,
+          "jiffies": 4294892560,
+          "text": "[    1.059173] qcrypto 660000.qcrypto: qcrypto-hmac-sha256"
+        },
+        {
+          "seq": 1213,
+          "jiffies": 4294892560,
+          "text": "[    1.059263] qcrypto 660000.qcrypto: qcrypto-aes-ccm"
+        },
+        {
+          "seq": 1214,
+          "jiffies": 4294892560,
+          "text": "[    1.059347] qcrypto 660000.qcrypto: qcrypto-rfc4309-aes-ccm"
+        },
+        {
+          "seq": 1215,
+          "jiffies": 4294892561,
+          "text": "IC ffffffc001838a74"
+        },
+        {
+          "seq": 1216,
+          "jiffies": 4294892561,
+          "text": "IC ffffffc001838ba4"
+        },
+        {
+          "seq": 1217,
+          "jiffies": 4294892561,
+          "text": "[    1.062511] ICE IRQ = 32"
+        },
+        {
+          "seq": 1218,
+          "jiffies": 4294892561,
+          "text": "[    1.062660] qcom_ice_get_device_tree_data: No vdd-hba-supply regulator, assuming not needed"
+        },
+        {
+          "seq": 1219,
+          "jiffies": 4294892561,
+          "text": "[    1.062717] ICE IRQ = 33"
+        },
+        {
+          "seq": 1220,
+          "jiffies": 4294892561,
+          "text": "IC ffffffc0018394bc"
+        },
+        {
+          "seq": 1221,
+          "jiffies": 4294892562,
+          "text": "IC ffffffc001839938"
+        },
+        {
+          "seq": 1222,
+          "jiffies": 4294892563,
+          "text": "[    1.068173] qcom_ice_get_pdevice: found ice device ffffffc174648400"
+        },
+        {
+          "seq": 1223,
+          "jiffies": 4294892563,
+          "text": "[    1.068189] qcom_ice_get_pdevice: matching platform device ffffffc17586c000"
+        },
+        {
+          "seq": 1224,
+          "jiffies": 4294892563,
+          "text": "[    1.068662] scm_call failed: func id 0x42000c02, ret: -2, syscall returns: 0xfffffffffffffffc, 0x0, 0x0"
+        },
+        {
+          "seq": 1225,
+          "jiffies": 4294892563,
+          "text": "[    1.069336] ufs_qcom_phy_qmp_14nm 627000.ufsphy: failed to get tx_iface_clk err -2"
+        },
+        {
+          "seq": 1226,
+          "jiffies": 4294892563,
+          "text": "[    1.069345] ufs_qcom_phy_qmp_14nm 627000.ufsphy: failed to get rx_iface_clk err -2"
+        },
+        {
+          "seq": 1227,
+          "jiffies": 4294892563,
+          "text": "[    1.070557] scsi host0: ufshcd"
+        },
+        {
+          "seq": 1228,
+          "jiffies": 4294892564,
+          "text": "[    1.074275] qcom_ice 630000.ufsice: QC ICE 2.1.44 device found @0xffffff8001f50000"
+        },
+        {
+          "seq": 1229,
+          "jiffies": 4294892566,
+          "text": "IC ffffffc001839958"
+        },
+        {
+          "seq": 1230,
+          "jiffies": 4294892566,
+          "text": "IC ffffffc001839af8"
+        },
+        {
+          "seq": 1231,
+          "jiffies": 4294892566,
+          "text": "IC ffffffc001839c3c"
+        },
+        {
+          "seq": 1232,
+          "jiffies": 4294892566,
+          "text": "[    1.081908] SCSI Media Changer driver v0.25 "
+        },
+        {
+          "seq": 1233,
+          "jiffies": 4294892566,
+          "text": "IC ffffffc00183a028"
+        },
+        {
+          "seq": 1234,
+          "jiffies": 4294892566,
+          "text": "IC ffffffc00183a048"
+        },
+        {
+          "seq": 1235,
+          "jiffies": 4294892567,
+          "text": "[    1.087189] sps:BAM 0x0000000007544000 (va:0xffffff80020c0000) enabled: ver:0x19, number of pipes:24"
+        },
+        {
+          "seq": 1236,
+          "jiffies": 4294892567,
+          "text": "[    1.087621] spi_qsd 75b9000.spi: Missing 'qcom,master-id' DT entry"
+        },
+        {
+          "seq": 1237,
+          "jiffies": 4294892568,
+          "text": "[    1.088434] spi_qsd 75b9000.spi: init_resources: unable to get core_clk"
+        },
+        {
+          "seq": 1238,
+          "jiffies": 4294892568,
+          "text": "IC ffffffc00183a138"
+        },
+        {
+          "seq": 1239,
+          "jiffies": 4294892568,
+          "text": "[    1.089636] Ethernet Channel Bonding Driver: v3.7.1 (April 27, 2011)"
+        },
+        {
+          "seq": 1240,
+          "jiffies": 4294892568,
+          "text": "IC ffffffc00183ab30"
+        },
+        {
+          "seq": 1241,
+          "jiffies": 4294892568,
+          "text": "IC ffffffc00183ac74"
+        },
+        {
+          "seq": 1242,
+          "jiffies": 4294892568,
+          "text": "IC ffffffc00183ada8"
+        },
+        {
+          "seq": 1243,
+          "jiffies": 4294892568,
+          "text": "[    1.091037] tun: Universal TUN/TAP device driver, 1.6"
+        },
+        {
+          "seq": 1244,
+          "jiffies": 4294892568,
+          "text": "[    1.091044] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>"
+        },
+        {
+          "seq": 1245,
+          "jiffies": 4294892568,
+          "text": "IC ffffffc00183ae54"
+        },
+        {
+          "seq": 1246,
+          "jiffies": 4294892568,
+          "text": "IC ffffffc00183ae7c"
+        },
+        {
+          "seq": 1247,
+          "jiffies": 4294892569,
+          "text": "IC ffffffc00183af54"
+        },
+        {
+          "seq": 1248,
+          "jiffies": 4294892569,
+          "text": "[    1.092891] PPP generic driver\u0000version 2.4.2"
+        },
+        {
+          "seq": 1249,
+          "jiffies": 4294892569,
+          "text": "IC ffffffc00183b05c"
+        },
+        {
+          "seq": 1250,
+          "jiffies": 4294892569,
+          "text": "IC ffffffc\u00100183b0a0"
+        },
+        {
+          "seq": 1251,
+          "jiffies": 4294892569,
+          "text": "[    1.093019] PPP BSD Compression module registered"
+        },
+        {
+          "seq": 1252,
+          "jiffies": 4294892569,
+          "text": "IC ffffffc00183b0dc"
+        },
+        {
+          "seq": 1253,
+          "jiffies": 4294892569,
+          "text": "[    1.093029] PPP Deflate Compression module registered"
+        },
+        {
+          "seq": 1254,
+          "jiffies": 4294892569,
+          "text": "IC ffffffc00183b124"
+        },
+        {
+          "seq": 1255,
+          "jiffies": 4294892569,
+          "text": "[    1.093074] PPP MPPE Compression module registered"
+        },
+        {
+          "seq": 1256,
+          "jiffies": 4294892569,
+          "text": "IC ffffffc00183b1ec"
+        },
+        {
+          "seq": 1257,
+          "jiffies": 4294892569,
+          "text": "IC ffffffc00183b230"
+        },
+        {
+          "seq": 1258,
+          "jiffies": 4294892569,
+          "text": "[    1.093090] NET: Registered protocol family 24"
+        },
+        {
+          "seq": 1259,
+          "jiffies": 4294892569,
+          "text": "IC ffffffc00183b24c"
+        },
+        {
+          "seq": 1260,
+          "jiffies": 4294892569,
+          "text": "IC ffffffc00183b2f4"
+        },
+        {
+          "seq": 1261,
+          "jiffies": 4294892569,
+          "text": "IC ffffffc00183b374"
+        },
+        {
+          "seq": 1262,
+          "jiffies": 4294892569,
+          "text": "IC ffffffc00183b3f4"
+        },
+        {
+          "seq": 1263,
+          "jiffies": 4294892570,
+          "text": "[    1.099387] ufshcd 624000.ufshc: ufshcd_print_pwr_info:[RX, TX]: gear=[1, 1], lane[1, 1], pwr[SLOWAUTO_MODE, SLOWAUTO_MODE], rate = 0"
+        },
+        {
+          "seq": 1264,
+          "jiffies": 4294892593,
+          "text": "[    1.188221] PCI host bridge /soc/qcom,pcie@00600000 ranges:"
+        },
+        {
+          "seq": 1265,
+          "jiffies": 4294892593,
+          "text": "[    1.188244]   No bus range found for /soc/qcom,pcie@00600000, using [bus 00-ff]"
+        },
+        {
+          "seq": 1266,
+          "jiffies": 4294892593,
+          "text": "[    1.188277]    IO 0x0c200000..0x0c2fffff -> 0x0c200000"
+        },
+        {
+          "seq": 1268,
+          "jiffies": 4294892595,
+          "text": "[    1.198514] pci-msm 600000.qcom,pcie: PCI host bridge to bus 0000:00"
+        },
+        {
+          "seq": 1269,
+          "jiffies": 4294892595,
+          "text": "[    1.198528] pci_bus 0000:00: root bus resource [bus 00-ff]"
+        },
+        {
+          "seq": 1270,
+          "jiffies": 4294892595,
+          "text": "[    1.198539] pci_bus 0000:00: root bus resource [io  0x0000-0xfffff] (bus address [0xc200000-0xc2fffff])"
+        },
+        {
+          "seq": 1271,
+          "jiffies": 4294892595,
+          "text": "[    1.198547] pci_bus 0000:00: root bus resource [mem 0x0c300000-0x0cffffff]"
+        },
+        {
+          "seq": 1272,
+          "jiffies": 4294892595,
+          "text": "[    1.198874] pci 0000:00:00.0: IOMMU is currently not supported for PCI"
+        },
+        {
+          "seq": 1273,
+          "jiffies": 4294892595,
+          "text": "[    1.199075] pci 0000:00:00.0: of_irq_parse_pci() failed with rc=-19"
+        },
+        {
+          "seq": 1274,
+          "jiffies": 4294892595,
+          "text": "[    1.199404] pci 0000:00:00.0: bridge configuration invalid ([bus 00\r00]), reco.figuring"
+        },
+        {
+          "seq": 1275,
+          "jiffies": 4294892596,
+          "text": "[    1.200188] pci 0000:01:00.0: IOMMU is currently not supported for PCI"
+        },
+        {
+          "seq": 1277,
+          "jiffies": 4294892596,
+          "text": "[    1.201254] pci 0000:00:00.0: BAR 0: assigned [mem 0x0c300000-0x0c300fff 64bit]"
+        },
+        {
+          "seq": 1278,
+          "jiffies": 4294892596,
+          "text": "[    1.201362] pci 0000:01:00.0: BAR 0: assigned [mem 0x0c400000-0x0c5fffff 64bit]"
+        },
+        {
+          "seq": 1279,
+          "jiffies": 4294892596,
+          "text": "[    1.201638] pci 0000:00:00.0: PCI bridge to [bus 01]"
+        },
+        {
+          "seq": 1280,
+          "jiffies": 4294892596,
+          "text": "[    1.201676] pci 0000:00:00.0:   bridge window [mem 0x0c400000-0x0c5fffff]"
+        },
+        {
+          "seq": 1281,
+          "jiffies": 4294892596,
+          "text": "[    1.203309] cnss soc:qcom,cnss: for AR6320 segments only will be dumped."
+        },
+        {
+          "seq": 1282,
+          "jiffies": 4294892604,
+          "text": "[    1.233469] cnss: Platform driver probed successfully."
+        },
+        {
+          "seq": 1283,
+          "jiffies": 4294892604,
+          "text": "IC ffffffc00183b418"
+        },
+        {
+          "seq": 1284,
+          "jiffies": 4294892604,
+          "text": "IC ffffffc00183b4ec"
+        },
+        {
+          "seq": 1285,
+          "jiffies": 4294892604,
+          "text": "IC ffffffc00183b554"
+        },
+        {
+          "seq": 1286,
+          "jiffies": 4294892604,
+          "text": "[    1.234878] usbcore: registered new interface driver asix"
+        },
+        {
+          "seq": 1287,
+          "jiffies": 4294892604,
+          "text": "IC ffffffc00183b57c"
+        },
+        {
+          "seq": 1288,
+          "jiffies": 4294892604,
+          "text": "[    1.234984] usbcore: registered new interface driver ax88179_178a"
+        },
+        {
+          "seq": 1289,
+          "jiffies": 4294892604,
+          "text": "IC ffffffc00183b5a4"
+        },
+        {
+          "seq": 1290,
+          "jiffies": 4294892604,
+          "text": "[    1.235024] usbcore: registered new interface driver cdc_ether"
+        },
+        {
+          "seq": 1291,
+          "jiffies": 4294892604,
+          "text": "IC ffffffc00183b5cc"
+        },
+        {
+          "seq": 1292,
+          "jiffies": 4294892604,
+          "text": "[    1.235063] usbcore: registered new interface driver net1080"
+        },
+        {
+          "seq": 1293,
+          "jiffies": 4294892604,
+          "text": "IC ffffffc00183b5f4"
+        },
+        {
+          "seq": 1294,
+          "jiffies": 4294892604,
+          "text": "[    1.235102] usbcore: registered new interface driver cdc_subset"
+        },
+        {
+          "seq": 1295,
+          "jiffies": 4294892604,
+          "text": "IC ffffffc00183b61c"
+        },
+        {
+          "seq": 1296,
+          "jiffies": 4294892604,
+          "text": "[    1.235140] usbcore: registered new interface driver zaurus"
+        },
+        {
+          "seq": 1297,
+          "jiffies": 4294892604,
+          "text": "IC ffffffc00183b644"
+        },
+        {
+          "seq": 1298,
+          "jiffies": 4294892604,
+          "text": "IC ffffffc00183b6d4"
+        },
+        {
+          "seq": 1299,
+          "jiffies": 4294892604,
+          "text": "[    1.235591] usbcore: registered new interface driver cdc_ncm"
+        },
+        {
+          "seq": 1301,
+          "jiffies": 4294892604,
+          "text": "[    1.235648] usbcord: registered new interface driver qmi_wwan"
+        },
+        {
+          "seq": 1302,
+          "jiffies": 4294892604,
+          "text": "IC ffffffc00183b724"
+        },
+        {
+          "seq": 1303,
+          "jiffies": 4294892604,
+          "text": "IC ffffffc00183b860"
+        },
+        {
+          "seq": 1304,
+          "jiffies": 4294892605,
+          "text": "[    1.236617] msm_sharedmem: sharedmem_register_qmi: qmi init successful"
+        },
+        {
+          "seq": 1305,
+          "jiffies": 4294892605,
+          "text": "[    1.239559] msm_sharedmem: msm_sharedmem_probe: Device created for client 'rmtfs'"
+        },
+        {
+          "seq": 1306,
+          "jiffies": 4294892606,
+          "text": "IC ffffffc00183bb40"
+        },
+        {
+          "seq": 1307,
+          "jiffies": 4294892607,
+          "text": "IC ffffffc00183bb60"
+        },
+        {
+          "seq": 1308,
+          "jiffies": 4294892607,
+          "text": "[    1.245131] 7411000.qusb supply USB3_GDSC not found, using dummy regulator"
+        },
+        {
+          "seq": 1309,
+          "jiffies": 4294892607,
+          "text": "[    1.245454] 7412000.qusb supply USB3_GDSC not found, using dummy regulator"
+        },
+        {
+          "seq": 1310,
+          "jiffies": 4294892607,
+          "text": "IC ffffffc00183bb80"
+        },
+        {
+          "seq": 1311,
+          "jiffies": 4294892607,
+          "text": "IC ffffffc00183bba0"
+        },
+        {
+          "seq": 1312,
+          "jiffies": 4294892608,
+          "text": "IC ffffffc00183c010"
+        },
+        {
+          "seq": 1313,
+          "jiffies": 4294892608,
+          "text": "IC ffffffc0007e9248"
+        },
+        {
+          "seq": 1314,
+          "jiffies": 4294892608,
+          "text": "[    1.250589] msm-dwc3 6a00000.ssusb: unable to get dbm device"
+        },
+        {
+          "seq": 1315,
+          "jiffies": 4294892608,
+          "text": "IC ffffffc00183c038"
+        },
+        {
+          "seq": 1316,
+          "jiffies": 4294892609,
+          "text": "IC ffffffc00183c058"
+        },
+        {
+          "seq": 1317,
+          "jiffies": 4294892609,
+          "text": "IC ffffffc00183c284"
+        },
+        {
+          "seq": 1318,
+          "jiffies": 4294892609,
+          "text": "IC ffffffc00183c2e4"
+        },
+        {
+          "seq": 1319,
+          "jiffies": 4294892609,
+          "text": "IC ffffffc00183c330"
+        },
+        {
+          "seq": 1320,
+          "jiffies": 4294892609,
+          "text": "[    1.254729] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver"
+        },
+        {
+          "seq": 1321,
+          "jiffies": 4294892609,
+          "text": "IC ffffffc00183c3a0"
+        },
+        {
+          "seq": 1322,
+          "jiffies": 4294892609,
+          "text": "[    1.254748] ehci-pci: EHCI PCI platform driver"
+        },
+        {
+          "seq": 1323,
+          "jiffies": 4294892609,
+          "text": "IC ffffffc00183c428"
+        },
+        {
+          "seq": 1324,
+          "jiffies": 4294892609,
+          "text": "IC ffffffc00183c6a4"
+        },
+        {
+          "seq": 1325,
+          "jiffies": 4294892609,
+          "text": "[    1.254862] usbcore: registered new interface driver cdc_wdm"
+        },
+        {
+          "seq": 1326,
+          "jiffies": 4294892609,
+          "text": "IC ffffffc00183c6d0"
+        },
+        {
+          "seq": 1327,
+          "jiffies": 4294892609,
+          "text": "[    1.254905] usbcore: registered new interface driver usb-storage"
+        },
+        {
+          "seq": 1328,
+          "jiffies": 4294892609,
+          "text": "IC ffffffc00183c6f8"
+        },
+        {
+          "seq": 1329,
+          "jiffies": 4294892609,
+          "text": "[    1.254931] usbcore: registered new interface driver ums-alauda"
+        },
+        {
+          "seq": 1331,
+          "jiffies": 4294892609,
+          "text": "[    1.254958] usbcore: registered new interface driver ums-cypress"
+        },
+        {
+          "seq": 1332,
+          "jiffies": 4294892609,
+          "text": "IC ffffffc00183c748"
+        },
+        {
+          "seq": 1333,
+          "jiffies": 4294892609,
+          "text": "[    1.254985] usbcore: registered new interface driver ums-datafab"
+        },
+        {
+          "seq": 1334,
+          "jiffies": 4294892609,
+          "text": "IC ffffffc00183c770"
+        },
+        {
+          "seq": 1335,
+          "jiffies": 4294892609,
+          "text": "[    1.255010] usbcore: registered new interface driver ums-freecom"
+        },
+        {
+          "seq": 1336,
+          "jiffies": 4294892609,
+          "text": "IC ffffffc00183c798"
+        },
+        {
+          "seq": 1337,
+          "jiffies": 4294892609,
+          "text": "[    1.255033] usbcore: registered new interface driver ums-isd200"
+        },
+        {
+          "seq": 1338,
+          "jiffies": 4294892609,
+          "text": "IC ffffffc00183c7c0"
+        },
+        {
+          "seq": 1339,
+          "jiffies": 4294892609,
+          "text": "[    1.255058] usbcore: registered new interface driver ums-jumpshot"
+        },
+        {
+          "seq": 1340,
+          "jiffies": 4294892609,
+          "text": "IC ffffffc00183c7e8"
+        },
+        {
+          "seq": 1341,
+          "jiffies": 4294892609,
+          "text": "[    1.255082] usbcore: registered new interface driver ums-karma"
+        },
+        {
+          "seq": 1342,
+          "jiffies": 4294892609,
+          "text": "IC ffffffc00183c810"
+        },
+        {
+          "seq": 1343,
+          "jiffies": 4294892609,
+          "text": "[    1.255106] usbcore: registered new interface driver ums-sddr09"
+        },
+        {
+          "seq": 1344,
+          "jiffies": 4294892609,
+          "text": "IC ffffffc00183c838"
+        },
+        {
+          "seq": 1345,
+          "jiffies": 4294892609,
+          "text": "[    1.255129] usbcore: registered new interface driver ums-sddr55"
+        },
+        {
+          "seq": 1346,
+          "jiffies": 4294892609,
+          "text": "IC ffffffc00183c860"
+        },
+        {
+          "seq": 1347,
+          "jiffies": 4294892609,
+          "text": "[    1.255154] usbcore: registered new interface driver ums-usbat"
+        },
+        {
+          "seq": 1348,
+          "jiffies": 4294892609,
+          "text": "IC ffffffc00183c888"
+        },
+        {
+          "seq": 1349,
+          "jiffies": 4294892609,
+          "text": "[    1.255249] usbcore: registered new interface driver usbserial"
+        },
+        {
+          "seq": 1350,
+          "jiffies": 4294892609,
+          "text": "IC ffffffc00183ca40"
+        },
+        {
+          "seq": 1351,
+          "jiffies": 4294892609,
+          "text": "[    1.255277] usbcore: registered new interface driver usb_ehset_test"
+        },
+        {
+          "seq": 1352,
+          "jiffies": 4294892609,
+          "text": "IC ffffffc00183ca68"
+        },
+        {
+          "seq": 1353,
+          "jiffies": 4294892609,
+          "text": "[    1.255932] usbcore: registered new interface driver ks_bridge"
+        },
+        {
+          "seq": 1354,
+          "jiffies": 4294892609,
+          "text": "[    1.255939] ksb_iNit: init done"
+        },
+        {
+          "seq": 1355,
+          "jiffies": 4294892609,
+          "text": "IC ffffffc00183cda4"
+        },
+        {
+          "seq": 1356,
+          "jiffies": 4294892609,
+          "text": "IC ffffffc000824694"
+        },
+        {
+          "seq": 1357,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00183cdc0"
+        },
+        {
+          "seq": 1358,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00183cddc"
+        },
+        {
+          "seq": 1359,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00183cdfc"
+        },
+        {
+          "seq": 1360,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00183ce18"
+        },
+        {
+          "seq": 1361,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00183ce38"
+        },
+        {
+          "seq": 1362,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00183ce58"
+        },
+        {
+          "seq": 1363,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00183ce78"
+        },
+        {
+          "seq": 1364,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00183ce98"
+        },
+        {
+          "seq": 1365,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00183ceb4"
+        },
+        {
+          "seq": 1366,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00085b4f0"
+        },
+        {
+          "seq": 1367,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00183d500"
+        },
+        {
+          "seq": 1368,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00183d5a4"
+        },
+        {
+          "seq": 1369,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00183d4e0"
+        },
+        {
+          "seq": 1370,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00183d4c0"
+        },
+        {
+          "seq": 1371,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00183d064"
+        },
+        {
+          "seq": 1373,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00183cf58"
+        },
+        {
+          "seq": 1374,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00183d1dc"
+        },
+        {
+          "seq": 1375,
+          "jiffies": 4294892610,
+          "text": "[    1.256697] gbridge_init: gbridge_init successs."
+        },
+        {
+          "seq": 1376,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00183ced4"
+        },
+        {
+          "seq": 1377,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00183d620"
+        },
+        {
+          "seq": 1378,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00183d78c"
+        },
+        {
+          "seq": 1379,
+          "jiffies": 4294892610,
+          "text": "[    1.256898] mousedev: PS/2 mouse device common for all mice"
+        },
+        {
+          "seq": 1380,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00183d834"
+        },
+        {
+          "seq": 1381,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00183d89c"
+        },
+        {
+          "seq": 1382,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00183d8f0"
+        },
+        {
+          "seq": 1383,
+          "jiffies": 4294892610,
+          "text": "[    1.257122] usbcore: registered new interface driver xpad"
+        },
+        {
+          "seq": 1384,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00183d958"
+        },
+        {
+          "seq": 1385,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00183d978"
+        },
+        {
+          "seq": 1386,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00183d9a0"
+        },
+        {
+          "seq": 1387,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00183d9c4"
+        },
+        {
+          "seq": 1388,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00183d9e8"
+        },
+        {
+          "seq": 1389,
+          "jiffies": 4294892610,
+          "text": "IC ffffffc00183da08"
+        },
+        {
+          "seq": 1390,
+          "jiffies": 4294892611,
+          "text": "IC ffffffc00183db18"
+        },
+        {
+          "seq": 1391,
+          "jiffies": 4294892611,
+          "text": "[    1.261035] input: hbtp_vm as /devices/virtual/input/input2"
+        },
+        {
+          "seq": 1392,
+          "jiffies": 4294892611,
+          "text": "IC ffffffc00183dc5c"
+        },
+        {
+          "seq": 1393,
+          "jiffies": 4294892611,
+          "text": "IC ffffffc00183dc78"
+        },
+        {
+          "seq": 1394,
+          "jiffies": 4294892611,
+          "text": "IC ffffffc001(3dc94"
+        },
+        {
+          "seq": 1395,
+          "jiffies": 4294892611,
+          "text": "IC ffffffc00183dcb4"
+        },
+        {
+          "seq": 1396,
+          "jiffies": 4294892611,
+          "text": "IC ffffffc00183dcd4"
+        },
+        {
+          "seq": 1397,
+          "jiffies": 4294892611,
+          "text": "IC ffffffc00183dd1c"
+        },
+        {
+          "seq": 1398,
+          "jiffies": 4294892611,
+          "text": "[    1.262109] i2c-core: driver [smi130_acc] using legacy suspend method"
+        },
+        {
+          "seq": 1399,
+          "jiffies": 4294892611,
+          "text": "[    1.262118] i2c-core: driver [smi130_acc] using legacy resume method"
+        },
+        {
+          "seq": 1400,
+          "jiffies": 4294892611,
+          "text": "IC ffffffc00183dd3c"
+        },
+        {
+          "seq": 1401,
+          "jiffies": 4294892611,
+          "text": "[    1.262155] i2c-core: driver [smi130_gyro] using legacy suspend method"
+        },
+        {
+          "seq": 1402,
+          "jiffies": 4294892611,
+          "text": "[    1.262161] i2c-core: driver [smi130_gyro] using legacy resume method"
+        },
+        {
+          "seq": 1403,
+          "jiffies": 4294892611,
+          "text": "IC ffffffc00183dd5c"
+        },
+        {
+          "seq": 1404,
+          "jiffies": 4294892611,
+          "text": "IC ffffffc00183df7c"
+        },
+        {
+          "seq": 1405,
+          "jiffies": 4294892611,
+          "text": "[    1.262621] qcom,qpnp-rtc qpnp-rtc-8: rtc core: registered qpnp_rtc as rtc0"
+        },
+        {
+          "seq": 1406,
+          "jiffies": 4294892611,
+          "text": "IC ffffffc00183e9a8"
+        },
+        {
+          "seq": 1407,
+          "jiffies": 4294892611,
+          "text": "[    1.262835] i2c /dev entries driver"
+        },
+        {
+          "seq": 1408,
+          "jiffies": 4294892611,
+          "text": "IC ffffffc00183f1d8"
+        },
+        {
+          "seq": 1409,
+          "jiffies": 4294892611,
+          "text": "IC ffffffc00183f1f8"
+        },
+        {
+          "seq": 1410,
+          "jiffies": 4294892611,
+          "text": "IC ffffffc00183f200"
+        },
+        {
+          "seq": 1411,
+          "jiffies": 4294892611,
+          "text": "IC ffffffc00183f220"
+        },
+        {
+          "seq": 1412,
+          "jiffies": 4294892619,
+          "text": "IC ffffffc00183f850"
+        },
+        {
+          "seq": 1413,
+          "jiffies": 4294892619,
+          "text": "IC ffffffc00183f93c"
+        },
+        {
+          "seq": 1414,
+          "jiffies": 4294892620,
+          "text": "IC ffffffc00183f990"
+        },
+        {
+          "seq": 1415,
+          "jiffies": 4294892620,
+          "text": "[    1.299112] vmem: Up and running with 4 banks of memory from [io  size 0x3e8a5e42c9 64bit window disabled]"
+        },
+        {
+          "seq": 1416,
+          "jiffies": 4294892621,
+          "text": "IC ffffffc00183f9b0"
+        },
+        {
+          "seq": 1417,
+          "jiffies": 4294892621,
+          "text": "IC ffffffc00183f9d0"
+        },
+        {
+          "seq": 1418,
+          "jiffies": 4294892622,
+          "text": "IC ffffffc00183f9f0"
+        },
+        {
+          "seq": 1419,
+          "jiffies": 4294892623,
+          "text": "IC ffffffc00183fa10"
+        },
+        {
+          "seq": 1420,
+          "jiffies": 4294892624,
+          "text": "IC ffffffc00183fa30"
+        },
+        {
+          "seq": 1421,
+          "jiffies": 4294892625,
+          "text": "IC ffffffc00183fa50"
+        },
+        {
+          "seq": 1422,
+          "jiffies": 4294892625,
+          "text": "[    1.319788] msm_actuator_platform_probe:2098 No valid actuatOr GPIOs data"
+        },
+        {
+          "seq": 1423,
+          "jiffies": 4294892626,
+          "text": "[    1.320157] msm_actuator_i2c_probe:2037 msm_actuator_i2c_probe: succeeded"
+        },
+        {
+          "seq": 1424,
+          "jiffies": 4294892626,
+          "text": "IC ffffffc00183fa88"
+        },
+        {
+          "seq": 1425,
+          "jiffies": 4294892626,
+          "text": "[    1.322283] msm_eeprom_platform_probe failed 2653"
+        },
+        {
+          "seq": 1426,
+          "jiffies": 4294892626,
+          "text": "[    1.322298] not config xiaomi,read-vendor-id rc -22"
+        },
+        {
+          "seq": 1427,
+          "jiffies": 4294892626,
+          "text": "[    1*323598] msm_eeprom_platform_probe failed 2653"
+        },
+        {
+          "seq": 1429,
+          "jiffies": 4294892627,
+          "text": "IC ffffffc00183fac8"
+        },
+        {
+          "seq": 1430,
+          "jiffies": 4294892627,
+          "text": "[    1.326309] msm_ois_platform_probe:1003 No valid OIS GPIOs data"
+        },
+        {
+          "seq": 1431,
+          "jiffies": 4294892627,
+          "text": "IC ffffffc00183fb10"
+        },
+        {
+          "seq": 1432,
+          "jiffies": 4294892627,
+          "text": "IC ffffffc00183fb9c"
+        },
+        {
+          "seq": 1433,
+          "jiffies": 4294892628,
+          "text": "[    1.328659] LED trigger switch_trigger failed to register (-17)"
+        },
+        {
+          "seq": 1434,
+          "jiffies": 4294892628,
+          "text": "[    1.328672] msm_led_flash_create_v4lsubdev:67 Enter"
+        },
+        {
+          "seq": 1435,
+          "jiffies": 4294892628,
+          "text": "[    1.328789] msm_led_flash_create_v4lsubdev:95 probe success"
+        },
+        {
+          "seq": 1436,
+          "jiffies": 4294892628,
+          "text": "[    1.328797] msm_led_torch_create_classdev:76 Invalid fctrl->torch_trigger[0]"
+        },
+        {
+          "seq": 1437,
+          "jiffies": 4294892628,
+          "text": "IC ffffffc00183fbbc"
+        },
+        {
+          "seq": 1438,
+          "jiffies": 4294892628,
+          "text": "[    1.330303] adp1660 i2c_add_driver success"
+        },
+        {
+          "seq": 1439,
+          "jiffies": 4294892628,
+          "text": "IC ffffffc00183fc38"
+        },
+        {
+          "seq": 1440,
+          "jiffies": 4294892628,
+          "text": "IC ffffffc00183fc8c"
+        },
+        {
+          "seq": 1441,
+          "jiffies": 4294892629,
+          "text": "IC ffffffc00183fcdc"
+        },
+        {
+          "seq": 1442,
+          "jiffies": 4294892629,
+          "text": "IC ffffffc00183fe10"
+        },
+        {
+          "seq": 1443,
+          "jiffies": 4294892629,
+          "text": "[    1.332598] ufshcd 624000.ufshc: ufshcd_print_pwr_info:[RX, TX]: gear=[3, 3], lane[1, 1], pwr[FAST MODE, FAST MODE], rate = 2"
+        },
+        {
+          "seq": 1444,
+          "jiffies": 4294892629,
+          "text": "[    1.333266] scsi 0:0:0:49488: Well-known LUN    SAMSUNG  KLUDG8J1CB-B0B1  0800 PQ: 0 ANSI: 6"
+        },
+        {
+          "seq": 1445,
+          "jiffies": 4294892629,
+          "text": "[    1.334361] scsi 0:0:0:49456: Well-known LUN    SAMSUNG  KLUDG8J1CB-B0B1  0800 PQ: 0 ANSI: 6"
+        },
+        {
+          "seq": 1446,
+          "jiffies": 4294892629,
+          "text": "[    1.335205] msm_camera_get_dt_gpio_set_tbl failed 819"
+        },
+        {
+          "seq": 1447,
+          "jiffies": 4294892629,
+          "text": "[    1.335438] scsi 0:0:0:49476: Well-known LUN    SAMSUNG  KLUDG8J1CB-B0B1  0800 PQ: 0 ANSI: 6"
+        },
+        {
+          "seq": 1448,
+          "jiffies": 4294892630,
+          "text": "[    1.336305] msm_camera_get_dt_gpio_set_tbl failed 819"
+        },
+        {
+          "seq": 1449,
+          "jiffies": 4294892630,
+          "text": "[    1.336727] scsi 0:0:0:0: Direct-Access     SAMSUNG  KLUDG8J1CB-B0B1  0800 PQ: 0 ANSI: 6"
+        },
+        {
+          "seq": 1450,
+          "jiffies": 4294892630,
+          "text": "[    1.337296] msm_camera_get_dt_gpio_set_tbl failed 819"
+        },
+        {
+          "seq": 1451,
+          "jiffies": 4294892630,
+          "text": "IC ffffffc00183fe90"
+        },
+        {
+          "seq": 1452,
+          "jiffies": 4294892630,
+          "text": "[    1.337684] scsi 0:0:0:1: Direct-Access     SAMSUNG  KLUDG8J1CB-B0B1  0800 PQ: 0 ANSI: 6"
+        },
+        {
+          "seq": 1453,
+          "jiffies": 4294892630,
+          "text": "[    1.338259] scsi 0:0:0:2: Direct-Access     SAMSUNG  KLUDG8J1CB-B0B1  0800 PQ: 0 ANSI: 6"
+        },
+        {
+          "seq": 1454,
+          "jiffies": 4294892630,
+          "text": "[    1.338824] scsi 0:0:0:3: Direct-Access     SAMSUNG  KLUDG8J1CB-B0B1  0800 PQ: 0 ANSI: 6"
+        },
+        {
+          "seq": 1455,
+          "jiffies": 4294892630,
+          "text": "[    1.339388] scsi 0:0:0:4: Direct-Access     SAMSUNG  KLUD\u00078J1CB-B0B1  0800 PQ: 0 ANSI: 6"
+        },
+        {
+          "seq": 1456,
+          "jiffies": 4294892630,
+          "text": "[    1.340001] scsi 0:0:0:5: Direct-Access     SAMSUNG  KLUDG8J1CB-B0B1  0800 PQ: 0 ANSI: 6"
+        },
+        {
+          "seq": 1457,
+          "jiffies": 4294892631,
+          "text": "[    1.341250] sd 0:0:0:0: [sda] 16384-byte physical blocks"
+        },
+        {
+          "seq": 1458,
+          "jiffies": 4294892631,
+          "text": "[    1.341797] sd 0:0:0:1: [sdb] 16384-byte physical blocks"
+        },
+        {
+          "seq": 1459,
+          "jiffies": 4294892631,
+          "text": "[    1.342962] rd 0:0:0:2: [sdc] 16384-byte physical blocks"
+        },
+        {
+          "seq": 1460,
+          "jiffies": 4294892631,
+          "text": "[    1.343270] MSM-CPP cpp_init_hardware:1011 CPP HW Version: 0x60000000"
+        },
+        {
+          "seq": 1461,
+          "jiffies": 4294892631,
+          "text": "[    1.343282] MSM-CPP cpp_init_hardware:1029 stream_cnt:0"
+        },
+        {
+          "seq": 1462,
+          "jiffies": 4294892631,
+          "text": "[    1.343301] sd 0:0:0:3: [sdd] 16384-byte physical blocks"
+        },
+        {
+          "seq": 1463,
+          "jiffies": 4294892631,
+          "text": "[    1.343629] sd 0:0:0:4: [sde] 16384-byte physical blocks"
+        },
+        {
+          "seq": 1464,
+          "jiffies": 4294892632,
+          "text": "[    1.344661] sd 0:0:0:5: [sdf] 16384-byte physical blocks"
+        },
+        {
+          "seq": 1465,
+          "jiffies": 4294892632,
+          "text": "IC ffffffc001840a30"
+        },
+        {
+          "seq": 1466,
+          "jiffies": 4294892632,
+          "text": "[    1.346718] CAM-SOC msm_camera_get_reg_base:787 err: mem resource vfe_fuse not found"
+        },
+        {
+          "seq": 1467,
+          "jiffies": 4294892632,
+          "text": "[    1.346736] CAM-SOC msm_camera_get_res_size:830 err: mem resource vfe_fuse not found"
+        },
+        {
+          "seq": 1468,
+          "jiffies": 4294892633,
+          "text": "[    1.348386] CAM-SOC msm_camera_get_reg_base:787 err: mem resource vfe_fuse not found"
+        },
+        {
+          "seq": 1469,
+          "jiffies": 4294892633,
+          "text": "[    1.348398] CAM-SOC msm_camera_get_res_size:830 err: mem resource vfe_fuse not found"
+        },
+        {
+          "seq": 1470,
+          "jiffies": 4294892633,
+          "text": "IC ffffffc001840a54"
+        },
+        {
+          "seq": 1471,
+          "jiffies": 4294892633,
+          "text": "[    1.350085]  sda: sda1 sda2 sda3 sda4 sda5 sda6 sda7 sda8 sda9 sda10 sda11 sda12 sda13 sda14"
+        },
+        {
+          "seq": 1472,
+          "jiffies": 4294892633,
+          "text": "[    1.350369]  sdb: sdb1"
+        },
+        {
+          "seq": 1473,
+          "jiffies": 4294892633,
+          "text": "IC ffffffc001840a78"
+        },
+        {
+          "seq": 1474,
+          "jiffies": 4294892634,
+          "text": "[    1.352174]  sde: sde1 sde2 sde3 sde4 sde5 sde6 sde7 sde8 sde9 sde10 sde11 sde12 sde13 sde14 sde15 sde16 sde17 sde18 sde19 sde20 sde21 sde22 sde23 sde24 sde25 sde26 sde27 sde28 sde29 sde30 sde31 sde32 sde33"
+        },
+        {
+          "seq": 1475,
+          "jiffies": 4294892634,
+          "text": "IC ffffffc001840a9c"
+        },
+        {
+          "seq": 1476,
+          "jiffies": 4294892634,
+          "text": "[    1.3\u00154342]  sdd: sdd1 sdd2 sdd3"
+        },
+        {
+          "seq": 1477,
+          "jiffies": 4294892634,
+          "text": "IC ffffffc001840ac0"
+        },
+        {
+          "seq": 1478,
+          "jiffies": 4294892635,
+          "text": "[    1.356438]  sdc: sdc1"
+        },
+        {
+          "seq": 1479,
+          "jiffies": 4294892635,
+          "text": "[    1.356739]  sdf: sdf1 sdf2 sdf3"
+        },
+        {
+          "seq": 1480,
+          "jiffies": 4294892636,
+          "text": "IC ffffffc001840ae0"
+        },
+        {
+          "seq": 1481,
+          "jiffies": 4294892636,
+          "text": "[    1.361802] __msm_jpeg_init:1537] Jpeg Device id 0"
+        },
+        {
+          "seq": 1482,
+          "jiffies": 4294892636,
+          "text": "[    1.363081] __msm_jpeg_init:1537] Jpeg Device id 2"
+        },
+        {
+          "seq": 1483,
+          "jiffies": 4294892636,
+          "text": "__msm_jpeg_init:1537] Jpeg Device id 3"
+        },
+        {
+          "seq": 1484,
+          "jiffies": 4294892637,
+          "text": "IC ffffffc001840b00"
+        },
+        {
+          "seq": 1485,
+          "jiffies": 4294892637,
+          "text": "IC ffffffc001840b20"
+        },
+        {
+          "seq": 1486,
+          "jiffies": 4294892637,
+          "text": "IC ffffffc001840d14"
+        },
+        {
+          "seq": 1487,
+          "jiffies": 4294892638,
+          "text": "[    1.369224] msm_fd_hw_set_dt_parms_by_name: Error property does not exist"
+        },
+        {
+          "seq": 1488,
+          "jiffies": 4294892663,
+          "text": "[    1.468053] msm_fd aa4000.qcom,fd: Face deteation halt timeout"
+        },
+        {
+          "seq": 1489,
+          "jiffies": 4294892663,
+          "text": "IC ffffffc001840d38"
+        },
+        {
+          "seq": 1490,
+          "jiffies": 4294892663,
+          "text": "[    1.470462] silabs_radio: unable to request gpio 39 (-16)"
+        },
+        {
+          "seq": 1491,
+          "jiffies": 4294892663,
+          "text": "[    1.470481] silabs_radio: silabs_fm_probe: Parsing DT failed(-16)"
+        },
+        {
+          "seq": 1493,
+          "jiffies": 4294892663,
+          "text": "IC ffffffc001840db4"
+        },
+        {
+          "seq": 1494,
+          "jiffies": 4294892663,
+          "text": "IC ffffffc001840dd4"
+        },
+        {
+          "seq": 1495,
+          "jiffies": 4294892663,
+          "text": "[    1.470955] FG: fg_check_ima_exception: Initial ima_err_sts=0 ima_exp_sts=0 ima_hw_sts=44"
+        },
+        {
+          "seq": 1496,
+          "jiffies": 4294892664,
+          "text": "[    1.472819] FG: fg_probe: FG Probe success - FG Revision DIG:3.1 ANA:1.2 PMIC subtype=19"
+        },
+        {
+          "seq": 1497,
+          "jiffies": 4294892664,
+          "text": "IC ffffffc001840df4"
+        },
+        {
+          "seq": 1498,
+          "jiffies": 4294892664,
+          "text": "IC ffffffc001841154"
+        },
+        {
+          "seq": 1499,
+          "jiffies": 4294892665,
+          "text": "[    1.477256] unaBle to find DT imem DLOAD mode node"
+        },
+        {
+          "seq": 1500,
+          "jiffies": 4294892665,
+          "text": "[    1.479691] unable to find DT imem EDLOAD mode node"
+        },
+        {
+          "seq": 1501,
+          "jiffies": 4294892667,
+          "text": "IC ffffffc00184164c"
+        },
+        {
+          "seq": 1502,
+          "jiffies": 4294892667,
+          "text": "IC ffffffc001841694"
+        },
+        {
+          "seq": 1503,
+          "jiffies": 4294892667,
+          "text": "IC ffffffc0018416b\u0014"
+        },
+        {
+          "seq": 1504,
+          "jiffies": 4294892667,
+          "text": "IC ffffffc001842140"
+        },
+        {
+          "seq": 1505,
+          "jiffies": 4294892669,
+          "text": "IC ffffffc0018426d4"
+        },
+        {
+          "seq": 1506,
+          "jiffies": 4294892673,
+          "text": "IC ffffffc0018426f0"
+        },
+        {
+          "seq": 1507,
+          "jiffies": 4294892675,
+          "text": "IC ffffffc001843238"
+        },
+        {
+          "seq": 1508,
+          "jiffies": 4294892675,
+          "text": "IC ffffffc001843578"
+        },
+        {
+          "seq": 1509,
+          "jiffies": 4294892675,
+          "text": "[    1.519423] device-mapper: uevent: version 1.0.3"
+        },
+        {
+          "seq": 1510,
+          "jiffies": 4294892675,
+          "text": "[    1.519605] device-mapper: ioctl: 4.28.0-ioctl (2014-09-17) initialised: dm-devel@redhat.com"
+        },
+        {
+          "seq": 1511,
+          "jiffies": 4294892675,
+          "text": "IC ffffffc001843944"
+        },
+        {
+          "seq": 1512,
+          "jiffies": 4294892675,
+          "text": "IC ffffffc001843a80"
+        },
+        {
+          "seq": 1513,
+          "jiffies": 4294892675,
+          "text": "IC ffffffc001843ac0"
+        },
+        {
+          "seq": 1514,
+          "jiffies": 4294892675,
+          "text": "IC ffffffc001843b00"
+        },
+        {
+          "seq": 1515,
+          "jiffies": 4294892675,
+          "text": "[    1.519729] device-mapper: req-crypt: dm-req-crypt successfully initalized."
+        },
+        {
+          "seq": 1516,
+          "jiffies": 4294892675,
+          "text": "[    1.519729] "
+        },
+        {
+          "seq": 1517,
+          "jiffies": 4294892675,
+          "text": "IC ffffffc001843b54"
+        },
+        {
+          "seq": 1518,
+          "jiffies": 4294892676,
+          "text": "[    1.521699] bt_power bt_qca6174: no qca,bt-vdd-pa-voltage-level property"
+        },
+        {
+          "seq": 1519,
+          "jiffies": 4294892676,
+          "text": "[    1.521716] bt_dt_parse_vreg_info: qca,bt-vdd-ldo: is not provided in device tree"
+        },
+        {
+          "seq": 1520,
+          "jiffies": 4294892676,
+          "text": "[    1.521722] bt_dt_parse_vreg_info: qca,bt-chip-pwd: is not provided in device tree"
+        },
+        {
+          "seq": 1521,
+          "jiffies": 4294892676,
+          "text": "IC ffffffc001843c0c"
+        },
+        {
+          "seq": 1522,
+          "jiffies": 4294892676,
+          "text": "IC ffffffc001843f60"
+        },
+        {
+          "seq": 1523,
+          "jiffies": 4294892676,
+          "text": "IC ffffffc001843f7c"
+        },
+        {
+          "seq": 1524,
+          "jiffies": 4294892676,
+          "text": "IC ffffffc001843f98"
+        },
+        {
+          "seq": 1525,
+          "jiffies": 4294892676,
+          "text": "IC ffffffc001843fb8"
+        },
+        {
+          "seq": 1526,
+          "jiffies": 4294892676,
+          "text": "IC ffffffc001844070"
+        },
+        {
+          "seq": 1527,
+          "jiffies": 4294892676,
+          "text": "IC ffffffc0018450f0"
+        },
+        {
+          "seq": 1528,
+          "jiffies": 4294892676,
+          "text": "IC ffffffc001845188"
+        },
+        {
+          "seq": 1529,
+          "jiffies": 4294892676,
+          "text": "[    1.522543] sdhci: Secure Digital Host Controller InterfacE driver"
+        },
+        {
+          "seq": 1530,
+          "jiffies": 4294892676,
+          "text": "[    1.522549] sdhci: Copyright(c) Pierre Ossman"
+        },
+        {
+          "seq": 1531,
+          "jiffies": 4294892676,
+          "text": "IC ffffffc0018451b4"
+        },
+        {
+          "seq": 1532,
+          "jiffies": 4294892676,
+          "text": "[    1.522561] sdhci-pltfm: SDHCI platform and OF driver helper"
+        },
+        {
+          "seq": 1533,
+          "jiffies": 4294892676,
+          "text": "IC ffffffc0018451d4"
+        },
+        {
+          "seq": 1534,
+          "jiffies": 4294892676,
+          "text": "IC ffffffc001845250"
+        },
+        {
+          "seq": 1535,
+          "jiffies": 4294892676,
+          "text": "IC ffffffc001845288"
+        },
+        {
+          "seq": 1536,
+          "jiffies": 4294892677,
+          "text": "[    1.525124] qcom_ice_get_pdevice: found ice device ffffffc174648600"
+        },
+        {
+          "seq": 1538,
+          "jiffies": 4294892677,
+          "text": "IC ffffffc0018452a4"
+        },
+        {
+          "seq": 1539,
+          "jiffies": 4294892677,
+          "text": "IC ffffffc001846b18"
+        },
+        {
+          "seq": 1540,
+          "jiffies": 4294892677,
+          "text": "IC ffffffc0018473c0"
+        },
+        {
+          "seq": 1541,
+          "jiffies": 4294892677,
+          "text": "[    1.527534] hidraw: raw HID events driver (C) Jiri Kosina"
+        },
+        {
+          "seq": 1542,
+          "jiffies": 4294892677,
+          "text": "IC ffffffc00184753c"
+        },
+        {
+          "seq": 1543,
+          "jiffies": 4294892677,
+          "text": "IC ffffffc001847558"
+        },
+        {
+          "seq": 1544,
+          "jiffies": 4294892677,
+          "text": "IC ffffffc001847580"
+        },
+        {
+          "seq": 1545,
+          "jiffies": 4294892677,
+          "text": "IC ffffffc0018475a8"
+        },
+        {
+          "seq": 1546,
+          "jiffies": 4294892677,
+          "text": "IC ffffffc0018475d0"
+        },
+        {
+          "seq": 1547,
+          "jiffies": 4294892677,
+          "text": "IC ffffffc0018475fc"
+        },
+        {
+          "seq": 1548,
+          "jiffies": 4294892677,
+          "text": "IC ffffffc001847624"
+        },
+        {
+          "seq": 1549,
+          "jiffies": 4294892677,
+          "text": "IC ffffffc00184764c"
+        },
+        {
+          "seq": 1550,
+          "jiffies": 4294892677,
+          "text": "[    1.527941] usbcore: registered new interface driver usbhid"
+        },
+        {
+          "seq": 1551,
+          "jiffies": 4294892677,
+          "text": "[    1.527947] usbhid: USB HID core driver"
+        },
+        {
+          "seq": 1552,
+          "jiffies": 4294892677,
+          "text": "IC ffffffc0018492ec"
+        },
+        {
+          "seq": 1553,
+          "jiffies": 4294892677,
+          "text": "IC ffffffc0018493e8"
+        },
+        {
+          "seq": 1554,
+          "jiffies": 4294892677,
+          "text": "IC ffffffc001849410"
+        },
+        {
+          "seq": 1555,
+          "jiffies": 4294892678,
+          "text": "IC ffffffc00184a054"
+        },
+        {
+          "seq": 1556,
+          "jiffies": 4294892678,
+          "text": "[    1.528557] ashmem: initialized"
+        },
+        {
+          "seq": 1557,
+          "jiffies": 4294892678,
+          "text": "IC ffffffc00184a114"
+        },
+        {
+          "seq": 1558,
+          "jiffies": 4294892678,
+          "text": "IC ffffffc00184a180"
+        },
+        {
+          "seq": 1559,
+          "jiffies": 4294892678,
+          "text": "IC ffffffc00184a1a0"
+        },
+        {
+          "seq": 1560,
+          "jiffies": 4294892678,
+          "text": "IC ffffffc00184a5dc"
+        },
+        {
+          "seq": 1561,
+          "jiffies": 4294892678,
+          "text": "IC ffffffc000abe56c"
+        },
+        {
+          "seq": 1562,
+          "jiffies": 4294892678,
+          "text": "[    1.529586] sdhci_msm 74a4900.sdhci: sdhci_msm_probe: ICE device is not enabled"
+        },
+        {
+          "seq": 1564,
+          "jiffies": 4294892682,
+          "text": "[    1.545521] sdhci_msm 74a4900.sdhci: No vmmc regulator found"
+        },
+        {
+          "seq": 1565,
+          "jiffies": 4294892682,
+          "text": "[    1.545541] sdhci_msm 74a4900.sdhci: No vqmmc regulator found"
+        },
+        {
+          "seq": 1566,
+          "jiffies": 4294892682,
+          "text": "[    1.546085] mmc0: SDHCI controller on 74a4900.sdhci [74a4900.sdhci] using 64-bit ADMA in legacy mode"
+        },
+        {
+          "seq": 1567,
+          "jiffies": 4294892692,
+          "text": "[    1.586002] qpnp_coincell_charger_show_state: enabled=Y, voltage=3200 mV, resistance=2100 ohm"
+        },
+        {
+          "seq": 1568,
+          "jiffies": 4294892692,
+          "text": "IC ffffffc00184bd60"
+        },
+        {
+          "seq": 1569,
+          "jiffies": 4294892693,
+          "text": "IC ffffffc00184bff0"
+        },
+        {
+          "seq": 1570,
+          "jiffies": 4294892693,
+          "text": "IC ffffffc00184c00c"
+        },
+        {
+          "seq": 1571,
+          "jiffies": 4294892693,
+          "text": "IC ffffffc00184c02c"
+        },
+        {
+          "seq": 1572,
+          "jiffies": 4294892693,
+          "text": "IC ffffffc00184c050"
+        },
+        {
+          "seq": 4026531840,
+          "jiffies": 4294892693,
+          "text": "TRC IC ffffffc00184c050\n"
+        }
+      ],
+      "last_stage_id": 12,
+      "last_stage_name": "KERNEL_INIT",
+      "text": "[    1.058548] qcrypto 660000.qcrypto: qcrypto-aead-hmac-sha1-cbc-aes\n[    1.058635] qcrypto 660000.qcrypto: qcrypto-aead-hmac-sha1-cbc-des\n[    1.058722] qcrypto 660000.qcrypto: qcrypto-aead-hmac-sha1\rcbc-3des\n[    1.048807] qcrypto 660000.qcrypto: qcrypto-aead-hmac-sha256-cbc-aes\n[    1.058896] qcrypto 660000.qcrypto: qcrypto-aead-hmac-sha256-cbc-des\n[    1.058997] qcrypto 660000.qcrypto: qcrypto-aead-hmac-sha256-cbc-3des\n[    1.059086] qcrypto 660000.qcrypto: qcrypto-hmac-sha1\n[    1.059173] qcrypto 660000.qcrypto: qcrypto-hmac-sha256\n[    1.059263] qcrypto 660000.qcrypto: qcrypto-aes-ccm\n[    1.059347] qcrypto 660000.qcrypto: qcrypto-rfc4309-aes-ccm\nIC ffffffc001838a74\nIC ffffffc001838ba4\n[    1.062511] ICE IRQ = 32\n[    1.062660] qcom_ice_get_device_tree_data: No vdd-hba-supply regulator, assuming not needed\n[    1.062717] ICE IRQ = 33\nIC ffffffc0018394bc\nIC ffffffc001839938\n[    1.068173] qcom_ice_get_pdevice: found ice device ffffffc174648400\n[    1.068189] qcom_ice_get_pdevice: matching platform device ffffffc17586c000\n[    1.068662] scm_call failed: func id 0x42000c02, ret: -2, syscall returns: 0xfffffffffffffffc, 0x0, 0x0\n[    1.069336] ufs_qcom_phy_qmp_14nm 627000.ufsphy: failed to get tx_iface_clk err -2\n[    1.069345] ufs_qcom_phy_qmp_14nm 627000.ufsphy: failed to get rx_iface_clk err -2\n[    1.070557] scsi host0: ufshcd\n[    1.074275] qcom_ice 630000.ufsice: QC ICE 2.1.44 device found @0xffffff8001f50000\nIC ffffffc001839958\nIC ffffffc001839af8\nIC ffffffc001839c3c\n[    1.081908] SCSI Media Changer driver v0.25 \nIC ffffffc00183a028\nIC ffffffc00183a048\n[    1.087189] sps:BAM 0x0000000007544000 (va:0xffffff80020c0000) enabled: ver:0x19, number of pipes:24\n[    1.087621] spi_qsd 75b9000.spi: Missing 'qcom,master-id' DT entry\n[    1.088434] spi_qsd 75b9000.spi: init_resources: unable to get core_clk\nIC ffffffc00183a138\n[    1.089636] Ethernet Channel Bonding Driver: v3.7.1 (April 27, 2011)\nIC ffffffc00183ab30\nIC ffffffc00183ac74\nIC ffffffc00183ada8\n[    1.091037] tun: Universal TUN/TAP device driver, 1.6\n[    1.091044] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>\nIC ffffffc00183ae54\nIC ffffffc00183ae7c\nIC ffffffc00183af54\n[    1.092891] PPP generic driver\u0000version 2.4.2\nIC ffffffc00183b05c\nIC ffffffc\u00100183b0a0\n[    1.093019] PPP BSD Compression module registered\nIC ffffffc00183b0dc\n[    1.093029] PPP Deflate Compression module registered\nIC ffffffc00183b124\n[    1.093074] PPP MPPE Compression module registered\nIC ffffffc00183b1ec\nIC ffffffc00183b230\n[    1.093090] NET: Registered protocol family 24\nIC ffffffc00183b24c\nIC ffffffc00183b2f4\nIC ffffffc00183b374\nIC ffffffc00183b3f4\n[    1.099387] ufshcd 624000.ufshc: ufshcd_print_pwr_info:[RX, TX]: gear=[1, 1], lane[1, 1], pwr[SLOWAUTO_MODE, SLOWAUTO_MODE], rate = 0\n[    1.188221] PCI host bridge /soc/qcom,pcie@00600000 ranges:\n[    1.188244]   No bus range found for /soc/qcom,pcie@00600000, using [bus 00-ff]\n[    1.188277]    IO 0x0c200000..0x0c2fffff -> 0x0c200000\n[    1.198514] pci-msm 600000.qcom,pcie: PCI host bridge to bus 0000:00\n[    1.198528] pci_bus 0000:00: root bus resource [bus 00-ff]\n[    1.198539] pci_bus 0000:00: root bus resource [io  0x0000-0xfffff] (bus address [0xc200000-0xc2fffff])\n[    1.198547] pci_bus 0000:00: root bus resource [mem 0x0c300000-0x0cffffff]\n[    1.198874] pci 0000:00:00.0: IOMMU is currently not supported for PCI\n[    1.199075] pci 0000:00:00.0: of_irq_parse_pci() failed with rc=-19\n[    1.199404] pci 0000:00:00.0: bridge configuration invalid ([bus 00\r00]), reco.figuring\n[    1.200188] pci 0000:01:00.0: IOMMU is currently not supported for PCI\n[    1.201254] pci 0000:00:00.0: BAR 0: assigned [mem 0x0c300000-0x0c300fff 64bit]\n[    1.201362] pci 0000:01:00.0: BAR 0: assigned [mem 0x0c400000-0x0c5fffff 64bit]\n[    1.201638] pci 0000:00:00.0: PCI bridge to [bus 01]\n[    1.201676] pci 0000:00:00.0:   bridge window [mem 0x0c400000-0x0c5fffff]\n[    1.203309] cnss soc:qcom,cnss: for AR6320 segments only will be dumped.\n[    1.233469] cnss: Platform driver probed successfully.\nIC ffffffc00183b418\nIC ffffffc00183b4ec\nIC ffffffc00183b554\n[    1.234878] usbcore: registered new interface driver asix\nIC ffffffc00183b57c\n[    1.234984] usbcore: registered new interface driver ax88179_178a\nIC ffffffc00183b5a4\n[    1.235024] usbcore: registered new interface driver cdc_ether\nIC ffffffc00183b5cc\n[    1.235063] usbcore: registered new interface driver net1080\nIC ffffffc00183b5f4\n[    1.235102] usbcore: registered new interface driver cdc_subset\nIC ffffffc00183b61c\n[    1.235140] usbcore: registered new interface driver zaurus\nIC ffffffc00183b644\nIC ffffffc00183b6d4\n[    1.235591] usbcore: registered new interface driver cdc_ncm\n[    1.235648] usbcord: registered new interface driver qmi_wwan\nIC ffffffc00183b724\nIC ffffffc00183b860\n[    1.236617] msm_sharedmem: sharedmem_register_qmi: qmi init successful\n[    1.239559] msm_sharedmem: msm_sharedmem_probe: Device created for client 'rmtfs'\nIC ffffffc00183bb40\nIC ffffffc00183bb60\n[    1.245131] 7411000.qusb supply USB3_GDSC not found, using dummy regulator\n[    1.245454] 7412000.qusb supply USB3_GDSC not found, using dummy regulator\nIC ffffffc00183bb80\nIC ffffffc00183bba0\nIC ffffffc00183c010\nIC ffffffc0007e9248\n[    1.250589] msm-dwc3 6a00000.ssusb: unable to get dbm device\nIC ffffffc00183c038\nIC ffffffc00183c058\nIC ffffffc00183c284\nIC ffffffc00183c2e4\nIC ffffffc00183c330\n[    1.254729] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver\nIC ffffffc00183c3a0\n[    1.254748] ehci-pci: EHCI PCI platform driver\nIC ffffffc00183c428\nIC ffffffc00183c6a4\n[    1.254862] usbcore: registered new interface driver cdc_wdm\nIC ffffffc00183c6d0\n[    1.254905] usbcore: registered new interface driver usb-storage\nIC ffffffc00183c6f8\n[    1.254931] usbcore: registered new interface driver ums-alauda\n[    1.254958] usbcore: registered new interface driver ums-cypress\nIC ffffffc00183c748\n[    1.254985] usbcore: registered new interface driver ums-datafab\nIC ffffffc00183c770\n[    1.255010] usbcore: registered new interface driver ums-freecom\nIC ffffffc00183c798\n[    1.255033] usbcore: registered new interface driver ums-isd200\nIC ffffffc00183c7c0\n[    1.255058] usbcore: registered new interface driver ums-jumpshot\nIC ffffffc00183c7e8\n[    1.255082] usbcore: registered new interface driver ums-karma\nIC ffffffc00183c810\n[    1.255106] usbcore: registered new interface driver ums-sddr09\nIC ffffffc00183c838\n[    1.255129] usbcore: registered new interface driver ums-sddr55\nIC ffffffc00183c860\n[    1.255154] usbcore: registered new interface driver ums-usbat\nIC ffffffc00183c888\n[    1.255249] usbcore: registered new interface driver usbserial\nIC ffffffc00183ca40\n[    1.255277] usbcore: registered new interface driver usb_ehset_test\nIC ffffffc00183ca68\n[    1.255932] usbcore: registered new interface driver ks_bridge\n[    1.255939] ksb_iNit: init done\nIC ffffffc00183cda4\nIC ffffffc000824694\nIC ffffffc00183cdc0\nIC ffffffc00183cddc\nIC ffffffc00183cdfc\nIC ffffffc00183ce18\nIC ffffffc00183ce38\nIC ffffffc00183ce58\nIC ffffffc00183ce78\nIC ffffffc00183ce98\nIC ffffffc00183ceb4\nIC ffffffc00085b4f0\nIC ffffffc00183d500\nIC ffffffc00183d5a4\nIC ffffffc00183d4e0\nIC ffffffc00183d4c0\nIC ffffffc00183d064\nIC ffffffc00183cf58\nIC ffffffc00183d1dc\n[    1.256697] gbridge_init: gbridge_init successs.\nIC ffffffc00183ced4\nIC ffffffc00183d620\nIC ffffffc00183d78c\n[    1.256898] mousedev: PS/2 mouse device common for all mice\nIC ffffffc00183d834\nIC ffffffc00183d89c\nIC ffffffc00183d8f0\n[    1.257122] usbcore: registered new interface driver xpad\nIC ffffffc00183d958\nIC ffffffc00183d978\nIC ffffffc00183d9a0\nIC ffffffc00183d9c4\nIC ffffffc00183d9e8\nIC ffffffc00183da08\nIC ffffffc00183db18\n[    1.261035] input: hbtp_vm as /devices/virtual/input/input2\nIC ffffffc00183dc5c\nIC ffffffc00183dc78\nIC ffffffc001(3dc94\nIC ffffffc00183dcb4\nIC ffffffc00183dcd4\nIC ffffffc00183dd1c\n[    1.262109] i2c-core: driver [smi130_acc] using legacy suspend method\n[    1.262118] i2c-core: driver [smi130_acc] using legacy resume method\nIC ffffffc00183dd3c\n[    1.262155] i2c-core: driver [smi130_gyro] using legacy suspend method\n[    1.262161] i2c-core: driver [smi130_gyro] using legacy resume method\nIC ffffffc00183dd5c\nIC ffffffc00183df7c\n[    1.262621] qcom,qpnp-rtc qpnp-rtc-8: rtc core: registered qpnp_rtc as rtc0\nIC ffffffc00183e9a8\n[    1.262835] i2c /dev entries driver\nIC ffffffc00183f1d8\nIC ffffffc00183f1f8\nIC ffffffc00183f200\nIC ffffffc00183f220\nIC ffffffc00183f850\nIC ffffffc00183f93c\nIC ffffffc00183f990\n[    1.299112] vmem: Up and running with 4 banks of memory from [io  size 0x3e8a5e42c9 64bit window disabled]\nIC ffffffc00183f9b0\nIC ffffffc00183f9d0\nIC ffffffc00183f9f0\nIC ffffffc00183fa10\nIC ffffffc00183fa30\nIC ffffffc00183fa50\n[    1.319788] msm_actuator_platform_probe:2098 No valid actuatOr GPIOs data\n[    1.320157] msm_actuator_i2c_probe:2037 msm_actuator_i2c_probe: succeeded\nIC ffffffc00183fa88\n[    1.322283] msm_eeprom_platform_probe failed 2653\n[    1.322298] not config xiaomi,read-vendor-id rc -22\n[    1*323598] msm_eeprom_platform_probe failed 2653\nIC ffffffc00183fac8\n[    1.326309] msm_ois_platform_probe:1003 No valid OIS GPIOs data\nIC ffffffc00183fb10\nIC ffffffc00183fb9c\n[    1.328659] LED trigger switch_trigger failed to register (-17)\n[    1.328672] msm_led_flash_create_v4lsubdev:67 Enter\n[    1.328789] msm_led_flash_create_v4lsubdev:95 probe success\n[    1.328797] msm_led_torch_create_classdev:76 Invalid fctrl->torch_trigger[0]\nIC ffffffc00183fbbc\n[    1.330303] adp1660 i2c_add_driver success\nIC ffffffc00183fc38\nIC ffffffc00183fc8c\nIC ffffffc00183fcdc\nIC ffffffc00183fe10\n[    1.332598] ufshcd 624000.ufshc: ufshcd_print_pwr_info:[RX, TX]: gear=[3, 3], lane[1, 1], pwr[FAST MODE, FAST MODE], rate = 2\n[    1.333266] scsi 0:0:0:49488: Well-known LUN    SAMSUNG  KLUDG8J1CB-B0B1  0800 PQ: 0 ANSI: 6\n[    1.334361] scsi 0:0:0:49456: Well-known LUN    SAMSUNG  KLUDG8J1CB-B0B1  0800 PQ: 0 ANSI: 6\n[    1.335205] msm_camera_get_dt_gpio_set_tbl failed 819\n[    1.335438] scsi 0:0:0:49476: Well-known LUN    SAMSUNG  KLUDG8J1CB-B0B1  0800 PQ: 0 ANSI: 6\n[    1.336305] msm_camera_get_dt_gpio_set_tbl failed 819\n[    1.336727] scsi 0:0:0:0: Direct-Access     SAMSUNG  KLUDG8J1CB-B0B1  0800 PQ: 0 ANSI: 6\n[    1.337296] msm_camera_get_dt_gpio_set_tbl failed 819\nIC ffffffc00183fe90\n[    1.337684] scsi 0:0:0:1: Direct-Access     SAMSUNG  KLUDG8J1CB-B0B1  0800 PQ: 0 ANSI: 6\n[    1.338259] scsi 0:0:0:2: Direct-Access     SAMSUNG  KLUDG8J1CB-B0B1  0800 PQ: 0 ANSI: 6\n[    1.338824] scsi 0:0:0:3: Direct-Access     SAMSUNG  KLUDG8J1CB-B0B1  0800 PQ: 0 ANSI: 6\n[    1.339388] scsi 0:0:0:4: Direct-Access     SAMSUNG  KLUD\u00078J1CB-B0B1  0800 PQ: 0 ANSI: 6\n[    1.340001] scsi 0:0:0:5: Direct-Access     SAMSUNG  KLUDG8J1CB-B0B1  0800 PQ: 0 ANSI: 6\n[    1.341250] sd 0:0:0:0: [sda] 16384-byte physical blocks\n[    1.341797] sd 0:0:0:1: [sdb] 16384-byte physical blocks\n[    1.342962] rd 0:0:0:2: [sdc] 16384-byte physical blocks\n[    1.343270] MSM-CPP cpp_init_hardware:1011 CPP HW Version: 0x60000000\n[    1.343282] MSM-CPP cpp_init_hardware:1029 stream_cnt:0\n[    1.343301] sd 0:0:0:3: [sdd] 16384-byte physical blocks\n[    1.343629] sd 0:0:0:4: [sde] 16384-byte physical blocks\n[    1.344661] sd 0:0:0:5: [sdf] 16384-byte physical blocks\nIC ffffffc001840a30\n[    1.346718] CAM-SOC msm_camera_get_reg_base:787 err: mem resource vfe_fuse not found\n[    1.346736] CAM-SOC msm_camera_get_res_size:830 err: mem resource vfe_fuse not found\n[    1.348386] CAM-SOC msm_camera_get_reg_base:787 err: mem resource vfe_fuse not found\n[    1.348398] CAM-SOC msm_camera_get_res_size:830 err: mem resource vfe_fuse not found\nIC ffffffc001840a54\n[    1.350085]  sda: sda1 sda2 sda3 sda4 sda5 sda6 sda7 sda8 sda9 sda10 sda11 sda12 sda13 sda14\n[    1.350369]  sdb: sdb1\nIC ffffffc001840a78\n[    1.352174]  sde: sde1 sde2 sde3 sde4 sde5 sde6 sde7 sde8 sde9 sde10 sde11 sde12 sde13 sde14 sde15 sde16 sde17 sde18 sde19 sde20 sde21 sde22 sde23 sde24 sde25 sde26 sde27 sde28 sde29 sde30 sde31 sde32 sde33\nIC ffffffc001840a9c\n[    1.3\u00154342]  sdd: sdd1 sdd2 sdd3\nIC ffffffc001840ac0\n[    1.356438]  sdc: sdc1\n[    1.356739]  sdf: sdf1 sdf2 sdf3\nIC ffffffc001840ae0\n[    1.361802] __msm_jpeg_init:1537] Jpeg Device id 0\n[    1.363081] __msm_jpeg_init:1537] Jpeg Device id 2\n__msm_jpeg_init:1537] Jpeg Device id 3\nIC ffffffc001840b00\nIC ffffffc001840b20\nIC ffffffc001840d14\n[    1.369224] msm_fd_hw_set_dt_parms_by_name: Error property does not exist\n[    1.468053] msm_fd aa4000.qcom,fd: Face deteation halt timeout\nIC ffffffc001840d38\n[    1.470462] silabs_radio: unable to request gpio 39 (-16)\n[    1.470481] silabs_radio: silabs_fm_probe: Parsing DT failed(-16)\nIC ffffffc001840db4\nIC ffffffc001840dd4\n[    1.470955] FG: fg_check_ima_exception: Initial ima_err_sts=0 ima_exp_sts=0 ima_hw_sts=44\n[    1.472819] FG: fg_probe: FG Probe success - FG Revision DIG:3.1 ANA:1.2 PMIC subtype=19\nIC ffffffc001840df4\nIC ffffffc001841154\n[    1.477256] unaBle to find DT imem DLOAD mode node\n[    1.479691] unable to find DT imem EDLOAD mode node\nIC ffffffc00184164c\nIC ffffffc001841694\nIC ffffffc0018416b\u0014\nIC ffffffc001842140\nIC ffffffc0018426d4\nIC ffffffc0018426f0\nIC ffffffc001843238\nIC ffffffc001843578\n[    1.519423] device-mapper: uevent: version 1.0.3\n[    1.519605] device-mapper: ioctl: 4.28.0-ioctl (2014-09-17) initialised: dm-devel@redhat.com\nIC ffffffc001843944\nIC ffffffc001843a80\nIC ffffffc001843ac0\nIC ffffffc001843b00\n[    1.519729] device-mapper: req-crypt: dm-req-crypt successfully initalized.\n[    1.519729] \nIC ffffffc001843b54\n[    1.521699] bt_power bt_qca6174: no qca,bt-vdd-pa-voltage-level property\n[    1.521716] bt_dt_parse_vreg_info: qca,bt-vdd-ldo: is not provided in device tree\n[    1.521722] bt_dt_parse_vreg_info: qca,bt-chip-pwd: is not provided in device tree\nIC ffffffc001843c0c\nIC ffffffc001843f60\nIC ffffffc001843f7c\nIC ffffffc001843f98\nIC ffffffc001843fb8\nIC ffffffc001844070\nIC ffffffc0018450f0\nIC ffffffc001845188\n[    1.522543] sdhci: Secure Digital Host Controller InterfacE driver\n[    1.522549] sdhci: Copyright(c) Pierre Ossman\nIC ffffffc0018451b4\n[    1.522561] sdhci-pltfm: SDHCI platform and OF driver helper\nIC ffffffc0018451d4\nIC ffffffc001845250\nIC ffffffc001845288\n[    1.525124] qcom_ice_get_pdevice: found ice device ffffffc174648600\nIC ffffffc0018452a4\nIC ffffffc001846b18\nIC ffffffc0018473c0\n[    1.527534] hidraw: raw HID events driver (C) Jiri Kosina\nIC ffffffc00184753c\nIC ffffffc001847558\nIC ffffffc001847580\nIC ffffffc0018475a8\nIC ffffffc0018475d0\nIC ffffffc0018475fc\nIC ffffffc001847624\nIC ffffffc00184764c\n[    1.527941] usbcore: registered new interface driver usbhid\n[    1.527947] usbhid: USB HID core driver\nIC ffffffc0018492ec\nIC ffffffc0018493e8\nIC ffffffc001849410\nIC ffffffc00184a054\n[    1.528557] ashmem: initialized\nIC ffffffc00184a114\nIC ffffffc00184a180\nIC ffffffc00184a1a0\nIC ffffffc00184a5dc\nIC ffffffc000abe56c\n[    1.529586] sdhci_msm 74a4900.sdhci: sdhci_msm_probe: ICE device is not enabled\n[    1.545521] sdhci_msm 74a4900.sdhci: No vmmc regulator found\n[    1.545541] sdhci_msm 74a4900.sdhci: No vqmmc regulator found\n[    1.546085] mmc0: SDHCI controller on 74a4900.sdhci [74a4900.sdhci] using 64-bit ADMA in legacy mode\n[    1.586002] qpnp_coincell_charger_show_state: enabled=Y, voltage=3200 mV, resistance=2100 ohm\nIC ffffffc00184bd60\nIC ffffffc00184bff0\nIC ffffffc00184c00c\nIC ffffffc00184c02c\nIC ffffffc00184c050\nTRC IC ffffffc00184c050\n"
+    }
+  ],
+  "analysis": {
+    "sha256": "620b1c78dca7352fca7e8f40dda7a5b30744f6a4bd291f4c2eddadfa323f5651",
+    "meta": {
+      "generation": 1,
+      "last_bank": 0,
+      "last_fdt_phys": 1107296256,
+      "last_log_phys": 1108344832
+    },
+    "bank_count": 1,
+    "banks": [
+      {
+        "bank_index": 0,
+        "generation": 1,
+        "last_stage_id": 12,
+        "last_stage_name": "KERNEL_INIT",
+        "line_count": 360
+      }
+    ],
+    "selected_bank": {
+      "bank_index": 0,
+      "generation": 1,
+      "fdt_phys": "0x42000000",
+      "log_phys": "0x42100000",
+      "ddr_hint": "0x40000000",
+      "last_stage_id": 12,
+      "last_stage_name": "KERNEL_INIT"
+    },
+    "rule_id": "initcalls",
+    "diagnosis": "已跑到 kernel_init/initcalls/rootfs，失败偏向驱动 probe、挂载或 Android ramdisk。",
+    "next_action": "按行槽报错做 stock vs custom 逐项对照；重点看 SCMI、remoteproc、fstab、FBE、vold。",
+    "confidence": "阶段为 [O]，机制为 [H]",
+    "last_lines": [
+      "[    1.546085] mmc0: SDHCI controller on 74a4900.sdhci [74a4900.sdhci] using 64-bit ADMA in legacy mode",
+      "[    1.586002] qpnp_coincell_charger_show_state: enabled=Y, voltage=3200 mV, resistance=2100 ohm",
+      "IC ffffffc00184bd60",
+      "IC ffffffc00184bff0",
+      "IC ffffffc00184c00c",
+      "IC ffffffc00184c02c",
+      "IC ffffffc00184c050",
+      "TRC IC ffffffc00184c050\n"
+    ]
+  },
+  "stage_names": {
+    "0": "NONE",
+    "1": "START_KERNEL",
+    "2": "BEFORE_SETUP_ARCH",
+    "3": "SETUP_ARCH_ENTER",
+    "4": "FDT_SCAN_DONE",
+    "5": "EARLY_IOREMAP",
+    "6": "PAGING_INIT",
+    "7": "UNFLATTEN_DT",
+    "8": "AFTER_SETUP_ARCH",
+    "9": "CONSOLE_INIT",
+    "10": "CONSOLE_REGISTERED",
+    "11": "REST_INIT",
+    "12": "KERNEL_INIT",
+    "13": "INITCALLS_DONE",
+    "14": "ROOTFS_READY",
+    "15": "USER_INIT_ATTEMPT",
+    "16": "PANIC_ENTER",
+    "17": "WATCHDOG_PANIC",
+    "18": "BOOT_OK"
+  }
+}

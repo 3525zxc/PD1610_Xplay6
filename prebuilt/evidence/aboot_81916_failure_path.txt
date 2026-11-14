@@ -1,0 +1,543 @@
+PD1610 aboot 8.19.16 - verification failure path, independent re-check
+file   : C:\qfilx\firmware\81916\emmc_appsboot.mbn (3173696 bytes)
+compare: C:\qfilx\probe\aboot.bin (16777216 bytes)
+PT_LOAD: vaddr=0x91D00000 off=0x8000 size=0x2FED40
+
+==============================================================================
+G = boot verification wrapper (0x91D39CB4)   VA 0x91D39CB4  file_off 0x41CB4  448 bytes
+==============================================================================
+  91D39CB4  f0402de9   push     {r4, r5, r6, r7, lr}
+  91D39CB8  bc5a03e3   movw     r5, #0x3abc
+  91D39CBC  015249e3   movt     r5, #0x9201
+  91D39CC0  dc6705e3   movw     r6, #0x57dc
+  91D39CC4  016249e3   movt     r6, #0x9201
+  91D39CC8  24d04de2   sub      sp, sp, #0x24
+  91D39CCC  002095e5   ldr      r2, [r5]
+  91D39CD0  184301e3   movw     r4, #0x1318
+  91D39CD4  003096e5   ldr      r3, [r6]
+  91D39CD8  da4149e3   movt     r4, #0x91da
+  91D39CDC  000052e3   cmp      r2, #0
+  91D39CE0  0070a0e1   mov      r7, r0
+  91D39CE4  0120a0e3   mov      r2, #1
+  91D39CE8  142084e5   str      r2, [r4, #0x14]
+  91D39CEC  1c308de5   str      r3, [sp, #0x1c]
+  91D39CF0  3f00001a   bne      #0x91d39df4
+  91D39CF4  b8ca02e3   movw     ip, #0x2ab8
+  91D39CF8  01c249e3   movt     ip, #0x9201
+  91D39CFC  203803e3   movw     r3, #0x3820
+  91D39D00  d83149e3   movt     r3, #0x91d8
+  91D39D04  00009ce5   ldr      r0, [ip]
+  91D39D08  142803e3   movw     r2, #0x3814
+  91D39D0C  d82149e3   movt     r2, #0x91d8
+  91D39D10  000050e3   cmp      r0, #0
+  91D39D14  0320a001   moveq    r2, r3
+  91D39D18  0700a0e1   mov      r0, r7
+  91D39D1C  2b64ffeb   bl       #0x91d12dd0
+  91D39D20  0070a0e1   mov      r7, r0
+  91D39D24  3f65ffeb   bl       #0x91d13228
+  91D39D28  000057e3   cmp      r7, #0
+  91D39D2C  1a00001a   bne      #0x91d39d9c
+  91D39D30  002095e5   ldr      r2, [r5]
+  91D39D34  143094e5   ldr      r3, [r4, #0x14]
+  91D39D38  002092e2   adds     r2, r2, #0
+  91D39D3C  0120a013   movne    r2, #1
+  91D39D40  000053e3   cmp      r3, #0
+  91D39D44  0820cde5   strb     r2, [sp, #8]
+  91D39D48  0230a013   movne    r3, #2
+  91D39D4C  0130a003   moveq    r3, #1
+  91D39D50  08008de2   add      r0, sp, #8
+  91D39D54  0040a0e3   mov      r4, #0
+  91D39D58  0930cde5   strb     r3, [sp, #9]
+  91D39D5C  0c408de5   str      r4, [sp, #0xc]
+  91D39D60  10408de5   str      r4, [sp, #0x10]
+  91D39D64  14408de5   str      r4, [sp, #0x14]
+  91D39D68  18408de5   str      r4, [sp, #0x18]
+  91D39D6C  d52b00eb   bl       #0x91d44cc8
+  91D39D70  1c65ffeb   bl       #0x91d131e8
+  91D39D74  020050e3   cmp      r0, #2
+  91D39D78  1900000a   beq      #0x91d39de4
+  91D39D7C  030050e3   cmp      r0, #3
+  91D39D80  1100000a   beq      #0x91d39dcc
+  91D39D84  1c209de5   ldr      r2, [sp, #0x1c]
+  91D39D88  003096e5   ldr      r3, [r6]
+  91D39D8C  030052e1   cmp      r2, r3
+  91D39D90  1f00001a   bne      #0x91d39e14
+  91D39D94  24d08de2   add      sp, sp, #0x24
+  91D39D98  f080bde8   pop      {r4, r5, r6, r7, pc}
+  91D39D9C  000095e5   ldr      r0, [r5]
+  91D39DA0  ac2d07e3   movw     r2, #0x7dac
+  91D39DA4  002249e3   movt     r2, #0x9200
+  91D39DA8  0110a0e3   mov      r1, #1
+  91D39DAC  000090e2   adds     r0, r0, #0
+  91D39DB0  0130a0e1   mov      r3, r1
+  91D39DB4  001082e5   str      r1, [r2]
+  91D39DB8  0020a0e3   mov      r2, #0
+  91D39DBC  0100a013   movne    r0, #1
+  91D39DC0  142084e5   str      r2, [r4, #0x14]
+  91D39DC4  0800cde5   strb     r0, [sp, #8]
+  91D39DC8  e0ffffea   b        #0x91d39d50
+  91D39DCC  0200a0e3   mov      r0, #2
+  91D39DD0  826affeb   bl       #0x91d147e0
+  91D39DD4  300507e3   movw     r0, #0x7530
+  91D39DD8  f67bffeb   bl       #0x91d18db8
+  91D39DDC  9eedffeb   bl       #0x91d3545c
+  91D39DE0  e7ffffea   b        #0x91d39d84
+  91D39DE4  0400a0e1   mov      r0, r4
+  91D39DE8  7c6affeb   bl       #0x91d147e0
+  91D39DEC  f667ffeb   bl       #0x91d13dcc
+  91D39DF0  e3ffffea   b        #0x91d39d84
+  91D39DF4  04108de5   str      r1, [sp, #4]
+  91D39DF8  3544ffeb   bl       #0x91d0aed4
+  91D39DFC  04109de5   ldr      r1, [sp, #4]
+  91D39E00  000050e3   cmp      r0, #0
+  91D39E04  baffff1a   bne      #0x91d39cf4
+  91D39E08  082803e3   movw     r2, #0x3808
+  91D39E0C  d82149e3   movt     r2, #0x91d8
+  91D39E10  c0ffffea   b        #0x91d39d18
+  91D39E14  2a5e00eb   bl       #0x91d516c4
+  91D39E18  30402de9   push     {r4, r5, lr}
+  91D39E1C  dc4705e3   movw     r4, #0x57dc
+  91D39E20  014249e3   movt     r4, #0x9201
+  91D39E24  0cd04de2   sub      sp, sp, #0xc
+  91D39E28  000051e3   cmp      r1, #0
+  91D39E2C  0050a0e1   mov      r5, r0
+  91D39E30  003094e5   ldr      r3, [r4]
+  91D39E34  04308de5   str      r3, [sp, #4]
+  91D39E38  0e00001a   bne      #0x91d39e78
+  91D39E3C  6f2cffeb   bl       #0x91d05000
+  91D39E40  020980e2   add      r0, r0, #0x8000
+  91D39E44  0c0085e5   str      r0, [r5, #0xc]
+  91D39E48  6c2cffeb   bl       #0x91d05000
+  91D39E4C  220680e2   add      r0, r0, #0x2200000
+  91D39E50  140085e5   str      r0, [r5, #0x14]
+  91D39E54  692cffeb   bl       #0x91d05000
+  91D39E58  04209de5   ldr      r2, [sp, #4]
+  91D39E5C  003094e5   ldr      r3, [r4]
+  91D39E60  030052e1   cmp      r2, r3
+  91D39E64  020480e2   add      r0, r0, #0x2000000
+  91D39E68  200085e5   str      r0, [r5, #0x20]
+  91D39E6C  0500001a   bne      #0x91d39e88
+  91D39E70  0cd08de2   add      sp, sp, #0xc
+
+G bl-targets: 0x91D12DD0, 0x91D13228, 0x91D44CC8, 0x91D131E8, 0x91D147E0, 0x91D18DB8, 0x91D3545C, 0x91D147E0, 0x91D13DCC, 0x91D0AED4, 0x91D516C4, 0x91D05000, 0x91D05000, 0x91D05000
+G ends with pop/return (see last lines above) - no direct reboot/assert branch
+
+==============================================================================
+Failure-side state handler (0x91D44CC8)   VA 0x91D44CC8  file_off 0x4CCC8  288 bytes
+==============================================================================
+  91D44CC8  f04f2de9   push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+  91D44CCC  dc6705e3   movw     r6, #0x57dc
+  91D44CD0  016249e3   movt     r6, #0x9201
+  91D44CD4  d4d04de2   sub      sp, sp, #0xd4
+  91D44CD8  0e40a0e1   mov      r4, lr
+  91D44CDC  0090a0e1   mov      sb, r0
+  91D44CE0  003096e5   ldr      r3, [r6]
+  91D44CE4  cc308de5   str      r3, [sp, #0xcc]
+  91D44CE8  030800eb   bl       #0x91d46cfc
+  91D44CEC  000050e3   cmp      r0, #0
+  91D44CF0  2600001a   bne      #0x91d44d90
+  91D44CF4  307401e3   movw     r7, #0x1430
+  91D44CF8  000059e3   cmp      sb, #0
+  91D44CFC  da7149e3   movt     r7, #0x91da
+  91D44D00  0030a0e3   mov      r3, #0
+  91D44D04  003087e5   str      r3, [r7]
+  91D44D08  0401000a   beq      #0x91d45120
+  91D44D0C  38008de2   add      r0, sp, #0x38
+  91D44D10  fd0600eb   bl       #0x91d4690c
+  91D44D14  000050e3   cmp      r0, #0
+  91D44D18  9c00001a   bne      #0x91d44f90
+  91D44D1C  38309de5   ldr      r3, [sp, #0x38]
+  91D44D20  000053e3   cmp      r3, #0
+  91D44D24  1e00001a   bne      #0x91d44da4
+  91D44D28  0030d9e5   ldrb     r3, [sb]
+  91D44D2C  000053e3   cmp      r3, #0
+  91D44D30  0500000a   beq      #0x91d44d4c
+  91D44D34  cc209de5   ldr      r2, [sp, #0xcc]
+  91D44D38  003096e5   ldr      r3, [r6]
+  91D44D3C  030052e1   cmp      r2, r3
+  91D44D40  4f02001a   bne      #0x91d45684
+  91D44D44  d4d08de2   add      sp, sp, #0xd4
+  91D44D48  f08fbde8   pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc}
+  91D44D4C  d00c03e3   movw     r0, #0x3cd0
+  91D44D50  010040e3   movt     r0, #1
+  91D44D54  3f3700eb   bl       #0x91d52a58
+  91D44D58  004050e2   subs     r4, r0, #0
+  91D44D5C  cf01000a   beq      #0x91d454a0
+  91D44D60  0410a0e1   mov      r1, r4
+  91D44D64  0400a0e1   mov      r0, r4
+  91D44D68  2efeffeb   bl       #0x91d44628
+  91D44D6C  0410a0e1   mov      r1, r4
+  91D44D70  0400a0e1   mov      r0, r4
+  91D44D74  2bfeffeb   bl       #0x91d44628
+  91D44D78  0400a0e1   mov      r0, r4
+  91D44D7C  0410a0e1   mov      r1, r4
+  91D44D80  28feffeb   bl       #0x91d44628
+  91D44D84  0400a0e1   mov      r0, r4
+  91D44D88  6d3700eb   bl       #0x91d52b44
+  91D44D8C  e8ffffea   b        #0x91d44d34
+  91D44D90  200606e3   movw     r0, #0x6620
+  91D44D94  d80149e3   movt     r0, #0x91d8
+  91D44D98  da3100eb   bl       #0x91d51508
+  91D44D9C  bb0600eb   bl       #0x91d46890
+  91D44DA0  d3ffffea   b        #0x91d44cf4
+  91D44DA4  1f32ffeb   bl       #0x91d11628
+  91D44DA8  4f3b80e2   add      r3, r0, #0x13c00
+  91D44DAC  000060e2   rsb      r0, r0, #0
+  91D44DB0  cf3083e2   add      r3, r3, #0xcf
+  91D44DB4  035000e0   and      r5, r0, r3
+  91D44DB8  0500a0e1   mov      r0, r5
+  91D44DBC  253700eb   bl       #0x91d52a58
+  91D44DC0  000050e3   cmp      r0, #0
+  91D44DC4  24008de5   str      r0, [sp, #0x24]
+  91D44DC8  b901000a   beq      #0x91d454b4
+  91D44DCC  0500a0e1   mov      r0, r5
+  91D44DD0  203700eb   bl       #0x91d52a58
+  91D44DD4  008050e2   subs     r8, r0, #0
+  91D44DD8  ba01000a   beq      #0x91d454c8
+  91D44DDC  1132ffeb   bl       #0x91d11628
+  91D44DE0  24a09de5   ldr      sl, [sp, #0x24]
+  91D44DE4  00005ae3   cmp      sl, #0
+
+==============================================================================
+Caller region around G call site (0x91D3C7C0..)   VA 0x91D3C7C0  file_off 0x447C0  384 bytes
+==============================================================================
+  91D3C7C0  03208ae0   add      r2, sl, r3
+  91D3C7C4  030090e0   adds     r0, r0, r3
+  91D3C7C8  0b3063e0   rsb      r3, r3, fp
+  91D3C7CC  0010a1e2   adc      r1, r1, #0
+  91D3C7D0  3854ffeb   bl       #0x91d118b8
+  91D3C7D4  000050e3   cmp      r0, #0
+  91D3C7D8  9701001a   bne      #0x91d3ce3c
+  91D3C7DC  bc39ffeb   bl       #0x91d0aed4
+  91D3C7E0  0500a0e3   mov      r0, #5
+  91D3C7E4  d63fffeb   bl       #0x91d0c744
+  91D3C7E8  09ecffeb   bl       #0x91d37814
+  91D3C7EC  000050e3   cmp      r0, #0
+  91D3C7F0  1c01000a   beq      #0x91d3cc68
+  91D3C7F4  0b208ae0   add      r2, sl, fp
+  91D3C7F8  003095e5   ldr      r3, [r5]
+  91D3C7FC  0210e0e1   mvn      r1, r2
+  91D3C800  010053e1   cmp      r3, r1
+  91D3C804  f500008a   bhi      #0x91d3cbe0
+  91D3C808  ff1f0fe3   movw     r1, #0xffff
+  91D3C80C  cf1149e3   movt     r1, #0x91cf
+  91D3C810  010052e1   cmp      r2, r1
+  91D3C814  ed00008a   bhi      #0x91d3cbd0
+  91D3C818  0010a0e3   mov      r1, #0
+  91D3C81C  030082e0   add      r0, r2, r3
+  91D3C820  d01149e3   movt     r1, #0x91d0
+  91D3C824  010050e1   cmp      r0, r1
+  91D3C828  ec00008a   bhi      #0x91d3cbe0
+  91D3C82C  d001cde1   ldrd     r0, r1, [sp, #0x10]
+  91D3C830  0b0090e0   adds     r0, r0, fp
+  91D3C834  0010a1e2   adc      r1, r1, #0
+  91D3C838  1e54ffeb   bl       #0x91d118b8
+  91D3C83C  000050e3   cmp      r0, #0
+  91D3C840  8701001a   bne      #0x91d3ce64
+  91D3C844  0a00a0e1   mov      r0, sl
+  91D3C848  0b10a0e1   mov      r1, fp
+  91D3C84C  18f5ffeb   bl       #0x91d39cb4
+  91D3C850  641f00eb   bl       #0x91d445e8
+  91D3C854  000050e3   cmp      r0, #0
+  91D3C858  0400000a   beq      #0x91d3c870
+  91D3C85C  ac3d07e3   movw     r3, #0x7dac
+  91D3C860  003249e3   movt     r3, #0x9200
+  91D3C864  003093e5   ldr      r3, [r3]
+  91D3C868  000053e3   cmp      r3, #0
+  91D3C86C  46ffff1a   bne      #0x91d3c58c
+  91D3C870  5c5affeb   bl       #0x91d131e8
+  91D3C874  010050e3   cmp      r0, #1
+  91D3C878  2001000a   beq      #0x91d3cd00
+  91D3C87C  a3ecffeb   bl       #0x91d37b10
+  91D3C880  020050e3   cmp      r0, #2
+  91D3C884  3601000a   beq      #0x91d3cd64
+  91D3C888  000095e5   ldr      r0, [r5]
+  91D3C88C  3c3800e3   movw     r3, #0x83c
+  91D3C890  081094e5   ldr      r1, [r4, #8]
+  91D3C894  013249e3   movt     r3, #0x9201
+  91D3C898  00008ae0   add      r0, sl, r0
+  91D3C89C  0c308de5   str      r3, [sp, #0xc]
+  91D3C8A0  d2e400eb   bl       #0x91d75bf0
+  91D3C8A4  009b05e3   movw     sb, #0x5b00
+  91D3C8A8  0c309de5   ldr      r3, [sp, #0xc]
+  91D3C8AC  009249e3   movt     sb, #0x9200
+  91D3C8B0  000050e3   cmp      r0, #0
+  91D3C8B4  10008de5   str      r0, [sp, #0x10]
+  91D3C8B8  fb00001a   bne      #0x91d3ccac
+  91D3C8BC  00b093e5   ldr      fp, [r3]
+  91D3C8C0  1020a0e3   mov      r2, #0x10
+  91D3C8C4  1c1304e3   movw     r1, #0x431c
+  91D3C8C8  d81149e3   movt     r1, #0x91d8
+  91D3C8CC  0b808ae0   add      r8, sl, fp
+  91D3C8D0  2c808de5   str      r8, [sp, #0x2c]
+  91D3C8D4  0800a0e1   mov      r0, r8
+  91D3C8D8  aa5a00eb   bl       #0x91d53388
+  91D3C8DC  000050e3   cmp      r0, #0
+  91D3C8E0  2c809d05   ldreq    r8, [sp, #0x2c]
+  91D3C8E4  08209915   ldrne    r2, [sb, #8]
+  91D3C8E8  10909d15   ldrne    sb, [sp, #0x10]
+  91D3C8EC  10109805   ldreq    r1, [r8, #0x10]
+  91D3C8F0  14808b02   addeq    r8, fp, #0x14
+  91D3C8F4  08808a00   addeq    r8, sl, r8
+  91D3C8F8  08209905   ldreq    r2, [sb, #8]
+  91D3C8FC  1490a003   moveq    sb, #0x14
+  91D3C900  44108d05   streq    r1, [sp, #0x44]
+  91D3C904  381098e5   ldr      r1, [r8, #0x38]
+  91D3C908  413205e3   movw     r3, #0x5241
+  91D3C90C  4d3446e3   movt     r3, #0x644d
+  91D3C910  000b05e3   movw     r0, #0x5b00
+  91D3C914  03c051e0   subs     ip, r1, r3
+  91D3C918  000249e3   movt     r0, #0x9200
+  91D3C91C  00107ce2   rsbs     r1, ip, #0
+  91D3C920  0c208de5   str      r2, [sp, #0xc]
+  91D3C924  0c10b1e0   adcs     r1, r1, ip
+  91D3C928  3af5ffeb   bl       #0x91d39e18
+  91D3C92C  0c0094e5   ldr      r0, [r4, #0xc]
+  91D3C930  2221ffeb   bl       #0x91d04dc0
+  91D3C934  0c0084e5   str      r0, [r4, #0xc]
+  91D3C938  140094e5   ldr      r0, [r4, #0x14]
+  91D3C93C  1f21ffeb   bl       #0x91d04dc0
+
+==============================================================================
+boot_linux_from_flash entry (0x91D3C3F0)   VA 0x91D3C3F0  file_off 0x443F0  256 bytes
+==============================================================================
+  91D3C3F0  f04f2de9   push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+  91D3C3F4  dc6705e3   movw     r6, #0x57dc
+  91D3C3F8  016249e3   movt     r6, #0x9201
+  91D3C3FC  64d04de2   sub      sp, sp, #0x64
+  91D3C400  380104e3   movw     r0, #0x4138
+  91D3C404  d80149e3   movt     r0, #0x91d8
+  91D3C408  002096e5   ldr      r2, [r6]
+  91D3C40C  0030a0e3   mov      r3, #0
+  91D3C410  2ce08de5   str      lr, [sp, #0x2c]
+  91D3C414  40308de5   str      r3, [sp, #0x40]
+  91D3C418  44308de5   str      r3, [sp, #0x44]
+  91D3C41C  5c208de5   str      r2, [sp, #0x5c]
+  91D3C420  1836ffeb   bl       #0x91d09c88
+  91D3C424  010070e3   cmn      r0, #1
+  91D3C428  0040a0e1   mov      r4, r0
+  91D3C42C  0400000a   beq      #0x91d3c444
+  91D3C430  c536ffeb   bl       #0x91d09f4c
+  91D3C434  0080a0e1   mov      r8, r0
+  91D3C438  0190a0e1   mov      sb, r1
+  91D3C43C  090098e1   orrs     r0, r8, sb
+  91D3C440  5800001a   bne      #0x91d3c5a8
+  91D3C444  bc7a03e3   movw     r7, #0x3abc
+  91D3C448  017249e3   movt     r7, #0x9201
+  91D3C44C  003097e5   ldr      r3, [r7]
+  91D3C450  000053e3   cmp      r3, #0
+  91D3C454  0400001a   bne      #0x91d3c46c
+  91D3C458  b83a02e3   movw     r3, #0x2ab8
+  91D3C45C  013249e3   movt     r3, #0x9201
+  91D3C460  004093e5   ldr      r4, [r3]
+  91D3C464  000054e3   cmp      r4, #0
+  91D3C468  ba01000a   beq      #0x91d3cb58
+  91D3C46C  908b07e3   movw     r8, #0x7b90
+  91D3C470  008249e3   movt     r8, #0x9200
+  91D3C474  0030a0e3   mov      r3, #0
+  91D3C478  003088e5   str      r3, [r8]
+  91D3C47C  0f0aa0e3   mov      r0, #0xf000
+  91D3C480  a01104e3   movw     r1, #0x41a0
+  91D3C484  df0149e3   movt     r0, #0x91df
+  91D3C488  d81149e3   movt     r1, #0x91d8
+  91D3C48C  0820a0e3   mov      r2, #8
+  91D3C490  745a00eb   bl       #0x91d52e68
+  91D3C494  000050e3   cmp      r0, #0
+  91D3C498  9101000a   beq      #0x91d3cae4
+  91D3C49C  003097e5   ldr      r3, [r7]
+  91D3C4A0  000053e3   cmp      r3, #0
+  91D3C4A4  a201001a   bne      #0x91d3cb34
+  91D3C4A8  b81a02e3   movw     r1, #0x2ab8
+  91D3C4AC  011249e3   movt     r1, #0x9201
+  91D3C4B0  2c2104e3   movw     r2, #0x412c
+  91D3C4B4  8c3a05e3   movw     r3, #0x5a8c
+  91D3C4B8  004091e5   ldr      r4, [r1]
+  91D3C4BC  d82149e3   movt     r2, #0x91d8
+  91D3C4C0  d83149e3   movt     r3, #0x91d8
+  91D3C4C4  000054e3   cmp      r4, #0
+  91D3C4C8  0240a011   movne    r4, r2
+  91D3C4CC  0340a001   moveq    r4, r3
+  91D3C4D0  0400a0e1   mov      r0, r4
+  91D3C4D4  eb35ffeb   bl       #0x91d09c88
+  91D3C4D8  0050a0e1   mov      r5, r0
+  91D3C4DC  9a36ffeb   bl       #0x91d09f4c
+  91D3C4E0  f001cde1   strd     r0, r1, [sp, #0x10]
+  91D3C4E4  011090e1   orrs     r1, r0, r1
+  91D3C4E8  3002000a   beq      #0x91d3cdb0
+  91D3C4EC  0500a0e1   mov      r0, r5
+
+==============================================================================
+is_tampered consumer: tampered string selector (0x91D3A3E0)   VA 0x91D3A3E0  file_off 0x423E0  112 bytes
+==============================================================================
+  91D3A3E0  143094e5   ldr      r3, [r4, #0x14]
+  91D3A3E4  d86149e3   movt     r6, #0x91d8
+  91D3A3E8  00c097e5   ldr      ip, [r7]
+  91D3A3EC  2c5903e3   movw     r5, #0x392c
+  91D3A3F0  000053e3   cmp      r3, #0
+  91D3A3F4  d85149e3   movt     r5, #0x91d8
+  91D3A3F8  4cd04de2   sub      sp, sp, #0x4c
+  91D3A3FC  4010a0e3   mov      r1, #0x40
+  91D3A400  0630a001   moveq    r3, r6
+  91D3A404  0530a011   movne    r3, r5
+  91D3A408  04008de2   add      r0, sp, #4
+  91D3A40C  3c2903e3   movw     r2, #0x393c
+  91D3A410  d82149e3   movt     r2, #0x91d8
+  91D3A414  44c08de5   str      ip, [sp, #0x44]
+  91D3A418  636100eb   bl       #0x91d529ac
+  91D3A41C  04008de2   add      r0, sp, #4
+  91D3A420  d31f00eb   bl       #0x91d42374
+  91D3A424  103094e5   ldr      r3, [r4, #0x10]
+  91D3A428  4010a0e3   mov      r1, #0x40
+  91D3A42C  04008de2   add      r0, sp, #4
+  91D3A430  000053e3   cmp      r3, #0
+  91D3A434  542903e3   movw     r2, #0x3954
+  91D3A438  d82149e3   movt     r2, #0x91d8
+  91D3A43C  0630a001   moveq    r3, r6
+  91D3A440  0530a011   movne    r3, r5
+  91D3A444  586100eb   bl       #0x91d529ac
+  91D3A448  04008de2   add      r0, sp, #4
+  91D3A44C  c81f00eb   bl       #0x91d42374
+
+==============================================================================
+is_tampered consumer: unlocked||tampered path pick (0x91D3CACC)   VA 0x91D3CACC  file_off 0x44ACC  112 bytes
+==============================================================================
+  91D3CACC  143093e5   ldr      r3, [r3, #0x14]
+  91D3CAD0  000053e3   cmp      r3, #0
+  91D3CAD4  c700000a   beq      #0x91d3cdf8
+  91D3CAD8  004b05e3   movw     r4, #0x5b00
+  91D3CADC  004249e3   movt     r4, #0x9200
+  91D3CAE0  010000ea   b        #0x91d3caec
+  91D3CAE4  0f4aa0e3   mov      r4, #0xf000
+  91D3CAE8  df4149e3   movt     r4, #0x91df
+  91D3CAEC  402084e2   add      r2, r4, #0x40
+  91D3CAF0  263e84e2   add      r3, r4, #0x260
+  91D3CAF4  48208de5   str      r2, [sp, #0x48]
+  91D3CAF8  0090a0e3   mov      sb, #0
+  91D3CAFC  4c308de5   str      r3, [sp, #0x4c]
+  91D3CB00  0c7094e5   ldr      r7, [r4, #0xc]
+  91D3CB04  205094e5   ldr      r5, [r4, #0x20]
+  91D3CB08  180fffeb   bl       #0x91d00770
+  91D3CB0C  14c094e5   ldr      ip, [r4, #0x14]
+  91D3CB10  48208de2   add      r2, sp, #0x48
+  91D3CB14  0510a0e1   mov      r1, r5
+  91D3CB18  00c08de5   str      ip, [sp]
+  91D3CB1C  10c094e5   ldr      ip, [r4, #0x10]
+  91D3CB20  04c08de5   str      ip, [sp, #4]
+  91D3CB24  0030a0e1   mov      r3, r0
+  91D3CB28  0700a0e1   mov      r0, r7
+  91D3CB2C  63fcffeb   bl       #0x91d3bcc0
+  91D3CB30  95feffea   b        #0x91d3c58c
+  91D3CB34  e638ffeb   bl       #0x91d0aed4
+  91D3CB38  000050e3   cmp      r0, #0
+
+==============================================================================
+is_tampered consumer: tampered status writeback (0x91D3D680)   VA 0x91D3D680  file_off 0x45680  112 bytes
+==============================================================================
+  91D3D680  143090e5   ldr      r3, [r0, #0x14]
+  91D3D684  005b05e3   movw     r5, #0x5b00
+  91D3D688  000053e3   cmp      r3, #0
+  91D3D68C  00524903   movteq   r5, #0x9200
+  91D3D690  0dffff0a   beq      #0x91d3d2cc
+  91D3D694  a4feffeb   bl       #0x91d3d12c
+  91D3D698  005249e3   movt     r5, #0x9200
+  91D3D69C  0affffea   b        #0x91d3d2cc
+  91D3D6A0  ff3f0fe3   movw     r3, #0xffff
+  91D3D6A4  2f3249e3   movt     r3, #0x922f
+  91D3D6A8  030050e1   cmp      r0, r3
+  91D3D6AC  8dffff8a   bhi      #0x91d3d4e8
+  91D3D6B0  300304e3   movw     r0, #0x4330
+  91D3D6B4  d80149e3   movt     r0, #0x91d8
+  91D3D6B8  924f00eb   bl       #0x91d51508
+  91D3D6BC  0000e0e3   mvn      r0, #0
+  91D3D6C0  12ffffea   b        #0x91d3d310
+  91D3D6C4  005b05e3   movw     r5, #0x5b00
+  91D3D6C8  005249e3   movt     r5, #0x9200
+  91D3D6CC  fefeffea   b        #0x91d3d2cc
+  91D3D6D0  5c0304e3   movw     r0, #0x435c
+  91D3D6D4  d80149e3   movt     r0, #0x91d8
+  91D3D6D8  8a4f00eb   bl       #0x91d51508
+  91D3D6DC  0000e0e3   mvn      r0, #0
+  91D3D6E0  0affffea   b        #0x91d3d310
+  91D3D6E4  b81809e3   movw     r1, #0x98b8
+  91D3D6E8  d71149e3   movt     r1, #0x91d7
+  91D3D6EC  1a6000eb   bl       #0x91d5575c
+
+==============================================================================
+ASSERT / HALT related strings: 7.13.15 vs 8.19.16
+==============================================================================
+  STRING                      7.13.15    8.19.16
+  aboot.c                           1          1
+  ASSERT                            2          2
+  Asserting                         2          1
+  platform_halt                     1          0
+  HALT:                             3          3
+  Device is tampered                1          0
+  Security Error                    1          1
+  reboot_device                     0          0
+  boot_verifier.c                   1          1
+  Device unlocked                   1          1
+  critical unlocked                 1          1
+
+==============================================================================
+CONCLUSION - independent re-check, 2026-11-10 22:50
+Question: does aboot 8.19.16 BLOCK image loading when boot signature
+          verification FAILS?   Static answer: NO.
+==============================================================================
+
+[A] ELF mapping (verified)
+    PT_LOAD vaddr=0x91D00000  file_off=0x8000  filesz=0x2FED40
+    G 0x91D39CB4 -> file 0x41CB4 ; caller 0x91D3C84C -> 0x4484C
+
+[B] G = 0x91D39CB4 (boot verification wrapper)
+    91D39CE8  str  r2(=1),[r4,#0x14]      devinfo+0x14 is_tampered = 1 (unconditional)
+    91D39D1C  bl   0x91D12DD0             verify_image
+    91D39D20  mov  r7,r0                  save result
+    91D39D28  cmp  r7,#0
+    91D39D2C  bne  0x91D39D9C             -> failure side
+    failure side:
+      91D39DB4  str r1(=1),[r2]           [0x92007DAC] = 1
+      91D39DC0  str r2(=0),[r4,#0x14]    is_tampered = 0
+      91D39DC8  b   0x91D39D50            JOIN COMMON PATH
+    common path:
+      91D39D6C  bl 0x91D44CC8             state handler (ends pop {..,pc} @91D44D48)
+      91D39D70  bl 0x91D131E8             boot_state_get
+      91D39D74/7C state 2 / 3 handling -> back to 0x91D39D84
+    91D39D98  pop {r4,r5,r6,r7,pc}       <<< BOTH paths RETURN
+    No bl / b to reboot_device, platform_halt or ASSERT inside G.
+    (0x91D39E14 `bl 0x91D516C4` belongs to the NEXT function, outside G.)
+
+[C] Caller 0x91D3C84C continues after G returns
+    91D3C84C  bl 0x91D39CB4               G
+    91D3C850  bl 0x91D445E8
+    91D3C854  cmp r0,#0 / beq 0x91D3C870
+    91D3C870  bl 0x91D131E8               boot_state_get
+    91D3C87C  bl 0x91D37B10
+    91D3C8C4  movw r1,#0x431c / movt #0x91d8 -> 0x91D8431C ("UNCOMPRESSED_IMG")
+    91D3C8D8  bl 0x91D53388               image recognition / compare
+    => execution proceeds into image recognition & loading, NOT a halt loop.
+    0x91D3C58C is an early-return branch, not a reboot/halt.
+
+[D] String evidence: 7.13.15 partition dump vs 8.19.16 mbn
+    platform_halt        1 -> 0
+    Device is tampered   1 -> 0
+    Asserting            2 -> 1  (remaining hit is USB/TRB "ep->trb", not tampered)
+    ASSERT / aboot.c / HALT:  2/1/3 -> 2/1/3  (other code paths)
+
+[E] Verdict
+    H1's static premise is CONFIRMED at instruction level: in aboot 8.19.16
+    a failed boot signature verification only updates state, RETURNS to the
+    caller, and the caller continues to kernel/ramdisk image recognition and
+    loading. There is no tampered assert / reboot_device(0) on this path.
+    Combined with the 11-10 live result (full official 8.1 OTA boots on this
+    aboot: 8.1.0 / boot_completed=1 / green), the verification gate is not
+    the blocker for an unsigned / self-built boot image.
+
+    CAVEATS (do not over-claim):
+    - Static "not blocked" != "boots": kernel decompression, DTB board-id
+      match, dm-verity/fstab and init still must succeed.
+    - The real unsigned-boot test has NOT been executed (zero bytes written).
+    - Exact semantics of [0x92007DAC] and the 0x91D3C58C early-return branch
+      are not fully expanded; low-priority follow-up, does not affect the
+      "failure path returns instead of halting" finding.
+
+    Reproduce: python D:\16\PD1610_81\scripts\verify_aboot_81916.py

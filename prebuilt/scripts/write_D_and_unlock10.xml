@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<!-- 决定性实验：未签名 boot(D, 等长清零签名尾部) + devinfo 仅置 +0x10(is_unlocked)=1 -->
+<data>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="flash_boot_D_full.bin" label="boot" num_partition_sectors="24576" partofsingleimage="false" physical_partition_number="4" readbackverify="false" size_in_KB="98304.0" sparse="false" start_sector="47370"/>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="devinfo_u10.bin" label="devinfo" num_partition_sectors="1" partofsingleimage="false" physical_partition_number="4" readbackverify="false" size_in_KB="4.0" sparse="false" start_sector="882954"/>
+</data>

@@ -1,0 +1,27 @@
+﻿17:46:57.197 | === ROUND20 TOUCH DIAGNOSTIC LOG BUILD ===
+17:46:57.314 | candidate_sha256=cec0f10bdc32d2c540429e89a9f04129764086e8396e4d480777a4d449c37360
+17:46:57.314 | SINGLE_VARIABLE=only +34B cmdline "log_buf_len=2M audit=0 loglevel=8" vs round19 image
+17:46:57.317 | PREFLIGHT=SAFE_TO_FLASH 17/17
+17:46:57.353 | pre_adb=List of devices attached / 5fccbfeb	device
+17:46:57.432 | pre_kernel=3.18.120-perf /
+17:47:09.880 | STEP1 adb reboot bootloader sent
+17:47:46.049 | fastboot_detected=False state=[]
+17:47:46.049 | ABORT_NO_FASTBOOT
+17:54:30.167 | === BLM RAM READ VIA EDL (no flash) ===
+17:54:30.225 | pre_adb=List of devices attached / 5fccbfeb	device
+17:54:30.318 | pre_kernel=3.18.120-perf
+17:54:42.834 | adb_reboot_edl=
+17:55:27.170 | QDLOADER_COM=0
+17:55:27.170 | NO_9008_PORT
+17:58:10.105 | sys.powerctl reboot,bootloader attempt
+17:58:10.231 | setprop_out=[]
+17:58:10.889 | t=0s fastboot=[] adb=[List of devices attached / 5fccbfeb	device] pnp=[]
+17:58:16.432 | t=5s fastboot=[] adb=[List of devices attached / 5fccbfeb	device] pnp=[]
+17:58:21.950 | t=10s fastboot=[] adb=[List of devices attached / 5fccbfeb	device] pnp=[]
+17:58:27.481 | t=15s fastboot=[] adb=[List of devices attached] pnp=[]
+17:58:33.020 | t=20s fastboot=[] adb=[List of devices attached] pnp=[]
+17:58:38.551 | t=25s fastboot=[] adb=[List of devices attached] pnp=[]
+17:58:44.100 | t=30s fastboot=[] adb=[List of devices attached] pnp=[]
+17:58:49.641 | t=35s fastboot=[] adb=[List of devices attached / 5fccbfeb	device] pnp=[]
+17:58:55.191 | t=40s fastboot=[] adb=[List of devices attached / 5fccbfeb	device] pnp=[]
+17:59:00.727 | t=45s fastboot=[] adb=[List of devices attached / 5fccbfeb	device] pnp=[]

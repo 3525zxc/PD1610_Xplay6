@@ -1,0 +1,163 @@
+
+==========================================================================
+=== unlock gate 0x91D3C344 (前方上下文)  VA 91D3C2C0  off 0x442C0
+==========================================================================
+91D3C2C0  mov     r8, r0
+91D3C2C4  bl      #0x91d07704
+91D3C2C8  adds    r4, r0, r8
+91D3C2CC  mov     r0, r7
+91D3C2D0  adc     r5, r1, #0
+91D3C2D4  mvn     r7, r7
+91D3C2D8  bl      #0x91d04d88
+91D3C2DC  cmp     r7, sb
+91D3C2E0  blo     #0x91d3c330
+91D3C2E4  cmp     r8, r0
+91D3C2E8  bhi     #0x91d3c330
+91D3C2EC  mov     r2, r0
+91D3C2F0  mov     r3, #0
+91D3C2F4  cmp     r5, r3
+91D3C2F8  cmpeq   r4, r2
+91D3C2FC  bls     #0x91d3c330
+91D3C300  add     r0, r0, sb
+91D3C304  mov     r1, #0
+91D3C308  cmp     r5, r1
+91D3C30C  cmpeq   r4, r0
+91D3C310  movhs   r0, #0
+91D3C314  mvnlo   r0, #0
+91D3C318  ldr     r2, [sp, #4]
+91D3C31C  ldr     r3, [r6]
+91D3C320  cmp     r2, r3
+91D3C324  bne     #0x91d3c338
+91D3C328  add     sp, sp, #0xc
+91D3C32C  pop     {r4, r5, r6, r7, r8, sb, pc}
+91D3C330  mvn     r0, #0
+91D3C334  b       #0x91d3c318
+91D3C338  bl      #0x91d516c4
+91D3C33C  movw    r3, #0x1318
+91D3C340  movt    r3, #0x91da
+91D3C344  push    {r4, lr}
+91D3C348  movw    r4, #0x57dc
+91D3C34C  movt    r4, #0x9201
+91D3C350  ldr     r0, [r3, #0x10]
+91D3C354  sub     sp, sp, #8
+91D3C358  ldr     r3, [r4]
+91D3C35C  cmp     r0, #0
+91D3C360  str     r3, [sp, #4]
+91D3C364  bne     #0x91d3c390
+91D3C368  bl      #0x91d12cfc
+91D3C36C  bl      #0x91d12594
+91D3C370  cmp     r0, #2
+91D3C374  beq     #0x91d3c3c4
+91D3C378  ldr     r2, [sp, #4]
+91D3C37C  ldr     r3, [r4]
+91D3C380  cmp     r2, r3
+91D3C384  bne     #0x91d3c3ec
+91D3C388  add     sp, sp, #8
+91D3C38C  pop     {r4, pc}
+91D3C390  mov     r0, #1
+91D3C394  bl      #0x91d12cfc
+91D3C398  bl      #0x91d13228
+91D3C39C  movw    r0, #0x40c4
+91D3C3A0  movt    r0, #0x91d8
+91D3C3A4  bl      #0x91d51508
+91D3C3A8  ldr     r2, [sp, #4]
+91D3C3AC  ldr     r3, [r4]
+91D3C3B0  cmp     r2, r3
+91D3C3B4  bne     #0x91d3c3ec
+91D3C3B8  add     sp, sp, #8
+91D3C3BC  pop     {r4, lr}
+91D3C3C0  b       #0x91d12594
+91D3C3C4  bl      #0x91d13228
+91D3C3C8  ldr     r2, [sp, #4]
+91D3C3CC  ldr     r3, [r4]
+91D3C3D0  cmp     r2, r3
+91D3C3D4  bne     #0x91d3c3ec
+91D3C3D8  movw    r0, #0x40f4
+91D3C3DC  movt    r0, #0x91d8
+91D3C3E0  add     sp, sp, #8
+91D3C3E4  pop     {r4, lr}
+91D3C3E8  b       #0x91d51508
+91D3C3EC  bl      #0x91d516c4
+91D3C3F0  push    {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+91D3C3F4  movw    r6, #0x57dc
+91D3C3F8  movt    r6, #0x9201
+91D3C3FC  sub     sp, sp, #0x64
+  (80)
+
+==========================================================================
+=== Security-Error printer 0x91D13224  VA 91D13220  off 0x1B220
+==========================================================================
+91D13220  pop     {pc}
+91D13224  bl      #0x91d516c4
+91D13228  movw    r2, #0xdd98
+91D1322C  movw    r3, #0x57dc
+91D13230  movt    r2, #0x91d9
+91D13234  movt    r3, #0x9201
+91D13238  str     lr, [sp, #-4]!
+91D1323C  sub     sp, sp, #0xc
+91D13240  ldr     r1, [r2]
+91D13244  ldr     r2, [r3]
+91D13248  cmp     r1, #3
+91D1324C  str     r2, [sp, #4]
+91D13250  ldr     r2, [sp, #4]
+91D13254  ldr     r3, [r3]
+91D13258  beq     #0x91d1326c
+91D1325C  cmp     r2, r3
+91D13260  bne     #0x91d13288
+91D13264  add     sp, sp, #0xc
+91D13268  pop     {pc}
+91D1326C  cmp     r2, r3
+91D13270  bne     #0x91d13288
+91D13274  movw    r0, #0xc88c
+91D13278  movt    r0, #0x91d7
+91D1327C  add     sp, sp, #0xc
+91D13280  pop     {lr}
+91D13284  b       #0x91d06da0
+91D13288  bl      #0x91d516c4
+91D1328C  push    {r4, r5, lr}
+91D13290  movw    r4, #0x57dc
+91D13294  movt    r4, #0x9201
+91D13298  sub     sp, sp, #0xc
+91D1329C  cmp     r1, #2
+91D132A0  mov     r5, r1
+91D132A4  ldr     r2, [r4]
+91D132A8  str     r0, [sp]
+91D132AC  str     r2, [sp, #4]
+91D132B0  bls     #0x91d132c0
+91D132B4  ldrb    r3, [r0]
+91D132B8  cmp     r3, #0x30
+91D132BC  beq     #0x91d132e8
+  (40)
+
+[callers] unlock gate              91D3C344  n=0  []
+
+[callers] sec-error printer        91D13224  n=1  [('0x91d13218', 'B')]
+
+[callers] setter 0x91D12CFC        91D12CFC  n=5  [('0x91d13078', 'BL'), ('0x91d3c368', 'BL'), ('0x91d3c394', 'BL'), ('0x91d45040', 'BL'), ('0x91d45574', 'BL')]
+
+[callers] getter 0x91D13228        91D13228  n=3  [('0x91d39d24', 'BL'), ('0x91d3c398', 'BL'), ('0x91d3c3c4', 'BL')]
+
+==========================================================================
+=== setter 0x91D12CFC 区域  VA 91D12CE0  off 0x1ACE0
+==========================================================================
+91D12CE0  movw    r0, #0x582c
+91D12CE4  cmp     r2, r3
+91D12CE8  movt    r0, #0x9201
+91D12CEC  bne     #0x91d12cf8
+91D12CF0  add     sp, sp, #0xc
+91D12CF4  pop     {pc}
+91D12CF8  bl      #0x91d516c4
+91D12CFC  movw    r3, #0x57dc
+91D12D00  movt    r3, #0x9201
+91D12D04  str     lr, [sp, #-4]!
+91D12D08  sub     sp, sp, #0xc
+91D12D0C  ldr     r2, [r3]
+91D12D10  str     r2, [sp, #4]
+91D12D14  cmp     r0, #5
+91D12D18  ldrls   pc, [pc, r0, lsl #2]
+91D12D1C  b       #0x91d12d54
+91D12D20  bicsls  r2, r1, ip, ror #26
+91D12D24  ldrhls  r2, [r1, #0xd8]
+91D12D28  bicsls  r2, r1, r0, lsl #27
+91D12D2C  bicsls  r2, r1, ip, ror #26
+  (20)

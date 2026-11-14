@@ -1,0 +1,426 @@
+
+
+ 
+ vivo X9s一个又能root又能解锁BL的方法 来自 王大臭屁 - 酷安
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+ [IMG] //static.coolapk.com/static/web/v8/images/header-logo.png酷安
+ 
+ 
+首页
+-->
+应用
+-->
+游戏
+-->
+酷安手机APP
+-->
+联系酷安
+-->
+关于酷安
+-->
+ 
+
+酷安开发者平台-->
+ 
+
+ 
+ 
+ 
+ 
+ [IMG] //static.coolapk.com/static/web/v8/images/header-logo.png
+ 
+ 酷安APP
+ 分享美好科技生活
+ 
+
+ 
+
+ 
+ 点击下载
+ 
+
+ 
+
+ 
+
+ 
+ 
+ vivo X9s一个又能root又能解锁BL的方法
+
+ 
+ 
+ [IMG] http://avatar.coolapk.com/data/038/76/63/98_avatar_middle.jpg?t=1761043436
+ 
+
+ 
+ 王大臭屁
+
+ 2025-10-26 华为MatePad Pro 10.8英寸
+
+ 
+
+ 
+
+ 
+ 关注
+ 
+
+ #vivox9s# 首先还是感谢@楓と铃 @徐正豪 @某贼 @璃梦星空 这四位大佬
+
+链接在上篇
+
+首先我们先来搞root的部分
+
+首先把链接里的boot镜像下载下来，这个是已经修补过的
+
+然后下载链接里的Notepad 3（这个需要提前解压并安装），Bootimg1（需要提前添加path）和python
+
+把它们放到同一个目录下，此目录不要有任何中文
+
+添加path教程
+
+ 
+ [IMG] //image.coolapk.com/feed/2025/1026/20/38766398_c37c5895_2629_1217_716@2494x3325.jpeg.m.jpg
+ 
+
+ 在安装python时把下面两个小方块都勾住
+
+这样就可以了
+
+然后再开一个，不要有中文的文件夹，把镜像和Boot img这个软件放进去
+
+然后点击上面的方框输入cmd，输入bootimg.exe --unpack-bootimg（自己的boot镜像是什么名字就把后面的bootimg改成什么名字）然后回车，就可以解包boot镜像了记得要把应用的名字后缀加一个.exe 解包后的boot镜像在initrd目录下的fstab.qcoma
+
+ 
+ [IMG] //image.coolapk.com/feed/2025/1026/20/38766398_bb3d3965_2629_1228_128@2494x3325.jpeg.m.jpg
+ 
+
+ 在打开这个文件的时候切记要用notepad 3打开，不能用自带的记事本
+
+ 
+ [IMG] //image.coolapk.com/feed/2025/1026/20/38766398_9631d47b_2629_1237_8@2494x3325.jpeg.m.jpg
+ 
+
+ 然后咱们把“forceencrypt=footer”改为“encryptable=footer”
+
+ 
+ [IMG] //image.coolapk.com/feed/2025/1026/20/38766398_d3fcd063_2629_1242_371@2494x3325.jpeg.m.jpg
+ 
+
+ 随后保存文件，打包镜像，还是使用命令行，和刚才方法一样，只不过指令要变为“bootimg.exe --repack-bootimg”
+
+ 
+ [IMG] //image.coolapk.com/feed/2025/1026/20/38766398_833fbe14_2629_1247_520@2494x3325.jpeg.m.jpg
+ 
+
+ 然后用这个弄好的镜像，辅助解锁BL
+
+前面用维酷工具箱解锁BL第一步我就不多说了
+
+我主要讲讲第二步
+
+首先将链接中的柚坛工具箱下载下来，打开工具箱，选择自定义刷入，然后选择boot旁边的文件，然后将刚才打包好的镜像选择进去（在你存放的路径中后面带new的就是修改过的）手机重启到fast boot模式，刷入这个镜像
+
+ 
+ [IMG] //image.coolapk.com/feed/2025/1026/20/38766398_a871e0d0_2629_1249_17@2494x3325.jpeg.m.jpg
+ 
+
+ 出现这个页面就可以了
+
+刷入后一定要将手机重启到fastboot，如果能出现这个页面，那证明你就成功了，1/3了
+
+ 
+ [IMG] //image.coolapk.com/feed/2025/1026/20/38766398_c02ef4b1_2629_1259_709@2494x3325.jpeg.m.jpg
+ 
+
+ 再次重启到fast boot，用adb命令行执行“fastboot format userdata”和“fastboot format cache”
+
+ 
+ [IMG] //image.coolapk.com/feed/2025/1026/20/38766398_eccf04d8_2629_1267_247@2494x3325.jpeg.m.jpg
+ 
+
+ 可能有些人使用cmd时会显示，Fast boot不是内部或外部命令，如果想要快速使用的话，下载一个搞机助手，选择cmd命令行，或者是直接用cx(一位故人)的工具启动adb实用工具，也可以正常使用命令
+
+此时能正常开机的话你就差不多成功了
+
+不过还是要看一下，开发者选项里OEM有没有变灰，桌面上有没有magisk的应用
+
+ 
+ [IMG] //image.coolapk.com/feed/2025/1026/20/38766398_fc66679e_2629_1273_189@2494x3325.jpeg.m.jpg
+ 
+
+ 
+ [IMG] //image.coolapk.com/feed/2025/1026/20/38766398_7401ba96_2633_7824_792@2494x3325.jpeg.m.jpg
+ 
+
+ 如果两个都有，你就差不多成了
+
+然后把链接里magisk的应用下载到手机里
+
+恭喜你，你Root成功了
+
+ 
+ [IMG] //image.coolapk.com/feed/2025/1026/20/38766398_6b75b9e1_2633_7826_196@2494x3325.jpeg.m.jpg
+ 
+
+ 不过root成功是有几率不能使用WIFI的，我的WIFI就已经灰了打不开
+
+希望以后有一个大佬能够，做一个能强制打开WIFI的模块
+
+ 
+
+ 
+ 16
+
+ 
+
+ 
+ 
+ 42
+ 
+
+ 
+
+ 
+ 
+ 24
+ 
+
+ 
+
+ 
+ 
+ 
+ 打开酷安App，查看全部评论
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 无法打开？前往华为应用市场
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ [IMG] //static.coolapk.com/static/web/v8/images/header-logo.png
+ 
+
+ 
+ 酷安APP
+
+ 分享美好科技生活
+ 
+
+ 
+
+ 
+ [IMG] /qr/image?data=base64,aHR0cHM6Ly93d3cuY29vbGFway5jb20vZmVlZC82ODE4NjU4MT9zPU16ZGtNalJoTmpjM01HRmtZMlJuTm1GbU0yWmlOalo2YTE2NjI~&h=250b1314
+ 
+
+ 扫码用酷安打开
+
+ 
+ [IMG] //static.coolapk.com/static/web/v8/img/android_white.png-->
+ [IMG] //static.coolapk.com/static/web/v8/img/iphone_white.png-->
+ [IMG] //static.coolapk.com/static/web/v8/img/android_white.png
+ [IMG] //static.coolapk.com/static/web/v8/img/iphone_white.png
+ 
+
+ 
+ - 欢迎关注我们 -
+ 
+
+ 
+ 
+ [IMG] //static.coolapk.com/static/web/v8/img/weixin.png
+ [IMG] //static.coolapk.com/static/web/v8/img/weixin_qrcode.png
+ 
+ 
+ [IMG] //static.coolapk.com/static/web/v8/img/weibo.png
+ 
+ 
+ [IMG] //static.coolapk.com/static/web/v8/img/zhihu.png
+ 
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+ 
+ 更多功能，丰富内容，尽在酷安APP
+ 
+
+ 
+ 取消
+ 下载APP
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ [IMG] //static.coolapk.com/static/web/v8/images/header-logo.png
+ 
+
+ 
+ 酷安APP
+
+ 分享美好科技生活
+
+ 
+
+ 
+
+ 
+ 
+ 关于酷安
+
+ 联系合作
+
+ 加入我们
+
+ 版权声明
+
+酷安APP
+-->
+酷安APP
+-->
+酷安开发者平台
+-->
+ 
+ 
+
+ 
+ Copyright © 2010- 酷安网
+
+ 粤ICP备15030494号-2 | 粤网文 [2016] 2468-477号 | 粤B2-20180425 | APP备案号：粤ICP备15030494号-3A
+
+ 违法和不良信息举报电话：0755-86965007 举报邮箱：jubao@coolapk.com
+
+ [IMG] //static.coolapk.com/static/web/v8/images/beian.png 粤公网安备44030502000719号
+
+ 
+
+ 
+
+ 
+ 
+ [IMG] /qr/image?data=base64,aHR0cHM6Ly93ZWliby5jb20vdS8xNzQ2NTIzOTc0&h=514f5cf8
+ 酷安微博
+
+ 
+
+ 
+ [IMG] /qr/image?data=base64,aHR0cDovL3dlaXhpbi5xcS5jb20vci9IQ2s4SlBMRWpLLXpyYlpIOTN3Tw~~&h=5aac8427
+ 酷安公众号
+
+ 
+
+ 
+
+ 
+

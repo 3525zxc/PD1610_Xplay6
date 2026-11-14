@@ -1,0 +1,100 @@
+[    0.000000] psci: PSCIv1.0 detected in firmware.
+[    1.899705] Loading compiled-in X.509 certificates
+[    2.100529] [PD 2.101] PD03 DoFirstStageMount begininit: Using Android DT directory /proc/device-tree/firmware/android/
+[    2.444460] [PD 2.444] PD06 seccomp done, selinux init begininit: Loading SELinux policy
+[    2.556585] [PD 2.556] dump_kmsg total=492init: Using Android DT directory /proc/device-tree/firmware/android/
+[    3.959674] init: [libfs_mgr]__mount(source=/dev/block/platform/soc/624000.ufshc/by-name/modem,target=/firmware,type=vfat)=0: Success
+[    3.960771] init: [libfs_mgr]__mount(source=/dev/block/platform/soc/624000.ufshc/by-name/bluetooth,target=/bt_firmware,type=vfat)=0: Success
+[    5.596846] init: processing action (firmware_mounts_complete) from (/init.rc:275)
+[    5.667503] ueventd: firmware: loading 'adsp.mdt' for '/devices/soc/9300000.qcom,lpass/firmware/adsp.mdt'
+[    5.688237] ueventd: loading /devices/soc/9300000.qcom,lpass/firmware/adsp.mdt took 20ms
+[    5.692204] subsys-pil-tz 9300000.qcom,lpass: adsp: loading from 0x000000008ea00000 to 0x0000000090400000
+[    5.727906] ueventd: firmware: loading 'slpi.mdt' for '/devices/soc/1c00000.qcom,ssc/firmware/slpi.mdt'
+[    5.729891] subsys-pil-tz 1c00000.qcom,ssc: slpi: loading from 0x0000000090400000 to 0x0000000090e00000
+[    5.730113] ueventd: loading /devices/soc/1c00000.qcom,ssc/firmware/slpi.mdt took 2ms
+[    5.865826] ueventd: firmware: loading 'slpi.b02' for '/devices/soc/1c00000.qcom,ssc/firmware/slpi.b02'
+[    5.873597] ueventd: loading /devices/soc/1c00000.qcom,ssc/firmware/slpi.b02 took 8ms
+[    5.874048] ueventd: firmware: loading 'adsp.b02' for '/devices/soc/9300000.qcom,lpass/firmware/adsp.b02'
+[    5.877308] ueventd: firmware: loading 'slpi.b03' for '/devices/soc/1c00000.qcom,ssc/firmware/slpi.b03'
+[    5.888208] ueventd: loading /devices/soc/9300000.qcom,lpass/firmware/adsp.b02 took 18ms
+[    5.890852] ueventd: loading /devices/soc/1c00000.qcom,ssc/firmware/slpi.b03 took 14ms
+[    5.893579] ueventd: firmware: loading 'adsp.b03' for '/devices/soc/9300000.qcom,lpass/firmware/adsp.b03'
+[    5.894522] ueventd: firmware: loading 'slpi.b04' for '/devices/soc/1c00000.qcom,ssc/firmware/slpi.b04'
+[    5.899811] ueventd: loading /devices/soc/9300000.qcom,lpass/firmware/adsp.b03 took 7ms
+[    5.907431] ueventd: firmware: loading 'adsp.b04' for '/devices/soc/9300000.qcom,lpass/firmware/adsp.b04'
+[    5.916286] ueventd: loading /devices/soc/9300000.qcom,lpass/firmware/adsp.b04 took 9ms
+[    5.916834] ueventd: loading /devices/soc/1c00000.qcom,ssc/firmware/slpi.b04 took 22ms
+[    5.944647] ueventd: firmware: loading 'slpi.b05' for '/devices/soc/1c00000.qcom,ssc/firmware/slpi.b05'
+[    5.955046] ueventd: firmware: loading 'adsp.b05' for '/devices/soc/9300000.qcom,lpass/firmware/adsp.b05'
+[    5.968076] ueventd: loading /devices/soc/1c00000.qcom,ssc/firmware/slpi.b05 took 23ms
+[    6.013916] ueventd: firmware: loading 'slpi.b06' for '/devices/soc/1c00000.qcom,ssc/firmware/slpi.b06'
+[    6.021067] ueventd: loading /devices/soc/1c00000.qcom,ssc/firmware/slpi.b06 took 7ms
+[    6.025032] ueventd: firmware: loading 'slpi.b07' for '/devices/soc/1c00000.qcom,ssc/firmware/slpi.b07'
+[    6.044534] ueventd: loading /devices/soc/1c00000.qcom,ssc/firmware/slpi.b07 took 21ms
+[    6.049573] ueventd: loading /devices/soc/9300000.qcom,lpass/firmware/adsp.b05 took 97ms
+[    6.115853] ueventd: firmware: loading 'slpi.b08' for '/devices/soc/1c00000.qcom,ssc/firmware/slpi.b08'
+[    6.120581] ueventd: loading /devices/soc/1c00000.qcom,ssc/firmware/slpi.b08 took 4ms
+[    6.144784] ueventd: firmware: loading 'a530_pm4.fw' for '/devices/soc/b00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/a530_pm4.fw'
+[    6.153079] ueventd: loading /devices/soc/b00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/a530_pm4.fw took 8ms
+[    6.160450] ueventd: firmware: loading 'adsp.b06' for '/devices/soc/9300000.qcom,lpass/firmware/adsp.b06'
+[    6.162105] ueventd: firmware: loading 'a530_pfp.fw' for '/devices/soc/b00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/a530_pfp.fw'
+[    6.173833] ueventd: loading /devices/soc/9300000.qcom,lpass/firmware/adsp.b06 took 13ms
+[    6.174939] ueventd: loading /devices/soc/b00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/a530_pfp.fw took 13ms
+[    6.177282] ueventd: firmware: loading 'slpi.b09' for '/devices/soc/1c00000.qcom,ssc/firmware/slpi.b09'
+[    6.181579] ueventd: loading /devices/soc/1c00000.qcom,ssc/firmware/slpi.b09 took 7ms
+[    6.191350] ueventd: firmware: loading 'a530v3_gpmu.fw2' for '/devices/soc/b00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/a530v3_gpmu.fw2'
+[    6.200971] ueventd: loading /devices/soc/b00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/a530v3_gpmu.fw2 took 15ms
+[    6.211108] ueventd: firmware: loading 'slpi.b10' for '/devices/soc/1c00000.qcom,ssc/firmware/slpi.b10'
+[    6.212776] ueventd: firmware: loading 'a530v3_seq.fw2' for '/devices/soc/b00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/a530v3_seq.fw2'
+[    6.215567] ueventd: firmware: loading 'adsp.b08' for '/devices/soc/9300000.qcom,lpass/firmware/adsp.b08'
+[    6.220228] ueventd: loading /devices/soc/b00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/a530v3_seq.fw2 took 7ms
+[    6.241896] ueventd: loading /devices/soc/1c00000.qcom,ssc/firmware/slpi.b10 took 30ms
+[    6.267245] ueventd: firmware: loading 'slpi.b11' for '/devices/soc/1c00000.qcom,ssc/firmware/slpi.b11'
+[    6.291565] ueventd: loading /devices/soc/1c00000.qcom,ssc/firmware/slpi.b11 took 24ms
+[    6.296983] ueventd: firmware: loading 'a530_zap.mdt' for '/devices/soc/soc:qcom,kgsl-hyp/firmware/a530_zap.mdt'
+[    6.306813] subsys-pil-tz soc:qcom,kgsl-hyp: a530_zap: loading from 0x0000000090e00000 to 0x0000000090e02000
+[    6.307380] ueventd: loading /devices/soc/soc:qcom,kgsl-hyp/firmware/a530_zap.mdt took 10ms
+[    6.329297] ueventd: firmware: loading 'slpi.b12' for '/devices/soc/1c00000.qcom,ssc/firmware/slpi.b12'
+[    6.358432] ueventd: loading /devices/soc/9300000.qcom,lpass/firmware/adsp.b08 took 143ms
+[    6.377510] ueventd: firmware: loading 'a530_zap.b02' for '/devices/soc/soc:qcom,kgsl-hyp/firmware/a530_zap.b02'
+[    6.393631] ueventd: loading /devices/soc/soc:qcom,kgsl-hyp/firmware/a530_zap.b02 took 16ms
+[    6.432429] ueventd: loading /devices/soc/1c00000.qcom,ssc/firmware/slpi.b12 took 103ms
+[    6.449559] ueventd: firmware: loading 'slpi.b13' for '/devices/soc/1c00000.qcom,ssc/firmware/slpi.b13'
+[    6.458808] ueventd: loading /devices/soc/1c00000.qcom,ssc/firmware/slpi.b13 took 9ms
+[    6.471077] ueventd: firmware: loading 'slpi.b14' for '/devices/soc/1c00000.qcom,ssc/firmware/slpi.b14'
+[    6.485381] ueventd: loading /devices/soc/1c00000.qcom,ssc/firmware/slpi.b14 took 14ms
+[    6.486850] ueventd: firmware: loading 'adsp.b09' for '/devices/soc/9300000.qcom,lpass/firmware/adsp.b09'
+[    6.493173] ueventd: loading /devices/soc/9300000.qcom,lpass/firmware/adsp.b09 took 6ms
+[    6.996098] ueventd: firmware: loading 'cpp_firmware_v1_10_0.fw' for '/devices/soc/a04000.qcom,cpp/firmware/cpp_firmware_v1_10_0.fw'
+[    6.996537] ueventd: firmware: could not find firmware for cpp_firmware_v1_10_0.fw
+[    6.996648] ueventd: loading /devices/soc/a04000.qcom,cpp/firmware/cpp_firmware_v1_10_0.fw took 0ms
+[    6.997363] msm_cpp a04000.qcom,cpp: Fail to loc blob cpp_firmware_v1_10_0.fw dev 0000000000000000, rc:-11
+[    7.072893] [FTS]: fts_fw_update_auto:NO CRC Error 124 K firmware update 
+[    7.072903] [FTS]: fts_fw_update_auto: firmware update failed and retry!
+[    7.952544] ueventd: firmware: loading 'modem.mdt' for '/devices/soc/2080000.qcom,mss/firmware/modem.mdt'
+[    7.960412] pil-q6v5-mss 2080000.qcom,mss: modem: loading from 0x0000000088800000 to 0x000000008ea00000
+[    7.961702] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.mdt took 7ms
+[    7.981805] ueventd: firmware: loading 'mba.mbn' for '/devices/soc/2080000.qcom,mss/firmware/mba.mbn'
+[    7.983827] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/mba.mbn took 2ms
+[    7.992560] ueventd: firmware: loading 'msadp' for '/devices/soc/2080000.qcom,mss/firmware/msadp'
+[    7.992991] ueventd: firmware: could not find firmware for msadp
+[    7.993099] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/msadp took 0ms
+[    7.995691] pil-q6v5-mss 2080000.qcom,mss: Loading MBA and DP (if present) from 0x00000000f6e00000 to 0x00000000f6f00000 size 100000
+[    8.084735] ueventd: firmware: loading 'modem.b02' for '/devices/soc/2080000.qcom,mss/firmware/modem.b02'
+[    8.093090] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.b02 took 7ms
+[    8.093802] ueventd: firmware: loading 'modem.b03' for '/devices/soc/2080000.qcom,mss/firmware/modem.b03'
+[    8.111286] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.b03 took 17ms
+[    8.112131] ueventd: firmware: loading 'modem.b04' for '/devices/soc/2080000.qcom,mss/firmware/modem.b04'
+[    8.194347] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.b04 took 82ms
+[    8.196811] ueventd: firmware: loading 'modem.b05' for '/devices/soc/2080000.qcom,mss/firmware/modem.b05'
+[    8.212587] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.b05 took 15ms
+[    8.213348] ueventd: firmware: loading 'modem.b06' for '/devices/soc/2080000.qcom,mss/firmware/modem.b06'
+[    8.227197] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.b06 took 14ms
+[    8.227970] ueventd: firmware: loading 'modem.b07' for '/devices/soc/2080000.qcom,mss/firmware/modem.b07'
+[    8.241820] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.b07 took 14ms
+[    8.243432] ueventd: firmware: loading 'modem.b08' for '/devices/soc/2080000.qcom,mss/firmware/modem.b08'
+[    8.364177] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.b08 took 121ms
+[    8.365343] ueventd: firmware: loading 'modem.b09' for '/devices/soc/2080000.qcom,mss/firmware/modem.b09'
+[    8.372940] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.b09 took 7ms
+[    8.373690] ueventd: firmware: loading 'modem.b10' for '/devices/soc/2080000.qcom,mss/firmware/modem.b10'
+[    8.381072] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.b10 took 7ms

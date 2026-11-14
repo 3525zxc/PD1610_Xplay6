@@ -1,0 +1,550 @@
+﻿[    6.973419] init: Command 'class_start hal' action=boot (/init.rc:684) took 323ms and succeeded
+[    6.973872] init: Service 'configstore-hal-1-0' (pid 959) received signal 31
+[    6.973891] init: Sending signal 9 to service 'configstore-hal-1-0' (pid 959) process group...
+[    6.974012] libprocessgroup: Successfully killed process cgroup uid 1000 pid 959 in 0ms
+[    6.975120] init: starting service 'qcom-c_core-sh'...
+[    7.012628] init: starting service 'irsc_util'...
+[    7.013861] init: starting service 'rmt_storage'...
+[    7.015041] init: starting service 'tftp_server'...
+[    7.041709] type=1400 audit(272817.175:97): avc: denied { execute_no_trans } for pid=1021 comm="init" path="/system/vendor/bin/hw/vendor.vivo.hardware.light@1.0-service" dev="sde18" ino=2575 scontext=u:r:init:s0 tcontext=u:object_r:vendor_file:s0 tclass=file permissive=1
+[    7.041735] type=1400 audit(272817.251:98): avc: denied { call } for pid=1020 comm="vendor.vivo.har" scontext=u:r:init:s0 tcontext=u:r:hwservicemanager:s0 tclass=binder permissive=1
+[    7.055276] init: starting service 'sensor-sh'...
+[    7.056283] init: Could not start service 'esepmdaemon' as part of class 'core': Cannot find '/system/vendor/bin/esepmdaemon': No such file or directory
+[    7.056650] init: starting service 'per_mgr'...
+[    7.057623] init: File /system/bin/sh(labeled "u:object_r:shell_exec:s0") has incorrect label or no domain transition from u:r:init:s0 to another SELinux domain defined. Have you configured your service correctly? https://source.android.com/security/selinux/device-policy#label_new_services_and_address_denials
+[    7.057641] init: starting service 'mdm_launcher'...
+[    7.058749] init: starting service 'qseecomd'...
+[    7.061320] audit: audit_lost=73 audit_rate_limit=5 audit_backlog_limit=64
+[    7.061333] audit: rate limit exceeded
+[    7.064929] type=1400 audit(272817.251:98): avc: denied { call } for pid=1020 comm="vendor.vivo.har" scontext=u:r:init:s0 tcontext=u:r:hwservicemanager:s0 tclass=binder permissive=1
+[    7.064953] type=1400 audit(272817.271:99): avc: denied { search } for pid=447 comm="hwservicemanage" name="1020" dev="proc" ino=20120 scontext=u:r:hwservicemanager:s0 tcontext=u:r:init:s0 tclass=dir permissive=1
+[    7.065023] type=1400 audit(272817.271:99): avc: denied { search } for pid=447 comm="hwservicemanage" name="1020" dev="proc" ino=20120 scontext=u:r:hwservicemanager:s0 tcontext=u:r:init:s0 tclass=dir permissive=1
+[    7.065033] type=1400 audit(272817.271:100): avc: denied { read } for pid=447 comm="hwservicemanage" name="current" dev="proc" ino=19091 scontext=u:r:hwservicemanager:s0 tcontext=u:r:init:s0 tclass=file permissive=1
+[    7.065082] type=1400 audit(272817.271:100): avc: denied { read } for pid=447 comm="hwservicemanage" name="current" dev="proc" ino=19091 scontext=u:r:hwservicemanager:s0 tcontext=u:r:init:s0 tclass=file permissive=1
+[    7.065093] type=1400 audit(272817.271:101): avc: denied { open } for pid=447 comm="hwservicemanage" path="/proc/1020/attr/current" dev="proc" ino=19091 scontext=u:r:hwservicemanager:s0 tcontext=u:r:init:s0 tclass=file permissive=1
+[    7.090159] init: starting service 'audioserver'...
+[    7.091384] init: starting service 'lmkd'...
+[    7.092653] init: starting service 'surfaceflinger'...
+[    7.093813] init: starting service 'thermalservice'...
+[    7.114440] rmt_storage:INFO:main: Done with init now waiting for messages!
+[    7.119665] init: Created socket '/dev/socket/lmkd', mode 660, user 1000, group 1000
+[    7.125011] init: Failed to bind socket 'pdx/system/vr/display/client': No such file or directory
+[    7.125338] init: Failed to bind socket 'pdx/system/vr/display/manager': No such file or directory
+[    7.125602] init: Failed to bind socket 'pdx/system/vr/display/vsync': No such file or directory
+[    7.140521] init: Command 'class_start core' action=boot (/init.rc:686) took 165ms and succeeded
+[    7.140742] init: Received control message 'interface_start' for 'android.hardware.health@1.0::IHealth/default' from pid: 447 (/system/bin/hwservicemanager)
+[    7.140763] init: Could not find service hosting interface android.hardware.health@1.0::IHealth/default
+[    7.140821] init: processing action (boot) from (/init.usb.rc:21)
+[    7.141595] init: Service 'irsc_util' (pid 1029) exited with status 0
+[    7.141888] init: Service 'mdm_launcher' (pid 1038) exited with status 127
+[    7.142070] init: processing action (persist.sys.usb.config=* && boot) from (/init.usb.rc:102)
+[    7.142956] init: Received control message 'interface_start' for 'android.hardware.health@1.0::IHealth/default' from pid: 447 (/system/bin/hwservicemanager)
+[    7.142981] init: Could not find service hosting interface android.hardware.health@1.0::IHealth/default
+[    7.143040] init: processing action (boot) from (/init.qcom.rc:24)
+[    7.143556] PD1610-DIAG: enter bootinit: Received control message 'start' for 'mmid' from pid: 1012 (/vendor/bin/hw/vendor.qti.hardware.factory@1.0-service)
+[    7.165988] init: starting service 'mmid'...
+[    7.166939] init: processing action (boot) from (/vendor/etc/init/hw/init.qcom.rc:68)
+[    7.224882] scm_call failed: func id 0x72000206, ret: -1, syscall returns: 0x0, 0x0, 0x0
+[    7.228234] scm_call failed: func id 0x72000206, ret: -1, syscall returns: 0x0, 0x0, 0x0
+[    7.229893] scm_call failed: func id 0x72000206, ret: -1, syscall returns: 0x0, 0x0, 0x0
+[    7.240056] init: Received control message 'interface_start' for 'android.hardware.thermal@1.1::IThermal/default' from pid: 447 (/system/bin/hwservicemanager)
+[    7.240084] init: Could not find service hosting interface android.hardware.thermal@1.1::IThermal/default
+[    7.241758] init: Command 'chmod 0755 /system/bin/ip' action=boot (/vendor/etc/init/hw/init.qcom.rc:134) took 1ms and failed: fchmodat() failed: Read-only file system
+[    7.246230] scm_call failed: func id 0x72000206, ret: -1, syscall returns: 0x0, 0x0, 0x0
+[    7.247748] scm_call failed: func id 0x72000206, ret: -1, syscall returns: 0x0, 0x0, 0x0
+[    7.256965] scm_call failed: func id 0x72000206, ret: -1, syscall returns: 0x0, 0x0, 0x0
+[    7.278326] scm_call failed: func id 0x72000206, ret: -1, syscall returns: 0x0, 0x0, 0x0
+[    7.281604] init: processing action (boot) from (/vendor/etc/init/hw/init.qcom.usb.rc:51)
+[    7.281844] scm_call failed: func id 0x72000206, ret: -1, syscall returns: 0x0, 0x0, 0x0
+[    7.283732] selinux: avc:  denied  { set } for property=sys.listeners.registered pid=1056 uid=1000 gid=1000 scontext=u:r:tee:s0 tcontext=u:object_r:system_prop:s0 tclass=property_service permissive=1
+[    7.283732] 
+[    7.288716] init: Received control message 'start' for 'sensors' from pid: 1083 (start sensors)
+[    7.289976] init: starting service 'sensors'...
+[    7.337951] init: Service 'sensor-sh' (pid 1035) exited with status 0
+[    7.397087] init: Command 'mount configfs none /config' action=boot (/vendor/etc/init/hw/init.qcom.usb.rc:55) took 58ms and failed: mount() failed: Device or resource busy
+[    7.417004] init: Received control message 'start' for 'console' from pid: 1087 (start console)
+[    7.417043] init: Could not ctl.start for service console: Couldn't open console '/dev/ttyHSL0': No such file or directory
+[    7.425078] init: Service 'qcom-c_core-sh' (pid 1025) exited with status 0
+[    7.492264] SELinux: initialized (dev functionfs, type functionfs), uses genfs_contexts
+[    7.494118] init: starting service 'qcom-usb-sh'...
+[    7.495483] init: processing action (boot) from (/vendor/etc/init/hw/init.target.rc:95)
+[    7.496418] init: Command 'start rfs_access' action=boot (/vendor/etc/init/hw/init.target.rc:97) took 0ms and failed: service rfs_access not found
+[    7.499161] init: processing action (boot) from (/system/etc/init/bootstat.rc:61)
+[    7.499228] init: processing action (boot) from (/system/etc/init/dumpstate.rc:1)
+[    7.499323] init: processing action (boot) from (/system/etc/init/lineage-governor.rc:1)
+[    7.500859] init: processing action (boot) from (/system/etc/init/lineage-iosched.rc:16)
+[    7.500911] selinux: SELinux: Could not get canonical path for /sys/block/mmcblk0/queue restorecon: No such file or directory.
+[    7.500911] 
+[    7.603103] init: Command 'restorecon --recursive /sys/block/sda/queue' action=boot (/system/etc/init/lineage-iosched.rc:21) took 102ms and succeeded
+[    7.647275] init: processing action (boot) from (/system/etc/init/lineage-livedisplay.rc:1)
+[    7.647735] init: processing action (boot) from (/system/etc/init/lineage-system.rc:16)
+[    7.648757] init: processing action (boot) from (/vendor/etc/init/init.pd1610.rc:42)
+[    7.649631] init: processing action (enable_property_trigger) from (<Builtin Action>:0)
+[    7.650294] init: processing action (security.perf_harden=1) from (/init.rc:739)
+[    7.651068] init: processing action (ro.debuggable=1) from (/init.rc:763)
+[    7.651365] init: processing action (persist.radio.atfwd.start=true) from (/vendor/etc/init/hw/init.qcom.rc:969)
+[    7.652201] init: starting service 'atfwd'...
+[    7.653434] init: processing action (vold.post_fs_data_done=1) from (/vendor/etc/init/hw/init.qcom.rc:1207)
+[    7.653874] init: processing action (sys.usb.config=diag,serial_cdev,serial_tty,rmnet_ipa,mass_storage,adb && sys.usb.configfs=0) from (/vendor/etc/init/hw/init.qcom.usb.rc:390)
+[    7.654763] enable_store: android_usb: already disabled
+[    7.663178] init: starting service 'adbd'...
+[    7.664874] init: processing action (init.svc.per_mgr=running) from (/vendor/etc/init/hw/init.target.rc:150)
+[    7.665584] init: starting service 'per_proxy'...
+[    7.666841] init: processing action (vendor.ims.QMI_DAEMON_STATUS=1) from (/vendor/etc/init/hw/init.target.rc:347)
+[    7.667526] init: starting service 'imsdatadaemon'...
+[    7.668791] init: processing action (init.svc.surfaceflinger=running) from (/vendor/etc/init/hw/init.target.rc:384)
+[    7.669633] init: starting service 'ppd'...
+[    7.670786] init: processing action (init.svc.zygote=running) from (/vendor/etc/init/hw/init.target.rc:393)
+[    7.673297] init: Created socket '/dev/socket/adbd', mode 660, user 1000, group 1000
+[    7.689084] init: Created socket '/dev/socket/ims_datad', mode 660, user 1000, group 1001
+[    7.691872] init: Created socket '/dev/socket/pps', mode 660, user 1000, group 1000
+[    7.709913] init: Received control message 'interface_start' for 'android.hardware.audio@2.0::IDevicesFactory/msd' from pid: 447 (/system/bin/hwservicemanager)
+[    7.709951] init: Could not find service hosting interface android.hardware.audio@2.0::IDevicesFactory/msd
+[    7.720428] init: Received control message 'interface_start' for 'android.hardware.audio@4.0::IDevicesFactory/default' from pid: 447 (/system/bin/hwservicemanager)
+[    7.720645] init: Could not find service hosting interface android.hardware.audio@4.0::IDevicesFactory/default
+[    7.720933] init: Received control message 'interface_start' for 'android.hardware.audio.effect@4.0::IEffectsFactory/default' from pid: 447 (/system/bin/hwservicemanager)
+[    7.720969] init: Could not find service hosting interface android.hardware.audio.effect@4.0::IEffectsFactory/default
+[    7.728357] read descriptors
+[    7.728376] read strings
+[    7.766244] subsys-restart: __subsystem_get(): Changing subsys fw_name to modem
+[    7.772159] IPA received MPSS BEFORE_POWERUP
+[    7.776204] ipa ipa2_uc_state_check:301 uC is not loaded
+[    7.776246] ipa ipa_sps_irq_control_all:945 EP (5) not allocated.
+[    7.777551] IPA BEFORE_POWERUP handling is complete
+[    7.787611] ueventd: firmware: loading 'modem.mdt' for '/devices/soc/2080000.qcom,mss/firmware/modem.mdt'
+[    7.791755] IPC_RTR: msm_ipc_router_bind: imsdatadaemon Do not have permissions
+[    7.795054] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.mdt took 9ms
+[    7.795123] pil-q6v5-mss 2080000.qcom,mss: modem: loading from 0x0000000088800000 to 0x000000008ea00000
+[    7.817467] healthd_msm: Error in opening batt_info.txt, fd=-1
+[    7.817491] healthd_msm: Couldn't create file, fd=-1 errno=Permission denied
+[    7.817718] healthd_msm: Not notifying BMS
+[    7.819312] healthd: BatteryCycleCountPath not found
+[    7.825266] healthd_msm: Error in opening batt_info.txt, fd=-1
+[    7.828720] ueventd: firmware: loading 'mba.mbn' for '/devices/soc/2080000.qcom,mss/firmware/mba.mbn'
+[    7.837067] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/mba.mbn took 34ms
+[    7.838957] ueventd: firmware: loading 'msadp' for '/devices/soc/2080000.qcom,mss/firmware/msadp'
+[    7.839300] ueventd: firmware: could not find firmware for msadp
+[    7.839392] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/msadp took 0ms
+[    7.839563] pil-q6v5-mss 2080000.qcom,mss: Debug policy not present - msadp. Continue.
+[    7.842900] pil-q6v5-mss 2080000.qcom,mss: Loading MBA and DP (if present) from 0x00000000f6e00000 to 0x00000000f6f00000 size 100000
+[    7.910978] pil-q6v5-mss 2080000.qcom,mss: MBA boot done
+[    7.930968] android_work: android_work: sent uevent USB_STATE=CONNECTED
+[    7.932295] ueventd: firmware: loading 'modem.b02' for '/devices/soc/2080000.qcom,mss/firmware/modem.b02'
+[    7.933412] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.b02 took 1ms
+[    7.936101] ueventd: firmware: loading 'modem.b03' for '/devices/soc/2080000.qcom,mss/firmware/modem.b03'
+[    7.949489] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.b03 took 13ms
+[    7.950643] ueventd: firmware: loading 'modem.b04' for '/devices/soc/2080000.qcom,mss/firmware/modem.b04'
+[    7.967497] selinux: avc:  denied  { set } for property=sys.usb.rps_mask pid=1176 uid=0 gid=0 scontext=u:r:qti_init_shell:s0 tcontext=u:object_r:system_prop:s0 tclass=property_service permissive=1
+[    7.967497] 
+[    7.971040] init: Service 'qcom-usb-sh' (pid 1097) exited with status 0
+[    7.974542] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.b04 took 24ms
+[    7.976172] ueventd: firmware: loading 'modem.b05' for '/devices/soc/2080000.qcom,mss/firmware/modem.b05'
+[    7.977957] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.b05 took 2ms
+[    7.979274] ueventd: firmware: loading 'modem.b06' for '/devices/soc/2080000.qcom,mss/firmware/modem.b06'
+[    7.983654] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.b06 took 4ms
+[    7.985268] ueventd: firmware: loading 'modem.b07' for '/devices/soc/2080000.qcom,mss/firmware/modem.b07'
+[    7.996312] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.b07 took 11ms
+[    7.997921] ueventd: firmware: loading 'modem.b08' for '/devices/soc/2080000.qcom,mss/firmware/modem.b08'
+[    8.008307] type=1400 audit(272817.271:101): avc: denied { open } for pid=447 comm="hwservicemanage" path="/proc/1020/attr/current" dev="proc" ino=19091 scontext=u:r:hwservicemanager:s0 tcontext=u:r:init:s0 tclass=file permissive=1
+[    8.008337] type=1400 audit(272818.215:131): avc: denied { dac_override } for pid=477 comm="thermal-engine" capability=1 scontext=u:r:thermal-engine:s0 tcontext=u:r:thermal-engine:s0 tclass=capability permissive=1
+[    8.036226] init: Received control message 'interface_start' for 'android.hardware.camera.provider@2.4::ICameraProvider/external/0' from pid: 447 (/system/bin/hwservicemanager)
+[    8.036258] init: Could not find service hosting interface android.hardware.camera.provider@2.4::ICameraProvider/external/0
+[    8.052479] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.b08 took 54ms
+[    8.053538] ueventd: firmware: loading 'modem.b09' for '/devices/soc/2080000.qcom,mss/firmware/modem.b09'
+[    8.056366] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.b09 took 2ms
+[    8.057338] ueventd: firmware: loading 'modem.b10' for '/devices/soc/2080000.qcom,mss/firmware/modem.b10'
+[    8.059378] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.b10 took 2ms
+[    8.061028] ueventd: firmware: loading 'modem.b11' for '/devices/soc/2080000.qcom,mss/firmware/modem.b11'
+[    8.064307] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.b11 took 3ms
+[    8.065448] ueventd: firmware: loading 'modem.b12' for '/devices/soc/2080000.qcom,mss/firmware/modem.b12'
+[    8.079821] android_usb gadget: high-speed config #1: 66bf0c8.android_usb
+[    8.079878] diag: USB channel diag connected
+[    8.080117] msm-dwc3 6a00000.ssusb: Avail curr from USB = 500
+[    8.091019] sps:BAM 0x0000000006b04000 (va:0x0000000000000000) enabled: ver:0x27, number of pipes:8
+[    8.091153] ipa ipa2_uc_state_check:301 uC is not loaded
+[    8.091334] ipa ipa2_uc_state_check:301 uC is not loaded
+[    8.092096] init: Received control message 'start' for 'bootanim' from pid: 1043 (/system/bin/surfaceflinger)
+[    8.092441] init: starting service 'bootanim'...
+[    8.093893] init: processing action (init.svc.bootanim=running) from (/vendor/etc/init/hw/init.target.rc:92)
+[    8.108418] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.b12 took 43ms
+[    8.109534] ueventd: firmware: loading 'modem.b13' for '/devices/soc/2080000.qcom,mss/firmware/modem.b13'
+[    8.134874] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.b13 took 25ms
+[    8.138656] android_work: android_work: sent uevent USB_STATE=CONFIGURED
+[    8.220483] ueventd: firmware: loading 'modem.b15' for '/devices/soc/2080000.qcom,mss/firmware/modem.b15'
+[    8.225322] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.b15 took 5ms
+[    8.226928] ueventd: firmware: loading 'modem.b16' for '/devices/soc/2080000.qcom,mss/firmware/modem.b16'
+[    8.230260] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.b16 took 3ms
+[    8.231802] ueventd: firmware: loading 'modem.b17' for '/devices/soc/2080000.qcom,mss/firmware/modem.b17'
+[    8.271490] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.b17 took 39ms
+[    8.276580] ueventd: firmware: loading 'modem.b18' for '/devices/soc/2080000.qcom,mss/firmware/modem.b18'
+[    8.277890] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.b18 took 1ms
+[    8.278990] ueventd: firmware: loading 'modem.b19' for '/devices/soc/2080000.qcom,mss/firmware/modem.b19'
+[    8.283813] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.b19 took 4ms
+[    8.285069] ueventd: firmware: loading 'modem.b20' for '/devices/soc/2080000.qcom,mss/firmware/modem.b20'
+[    8.287295] ueventd: loading /devices/soc/2080000.qcom,mss/firmware/modem.b20 took 2ms
+[    8.857705] pil-q6v5-mss 2080000.qcom,mss: modem: Brought out of reset
+[    8.908565] msm8996-asoc-snd soc:sound-9335: msm8996_init_wsa_dev: Max WSA devices is 0 for this target?
+[    8.908579] msm8996-asoc-snd soc:sound-9335: msm8996_init_pa_dev: PA dev node is not present
+[    8.908585] msm8996-asoc-snd soc:sound-9335: msm8996_init_piezo_dev: PA dev node is not present
+[    8.908933] msm8996-asoc-snd soc:sound-9335: ASoC: CPU DAI msm-dai-q6-mi2s.0 not registered
+[    8.932776] msm8996-asoc-snd soc:sound-9335: msm8996_init_wsa_dev: Max WSA devices is 0 for this target?
+[    8.932792] msm8996-asoc-snd soc:sound-9335: msm8996_init_pa_dev: PA dev node is not present
+[    8.932800] msm8996-asoc-snd soc:sound-9335: msm8996_init_piezo_dev: PA dev node is not present
+[    8.933205] msm8996-asoc-snd soc:sound-9335: ASoC: CPU DAI msm-dai-q6-mi2s.0 not registered
+[    8.937481] pil-q6v5-mss 2080000.qcom,mss: modem: Power/Clock ready interrupt received
+[    8.937530] pil-q6v5-mss 2080000.qcom,mss: Subsystem error monitoring/handling services are up
+[    8.939451] rmt_storage:INFO:rmt_storage_open_cb: Processing: Open Request for /boot/modem_fs1!
+[    8.940466] sysmon-qmi: sysmon_clnt_svc_arrive: Connection established between QMI handle and modem's SSCTL service
+[    8.941092] rmt_storage:INFO:rmt_storage_open_cb: Processing: Open Request for /boot/modem_fs2!
+[    8.942380] rmt_storage:INFO:rmt_storage_open_cb: Processing: Open Request for /boot/modem_fsg!
+[    8.943496] rmt_storage:INFO:rmt_storage_open_cb: Processing: Open Request for /boot/modem_fsc!
+[    8.945015] rmt_storage:INFO:rmt_storage_alloc_buff_cb: Received req_size: 0! avail: 2097152
+[    8.945590] IPA received MPSS AFTER_POWERUP
+[    8.945599] IPA AFTER_POWERUP handling is complete
+[    8.951379] rmt_storage:INFO:rmt_storage_rw_iovec_cb: Read iovec request received for /boot/modem_fs1
+[    8.951513] rmt_storage:INFO:rmt_storage_client_thread: Calling Read [offset=512, size=512]for /boot/modem_fs1!
+[    8.952175] rmt_storage:INFO:rmt_storage_client_thread: Done Read (bytes = 512) for /boot/modem_fs1!
+[    8.953151] M-Notify: General: 7
+[    8.953290] rmt_storage:INFO:rmt_storage_rw_iovec_cb: Read iovec request received for /boot/modem_fs2
+[    8.953408] rmt_storage:INFO:rmt_storage_client_thread: Calling Read [offset=512, size=512]for /boot/modem_fs2!
+[    8.953980] rmt_storage:INFO:rmt_storage_client_thread: Done Read (bytes = 512) for /boot/modem_fs2!
+[    8.956692] rmt_storage:INFO:rmt_storage_rw_iovec_cb: Read iovec request received for /boot/modem_fs1
+[    8.956818] rmt_storage:INFO:rmt_storage_client_thread: Calling Read [offset=1024, size=2096128]for /boot/modem_fs1!
+[    8.964954] rmt_storage:INFO:rmt_storage_client_thread: Done Read (bytes = 2096128) for /boot/modem_fs1!
+[    9.087529] apr_tal:Modem Is Up
+[    9.090876] msm8996-asoc-snd soc:sound-9335: msm8996_init_wsa_dev: Max WSA devices is 0 for this target?
+[    9.090889] msm8996-asoc-snd soc:sound-9335: msm8996_init_pa_dev: PA dev node is not present
+[    9.090895] msm8996-asoc-snd soc:sound-9335: msm8996_init_piezo_dev: PA dev node is not present
+[    9.091342] msm8996-asoc-snd soc:sound-9335: ASoC: CPU DAI msm-dai-q6-mi2s.0 not registered
+[    9.092827] diag: In diag_send_feature_mask_update, control channel is not open, p: 0, 0000000000000000
+[    9.140412] Sending QMI_IPA_INIT_MODEM_DRIVER_REQ_V01
+[    9.141532] ipa-wan handle_indication_req:133 not send indication
+[    9.142923] QMI_IPA_INIT_MODEM_DRIVER_REQ_V01 response received
+[    9.143112] ipa ipa_uc_response_hdlr:461 IPA uC loaded
+[    9.143146] ipa ipa_uc_wdi_event_log_info_handler:320 wdi stats sz invalid exp=164 is=160
+[    9.143153] ipa ipa_uc_ntn_event_log_info_handler:39 NTN feature missing 0x9
+[    9.296563] rmt_storage:INFO:rmt_storage_rw_iovec_cb: Write iovec request received for /boot/modem_fs2
+[    9.296698] rmt_storage:INFO:rmt_storage_client_thread: Calling Write [offset=0, size=2097152]for /boot/modem_fs2!
+[    9.320937] rmt_storage:INFO:rmt_storage_client_thread: Done Write (bytes = 2097152) for /boot/modem_fs2!
+[    9.483577] init: Received control message 'interface_start' for 'android.hardware.health@2.0::IHealth/default' from pid: 447 (/system/bin/hwservicemanager)
+[    9.483615] init: Could not find service hosting interface android.hardware.health@2.0::IHealth/default
+[    9.488798] type=1400 audit(272818.215:131): avc: denied { dac_override } for pid=477 comm="thermal-engine" capability=1 scontext=u:r:thermal-engine:s0 tcontext=u:r:thermal-engine:s0 tclass=capability permissive=1
+[    9.488830] type=1400 audit(272819.699:132): avc: denied { read } for pid=954 comm="healthd" name="type" dev="sysfs" ino=45324 scontext=u:r:healthd:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[    9.488958] type=1400 audit(272819.699:132): avc: denied { read } for pid=954 comm="healthd" name="type" dev="sysfs" ino=45324 scontext=u:r:healthd:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[    9.488978] type=1400 audit(272819.699:133): avc: denied { open } for pid=954 comm="healthd" path="/sys/devices/soc/soc:qcom,bcl/power_supply/bcl/type" dev="sysfs" ino=45324 scontext=u:r:healthd:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[    9.489059] type=1400 audit(272819.699:133): avc: denied { open } for pid=954 comm="healthd" path="/sys/devices/soc/soc:qcom,bcl/power_supply/bcl/type" dev="sysfs" ino=45324 scontext=u:r:healthd:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[    9.489078] type=1400 audit(272819.699:134): avc: denied { getattr } for pid=954 comm="healthd" path="/sys/devices/soc/soc:qcom,bcl/power_supply/bcl/type" dev="sysfs" ino=45324 scontext=u:r:healthd:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[    9.496215] type=1400 audit(272819.699:134): avc: denied { getattr } for pid=954 comm="healthd" path="/sys/devices/soc/soc:qcom,bcl/power_supply/bcl/type" dev="sysfs" ino=45324 scontext=u:r:healthd:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[    9.496243] type=1400 audit(272819.699:135): avc: denied { read } for pid=954 comm="healthd" name="type" dev="sysfs" ino=45324 scontext=u:r:healthd:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[    9.496334] type=1400 audit(272819.699:135): avc: denied { read } for pid=954 comm="healthd" name="type" dev="sysfs" ino=45324 scontext=u:r:healthd:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[    9.496352] type=1400 audit(272819.699:136): avc: denied { open } for pid=954 comm="healthd" path="/sys/devices/soc/soc:qcom,bcl/power_supply/bcl/type" dev="sysfs" ino=45324 scontext=u:r:healthd:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[    9.496406] type=1400 audit(272819.699:136): avc: denied { open } for pid=954 comm="healthd" path="/sys/devices/soc/soc:qcom,bcl/power_supply/bcl/type" dev="sysfs" ino=45324 scontext=u:r:healthd:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[    9.496419] type=1400 audit(272819.699:137): avc: denied { getattr } for pid=954 comm="healthd" path="/sys/devices/soc/soc:qcom,bcl/power_supply/bcl/type" dev="sysfs" ino=45324 scontext=u:r:healthd:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[    9.685286] init: Received control message 'interface_start' for 'android.hardware.ir@1.0::IConsumerIr/default' from pid: 447 (/system/bin/hwservicemanager)
+[    9.685326] init: Could not find service hosting interface android.hardware.ir@1.0::IConsumerIr/default
+[    9.765893] selinux: avc:  denied  { set } for property=persist.net.doxlat pid=698 uid=1001 gid=1001 scontext=u:r:netmgrd:s0 tcontext=u:object_r:default_prop:s0 tclass=property_service permissive=1
+[    9.765893] 
+[    9.766879] type=1400 audit(272819.699:137): avc: denied { getattr } for pid=954 comm="healthd" path="/sys/devices/soc/soc:qcom,bcl/power_supply/bcl/type" dev="sysfs" ino=45324 scontext=u:r:healthd:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[    9.766910] type=1400 audit(1794408372.071:138): avc: denied { write } for pid=698 comm="netmgrd" name="property_service" dev="tmpfs" ino=14214 scontext=u:r:netmgrd:s0 tcontext=u:object_r:property_socket:s0 tclass=sock_file permissive=1
+[    9.767008] type=1400 audit(1794408372.071:138): avc: denied { write } for pid=698 comm="netmgrd" name="property_service" dev="tmpfs" ino=14214 scontext=u:r:netmgrd:s0 tcontext=u:object_r:property_socket:s0 tclass=sock_file permissive=1
+[    9.767023] type=1400 audit(1794408372.071:139): avc: denied { connectto } for pid=698 comm="netmgrd" path="/dev/socket/property_service" scontext=u:r:netmgrd:s0 tcontext=u:r:init:s0 tclass=unix_stream_socket permissive=1
+[    9.879641] init: processing action (sys.sysctl.extra_free_kbytes=*) from (/init.rc:729)
+[   10.000250] init: Unable to set property 'ro.vendor.ril.svlte1x' to 'false' from uid:1001 gid:1001 pid:669: Read-only property was already set
+[   10.006508] init: Unable to set property 'ro.vendor.ril.svdo' to 'false' from uid:1001 gid:1001 pid:669: Read-only property was already set
+[   10.010392] type=1400 audit(1794408372.071:139): avc: denied { connectto } for pid=698 comm="netmgrd" path="/dev/socket/property_service" scontext=u:r:netmgrd:s0 tcontext=u:r:init:s0 tclass=unix_stream_socket permissive=1
+[   10.010422] type=1400 audit(1794408372.319:140): avc: denied { dac_override } for pid=477 comm="thermal-engine" capability=1 scontext=u:r:thermal-engine:s0 tcontext=u:r:thermal-engine:s0 tclass=capability permissive=1
+[   10.168565] init: Received control message 'interface_start' for 'android.hardware.oemlock@1.0::IOemLock/default' from pid: 447 (/system/bin/hwservicemanager)
+[   10.168596] init: Could not find service hosting interface android.hardware.oemlock@1.0::IOemLock/default
+[   10.511256] ipa-wan ipa_wwan_ioctl:1554 get AGG size 8192 count 10
+[   10.523580] ipa ipa_assign_policy:3158 get close-by 8192
+[   10.523596] ipa ipa_assign_policy:3164 set rx_buff_sz 7808
+[   10.523605] ipa ipa_assign_policy:3187 set aggr_limit 6
+[   10.547515] ipa-wan ipa_wwan_ioctl:1455 dev(rmnet_data0) register to IPA
+[   10.596462] binder: 446:446 BC_REQUEST_DEATH_NOTIFICATION death notification already set
+[   10.615172] ipa-wan ipa_wwan_ioctl:1455 dev(rmnet_data1) register to IPA
+[   10.692006] ipa-wan ipa_wwan_ioctl:1455 dev(rmnet_data2) register to IPA
+[   10.711598] init: Received control message 'interface_start' for 'android.hardware.usb.gadget@1.0::IUsbGadget/default' from pid: 447 (/system/bin/hwservicemanager)
+[   10.711633] init: Could not find service hosting interface android.hardware.usb.gadget@1.0::IUsbGadget/default
+[   10.735944] acc_open
+[   10.735969] acc_release
+[   10.746965] ipa-wan ipa_wwan_ioctl:1455 dev(rmnet_data3) register to IPA
+[   10.748260] init: Received control message 'interface_start' for 'android.hardware.usb@1.0::IUsb/default' from pid: 447 (/system/bin/hwservicemanager)
+[   10.748295] init: Could not find service hosting interface android.hardware.usb@1.0::IUsb/default
+[   10.809027] ipa-wan ipa_wwan_ioctl:1455 dev(rmnet_data4) register to IPA
+[   10.814695] init: Received control message 'interface_start' for 'android.hardware.contexthub@1.0::IContexthub/default' from pid: 447 (/system/bin/hwservicemanager)
+[   10.814734] init: Could not find service hosting interface android.hardware.contexthub@1.0::IContexthub/default
+[   10.864140] init: Received control message 'interface_start' for 'android.hardware.biometrics.fingerprint@2.1::IBiometricsFingerprint/default' from pid: 447 (/system/bin/hwservicemanager)
+[   10.864179] init: Could not find service hosting interface android.hardware.biometrics.fingerprint@2.1::IBiometricsFingerprint/default
+[   10.874621] ipa-wan ipa_wwan_ioctl:1455 dev(rmnet_data5) register to IPA
+[   10.914263] ipa-wan ipa_wwan_ioctl:1455 dev(rmnet_data6) register to IPA
+[   10.965066] ipa-wan ipa_wwan_ioctl:1455 dev(rmnet_data7) register to IPA
+[   11.032309] init: Received control message 'interface_start' for 'vendor.lineage.trust@1.0::IUsbRestrict/default' from pid: 447 (/system/bin/hwservicemanager)
+[   11.032345] init: Could not find service hosting interface vendor.lineage.trust@1.0::IUsbRestrict/default
+[   11.057251] init: Received control message 'interface_start' for 'android.hardware.weaver@1.0::IWeaver/default' from pid: 447 (/system/bin/hwservicemanager)
+[   11.057283] init: Could not find service hosting interface android.hardware.weaver@1.0::IWeaver/default
+[   11.059392] init: Received control message 'interface_start' for 'android.hardware.authsecret@1.0::IAuthSecret/default' from pid: 447 (/system/bin/hwservicemanager)
+[   11.059430] init: Could not find service hosting interface android.hardware.authsecret@1.0::IAuthSecret/default
+[   11.147683] init: Received control message 'interface_start' for 'vendor.lineage.power@1.0::ILineagePower/default' from pid: 447 (/system/bin/hwservicemanager)
+[   11.147716] init: Could not find service hosting interface vendor.lineage.power@1.0::ILineagePower/default
+[   11.162390] init: Received control message 'interface_start' for 'vendor.lineage.touch@1.0::IKeyDisabler/default' from pid: 447 (/system/bin/hwservicemanager)
+[   11.162421] init: Could not find service hosting interface vendor.lineage.touch@1.0::IKeyDisabler/default
+[   11.215858] type=1400 audit(1794408372.319:140): avc: denied { dac_override } for pid=477 comm="thermal-engine" capability=1 scontext=u:r:thermal-engine:s0 tcontext=u:r:thermal-engine:s0 tclass=capability permissive=1
+[   11.215883] type=1400 audit(1794408373.523:141): avc: denied { read write } for pid=981 comm="light@2.0-servi" name="brightness" dev="sysfs" ino=41602 scontext=u:r:hal_light_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   11.216075] type=1400 audit(1794408373.523:141): avc: denied { read write } for pid=981 comm="light@2.0-servi" name="brightness" dev="sysfs" ino=41602 scontext=u:r:hal_light_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   11.216091] type=1400 audit(1794408373.523:142): avc: denied { open } for pid=981 comm="light@2.0-servi" path="/sys/devices/soc/leds-qpnp-24/leds/button-backlight/brightness" dev="sysfs" ino=41602 scontext=u:r:hal_light_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   11.269634] init: Received control message 'interface_start' for 'vendor.lineage.touch@1.0::IStylusMode/default' from pid: 447 (/system/bin/hwservicemanager)
+[   11.269670] init: Could not find service hosting interface vendor.lineage.touch@1.0::IStylusMode/default
+[   11.270921] init: Received control message 'interface_start' for 'vendor.lineage.touch@1.0::IGloveMode/default' from pid: 447 (/system/bin/hwservicemanager)
+[   11.270957] init: Could not find service hosting interface vendor.lineage.touch@1.0::IGloveMode/default
+[   11.403247] sdcardfs version 2.0
+[   11.403273] sdcardfs: dev_name -> /data/media
+[   11.403281] sdcardfs: options -> fsuid=1023,fsgid=1023,multiuser,derive_gid,default_normal,mask=6,userid=0,gid=1015
+[   11.403288] sdcardfs: mnt -> 0000000000000000
+[   11.403339] sdcardfs: mounted on top of /data/media type ext4
+[   11.403518] SELinux: initialized (dev sdcardfs, type sdcardfs), uses genfs_contexts
+[   11.403748] Remount options were mask=23,gid=9997 for vfsmnt 0000000000000000.
+[   11.403761] sdcardfs : options - debug:1
+[   11.403767] sdcardfs : options - gid:9997
+[   11.403773] sdcardfs : options - mask:23
+[   11.403869] Remount options were mask=7,gid=9997 for vfsmnt 0000000000000000.
+[   11.403878] sdcardfs : options - debug:1
+[   11.403883] sdcardfs : options - gid:9997
+[   11.403889] sdcardfs : options - mask:7
+[   11.618199] type=1400 audit(1794408373.523:142): avc: denied { open } for pid=981 comm="light@2.0-servi" path="/sys/devices/soc/leds-qpnp-24/leds/button-backlight/brightness" dev="sysfs" ino=41602 scontext=u:r:hal_light_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   11.618231] type=1400 audit(1794408373.927:143): avc: denied { write } for pid=1692 comm="webview_zygote" path="socket:[27276]" dev="sockfs" ino=27276 scontext=u:r:webview_zygote:s0 tcontext=u:r:zygote:s0 tclass=unix_dgram_socket permissive=1
+[   11.661348] init: starting service 'configstore-hal-1-0'...
+[   11.754059] init: Service 'configstore-hal-1-0' (pid 1732) received signal 31
+[   11.754099] init: Sending signal 9 to service 'configstore-hal-1-0' (pid 1732) process group...
+[   11.754265] libprocessgroup: Successfully killed process cgroup uid 1000 pid 1732 in 0ms
+[   11.761774] init: Received control message 'interface_start' for 'android.hardware.gnss@1.1::IGnss/default' from pid: 447 (/system/bin/hwservicemanager)
+[   11.761817] init: Could not find service hosting interface android.hardware.gnss@1.1::IGnss/default
+[   11.844305] msm_vidc: info: Opening video instance: 0000000000000000, 1
+[   11.856896] subsys-restart: __subsystem_get(): Changing subsys fw_name to venus
+[   11.865354] ueventd: firmware: loading 'venus.mdt' for '/devices/soc/ce0000.qcom,venus/firmware/venus.mdt'
+[   11.866879] ueventd: loading /devices/soc/ce0000.qcom,venus/firmware/venus.mdt took 1ms
+[   11.867148] subsys-pil-tz ce0000.qcom,venus: venus: loading from 0x0000000090f00000 to 0x0000000091400000
+[   11.886683] ueventd: firmware: loading 'venus.b02' for '/devices/soc/ce0000.qcom,venus/firmware/venus.b02'
+[   11.892304] ueventd: loading /devices/soc/ce0000.qcom,venus/firmware/venus.b02 took 5ms
+[   11.893969] ueventd: firmware: loading 'venus.b03' for '/devices/soc/ce0000.qcom,venus/firmware/venus.b03'
+[   11.895015] ueventd: loading /devices/soc/ce0000.qcom,venus/firmware/venus.b03 took 1ms
+[   11.925447] ueventd: firmware: loading 'venus.b04' for '/devices/soc/ce0000.qcom,venus/firmware/venus.b04'
+[   11.937427] ueventd: loading /devices/soc/ce0000.qcom,venus/firmware/venus.b04 took 12ms
+[   12.010705] type=1400 audit(1794408373.927:143): avc: denied { write } for pid=1692 comm="webview_zygote" path="socket:[27276]" dev="sockfs" ino=27276 scontext=u:r:webview_zygote:s0 tcontext=u:r:zygote:s0 tclass=unix_dgram_socket permissive=1
+[   12.010748] type=1400 audit(1794408374.319:144): avc: denied { dac_override } for pid=477 comm="thermal-engine" capability=1 scontext=u:r:thermal-engine:s0 tcontext=u:r:thermal-engine:s0 tclass=capability permissive=1
+[   12.020995] init: Received control message 'interface_start' for 'android.hardware.biometrics.fingerprint@2.1::IBiometricsFingerprint/default' from pid: 447 (/system/bin/hwservicemanager)
+[   12.021050] init: Could not find service hosting interface android.hardware.biometrics.fingerprint@2.1::IBiometricsFingerprint/default
+[   12.025240] subsys-pil-tz ce0000.qcom,venus: venus: Brought out of reset
+[   12.099140] msm_vidc: info: Closed video instance: 0000000000000000
+[   12.114348] msm_vidc: info: Opening video instance: 0000000000000000, 1
+[   12.148218] msm_vidc: info: Closed video instance: 0000000000000000
+[   12.192350] msm_vidc: info: Opening video instance: 0000000000000000, 1
+[   12.209603] msm_vidc: info: Closed video instance: 0000000000000000
+[   12.242503] msm_vidc: info: Opening video instance: 0000000000000000, 1
+[   12.276525] msm_vidc: info: Closed video instance: 0000000000000000
+[   12.289984] msm_vidc: info: Opening video instance: 0000000000000000, 1
+[   12.329422] msm_vidc: info: Closed video instance: 0000000000000000
+[   12.353041] msm_vidc: info: Opening video instance: 0000000000000000, 1
+[   12.383378] msm_vidc: info: Closed video instance: 0000000000000000
+[   12.390404] msm_vidc: info: Opening video instance: 0000000000000000, 1
+[   12.408400] msm_vidc: info: Closed video instance: 0000000000000000
+[   12.415874] msm_vidc: info: Opening video instance: 0000000000000000, 1
+[   12.430309] msm_vidc: info: Closed video instance: 0000000000000000
+[   12.450679] msm_vidc: info: Opening video instance: 0000000000000000, 1
+[   12.470274] msm_vidc: info: Closed video instance: 0000000000000000
+[   12.501131] msm_vidc: info: Opening video instance: 0000000000000000, 1
+[   12.514852] msm_vidc: info: Closed video instance: 0000000000000000
+[   12.521124] msm_vidc: info: Opening video instance: 0000000000000000, 1
+[   12.536218] msm_vidc: info: Closed video instance: 0000000000000000
+[   12.557065] msm_vidc: info: Opening video instance: 0000000000000000, 0
+[   12.585845] msm_vidc: info: Closed video instance: 0000000000000000
+[   12.611672] msm_vidc: info: Opening video instance: 0000000000000000, 0
+[   12.623667] type=1400 audit(1794408374.319:144): avc: denied { dac_override } for pid=477 comm="thermal-engine" capability=1 scontext=u:r:thermal-engine:s0 tcontext=u:r:thermal-engine:s0 tclass=capability permissive=1
+[   12.623696] type=1400 audit(1794408374.931:145): avc: denied { write } for pid=1692 comm="webview_zygote" path="socket:[27276]" dev="sockfs" ino=27276 scontext=u:r:webview_zygote:s0 tcontext=u:r:zygote:s0 tclass=unix_dgram_socket permissive=1
+[   12.632731] msm_vidc: info: Closed video instance: 0000000000000000
+[   12.660891] msm_vidc: info: Opening video instance: 0000000000000000, 0
+[   12.688917] msm_vidc: info: Closed video instance: 0000000000000000
+[   12.698151] msm_vidc: info: Opening video instance: 0000000000000000, 0
+[   12.712974] init: Received control message 'interface_start' for 'android.hardware.radio.config@1.0::IRadioConfig/default' from pid: 447 (/system/bin/hwservicemanager)
+[   12.713027] init: Could not find service hosting interface android.hardware.radio.config@1.0::IRadioConfig/default
+[   12.726848] msm_vidc: info: Closed video instance: 0000000000000000
+[   12.762273] msm_vidc: info: Opening video instance: 0000000000000000, 0
+[   12.787962] msm_vidc: info: Closed video instance: 0000000000000000
+[   13.525674] init: Received control message 'interface_start' for 'vendor.lineage.trust@1.0::IUsbRestrict/default' from pid: 447 (/system/bin/hwservicemanager)
+[   13.525715] init: Could not find service hosting interface vendor.lineage.trust@1.0::IUsbRestrict/default
+[   14.368997] init: Received control message 'interface_start' for 'android.hardware.biometrics.fingerprint@2.1::IBiometricsFingerprint/default' from pid: 447 (/system/bin/hwservicemanager)
+[   14.369039] init: Could not find service hosting interface android.hardware.biometrics.fingerprint@2.1::IBiometricsFingerprint/default
+[   16.665241] init: starting service 'configstore-hal-1-0'...
+[   16.682413] init: Service 'configstore-hal-1-0' (pid 2079) received signal 31
+[   16.682442] init: Sending signal 9 to service 'configstore-hal-1-0' (pid 2079) process group...
+[   16.682543] libprocessgroup: Successfully killed process cgroup uid 1000 pid 2079 in 0ms
+[   19.719282] init: Service 'bootanim' (pid 1191) exited with status 0
+[   19.720455] init: processing action (init.svc.bootanim=stopped) from (/vendor/etc/init/hw/init.target.rc:314)
+[   19.721031] init: starting service 'usf-post-boot'...
+[   19.729031] init: Service 'usf-post-boot' (pid 2087) exited with status 127
+[   19.869168] type=1400 audit(1794408374.931:145): avc: denied { write } for pid=1692 comm="webview_zygote" path="socket:[27276]" dev="sockfs" ino=27276 scontext=u:r:webview_zygote:s0 tcontext=u:r:zygote:s0 tclass=unix_dgram_socket permissive=1
+[   19.869197] type=1400 audit(1794408382.179:146): avc: denied { read write } for pid=981 comm="light@2.0-servi" name="brightness" dev="sysfs" ino=41602 scontext=u:r:hal_light_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   19.869279] type=1400 audit(1794408382.179:146): avc: denied { read write } for pid=981 comm="light@2.0-servi" name="brightness" dev="sysfs" ino=41602 scontext=u:r:hal_light_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   19.869294] type=1400 audit(1794408382.179:147): avc: denied { open } for pid=981 comm="light@2.0-servi" path="/sys/devices/soc/leds-qpnp-24/leds/button-backlight/brightness" dev="sysfs" ino=41602 scontext=u:r:hal_light_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   19.876481] init: processing action (sys.usb.config=none && sys.usb.configfs=0) from (/init.usb.rc:25)
+[   19.876530] init: Sending signal 9 to service 'adbd' (pid 1113) process group...
+[   19.908433] dwc3 6a00000.dwc3: request 0000000000000000 was not queued to ep0out
+[   19.908444] diag: USB channel diag disconnected
+[   19.908522] qti_ctrl_queue_notify: qti_ctrl_queue_notify: rmnet ctrl file handler 0000000000000000 is not open
+[   19.918580] libprocessgroup: Successfully killed process cgroup uid 0 pid 1113 in 41ms
+[   19.919033] init: Received control message 'interface_start' for 'vendor.lineage.livedisplay@2.0::IAdaptiveBacklight/default' from pid: 447 (/system/bin/hwservicemanager)
+[   19.919063] init: Could not find service hosting interface vendor.lineage.livedisplay@2.0::IAdaptiveBacklight/default
+[   19.920149] init: Service 'adbd' (pid 1113) received signal 9
+[   19.921217] init: Received control message 'interface_start' for 'vendor.lineage.livedisplay@2.0::IColorEnhancement/default' from pid: 447 (/system/bin/hwservicemanager)
+[   19.921245] init: Could not find service hosting interface vendor.lineage.livedisplay@2.0::IColorEnhancement/default
+[   19.921658] init: Received control message 'interface_start' for 'vendor.lineage.livedisplay@2.0::IAutoContrast/default' from pid: 447 (/system/bin/hwservicemanager)
+[   19.921678] init: Could not find service hosting interface vendor.lineage.livedisplay@2.0::IAutoContrast/default
+[   19.922406] init: processing action (init.svc.adbd=stopped) from (/init.usb.configfs.rc:14)
+[   19.922856] init: Received control message 'interface_start' for 'vendor.lineage.livedisplay@2.0::IDisplayColorCalibration/default' from pid: 447 (/system/bin/hwservicemanager)
+[   19.922877] init: Could not find service hosting interface vendor.lineage.livedisplay@2.0::IDisplayColorCalibration/default
+[   19.923694] init: Received control message 'interface_start' for 'vendor.lineage.livedisplay@2.0::IDisplayModes/default' from pid: 447 (/system/bin/hwservicemanager)
+[   19.923715] init: Could not find service hosting interface vendor.lineage.livedisplay@2.0::IDisplayModes/default
+[   19.923842] init: Received control message 'interface_start' for 'vendor.lineage.livedisplay@2.0::IReadingEnhancement/default' from pid: 447 (/system/bin/hwservicemanager)
+[   19.923859] init: Could not find service hosting interface vendor.lineage.livedisplay@2.0::IReadingEnhancement/default
+[   19.924140] init: Received control message 'interface_start' for 'vendor.lineage.livedisplay@2.0::IColorBalance/default' from pid: 447 (/system/bin/hwservicemanager)
+[   19.924164] init: Could not find service hosting interface vendor.lineage.livedisplay@2.0::IColorBalance/default
+[   19.924294] init: Received control message 'interface_start' for 'vendor.lineage.livedisplay@2.0::ISunlightEnhancement/default' from pid: 447 (/system/bin/hwservicemanager)
+[   19.924311] init: Could not find service hosting interface vendor.lineage.livedisplay@2.0::ISunlightEnhancement/default
+[   19.924442] init: Received control message 'interface_start' for 'vendor.lineage.livedisplay@2.0::IPictureAdjustment/default' from pid: 447 (/system/bin/hwservicemanager)
+[   19.924459] init: Could not find service hosting interface vendor.lineage.livedisplay@2.0::IPictureAdjustment/default
+[   19.925378] init: processing action (sys.boot_completed=1) from (/init.rc:723)
+[   19.925569] init: processing action (sys.boot_completed=1) from (/init.qcom.rc:27)
+[   19.925985] PD1610-DIAG: boot_completedinit: processing action (sys.boot_completed=1) from (/vendor/etc/init/hw/init.qcom.rc:491)
+[   19.927028] Boot completed 
+[   19.929541] init: processing action (sys.boot_completed=1) from (/vendor/etc/init/hw/init.qcom.rc:955)
+[   19.930014] init: starting service 'qcom-post-boot'...
+[   19.931811] init: processing action (sys.boot_completed=1 && sys.logbootcomplete=1) from (/system/etc/init/bootstat.rc:70)
+[   19.932646] init: starting service 'exec 4 (/system/bin/bootstat --set_system_boot_reason --record_boot_complete --record_boot_reason --record_time_since_factory_reset -l)'...
+[   19.936177] init: processing action (sys.boot_completed=1 && sys.wifitracing.started=0) from (/system/etc/init/wifi-events.rc:20)
+[   19.948830] type=1400 audit(1794408382.179:147): avc: denied { open } for pid=981 comm="light@2.0-servi" path="/sys/devices/soc/leds-qpnp-24/leds/button-backlight/brightness" dev="sysfs" ino=41602 scontext=u:r:hal_light_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   19.948859] type=1400 audit(1794408382.255:148): avc: denied { execute_no_trans } for pid=2099 comm="init.qcom.post_" path="/system/vendor/bin/getprop" dev="sde18" ino=2754 scontext=u:r:qti_init_shell:s0 tcontext=u:object_r:vendor_file:s0 tclass=file permissive=1
+[   19.969056] logd: logdr: UID=1000 GID=1007 PID=2098 n tail=0 logMask=80 pid=0 start=0ns timeout=0ns
+[   19.986725] msm_thermal:store_cc_enabled Core control disabled
+[   19.987016] type=1400 audit(1794408382.255:148): avc: denied { execute_no_trans } for pid=2099 comm="init.qcom.post_" path="/system/vendor/bin/getprop" dev="sde18" ino=2754 scontext=u:r:qti_init_shell:s0 tcontext=u:object_r:vendor_file:s0 tclass=file permissive=1
+[   19.987043] type=1400 audit(1794408382.295:149): avc: denied { write } for pid=2097 comm="init.qcom.post_" name="mode" dev="sysfs" ino=45304 scontext=u:r:qti_init_shell:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   19.989147] audit: audit_lost=102 audit_rate_limit=5 audit_backlog_limit=64
+[   19.989155] audit: rate limit exceeded
+[   19.989203] type=1400 audit(1794408382.295:149): avc: denied { write } for pid=2097 comm="init.qcom.post_" name="mode" dev="sysfs" ino=45304 scontext=u:r:qti_init_shell:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   19.989230] type=1400 audit(1794408382.299:150): avc: denied { read } for pid=954 comm="healthd" name="type" dev="sysfs" ino=29282 scontext=u:r:healthd:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   19.990151] mode_store: bcl disabled
+[   19.999639] hotplug_mask_store: bcl hotplug mask updated to 0
+[   20.009097] hotplug_soc_mask_store: bcl soc hotplug mask updated to 0
+[   20.009416] mode_store: bcl enabled
+[   20.012873] msm_thermal:store_cc_enabled Core control enabled
+[   20.015295] mode_store: bcl disabled
+[   20.015364] hotplug_mask_store: bcl hotplug mask updated to 12
+[   20.015403] hotplug_soc_mask_store: bcl soc hotplug mask updated to 0
+[   20.015679] mode_store: bcl enabled
+[   20.029910] init: processing action (sys.usb.config=adb && sys.usb.configfs=0) from (/init.usb.rc:34)
+[   20.031645] enable_store: android_usb: already disabled
+[   20.036373] init: starting service 'adbd'...
+[   20.037720] init: processing action (sys.usb.config=adb && sys.usb.configfs=0) from (/vendor/etc/init/hw/init.qcom.usb.rc:154)
+[   20.039473] init: Created socket '/dev/socket/adbd', mode 660, user 1000, group 1000
+[   20.045413] read descriptors
+[   20.045430] read strings
+[   20.053143] dwc3_gadget_suspend_interrupt(): state:0. Ignore SUSPEND.
+[   20.056821] init: processing action (ro.boot.bootreason=*) from (/system/etc/init/bootstat.rc:4)
+[   20.060809] init: Service 'exec 4 (/system/bin/bootstat --set_system_boot_reason --record_boot_complete --record_boot_reason --record_time_since_factory_reset -l)' (pid 2098) exited with status 0
+[   20.062405] init: Received control message 'start' for 'iop' from pid: 2126 (start iop)
+[   20.062477] init: Could not ctl.start for service iop: Cannot find '/system/vendor/bin/iop': No such file or directory
+[   20.086226] selinux: SELinux: Skipping restorecon_recursive(/data/system_ce/0)
+[   20.086226] 
+[   20.087160] init: Async property child exited with status 0
+[   20.089185] selinux: SELinux: Skipping restorecon_recursive(/data/misc_ce/0)
+[   20.089185] 
+[   20.092900] init: Async property child exited with status 0
+[   20.147421] msm-dwc3 6a00000.ssusb: Avail curr from USB = 0
+[   20.147865] android_work: android_work: sent uevent USB_STATE=DISCONNECTED
+[   20.230195] android_work: android_work: sent uevent USB_STATE=CONNECTED
+[   20.316968] android_usb gadget: high-speed config #1: 66bf0c8.android_usb
+[   20.317054] msm-dwc3 6a00000.ssusb: Avail curr from USB = 500
+[   20.376253] android_work: android_work: sent uevent USB_STATE=CONFIGURED
+[   20.388785] devbw soc:qcom,gpubw: dev_pm_opp_get_opp_count: device OPP not found (-19)
+[   20.392993] selinux: avc:  denied  { set } for property=ro.min_freq_0 pid=1013 uid=0 gid=0 scontext=u:r:hal_perf_default:s0 tcontext=u:object_r:default_prop:s0 tclass=property_service permissive=1
+[   20.392993] 
+[   20.395385] devbw soc:qcom,cpubw: dev_pm_opp_get_opp_count: device OPP not found (-19)
+[   20.457104] init: Service 'qcom-post-boot' (pid 2097) exited with status 0
+[   20.912169] init: Received control message 'interface_start' for 'android.hardware.secure_element@1.0::ISecureElement/SIM1' from pid: 447 (/system/bin/hwservicemanager)
+[   20.912211] init: Could not find service hosting interface android.hardware.secure_element@1.0::ISecureElement/SIM1
+[   20.912506] init: Received control message 'interface_start' for 'android.hardware.secure_element@1.0::ISecureElement/eSE1' from pid: 447 (/system/bin/hwservicemanager)
+[   20.912542] init: Could not find service hosting interface android.hardware.secure_element@1.0::ISecureElement/eSE1
+[   20.951272] type=1400 audit(1794408382.299:150): avc: denied { read } for pid=954 comm="healthd" name="type" dev="sysfs" ino=29282 scontext=u:r:healthd:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   20.951306] type=1400 audit(1794408383.259:164): avc: denied { read } for pid=982 comm="memtrack@1.0-se" name="mem" dev="debugfs" ino=28274 scontext=u:r:hal_memtrack_default:s0 tcontext=u:object_r:debugfs:s0 tclass=file permissive=1
+[   20.953408] type=1400 audit(1794408383.259:164): avc: denied { read } for pid=982 comm="memtrack@1.0-se" name="mem" dev="debugfs" ino=28274 scontext=u:r:hal_memtrack_default:s0 tcontext=u:object_r:debugfs:s0 tclass=file permissive=1
+[   20.956856] type=1400 audit(1794408383.259:165): avc: denied { open } for pid=982 comm="memtrack@1.0-se" path="/sys/kernel/debug/kgsl/proc/1779/mem" dev="debugfs" ino=28274 scontext=u:r:hal_memtrack_default:s0 tcontext=u:object_r:debugfs:s0 tclass=file permissive=1
+[   20.957010] type=1400 audit(1794408383.259:165): avc: denied { open } for pid=982 comm="memtrack@1.0-se" path="/sys/kernel/debug/kgsl/proc/1779/mem" dev="debugfs" ino=28274 scontext=u:r:hal_memtrack_default:s0 tcontext=u:object_r:debugfs:s0 tclass=file permissive=1
+[   20.957029] type=1400 audit(1794408383.259:166): avc: denied { getattr } for pid=982 comm="memtrack@1.0-se" path="/sys/kernel/debug/kgsl/proc/1779/mem" dev="debugfs" ino=28274 scontext=u:r:hal_memtrack_default:s0 tcontext=u:object_r:debugfs:s0 tclass=file permissive=1
+[   21.202450] init: Received control message 'interface_start' for 'vendor.lineage.touch@1.0::ITouchscreenGesture/default' from pid: 447 (/system/bin/hwservicemanager)
+[   21.202494] init: Could not find service hosting interface vendor.lineage.touch@1.0::ITouchscreenGesture/default
+[   21.666841] init: starting service 'configstore-hal-1-0'...
+[   21.693569] init: Service 'configstore-hal-1-0' (pid 2384) received signal 31
+[   21.693597] init: Sending signal 9 to service 'configstore-hal-1-0' (pid 2384) process group...
+[   21.693706] libprocessgroup: Successfully killed process cgroup uid 1000 pid 2384 in 0ms
+[   21.839853] msm_thermal:hotplug_notify tsens_tz_sensor9 reach temp threshold: 650
+[   21.841423] msm_thermal:hotplug_notify tsens_tz_sensor9 reach temp threshold: 650
+[   21.842973] msm_thermal:hotplug_notify tsens_tz_sensor9 reach temp threshold: 650
+[   21.844487] msm_thermal:hotplug_notify tsens_tz_sensor9 reach temp threshold: 650
+[   21.844731] msm_thermal:hotplug_notify tsens_tz_sensor11 reach temp threshold: 650
+[   21.846093] msm_thermal:hotplug_notify tsens_tz_sensor9 reach temp threshold: 650
+[   21.846329] msm_thermal:hotplug_notify tsens_tz_sensor11 reach temp threshold: 650
+[   21.847657] msm_thermal:hotplug_notify tsens_tz_sensor9 reach temp threshold: 650
+[   21.847896] msm_thermal:hotplug_notify tsens_tz_sensor11 reach temp threshold: 650
+[   21.849226] msm_thermal:hotplug_notify tsens_tz_sensor9 reach temp threshold: 650
+[   26.084793] type=1400 audit(1794408383.259:166): avc: denied { getattr } for pid=982 comm="memtrack@1.0-se" path="/sys/kernel/debug/kgsl/proc/1779/mem" dev="debugfs" ino=28274 scontext=u:r:hal_memtrack_default:s0 tcontext=u:object_r:debugfs:s0 tclass=file permissive=1
+[   26.084970] type=1400 audit(1794408388.391:167): avc: denied { read write } for pid=981 comm="light@2.0-servi" name="brightness" dev="sysfs" ino=41602 scontext=u:r:hal_light_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   26.085412] type=1400 audit(1794408388.391:167): avc: denied { read write } for pid=981 comm="light@2.0-servi" name="brightness" dev="sysfs" ino=41602 scontext=u:r:hal_light_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   26.085507] type=1400 audit(1794408388.391:168): avc: denied { open } for pid=981 comm="light@2.0-servi" path="/sys/devices/soc/leds-qpnp-24/leds/button-backlight/brightness" dev="sysfs" ino=41602 scontext=u:r:hal_light_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   26.674816] init: starting service 'configstore-hal-1-0'...
+[   26.729886] init: Service 'configstore-hal-1-0' (pid 2715) received signal 31
+[   26.730025] init: Sending signal 9 to service 'configstore-hal-1-0' (pid 2715) process group...
+[   26.730476] libprocessgroup: Successfully killed process cgroup uid 1000 pid 2715 in 0ms
+[   31.686325] init: starting service 'configstore-hal-1-0'...
+[   31.729115] init: Service 'configstore-hal-1-0' (pid 2722) received signal 31
+[   31.729150] init: Sending signal 9 to service 'configstore-hal-1-0' (pid 2722) process group...
+[   31.729299] libprocessgroup: Successfully killed process cgroup uid 1000 pid 2722 in 0ms
+[   36.698351] init: starting service 'configstore-hal-1-0'...
+[   36.748356] init: Service 'configstore-hal-1-0' (pid 2724) received signal 31
+[   36.748516] init: Sending signal 9 to service 'configstore-hal-1-0' (pid 2724) process group...
+[   36.749012] libprocessgroup: Successfully killed process cgroup uid 1000 pid 2724 in 0ms
+[   40.549453] type=1400 audit(1794408388.391:168): avc: denied { open } for pid=981 comm="light@2.0-servi" path="/sys/devices/soc/leds-qpnp-24/leds/button-backlight/brightness" dev="sysfs" ino=41602 scontext=u:r:hal_light_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   40.549602] type=1400 audit(1794408402.859:169): avc: denied { read } for pid=982 comm="memtrack@1.0-se" name="mem" dev="debugfs" ino=38010 scontext=u:r:hal_memtrack_default:s0 tcontext=u:object_r:debugfs:s0 tclass=file permissive=1
+[   40.550102] type=1400 audit(1794408402.859:169): avc: denied { read } for pid=982 comm="memtrack@1.0-se" name="mem" dev="debugfs" ino=38010 scontext=u:r:hal_memtrack_default:s0 tcontext=u:object_r:debugfs:s0 tclass=file permissive=1
+[   40.550202] type=1400 audit(1794408402.859:170): avc: denied { open } for pid=982 comm="memtrack@1.0-se" path="/sys/kernel/debug/kgsl/proc/2241/mem" dev="debugfs" ino=38010 scontext=u:r:hal_memtrack_default:s0 tcontext=u:object_r:debugfs:s0 tclass=file permissive=1
+[   40.550537] type=1400 audit(1794408402.859:170): avc: denied { open } for pid=982 comm="memtrack@1.0-se" path="/sys/kernel/debug/kgsl/proc/2241/mem" dev="debugfs" ino=38010 scontext=u:r:hal_memtrack_default:s0 tcontext=u:object_r:debugfs:s0 tclass=file permissive=1
+[   40.550625] type=1400 audit(1794408402.859:171): avc: denied { getattr } for pid=982 comm="memtrack@1.0-se" path="/sys/kernel/debug/kgsl/proc/2241/mem" dev="debugfs" ino=38010 scontext=u:r:hal_memtrack_default:s0 tcontext=u:object_r:debugfs:s0 tclass=file permissive=1
+[   41.709905] init: starting service 'configstore-hal-1-0'...
+[   41.749566] init: Service 'configstore-hal-1-0' (pid 2726) received signal 31
+[   41.749601] init: Sending signal 9 to service 'configstore-hal-1-0' (pid 2726) process group...
+[   41.749726] libprocessgroup: Successfully killed process cgroup uid 1000 pid 2726 in 0ms
+[   46.721935] init: starting service 'configstore-hal-1-0'...
+[   46.770346] init: Service 'configstore-hal-1-0' (pid 2747) received signal 31
+[   46.770481] init: Sending signal 9 to service 'configstore-hal-1-0' (pid 2747) process group...
+[   46.770918] libprocessgroup: Successfully killed process cgroup uid 1000 pid 2747 in 0ms
+[   51.732877] init: starting service 'configstore-hal-1-0'...
+[   51.770454] init: Service 'configstore-hal-1-0' (pid 2749) received signal 31
+[   51.770586] init: Sending signal 9 to service 'configstore-hal-1-0' (pid 2749) process group...
+[   51.771008] libprocessgroup: Successfully killed process cgroup uid 1000 pid 2749 in 0ms
+[   53.892838] binder: undelivered transaction 31668, process died.
+[   54.284003] type=1400 audit(1794408402.859:171): avc: denied { getattr } for pid=982 comm="memtrack@1.0-se" path="/sys/kernel/debug/kgsl/proc/2241/mem" dev="debugfs" ino=38010 scontext=u:r:hal_memtrack_default:s0 tcontext=u:object_r:debugfs:s0 tclass=file permissive=1
+[   54.284388] type=1400 audit(1794408416.591:172): avc: denied { read } for pid=982 comm="memtrack@1.0-se" name="mem" dev="debugfs" ino=38010 scontext=u:r:hal_memtrack_default:s0 tcontext=u:object_r:debugfs:s0 tclass=file permissive=1
+[   54.284815] type=1400 audit(1794408416.591:172): avc: denied { read } for pid=982 comm="memtrack@1.0-se" name="mem" dev="debugfs" ino=38010 scontext=u:r:hal_memtrack_default:s0 tcontext=u:object_r:debugfs:s0 tclass=file permissive=1
+[   54.284910] type=1400 audit(1794408416.591:173): avc: denied { open } for pid=982 comm="memtrack@1.0-se" path="/sys/kernel/debug/kgsl/proc/2241/mem" dev="debugfs" ino=38010 scontext=u:r:hal_memtrack_default:s0 tcontext=u:object_r:debugfs:s0 tclass=file permissive=1
+[   54.285223] type=1400 audit(1794408416.591:173): avc: denied { open } for pid=982 comm="memtrack@1.0-se" path="/sys/kernel/debug/kgsl/proc/2241/mem" dev="debugfs" ino=38010 scontext=u:r:hal_memtrack_default:s0 tcontext=u:object_r:debugfs:s0 tclass=file permissive=1
+[   54.285307] type=1400 audit(1794408416.591:174): avc: denied { getattr } for pid=982 comm="memtrack@1.0-se" path="/sys/kernel/debug/kgsl/proc/2241/mem" dev="debugfs" ino=38010 scontext=u:r:hal_memtrack_default:s0 tcontext=u:object_r:debugfs:s0 tclass=file permissive=1
+[   56.743265] init: starting service 'configstore-hal-1-0'...
+[   56.788928] init: Service 'configstore-hal-1-0' (pid 2752) received signal 31
+[   56.789170] init: Sending signal 9 to service 'configstore-hal-1-0' (pid 2752) process group...
+[   56.789618] libprocessgroup: Successfully killed process cgroup uid 1000 pid 2752 in 0ms
+[   58.468778] type=1400 audit(1794408416.591:174): avc: denied { getattr } for pid=982 comm="memtrack@1.0-se" path="/sys/kernel/debug/kgsl/proc/2241/mem" dev="debugfs" ino=38010 scontext=u:r:hal_memtrack_default:s0 tcontext=u:object_r:debugfs:s0 tclass=file permissive=1
+[   58.468902] type=1400 audit(1794408420.775:175): avc: denied { read } for pid=2777 comm="ls" name="vibrator" dev="sysfs" ino=41880 scontext=u:r:shell:s0 tcontext=u:object_r:sysfs_vibrator:s0 tclass=dir permissive=1
+[   58.470368] type=1400 audit(1794408420.775:175): avc: denied { read } for pid=2777 comm="ls" name="vibrator" dev="sysfs" ino=41880 scontext=u:r:shell:s0 tcontext=u:object_r:sysfs_vibrator:s0 tclass=dir permissive=1
+[   58.470465] type=1400 audit(1794408420.779:176): avc: denied { open } for pid=2777 comm="ls" path="/sys/devices/virtual/timed_output/vibrator" dev="sysfs" ino=41880 scontext=u:r:shell:s0 tcontext=u:object_r:sysfs_vibrator:s0 tclass=dir permissive=1
+[   58.470972] type=1400 audit(1794408420.779:176): avc: denied { open } for pid=2777 comm="ls" path="/sys/devices/virtual/timed_output/vibrator" dev="sysfs" ino=41880 scontext=u:r:shell:s0 tcontext=u:object_r:sysfs_vibrator:s0 tclass=dir permissive=1
+[   58.470998] type=1400 audit(1794408420.779:177): avc: denied { search } for pid=2777 comm="ls" name="vibrator" dev="sysfs" ino=41880 scontext=u:r:shell:s0 tcontext=u:object_r:sysfs_vibrator:s0 tclass=dir permissive=1
+[   58.471125] type=1400 audit(1794408420.779:177): avc: denied { search } for pid=2777 comm="ls" name="vibrator" dev="sysfs" ino=41880 scontext=u:r:shell:s0 tcontext=u:object_r:sysfs_vibrator:s0 tclass=dir permissive=1
+[   58.471139] type=1400 audit(1794408420.779:178): avc: denied { getattr } for pid=2777 comm="ls" path="/sys/devices/virtual/timed_output/vibrator/enable" dev="sysfs" ino=41884 scontext=u:r:shell:s0 tcontext=u:object_r:sysfs_vibrator:s0 tclass=file permissive=1
+

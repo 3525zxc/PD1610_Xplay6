@@ -1,0 +1,57 @@
+=== 8.19.16 aboot: global flag 0x92007DAC access trace ===
+binary: D:\16\PD1610_81\migrated_from_C\qfilx\firmware\81916\emmc_appsboot.mbn (3173696 bytes)
+PT_LOAD vaddr=0x91D00000 off=0x8000 filesz=0x2FED40 memsz=0x331814
+
+--- 1. movw/movt pairs materialising 0x92007DAC ---
+count = 3
+  VA 0x91D39DA0  r2
+  VA 0x91D3AD38  r3
+  VA 0x91D3C85C  r3
+
+--- 2. raw 32-bit literal occurrences ---
+count = 0  []
+
+--- 3. reads/writes through the materialised register ---
+  VA 0x91D39DB4  WRITE str      r1, [r2]                        (materialised @0x91D39DA0)
+  VA 0x91D3AD40  READ  ldr      r3, [r3]                        (materialised @0x91D3AD38)
+  VA 0x91D3C864  READ  ldr      r3, [r3]                        (materialised @0x91D3C85C)
+
+--- 4. pc-relative literal loads of the address ---
+consumers = 0
+
+--- 5. G function region 0x91D39D78..0x91D39DD4 ---
+  91D39D78  beq      #0x91d39de4
+  91D39D7C  cmp      r0, #3
+  91D39D80  beq      #0x91d39dcc
+  91D39D84  ldr      r2, [sp, #0x1c]
+  91D39D88  ldr      r3, [r6]
+  91D39D8C  cmp      r2, r3
+  91D39D90  bne      #0x91d39e14
+  91D39D94  add      sp, sp, #0x24
+  91D39D98  pop      {r4, r5, r6, r7, pc}
+  91D39D9C  ldr      r0, [r5]
+  91D39DA0  movw     r2, #0x7dac
+  91D39DA4  movt     r2, #0x9200
+  91D39DA8  mov      r1, #1
+  91D39DAC  adds     r0, r0, #0
+  91D39DB0  mov      r3, r1
+  91D39DB4  str      r1, [r2]
+  91D39DB8  mov      r2, #0
+  91D39DBC  movne    r0, #1
+  91D39DC0  str      r2, [r4, #0x14]
+  91D39DC4  strb     r0, [sp, #8]
+  91D39DC8  b        #0x91d39d50
+  91D39DCC  mov      r0, #2
+  91D39DD0  bl       #0x91d147e0
+
+--- 6. address space classification ---
+  .bss range: 0x91FFED40 .. 0x92031814
+  target 0x92007DAC in .bss: True
+  => value initialised to 0 by crt0; any non-zero value comes from a store.
+
+=== Boundary ===
+Covers direct movw/movt materialisation and pc-relative literals in the
+single PT_LOAD segment. Indirect pointer tables / computed registers /
+other segments are not covered. Static analysis only, no device operation.
+
+wrote D:\16\PD1610_81\evidence\flag_92007dac_trace.txt

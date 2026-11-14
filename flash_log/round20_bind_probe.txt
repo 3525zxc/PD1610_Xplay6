@@ -1,0 +1,3 @@
+﻿BIND_RC=1
+---POST_BIND_DMESG---
+

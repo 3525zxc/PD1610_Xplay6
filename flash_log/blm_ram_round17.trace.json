@@ -1,0 +1,105 @@
+{
+  "input": "flash_log/blm_ram_round17.bin",
+  "system_map": "build/vib-20261114160500/System.map",
+  "bank_index": 0,
+  "generation": 1,
+  "last_stage_id": 12,
+  "last_stage_name": "KERNEL_INIT",
+  "found": {
+    "0": {
+      "id": 0,
+      "expected_name": "LAST_INITCALL",
+      "tag": "IC",
+      "seq": 4026531840,
+      "jiffies": 4294892692,
+      "value": 18446743798857121872,
+      "value_hex": "0xffffffc00184c050",
+      "symbol": "qpnp_vibrator_init",
+      "symbol_offset": 0
+    },
+    "16": {
+      "id": 16,
+      "expected_name": "VIB_ENTER",
+      "tag": "VIB_ENTER",
+      "seq": 4026531856,
+      "jiffies": 4294892692,
+      "value": 0,
+      "value_hex": "0x0"
+    },
+    "17": {
+      "id": 17,
+      "expected_name": "VIB_SPMI_SET",
+      "tag": "VIB_SPMI_SET",
+      "seq": 4026531857,
+      "jiffies": 4294892692,
+      "value": 0,
+      "value_hex": "0x0"
+    },
+    "18": {
+      "id": 18,
+      "expected_name": "VIB_RES_BEFORE",
+      "tag": "VIB_RES_BEFORE",
+      "seq": 4026531858,
+      "jiffies": 4294892692,
+      "value": 0,
+      "value_hex": "0x0"
+    },
+    "19": {
+      "id": 19,
+      "expected_name": "VIB_RES_AFTER",
+      "tag": "VIB_RES_AFTER",
+      "seq": 4026531859,
+      "jiffies": 4294892692,
+      "value": 20736,
+      "value_hex": "0x5100"
+    },
+    "20": {
+      "id": 20,
+      "expected_name": "VIB_DT_BEFORE",
+      "tag": "VIB_DT_BEFORE",
+      "seq": 4026531860,
+      "jiffies": 4294892692,
+      "value": 0,
+      "value_hex": "0x0"
+    },
+    "21": {
+      "id": 21,
+      "expected_name": "VIB_CONFIG_BEFORE",
+      "tag": "VIB_CONFIG_BEFOR",
+      "seq": 4026531861,
+      "jiffies": 4294892692,
+      "value": 0,
+      "value_hex": "0x0"
+    },
+    "22": {
+      "id": 22,
+      "expected_name": "VIB_READ1",
+      "tag": "VIB_READ1",
+      "seq": 4026531862,
+      "jiffies": 4294892692,
+      "value": 0,
+      "value_hex": "0x0"
+    }
+  },
+  "missing": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    15,
+    23,
+    24,
+    25,
+    26
+  ],
+  "last_bam_milestone": null,
+  "last_vib_milestone": 22,
+  "vib_suspected_window": "第一次 SPMI 读 qpnp_vib_read_u8"
+}

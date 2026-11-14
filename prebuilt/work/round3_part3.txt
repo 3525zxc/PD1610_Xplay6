@@ -1,0 +1,386 @@
+=== site A: fn around 0x91D0B09C (base 0x92002728) ===
+  91D0B060  mov      r0, r5
+  91D0B064  ldr      r2, [sp, #0x14]
+  91D0B068  ldr      r3, [r1]
+  91D0B06C  cmp      r2, r3
+  91D0B070  bne      #0x91d0b084
+  91D0B074  add      sp, sp, #0x1c
+  91D0B078  pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc}
+  91D0B07C  mov      r5, #0
+  91D0B080  b        #0x91d0b05c
+  91D0B084  bl       #0x91d516c4
+  91D0B088  push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+  91D0B08C  movw     sl, #0x57dc
+  91D0B090  movt     sl, #0x9201
+  91D0B094  sub      sp, sp, #0x3c
+  91D0B098  add      r6, r0, #0x380
+  91D0B09C  ldr      fp, [pc, #0x15c] <<<
+  91D0B0A0  ldr      r3, [sl]
+  91D0B0A4  movw     r8, #0xa05c
+  91D0B0A8  movw     r7, #0xa058
+  91D0B0AC  movt     r8, #0x91d7
+  91D0B0B0  movt     r7, #0x91d7
+  91D0B0B4  str      r3, [sp, #0x34]
+  91D0B0B8  bl       #0x91d08938
+  91D0B0BC  mov      ip, fp
+  91D0B0C0  str      sl, [sp, #0x28]
+  91D0B0C4  str      r0, [sp, #0x2c]
+  91D0B0C8  ldr      sb, [ip, #4]!
+  91D0B0CC  mov      r1, #0x98
+  91D0B0D0  ldr      r4, [sp, #0x2c]
+  91D0B0D4  mov      r5, #0x800000
+  91D0B0D8  sub      r0, r6, #0x280
+  91D0B0DC  mov      r2, #0x40
+  91D0B0E0  mla      sb, r1, sb, r4
+  91D0B0E4  mov      r4, #0
+  91D0B0E8  ldrd     sl, fp, [sb, #0x40]
+  91D0B0EC  str      ip, [sp, #4]
+  91D0B0F0  and      fp, fp, r5
+  91D0B0F4  and      sl, sl, r4
+  91D0B0F8  strd     sl, fp, [sp, #8]
+  91D0B0FC  mov      sl, #0
+  91D0B100  lsr      r5, fp, #0x17
+  91D0B104  str      sl, [sp, #0x14]
+  91D0B108  str      r5, [sp, #0x10]
+  91D0B10C  ldrd     r4, r5, [sp, #0x10]
+
+=== site B: fn around 0x91D0B18C (base 0x92002730) ===
+  91D0B150  ldrd     r4, r5, [sp, #0x18]
+  91D0B154  orrs     r5, r4, r5
+  91D0B158  mov      r5, #0x400000
+  91D0B15C  movne    r1, r8
+  91D0B160  moveq    r1, r7
+  91D0B164  bl       #0x91d53174
+  91D0B168  ldrd     r2, r3, [sb, #0x40]
+  91D0B16C  ldr      fp, [sp, #0x14]
+  91D0B170  mov      r0, r6
+  91D0B174  and      r5, r5, r3
+  91D0B178  mov      r2, #0x40
+  91D0B17C  lsr      sl, r5, #0x16
+  91D0B180  str      fp, [sp, #0x24]
+  91D0B184  str      sl, [sp, #0x20]
+  91D0B188  ldrd     r4, r5, [sp, #0x20]
+  91D0B18C  ldr      sl, [pc, #0x70] <<<
+  91D0B190  orrs     r5, r4, r5
+  91D0B194  movne    r1, r8
+  91D0B198  moveq    r1, r7
+  91D0B19C  bl       #0x91d53174
+  91D0B1A0  ldrd     r4, r5, [sb, #0x40]
+  91D0B1A4  mov      r3, #0x380000
+  91D0B1A8  add      r1, sp, #0x30
+  91D0B1AC  and      r5, r5, r3
+  91D0B1B0  mov      r2, #2
+  91D0B1B4  mov      r3, #0xa
+  91D0B1B8  lsr      r0, r5, #0x13
+  91D0B1BC  bl       #0x91d52088
+  91D0B1C0  add      r0, r6, #0x140
+  91D0B1C4  add      r1, sp, #0x30
+  91D0B1C8  mov      r2, #0x40
+  91D0B1CC  bl       #0x91d53174
+  91D0B1D0  ldr      ip, [sp, #4]
+  91D0B1D4  add      r6, r6, #0x500
+  91D0B1D8  cmp      ip, sl
+  91D0B1DC  bne      #0x91d0b0c8
+  91D0B1E0  ldr      sl, [sp, #0x28]
+  91D0B1E4  ldr      r2, [sp, #0x34]
+  91D0B1E8  ldr      r3, [sl]
+  91D0B1EC  cmp      r2, r3
+
+=== str [reg, idx, lsl #2] after materialising 0x9200272C (array writes) ===
+  count: 0
+
+=== 0x91D377A8 (pre-loop check 1) ===
+  91D377A8  movw     r3, #0x57dc
+  91D377AC  movt     r3, #0x9201
+  91D377B0  str      lr, [sp, #-4]!
+  91D377B4  sub      sp, sp, #0xc
+  91D377B8  ldr      r2, [r3]
+  91D377BC  mov      r0, #1
+  91D377C0  str      r2, [sp, #4]
+  91D377C4  ldr      r2, [sp, #4]
+  91D377C8  ldr      r3, [r3]
+  91D377CC  cmp      r2, r3
+  91D377D0  bne      #0x91d377dc
+  91D377D4  add      sp, sp, #0xc
+  91D377D8  pop      {pc}
+  91D377DC  bl       #0x91d516c4
+  91D377E0  movw     r3, #0x57dc
+  91D377E4  movt     r3, #0x9201
+  91D377E8  str      lr, [sp, #-4]!
+  91D377EC  sub      sp, sp, #0xc
+  91D377F0  ldr      r2, [r3]
+  91D377F4  str      r2, [sp, #4]
+  91D377F8  ldr      r2, [sp, #4]
+  91D377FC  ldr      r3, [r3]
+  91D37800  cmp      r2, r3
+  91D37804  bne      #0x91d37810
+  91D37808  add      sp, sp, #0xc
+  91D3780C  pop      {pc}
+  91D37810  bl       #0x91d516c4
+
+=== 0x91D37814 (pre-loop check 2) ===
+  91D37814  movw     r3, #0x57dc
+  91D37818  movt     r3, #0x9201
+  91D3781C  str      lr, [sp, #-4]!
+  91D37820  sub      sp, sp, #0xc
+  91D37824  ldr      r2, [r3]
+  91D37828  mov      r0, #1
+  91D3782C  str      r2, [sp, #4]
+  91D37830  ldr      r2, [sp, #4]
+  91D37834  ldr      r3, [r3]
+  91D37838  cmp      r2, r3
+  91D3783C  bne      #0x91d37848
+  91D37840  add      sp, sp, #0xc
+  91D37844  pop      {pc}
+  91D37848  bl       #0x91d516c4
+  91D3784C  movw     r3, #0x57dc
+  91D37850  movt     r3, #0x9201
+  91D37854  str      lr, [sp, #-4]!
+  91D37858  sub      sp, sp, #0xc
+  91D3785C  ldr      r2, [r3]
+
+=== 0x91D3D27C (exit path call) ===
+  91D3D27C  push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+  91D3D280  movw     r4, #0x57dc
+  91D3D284  movt     r4, #0x9201
+  91D3D288  sub      sp, sp, #0x34
+  91D3D28C  mov      r8, lr
+  91D3D290  ldr      r3, [r4]
+  91D3D294  str      r3, [sp, #0x2c]
+  91D3D298  bl       #0x91d377a8
+  91D3D29C  cmp      r0, #0
+  91D3D2A0  beq      #0x91d3d328
+  91D3D2A4  mov      r0, #0xf000
+  91D3D2A8  movw     r1, #0x41a0
+  91D3D2AC  movt     r0, #0x91df
+
+=== 0x91D43730 (exit path call) ===
+  91D43730  push     {r4, r5, r6, r7, r8, lr}
+  91D43734  movw     r4, #0x57dc
+  91D43738  movt     r4, #0x9201
+  91D4373C  sub      sp, sp, #0x460
+  91D43740  sub      sp, sp, #8
+  91D43744  mov      r2, #0
+  91D43748  ldr      r3, [r4]
+  91D4374C  add      r0, sp, #4
+  91D43750  str      r2, [sp]
+  91D43754  str      r3, [sp, #0x464]
+  91D43758  bl       #0x91d431b4
+  91D4375C  subs     r5, r0, #0
+  91D43760  bne      #0x91d43938
+  91D43764  movw     r0, #0x5c60
+  91D43768  add      r1, sp, #4
+  91D4376C  movt     r0, #0x91d8
+
+=== T4 caller1 0x91D3C84C post-region ===
+  91D3C84C  bl       #0x91d39cb4
+  91D3C850  bl       #0x91d445e8
+  91D3C854  cmp      r0, #0
+  91D3C858  beq      #0x91d3c870
+  91D3C85C  movw     r3, #0x7dac
+  91D3C860  movt     r3, #0x9200
+  91D3C864  ldr      r3, [r3]
+  91D3C868  cmp      r3, #0
+  91D3C86C  bne      #0x91d3c58c
+  91D3C870  bl       #0x91d131e8
+  91D3C874  cmp      r0, #1
+  91D3C878  beq      #0x91d3cd00
+  91D3C87C  bl       #0x91d37b10
+  91D3C880  cmp      r0, #2
+  91D3C884  beq      #0x91d3cd64
+  91D3C888  ldr      r0, [r5]
+  91D3C88C  movw     r3, #0x83c
+  91D3C890  ldr      r1, [r4, #8]
+  91D3C894  movt     r3, #0x9201
+  91D3C898  add      r0, sl, r0
+  91D3C89C  str      r3, [sp, #0xc]
+  91D3C8A0  bl       #0x91d75bf0
+  91D3C8A4  movw     sb, #0x5b00
+  91D3C8A8  ldr      r3, [sp, #0xc]
+  91D3C8AC  movt     sb, #0x9200
+  91D3C8B0  cmp      r0, #0
+  91D3C8B4  str      r0, [sp, #0x10]
+  91D3C8B8  bne      #0x91d3ccac
+  91D3C8BC  ldr      fp, [r3]
+  91D3C8C0  mov      r2, #0x10
+  91D3C8C4  movw     r1, #0x431c
+  91D3C8C8  movt     r1, #0x91d8
+  91D3C8CC  add      r8, sl, fp
+  91D3C8D0  str      r8, [sp, #0x2c]
+  91D3C8D4  mov      r0, r8
+  91D3C8D8  bl       #0x91d53388
+  91D3C8DC  cmp      r0, #0
+  91D3C8E0  ldreq    r8, [sp, #0x2c]
+  91D3C8E4  ldrne    r2, [sb, #8]
+  91D3C8E8  ldrne    sb, [sp, #0x10]
+  91D3C8EC  ldreq    r1, [r8, #0x10]
+
+=== T4 caller2 0x91D3D764 region ===
+  91D3D740  ldr      ip, [sp, #0x18]
+  91D3D744  ldr      r0, [sp, #0x14]
+  91D3D748  add      r3, ip, sl
+  91D3D74C  str      lr, [sp]
+  91D3D750  bl       #0x91d1d830
+  91D3D754  cmp      r0, #0
+  91D3D758  bne      #0x91d3d858
+  91D3D75C  mov      r1, sl
+  91D3D760  ldr      r0, [sp, #0x18]
+  91D3D764  bl       #0x91d39cb4
+  91D3D768  b        #0x91d3d5e0
+  91D3D76C  movw     r0, #0x41f4
+  91D3D770  movt     r0, #0x91d8
+  91D3D774  bl       #0x91d51508
+  91D3D778  mvn      r0, #0
+  91D3D77C  b        #0x91d3d310
+  91D3D780  movw     r0, #0x4574
+  91D3D784  movw     r2, #0x37e4
+  91D3D788  movt     r0, #0x91d8
+  91D3D78C  movt     r2, #0x91d8
+  91D3D790  movw     r1, #0x7f9
+  91D3D794  bl       #0x91d51508
+  91D3D798  mvn      r0, #0
+  91D3D79C  b        #0x91d3d310
+  91D3D7A0  movw     r0, #0x45b0
+  91D3D7A4  movt     r0, #0x91d8
+  91D3D7A8  bl       #0x91d51508
+  91D3D7AC  mvn      r0, #0
+  91D3D7B0  b        #0x91d3d310
+  91D3D7B4  movw     r0, #0x42a8
+  91D3D7B8  movt     r0, #0x91d8
+  91D3D7BC  bl       #0x91d51508
+  91D3D7C0  mvn      r0, #0
+  91D3D7C4  b        #0x91d3d310
+  91D3D7C8  movw     r0, #0x41cc
+  91D3D7CC  movt     r0, #0x91d8
+  91D3D7D0  bl       #0x91d51508
+  91D3D7D4  mvn      r0, #0
+  91D3D7D8  b        #0x91d3d310
+  91D3D7DC  movw     r0, #0x45e0
+  91D3D7E0  movw     r1, #0x37e4
+  91D3D7E4  movt     r0, #0x91d8
+  91D3D7E8  movt     r1, #0x91d8
+  91D3D7EC  movw     r2, #0x822
+  91D3D7F0  bl       #0x91d51508
+  91D3D7F4  mvn      r0, #0
+  91D3D7F8  b        #0x91d3d310
+  91D3D7FC  movw     r0, #0x453c
+  91D3D800  movt     r0, #0x91d8
+  91D3D804  bl       #0x91d51508
+  91D3D808  mvn      r0, #0
+  91D3D80C  b        #0x91d3d310
+
+=== T4 caller3 0x91D3E380 region ===
+  91D3E360  movw     r3, #0x1318
+  91D3E364  movt     r3, #0x91da
+  91D3E368  ldr      r3, [r3, #0x10]
+  91D3E36C  cmp      r3, #0
+  91D3E370  bne      #0x91d3e1e4
+  91D3E374  ldr      r3, [sp, #0x14]
+  91D3E378  mov      r0, r5
+  91D3E37C  rsb      r1, r3, sl
+  91D3E380  bl       #0x91d39cb4
+  91D3E384  b        #0x91d3e1f8
+  91D3E388  movw     r0, #0x47e0
+  91D3E38C  movt     r0, #0x91d8
+  91D3E390  bl       #0x91d51508
+  91D3E394  b        #0x91d3e064
+  91D3E398  add      r0, r5, sl
+  91D3E39C  rsb      r1, sl, r6
+  91D3E3A0  bl       #0x91d1239c
+  91D3E3A4  mvn      r3, r0
+  91D3E3A8  cmp      sl, r3
+  91D3E3AC  addlo    sl, sl, r0
+  91D3E3B0  str      r0, [sp, #0x14]
+  91D3E3B4  mvnhs    sl, #0
+  91D3E3B8  cmp      sl, r6
+  91D3E3BC  bls      #0x91d3e18c
+  91D3E3C0  b        #0x91d3e1c8
+  91D3E3C4  movw     r0, #0x4788
+  91D3E3C8  movt     r0, #0x91d8
+  91D3E3CC  bl       #0x91d51508
+  91D3E3D0  movw     r0, #0x47b0
+  91D3E3D4  movt     r0, #0x91d8
+  91D3E3D8  bl       #0x91d51508
+  91D3E3DC  b        #0x91d3e064
+  91D3E3E0  add      r0, sp, #0x38
+  91D3E3E4  mov      r3, #2
+  91D3E3E8  strb     r3, [r0, #-0x18]!
+  91D3E3EC  bl       #0x91d44cc8
+  91D3E3F0  b        #0x91d3e1f8
+  91D3E3F4  bl       #0x91d012e4
+  91D3E3F8  ldr      r3, [sp, #0xc]
+  91D3E3FC  ldr      r6, [r3]
+  91D3E400  add      r6, sl, r6
+  91D3E404  add      r6, r0, r6
+  91D3E408  bl       #0x91d01320
+  91D3E40C  ldr      r3, [sp, #0xc]
+  91D3E410  add      lr, sp, #0x1c
+  91D3E414  ldr      r1, [r5, #8]
+  91D3E418  mov      r2, r6
+  91D3E41C  ldr      r3, [r3]
+
+=== flag/helper proximity scan around caller2/caller3 (±0x200) ===
+  caller2: flag-movw []  helper-bl []
+  caller3: flag-movw []  helper-bl []
+
+=== T5 helper 0x91D445E8 full body ===
+  91D445E8  movw     r3, #0x57dc
+  91D445EC  movt     r3, #0x9201
+  91D445F0  str      lr, [sp, #-4]!
+  91D445F4  sub      sp, sp, #0xc
+  91D445F8  ldr      r1, [r3]
+  91D445FC  movw     r2, #0x3ac0
+  91D44600  movt     r2, #0x9201
+  91D44604  str      r1, [sp, #4]
+  91D44608  ldr      r0, [r2]
+  91D4460C  ldr      r2, [sp, #4]
+  91D44610  ldr      r3, [r3]
+  91D44614  cmp      r2, r3
+  91D44618  bne      #0x91d44624
+  91D4461C  add      sp, sp, #0xc
+  91D44620  pop      {pc}
+  91D44624  bl       #0x91d516c4
+  91D44628  push     {r4, r5, r6, r7, lr}
+  91D4462C  movw     r5, #0x57dc
+  91D44630  movt     r5, #0x9201
+  91D44634  sub      sp, sp, #0x84
+  91D44638  subs     r4, r0, #0
+  91D4463C  mov      r7, lr
+  91D44640  ldr      r3, [r5]
+  91D44644  mov      r6, r1
+  91D44648  str      r3, [sp, #0x7c]
+  91D4464C  beq      #0x91d4473c
+  91D44650  cmp      r6, #0
+  91D44654  beq      #0x91d44710
+  91D44658  add      r0, sp, #0xc
+  91D4465C  bl       #0x91d70aac
+  91D44660  mov      r1, r4
+  91D44664  add      r0, sp, #0xc
+  91D44668  movw     r2, #0x3cb0
+  91D4466C  movt     r2, #1
+  91D44670  bl       #0x91d70b5c
+  91D44674  add      r0, r4, #0x13c00
+  91D44678  add      r1, sp, #0xc
+  91D4467C  add      r0, r0, #0xb0
+
+=== ldrex/strex/dmb census in helper & neighbours ===
+(none listed = no atomics/barriers)
+
+=== helper region containing mvn r0,#0 (fail exit) ===
+=== around mvn @0x91D44704 ===
+  91D446D4  movt     r1, #1
+  91D446D8  bl       #0x91d3687c
+  91D446DC  mov      r0, r4
+  91D446E0  ldr      r2, [sp, #0x7c]
+  91D446E4  ldr      r3, [r5]
+  91D446E8  cmp      r2, r3
+  91D446EC  bne      #0x91d4470c
+  91D446F0  add      sp, sp, #0x84
+  91D446F4  pop      {r4, r5, r6, r7, pc}
+  91D446F8  movw     r0, #0x632c
+  91D446FC  movt     r0, #0x91d8
+  91D44700  bl       #0x91d51508
+  91D44704  mvn      r0, #0 <<<
+  91D44708  b        #0x91d446e0
+  91D4470C  bl       #0x91d516c4
+  91D44710  mov      r0, r7

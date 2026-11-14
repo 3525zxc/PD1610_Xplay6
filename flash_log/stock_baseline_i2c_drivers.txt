@@ -1,0 +1,125 @@
+total 0
+drwxr-xr-x 2 root root 0 2026-11-11 23:31 at24
+drwxr-xr-x 2 root root 0 2026-11-11 23:31 bq24192_charger
+drwxr-xr-x 2 root root 0 2026-11-11 23:31 cyttsp_button
+drwxr-xr-x 2 root root 0 2026-11-11 23:31 drv2667
+drwxr-xr-x 2 root root 0 2026-11-11 23:31 dummy
+drwxr-xr-x 2 root root 0 2026-11-11 23:31 es9038
+drwxr-xr-x 2 root root 0 2026-11-11 23:31 fan53555-regulator
+drwxr-xr-x 2 root root 0 2026-11-11 23:31 fts
+drwxr-xr-x 2 root root 0 2026-11-11 23:31 i2c_camera
+drwxr-xr-x 2 root root 0 2026-11-11 23:31 msm_eeprom
+drwxr-xr-x 2 root root 0 2026-11-11 23:31 nq-nci
+drwxr-xr-x 2 root root 0 2026-11-11 23:31 qcom,actuator
+drwxr-xr-x 2 root root 0 2026-11-11 23:31 qcom,led-ext-flash
+drwxr-xr-x 2 root root 0 2026-11-11 23:31 silabs-fm
+drwxr-xr-x 2 root root 0 2026-11-11 23:31 smb1351-charger
+drwxr-xr-x 2 root root 0 2026-11-11 23:31 tabla-i2c-core
+drwxr-xr-x 2 root root 0 2026-11-11 23:31 tasha-i2c-core
+drwxr-xr-x 2 root root 0 2026-11-11 23:31 tfa98xx
+drwxr-xr-x 2 root root 0 2026-11-11 23:31 wcd9xxx-i2c-core
+---DRIVER_BINDINGS---
+== at24
+total 0
+--w------- 1 root root 4096 2026-11-11 23:31 bind
+--w------- 1 root root 4096 2026-11-11 23:31 uevent
+--w------- 1 root root 4096 2026-11-11 23:31 unbind
+== bq24192_charger
+total 0
+lrwxrwxrwx 1 root root    0 2026-11-11 23:31 3-006b -> ../../../../devices/soc/7577000.i2c/i2c-3/3-006b
+--w------- 1 root root 4096 2026-11-11 23:31 bind
+--w------- 1 root root 4096 2026-11-11 23:31 uevent
+--w------- 1 root root 4096 2026-11-11 23:31 unbind
+== cyttsp_button
+total 0
+lrwxrwxrwx 1 root root    0 2026-11-11 23:31 3-0028 -> ../../../../devices/soc/7577000.i2c/i2c-3/3-0028
+--w------- 1 root root 4096 2026-11-11 23:31 bind
+--w------- 1 root root 4096 2026-11-11 23:31 uevent
+--w------- 1 root root 4096 2026-11-11 23:31 unbind
+== drv2667
+total 0
+--w------- 1 root root 4096 2026-11-11 23:31 bind
+--w------- 1 root root 4096 2026-11-11 23:31 uevent
+--w------- 1 root root 4096 2026-11-11 23:31 unbind
+== dummy
+total 0
+--w------- 1 root root 4096 2026-11-11 23:31 bind
+--w------- 1 root root 4096 2026-11-11 23:31 uevent
+--w------- 1 root root 4096 2026-11-11 23:31 unbind
+== es9038
+total 0
+lrwxrwxrwx 1 root root    0 2026-11-11 23:31 8-0048 -> ../../../../devices/soc/75b6000.i2c/i2c-8/8-0048
+--w------- 1 root root 4096 2026-11-11 23:31 bind
+--w------- 1 root root 4096 2026-11-11 23:31 uevent
+--w------- 1 root root 4096 2026-11-11 23:31 unbind
+== fan53555-regulator
+total 0
+--w------- 1 root root 4096 2026-11-11 23:31 bind
+--w------- 1 root root 4096 2026-11-11 23:31 uevent
+--w------- 1 root root 4096 2026-11-11 23:31 unbind
+== fts
+total 0
+lrwxrwxrwx 1 root root    0 2026-11-11 23:31 12-0049 -> ../../../../devices/soc/75ba000.i2c/i2c-12/12-0049
+--w------- 1 root root 4096 2026-11-11 23:31 bind
+--w------- 1 root root 4096 2026-11-11 23:31 uevent
+--w------- 1 root root 4096 2026-11-11 23:31 unbind
+== i2c_camera
+total 0
+lrwxrwxrwx 1 root root    0 2026-11-11 23:31 7-0002 -> ../../../../devices/soc/75b5000.i2c/i2c-7/7-0002
+--w------- 1 root root 4096 2026-11-11 23:31 bind
+--w------- 1 root root 4096 2026-11-11 23:31 uevent
+--w------- 1 root root 4096 2026-11-11 23:31 unbind
+== msm_eeprom
+total 0
+lrwxrwxrwx 1 root root    0 2026-11-11 23:31 7-0050 -> ../../../../devices/soc/75b5000.i2c/i2c-7/7-0050
+--w------- 1 root root 4096 2026-11-11 23:31 bind
+--w------- 1 root root 4096 2026-11-11 23:31 uevent
+--w------- 1 root root 4096 2026-11-11 23:31 unbind
+== nq-nci
+total 0
+--w------- 1 root root 4096 2026-11-11 23:31 bind
+--w------- 1 root root 4096 2026-11-11 23:31 uevent
+--w------- 1 root root 4096 2026-11-11 23:31 unbind
+== qcom,actuator
+total 0
+lrwxrwxrwx 1 root root    0 2026-11-11 23:31 7-0072 -> ../../../../devices/soc/75b5000.i2c/i2c-7/7-0072
+--w------- 1 root root 4096 2026-11-11 23:31 bind
+--w------- 1 root root 4096 2026-11-11 23:31 uevent
+--w------- 1 root root 4096 2026-11-11 23:31 unbind
+== qcom,led-ext-flash
+total 0
+lrwxrwxrwx 1 root root    0 2026-11-11 23:31 3-0067 -> ../../../../devices/soc/7577000.i2c/i2c-3/3-0067
+--w------- 1 root root 4096 2026-11-11 23:31 bind
+--w------- 1 root root 4096 2026-11-11 23:31 uevent
+--w------- 1 root root 4096 2026-11-11 23:31 unbind
+== silabs-fm
+total 0
+--w------- 1 root root 4096 2026-11-11 23:31 bind
+--w------- 1 root root 4096 2026-11-11 23:31 uevent
+--w------- 1 root root 4096 2026-11-11 23:31 unbind
+== smb1351-charger
+total 0
+--w------- 1 root root 4096 2026-11-11 23:31 bind
+--w------- 1 root root 4096 2026-11-11 23:31 uevent
+--w------- 1 root root 4096 2026-11-11 23:31 unbind
+== tabla-i2c-core
+total 0
+--w------- 1 root root 4096 2026-11-11 23:31 bind
+--w------- 1 root root 4096 2026-11-11 23:31 uevent
+--w------- 1 root root 4096 2026-11-11 23:31 unbind
+== tasha-i2c-core
+total 0
+--w------- 1 root root 4096 2026-11-11 23:31 bind
+--w------- 1 root root 4096 2026-11-11 23:31 uevent
+--w------- 1 root root 4096 2026-11-11 23:31 unbind
+== tfa98xx
+total 0
+lrwxrwxrwx 1 root root    0 2026-11-11 23:31 8-0034 -> ../../../../devices/soc/75b6000.i2c/i2c-8/8-0034
+--w------- 1 root root 4096 2026-11-11 23:31 bind
+--w------- 1 root root 4096 2026-11-11 23:31 uevent
+--w------- 1 root root 4096 2026-11-11 23:31 unbind
+== wcd9xxx-i2c-core
+total 0
+--w------- 1 root root 4096 2026-11-11 23:31 bind
+--w------- 1 root root 4096 2026-11-11 23:31 uevent
+--w------- 1 root root 4096 2026-11-11 23:31 unbind

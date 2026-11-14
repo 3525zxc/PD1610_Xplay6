@@ -1,0 +1,23 @@
+# PD1610 增量 init 配置（非 Treble 布局）
+#
+# 只做三件原厂 init.qcom.rc / AOSP init.rc 都没覆盖的事。其余（41 个 service、
+# /persist 挂载、/dev/socket 目录、vold 触发器等）都走原厂
+# /system/vendor/etc/init/hw/init.qcom.rc，不在这里重复。
+
+on early-init
+    # 兜底：正常路径由 BoardConfig.mk 的 BOARD_ROOT_EXTRA_SYMLINKS 在制作
+    # system 镜像时建好 /vendor -> /system/vendor。若该变量在当前分支被移除，
+    # 这一行保证 init 仍能在 /vendor/etc/init/ 下找到厂商 rc。
+    # 已存在时 symlink 会返回 EEXIST，只打一条 warning，不影响启动。
+    symlink /system/vendor /vendor
+
+on post-fs-data
+    # vendor 侧 HAL 的运行时目录（原厂 init.qcom.rc 也建，这里做幂等补充）
+    mkdir /data/vendor 0771 root root
+    mkdir /data/vendor/wifi 0770 wifi wifi
+    mkdir /data/vendor/wifi/sockets 0770 wifi wifi
+    mkdir /data/vendor/bluetooth 0770 bluetooth bluetooth
+
+on boot
+    # 首启阶段把内核 printk 拉满，方便从 dmesg 里看到 first stage / fs_mgr 的失败点
+    write /proc/sys/kernel/printk "7 7 7 7"

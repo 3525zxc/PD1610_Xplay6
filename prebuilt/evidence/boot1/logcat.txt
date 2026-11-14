@@ -1,0 +1,1116 @@
+--------- beginning of main
+01-01 08:01:35.417 W/auditd  (  468): type=2000 audit(0.0:1): initialized
+01-01 08:01:37.029 I/auditd  (  468): type=1403 audit(0.0:2): policy loaded auid=4294967295 ses=4294967295
+01-01 08:01:37.029 I/init    (    1): type=1400 audit(0.0:3): avc: denied { open } for path="/dev/kmsg" dev="tmpfs" ino=14259 scontext=u:r:kernel:s0 tcontext=u:object_r:tmpfs:s0 tclass=chr_file permissive=1
+01-01 08:01:37.039 I/init    (    1): type=1400 audit(0.0:4): avc: denied { read } for name="kmsg" dev="proc" ino=4026532446 scontext=u:r:kernel:s0 tcontext=u:object_r:proc_kmsg:s0 tclass=file permissive=1
+01-01 08:01:37.039 I/init    (    1): type=1400 audit(0.0:5): avc: denied { open } for path="/proc/kmsg" dev="proc" ino=4026532446 scontext=u:r:kernel:s0 tcontext=u:object_r:proc_kmsg:s0 tclass=file permissive=1
+01-01 08:01:37.039 I/init    (    1): type=1400 audit(0.0:6): avc: denied { syslog } for capability=34 scontext=u:r:kernel:s0 tcontext=u:r:kernel:s0 tclass=capability2 permissive=1
+01-01 08:01:37.039 I/init    (    1): type=1400 audit(0.0:7): avc: denied { syslog_mod } for scontext=u:r:kernel:s0 tcontext=u:r:kernel:s0 tclass=system permissive=1
+01-01 08:01:37.049 I/init    (    1): type=1400 audit(0.0:8): avc: denied { write } for name="pdblk" dev="rootfs" ino=14255 scontext=u:r:init:s0 tcontext=u:object_r:rootfs:s0 tclass=blk_file permissive=1
+01-01 08:01:37.049 I/init    (    1): type=1400 audit(0.0:9): avc: denied { open } for path="/pdblk" dev="rootfs" ino=14255 scontext=u:r:init:s0 tcontext=u:object_r:rootfs:s0 tclass=blk_file permissive=1
+01-01 08:01:37.129 I/init    (  435): type=1400 audit(0.0:10): avc: denied { write } for name="/" dev="rootfs" ino=2 scontext=u:r:vendor_init:s0 tcontext=u:object_r:rootfs:s0 tclass=dir permissive=1
+01-01 08:01:39.012 I/SELinux (  471): SELinux: Loaded service_contexts from:
+01-01 08:01:39.013 I/SELinux (  471):     /vndservice_contexts
+01-01 08:01:39.020 I/SELinux (  469): SELinux: Loaded service_contexts from:
+01-01 08:01:39.021 I/SELinux (  469):     /plat_service_contexts
+01-01 08:01:39.021 I/SELinux (  469):     /vendor_service_contexts
+01-01 08:01:39.809 I/init    (  483): type=1400 audit(0.0:30): avc: denied { execute_no_trans } for path="/system/vendor/bin/hw/vendor.vivo.hardware.biometrics.analysis@1.0-service" dev="sde18" ino=2568 scontext=u:r:init:s0 tcontext=u:object_r:vendor_file:s0 tclass=file permissive=1
+01-01 08:01:39.810 I/hwservicemanager(  470): hwservicemanager is ready now.
+01-01 08:01:39.879 I/vendor.vivo.har(  483): type=1400 audit(0.0:31): avc: denied { read } for name="vndbinder" dev="tmpfs" ino=15057 scontext=u:r:init:s0 tcontext=u:object_r:vndbinder_device:s0 tclass=chr_file permissive=1
+01-01 08:01:39.879 I/vendor.vivo.har(  483): type=1400 audit(0.0:32): avc: denied { write } for name="vndbinder" dev="tmpfs" ino=15057 scontext=u:r:init:s0 tcontext=u:object_r:vndbinder_device:s0 tclass=chr_file permissive=1
+01-01 08:01:39.879 I/vendor.vivo.har(  483): type=1400 audit(0.0:33): avc: denied { open } for path="/dev/vndbinder" dev="tmpfs" ino=15057 scontext=u:r:init:s0 tcontext=u:object_r:vndbinder_device:s0 tclass=chr_file permissive=1
+01-01 08:01:39.879 I/vendor.vivo.har(  483): type=1400 audit(0.0:34): avc: denied { ioctl } for path="/dev/vndbinder" dev="tmpfs" ino=15057 ioctlcmd=6209 scontext=u:r:init:s0 tcontext=u:object_r:vndbinder_device:s0 tclass=chr_file permissive=1
+01-01 08:01:39.879 W/vendor.vivo.har(  483): type=1400 audit(0.0:35): avc: granted { read } for path="/dev/vndbinder" dev="tmpfs" ino=15057 scontext=u:r:init:s0 tcontext=u:object_r:vndbinder_device:s0 tclass=chr_file
+01-01 08:01:39.879 I/analysis@1.0-se(  483): type=1400 audit(0.0:36): avc: denied { call } for scontext=u:r:init:s0 tcontext=u:r:hwservicemanager:s0 tclass=binder permissive=1
+01-01 08:01:39.879 I/analysis@1.0-se(  483): type=1400 audit(0.0:37): avc: denied { transfer } for scontext=u:r:init:s0 tcontext=u:r:hwservicemanager:s0 tclass=binder permissive=1
+01-01 08:01:39.879 I/hwservicemanage(  470): type=1400 audit(0.0:38): avc: denied { search } for name="483" dev="proc" ino=4095 scontext=u:r:hwservicemanager:s0 tcontext=u:r:init:s0 tclass=dir permissive=1
+01-01 08:01:39.880 D/vndksupport(  482): Loading /vendor/lib64/hw/android.hardware.keymaster@3.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:39.886 E/ServiceManagement(  482): Failed to dlopen android.hardware.keymaster@3.0-impl.so: dlopen failed: library "libkeymaster_staging.so" not found
+01-01 08:01:39.887 E/android.hardware.keymaster@3.0-service(  482): Could not get passthrough implementation for android.hardware.keymaster@3.0::IKeymasterDevice/default.
+01-01 08:01:39.891 D/analysis_remote(  483): AnalysisRemote
+01-01 08:01:39.891 D/analysis_remote(  483): setEventCallback
+01-01 08:01:39.891 D/analysis_remote(  483): start remote thread...
+01-01 08:01:39.892 I/ServiceManagement(  483): Removing namespace from process name vendor.vivo.hardware.biometrics.analysis@1.0-service to analysis@1.0-service.
+01-01 08:01:39.893 D/analysis_remote(  483): all ready.
+01-01 08:01:39.893 E/SELinux (  470): avc:  denied  { add } for interface=vendor.vivo.hardware.biometrics.analysis::IAnalysis sid=u:r:init:s0 pid=483 scontext=u:r:init:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=1
+01-01 08:01:39.894 E/SELinux (  470): avc:  denied  { add } for interface=android.hidl.base::IBase sid=u:r:init:s0 pid=483 scontext=u:r:init:s0 tcontext=u:object_r:hidl_base_hwservice:s0 tclass=hwservice_manager permissive=1
+01-01 08:01:39.895 D/analysis_serializer(  483): DESERIALIZE event image_quality
+01-01 08:01:39.895 D/analysis_serializer(  483): DESERIALIZE event image_coverage
+01-01 08:01:39.895 D/analysis_serializer(  483): DESERIALIZE event verify_score
+01-01 08:01:39.895 D/analysis_serializer(  483): DESERIALIZE event verify_retry
+01-01 08:01:39.895 D/analysis_rule(  483): Clear flag OPTION when set BEGIN on event image_quality
+01-01 08:01:39.895 D/analysis_rule(  483): Clear flag OPTION when set OVER on event verify_retry
+01-01 08:01:39.895 D/analysis_serializer(  483): DESERIALIZE event requireShowShooter
+01-01 08:01:39.895 D/analysis_serializer(  483): DESERIALIZE event shooterShown
+01-01 08:01:39.895 D/analysis_serializer(  483): DESERIALIZE event fingerprintWake
+01-01 08:01:39.895 D/analysis_serializer(  483): --Flag: begin
+01-01 08:01:39.895 D/analysis_serializer(  483): DESERIALIZE event hideKeyguardByFingerprint
+01-01 08:01:39.895 D/analysis_serializer(  483): DESERIALIZE event requireShowShooter
+01-01 08:01:39.895 D/analysis_serializer(  483): --Flag: optional
+01-01 08:01:39.895 D/analysis_serializer(  483): DESERIALIZE event displayInit
+01-01 08:01:39.895 D/analysis_serializer(  483): --Flag: pairable
+01-01 08:01:39.895 D/analysis_serializer(  483): DESERIALIZE event shooterShown
+01-01 08:01:39.895 D/analysis_serializer(  483): --Flag: optional
+01-01 08:01:39.895 D/analysis_serializer(  483): DESERIALIZE event authenticated
+01-01 08:01:39.895 D/analysis_serializer(  483): DESERIALIZE event authenticatedTimeout
+01-01 08:01:39.895 D/analysis_serializer(  483): --Flag: cancelled
+01-01 08:01:39.895 D/analysis_serializer(  483): --Flag: optional
+01-01 08:01:39.895 D/analysis_serializer(  483): DESERIALIZE event windowReady
+01-01 08:01:39.895 D/analysis_serializer(  483): --Flag: optional
+01-01 08:01:39.895 D/analysis_serializer(  483): DESERIALIZE event wakeUp
+01-01 08:01:39.895 D/analysis_serializer(  483): --Flag: pairable
+01-01 08:01:39.895 D/analysis_serializer(  483): DESERIALIZE event dismissColorFade
+01-01 08:01:39.895 D/analysis_serializer(  483): --Flag: nail
+01-01 08:01:39.895 D/analysis_serializer(  483): DESERIALIZE event setColorFadeLevel
+01-01 08:01:39.895 D/analysis_serializer(  483): DESERIALIZE event brightnessUpdate
+01-01 08:01:39.895 D/analysis_serializer(  483): DESERIALIZE event applyBrightness
+01-01 08:01:39.895 D/analysis_serializer(  483): DESERIALIZE event highlightMaskRemoved
+01-01 08:01:39.895 D/analysis_serializer(  483): --Flag: optional
+01-01 08:01:39.895 D/analysis_serializer(  483): DESERIALIZE event wakeUpIntercept
+01-01 08:01:39.895 D/analysis_serializer(  483): --Flag: cancelled
+01-01 08:01:39.895 D/analysis_serializer(  483): --Flag: optional
+01-01 08:01:39.895 D/analysis_serializer(  483): DESERIALIZE event wakeUpHookCancelled
+01-01 08:01:39.895 D/analysis_serializer(  483): --Flag: cancelled
+01-01 08:01:39.895 D/analysis_serializer(  483): --Flag: optional
+01-01 08:01:39.895 D/analysis_serializer(  483): DESERIALIZE event light
+01-01 08:01:39.896 D/analysis_serializer(  483): --Flag: pairable
+01-01 08:01:39.896 D/analysis_serializer(  483): --Flag: over
+01-01 08:01:39.896 I/analysis_parser(  483): Analysis rule load finished
+01-01 08:01:39.896 D/analysis_rule(  483): >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+01-01 08:01:39.896 D/analysis_rule(  483): AnalysisRule class: fingerprint, Enabled: true
+01-01 08:01:39.896 D/analysis_rule(  483): --Rule authenticated, type: 3, enabled: true, endCount: 1, triggerEvent: image_quality
+01-01 08:01:39.896 D/analysis_rule(  483): ----Event image_quality, flags: 0x01
+01-01 08:01:39.896 D/analysis_rule(  483): ----Event image_coverage, flags: 0x04
+01-01 08:01:39.896 D/analysis_rule(  483): ----Event verify_score, flags: 0x04
+01-01 08:01:39.896 D/analysis_rule(  483): ----Event verify_retry, flags: 0x02
+01-01 08:01:39.896 D/analysis_rule(  483): --Rule showShooter, type: 1, enabled: true, endCount: 1, triggerEvent: requireShowShooter
+01-01 08:01:39.896 D/analysis_rule(  483): ----Event requireShowShooter, flags: 0x01
+01-01 08:01:39.896 D/analysis_rule(  483): ----Event shooterShown, flags: 0x02
+01-01 08:01:39.896 D/analysis_rule(  483): --Rule unlockScreenOff, type: 1, enabled: true, endCount: 2, triggerEvent: fingerprintWake
+01-01 08:01:39.896 D/analysis_rule(  483): ----Event fingerprintWake, flags: 0x01
+01-01 08:01:39.896 D/analysis_rule(  483): ----Event hideKeyguardByFingerprint, flags: 0x00
+01-01 08:01:39.896 D/analysis_rule(  483): ----Event requireShowShooter, flags: 0x04
+01-01 08:01:39.896 D/analysis_rule(  483): ----Event displayInit, flags: 0x20
+01-01 08:01:39.896 D/analysis_rule(  483): ----Event shooterShown, flags: 0x04
+01-01 08:01:39.896 D/analysis_rule(  483): ----Event authenticated, flags: 0x00
+01-01 08:01:39.896 D/analysis_rule(  483): ----Event authenticatedTimeout, flags: 0x14
+01-01 08:01:39.896 D/analysis_rule(  483): ----Event windowReady, flags: 0x04
+01-01 08:01:39.896 D/analysis_rule(  483): ----Event wakeUp, flags: 0x20
+01-01 08:01:39.896 D/analysis_rule(  483): ----Event dismissColorFade, flags: 0x40
+01-01 08:01:39.896 D/analysis_rule(  483): ----Event setColorFadeLevel, flags: 0x00
+01-01 08:01:39.896 D/analysis_rule(  483): ----Event brightnessUpdate, flags: 0x00
+01-01 08:01:39.896 D/analysis_rule(  483): ----Event applyBrightness, flags: 0x00
+01-01 08:01:39.896 D/analysis_rule(  483): ----Event highlightMaskRemoved, flags: 0x04
+01-01 08:01:39.896 D/analysis_rule(  483): ----Event wakeUpIntercept, flags: 0x14
+01-01 08:01:39.896 D/analysis_rule(  483): ----Event wakeUpHookCancelled, flags: 0x14
+01-01 08:01:39.896 D/analysis_rule(  483): ----Event light, flags: 0x22
+01-01 08:01:39.896 D/analysis_rule(  483): <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+--------- beginning of system
+01-01 08:01:39.903 I/vold    (  484): Vold 3.0 (the awakening) firing up
+01-01 08:01:39.903 V/vold    (  484): Detected support for: exfat ext4 ntfs vfat
+01-01 08:01:39.908 V/vold    (  484): Found unmanaged dm device named system
+01-01 08:01:39.908 W/vold    (  484): Failed to LOOP_GET_STATUS64 /dev/block/loop7: No such device or address
+01-01 08:01:39.908 W/vold    (  484): Failed to LOOP_GET_STATUS64 /dev/block/loop3: No such device or address
+01-01 08:01:39.909 W/vold    (  484): Failed to LOOP_GET_STATUS64 /dev/block/loop4: No such device or address
+01-01 08:01:39.909 W/vold    (  484): Failed to LOOP_GET_STATUS64 /dev/block/loop0: No such device or address
+01-01 08:01:39.909 W/vold    (  484): Failed to LOOP_GET_STATUS64 /dev/block/loop6: No such device or address
+01-01 08:01:39.909 W/vold    (  484): Failed to LOOP_GET_STATUS64 /dev/block/loop2: No such device or address
+01-01 08:01:39.909 W/vold    (  484): Failed to LOOP_GET_STATUS64 /dev/block/loop5: No such device or address
+01-01 08:01:39.909 W/vold    (  484): Failed to LOOP_GET_STATUS64 /dev/block/loop1: No such device or address
+01-01 08:01:39.909 E/vold    (  484): [libfs_mgr]Warning: unknown flag resize
+01-01 08:01:39.910 I/vold    (  484): [libfs_mgr]dt_fstab: Skip disabled entry for partition vendor
+01-01 08:01:39.912 D/vold    (  484): VoldNativeService::start() completed OK
+01-01 08:01:39.930 D/vold    (  484): e4crypt_init_user0
+01-01 08:01:39.930 D/vold    (  484): e4crypt_prepare_user_storage for volume null, user 0, serial 0, flags 1
+01-01 08:01:39.930 D/vold    (  484): Preparing: /data/system/users/0
+01-01 08:01:39.930 D/vold    (  484): Preparing: /data/misc/profiles/cur/0
+01-01 08:01:39.930 D/vold    (  484): Preparing: /data/system_de/0
+01-01 08:01:39.930 D/vold    (  484): Preparing: /data/misc_de/0
+01-01 08:01:39.931 D/vold    (  484): Preparing: /data/vendor_de/0
+01-01 08:01:39.931 D/vold    (  484): Preparing: /data/user_de/0
+01-01 08:01:39.931 V/vold    (  484): /system/bin/vold_prepare_subdirs
+01-01 08:01:39.931 V/vold    (  484):     prepare
+01-01 08:01:39.931 V/vold    (  484):     
+01-01 08:01:39.931 V/vold    (  484):     0
+01-01 08:01:39.931 V/vold    (  484):     1
+01-01 08:01:39.954 I/vold_prepare_subdirs(  484): SELinux: Loaded file_contexts
+01-01 08:01:39.958 D/vold_prepare_subdirs(  490): Setting up mode 700 uid 0 gid 0 context u:object_r:vold_data_file:s0 on path: /data/misc_de/0/vold
+01-01 08:01:39.959 D/vold_prepare_subdirs(  490): Setting up mode 700 uid 0 gid 0 context u:object_r:storaged_data_file:s0 on path: /data/misc_de/0/storaged
+01-01 08:01:39.960 D/vold_prepare_subdirs(  490): Setting up mode 700 uid 1000 gid 1000 context u:object_r:fingerprint_vendor_data_file:s0 on path: /data/vendor_de/0/fpdata
+01-01 08:01:39.962 D/vold    (  484): e4crypt_unlock_user_key 0 serial=0 token_present=0
+01-01 08:01:39.962 E/vold    (  484): Failed to chmod /data/system_ce/0: No such file or directory
+01-01 08:01:39.962 E/vold    (  484): Failed to chmod /data/misc_ce/0: No such file or directory
+01-01 08:01:39.962 E/vold    (  484): Failed to chmod /data/media/0: No such file or directory
+01-01 08:01:40.007 I//system/bin/tzdatacheck(  492): timezone distro dir /data/misc/zoneinfo/current does not exist. No action required.
+01-01 08:01:40.193 I/sysinit (  495): Running /system/etc/init.d/00banner
+01-01 08:01:40.228 I/lineage (  498): _ _                                       
+01-01 08:01:40.249 I/lineage (  503): | (_)_ __   ___  __ _  __ _  ___  ___  ___ 
+01-01 08:01:40.265 I/lineage (  508): | | | '_ \ / _ \/ _` |/ _` |/ _ \/ _ \/ __|
+01-01 08:01:40.287 I/lineage (  515): | | | | | |  __/ (_| | (_| |  __/ (_) \__ \
+01-01 08:01:40.302 I/lineage (  520): |_|_|_| |_|\___|\__,_|\__, |\___|\___/|___/
+01-01 08:01:40.304 I/BOOT    (  521): MSM target '', SoC 'Surf', HwID '246', SoC ver '65536'
+01-01 08:01:40.317 I/lineage (  526):                       |___/
+01-01 08:01:40.325 W/DRM_BOOT(  527): file: '/sys/module/drm/parameters/vblankoffdelay' or perms doesn't exist
+01-01 08:01:40.361 I/lineage (  535): Welcome to Android 9 / LineageOS-16.0-20261111-UNOFFICIAL-UNOFFICIAL
+01-01 08:01:40.376 W/libc    (  536): Unable to set property "ro.sf.lcd_density" to "560": error code: 0xb
+01-01 08:01:40.376 I/sysinit (  537): Running /system/etc/init.d/90userinit
+01-01 08:01:40.468 W/libc    (  546): Unable to set property "ro.sf.lcd_density" to "560": error code: 0xb
+01-01 08:01:40.969 I/init    (  612): type=1400 audit(0.0:77): avc: denied { execute_no_trans } for path="/system/vendor/bin/hw/android.hardware.drm@1.0-service.widevine" dev="sde18" ino=2559 scontext=u:r:init:s0 tcontext=u:object_r:vendor_file:s0 tclass=file permissive=1
+01-01 08:01:41.054 I/ServiceManagement(  603): Removing namespace from process name android.hidl.allocator@1.0-service to allocator@1.0-service.
+01-01 08:01:41.065 I/health@2.0/(  604): health@2.0/backup: Hal starting main loop...
+01-01 08:01:41.065 I/health@2.0/(  604): health@2.0/backup Hal is starting up...
+01-01 08:01:41.070 I/android.hardware.bluetooth@1.0-service(  606): registering BT & FM services
+01-01 08:01:41.080 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  609): libminijail[609]: allowing syscall: connect
+01-01 08:01:41.080 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  609): libminijail[609]: allowing syscall: fcntl
+01-01 08:01:41.080 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  609): libminijail[609]: allowing syscall: sendto
+01-01 08:01:41.080 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  609): libminijail[609]: allowing syscall: socket
+01-01 08:01:41.080 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  609): libminijail[609]: allowing syscall: writev
+01-01 08:01:41.081 W/ServiceManagement(  604): Can't efficiently wait for android.hardware.health@1.0::IHealth/default, because we are called from the only binder thread in this process.
+01-01 08:01:41.081 D/vndksupport(  606): Loading /vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so from current namespace instead of sphal namespace.
+01-01 08:01:41.083 I/ServiceManagement(  604): getService: Trying again for android.hardware.health@1.0::IHealth/default...
+01-01 08:01:41.083 W/ServiceManagement(  604): Waiting one second for android.hardware.health@1.0::IHealth/default
+01-01 08:01:41.086 W//vendor/bin/hw/android.hardware.configstore@1.1-service(  610): libminijail[610]: allowing syscall: connect
+01-01 08:01:41.086 W//vendor/bin/hw/android.hardware.configstore@1.1-service(  610): libminijail[610]: allowing syscall: fcntl
+01-01 08:01:41.086 W//vendor/bin/hw/android.hardware.configstore@1.1-service(  610): libminijail[610]: allowing syscall: sendto
+01-01 08:01:41.086 W//vendor/bin/hw/android.hardware.configstore@1.1-service(  610): libminijail[610]: allowing syscall: socket
+01-01 08:01:41.086 W//vendor/bin/hw/android.hardware.configstore@1.1-service(  610): libminijail[610]: allowing syscall: writev
+01-01 08:01:41.090 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  609): libminijail[609]: logging seccomp filter failures
+01-01 08:01:41.091 I/ServiceManagement(  609): Removing namespace from process name android.hardware.configstore@1.0-service to configstore@1.0-service.
+01-01 08:01:41.091 E//vendor/bin/hw/android.hardware.configstore@1.0-service(  609): libminijail[609]: blocked syscall: getdents64
+01-01 08:01:41.093 W//vendor/bin/hw/android.hardware.configstore@1.1-service(  610): libminijail[610]: logging seccomp filter failures
+01-01 08:01:41.099 I/ServiceManagement(  610): Removing namespace from process name android.hardware.configstore@1.1-service to configstore@1.1-service.
+01-01 08:01:41.120 D/vndksupport(  616): Loading /vendor/lib64/hw/android.hardware.health@1.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:41.131 I/ServiceManagement(  606): Removing namespace from process name android.hardware.bluetooth@1.0-service-qti to bluetooth@1.0-service-qti.
+01-01 08:01:41.141 D/vndksupport(  613): Loading /vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:41.147 D/vndksupport(  614): Loading /vendor/lib64/hw/android.hardware.graphics.allocator@2.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:41.148 I/android.hardware.bluetooth@1.0-service(  606): Registration complete for android.hardware.bluetooth@1.0::IBluetoothHci/default.
+01-01 08:01:41.154 D/vndksupport(  613): Loading /vendor/lib64/hw/gatekeeper.msm8996.so from current namespace instead of sphal namespace.
+01-01 08:01:41.154 D/vndksupport(  606): Loading /vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:41.159 D/gatekeeper_device(  613): HwGkOpen called
+01-01 08:01:41.163 D/vndksupport(  614): Loading /vendor/lib64/hw/gralloc.msm8996.so from current namespace instead of sphal namespace.
+01-01 08:01:41.168 I/ServiceManagement(  616): Removing namespace from process name android.hardware.health@1.0-service to health@1.0-service.
+01-01 08:01:41.175 I/android.hardware.bluetooth@1.0-service(  606): Registration complete for vendor.qti.hardware.fm@1.0::IFmHci/default.
+01-01 08:01:41.193 I/android.hardware.health@1.0-service(  616): Registration complete for android.hardware.health@1.0::IHealth/default.
+01-01 08:01:41.219 D/vndksupport(  617): Loading /vendor/lib64/hw/android.hardware.light@2.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:41.220 D/vndksupport(  606): Loading /vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:41.229 D/vndksupport(  617): Loading /vendor/lib64/hw/lights.msm8996.so from current namespace instead of sphal namespace.
+01-01 08:01:41.231 I/ServiceManagement(  614): Removing namespace from process name android.hardware.graphics.allocator@2.0-service to allocator@2.0-service.
+01-01 08:01:41.233 D/android.hardware.drm@1.0-service(  611): android.hardware.drm@1.0-service starting...
+--------- beginning of crash
+01-01 08:01:41.233 F/linker  (  623): CANNOT LINK EXECUTABLE "/vendor/bin/hw/android.hardware.wifi@1.0-service": cannot locate symbol "_ZN7android8hardware4wifi4V1_08toStringERKNS_2spINS2_22IWifiChipEventCallbackEEE" referenced by "/system/vendor/bin/hw/android.hardware.wifi@1.0-service"...
+01-01 08:01:41.235 D/vndksupport(  615): Loading /vendor/lib64/hw/android.hardware.graphics.composer@2.1-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:41.240 D/vndksupport(  618): Loading /vendor/lib64/hw/android.hardware.memtrack@1.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:41.246 I/android.hardware.graphics.allocator@2.0-service(  614): Registration complete for android.hardware.graphics.allocator@2.0::IAllocator/default.
+01-01 08:01:41.249 I/init    (  636): type=1400 audit(0.0:78): avc: denied { execute_no_trans } for path="/system/vendor/bin/hw/vendor.vivo.hardware.bbkts@1.0-service" dev="sde18" ino=2562 scontext=u:r:init:s0 tcontext=u:object_r:vendor_file:s0 tclass=file permissive=1
+01-01 08:01:41.254 D/vndksupport(  618): Loading /vendor/lib64/hw/memtrack.msm8996.so from current namespace instead of sphal namespace.
+01-01 08:01:41.256 D/vndksupport(  615): Loading /vendor/lib64/hw/hwcomposer.msm8996.so from current namespace instead of sphal namespace.
+01-01 08:01:41.258 D/android.hardware.cas@1.0-service(  608): android.hardware.cas@1.0-service starting...
+01-01 08:01:41.259 D/vndksupport(  611): Loading /vendor/lib/hw/android.hardware.drm@1.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:41.264 D/vndksupport(  617): Loading /vendor/lib64/hw/lights.msm8996.so from current namespace instead of sphal namespace.
+01-01 08:01:41.264 E/light   (  617): light_open lights keyboard failed: -22
+01-01 08:01:41.264 E/light   (  617): Light passthrough failed to load legacy HAL.
+01-01 08:01:41.264 D/vndksupport(  617): Loading /vendor/lib64/hw/lights.msm8996.so from current namespace instead of sphal namespace.
+01-01 08:01:41.265 I/chatty  (  617): uid=1000(system) light@2.0-servi identical 3 lines
+01-01 08:01:41.266 D/vndksupport(  617): Loading /vendor/lib64/hw/lights.msm8996.so from current namespace instead of sphal namespace.
+01-01 08:01:41.266 E/light   (  617): light_open lights bluetooth failed: -22
+01-01 08:01:41.266 E/light   (  617): Light passthrough failed to load legacy HAL.
+01-01 08:01:41.266 D/vndksupport(  617): Loading /vendor/lib64/hw/lights.msm8996.so from current namespace instead of sphal namespace.
+01-01 08:01:41.266 E/light   (  617): light_open lights wifi failed: -22
+01-01 08:01:41.266 E/light   (  617): Light passthrough failed to load legacy HAL.
+01-01 08:01:41.275 I/android.hardware.bluetooth@1.0-service(  606): Registration complete for com.qualcomm.qti.ant@1.0::IAntHci/default.
+01-01 08:01:41.287 I/ServiceManagement(  608): Removing namespace from process name android.hardware.cas@1.0-service to cas@1.0-service.
+01-01 08:01:41.297 D/vndksupport(  619): Loading /vendor/lib64/hw/android.hardware.power@1.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:41.303 D/vendor.qti.esepowermanager@1.0-service(  625): loading eseservice
+01-01 08:01:41.303 D/QSEECOMAPI(  625): QSEECom_get_handle sb_length = 0x400
+01-01 08:01:41.304 D/QSEECOMAPI(  625): App is not loaded in QSEE
+01-01 08:01:41.304 E/QSEECOMAPI(  625): Error::Cannot open the file /firmware/image/eseservice.mdt errno = 2
+01-01 08:01:41.304 E/QSEECOMAPI(  625): Error::Loading image failed with ret = -1
+01-01 08:01:41.304 D/vendor.qti.esepowermanager@1.0-service(  625): loading eseservice failed
+01-01 08:01:41.304 D/vendor.qti.esepowermanager@1.0-service(  625): eSEPowerManager is starting
+01-01 08:01:41.317 I/irsc_util(  642): Starting irsc tool
+01-01 08:01:41.319 D/vndksupport(  620): Loading /vendor/lib64/hw/android.hardware.sensors@1.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:41.330 D/vndksupport(  622): Loading /vendor/lib64/hw/android.hardware.vibrator@1.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:41.335 D/vndksupport(  622): Loading /vendor/lib64/hw/vibrator.default.so from current namespace instead of sphal namespace.
+01-01 08:01:41.349 I/vendor.vivo.har(  637): type=1400 audit(0.0:79): avc: denied { call } for scontext=u:r:init:s0 tcontext=u:r:hwservicemanager:s0 tclass=binder permissive=1
+01-01 08:01:41.355 D/vndksupport(  619): Loading /vendor/lib64/hw/power.qcom.so from current namespace instead of sphal namespace.
+01-01 08:01:41.357 D/        (  622): Vibrator using timed_output
+01-01 08:01:41.357 F/linker  (  626): CANNOT LINK EXECUTABLE "/vendor/bin/hw/vendor.qti.gnss@1.0-service": cannot locate symbol "_ZN7android8hardware4gnss4V1_08toStringINS2_15IGnssNiCallback17GnssNiNotifyFlagsEEENSt3__112basic_stringIcNS6_11char_traitsIcEENS6_9allocatorIcEEEEj" referenced by "/system/vendor/lib64/vendor.qti.gnss@1.0_vendor.so"...
+01-01 08:01:41.359 I/android.hardwar(  612): type=1400 audit(0.0:80): avc: denied { read } for name="vndbinder" dev="tmpfs" ino=15057 scontext=u:r:init:s0 tcontext=u:object_r:vndbinder_device:s0 tclass=chr_file permissive=1
+01-01 08:01:41.359 I/android.hardwar(  612): type=1400 audit(0.0:81): avc: denied { write } for name="vndbinder" dev="tmpfs" ino=15057 scontext=u:r:init:s0 tcontext=u:object_r:vndbinder_device:s0 tclass=chr_file permissive=1
+01-01 08:01:41.370 I/ServiceManagement(  624): Removing namespace from process name vendor.display.color@1.0-service to color@1.0-service.
+01-01 08:01:41.372 D/android.hardware.drm@1.0-service.widevine(  612): android.hardware.drm@1.0-service.widevine starting...
+01-01 08:01:41.372 I/ServiceManagement(  612): Removing namespace from process name android.hardware.drm@1.0-service.widevine to drm@1.0-service.widevine.
+01-01 08:01:41.374 I/ServiceManagement(  617): Removing namespace from process name android.hardware.light@2.0-service to light@2.0-service.
+01-01 08:01:41.375 I/ServiceManagement(  618): Removing namespace from process name android.hardware.memtrack@1.0-service to memtrack@1.0-service.
+01-01 08:01:41.383 D/vndksupport(  605): Loading /vendor/lib/hw/android.hardware.audio@2.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:41.386 I/QCOM PowerHAL(  619): QCOM power HAL initing.
+01-01 08:01:41.390 I/android.hardware.camera.provider@2.4-service(  607): Camera provider Service is starting.
+01-01 08:01:41.392 D/vndksupport(  625): Loading /vendor/lib64/hw/vendor.qti.esepowermanager@1.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:41.399 D/vndksupport(  615): Loading /vendor/lib64/hw/gralloc.msm8996.so from current namespace instead of sphal namespace.
+01-01 08:01:41.408 I/SDM     (  615): ExtensionInterface::CreateExtensionInterface: 
+01-01 08:01:41.408 I/SDM     (  615): SDM-EXTENSION Version: Date: 05/10/18, Commit: 09f4c53, Change: I423bbb6408
+01-01 08:01:41.410 I/SDM     (  615): HWInfo::GetHWResourceInfo: SDE Version = 5, SDE Revision = 10070002, RGB = 4, VIG = 4, DMA = 2, Cursor = 2
+01-01 08:01:41.410 I/SDM     (  615): HWInfo::GetHWResourceInfo: Upscale Ratio = 20, Downscale Ratio = 4, Blending Stages = 7
+01-01 08:01:41.410 I/SDM     (  615): HWInfo::GetHWResourceInfo: SourceSplit = 1 QSEED3 = 0
+01-01 08:01:41.410 I/SDM     (  615): HWInfo::GetHWResourceInfo: BWC = 0, UBWC = 1, Decimation = 1, Tile Format = 0 Concurrent Writeback = 0
+01-01 08:01:41.410 I/SDM     (  615): HWInfo::GetHWResourceInfo: MaxLowBw = 9600000 , MaxHighBw = 9600000
+01-01 08:01:41.410 I/SDM     (  615): HWInfo::GetHWResourceInfo: MaxPipeBw = 4500000 KBps, MaxSDEClock = 412500000 Hz, ClockFudgeFactor = 1.050000
+01-01 08:01:41.410 I/SDM     (  615): HWInfo::GetHWResourceInfo: Prefill factors: Tiled_NV12 = 8, Tiled = 4, Linear = 1, Scale = 1, Fudge_factor = 2
+01-01 08:01:41.410 I/SDM     (  615): HWInfo::GetMDSSRotatorInfo: MDSS Rotator: Count = 2, Downscale = 1, Min_downscale = 2.000000
+01-01 08:01:41.412 I/SDM     (  615): SessionManager::SessionManager: Allocate buffers synchronously = 0
+01-01 08:01:41.417 E/SELinux (  470): avc:  denied  { add } for interface=android.hardware.drm::IDrmFactory sid=u:r:init:s0 pid=612 scontext=u:r:init:s0 tcontext=u:object_r:hal_drm_hwservice:s0 tclass=hwservice_manager permissive=1
+01-01 08:01:41.418 I/ServiceManagement(  612): Removing namespace from process name android.hardware.drm@1.0-service.widevine to drm@1.0-service.widevine.
+01-01 08:01:41.420 E/ServiceManagement(  605): Failed to dlopen android.hardware.audio@2.0-impl.so: dlopen failed: cannot locate symbol "_ZN7android9HidlUtils16audioConfigToHalERKNS_8hardware5audio6common4V2_011AudioConfigEP12audio_config" referenced by "/system/vendor/lib/hw/android.hardware.audio@2.0-impl.so"...
+01-01 08:01:41.421 I/irsc_util(  642): Num of entries:292
+01-01 08:01:41.423 I/irsc_util(  642): Ending irsc tool
+01-01 08:01:41.426 I/SDM     (  615): CoreInterface::CreateCore: Open interface handle = 0x7024e55000
+01-01 08:01:41.426 I/SDM     (  615): HWCSession::Register: Set uevent listener = 0x7024e4b200
+01-01 08:01:41.426 I/SDM     (  615): HWInfo::GetFirstDisplayInterfaceType: First display is internal display
+01-01 08:01:41.426 I/SDM     (  615): CPUHint::Init: Vendor Extension Library not enabled
+01-01 08:01:41.428 I/SDM     (  615): HWDevice::GetHWPanelMaxBrightnessFromNode: Max brightness level = 255
+01-01 08:01:41.428 E/libsensor1(  620): check_sensors_enabled: Sensors enabled = true
+01-01 08:01:41.428 I/SDM     (  615): HWDevice::Init: access(/dev/graphics/fb0) successful
+01-01 08:01:41.429 I/SDM     (  615): HWDevice::GetHWPanelMaxBrightnessFromNode: Max brightness level = 255
+01-01 08:01:41.430 I/SDM     (  615): HWDevice::PopulateHWPanelInfo: Device type = 0, Display Port = 1, Display Mode = 2, Device Node = 0, Is Primary = 1
+01-01 08:01:41.430 I/SDM     (  615): HWDevice::PopulateHWPanelInfo: Partial Update = 0, supported roi_count =1, Dynamic FPS = 0
+01-01 08:01:41.430 I/SDM     (  615): HWDevice::PopulateHWPanelInfo: Align: left = 0, width = 0, top = 0, height = 0
+01-01 08:01:41.430 I/SDM     (  615): HWDevice::PopulateHWPanelInfo: ROI: min_width = 0, min_height = 0, need_merge = 0
+01-01 08:01:41.430 I/SDM     (  615): HWDevice::PopulateHWPanelInfo: FPS: min = 0, max =0
+01-01 08:01:41.430 I/SDM     (  615): HWDevice::PopulateHWPanelInfo: Ping Pong Split = 0
+01-01 08:01:41.430 I/SDM     (  615): HWDevice::PopulateHWPanelInfo: Left Split = 720, Right Split = 720
+01-01 08:01:41.432 I/SDM     (  615): HWDevice::GetHWPanelMaxBrightnessFromNode: Max brightness level = 255
+01-01 08:01:41.433 I/SDM     (  615): HWDevice::GetHWPanelMaxBrightnessFromNode: Max brightness level = 255
+01-01 08:01:41.433 W/SDM     (  615): HWDevice::GetHWPanelInfoByNode: Failed to open msm_fb_panel_info node device node 2
+01-01 08:01:41.433 W/SDM     (  615): HWDevice::GetHWPanelInfoByNode: Failed to open msm_fb_panel_info node device node 3
+01-01 08:01:41.434 I/SDM     (  615): HWDevice::GetHWPanelMaxBrightnessFromNode: Max brightness level = 255
+01-01 08:01:41.435 I/SDM     (  615): HWDevice::GetHWPanelMaxBrightnessFromNode: Max brightness level = 255
+01-01 08:01:41.435 W/SDM     (  615): HWDevice::GetHWPanelInfoByNode: Failed to open msm_fb_panel_info node device node 2
+01-01 08:01:41.436 W/SDM     (  615): HWDevice::GetHWPanelInfoByNode: Failed to open msm_fb_panel_info node device node 3
+01-01 08:01:41.436 I/SDM     (  615): HWPrimary::GetCurrentModeFromSysfs: Current Config: 1440 x 2560
+01-01 08:01:41.436 I/SDM     (  615): HWPrimary::InitializeConfigs: Found mode 1440 x 2560
+01-01 08:01:41.436 I/SDM     (  615): HWPrimary::InitializeConfigs: Active config index 0
+01-01 08:01:41.436 I/SDM     (  615): HWPrimary::InitializeConfigs: Found mode 1080 x 1920
+01-01 08:01:41.436 I/SDM     (  615): StrategyImpl::SetIdleTimeoutMs: Idle timeout not supported for display = 0, mode = 2
+01-01 08:01:41.438 E/audiohalservice(  605): Could not get passthrough implementation for android.hardware.audio@2.0::IDevicesFactory/default.
+01-01 08:01:41.439 F/audiohalservice(  605): Error while registering audio service: 1
+01-01 08:01:41.440 F/libc    (  605): Fatal signal 6 (SIGABRT), code -6 (SI_TKILL) in tid 605 (android.hardwar), pid 605 (android.hardwar)
+01-01 08:01:41.441 W/SDM     (  615): ColorManager::CreateColorManagerProxy: PAV2 version is versions = 11, version = 11 
+01-01 08:01:41.450 I/rmt_storage(  643): Shared memory initialised successfully.
+01-01 08:01:41.451 I/rmt_storage(  643): Registering modemst1: 0x4a /boot/modem_fs1
+01-01 08:01:41.451 I/rmt_storage(  643): Registering modemst2: 0x4b /boot/modem_fs2
+01-01 08:01:41.451 I/rmt_storage(  643): Registering fsc: 0xff /boot/modem_fsc
+01-01 08:01:41.451 I/rmt_storage(  643): Registering fsg: 0x58 /boot/modem_fsg
+01-01 08:01:41.451 I/rmt_storage(  643): 4 GPT partitions found
+01-01 08:01:41.451 I/rmt_storage(  643): Capset success!
+01-01 08:01:41.456 I/SDM     (  615): DisplayBase::InitializeColorModes: Number of Color Modes = 5
+01-01 08:01:41.477 D/        (  635): tui_comm: svc service starting :)
+01-01 08:01:41.482 I/tftp_server(  645): Initializing tftp_server RING buffer
+01-01 08:01:41.482 I/tftp_server(  645): Starting...
+01-01 08:01:41.487 W/SDM     (  615): HWEvents::InitializePollFd: open failed for display=0 event=idle_power_collapse, error=No such file or directory
+01-01 08:01:41.488 I/SDM     (  615): HWCDisplay::Init: Display created with id: 0
+01-01 08:01:41.488 E/SDM     (  615): DisplayBase::GetColorModeAttr: Failed: Mode Mode_EyeCare without attribute
+01-01 08:01:41.488 E/SDM     (  615): DisplayBase::GetColorModeAttr: Failed: Mode Mode_default without attribute
+01-01 08:01:41.488 E/SDM     (  615): DisplayBase::GetColorModeAttr: Failed: Mode Mode_2 without attribute
+01-01 08:01:41.488 E/SDM     (  615): DisplayBase::GetColorModeAttr: Failed: Mode Mode_backlightlow without attribute
+01-01 08:01:41.488 E/SDM     (  615): DisplayBase::GetColorModeAttr: Failed: Mode Mode_backlighthigh without attribute
+01-01 08:01:41.488 I/SDM     (  615): DisplayBase::SetFrameBufferConfig: New framebuffer resolution (1440x2560)
+01-01 08:01:41.491 I/android.hardware.light@2.0-service(  617): Registration complete for android.hardware.light@2.0::ILight/default.
+01-01 08:01:41.493 I/android.hardware.memtrack@1.0-service(  618): Registration complete for android.hardware.memtrack@1.0::IMemtrack/default.
+01-01 08:01:41.496 D/vndksupport(  621): Loading /vendor/lib64/hw/android.hardware.thermal@1.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:41.498 I/ServiceManagement(  635): Removing namespace from process name vendor.qti.hardware.tui_comm@1.0-service-qti to tui_comm@1.0-service-qti.
+01-01 08:01:41.499 I/ServiceManagement(  622): Removing namespace from process name android.hardware.vibrator@1.0-service to vibrator@1.0-service.
+01-01 08:01:41.499 E/SELinux (  470): avc:  denied  { find } for interface=vendor.vivo.hardware.light::ILight sid=u:r:init:s0 pid=637 scontext=u:r:init:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=1
+01-01 08:01:41.500 W/hwservicemanager(  470): getTransport: Cannot find entry vendor.vivo.hardware.light@1.0::ILight/default in either framework or device manifest.
+01-01 08:01:41.501 D/vndksupport(  637): Loading /vendor/lib64/hw/vendor.vivo.hardware.light@1.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:41.503 D/vndksupport(  621): Loading /vendor/lib64/hw/thermal.msm8996.so from current namespace instead of sphal namespace.
+01-01 08:01:41.506 I/ServiceManagement(  629): Removing namespace from process name vendor.qti.hardware.perf@1.0-service to perf@1.0-service.
+01-01 08:01:41.514 I/ServiceManagement(  619): Removing namespace from process name android.hardware.power@1.0-service to power@1.0-service.
+01-01 08:01:41.514 E/SELinux (  470): avc:  denied  { find } for interface=vendor.vivo.hardware.camera.provider::IVivoCameraProvider sid=u:r:hal_camera_default:s0 pid=607 scontext=u:r:hal_camera_default:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=1
+01-01 08:01:41.516 D/vndksupport(  607): Loading /vendor/lib/hw/vendor.vivo.hardware.camera.provider@1.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:41.517 W/hwservicemanager(  470): getTransport: Cannot find entry vendor.qti.hardware.factory@1.0::IFactory/default in either framework or device manifest.
+01-01 08:01:41.519 I/tftp_server(  645): pid=645 tid=645 tftp-server : INF :[tftp_os_la.c, 121] mkdir failed: [2] [/data/vendor/tombstones/rfs/modem] [No such file or directory]
+01-01 08:01:41.519 D/vndksupport(  628): Loading /vendor/lib64/hw/vendor.qti.hardware.factory@1.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:41.520 E/tftp_server(  645): pid=645 tid=645 tftp-server : ERR :[tftp_server.c, 206] Open of  /vendor/rfs/msm/mpss/shared/server_info.txt failed with -2
+01-01 08:01:41.520 E/tftp_server(  645): pid=645 tid=645 tftp-server : ERR :[tftp_server.c, 231] Info file creation failed..!
+01-01 08:01:41.523 E/ServiceManagement(  607): Failed to dlopen vendor.vivo.hardware.camera.provider@1.0-impl.so: dlopen failed: library "vendor.vivo.hardware.camera.vif@1.0-impl.so" not found
+01-01 08:01:41.523 E/android.hardware.camera.provider@2.4-service(  607): Could not get passthrough implementation for vendor.vivo.hardware.camera.provider@1.0::IVivoCameraProvider/default.
+01-01 08:01:41.523 D/android.hardware.camera.provider@2.4-service(  607): register IVivoCameraProvider status:1,ok:0
+01-01 08:01:41.529 D/QSEECOMD: (  649): qseecom listener services process entry PPID = 1
+01-01 08:01:41.529 E/QSEECOMD: (  649): Listener: index = 0, hierarchy = 0
+01-01 08:01:41.530 D/vndksupport(  627): Loading /vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:41.532 I/ServiceManagement(  625): Removing namespace from process name vendor.qti.esepowermanager@1.0-service to esepowermanager@1.0-service.
+01-01 08:01:41.535 D/vndksupport(  634): Loading /vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:41.535 I/vendor.qti.hardware.factory@1.0-impl(  628): start to HIDL_FETCH_IFactory
+01-01 08:01:41.535 E/vendor.qti.hardware.factory@1.0-impl(  628): Start mmid time:10
+01-01 08:01:41.539 D/vndksupport(  639): Loading /vendor/lib64/hw/vendor.vivo.hardware.wifiap@1.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:41.541 I/lowmemorykiller(  652): Using in-kernel low memory killer interface
+01-01 08:01:41.542 D/vndksupport(  636): Loading /vendor/lib64/hw/vendor.vivo.hardware.bbkts@1.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:41.545 D/QSEECOMD: (  649): Init dlopen(librpmb.so, RTLD_NOW) succeeds
+01-01 08:01:41.545 D/QSEECOMD: (  649): Init::Init dlsym(g_FSHandle rpmb_init_service) succeeds
+01-01 08:01:41.548 I/rpmb_ufs(  649): RPMB Mult (512-byte sector) = 8192, Rel_sec_cnt = 32
+01-01 08:01:41.549 E/DrmLibRpmb(  649): rpmb_init succeeded! with ret = 0
+01-01 08:01:41.549 D/QSEECOMD: (  649): Init rpmb_init_service ret = 0
+01-01 08:01:41.549 D/QSEECOMD: (  649): RPMB system services: init (Listener ID = 8192)
+01-01 08:01:41.549 E/QSEECOMD: (  649): Listener: index = 1, hierarchy = 0
+01-01 08:01:41.550 D/QSEECOMD: (  649): Init dlopen(libssd.so, RTLD_NOW) succeeds
+01-01 08:01:41.550 D/QSEECOMD: (  649): Init::Init dlsym(g_FSHandle ssd_init_service) succeeds
+01-01 08:01:41.550 E/bbkts   (  636): BBKTouchScreen HIDL init
+01-01 08:01:41.550 E/SSD     (  649): ssd_init_service succeeded!
+01-01 08:01:41.550 D/QSEECOMD: (  649): Init ssd_init_service ret = 0
+01-01 08:01:41.550 D/QSEECOMD: (  649): SSD system services: init (Listener ID = 12288)
+01-01 08:01:41.550 E/QSEECOMD: (  649): Listener: index = 2, hierarchy = 0
+01-01 08:01:41.552 E/bbkts   (  636): hw_get_module bbktouchscreen failed: -2
+01-01 08:01:41.552 E/bbkts   (  636): touchscreen passthrough failed to load legacy HAL.
+01-01 08:01:41.552 E/bbkts   (  636): touchscreen getBbktsDevice is NULL
+01-01 08:01:41.556 I/android.hardware.vibrator@1.0-service(  622): Registration complete for android.hardware.vibrator@1.0::IVibrator/default.
+01-01 08:01:41.573 E/        (  635): Registered ITuiComm HAL service success!
+01-01 08:01:41.575 I/ServiceManagement(  637): Removing namespace from process name vendor.vivo.hardware.light@1.0-service to light@1.0-service.
+01-01 08:01:41.577 I/PerMgrSrv(  647): Adding entry for modem : offTimeout : 500 ackTimeout : 200
+01-01 08:01:41.582 E/vendor.qti.hardware.perf@1.0-service(  629): Registered IPerf HAL service success!
+01-01 08:01:41.585 I/ServiceManagement(  621): Removing namespace from process name android.hardware.thermal@1.0-service to thermal@1.0-service.
+01-01 08:01:41.588 I/android.hardware.power@1.0-service(  619): Registration complete for android.hardware.power@1.0::IPower/default.
+01-01 08:01:41.591 D/QSEECOMD: (  649): Init dlopen(libsecureui.so, RTLD_NOW) succeeds
+01-01 08:01:41.591 D/QSEECOMD: (  649): Init::Init dlsym(g_FSHandle secure_ui_init) succeeds
+01-01 08:01:41.591 D/QSEECOMD: (  649): Init secure_ui_init ret = 0
+01-01 08:01:41.591 D/QSEECOMD: (  649): secure UI services: init (Listener ID = 16384)
+01-01 08:01:41.592 D/vndksupport(  607): Loading /vendor/lib/hw/android.hardware.camera.provider@2.4-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:41.594 I/vendor.qti.esepowermanager@1.0-service(  625): Registration complete for vendor.qti.esepowermanager@1.0::IEsePowerManager/default.
+01-01 08:01:41.596 D/QSEECOMD: (  649): Parent qseecom daemon process paused!! 
+01-01 08:01:41.596 I/ServiceManagement(  627): Removing namespace from process name vendor.qti.hardware.alarm@1.0-service to alarm@1.0-service.
+01-01 08:01:41.598 I/ServiceManagement(  639): Removing namespace from process name vendor.vivo.hardware.wifiap@1.0-service to wifiap@1.0-service.
+01-01 08:01:41.599 I/ServiceManagement(  636): Removing namespace from process name vendor.vivo.hardware.bbkts@1.0-service to bbkts@1.0-service.
+01-01 08:01:41.602 I/ServiceManagement(  611): Removing namespace from process name android.hardware.drm@1.0-service to drm@1.0-service.
+01-01 08:01:41.604 I/vendor.vivo.hardware.light@1.0-service(  637): Registration complete for vendor.vivo.hardware.light@1.0::ILight/default.
+01-01 08:01:41.606 I/android.hardware.thermal@1.0-service(  621): Registration complete for android.hardware.thermal@1.0::IThermal/default.
+01-01 08:01:41.608 D/QSEECOMD: (  669): qseecom listener service threads starting!!! 
+01-01 08:01:41.608 D/QSEECOMD: (  669): Total listener services to start = 9
+01-01 08:01:41.608 E/QSEECOMD: (  669): Listener: index = 0, hierarchy = 1
+01-01 08:01:41.609 I/        (  627): Registration complete for vendor.qti.hardware.alarm@1.0::IAlarm/default.
+01-01 08:01:41.609 D/QSEECOMD: (  669): Init dlopen(librpmb.so, RTLD_NOW) succeeds
+01-01 08:01:41.609 D/QSEECOMD: (  669): Init::Init dlsym(g_FSHandle rpmb_start) succeeds
+01-01 08:01:41.609 D/QSEECOMAPI(  669): QSEECom_register_listener 8192 sb_length = 0x6400
+01-01 08:01:41.611 I/vendor.vivo.hardware.wifiap@1.0-service(  639): Registration complete for vendor.vivo.hardware.wifiap@1.0::IWifiAp/default.
+01-01 08:01:41.612 I/vendor.vivo.hardware.bbkts@1.0-service(  636): Registration complete for vendor.vivo.hardware.bbkts@1.0::IBbkts/default.
+01-01 08:01:41.614 I/ServiceManagement(  634): Removing namespace from process name vendor.qti.hardware.qteeconnector@1.0-service to qteeconnector@1.0-service.
+01-01 08:01:41.619 D/QSEECOMD: (  669): Init rpmb_start ret = 0
+01-01 08:01:41.619 D/QSEECOMD: (  669): RPMB system services: Started (Listener ID = 8192)
+01-01 08:01:41.619 E/QSEECOMD: (  669): Listener: index = 1, hierarchy = 1
+01-01 08:01:41.619 D/QSEECOMD: (  669): Init dlopen(libssd.so, RTLD_NOW) succeeds
+01-01 08:01:41.620 D/QSEECOMD: (  669): Init::Init dlsym(g_FSHandle ssd_start) succeeds
+01-01 08:01:41.620 D/QSEECOMAPI(  669): QSEECom_register_listener 12288 sb_length = 0x5000
+01-01 08:01:41.621 D/QSEECOMD: (  669): Init ssd_start ret = 0
+01-01 08:01:41.621 D/QSEECOMD: (  669): SSD system services: Started (Listener ID = 12288)
+01-01 08:01:41.621 E/QSEECOMD: (  669): Listener: index = 2, hierarchy = 1
+01-01 08:01:41.621 D/QSEECOMD: (  669): Init dlopen(libsecureui.so, RTLD_NOW) succeeds
+01-01 08:01:41.621 D/QSEECOMD: (  669): Init::Init dlsym(g_FSHandle secure_ui_start) succeeds
+01-01 08:01:41.622 D/QSEECOMAPI(  669): QSEECom_register_listener 16384 sb_length = 0x10a8
+01-01 08:01:41.624 I/android.hardware.drm@1.0-service(  611): Registration complete for android.hardware.drm@1.0::IDrmFactory/default.
+01-01 08:01:41.629 D/vndksupport(  611): Loading /vendor/lib/hw/android.hardware.drm@1.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:41.631 D/vndksupport(  634): Loading /vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:41.634 D/        (  633): QdutilsDisp: svc service starting :)
+01-01 08:01:41.635 I/ServiceManagement(  633): Removing namespace from process name vendor.qti.hardware.qdutils_disp@1.0-service-qti to qdutils_disp@1.0-service-qti.
+01-01 08:01:41.639 I/ServiceManagement(  611): Removing namespace from process name android.hardware.drm@1.0-service to drm@1.0-service.
+01-01 08:01:41.640 D/QSEECOMD: (  669): Init secure_ui_start ret = 0
+01-01 08:01:41.640 D/QSEECOMD: (  669): secure UI services: Started (Listener ID = 16384)
+01-01 08:01:41.640 E/QSEECOMD: (  669): Listener: index = 3, hierarchy = 1
+01-01 08:01:41.643 I/PerMgrSrv(  647): Adding entry for slpi : offTimeout : 5000 ackTimeout : 200
+01-01 08:01:41.644 I/ServiceManagement(  634): Removing namespace from process name vendor.qti.hardware.qteeconnector@1.0-service to qteeconnector@1.0-service.
+01-01 08:01:41.646 D/QSEECOMD: (  669): Init dlopen(libdrmtime.so, RTLD_NOW) succeeds
+01-01 08:01:41.646 D/QSEECOMD: (  669): Init::Init dlsym(g_FSHandle atime_start) succeeds
+01-01 08:01:41.646 D/DrmLibTime(  669): QSEE Time Listener: atime_start
+01-01 08:01:41.646 D/QSEECOMAPI(  669): QSEECom_register_listener 11 sb_length = 0x5000
+01-01 08:01:41.650 I/mmid    (  667): mmi daemon start, enjoy!!!!
+01-01 08:01:41.650 I/mmid    (  667): mmi daemon create threads!
+01-01 08:01:41.650 I/mmid    (  667): start create threads
+01-01 08:01:41.650 D/mmid    (  667): create accepting thread(thread id=505516389616) for accepting client connection
+01-01 08:01:41.650 D/mmid    (  667): create waiting thread(thread id=505515349232) for waiting msg
+01-01 08:01:41.650 I/android.hardware.drm@1.0-service(  611): Registration complete for android.hardware.drm@1.0::ICryptoFactory/default.
+01-01 08:01:41.650 D/mmid    (  667): create handle thread(thread id=505514308848) for handle msg
+01-01 08:01:41.651 I/PerMgrSrv(  647): Peripheral Mananager service start
+01-01 08:01:41.651 I/PerMgrSrv(  647): power-off timeout 500,ms; event-ack timeout 200,ms; debug-mode false
+01-01 08:01:41.651 I/PerMgrSrv(  647): Statistics for : modem
+01-01 08:01:41.651 I/PerMgrSrv(  647): modem: Current State : is off-line
+01-01 08:01:41.651 I/PerMgrSrv(  647): modem: Voter/Listener count : 0/0
+01-01 08:01:41.651 I/PerMgrSrv(  647): modem: Power on count : 0
+01-01 08:01:41.651 I/PerMgrSrv(  647): modem: Power off count: 0
+01-01 08:01:41.651 I/PerMgrSrv(  647): modem: Client list:
+01-01 08:01:41.651 I/PerMgrSrv(  647): Statistics for : slpi
+01-01 08:01:41.651 I/PerMgrSrv(  647): slpi: Current State : is off-line
+01-01 08:01:41.651 I/PerMgrSrv(  647): slpi: Voter/Listener count : 0/0
+01-01 08:01:41.651 I/PerMgrSrv(  647): slpi: Power on count : 0
+01-01 08:01:41.651 I/PerMgrSrv(  647): slpi: Power off count: 0
+01-01 08:01:41.651 I/PerMgrSrv(  647): slpi: Client list:
+01-01 08:01:41.653 D/DrmLibTime(  669): registering fs service to QSEECom is done!
+01-01 08:01:41.653 D/DrmLibTime(  669): begin to create a thread!
+01-01 08:01:41.654 D/DrmLibTime(  669): Creating a pthread in atime_start is done! return 0
+01-01 08:01:41.654 D/QSEECOMD: (  669): Init atime_start ret = 0
+01-01 08:01:41.654 D/QSEECOMD: (  669): time services: Started (Listener ID = 11)
+01-01 08:01:41.654 E/QSEECOMD: (  669): Listener: index = 4, hierarchy = 1
+01-01 08:01:41.655 D/QSEECOMD: (  669): Init dlopen(libdrmfs.so, RTLD_NOW) succeeds
+01-01 08:01:41.655 D/QSEECOMD: (  669): Init::Init dlsym(g_FSHandle fs_start) succeeds
+01-01 08:01:41.655 D/QSEECOMAPI(  669): QSEECom_register_listener 10 sb_length = 0x5000
+01-01 08:01:41.660 D/QSEECOMD: (  669): Init fs_start ret = 0
+01-01 08:01:41.660 D/QSEECOMD: (  669): file system services: Started (Listener ID = 10)
+01-01 08:01:41.660 E/QSEECOMD: (  669): Listener: index = 5, hierarchy = 1
+01-01 08:01:41.660 D/QSEECOMD: (  669): Init dlopen(libdrmfs.so, RTLD_NOW) succeeds
+01-01 08:01:41.660 D/QSEECOMD: (  669): Init::Init dlsym(g_FSHandle gpfs_start) succeeds
+01-01 08:01:41.660 D/QSEECOMAPI(  669): QSEECom_register_listener 28672 sb_length = 0x7e000
+01-01 08:01:41.662 D/DrmLibTime(  669): QSEE Time Listener: dispatch
+01-01 08:01:41.662 D/DrmLibTime(  669): before calling ioctl to read the next time_cmd
+01-01 08:01:41.662 D/mmid    (  667): Created socket success with '/dev/socket/mmi', sockfd=4
+01-01 08:01:41.662 I/mmid    (  667): thread(server_accepting_thread) started
+01-01 08:01:41.662 I/mmid    (  667): thread(msg_waiting_thread) started
+01-01 08:01:41.663 I/mmid    (  667): wait for client connection...
+01-01 08:01:41.663 I/mmid    (  667): thread(msg_handle_thread) started
+01-01 08:01:41.663 E/        (  633): Registered IQdutilsDisp HAL service success!
+01-01 08:01:41.672 I/PerMgrSrv(  647): QMI service start
+01-01 08:01:41.673 D/QSEECOMD: (  669): Init gpfs_start ret = 0
+01-01 08:01:41.673 D/QSEECOMD: (  669): gpfile system services: Started (Listener ID = 28672)
+01-01 08:01:41.673 E/QSEECOMD: (  669): Listener: index = 6, hierarchy = 1
+01-01 08:01:41.680 W/hwservicemanager(  470): getTransport: Cannot find entry android.hardware.thermal@1.1::IThermal/default in either framework or device manifest.
+01-01 08:01:41.689 D/QSEECOMD: (  669): Init dlopen(libqisl.so, RTLD_NOW) succeeds
+01-01 08:01:41.689 D/QSEECOMD: (  669): Init::Init dlsym(g_FSHandle qisl_start) succeeds
+01-01 08:01:41.699 W/thermalserviced(  659): Unable to get Thermal HAL V1.1, vendor thermal event notification not available
+01-01 08:01:41.701 I/QISL    (  669): QSEE Interrupt Service Listener Thread is started
+01-01 08:01:41.702 D/QSEECOMAPI(  669): QSEECom_register_listener 36864 sb_length = 0x1f4
+01-01 08:01:41.711 I/QISL    (  669): QSEE Interrupt Service Listener was activated successfully
+01-01 08:01:41.711 D/QSEECOMD: (  669): Init qisl_start ret = 0
+01-01 08:01:41.711 D/QSEECOMD: (  669): interrupt services: Started (Listener ID = 36864)
+01-01 08:01:41.711 E/QSEECOMD: (  669): Listener: index = 7, hierarchy = 1
+01-01 08:01:41.711 E/QSEECOMD: (  669): Init dlopen(libspl.so, RLTD_NOW) is failed.... dlopen failed: library "libspl.so" not found
+01-01 08:01:41.711 E/QSEECOMD: (  669): Listener: index = 8, hierarchy = 1
+01-01 08:01:41.713 D/QSEECOMD: (  669): Init dlopen(libGPreqcancel.so, RTLD_NOW) succeeds
+01-01 08:01:41.713 D/QSEECOMD: (  669): Init::Init dlsym(g_FSHandle gp_reqcancel_start) succeeds
+01-01 08:01:41.713 D/QSEECOMAPI(  669): QSEECom_register_listener 4352 sb_length = 0x5000
+01-01 08:01:41.713 I/crash_dump32(  691): obtaining output fd from tombstoned, type: kDebuggerdTombstone
+01-01 08:01:41.714 E/libc    (  691): failed to connect to tombstoned: No such file or directory
+01-01 08:01:41.714 I/crash_dump32(  691): performing dump of process 605 (target tid = 605)
+01-01 08:01:41.716 D/vndksupport(  607): Loading /vendor/lib/hw/camera.msm8996.so from current namespace instead of sphal namespace.
+01-01 08:01:41.721 F/DEBUG   (  691): *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+01-01 08:01:41.721 F/DEBUG   (  691): LineageOS Version: '16.0-20261111-UNOFFICIAL-UNOFFICIAL'
+01-01 08:01:41.721 F/DEBUG   (  691): Build fingerprint: 'vivo/lineage_pd1610/pd1610:9/PQ3A.190801.002/builder11111859:userdebug/test-keys'
+01-01 08:01:41.722 F/DEBUG   (  691): Revision: '0'
+01-01 08:01:41.722 F/DEBUG   (  691): ABI: 'arm'
+01-01 08:01:41.722 F/DEBUG   (  691): pid: 605, tid: 605, name: android.hardwar  >>> /vendor/bin/hw/android.hardware.audio@2.0-service <<<
+01-01 08:01:41.722 F/DEBUG   (  691): signal 6 (SIGABRT), code -6 (SI_TKILL), fault addr --------
+01-01 08:01:41.723 F/DEBUG   (  691): Abort message: 'Error while registering audio service: 1'
+01-01 08:01:41.723 F/DEBUG   (  691):     r0  00000000  r1  0000025d  r2  00000006  r3  00000008
+01-01 08:01:41.723 F/DEBUG   (  691):     r4  0000025d  r5  0000025d  r6  ffd06d54  r7  0000010c
+01-01 08:01:41.724 F/DEBUG   (  691):     r8  af082f68  r9  00000000  r10 00000000  r11 ffd0722c
+01-01 08:01:41.724 F/DEBUG   (  691):     ip  ffd071d8  sp  ffd06d40  lr  e7d24f89  pc  e7d1cdda
+01-01 08:01:41.732 D/QSEECOMD: (  669): Init gp_reqcancel_start ret = 0
+01-01 08:01:41.732 D/QSEECOMD: (  669): gp request cancellation services: Started (Listener ID = 4352)
+01-01 08:01:41.734 D/QSEECOMD: (  669): QSEECOM DAEMON RUNNING 
+01-01 08:01:41.736 F/DEBUG   (  691): 
+01-01 08:01:41.736 F/DEBUG   (  691): backtrace:
+01-01 08:01:41.737 F/DEBUG   (  691):     #00 pc 0001cdda  /system/lib/libc.so (abort+58)
+01-01 08:01:41.737 F/DEBUG   (  691):     #01 pc 00006ccd  /system/lib/liblog.so (__android_log_assert+156)
+01-01 08:01:41.737 F/DEBUG   (  691):     #02 pc 00001413  /system/vendor/bin/hw/android.hardware.audio@2.0-service (main+354)
+01-01 08:01:41.737 F/DEBUG   (  691):     #03 pc 0008bbdd  /system/lib/libc.so (__libc_init+48)
+01-01 08:01:41.737 F/DEBUG   (  691):     #04 pc 000011d0  /system/vendor/bin/hw/android.hardware.audio@2.0-service (_start_main+88)
+01-01 08:01:41.753 I/SDM     (  615): HWCDisplay::SetFrameBufferResolution: New framebuffer resolution (1440x2560)
+01-01 08:01:41.758 I/SDM     (  615): HWCColorManager::CreateColorManager: Successfully loaded libsdm-disp-vndapis.so
+01-01 08:01:41.766 I/SDM     (  615): HWCColorManager::CreateColorManager: Successfully loaded libsdm-disp-vndapis.so and libsdm-diag.so and diag_init'ed
+01-01 08:01:41.768 I/ServiceManagement(  615): Removing namespace from process name android.hardware.graphics.composer@2.1-service to composer@2.1-service.
+01-01 08:01:41.771 I/android.hardware.graphics.composer@2.1-service(  615): Registration complete for android.hardware.graphics.composer@2.1::IComposer/default.
+01-01 08:01:41.772 D/QSEECOMAPI(  613): QSEECom_get_handle sb_length = 0xa000
+01-01 08:01:41.772 D/QSEECOMAPI(  613): App is already loaded QSEE and app id = 65537
+01-01 08:01:41.774 E/gatekeeper_device(  613): Gatekeeper initialized
+01-01 08:01:41.776 I/ServiceManagement(  613): Removing namespace from process name android.hardware.gatekeeper@1.0-service to gatekeeper@1.0-service.
+01-01 08:01:41.778 I/android.hardware.gatekeeper@1.0-service(  613): Registration complete for android.hardware.gatekeeper@1.0::IGatekeeper/default.
+01-01 08:01:41.822 E/crash_dump32(  691): unable to connect to activity manager: No such file or directory
+01-01 08:01:41.832 I/ConfigStore(  658): android::hardware::configstore::V1_0::ISurfaceFlingerConfigs::startGraphicsAllocatorService retrieved: 0
+01-01 08:01:41.834 I/SurfaceFlinger(  658): Using HWComposer service: 'default'
+01-01 08:01:41.834 I/SurfaceFlinger(  658): SurfaceFlinger is starting
+01-01 08:01:41.839 I/ConfigStore(  658): android::hardware::configstore::V1_0::ISurfaceFlingerConfigs::vsyncEventPhaseOffsetNs retrieved: 1000000 (default)
+01-01 08:01:41.840 I/ConfigStore(  658): android::hardware::configstore::V1_0::ISurfaceFlingerConfigs::vsyncSfEventPhaseOffsetNs retrieved: 1000000 (default)
+01-01 08:01:41.841 I/ConfigStore(  658): android::hardware::configstore::V1_0::ISurfaceFlingerConfigs::hasSyncFramework retrieved: 1
+01-01 08:01:41.841 I/ConfigStore(  658): android::hardware::configstore::V1_0::ISurfaceFlingerConfigs::presentTimeOffsetFromVSyncNs retrieved: 0
+01-01 08:01:41.842 I/ConfigStore(  658): android::hardware::configstore::V1_0::ISurfaceFlingerConfigs::useHwcForRGBtoYUV retrieved: 1
+01-01 08:01:41.844 I/ConfigStore(  658): android::hardware::configstore::V1_0::ISurfaceFlingerConfigs::maxVirtualDisplaySize retrieved: 2048
+01-01 08:01:41.844 I/ConfigStore(  658): android::hardware::configstore::V1_0::ISurfaceFlingerConfigs::useVrFlinger retrieved: 0 (default)
+01-01 08:01:41.845 I/ConfigStore(  658): android::hardware::configstore::V1_0::ISurfaceFlingerConfigs::maxFrameBufferAcquiredBuffers retrieved: 3
+01-01 08:01:41.845 I/ConfigStore(  658): android::hardware::configstore::V1_0::ISurfaceFlingerConfigs::hasWideColorDisplay retrieved: 0
+01-01 08:01:41.846 W/hwservicemanager(  470): getTransport: Cannot find entry android.hardware.configstore@1.1::ISurfaceFlingerConfigs/default in either framework or device manifest.
+01-01 08:01:41.849 I/ConfigStore(  658): android::hardware::configstore::V1_1::ISurfaceFlingerConfigs::primaryDisplayOrientation retrieved: ORIENTATION_0 (default)
+01-01 08:01:41.850 I/SurfaceFlinger(  658): Disabling backpressure propagation
+01-01 08:01:41.850 I/SurfaceFlinger(  658): Disabling Triple Buffering
+01-01 08:01:41.850 I/SurfaceFlinger(  658): Treble testing override: 'false'
+01-01 08:01:41.850 W/SchedPolicy(  658): add_tid_to_cgroup failed to write '658' (No space left on device); fd=9
+01-01 08:01:41.850 I/SurfaceFlinger(  658): SurfaceFlinger's main thread ready to run. Initializing graphics H/W...
+01-01 08:01:41.850 I/SurfaceFlinger(  658): Phase offest NS: 1000000
+01-01 08:01:41.854 D/vndksupport(  658): Loading /vendor/lib64/egl/libEGL_adreno.so from current namespace instead of sphal namespace.
+01-01 08:01:41.860 D/libEGL  (  658): loaded /vendor/lib64/egl/libEGL_adreno.so
+01-01 08:01:41.871 D/vndksupport(  658): Loading /vendor/lib64/egl/libGLESv1_CM_adreno.so from current namespace instead of sphal namespace.
+01-01 08:01:41.879 D/libEGL  (  658): loaded /vendor/lib64/egl/libGLESv1_CM_adreno.so
+01-01 08:01:41.985 E/HAL     (  607): load: module=/vendor/lib/hw/camera.msm8996.so
+01-01 08:01:41.985 E/HAL     (  607): dlopen failed: library "vendor.vivo.hardware.camera.vif@1.0-impl.so" not found
+01-01 08:01:41.985 E/CamProvider@2.4-impl(  607): Could not load camera HAL module: -22 (Invalid argument)
+01-01 08:01:41.986 E/CamProvider@2.4-impl(  607): HIDL_FETCH_ICameraProvider: camera provider init failed!
+01-01 08:01:41.999 E/android.hardware.camera.provider@2.4-service(  607): Could not get passthrough implementation for android.hardware.camera.provider@2.4::ICameraProvider/legacy/0.
+01-01 08:01:42.089 I/healthd (  604): type=1400 audit(0.0:119): avc: denied { read } for name="type" dev="sysfs" ino=45428 scontext=u:r:healthd:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+01-01 08:01:42.089 I/healthd (  604): type=1400 audit(0.0:120): avc: denied { open } for path="/sys/devices/soc/soc:qcom,bcl/power_supply/bcl/type" dev="sysfs" ino=45428 scontext=u:r:healthd:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+01-01 08:01:42.089 I/healthd (  604): type=1400 audit(0.0:121): avc: denied { getattr } for path="/sys/devices/soc/soc:qcom,bcl/power_supply/bcl/type" dev="sysfs" ino=45428 scontext=u:r:healthd:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+01-01 08:01:42.099 I/healthd (  604): healthd: redirecting calls to 1.0 health HAL
+01-01 08:01:42.113 I/health@2.0/(  604): health@2.0/backup: Hal init done
+01-01 08:01:42.147 I/tftp_server(  645): pid=645 tid=645 tftp-server : INF :[tftp_server.c, 524] rcvd request [2] [73] [2] [5] [7]
+01-01 08:01:42.149 I/init    (  732): type=1400 audit(0.0:122): avc: denied { execute_no_trans } for path="/system/vendor/bin/goodix_fpd" dev="sde18" ino=2804 scontext=u:r:init:s0 tcontext=u:object_r:vendor_file:s0 tclass=file permissive=1
+01-01 08:01:42.149 I/adbd    (  725): initializing functionfs
+01-01 08:01:42.149 I/adbd    (  725): opening control endpoint /dev/usb-ffs/adb/ep0
+01-01 08:01:42.153 I/adbd    (  725): functionfs successfully initialized
+01-01 08:01:42.153 I/adbd    (  725): registering usb transport
+01-01 08:01:42.165 I/tftp_server(  645): pid=645 tid=731 tftp-server : INF :[tftp_server_utils.c, 113] file [readwrite/server_check.txt] : [/vendor/rfs/msm/adsp/readwrite/server_check.txt]
+01-01 08:01:42.166 I/tftp_server(  645): pid=645 tid=731 tftp-server : INF :[tftp_server.c, 1044] OACK options : [7680, 1500, 10, 0, 0, 0, 0, 0]
+01-01 08:01:42.166 I/tftp_server(  645): pid=645 tid=731 tftp-server : INF :[tftp_server.c, 722] Using temp file[/vendor/rfs/msm/adsp/readwrite/server_check.txt.rfs_tmp] for atomic put
+01-01 08:01:42.166 I/tftp_server(  645): pid=645 tid=731 tftp-server : INF :[tftp_os_la.c, 59] open : [-1] [-1] [384] [577] [/vendor/rfs/msm/adsp/readwrite/server_check.txt.rfs_tmp]
+01-01 08:01:42.166 E/tftp_server(  645): pid=645 tid=731 tftp-server : ERR :[tftp_os_la.c, 65] open failed: [2] [No such file or directory]
+01-01 08:01:42.166 I/tftp_server(  645): pid=645 tid=731 tftp-server : INF :[tftp_os_la.c, 121] mkdir failed: [2] [/vendor/rfs/msm/adsp/readwrite] [No such file or directory]
+01-01 08:01:42.166 I/tftp_server(  645): pid=645 tid=731 tftp-server : INF :[tftp_os_la.c, 121] mkdir failed: [2] [/vendor/rfs/msm/adsp] [No such file or directory]
+01-01 08:01:42.166 I/tftp_server(  645): pid=645 tid=731 tftp-server : INF :[tftp_os_la.c, 121] mkdir failed: [2] [/vendor/rfs/msm] [No such file or directory]
+01-01 08:01:42.166 I/tftp_server(  645): pid=645 tid=731 tftp-server : INF :[tftp_os_la.c, 121] mkdir failed: [30] [/vendor/rfs] [Read-only file system]
+01-01 08:01:42.166 E/tftp_server(  645): pid=645 tid=731 tftp-server : ERR :[tftp_server.c, 653] Retry auto dir after attempting to create data dirs
+01-01 08:01:42.167 I/tftp_server(  645): pid=645 tid=731 tftp-server : INF :[tftp_os_la.c, 121] mkdir failed: [2] [/vendor/rfs/msm/adsp/readwrite] [No such file or directory]
+01-01 08:01:42.167 I/tftp_server(  645): pid=645 tid=731 tftp-server : INF :[tftp_os_la.c, 121] mkdir failed: [2] [/vendor/rfs/msm/adsp] [No such file or directory]
+01-01 08:01:42.167 I/tftp_server(  645): pid=645 tid=731 tftp-server : INF :[tftp_os_la.c, 121] mkdir failed: [2] [/vendor/rfs/msm] [No such file or directory]
+01-01 08:01:42.167 I/tftp_server(  645): pid=645 tid=731 tftp-server : INF :[tftp_os_la.c, 121] mkdir failed: [30] [/vendor/rfs] [Read-only file system]
+01-01 08:01:42.167 E/tftp_server(  645): pid=645 tid=731 tftp-server : ERR :[tftp_server.c, 1519] open failed : [-30] [Unknown error -30]
+01-01 08:01:42.167 E/tftp_server(  645): pid=645 tid=731 tftp-server : ERR :[tftp_protocol.c, 1146] sending error-pkt. Code = 0, Msg = Err=30 String=Read-only file system
+01-01 08:01:42.200 E/PerMgrProxy(  727): Starting pm-proxy service
+01-01 08:01:42.203 D/PerMgrSrv(  647): modem state: is off-line, add client PM-PROXY-THREAD
+01-01 08:01:42.203 D/PerMgrSrv(  647): PM-PROXY-THREAD registered
+01-01 08:01:42.209 I/ATFWD-daemon(  726): type=1400 audit(0.0:123): avc: denied { read } for name="name" dev="sysfs" ino=29454 scontext=u:r:atfwd:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+01-01 08:01:42.210 I/tftp_server(  645): pid=645 tid=645 tftp-server : INF :[tftp_server.c, 524] rcvd request [2] [73] [2] [5] [11]
+01-01 08:01:42.213 D/PerMgrLib(  727): PM-PROXY-THREAD successfully registered for modem
+01-01 08:01:42.213 I/PerMgrProxy(  727): Casting proxy vote for modem
+01-01 08:01:42.213 D/PerMgrLib(  727): PM-PROXY-THREAD voting for modem
+01-01 08:01:42.213 D/PerMgrSrv(  647): PM-PROXY-THREAD voting for modem
+01-01 08:01:42.213 D/PerMgrSrv(  647): modem new state: going on-line
+01-01 08:01:42.214 D/PerMgrSrv(  647): modem num voters is 1
+01-01 08:01:42.214 I/PerMgrProxy(  727): pm-proxy-thread vote successful for modem
+01-01 08:01:42.217 I/tftp_server(  645): pid=645 tid=735 tftp-server : INF :[tftp_server_utils.c, 113] file [readwrite/server_check.txt] : [/vendor/rfs/msm/adsp/readwrite/server_check.txt]
+01-01 08:01:42.217 I/tftp_server(  645): pid=645 tid=735 tftp-server : INF :[tftp_server.c, 1044] OACK options : [7680, 1500, 10, 0, 0, 0, 0, 0]
+01-01 08:01:42.217 I/tftp_server(  645): pid=645 tid=735 tftp-server : INF :[tftp_server.c, 722] Using temp file[/vendor/rfs/msm/adsp/readwrite/server_check.txt.rfs_tmp] for atomic put
+01-01 08:01:42.217 I/tftp_server(  645): pid=645 tid=735 tftp-server : INF :[tftp_os_la.c, 59] open : [-1] [-1] [384] [577] [/vendor/rfs/msm/adsp/readwrite/server_check.txt.rfs_tmp]
+01-01 08:01:42.217 E/tftp_server(  645): pid=645 tid=735 tftp-server : ERR :[tftp_os_la.c, 65] open failed: [2] [No such file or directory]
+01-01 08:01:42.218 I/tftp_server(  645): pid=645 tid=735 tftp-server : INF :[tftp_os_la.c, 121] mkdir failed: [2] [/vendor/rfs/msm/adsp/readwrite] [No such file or directory]
+01-01 08:01:42.218 I/tftp_server(  645): pid=645 tid=735 tftp-server : INF :[tftp_os_la.c, 121] mkdir failed: [2] [/vendor/rfs/msm/adsp] [No such file or directory]
+01-01 08:01:42.218 I/tftp_server(  645): pid=645 tid=735 tftp-server : INF :[tftp_os_la.c, 121] mkdir failed: [2] [/vendor/rfs/msm] [No such file or directory]
+01-01 08:01:42.218 I/tftp_server(  645): pid=645 tid=735 tftp-server : INF :[tftp_os_la.c, 121] mkdir failed: [30] [/vendor/rfs] [Read-only file system]
+01-01 08:01:42.218 E/tftp_server(  645): pid=645 tid=735 tftp-server : ERR :[tftp_server.c, 653] Retry auto dir after attempting to create data dirs
+01-01 08:01:42.219 I/tftp_server(  645): pid=645 tid=735 tftp-server : INF :[tftp_os_la.c, 121] mkdir failed: [2] [/vendor/rfs/msm/adsp/readwrite] [No such file or directory]
+01-01 08:01:42.219 I/tftp_server(  645): pid=645 tid=735 tftp-server : INF :[tftp_os_la.c, 121] mkdir failed: [2] [/vendor/rfs/msm/adsp] [No such file or directory]
+01-01 08:01:42.219 I/tftp_server(  645): pid=645 tid=735 tftp-server : INF :[tftp_os_la.c, 121] mkdir failed: [2] [/vendor/rfs/msm] [No such file or directory]
+01-01 08:01:42.219 I/tftp_server(  645): pid=645 tid=735 tftp-server : INF :[tftp_os_la.c, 121] mkdir failed: [30] [/vendor/rfs] [Read-only file system]
+01-01 08:01:42.219 E/tftp_server(  645): pid=645 tid=735 tftp-server : ERR :[tftp_server.c, 1519] open failed : [-30] [Unknown error -30]
+01-01 08:01:42.219 E/tftp_server(  645): pid=645 tid=735 tftp-server : ERR :[tftp_protocol.c, 1146] sending error-pkt. Code = 0, Msg = Err=30 String=Read-only file system
+01-01 08:01:42.224 I/Atfwd_Daemon(  726): *** Starting ATFWD-daemon *** 
+01-01 08:01:42.224 I/Atfwd_Daemon(  726): init all signals
+01-01 08:01:42.224 I/Atfwd_Daemon(  726): Explicitly disbling qmux 
+01-01 08:01:42.224 I/Atfwd_Daemon(  726): Disabling QMUX complete...
+01-01 08:01:42.224 I/Atfwd_Daemon(  726): getting at svc obj for access terminal QMI svc
+01-01 08:01:42.224 I/Atfwd_Daemon(  726): 
+01-01 08:01:42.224 I/Atfwd_Daemon(  726): 
+01-01 08:01:42.224 I/Atfwd_Daemon(  726):  TrtyInit: retryCnt: 1
+01-01 08:01:42.224 I/Atfwd_Daemon(  726): Using QCCI. Skipping qmi_init
+01-01 08:01:42.224 I/Atfwd_Daemon(  726): result : 1 	 ,Init step :0 	 ,qmiErrorCode: 0
+01-01 08:01:42.224 I/Atfwd_Daemon(  726): 
+01-01 08:01:42.224 I/Atfwd_Daemon(  726):  Back to main.
+01-01 08:01:42.224 I/Atfwd_Daemon(  726):  tryinit complete with connectresult: 1
+01-01 08:01:42.224 I/Atfwd_Daemon(  726): 
+01-01 08:01:42.224 I/Atfwd_Daemon(  726): 
+01-01 08:01:42.224 I/Atfwd_Daemon(  726):  TrtyInit: retryCnt: 1
+01-01 08:01:42.224 I/Atfwd_Daemon(  726): 
+01-01 08:01:42.224 I/Atfwd_Daemon(  726):  qmi_client_init_instance....
+01-01 08:01:42.234 D/vndksupport(  658): Loading /vendor/lib64/egl/libGLESv2_adreno.so from current namespace instead of sphal namespace.
+01-01 08:01:42.268 D/FingerGoodix(  732): FingerPrintService is constructing
+01-01 08:01:42.269 D/vndksupport(  732): Loading /vendor/lib64/hw/gxfingerprint.default.so from current namespace instead of sphal namespace.
+01-01 08:01:42.297 D/libEGL  (  658): loaded /vendor/lib64/egl/libGLESv2_adreno.so
+01-01 08:01:42.313 I/Dpps    (  729): GetInstance: DppsServer ref count increased to 1
+01-01 08:01:42.315 I/Dpps    (  729): InitPrimaryContextFeatures():297 Dpps feature enable properties are false, skipping primary feature context init
+01-01 08:01:42.331 I/Adreno  (  658): QUALCOMM build                   : 624c5bb, I109c45a694
+01-01 08:01:42.331 I/Adreno  (  658): Build Date                       : 05/10/18
+01-01 08:01:42.331 I/Adreno  (  658): OpenGL ES Shader Compiler Version: EV031.22.00.01_06
+01-01 08:01:42.331 I/Adreno  (  658): Local Branch                     : mybranch32982249
+01-01 08:01:42.331 I/Adreno  (  658): Remote Branch                    : quic/gfx-adreno.lnx.1.0.r36-rel
+01-01 08:01:42.331 I/Adreno  (  658): Remote Branch                    : NONE
+01-01 08:01:42.331 I/Adreno  (  658): Reconstruct Branch               : NOTHING
+01-01 08:01:42.332 D/vndksupport(  658): Loading /vendor/lib64/hw/gralloc.msm8996.so from current namespace instead of sphal namespace.
+01-01 08:01:42.345 I/Adreno  (  658): PFP: 0x005ff087, ME: 0x005ff063
+01-01 08:01:42.352 I/FastMixerState(  651): sMaxFastTracks = 8
+01-01 08:01:42.355 V/MediaUtils(  651): physMem: 4294967295
+01-01 08:01:42.355 V/MediaUtils(  651): requested limit: 536870912
+01-01 08:01:42.355 V/MediaUtils(  651): actual limit: 536870912
+01-01 08:01:42.355 V/MediaUtils(  651): original limits: 4294967295/4294967295
+01-01 08:01:42.355 V/MediaUtils(  651): new limits: 536870912/4294967295
+01-01 08:01:42.356 I/audioserver(  651): ServiceManager: 0xed51c100
+01-01 08:01:42.357 W/BatteryNotifier(  651): batterystats service unavailable!
+01-01 08:01:42.360 W/hwservicemanager(  470): getTransport: Cannot find entry android.hardware.audio@4.0::IDevicesFactory/default in either framework or device manifest.
+01-01 08:01:42.372 I/ConfigStore(  658): android::hardware::configstore::V1_0::ISurfaceFlingerConfigs::hasWideColorDisplay retrieved: 0
+01-01 08:01:42.372 I/ConfigStore(  658): android::hardware::configstore::V1_0::ISurfaceFlingerConfigs::hasHDRDisplay retrieved: 0
+01-01 08:01:42.375 I/ServiceManagement(  651): getService: Trying again for android.hardware.audio@2.0::IDevicesFactory/default...
+01-01 08:01:42.379 I/SurfaceFlinger(  658): EGL information:
+01-01 08:01:42.379 I/SurfaceFlinger(  658): vendor    : Android
+01-01 08:01:42.379 I/SurfaceFlinger(  658): version   : 1.4 Android META-EGL
+01-01 08:01:42.379 I/SurfaceFlinger(  658): extensions: EGL_KHR_get_all_proc_addresses EGL_ANDROID_presentation_time EGL_KHR_swap_buffers_with_damage EGL_ANDROID_get_native_client_buffer EGL_ANDROID_front_buffer_auto_refresh EGL_ANDROID_get_frame_timestamps EGL_EXT_surface_SMPTE2086_metadata EGL_EXT_surface_CTA861_3_metadata EGL_KHR_image EGL_KHR_image_base EGL_KHR_lock_surface EGL_KHR_gl_colorspace EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_gl_renderbuffer_image EGL_KHR_reusable_sync EGL_KHR_fence_sync EGL_KHR_create_context EGL_KHR_surfaceless_context EGL_EXT_create_context_robustness EGL_ANDROID_image_native_buffer EGL_KHR_wait_sync EGL_ANDROID_recordable EGL_KHR_partial_update EGL_EXT_pixel_format_float EGL_KHR_create_context_no_error EGL_KHR_mutable_render_buffer EGL_EXT_yuv_surface EGL_EXT_protected_content EGL_IMG_context_priority EGL_KHR_no_config_context 
+01-01 08:01:42.379 I/SurfaceFlinger(  658): Client API: OpenGL_ES
+01-01 08:01:42.379 I/SurfaceFlinger(  658): EGLSurface: 8-8-8-8, config=0x7aab588e00
+01-01 08:01:42.381 I/SurfaceFlinger(  658): OpenGL ES informations:
+01-01 08:01:42.381 I/SurfaceFlinger(  658): vendor    : Qualcomm
+01-01 08:01:42.381 I/SurfaceFlinger(  658): renderer  : Adreno (TM) 530
+01-01 08:01:42.381 I/SurfaceFlinger(  658): version   : OpenGL ES 3.2 V@269.0 (GIT@624c5bb, I109c45a694) (Date:05/10/18)
+01-01 08:01:42.381 I/SurfaceFlinger(  658): extensions: GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_EGL_sync GL_OES_vertex_half_float GL_OES_framebuffer_object GL_OES_rgb8_rgba8 GL_OES_compressed_ETC1_RGB8_texture GL_AMD_compressed_ATC_texture GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_OES_texture_compression_astc GL_OES_texture_npot GL_EXT_texture_filter_anisotropic GL_EXT_texture_format_BGRA8888 GL_OES_texture_3D GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_QCOM_alpha_test GL_OES_depth24 GL_OES_packed_depth_stencil GL_OES_depth_texture GL_OES_depth_texture_cube_map GL_EXT_sRGB GL_OES_texture_float GL_OES_texture_float_linear GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_EXT_texture_type_2_10_10_10_REV GL_EXT_texture_sRGB_decode GL_OES_element_index_uint GL_EXT_copy_image GL_EXT_geometry_shader GL_EXT_tessellation_shader GL_OES_texture_stencil8 GL_EXT_shader_io_blocks GL_OES_shader_image_atomic GL_OES_sample_variables GL_EXT_texture_border_clamp GL_EXT_multisampled_render_to_texture
+01-01 08:01:42.381 I/SurfaceFlinger(  658): GL_MAX_TEXTURE_SIZE = 16384
+01-01 08:01:42.381 I/SurfaceFlinger(  658): GL_MAX_VIEWPORT_DIMS = 16384
+01-01 08:01:42.387 D/vndksupport(  615): Loading /vendor/lib64/hw/android.hardware.graphics.mapper@2.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:42.389 D/vndksupport(  615): Loading /vendor/lib64/hw/gralloc.msm8996.so from current namespace instead of sphal namespace.
+01-01 08:01:42.392 D/SDM     (  615): HWCSession::RegisterCallback: Registering callback: Hotplug
+01-01 08:01:42.400 I/SDM     (  615): HWCDisplay::GetHdrCapabilities: HDR is not supported
+01-01 08:01:42.400 I/SDM     (  615): HWCDisplay::GetHdrCapabilities: HDR is not supported
+01-01 08:01:42.400 E/HWComposer(  658): getSupportedPerFrameMetadata: getSupportedPerFrameMetadata failed for display 0: Unsupported (8)
+01-01 08:01:42.406 D/vndksupport(  658): Loading /vendor/lib64/hw/android.hardware.graphics.mapper@2.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:42.409 D/vndksupport(  658): Loading /vendor/lib64/hw/gralloc.msm8996.so from current namespace instead of sphal namespace.
+01-01 08:01:42.415 I/Gralloc2(  658): Adding additional valid usage bits: 0x200000
+01-01 08:01:42.440 D/SDM     (  615): HWCSession::RegisterCallback: Registering callback: Refresh
+01-01 08:01:42.440 D/SDM     (  615): HWCSession::RegisterCallback: Registering callback: Vsync
+01-01 08:01:42.549 I/ServiceManagement(  628): Removing namespace from process name vendor.qti.hardware.factory@1.0-service to factory@1.0-service.
+01-01 08:01:42.551 I/vendor.qti.hardware.factory@1.0-impl(  628): Connected to server '/dev/socket/mmi' success, socket id=6
+01-01 08:01:42.552 I/vendor.qti.hardware.factory@1.0-impl(  628): send msg: moduld=[QMMI], cmd=1, subcmd=, msg_id=0, msg=, msg_size=0, result=0
+01-01 08:01:42.552 I/mmid    (  667): connect success for module=[QMMI], cmd=1, subcmd=, socdetFd=5
+01-01 08:01:42.552 I/mmid    (  667): Client connect success: set socket fd(5) to module:[QMMI]
+01-01 08:01:42.553 I/        (  628): Registration complete for vendor.qti.hardware.factory@1.0::IFactory/default.
+01-01 08:01:42.554 I/vendor.qti.hardware.factory@1.0-impl(  628): create msg waiting thread(thread id=543814595824) for factory hidl
+01-01 08:01:42.554 I/vendor.qti.hardware.factory@1.0-impl(  628): create msg handle thread(thread id=543813555440) for factory hidl
+01-01 08:01:42.554 I/vendor.qti.hardware.factory@1.0-impl(  628): thread(msg_handle_thread) start for factory HIDL
+01-01 08:01:42.554 I/vendor.qti.hardware.factory@1.0-impl(  628): thread(msg_waiting_thread) start for factory HIDL
+01-01 08:01:42.619 E/Sensors (  708): sns_debug_main.c(283):Debug Config File missing in EFS!
+01-01 08:01:42.708 D/FingerGoodix(  732): Open device[/dev/goodix_fp] success. Handle = 5
+01-01 08:01:42.720 W/qti_sensors_hal(  620): addSensor : Not supported sensor with handle 25!
+01-01 08:01:42.721 E/qti_sensors_hal(  620): maglibSensor sensor name 1 
+01-01 08:01:42.721 E/qti_sensors_hal(  620): maglibSensor sensor name 2 mag
+01-01 08:01:42.729 W/qti_sensors_hal(  620): addSensor : Not supported sensor with handle 32!
+01-01 08:01:42.753 W/qti_sensors_hal(  620): steplib: handle:52
+01-01 08:01:42.757 W/qti_sensors_hal(  620): processResp: handle:52 msg_id:36 crsp_ptr 0x7c5a231640 0x7c5a231640
+01-01 08:01:42.757 W/qti_sensors_hal(  620): processResp: Received SNS_SAM_STEP_LIB_GET_ATTRIBUTES_RESP_V01
+01-01 08:01:42.757 W/qti_sensors_hal(  620): steplib: handle:52 exit
+01-01 08:01:42.758 W/qti_sensors_hal(  620): processResp exit
+01-01 08:01:42.780 W/qti_sensors_hal(  620): addSensor : Not supported sensor with handle 67!
+01-01 08:01:42.780 W/qti_sensors_hal(  620): addSensor : Not supported sensor with handle 71!
+01-01 08:01:42.792 W/qti_sensors_hal(  620): addSensor : Not supported sensor with handle 78!
+01-01 08:01:42.800 W/qti_sensors_hal(  620): steplib: handle:82
+01-01 08:01:42.800 E/qti_sensors_hal(  620): steplib no this handle 82
+01-01 08:01:42.804 W/qti_sensors_hal(  620): processResp: handle:82 msg_id:36 crsp_ptr 0x7c5a231880 0x7c5a231880
+01-01 08:01:42.804 W/qti_sensors_hal(  620): processResp: Received SNS_SAM_STEP_LIB_GET_ATTRIBUTES_RESP_V01
+01-01 08:01:42.804 W/qti_sensors_hal(  620): processResp exit
+01-01 08:01:42.805 W/qti_sensors_hal(  620): steplib: handle:82 exit
+01-01 08:01:42.814 W/qti_sensors_hal(  620): addSensor : Not supported sensor with handle 75!
+01-01 08:01:42.814 W/qti_sensors_hal(  620): addSensor : Not supported sensor with handle 87!
+01-01 08:01:42.814 W/qti_sensors_hal(  620): addSensor : Not supported sensor with handle 39!
+01-01 08:01:42.823 D/SurfaceFlinger(  658): shader cache generated - 24 shaders in 382.356873 ms
+01-01 08:01:42.827 E/libsensor1(  620): client_get_conn: qmi_client_get_service_list error -2
+01-01 08:01:42.827 E/libsensor1(  620): sensor1_write: Unable to create client connection
+01-01 08:01:42.827 W/qti_sensors_hal(  620): sendAlgoAttribReq: sensor1_write failed at SENSOR1_EBAD_SVC_ID, retrying...4
+01-01 08:01:42.827 D/SurfaceFlinger(  658): Set power mode=2, type=0 flinger=0x7aab458000
+01-01 08:01:42.827 I/SDM     (  615): DisplayBase::SetDisplayState: Set state = 1, display 0
+01-01 08:01:42.828 D/SurfaceFlinger(  658): Finished set power mode=2, type=0
+01-01 08:01:42.877 E/libsensor1(  620): client_get_conn: qmi_client_get_service_list error -2
+01-01 08:01:42.877 E/libsensor1(  620): sensor1_write: Unable to create client connection
+01-01 08:01:42.877 W/qti_sensors_hal(  620): sendAlgoAttribReq: sensor1_write failed at SENSOR1_EBAD_SVC_ID, retrying...3
+01-01 08:01:42.928 E/libsensor1(  620): client_get_conn: qmi_client_get_service_list error -2
+01-01 08:01:42.928 E/libsensor1(  620): sensor1_write: Unable to create client connection
+01-01 08:01:42.928 W/qti_sensors_hal(  620): sendAlgoAttribReq: sensor1_write failed at SENSOR1_EBAD_SVC_ID, retrying...2
+01-01 08:01:42.978 E/libsensor1(  620): client_get_conn: qmi_client_get_service_list error -2
+01-01 08:01:42.978 E/libsensor1(  620): sensor1_write: Unable to create client connection
+01-01 08:01:42.978 W/qti_sensors_hal(  620): sendAlgoAttribReq: sensor1_write failed at SENSOR1_EBAD_SVC_ID, retrying...1
+01-01 08:01:43.028 E/libsensor1(  620): client_get_conn: qmi_client_get_service_list error -2
+01-01 08:01:43.029 E/libsensor1(  620): sensor1_write: Unable to create client connection
+01-01 08:01:43.029 E/qti_sensors_hal(  620): sendAlgoAttribReq: sensor1_write() error: 12
+01-01 08:01:43.029 E/libsensor1(  620): client_get_conn: qmi_client_get_service_list error -2
+01-01 08:01:43.030 E/libsensor1(  620): sensor1_write: Unable to create client connection
+01-01 08:01:43.030 W/qti_sensors_hal(  620): sendAlgoAttribReq: sensor1_write failed at SENSOR1_EBAD_SVC_ID, retrying...4
+01-01 08:01:43.080 E/libsensor1(  620): client_get_conn: qmi_client_get_service_list error -2
+01-01 08:01:43.080 E/libsensor1(  620): sensor1_write: Unable to create client connection
+01-01 08:01:43.080 W/qti_sensors_hal(  620): sendAlgoAttribReq: sensor1_write failed at SENSOR1_EBAD_SVC_ID, retrying...3
+01-01 08:01:43.130 E/libsensor1(  620): client_get_conn: qmi_client_get_service_list error -2
+01-01 08:01:43.130 E/libsensor1(  620): sensor1_write: Unable to create client connection
+01-01 08:01:43.131 W/qti_sensors_hal(  620): sendAlgoAttribReq: sensor1_write failed at SENSOR1_EBAD_SVC_ID, retrying...2
+01-01 08:01:43.181 E/libsensor1(  620): client_get_conn: qmi_client_get_service_list error -2
+01-01 08:01:43.181 E/libsensor1(  620): sensor1_write: Unable to create client connection
+01-01 08:01:43.181 W/qti_sensors_hal(  620): sendAlgoAttribReq: sensor1_write failed at SENSOR1_EBAD_SVC_ID, retrying...1
+01-01 08:01:43.231 I/Atfwd_Daemon(  726): qmi_client_init_instance status retry : 1
+01-01 08:01:43.231 E/libsensor1(  620): client_get_conn: qmi_client_get_service_list error -2
+01-01 08:01:43.231 I/Atfwd_Daemon(  726): 
+01-01 08:01:43.231 I/Atfwd_Daemon(  726):  qmi_client_init_instance....
+01-01 08:01:43.231 E/libsensor1(  620): sensor1_write: Unable to create client connection
+01-01 08:01:43.232 E/qti_sensors_hal(  620): sendAlgoAttribReq: sensor1_write() error: 12
+01-01 08:01:43.232 W/qti_sensors_hal(  620): addSensor : Not supported sensor with handle 48!
+01-01 08:01:43.232 W/qti_sensors_hal(  620): addSensor : Not supported sensor with handle 49!
+01-01 08:01:43.236 I/Atfwd_Daemon(  726): qmi_client_init_instance status: -3, num_retries: 2, retryCnt: 1
+01-01 08:01:43.236 I/Atfwd_Daemon(  726): result : -3 	 ,Init step :1 	 ,qmiErrorCode: 0
+01-01 08:01:43.236 I/Atfwd_Daemon(  726): 
+01-01 08:01:43.236 I/Atfwd_Daemon(  726):  Sleeping...
+01-01 08:01:43.237 W/qti_sensors_hal(  620): addSensor : Not supported sensor with handle 53!
+01-01 08:01:43.237 E/libsensor1(  620): client_get_conn: qmi_client_get_service_list error -2
+01-01 08:01:43.237 E/libsensor1(  620): sensor1_write: Unable to create client connection
+01-01 08:01:43.237 W/qti_sensors_hal(  620): sendAlgoAttribReq: sensor1_write failed at SENSOR1_EBAD_SVC_ID, retrying...4
+01-01 08:01:43.288 E/libsensor1(  620): client_get_conn: qmi_client_get_service_list error -2
+01-01 08:01:43.288 E/libsensor1(  620): sensor1_write: Unable to create client connection
+01-01 08:01:43.288 W/qti_sensors_hal(  620): sendAlgoAttribReq: sensor1_write failed at SENSOR1_EBAD_SVC_ID, retrying...3
+01-01 08:01:43.338 E/libsensor1(  620): client_get_conn: qmi_client_get_service_list error -2
+01-01 08:01:43.338 E/libsensor1(  620): sensor1_write: Unable to create client connection
+01-01 08:01:43.338 W/qti_sensors_hal(  620): sendAlgoAttribReq: sensor1_write failed at SENSOR1_EBAD_SVC_ID, retrying...2
+01-01 08:01:43.373 D/vndksupport(  836): Loading /vendor/lib64/egl/libEGL_adreno.so from current namespace instead of sphal namespace.
+01-01 08:01:43.375 W/ServiceManagement(  651): Waited one second for android.hardware.audio@2.0::IDevicesFactory/default. Waiting another...
+01-01 08:01:43.375 D/libEGL  (  836): loaded /vendor/lib64/egl/libEGL_adreno.so
+01-01 08:01:43.383 D/vndksupport(  836): Loading /vendor/lib64/egl/libGLESv1_CM_adreno.so from current namespace instead of sphal namespace.
+01-01 08:01:43.384 D/libEGL  (  836): loaded /vendor/lib64/egl/libGLESv1_CM_adreno.so
+01-01 08:01:43.389 E/libsensor1(  620): client_get_conn: qmi_client_get_service_list error -2
+01-01 08:01:43.389 E/libsensor1(  620): sensor1_write: Unable to create client connection
+01-01 08:01:43.389 W/qti_sensors_hal(  620): sendAlgoAttribReq: sensor1_write failed at SENSOR1_EBAD_SVC_ID, retrying...1
+01-01 08:01:43.439 E/libsensor1(  620): client_get_conn: qmi_client_get_service_list error -2
+01-01 08:01:43.439 E/libsensor1(  620): sensor1_write: Unable to create client connection
+01-01 08:01:43.439 E/qti_sensors_hal(  620): sendAlgoAttribReq: sensor1_write() error: 12
+01-01 08:01:43.444 W/qti_sensors_hal(  620): addSensor : Not supported sensor with handle 68!
+01-01 08:01:43.455 E/qti_sensors_hal(  620): maglibSensor sensor name 1 AK09911-
+01-01 08:01:43.455 E/qti_sensors_hal(  620): maglibSensor sensor name 2 AK09911-uncal_mag
+01-01 08:01:43.463 I/        (  620): Loaded library from sensors.ssc.so
+01-01 08:01:43.464 W/        (  620): dlerror(): dlopen failed: library "qfp.wakeup.so" not found
+01-01 08:01:43.465 E//vendor/bin/hw/android.hardware.sensors@1.0-service(  620): HAL specifies version 1.4, but does not implement set_operation_mode()
+01-01 08:01:43.466 I/ServiceManagement(  620): Removing namespace from process name android.hardware.sensors@1.0-service to sensors@1.0-service.
+01-01 08:01:43.474 I/android.hardware.sensors@1.0-service(  620): Registration complete for android.hardware.sensors@1.0::ISensors/default.
+01-01 08:01:43.657 D/vndksupport(  836): Loading /vendor/lib64/egl/libGLESv2_adreno.so from current namespace instead of sphal namespace.
+01-01 08:01:43.667 D/libEGL  (  836): loaded /vendor/lib64/egl/libGLESv2_adreno.so
+01-01 08:01:43.689 I/goodix_fpd(  732): type=1400 audit(0.0:137): avc: denied { write } for name="qseecom" dev="tmpfs" ino=361 scontext=u:r:init:s0 tcontext=u:object_r:tee_device:s0 tclass=chr_file permissive=1
+01-01 08:01:43.699 W/goodix_fpd(  732): type=1400 audit(0.0:138): avc: granted { read open } for path="/dev/qseecom" dev="tmpfs" ino=361 scontext=u:r:init:s0 tcontext=u:object_r:tee_device:s0 tclass=chr_file
+01-01 08:01:43.699 I/goodix_fpd(  732): type=1400 audit(0.0:139): avc: denied { ioctl } for path="/dev/qseecom" dev="tmpfs" ino=361 ioctlcmd=970a scontext=u:r:init:s0 tcontext=u:object_r:tee_device:s0 tclass=chr_file permissive=1
+01-01 08:01:43.699 W/goodix_fpd(  732): type=1400 audit(0.0:140): avc: granted { read } for name="qseecom" dev="tmpfs" ino=361 scontext=u:r:init:s0 tcontext=u:object_r:tee_device:s0 tclass=chr_file
+01-01 08:01:43.699 W/goodix_fpd(  732): type=1400 audit(0.0:141): avc: granted { read open } for path="/dev/qseecom" dev="tmpfs" ino=361 scontext=u:r:init:s0 tcontext=u:object_r:tee_device:s0 tclass=chr_file
+01-01 08:01:43.700 I/Adreno  (  836): QUALCOMM build                   : 624c5bb, I109c45a694
+01-01 08:01:43.700 I/Adreno  (  836): Build Date                       : 05/10/18
+01-01 08:01:43.700 I/Adreno  (  836): OpenGL ES Shader Compiler Version: EV031.22.00.01_06
+01-01 08:01:43.700 I/Adreno  (  836): Local Branch                     : mybranch32982249
+01-01 08:01:43.700 I/Adreno  (  836): Remote Branch                    : quic/gfx-adreno.lnx.1.0.r36-rel
+01-01 08:01:43.700 I/Adreno  (  836): Remote Branch                    : NONE
+01-01 08:01:43.700 I/Adreno  (  836): Reconstruct Branch               : NOTHING
+01-01 08:01:43.701 D/vndksupport(  836): Loading /vendor/lib64/hw/gralloc.msm8996.so from current namespace instead of sphal namespace.
+01-01 08:01:43.705 I/Adreno  (  836): PFP: 0x005ff087, ME: 0x005ff063
+01-01 08:01:43.708 D/FingerGoodix(  732): gx_ta_start
+01-01 08:01:43.708 D/FingerGoodix(  732): QSEECom_start_app gf5116 with path /system/etc/firmware
+01-01 08:01:43.708 D/QSEECOMAPI(  732): QSEECom_get_handle sb_length = 0x1000
+01-01 08:01:43.708 D/QSEECOMAPI(  732): App is not loaded in QSEE
+01-01 08:01:43.709 E/QSEECOMAPI(  732): Error::Cannot open the file /system/etc/firmware/gf5116.mdt errno = 2
+01-01 08:01:43.709 E/QSEECOMAPI(  732): Error::Loading image failed with ret = -1
+01-01 08:01:43.709 D/FingerGoodix(  732): Loading gf5116 failed: ret=-1, errno=2.
+01-01 08:01:43.709 D/FingerGoodix(  732): QSEECom_start_app gf5116 with path /vendor/firmware
+01-01 08:01:43.709 D/QSEECOMAPI(  732): QSEECom_get_handle sb_length = 0x1000
+01-01 08:01:43.709 D/QSEECOMAPI(  732): App is not loaded in QSEE
+01-01 08:01:43.712 D/QSEECOMAPI(  732): app_arch = 1, total_files = 8
+01-01 08:01:43.713 I/ConfigStore(  836): android::hardware::configstore::V1_0::ISurfaceFlingerConfigs::hasWideColorDisplay retrieved: 0
+01-01 08:01:43.714 I/ConfigStore(  836): android::hardware::configstore::V1_0::ISurfaceFlingerConfigs::hasHDRDisplay retrieved: 0
+01-01 08:01:43.729 D/PerMgrSrv(  647): modem new state: is on-line
+01-01 08:01:43.825 I/rmt_storage(  643): rmt_storage_connect_cb: clnt_h=0x1 conn_h=0x7788a2c020
+01-01 08:01:43.826 I/rmt_storage(  643): rmt_storage_open_cb: /boot/modem_fs1: req_h=0x1 msg_id=1: Client found
+01-01 08:01:43.826 I/rmt_storage(  643): rmt_storage_open_cb: /boot/modem_fs1: req_h=0x1 msg_id=1: Send response: res=0 err=0
+01-01 08:01:43.826 I/rmt_storage(  643): rmt_storage_client_thread: /boot/modem_fs1: Worker thread started
+01-01 08:01:43.826 I/rmt_storage(  643): wake lock name: rmt_storage_513391195376, name creation success: 24
+01-01 08:01:43.827 I/rmt_storage(  643): rmt_storage_disconnect_cb: clnt_h=0x1 conn_h=0x7788a2c020
+01-01 08:01:43.828 I/rmt_storage(  643): rmt_storage_connect_cb: clnt_h=0x2 conn_h=0x7788a2c020
+01-01 08:01:43.828 I/rmt_storage(  643): rmt_storage_open_cb: /boot/modem_fs2: req_h=0x2 msg_id=1: Client found
+01-01 08:01:43.828 I/rmt_storage(  643): rmt_storage_open_cb: /boot/modem_fs2: req_h=0x2 msg_id=1: Send response: res=0 err=0
+01-01 08:01:43.828 I/rmt_storage(  643): rmt_storage_client_thread: /boot/modem_fs2: Worker thread started
+01-01 08:01:43.828 I/rmt_storage(  643): wake lock name: rmt_storage_513390154992, name creation success: 24
+01-01 08:01:43.829 I/rmt_storage(  643): rmt_storage_disconnect_cb: clnt_h=0x2 conn_h=0x7788a2c020
+01-01 08:01:43.829 I/rmt_storage(  643): rmt_storage_connect_cb: clnt_h=0x3 conn_h=0x7788a2c020
+01-01 08:01:43.829 I/rmt_storage(  643): rmt_storage_open_cb: /boot/modem_fsg: req_h=0x3 msg_id=1: Client found
+01-01 08:01:43.829 I/rmt_storage(  643): rmt_storage_open_cb: /boot/modem_fsg: req_h=0x3 msg_id=1: Send response: res=0 err=0
+01-01 08:01:43.829 I/rmt_storage(  643): rmt_storage_client_thread: /boot/modem_fsg: Worker thread started
+01-01 08:01:43.829 I/rmt_storage(  643): wake lock name: rmt_storage_513389114608, name creation success: 24
+01-01 08:01:43.830 I/rmt_storage(  643): rmt_storage_disconnect_cb: clnt_h=0x3 conn_h=0x7788a2c020
+01-01 08:01:43.831 I/rmt_storage(  643): rmt_storage_connect_cb: clnt_h=0x4 conn_h=0x7788a2c020
+01-01 08:01:43.831 I/rmt_storage(  643): rmt_storage_open_cb: /boot/modem_fsc: req_h=0x4 msg_id=1: Client found
+01-01 08:01:43.831 I/rmt_storage(  643): rmt_storage_open_cb: /boot/modem_fsc: req_h=0x4 msg_id=1: Send response: res=0 err=0
+01-01 08:01:43.832 I/rmt_storage(  643): rmt_storage_client_thread: /boot/modem_fsc: Worker thread started
+01-01 08:01:43.832 I/rmt_storage(  643): wake lock name: rmt_storage_513388074224, name creation success: 24
+01-01 08:01:43.832 I/rmt_storage(  643): rmt_storage_disconnect_cb: clnt_h=0x4 conn_h=0x7788a2c020
+01-01 08:01:43.833 I/rmt_storage(  643): rmt_storage_connect_cb: clnt_h=0x5 conn_h=0x7788a2c020
+01-01 08:01:43.833 I/rmt_storage(  643): rmt_storage_alloc_buff_cb: /boot/modem_fs1: req_h=0x5 msg_id=4: Alloc request received: Size: 0
+01-01 08:01:43.833 I/rmt_storage(  643): rmt_storage_alloc_buff_cb: /boot/modem_fs1: req_h=0x5 msg_id=4: New client making a dummy request with buffer req size 0
+01-01 08:01:43.833 I/rmt_storage(  643): rmt_storage_alloc_buff_cb: /boot/modem_fs1: req_h=0x5 msg_id=4: Send response: res=0 err=0
+01-01 08:01:43.834 I/rmt_storage(  643): rmt_storage_disconnect_cb: clnt_h=0x5 conn_h=0x7788a2c020
+01-01 08:01:43.835 I/rmt_storage(  643): rmt_storage_connect_cb: clnt_h=0x6 conn_h=0x7788a2c020
+01-01 08:01:43.835 I/rmt_storage(  643): rmt_storage_rw_iovec_cb: /boot/modem_fs1: req_h=0x6 msg_id=3: R/W request received
+01-01 08:01:43.835 I/rmt_storage(  643): wakelock acquired: 1, error no: 42
+01-01 08:01:43.835 I/rmt_storage(  643): rmt_storage_client_thread: /boot/modem_fs1: Unblock worker thread (th_id: 513391195376)
+01-01 08:01:43.836 I/rmt_storage(  643): rmt_storage_client_thread: /boot/modem_fs1: req_h=0x6 msg_id=3: Bytes read = 512
+01-01 08:01:43.836 I/rmt_storage(  643): rmt_storage_client_thread: /boot/modem_fs1: req_h=0x6 msg_id=3: Send response: res=0 err=0
+01-01 08:01:43.836 I/rmt_storage(  643): rmt_storage_client_thread: /boot/modem_fs1: About to block rmt_storage client thread (th_id: 513391195376) wakelock released: 1, error no: 0
+01-01 08:01:43.836 I/rmt_storage(  643): 
+01-01 08:01:43.837 I/rmt_storage(  643): rmt_storage_connect_cb: clnt_h=0x7 conn_h=0x7788a2c030
+01-01 08:01:43.837 I/rmt_storage(  643): rmt_storage_rw_iovec_cb: /boot/modem_fs2: req_h=0x7 msg_id=3: R/W request received
+01-01 08:01:43.837 I/rmt_storage(  643): wakelock acquired: 1, error no: 42
+01-01 08:01:43.837 I/rmt_storage(  643): rmt_storage_disconnect_cb: clnt_h=0x6 conn_h=0x7788a2c020
+01-01 08:01:43.837 I/rmt_storage(  643): rmt_storage_client_thread: /boot/modem_fs2: Unblock worker thread (th_id: 513390154992)
+01-01 08:01:43.838 I/rmt_storage(  643): rmt_storage_client_thread: /boot/modem_fs2: req_h=0x7 msg_id=3: Bytes read = 512
+01-01 08:01:43.838 I/rmt_storage(  643): rmt_storage_client_thread: /boot/modem_fs2: req_h=0x7 msg_id=3: Send response: res=0 err=0
+01-01 08:01:43.838 I/rmt_storage(  643): rmt_storage_client_thread: /boot/modem_fs2: About to block rmt_storage client thread (th_id: 513390154992) wakelock released: 1, error no: 0
+01-01 08:01:43.838 I/rmt_storage(  643): 
+01-01 08:01:43.839 I/rmt_storage(  643): rmt_storage_disconnect_cb: clnt_h=0x7 conn_h=0x7788a2c030
+01-01 08:01:43.841 I/rmt_storage(  643): rmt_storage_connect_cb: clnt_h=0x8 conn_h=0x7788a2c030
+01-01 08:01:43.841 I/rmt_storage(  643): rmt_storage_rw_iovec_cb: /boot/modem_fs1: req_h=0x8 msg_id=3: R/W request received
+01-01 08:01:43.841 I/rmt_storage(  643): wakelock acquired: 1, error no: 42
+01-01 08:01:43.841 I/rmt_storage(  643): rmt_storage_client_thread: /boot/modem_fs1: Unblock worker thread (th_id: 513391195376)
+01-01 08:01:43.860 I/rmt_storage(  643): rmt_storage_client_thread: /boot/modem_fs1: req_h=0x8 msg_id=3: Bytes read = 2096128
+01-01 08:01:43.860 I/rmt_storage(  643): rmt_storage_client_thread: /boot/modem_fs1: req_h=0x8 msg_id=3: Send response: res=0 err=0
+01-01 08:01:43.860 I/rmt_storage(  643): rmt_storage_client_thread: /boot/modem_fs1: About to block rmt_storage client thread (th_id: 513391195376) wakelock released: 1, error no: 0
+01-01 08:01:43.860 I/rmt_storage(  643): 
+01-01 08:01:43.861 I/rmt_storage(  643): rmt_storage_disconnect_cb: clnt_h=0x8 conn_h=0x7788a2c030
+01-01 08:01:43.867 D/BootAnimation(  836): BootAnimationShownTiming start time: 9568ms
+01-01 08:01:43.902 D/vndksupport(  836): Loading /vendor/lib64/hw/android.hardware.graphics.mapper@2.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:43.904 D/vndksupport(  836): Loading /vendor/lib64/hw/gralloc.msm8996.so from current namespace instead of sphal namespace.
+01-01 08:01:43.986 I/tftp_server(  645): pid=645 tid=645 tftp-server : INF :[tftp_server.c, 524] rcvd request [1] [73] [2] [0] [20]
+01-01 08:01:43.986 I/tftp_server(  645): pid=645 tid=881 tftp-server : INF :[tftp_server_utils.c, 113] file [readwrite/server_check.txt] : [/vendor/rfs/msm/mpss/readwrite/server_check.txt]
+01-01 08:01:43.987 I/tftp_server(  645): pid=645 tid=881 tftp-server : INF :[tftp_server.c, 1044] OACK options : [7680, 1500, 10, 0, 0, 0, 0, 0]
+01-01 08:01:43.987 I/tftp_server(  645): pid=645 tid=881 tftp-server : INF :[tftp_server.c, 722] Using temp file[/vendor/rfs/msm/mpss/readwrite/server_check.txt.rfs_tmp] for atomic put
+01-01 08:01:43.987 I/tftp_server(  645): pid=645 tid=881 tftp-server : INF :[tftp_os_la.c, 59] open : [-1] [-1] [384] [577] [/vendor/rfs/msm/mpss/readwrite/server_check.txt.rfs_tmp]
+01-01 08:01:43.987 E/tftp_server(  645): pid=645 tid=881 tftp-server : ERR :[tftp_os_la.c, 65] open failed: [2] [No such file or directory]
+01-01 08:01:43.987 I/tftp_server(  645): pid=645 tid=881 tftp-server : INF :[tftp_os_la.c, 121] mkdir failed: [2] [/vendor/rfs/msm/mpss/readwrite] [No such file or directory]
+01-01 08:01:43.987 I/tftp_server(  645): pid=645 tid=881 tftp-server : INF :[tftp_os_la.c, 121] mkdir failed: [2] [/vendor/rfs/msm/mpss] [No such file or directory]
+01-01 08:01:43.988 I/tftp_server(  645): pid=645 tid=881 tftp-server : INF :[tftp_os_la.c, 121] mkdir failed: [2] [/vendor/rfs/msm] [No such file or directory]
+01-01 08:01:43.988 I/tftp_server(  645): pid=645 tid=881 tftp-server : INF :[tftp_os_la.c, 121] mkdir failed: [30] [/vendor/rfs] [Read-only file system]
+01-01 08:01:43.988 E/tftp_server(  645): pid=645 tid=881 tftp-server : ERR :[tftp_server.c, 653] Retry auto dir after attempting to create data dirs
+01-01 08:01:43.989 I/tftp_server(  645): pid=645 tid=881 tftp-server : INF :[tftp_os_la.c, 121] mkdir failed: [2] [/vendor/rfs/msm/mpss/readwrite] [No such file or directory]
+01-01 08:01:43.989 I/tftp_server(  645): pid=645 tid=881 tftp-server : INF :[tftp_os_la.c, 121] mkdir failed: [2] [/vendor/rfs/msm/mpss] [No such file or directory]
+01-01 08:01:43.989 I/tftp_server(  645): pid=645 tid=881 tftp-server : INF :[tftp_os_la.c, 121] mkdir failed: [2] [/vendor/rfs/msm] [No such file or directory]
+01-01 08:01:43.989 I/tftp_server(  645): pid=645 tid=881 tftp-server : INF :[tftp_os_la.c, 121] mkdir failed: [30] [/vendor/rfs] [Read-only file system]
+01-01 08:01:43.989 E/tftp_server(  645): pid=645 tid=881 tftp-server : ERR :[tftp_server.c, 1519] open failed : [-30] [Unknown error -30]
+01-01 08:01:43.989 E/tftp_server(  645): pid=645 tid=881 tftp-server : ERR :[tftp_protocol.c, 1146] sending error-pkt. Code = 0, Msg = Err=30 String=Read-only file system
+01-01 08:01:44.000 I/SurfaceFlinger(  658): Enter boot animation
+01-01 08:01:44.002 D/qdutils (  615): DEBUG_CALC_FPS: 0
+01-01 08:01:44.002 D/qdutils (  615): period: 10
+01-01 08:01:44.002 D/qdutils (  615): ignorethresh_us: 500000
+01-01 08:01:44.031 D/QSEECOMAPI(  732): Loaded image: APP id = 131074
+01-01 08:01:44.033 D/FingerGoodix(  732): Loading gf5116 Succeed.
+01-01 08:01:44.034 D/FingerGoodix(  732): keymaster_ta_start
+01-01 08:01:44.034 D/QSEECOMAPI(  732): QSEECom_get_handle sb_length = 0x1000
+01-01 08:01:44.034 D/QSEECOMAPI(  732): App is already loaded QSEE and app id = 65537
+01-01 08:01:44.035 D/FingerGoodix(  732): Loading keymaster: ret=0, errno=17.
+01-01 08:01:44.035 D/FingerGoodix(  732): km handle=0x7c13a283f0
+01-01 08:01:44.035 D/FingerGoodix(  732): send cmd length 8 align length :64  origin 8
+01-01 08:01:44.039 D/FingerGoodix(  732): km get key ret:0, token_rsp:0x7ff8d90988, rsp.status:0x0, rsp.offset:12, rsp.len:152
+01-01 08:01:44.039 D/FingerGoodix(  732): get key success.
+01-01 08:01:44.039 D/FingerGoodix(  732): Ta start success.
+01-01 08:01:44.039 D/FingerGoodix(  732): OpenSession : 0!
+01-01 08:01:44.039 D/FingerGoodix(  732): gf_power_on
+01-01 08:01:44.039 D/FingerGoodix(  732): gf_hw_reset 5 ms!!
+01-01 08:01:44.053 D/FingerGoodix(  732): fnCa_Init check spi.
+01-01 08:01:44.059 D/FingerGoodix(  732): enable device.
+01-01 08:01:44.060 D/FingerGoodix(  732): enable device.
+01-01 08:01:44.060 D/FingerGoodix(  732): gf_hw_reset 70 ms!!
+01-01 08:01:44.136 D/FingerGoodix(  732): sig handle, signo:29, sem_value:0
+01-01 08:01:44.207 I/rmt_storage(  643): rmt_storage_connect_cb: clnt_h=0x9 conn_h=0x7788a2c030
+01-01 08:01:44.207 I/rmt_storage(  643): rmt_storage_rw_iovec_cb: /boot/modem_fs2: req_h=0x9 msg_id=3: R/W request received
+01-01 08:01:44.207 I/rmt_storage(  643): wakelock acquired: 1, error no: 42
+01-01 08:01:44.207 I/rmt_storage(  643): rmt_storage_client_thread: /boot/modem_fs2: Unblock worker thread (th_id: 513390154992)
+01-01 08:01:44.239 I/rmt_storage(  643): rmt_storage_client_thread: /boot/modem_fs2: req_h=0x9 msg_id=3: Bytes written = 2097152
+01-01 08:01:44.239 I/rmt_storage(  643): rmt_storage_client_thread: /boot/modem_fs2: req_h=0x9 msg_id=3: Send response: res=0 err=0
+01-01 08:01:44.240 I/rmt_storage(  643): rmt_storage_client_thread: /boot/modem_fs2: About to block rmt_storage client thread (th_id: 513390154992) wakelock released: 1, error no: 0
+01-01 08:01:44.240 I/rmt_storage(  643): 
+01-01 08:01:44.241 I/rmt_storage(  643): rmt_storage_disconnect_cb: clnt_h=0x9 conn_h=0x7788a2c030
+01-01 08:01:44.246 D/FingerGoodix(  732): fnCa_DownloadCFG OK
+01-01 08:01:44.246 D/FingerGoodix(  732): clear g_state, enable
+01-01 08:01:44.246 D/FingerGoodix(  732): create loop_thread
+01-01 08:01:44.246 D/FingerGoodix(  732): fnCa_Init check spi.
+01-01 08:01:44.247 D/FingerGoodix(  732): fnCa_NavGetStatus
+01-01 08:01:44.254 D/FingerGoodix(  732): fingerprint device enable
+01-01 08:01:44.254 D/FingerGoodix(  732): fingerprint performance create fail can not get lib
+01-01 08:01:44.254 D/FingerGoodix(  732): Wrong fp version. Expected 513, got 256
+01-01 08:01:44.254 D/FingerGoodix(  732): fingerprint set notify function.
+01-01 08:01:44.254 D/FingerGoodix(  732): fingerprint SetSafeClass: 0x2
+01-01 08:01:44.259 D/FingerGoodix(  732): handle check: status = 0x0, lbstatus:0x0 0x0
+01-01 08:01:44.260 D/FingerGoodix(  732): FpService SetSafeClass return:0x00000000
+01-01 08:01:44.260 D/FingerGoodix(  732): fingerprint get version.
+01-01 08:01:44.260 D/FingerGoodix(  732): fnCa_GetVersion
+01-01 08:01:44.270 D/FingerGoodix(  732): Ta version: 1.0.9 Nov  7 2018 15:28:31
+01-01 08:01:44.270 D/FingerGoodix(  732): Firmware version: GFx16M_1.05.14
+01-01 08:01:44.271 D/FingerGoodix(  732): Algorithm version: Milan_v_2.07.14
+01-01 08:01:44.271 E/FingerGoodix(  732): Service version:1.0.3Ta version:1.0.9 Nov  7 2018 15:28:31,Firmware version:GFx16M_1.05.14,Algorithm version:Milan_v_2.07.14.
+01-01 08:01:44.271 D/FingerGoodix(  732): fnCa_preprossor_init
+01-01 08:01:44.373 D/FingerGoodix(  732): sig handle, signo:29, sem_value:0
+01-01 08:01:44.373 D/FingerGoodix(  732): fnCa_preprossor_init: ret: 192 teeRet: 0
+01-01 08:01:44.373 D/FingerGoodix(  732): preprocessor init ret = 0
+01-01 08:01:44.373 D/FingerGoodix(  732): fnCa_NavGetStatus
+01-01 08:01:44.373 D/FingerGoodix(  732): mCurStatus = 0 , nextStatus = 1
+01-01 08:01:44.373 D/FingerGoodix(  732): getServiceStatus: service_status: 1
+01-01 08:01:44.373 D/FingerGoodix(  732): FingerPrintDaemon: value: 1
+01-01 08:01:44.374 D/FingerGoodix(  732): create RawDataProcessLoop!
+01-01 08:01:44.374 D/FingerGoodix(  732): RawDataProcessLoop waiting signal, default_mode: 1
+01-01 08:01:44.374 D/FingerGoodix(  732): setChipMode = 1 
+01-01 08:01:44.374 D/FingerGoodix(  732): fingerprint set mode. mode = 0x1
+01-01 08:01:44.374 D/FingerGoodix(  732):  Set mode:1, g_mode:0
+01-01 08:01:44.374 D/FingerGoodix(  732): before fnCa_SetMode(1), g_mode=0
+01-01 08:01:44.374 D/FingerGoodix(  732): fnCa_SetMode:1.
+01-01 08:01:44.375 E/SELinux (  471): avc:  denied  { add } for service=goodix.fp pid=732 uid=1000 scontext=u:r:init:s0 tcontext=u:object_r:default_android_vndservice:s0 tclass=service_manager permissive=1
+01-01 08:01:44.376 W/ServiceManagement(  651): Waited one second for android.hardware.audio@2.0::IDevicesFactory/default. Waiting another...
+01-01 08:01:44.380 D/FingerGoodix(  732): handle check: status = 0x0, lbstatus:0x0 0x0
+01-01 08:01:44.384 D/FingerGoodix(  732): gf_send_g_mode,1
+01-01 08:01:44.384 D/FingerGoodix(  732): after fnCa_SetMode(1), g_mode=1
+01-01 08:01:44.384 D/FingerGoodix(  732): Already in speed. [960000]
+01-01 08:01:44.849 D/vndksupport(  901): Loading /vendor/lib64/hw/android.hardware.keymaster@3.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:44.850 E/ServiceManagement(  901): Failed to dlopen android.hardware.keymaster@3.0-impl.so: dlopen failed: library "libkeymaster_staging.so" not found
+01-01 08:01:44.851 E/android.hardware.keymaster@3.0-service(  901): Could not get passthrough implementation for android.hardware.keymaster@3.0::IKeymasterDevice/default.
+01-01 08:01:45.376 W/ServiceManagement(  651): Waited one second for android.hardware.audio@2.0::IDevicesFactory/default. Waiting another...
+01-01 08:01:46.004 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  903): libminijail[903]: allowing syscall: connect
+01-01 08:01:46.004 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  903): libminijail[903]: allowing syscall: fcntl
+01-01 08:01:46.004 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  903): libminijail[903]: allowing syscall: sendto
+01-01 08:01:46.004 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  903): libminijail[903]: allowing syscall: socket
+01-01 08:01:46.004 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  903): libminijail[903]: allowing syscall: writev
+01-01 08:01:46.005 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  903): libminijail[903]: logging seccomp filter failures
+01-01 08:01:46.007 I/ServiceManagement(  903): Removing namespace from process name android.hardware.configstore@1.0-service to configstore@1.0-service.
+01-01 08:01:46.007 E//vendor/bin/hw/android.hardware.configstore@1.0-service(  903): libminijail[903]: blocked syscall: getdents64
+01-01 08:01:46.017 I/android.hardware.camera.provider@2.4-service(  902): Camera provider Service is starting.
+01-01 08:01:46.021 D/vndksupport(  902): Loading /vendor/lib/hw/vendor.vivo.hardware.camera.provider@1.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:46.022 E/ServiceManagement(  902): Failed to dlopen vendor.vivo.hardware.camera.provider@1.0-impl.so: dlopen failed: library "vendor.vivo.hardware.camera.vif@1.0-impl.so" not found
+01-01 08:01:46.022 E/android.hardware.camera.provider@2.4-service(  902): Could not get passthrough implementation for vendor.vivo.hardware.camera.provider@1.0::IVivoCameraProvider/default.
+01-01 08:01:46.022 D/android.hardware.camera.provider@2.4-service(  902): register IVivoCameraProvider status:1,ok:0
+01-01 08:01:46.024 D/vndksupport(  902): Loading /vendor/lib/hw/android.hardware.camera.provider@2.4-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:46.039 D/vndksupport(  902): Loading /vendor/lib/hw/camera.msm8996.so from current namespace instead of sphal namespace.
+01-01 08:01:46.058 E/HAL     (  902): load: module=/vendor/lib/hw/camera.msm8996.so
+01-01 08:01:46.058 E/HAL     (  902): dlopen failed: library "vendor.vivo.hardware.camera.vif@1.0-impl.so" not found
+01-01 08:01:46.058 E/CamProvider@2.4-impl(  902): Could not load camera HAL module: -22 (Invalid argument)
+01-01 08:01:46.058 E/CamProvider@2.4-impl(  902): HIDL_FETCH_ICameraProvider: camera provider init failed!
+01-01 08:01:46.060 E/android.hardware.camera.provider@2.4-service(  902): Could not get passthrough implementation for android.hardware.camera.provider@2.4::ICameraProvider/legacy/0.
+01-01 08:01:46.085 F/linker  (  904): CANNOT LINK EXECUTABLE "/vendor/bin/hw/android.hardware.wifi@1.0-service": cannot locate symbol "_ZN7android8hardware4wifi4V1_08toStringERKNS_2spINS2_22IWifiChipEventCallbackEEE" referenced by "/system/vendor/bin/hw/android.hardware.wifi@1.0-service"...
+01-01 08:01:46.105 F/linker  (  905): CANNOT LINK EXECUTABLE "/vendor/bin/hw/vendor.qti.gnss@1.0-service": cannot locate symbol "_ZN7android8hardware4gnss4V1_08toStringINS2_15IGnssNiCallback17GnssNiNotifyFlagsEEENSt3__112basic_stringIcNS6_11char_traitsIcEENS6_9allocatorIcEEEEj" referenced by "/system/vendor/lib64/vendor.qti.gnss@1.0_vendor.so"...
+01-01 08:01:46.376 W/ServiceManagement(  651): Waited one second for android.hardware.audio@2.0::IDevicesFactory/default. Waiting another...
+01-01 08:01:47.377 W/ServiceManagement(  651): Waited one second for android.hardware.audio@2.0::IDevicesFactory/default. Waiting another...
+01-01 08:01:48.237 I/Atfwd_Daemon(  726): 
+01-01 08:01:48.237 I/Atfwd_Daemon(  726):  Out of sleep...
+01-01 08:01:48.237 I/Atfwd_Daemon(  726): 
+01-01 08:01:48.237 I/Atfwd_Daemon(  726): 
+01-01 08:01:48.237 I/Atfwd_Daemon(  726):  TrtyInit: retryCnt: 2
+01-01 08:01:48.377 W/ServiceManagement(  651): Waited one second for android.hardware.audio@2.0::IDevicesFactory/default. Waiting another...
+01-01 08:01:49.237 I/Atfwd_Daemon(  726): qmi_client_init_instance status retry : 2
+01-01 08:01:49.237 I/Atfwd_Daemon(  726): 
+01-01 08:01:49.237 I/Atfwd_Daemon(  726):  qmi_client_init_instance....
+01-01 08:01:49.237 I/Atfwd_Daemon(  726): qmi_client_init_instance status: 0, num_retries: 3, retryCnt: 2
+01-01 08:01:49.237 I/Atfwd_Daemon(  726): qmi_client_register_error_cb status: 0
+01-01 08:01:49.237 I/Atfwd_Daemon(  726): result : 0 	 ,Init step :1 	 ,qmiErrorCode: 0
+01-01 08:01:49.237 I/Atfwd_Daemon(  726): 
+01-01 08:01:49.237 I/Atfwd_Daemon(  726):  Back to main.
+01-01 08:01:49.237 I/Atfwd_Daemon(  726):  tryinit complete with connectresult: 0
+01-01 08:01:49.237 I/Atfwd_Daemon(  726): 
+01-01 08:01:49.238 I/Atfwd_Daemon(  726): 
+01-01 08:01:49.238 I/Atfwd_Daemon(  726):  TrtyInit: retryCnt: 1
+01-01 08:01:49.238 I/Atfwd_Daemon(  726): Invalid type 2
+01-01 08:01:49.238 I/Atfwd_Daemon(  726):  tryinit complete with connectresult: 0
+01-01 08:01:49.238 I/Atfwd_Daemon(  726): Trying to register 8 commands:
+01-01 08:01:49.238 I/Atfwd_Daemon(  726): cmd0: +CKPD
+01-01 08:01:49.238 I/Atfwd_Daemon(  726): sending QMI_AT_REG_AT_CMD_FWD_REQ_V01 message
+01-01 08:01:49.240 I/Atfwd_Daemon(  726): cmd1: +CTSA
+01-01 08:01:49.240 I/Atfwd_Daemon(  726): sending QMI_AT_REG_AT_CMD_FWD_REQ_V01 message
+01-01 08:01:49.240 I/Atfwd_Daemon(  726): cmd2: +CFUN
+01-01 08:01:49.241 I/Atfwd_Daemon(  726): sending QMI_AT_REG_AT_CMD_FWD_REQ_V01 message
+01-01 08:01:49.241 I/Atfwd_Daemon(  726): cmd3: +CMAR
+01-01 08:01:49.241 I/Atfwd_Daemon(  726): sending QMI_AT_REG_AT_CMD_FWD_REQ_V01 message
+01-01 08:01:49.242 I/Atfwd_Daemon(  726): cmd4: +CDIS
+01-01 08:01:49.242 I/Atfwd_Daemon(  726): sending QMI_AT_REG_AT_CMD_FWD_REQ_V01 message
+01-01 08:01:49.243 I/Atfwd_Daemon(  726): cmd5: +CRSL
+01-01 08:01:49.243 I/Atfwd_Daemon(  726): sending QMI_AT_REG_AT_CMD_FWD_REQ_V01 message
+01-01 08:01:49.243 I/Atfwd_Daemon(  726): cmd6: +CSS
+01-01 08:01:49.243 I/Atfwd_Daemon(  726): sending QMI_AT_REG_AT_CMD_FWD_REQ_V01 message
+01-01 08:01:49.244 I/Atfwd_Daemon(  726): cmd7: $QCPWRDN
+01-01 08:01:49.244 I/Atfwd_Daemon(  726): sending QMI_AT_REG_AT_CMD_FWD_REQ_V01 message
+01-01 08:01:49.245 I/Atfwd_Daemon(  726): Registered AT Commands event handler
+01-01 08:01:49.245 I/Atfwd_Daemon(  726): Waiting for ctrCond
+01-01 08:01:49.378 W/ServiceManagement(  651): Waited one second for android.hardware.audio@2.0::IDevicesFactory/default. Waiting another...
+01-01 08:01:49.843 D/vndksupport(  907): Loading /vendor/lib64/hw/android.hardware.keymaster@3.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:49.844 E/ServiceManagement(  907): Failed to dlopen android.hardware.keymaster@3.0-impl.so: dlopen failed: library "libkeymaster_staging.so" not found
+01-01 08:01:49.844 E/android.hardware.keymaster@3.0-service(  907): Could not get passthrough implementation for android.hardware.keymaster@3.0::IKeymasterDevice/default.
+01-01 08:01:50.378 W/ServiceManagement(  651): Waited one second for android.hardware.audio@2.0::IDevicesFactory/default. Waiting another...
+01-01 08:01:50.977 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  909): libminijail[909]: allowing syscall: connect
+01-01 08:01:50.977 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  909): libminijail[909]: allowing syscall: fcntl
+01-01 08:01:50.977 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  909): libminijail[909]: allowing syscall: sendto
+01-01 08:01:50.977 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  909): libminijail[909]: allowing syscall: socket
+01-01 08:01:50.977 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  909): libminijail[909]: allowing syscall: writev
+01-01 08:01:50.977 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  909): libminijail[909]: logging seccomp filter failures
+01-01 08:01:50.978 I/ServiceManagement(  909): Removing namespace from process name android.hardware.configstore@1.0-service to configstore@1.0-service.
+01-01 08:01:50.978 E//vendor/bin/hw/android.hardware.configstore@1.0-service(  909): libminijail[909]: blocked syscall: getdents64
+01-01 08:01:50.986 I/android.hardware.camera.provider@2.4-service(  908): Camera provider Service is starting.
+01-01 08:01:50.988 D/vndksupport(  908): Loading /vendor/lib/hw/vendor.vivo.hardware.camera.provider@1.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:50.988 E/ServiceManagement(  908): Failed to dlopen vendor.vivo.hardware.camera.provider@1.0-impl.so: dlopen failed: library "vendor.vivo.hardware.camera.vif@1.0-impl.so" not found
+01-01 08:01:50.989 E/android.hardware.camera.provider@2.4-service(  908): Could not get passthrough implementation for vendor.vivo.hardware.camera.provider@1.0::IVivoCameraProvider/default.
+01-01 08:01:50.989 D/android.hardware.camera.provider@2.4-service(  908): register IVivoCameraProvider status:1,ok:0
+01-01 08:01:50.989 D/vndksupport(  908): Loading /vendor/lib/hw/android.hardware.camera.provider@2.4-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:50.998 D/vndksupport(  908): Loading /vendor/lib/hw/camera.msm8996.so from current namespace instead of sphal namespace.
+01-01 08:01:51.007 E/HAL     (  908): load: module=/vendor/lib/hw/camera.msm8996.so
+01-01 08:01:51.007 E/HAL     (  908): dlopen failed: library "vendor.vivo.hardware.camera.vif@1.0-impl.so" not found
+01-01 08:01:51.007 E/CamProvider@2.4-impl(  908): Could not load camera HAL module: -22 (Invalid argument)
+01-01 08:01:51.007 E/CamProvider@2.4-impl(  908): HIDL_FETCH_ICameraProvider: camera provider init failed!
+01-01 08:01:51.008 E/android.hardware.camera.provider@2.4-service(  908): Could not get passthrough implementation for android.hardware.camera.provider@2.4::ICameraProvider/legacy/0.
+01-01 08:01:51.079 F/linker  (  910): CANNOT LINK EXECUTABLE "/vendor/bin/hw/android.hardware.wifi@1.0-service": cannot locate symbol "_ZN7android8hardware4wifi4V1_08toStringERKNS_2spINS2_22IWifiChipEventCallbackEEE" referenced by "/system/vendor/bin/hw/android.hardware.wifi@1.0-service"...
+01-01 08:01:51.090 F/linker  (  911): CANNOT LINK EXECUTABLE "/vendor/bin/hw/vendor.qti.gnss@1.0-service": cannot locate symbol "_ZN7android8hardware4gnss4V1_08toStringINS2_15IGnssNiCallback17GnssNiNotifyFlagsEEENSt3__112basic_stringIcNS6_11char_traitsIcEENS6_9allocatorIcEEEEj" referenced by "/system/vendor/lib64/vendor.qti.gnss@1.0_vendor.so"...
+01-01 08:01:51.378 W/ServiceManagement(  651): Waited one second for android.hardware.audio@2.0::IDevicesFactory/default. Waiting another...
+01-01 08:01:52.378 W/ServiceManagement(  651): Waited one second for android.hardware.audio@2.0::IDevicesFactory/default. Waiting another...
+01-01 08:01:53.328 I/adbd    (  913): initializing functionfs
+01-01 08:01:53.328 I/adbd    (  913): opening control endpoint /dev/usb-ffs/adb/ep0
+01-01 08:01:53.359 I/adbd    (  913): functionfs successfully initialized
+01-01 08:01:53.359 I/adbd    (  913): registering usb transport
+01-01 08:01:53.378 W/ServiceManagement(  651): Waited one second for android.hardware.audio@2.0::IDevicesFactory/default. Waiting another...
+01-01 08:01:54.379 W/ServiceManagement(  651): Waited one second for android.hardware.audio@2.0::IDevicesFactory/default. Waiting another...
+01-01 08:01:54.845 D/vndksupport(  917): Loading /vendor/lib64/hw/android.hardware.keymaster@3.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:54.845 E/ServiceManagement(  917): Failed to dlopen android.hardware.keymaster@3.0-impl.so: dlopen failed: library "libkeymaster_staging.so" not found
+01-01 08:01:54.845 E/android.hardware.keymaster@3.0-service(  917): Could not get passthrough implementation for android.hardware.keymaster@3.0::IKeymasterDevice/default.
+01-01 08:01:55.379 W/ServiceManagement(  651): Waited one second for android.hardware.audio@2.0::IDevicesFactory/default. Waiting another...
+01-01 08:01:55.979 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  919): libminijail[919]: allowing syscall: connect
+01-01 08:01:55.979 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  919): libminijail[919]: allowing syscall: fcntl
+01-01 08:01:55.980 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  919): libminijail[919]: allowing syscall: sendto
+01-01 08:01:55.980 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  919): libminijail[919]: allowing syscall: socket
+01-01 08:01:55.980 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  919): libminijail[919]: allowing syscall: writev
+01-01 08:01:55.980 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  919): libminijail[919]: logging seccomp filter failures
+01-01 08:01:55.980 I/ServiceManagement(  919): Removing namespace from process name android.hardware.configstore@1.0-service to configstore@1.0-service.
+01-01 08:01:55.980 E//vendor/bin/hw/android.hardware.configstore@1.0-service(  919): libminijail[919]: blocked syscall: getdents64
+01-01 08:01:55.989 I/android.hardware.camera.provider@2.4-service(  918): Camera provider Service is starting.
+01-01 08:01:55.991 D/vndksupport(  918): Loading /vendor/lib/hw/vendor.vivo.hardware.camera.provider@1.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:55.992 E/ServiceManagement(  918): Failed to dlopen vendor.vivo.hardware.camera.provider@1.0-impl.so: dlopen failed: library "vendor.vivo.hardware.camera.vif@1.0-impl.so" not found
+01-01 08:01:55.992 E/android.hardware.camera.provider@2.4-service(  918): Could not get passthrough implementation for vendor.vivo.hardware.camera.provider@1.0::IVivoCameraProvider/default.
+01-01 08:01:55.992 D/android.hardware.camera.provider@2.4-service(  918): register IVivoCameraProvider status:1,ok:0
+01-01 08:01:55.993 D/vndksupport(  918): Loading /vendor/lib/hw/android.hardware.camera.provider@2.4-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:56.002 D/vndksupport(  918): Loading /vendor/lib/hw/camera.msm8996.so from current namespace instead of sphal namespace.
+01-01 08:01:56.014 E/HAL     (  918): load: module=/vendor/lib/hw/camera.msm8996.so
+01-01 08:01:56.014 E/HAL     (  918): dlopen failed: library "vendor.vivo.hardware.camera.vif@1.0-impl.so" not found
+01-01 08:01:56.014 E/CamProvider@2.4-impl(  918): Could not load camera HAL module: -22 (Invalid argument)
+01-01 08:01:56.014 E/CamProvider@2.4-impl(  918): HIDL_FETCH_ICameraProvider: camera provider init failed!
+01-01 08:01:56.015 E/android.hardware.camera.provider@2.4-service(  918): Could not get passthrough implementation for android.hardware.camera.provider@2.4::ICameraProvider/legacy/0.
+01-01 08:01:56.081 F/linker  (  920): CANNOT LINK EXECUTABLE "/vendor/bin/hw/android.hardware.wifi@1.0-service": cannot locate symbol "_ZN7android8hardware4wifi4V1_08toStringERKNS_2spINS2_22IWifiChipEventCallbackEEE" referenced by "/system/vendor/bin/hw/android.hardware.wifi@1.0-service"...
+01-01 08:01:56.093 F/linker  (  921): CANNOT LINK EXECUTABLE "/vendor/bin/hw/vendor.qti.gnss@1.0-service": cannot locate symbol "_ZN7android8hardware4gnss4V1_08toStringINS2_15IGnssNiCallback17GnssNiNotifyFlagsEEENSt3__112basic_stringIcNS6_11char_traitsIcEENS6_9allocatorIcEEEEj" referenced by "/system/vendor/lib64/vendor.qti.gnss@1.0_vendor.so"...
+01-01 08:01:56.379 W/ServiceManagement(  651): Waited one second for android.hardware.audio@2.0::IDevicesFactory/default. Waiting another...
+01-01 08:01:58.380 I/chatty  (  651): uid=1041(audioserver) /system/bin/audioserver identical 2 lines
+01-01 08:01:59.380 W/ServiceManagement(  651): Waited one second for android.hardware.audio@2.0::IDevicesFactory/default. Waiting another...
+01-01 08:01:59.852 D/vndksupport(  929): Loading /vendor/lib64/hw/android.hardware.keymaster@3.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:01:59.853 E/ServiceManagement(  929): Failed to dlopen android.hardware.keymaster@3.0-impl.so: dlopen failed: library "libkeymaster_staging.so" not found
+01-01 08:01:59.853 E/android.hardware.keymaster@3.0-service(  929): Could not get passthrough implementation for android.hardware.keymaster@3.0::IKeymasterDevice/default.
+01-01 08:02:00.380 W/ServiceManagement(  651): Waited one second for android.hardware.audio@2.0::IDevicesFactory/default. Waiting another...
+01-01 08:02:00.984 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  931): libminijail[931]: allowing syscall: connect
+01-01 08:02:00.984 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  931): libminijail[931]: allowing syscall: fcntl
+01-01 08:02:00.984 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  931): libminijail[931]: allowing syscall: sendto
+01-01 08:02:00.984 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  931): libminijail[931]: allowing syscall: socket
+01-01 08:02:00.984 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  931): libminijail[931]: allowing syscall: writev
+01-01 08:02:00.984 W//vendor/bin/hw/android.hardware.configstore@1.0-service(  931): libminijail[931]: logging seccomp filter failures
+01-01 08:02:00.985 I/ServiceManagement(  931): Removing namespace from process name android.hardware.configstore@1.0-service to configstore@1.0-service.
+01-01 08:02:00.985 E//vendor/bin/hw/android.hardware.configstore@1.0-service(  931): libminijail[931]: blocked syscall: getdents64
+01-01 08:02:00.998 I/android.hardware.camera.provider@2.4-service(  930): Camera provider Service is starting.
+01-01 08:02:01.000 D/vndksupport(  930): Loading /vendor/lib/hw/vendor.vivo.hardware.camera.provider@1.0-impl.so from current namespace instead of sphal namespace.
+01-01 08:02:01.001 E/ServiceManagement(  930): Failed to dlopen vendor.vivo.hardware.camera.provider@1.0-impl.so: dlopen failed: library "vendor.vivo.hardware.camera.vif@1.0-impl.so" not found
+01-01 08:02:01.001 E/android.hardware.camera.provider@2.4-service(  930): Could not get passthrough implementation for vendor.vivo.hardware.camera.provider@1.0::IVivoCameraProvider/default.
+01-01 08:02:01.001 D/android.hardware.camera.provider@2.4-service(  930): register IVivoCameraProvider status:1,ok:0
+01-01 08:02:01.002 D/vndksupport(  930): Loading /vendor/lib/hw/android.hardware.camera.provider@2.4-impl.so from current namespace instead of sphal namespace.
+01-01 08:02:01.013 D/vndksupport(  930): Loading /vendor/lib/hw/camera.msm8996.so from current namespace instead of sphal namespace.
+01-01 08:02:01.027 E/HAL     (  930): load: module=/vendor/lib/hw/camera.msm8996.so
+01-01 08:02:01.027 E/HAL     (  930): dlopen failed: library "vendor.vivo.hardware.camera.vif@1.0-impl.so" not found
+01-01 08:02:01.027 E/CamProvider@2.4-impl(  930): Could not load camera HAL module: -22 (Invalid argument)
+01-01 08:02:01.027 E/CamProvider@2.4-impl(  930): HIDL_FETCH_ICameraProvider: camera provider init failed!
+01-01 08:02:01.028 E/android.hardware.camera.provider@2.4-service(  930): Could not get passthrough implementation for android.hardware.camera.provider@2.4::ICameraProvider/legacy/0.
+01-01 08:02:01.084 F/linker  (  933): CANNOT LINK EXECUTABLE "/vendor/bin/hw/android.hardware.wifi@1.0-service": cannot locate symbol "_ZN7android8hardware4wifi4V1_08toStringERKNS_2spINS2_22IWifiChipEventCallbackEEE" referenced by "/system/vendor/bin/hw/android.hardware.wifi@1.0-service"...
+01-01 08:02:01.098 F/linker  (  934): CANNOT LINK EXECUTABLE "/vendor/bin/hw/vendor.qti.gnss@1.0-service": cannot locate symbol "_ZN7android8hardware4gnss4V1_08toStringINS2_15IGnssNiCallback17GnssNiNotifyFlagsEEENSt3__112basic_stringIcNS6_11char_traitsIcEENS6_9allocatorIcEEEEj" referenced by "/system/vendor/lib64/vendor.qti.gnss@1.0_vendor.so"...
+01-01 08:02:01.380 W/ServiceManagement(  651): Waited one second for android.hardware.audio@2.0::IDevicesFactory/default. Waiting another...
+01-01 08:02:02.319 I/dmesg   (  935): type=1400 audit(0.0:158): avc: denied { syslog_read } for scontext=u:r:shell:s0 tcontext=u:r:kernel:s0 tclass=system permissive=1
+01-01 08:02:02.381 W/ServiceManagement(  651): Waited one second for android.hardware.audio@2.0::IDevicesFactory/default. Waiting another...

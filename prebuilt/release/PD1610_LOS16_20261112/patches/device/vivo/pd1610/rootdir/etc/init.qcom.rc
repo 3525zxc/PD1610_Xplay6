@@ -1,0 +1,28 @@
+# PD1610 首启诊断标记（临时；定位完成后删除）
+#
+# 本文件被 ramdisk 根 init.rc 第 9 行 `import /init.${ro.hardware}.rc` 导入
+# （ro.hardware=qcom → /init.qcom.rc）。每个阶段向 /dev/kmsg 打一行标记。
+#
+# 注意：真正的日志落盘由 system/core/init/init.cpp 里的 PD1610 DIAG 代码完成
+# （直接 raw 写 /dev/block/sda3 偏移 64 MB），这里只留标记做交叉验证。
+
+on early-init
+    write /dev/kmsg "PD1610-DIAG: enter early-init"
+
+on init
+    write /dev/kmsg "PD1610-DIAG: enter init"
+
+on fs
+    write /dev/kmsg "PD1610-DIAG: enter fs"
+
+on post-fs
+    write /dev/kmsg "PD1610-DIAG: enter post-fs"
+
+on post-fs-data
+    write /dev/kmsg "PD1610-DIAG: enter post-fs-data"
+
+on boot
+    write /dev/kmsg "PD1610-DIAG: enter boot"
+
+on property:sys.boot_completed=1
+    write /dev/kmsg "PD1610-DIAG: boot_completed"

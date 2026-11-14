@@ -1,0 +1,386 @@
+
+
+ 
+ vivo X9s解锁BL教程 来自 王大臭屁 - 酷安
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+ [IMG] //static.coolapk.com/static/web/v8/images/header-logo.png酷安
+ 
+ 
+首页
+-->
+应用
+-->
+游戏
+-->
+酷安手机APP
+-->
+联系酷安
+-->
+关于酷安
+-->
+ 
+
+酷安开发者平台-->
+ 
+
+ 
+ 
+ 
+ 
+ [IMG] //static.coolapk.com/static/web/v8/images/header-logo.png
+ 
+ 酷安APP
+ 分享美好科技生活
+ 
+
+ 
+
+ 
+ 点击下载
+ 
+
+ 
+
+ 
+
+ 
+ 
+ [IMG] http://image.coolapk.com/feed_cover/2025/1026/13/38766398_25232534_7909_6011_595@444x200.jpeg
+
+ vivo X9s解锁BL教程
+
+ 
+ 
+ [IMG] http://avatar.coolapk.com/data/038/76/63/98_avatar_middle.jpg?t=1761043436
+ 
+
+ 
+ 王大臭屁
+
+ 2025-10-26 华为MatePad Pro 10.8英寸
+
+ 
+
+ 
+
+ 
+ 关注
+ 
+
+ #vivox9s# 这个解锁很难，请跟着我一步一步来
+
+首先感谢@徐正豪 @楓と铃 两位大佬的教程和工具
+
+感谢@璃梦星空 大佬的线刷包和aftool工具
+
+感谢@某贼 大佬开发的viqoo工具
+
+本文中出现的所有工具都在这个链接里查看链接 提取码:IU0y
+
+教程开始
+
+首先是准备工作
+
+需要1台vivo X 9s，一根micro USB数据线，1台电脑
+
+现在正式开始
+
+首先需要安装两个驱动，一个是adb和fast boot驱动，另一个是9008驱动
+
+ 
+ [IMG] //image.coolapk.com/feed/2025/1026/13/38766398_a13d849f_7910_8047_607@2494x3325.jpeg.m.jpg
+ 
+
+ 
+ [IMG] //image.coolapk.com/feed/2025/1026/13/38766398_24b7adc0_7910_8057_879@2494x3325.jpeg.m.jpg
+ 
+
+ 然后打开viqoo工具箱，选择解锁bl，选择第四个9008修改分区解锁，再选择第四个机型，按照提示刷入
+
+ 
+ [IMG] //image.coolapk.com/feed/2025/1026/13/38766398_91f605c9_7910_8062_213@2494x3325.jpeg.m.jpg
+ 
+
+ 这里某贼大佬搞错了，应该是长按电源键和音量减键
+
+ 刷完之后会出现这个页面，出现这个页面的原因是分区表加密
+
+ 
+ [IMG] //image.coolapk.com/feed/2025/1026/13/38766398_0e44175b_7910_8065_886@2494x3325.jpeg.m.jpg
+ 
+
+ 如果来到了这个页面，我们随便输密码，多输几次，直到出现这个页面
+
+图片来自@酷爱一个人
+
+ 
+ [IMG] //image.coolapk.com/feed/2025/1026/13/38766398_a9fcecb4_7910_8068_712@1600x2560.jpeg.m.jpg
+ 
+
+ 点击上面的恢复出厂设置，等待恢复出厂，此时你已经完成一半了
+
+然后咱们保存链接里的8.1版本镜像，这个镜像是用专用面具修补过的，保存过后，手机进入fast boot模式，刷入这个镜像，然后又会出来跟上面一样的页面，出来之后还是随便乱输密码，输完后又会出现解密失败的页面，咱们还是点击恢复出厂设置，此时激活手机，打开开发者模式，如果OEM解锁变为灰色，BL就成功解锁了
+
+ 
+ [IMG] //image.coolapk.com/feed/2025/1026/13/38766398_65362222_7910_8073_765@2494x3325.jpeg.m.jpg
+ 
+
+ 恭喜你成功解锁BL，Root的教程先等一等，回头就发
+
+ 
+
+ 
+ 16
+
+ 
+
+ 
+ 
+ 37
+ 
+
+ 
+
+ 
+ 
+ 32
+ 
+
+ 
+
+ 
+ 
+ 
+ 打开酷安App，查看全部评论
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 无法打开？前往华为应用市场
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ [IMG] //static.coolapk.com/static/web/v8/images/header-logo.png
+ 
+
+ 
+ 酷安APP
+
+ 分享美好科技生活
+ 
+
+ 
+
+ 
+ [IMG] /qr/image?data=base64,aHR0cHM6Ly93d3cuY29vbGFway5jb20vZmVlZC82ODE3NzI2NT9zPU1XVTNPRGc1TkRNM01HRmtZMlJuTm1GbU0yWTVOakY2YTE2NjI~&h=c150089a
+ 
+
+ 扫码用酷安打开
+
+ 
+ [IMG] //static.coolapk.com/static/web/v8/img/android_white.png-->
+ [IMG] //static.coolapk.com/static/web/v8/img/iphone_white.png-->
+ [IMG] //static.coolapk.com/static/web/v8/img/android_white.png
+ [IMG] //static.coolapk.com/static/web/v8/img/iphone_white.png
+ 
+
+ 
+ - 欢迎关注我们 -
+ 
+
+ 
+ 
+ [IMG] //static.coolapk.com/static/web/v8/img/weixin.png
+ [IMG] //static.coolapk.com/static/web/v8/img/weixin_qrcode.png
+ 
+ 
+ [IMG] //static.coolapk.com/static/web/v8/img/weibo.png
+ 
+ 
+ [IMG] //static.coolapk.com/static/web/v8/img/zhihu.png
+ 
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+ 
+ 更多功能，丰富内容，尽在酷安APP
+ 
+
+ 
+ 取消
+ 下载APP
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ [IMG] //static.coolapk.com/static/web/v8/images/header-logo.png
+ 
+
+ 
+ 酷安APP
+
+ 分享美好科技生活
+
+ 
+
+ 
+
+ 
+ 
+ 关于酷安
+
+ 联系合作
+
+ 加入我们
+
+ 版权声明
+
+酷安APP
+-->
+酷安APP
+-->
+酷安开发者平台
+-->
+ 
+ 
+
+ 
+ Copyright © 2010- 酷安网
+
+ 粤ICP备15030494号-2 | 粤网文 [2016] 2468-477号 | 粤B2-20180425 | APP备案号：粤ICP备15030494号-3A
+
+ 违法和不良信息举报电话：0755-86965007 举报邮箱：jubao@coolapk.com
+
+ [IMG] //static.coolapk.com/static/web/v8/images/beian.png 粤公网安备44030502000719号
+
+ 
+
+ 
+
+ 
+ 
+ [IMG] /qr/image?data=base64,aHR0cHM6Ly93ZWliby5jb20vdS8xNzQ2NTIzOTc0&h=514f5cf8
+ 酷安微博
+
+ 
+
+ 
+ [IMG] /qr/image?data=base64,aHR0cDovL3dlaXhpbi5xcS5jb20vci9IQ2s4SlBMRWpLLXpyYlpIOTN3Tw~~&h=5aac8427
+ 酷安公众号
+
+ 
+
+ 
+
+ 
+

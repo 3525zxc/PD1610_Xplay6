@@ -1,0 +1,46 @@
+{
+  "input": "flash_log/blm_ram_round15.bin",
+  "system_map": "build/trace-20261114140000/System.map",
+  "bank_index": 0,
+  "generation": 1,
+  "last_stage_id": 17,
+  "last_stage_name": "WATCHDOG_PANIC",
+  "symbol_count": 124663,
+  "line_count": 363,
+  "initcall_count": 0,
+  "initcalls": [],
+  "milestones": [],
+  "console_tail": [
+    {
+      "seq": 2616,
+      "jiffies": 4294897312,
+      "text": "[   21.432451] "
+    },
+    {
+      "seq": 2617,
+      "jiffies": 4294897312,
+      "text": "[   21.432451] Total active clients count: 1"
+    },
+    {
+      "seq": 2618,
+      "jiffies": 4294897312,
+      "text": "[   21.432527] ipa ipa2_uc_state_check:301 uC is not loaded"
+    },
+    {
+      "seq": 2619,
+      "jiffies": 4294897312,
+      "text": "[   21.432568] Rebooting in 5 seconds.."
+    },
+    {
+      "seq": 2620,
+      "jiffies": 4294897312,
+      "text": "[   27.801753] SMP: failed to stop secondarq CPUs"
+    },
+    {
+      "seq": 2621,
+      "jiffies": 4294897312,
+      "text": "[   27.801770] Going down for restart now"
+    }
+  ],
+  "suspected_stall": null
+}

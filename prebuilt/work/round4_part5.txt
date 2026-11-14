@@ -1,0 +1,151 @@
+=== 0x91D01868 head (tail target of fastboot gate)  0x91D01868..0x91D01900 ===
+  91D01868  push     {r4, lr}
+  91D0186C  movw     r4, #0x57dc   ; 0x920157DC
+  91D01870  movt     r4, #0x9201
+  91D01874  sub      sp, sp, #8
+  91D01878  cmp      r0, #0
+  91D0187C  ldr      r3, [r4]
+  91D01880  str      r3, [sp, #4]
+  91D01884  beq      #0x91d018e4
+  91D01888  ldrh     r3, [r0]
+  91D0188C  cmp      r3, #2
+  91D01890  movne    r0, #0
+  91D01894  bne      #0x91d018cc
+  91D01898  cmp      r1, #0
+  91D0189C  movw     r3, #0x9000   ; 0x91D99000 = '\x02'
+  91D018A0  movt     r3, #0x91d9
+  91D018A4  mov      r0, #0
+  91D018A8  movne    r2, #0x50
+  91D018AC  strbeq   r1, [r3, #5]
+  91D018B0  movw     r1, #0x9008
+  91D018B4  strbne   r2, [r3, #5]
+  91D018B8  movt     r1, #0x91d9
+  91D018BC  mov      r3, r0
+  91D018C0  mov      r2, #1
+  91D018C4  bl       #0x91d27c7c
+  91D018C8  mov      r0, #0
+  91D018CC  ldr      r2, [sp, #4]
+  91D018D0  ldr      r3, [r4]
+  91D018D4  cmp      r2, r3
+  91D018D8  bne      #0x91d018f8
+  91D018DC  add      sp, sp, #8
+  91D018E0  pop      {r4, pc}
+  91D018E4  movw     r0, #0x7518   ; 0x91D77518 = 'backlight structure is not available\n'
+  91D018E8  movt     r0, #0x91d7
+  91D018EC  bl       #0x91d51508
+  91D018F0  mvn      r0, #7
+  91D018F4  b        #0x91d018cc
+  91D018F8  bl       #0x91d516c4
+  91D018FC  push     {r4, r5, r6, r7, r8, sb, lr}
+
+=== movw/movt of 0x91D40FCC ===
+  (none)
+
+  pool@0x91D98FB4 <- (unref)
+
+=== 0x91D40974..0x91D40B00 (fastboot_init?)  0x91D40974..0x91D40B00 ===
+  91D40974  push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+  91D40978  sub      sp, sp, #0x64
+  91D4097C  movw     r1, #0x57dc   ; 0x920157DC
+  91D40980  movt     r1, #0x9201
+  91D40984  str      r1, [sp, #0xc]
+  91D40988  movw     r0, #0x5288
+  91D4098C  ldr      r2, [sp, #0xc]
+  91D40990  movt     r0, #0x91d8
+  91D40994  movw     r1, #0xff70   ; 0x91D3FF70 = '\x10@-éÜG\x05ã\x01BIãHÐMâ'
+  91D40998  movt     r1, #0x91d3
+  91D4099C  movw     sl, #0x1318   ; 0x91DA1318 = 'ANDROID-BOOT!'
+  91D409A0  movt     sl, #0x91da
+  91D409A4  ldr      r3, [r2]
+  91D409A8  str      r3, [sp, #0x5c]
+  91D409AC  bl       #0x91d41d3c
+  91D409B0  movw     r0, #0x5298
+  91D409B4  movw     r1, #0xc8   ; 0x91D800C8 = 'it code end 0115 1616\n'
+  91D409B8  movt     r0, #0x91d8
+  91D409BC  movt     r1, #0x91d4
+  91D409C0  bl       #0x91d41d3c
+  91D409C4  movw     r0, #0x52a8
+  91D409C8  movw     r1, #0x15c   ; 0x91D8015C = 'DSI1 PHY REGULATOR NOT READY,exceeded polling TIMEOUT!\n'
+  91D409CC  movt     r0, #0x91d8
+  91D409D0  movt     r1, #0x91d4
+  91D409D4  bl       #0x91d41d3c
+  91D409D8  movw     r0, #0x52b4
+  91D409DC  movw     r1, #0xa028   ; 0x91D8A028 = 'o'
+  91D409E0  movt     r0, #0x91d8
+  91D409E4  movt     r1, #0x91d3
+  91D409E8  bl       #0x91d41d3c
+  91D409EC  movw     r0, #0x52c8
+  91D409F0  movw     r1, #0xa0e8   ; 0x91D8A0E8 = 'trust'
+  91D409F4  movt     r0, #0x91d8
+  91D409F8  movt     r1, #0x91d3
+  91D409FC  bl       #0x91d41d3c
+  91D40A00  movw     r0, #0x52d8
+  91D40A04  movw     r1, #0xa1f4   ; 0x91D8A1F4 = 'openssl/crypto/bn/bn_ctx.c'
+  91D40A08  movt     r0, #0x91d8
+  91D40A0C  movt     r1, #0x91d3
+  91D40A10  bl       #0x91d41d3c
+  91D40A14  movw     r0, #0x52e8
+  91D40A18  movw     r1, #0xa32c   ; 0x91D8A32C = '\x07\x07\x07\x07\x07\x07\x07\x07\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08'
+  91D40A1C  movt     r0, #0x91d8
+  91D40A20  movt     r1, #0x91d3
+  91D40A24  bl       #0x91d41d3c
+  91D40A28  movw     r0, #0x52f8
+  91D40A2C  movw     r1, #0xa290   ; 0x91D8A290 = 'ssl/crypto/bn/bn_lib.c'
+  91D40A30  movt     r0, #0x91d8
+  91D40A34  movt     r1, #0x91d3
+  91D40A38  bl       #0x91d41d3c
+  91D40A3C  movw     r0, #0x530c
+  91D40A40  movw     r1, #0xff08   ; 0x91D8FF08
+  91D40A44  movt     r0, #0x91d8
+  91D40A48  movt     r1, #0x91d3
+  91D40A4C  bl       #0x91d41d3c
+  91D40A50  movw     r0, #0x531c
+  91D40A54  movw     r1, #0x9f0c   ; 0x91D89F0C
+  91D40A58  movt     r0, #0x91d8
+  91D40A5C  movt     r1, #0x91d3
+  91D40A60  bl       #0x91d41d3c
+  91D40A64  movw     r0, #0x532c
+  91D40A68  movw     r1, #0xdc6c   ; 0x91D8DC6C = 'E³Ø\x91'
+  91D40A6C  movt     r0, #0x91d8
+  91D40A70  movt     r1, #0x91d3
+  91D40A74  bl       #0x91d41d3c
+  91D40A78  ldr      r3, [sl, #0x10]
+  91D40A7C  cmp      r3, #0
+  91D40A80  beq      #0x91d40d54
+  91D40A84  movw     r0, #0x533c
+  91D40A88  movw     r1, #0xfbd4   ; 0x91D8FBD4 = '\x0c¼Ø\x91'
+  91D40A8C  movt     r0, #0x91d8
+  91D40A90  movt     r1, #0x91d3
+  91D40A94  bl       #0x91d41d3c
+  91D40A98  movw     r0, #0x5344
+  91D40A9C  movw     r1, #0xe968   ; 0x91D8E968 = 'h<Ù\x91¤\x01'
+  91D40AA0  movt     r0, #0x91d8
+  91D40AA4  movt     r1, #0x91d3
+  91D40AA8  bl       #0x91d41d3c
+  91D40AAC  movw     r0, #0x5a8c
+  91D40AB0  movw     r1, #0xe000   ; 0x91D8E000
+  91D40AB4  movt     r0, #0x91d8
+  91D40AB8  movt     r1, #0x91d3
+  91D40ABC  bl       #0x91d41d3c
+  91D40AC0  movw     r0, #0x534c
+  91D40AC4  movw     r1, #0xd870   ; 0x91D8D870 = 'D-Ù\x91ï'
+  91D40AC8  movt     r0, #0x91d8
+  91D40ACC  movt     r1, #0x91d3
+  91D40AD0  bl       #0x91d41d3c
+  91D40AD4  movw     r0, #0x5358
+  91D40AD8  movw     r1, #0xa510   ; 0x91D8A510 = '8lX:%s:%s:%s'
+  91D40ADC  movt     r0, #0x91d8
+  91D40AE0  movt     r1, #0x91d3
+  91D40AE4  bl       #0x91d41d3c
+  91D40AE8  movw     r0, #0x5360
+  91D40AEC  movw     r1, #0xa558   ; 0x91D8A558 = 'lib'
+  91D40AF0  movt     r0, #0x91d8
+  91D40AF4  movt     r1, #0x91d3
+  91D40AF8  bl       #0x91d41d3c
+  91D40AFC  movw     r0, #0x5374
+
+=== strings referenced by 0x91D01868..0x91D01A00 ===
+  91D0189C -> '\x02'
+  91D018E4 -> 'backlight structure is not available\n'
+  91D019B4 -> 'thulium_dsi_pll_enable_seq'
+  91D019C4 -> 'PLL failed to lock!\n'

@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<!-- 一次写入：官方 boot（还原） + devinfo 解锁标志候选(+0x10 与 +0x20 同时置 1) -->
+<data>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="flash_boot_official_full.bin" label="boot" num_partition_sectors="24576" partofsingleimage="false" physical_partition_number="4" readbackverify="false" size_in_KB="98304.0" sparse="false" start_sector="47370"/>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="devinfo_u10u20.bin" label="devinfo" num_partition_sectors="1" partofsingleimage="false" physical_partition_number="4" readbackverify="false" size_in_KB="4.0" sparse="false" start_sector="882954"/>
+</data>

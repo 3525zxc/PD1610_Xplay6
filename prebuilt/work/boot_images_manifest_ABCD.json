@@ -1,0 +1,128 @@
+{
+ "L": 58724352,
+ "page_size": 4096,
+ "kernel_size": 56551493,
+ "ramdisk_size": 2162779,
+ "note": "A/B/C/D 保持相同 header/kernel/ramdisk/DTB 与文件长度，只有目标变量不同；D=等长清零签名尾部（DER 擦除），非截断；禁止作为完整 ROM 刷入；未做任何设备写入。 命名：见 naming_rule。",
+ "images": [
+  {
+   "tag": "A",
+   "file": "boot_81_official.img",
+   "size": 58729728,
+   "sha256": "5a03236df43fb4badeb234e6c9b2ffeead9161ca77e71115b6c923c613d48a52",
+   "desc": "官方有效签名",
+   "change": "无",
+   "der_at_L": "308204fc",
+   "der_present": true,
+   "length_unchanged": true,
+   "L_unchanged": true,
+   "der_orig_offset": 58724352,
+   "der_orig_len": 1276,
+   "tail_region": {
+    "start": 58724352,
+    "end": 58729728,
+    "size": 5376
+   },
+   "boot_body_identical_to_A": true,
+   "parses_as_valid_BootSignature": true
+  },
+  {
+   "tag": "B",
+   "file": "boot_81_unsigned_test.img",
+   "size": 58729728,
+   "sha256": "c978147e0f98bfefaa9456082020f08b0684df24eed34f600b7196dad13c3eae",
+   "desc": "单字节摘要失配",
+   "change": "kernel 对齐填充区 1 字节 @0x35EF845",
+   "der_at_L": "308204fc",
+   "der_present": true,
+   "length_unchanged": true,
+   "L_unchanged": true,
+   "der_orig_offset": 58724352,
+   "der_orig_len": 1276,
+   "tail_region": {
+    "start": 58724352,
+    "end": 58729728,
+    "size": 5376
+   },
+   "boot_body_identical_to_A": false,
+   "parses_as_valid_BootSignature": true
+  },
+  {
+   "tag": "C",
+   "file": "boot_81_noverify.img",
+   "size": 58729728,
+   "sha256": "bed2b186792907e67f48d460df5ac3ddc69d33120fcafccaafafde6e86185092",
+   "desc": "去 system verity 挂载标志的摘要失配",
+   "change": "DTB fsmgr_flags 7 字节 @0x266F9E2",
+   "der_at_L": "308204fc",
+   "der_present": true,
+   "length_unchanged": true,
+   "L_unchanged": true,
+   "der_orig_offset": 58724352,
+   "der_orig_len": 1276,
+   "tail_region": {
+    "start": 58724352,
+    "end": 58729728,
+    "size": 5376
+   },
+   "boot_body_identical_to_A": false,
+   "parses_as_valid_BootSignature": true
+  },
+  {
+   "tag": "D",
+   "file": "boot_81_D_footerless.img",
+   "size": 58729728,
+   "sha256": "abee15b77a31851718502d2be3e5f49331d4ea73c8c3fae2e0fa41b996eeecaa",
+   "desc": "D: 等长清零签名尾部区域（DER 签名结构被擦除；文件长度与 L 保持不变）",
+   "change": "[L:] 5376 B 清零",
+   "der_at_L": "00000000",
+   "der_present": false,
+   "length_unchanged": true,
+   "L_unchanged": true,
+   "der_orig_offset": 58724352,
+   "der_orig_len": 1276,
+   "tail_region": {
+    "start": 58724352,
+    "end": 58729728,
+    "size": 5376
+   },
+   "boot_body_identical_to_A": true,
+   "parses_as_valid_BootSignature": false,
+   "name_precise": "D-zeroed-footer (equal-length zeroed signature tail; NOT a truncated footerless image)",
+   "zeroed_range": {
+    "start": 58724352,
+    "end": 58729728,
+    "bytes": 5376
+   },
+   "der_status": "DER 结构已擦除（0x30 82 04 FC 不复存在）；主体 [0,L) 与 A 完全一致",
+   "compare_note": "与「截断版 footerless」(boot_81_D_footerless_truncated.img, 文件缩短至 L) 区分；截断版仅备查、非单变量对照",
+   "variable": "zeroed-tail (equal length)",
+   "is_equal_length_variant_of_D": true
+  },
+  {
+   "tag": "D-trunc",
+   "file": "boot_81_D_footerless_truncated.img",
+   "size": 58724352,
+   "sha256": "dc11a0d278776ede152148586cedec36abb5fbb121bebd5ffb9a41aa1b442f43",
+   "desc": "真正截除签名尾部（文件变短，非单变量对照）",
+   "change": "截断至 L=0x3801000",
+   "der_at_L": null,
+   "der_present": false,
+   "length_unchanged": false,
+   "L_unchanged": true,
+   "der_orig_offset": 58724352,
+   "der_orig_len": 1276,
+   "tail_region": {
+    "start": 58724352,
+    "end": 58729728,
+    "size": 5376
+   },
+   "boot_body_identical_to_A": true,
+   "parses_as_valid_BootSignature": false,
+   "name_precise": "D-trunc: TRUNCATED-footer (signature tail physically removed, file shorter) -- DIFFERENT experiment variable from D; never describe as 'D class'",
+   "variable": "truncation",
+   "is_equal_length_variant_of_D": false
+  }
+ ],
+ "naming_rule": "报告/清单中必须使用精确标签：'D(等长清零签名尾部)' 或 'D-trunc(截短版)'；禁止统称'D 类无签名镜像'——D 与 D-trunc 是两个不同实验变量（等长清零 vs 物理截短），文件名与 tag 一一对应，不得混用。"
+}

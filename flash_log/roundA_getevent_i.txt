@@ -1,0 +1,102 @@
+add device 1: /dev/input/event0
+  bus:      0000
+  vendor    0000
+  product   0000
+  version   0000
+  name:     "qpnp_pon"
+  location: "qpnp_pon/input0"
+  id:       ""
+  version:  1.0.1
+  events:
+    KEY (0001): 0072  0074 
+  input props:
+    INPUT_PROP_ACCELEROMETER
+add device 2: /dev/input/event3
+  bus:      0019
+  vendor    0001
+  product   0001
+  version   0100
+  name:     "gpio-keys"
+  location: "gpio-keys/input0"
+  id:       ""
+  version:  1.0.1
+  events:
+    KEY (0001): 0066  0073  02fe 
+  input props:
+    <none>
+add device 3: /dev/input/event1
+  bus:      0019
+  vendor    0001
+  product   0001
+  version   0100
+  name:     "qbt1000_key_input"
+  location: ""
+  id:       ""
+  version:  1.0.1
+  events:
+    KEY (0001): 0001  0002  0003  0004  0005  0006  0007  0009 
+                000a  000b  000c  000d  000e  000f  0011  0012 
+                0013  0014  0015  0016  0017  0019  001a  001b 
+                001c  001d  001e  001f  0021  0022  0023  0024 
+                0025  0026  0027  0029  002a  002b  002c  002d 
+                002e  002f  0031  0032  0033  0034  0035  0036 
+                0037  0039  003a  003b  003c  003d  003e  003f 
+                0041  0042  0043  0044  0045  0046  0047  0049 
+                004a  004b  004c  004d  004e  004f  0051  0052 
+                0053  0054  0055  0056  0057  0059  005a  005b 
+                005c  005d  005e  005f  0061  0062  0063  0064 
+                0065  0066  0067  0069  006a  006b  006c  006d 
+                006e  006f  0071  0072  0073  0074  0075  0076 
+                0077  0079  007a  007b  007c  007d  007e  007f 
+                0081  0082  0083  0084  0085  0086  0087  0089 
+                008a  008b  008c  008d  008e  008f  0091  0092 
+                0093  0094  0095  0096  0097  0099  009a  009b 
+                009c  009d  009e  009f  00a1  00a2  00a3  00a4 
+                00a5  00a6  00a7  00a9  00aa  00ab  00ac  00ad 
+                00ae  00af  00b1  00b2  00b3  00b4  00b5  00b6 
+                00b7  00b9  00ba  00bb  00bc  00bd  00be  00bf 
+                00c1  00c2  00c3  00c4  00c5  00c6  00c7  00c9 
+                00ca  00cb  00cc  00cd  00ce  00cf  00d1  00d2 
+                00d3  00d4  00d5  00d6  00d7  00d9  00da  00db 
+                00dc  00dd  00de  00df  00e1  00e2  00e3  00e4 
+                00e5  00e6  00e7  00e9  00ea  00eb  00ec  00ed 
+                00ee  00ef  00f1  00f2  00f3  00f4  00f5  00f6 
+                00f7  00f9  00fa  00fb  00fc  00fd  00fe  00ff 
+                014a 
+    ABS (0003): 0000  : value 0, min 0, max 1000, fuzz 0, flat 0, resolution 0
+                0001  : value 0, min 0, max 1000, fuzz 0, flat 0, resolution 0
+  input props:
+    <none>
+add device 4: /dev/input/event2
+  bus:      0000
+  vendor    0000
+  product   0000
+  version   0000
+  name:     "hbtp_vm"
+  location: ""
+  id:       ""
+  version:  1.0.1
+  events:
+    KEY (0001): 0110  0111 
+    REL (0002): 0000  0001 
+  input props:
+    INPUT_PROP_DIRECT
+add device 5: /dev/input/event4
+  bus:      0018
+  vendor    0001
+  product   0002
+  version   0100
+  name:     "fts"
+  location: "fts/input0"
+  id:       ""
+  version:  1.0.1
+  events:
+    KEY (0001): 008f  0145  014a 
+    ABS (0003): 002f  : value 0, min 0, max 10, fuzz 0, flat 0, resolution 0
+                0030  : value 0, min 0, max 127, fuzz 0, flat 0, resolution 0
+                0031  : value 0, min 0, max 127, fuzz 0, flat 0, resolution 0
+                0035  : value 0, min 0, max 1440, fuzz 0, flat 0, resolution 0
+                0036  : value 0, min 0, max 2560, fuzz 0, flat 0, resolution 0
+                0039  : value 0, min 0, max 10, fuzz 0, flat 0, resolution 0
+  input props:
+    INPUT_PROP_DIRECT

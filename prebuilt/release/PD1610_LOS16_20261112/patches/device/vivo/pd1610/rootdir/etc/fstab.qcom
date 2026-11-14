@@ -1,0 +1,55 @@
+# Android fstab file.  PD1610 / vivo Xplay6 / msm8996
+#
+# 非 Treble 布局：没有 vendor 分区，/vendor 是 /system/vendor 的软链。
+# 这份文件要同时装到两个位置（device.mk 里已配）：
+#   /fstab.qcom                    ← ramdisk 根，first stage 读这里挂 /system
+#   /system/vendor/etc/fstab.qcom  ← 原厂 init.target.rc 的
+#                                    "mount_all /vendor/etc/fstab.qcom" 读这里
+# 两份必须是同一份内容，否则 /data 的加密标志会打架（一个 encryptable、
+# 一个 forceencrypt），表现为开机一直停在数据解密密码页。
+#
+# 与原厂 blobs/vendor/etc/fstab.qcom 的有意差异：
+#   1. /data 由 forceencrypt=footer 改成 encryptable=footer（首启不做强制加密）
+#   2. 去掉 quota（3.18 内核要额外开 CONFIG_QUOTA，首启先不引入变量）
+#   3. 补回原厂注释掉的 /system 行 —— POSIX 版 init 需要 fs_mgr 挂它
+#   4. 块设备路径由 /dev/block/bootdevice/by-name/ 改成
+#      /dev/block/platform/soc/624000.ufshc/by-name/   ← 见下方说明
+#
+# 为什么不用 /dev/block/bootdevice/by-name/（这是首启卡 logo 的真正原因）：
+#   原厂 init.target.rc:36-39 里写着
+#       on fs
+#           wait /dev/block/platform/soc/${ro.boot.bootdevice}
+#           symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+#           mount_all /vendor/etc/fstab.qcom
+#   也就是说 /dev/block/bootdevice 是原厂 init.target.rc 自己造的软链。而这个
+#   文件在 /system/vendor/etc/init/hw/ 里，要等 /system 挂上之后才会被解析。
+#   Android 9 是两段式 init：first stage 必须先按本文件把 /system 挂起来，
+#   那一刻 bootdevice 还不存在 -> 挂载必然失败 -> 停在厂标，永远走不到
+#   造软链那一步。实测该路径在本机 recovery 下确实不存在。
+#
+# 为什么是用平台路径而不是 /dev/block/by-name/：
+#   system/core/init/devices.cpp:331 无条件创建 <平台路径>/by-name/<分区>，
+#   而 :334 的 /dev/block/by-name/<分区> 只有在设备名命中 boot_devices_ 时才建。
+#   boot_devices_ 来自 fs_mgr_get_boot_devices()，本机没有
+#   /proc/device-tree/firmware/android/boot_devices 节点，只能从 fstab 里反推，
+#   而 fs_mgr_fstab.cpp:702 又明确跳过以 /dev/block/by-name 开头的条目 ——
+#   写 /dev/block/by-name 会变成"要有 by-name 才建 by-name"的死循环。
+#   写平台路径则能反推出设备名 624000.ufshc（= ro.boot.bootdevice），
+#   既保证平台路径本身存在，也顺带把 /dev/block/by-name/* 建出来。
+#   设备名已实测：本机 UFS 控制器节点就是 /dev/block/platform/soc/624000.ufshc。
+#
+# <src>                                                   <mnt_point>    <type>  <mnt_flags and options>                                                    <fs_mgr_flags>
+/dev/block/platform/soc/624000.ufshc/by-name/system        /system       ext4    ro,barrier=1                                                                  wait
+/dev/block/platform/soc/624000.ufshc/by-name/userdata      /data         ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc,discard,errors=panic,journal_checksum  wait,resize,encryptable=footer
+/dev/block/platform/soc/624000.ufshc/by-name/cache         /cache        ext4    noatime,nosuid,nodev,barrier=1                                                wait
+/dev/block/platform/soc/624000.ufshc/by-name/dsp           /dsp          ext4    ro,nosuid,nodev,barrier=1                                                     wait
+/dev/block/platform/soc/624000.ufshc/by-name/modem         /firmware     vfat    ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0     wait
+/dev/block/platform/soc/624000.ufshc/by-name/bluetooth     /bt_firmware  vfat    ro,shortname=lower,uid=1002,gid=3002,dmask=227,fmask=337,context=u:object_r:bt_firmware_file:s0  wait
+/dev/block/platform/soc/624000.ufshc/by-name/misc          /misc         emmc    defaults                                                                      defaults
+/dev/block/platform/soc/624000.ufshc/by-name/apps          /apps         ext4    ro,barrier=1                                                                  wait
+/dev/block/platform/soc/624000.ufshc/by-name/oem           /oem          ext4    ro,barrier=1                                                                  wait
+
+# 可移动存储（原厂同款 vold 条目，路径来自 msm8996 的 sdhci / dwc3 节点）
+/devices/soc/74a4900.sdhci/mmc_host*           /storage/sdcard1   vfat  nosuid,nodev                                                           wait,voldmanaged=sdcard1:auto
+/devices/soc/6a00000.ssusb/6a00000.dwc3/*sdg*  auto               auto  defaults                                                                 voldmanaged=sda:auto
+/devices/soc/6a00000.ssusb/6a00000.dwc3/*sdh*  auto               auto  defaults                                                                 voldmanaged=sdb:auto

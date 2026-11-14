@@ -1,0 +1,250 @@
+==============================================================================
+fastboot "boot" handler  0x91D3E000
+==============================================================================
+  91D3E000  push    {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+  91D3E004  movw    r4, #0x57dc                       
+  91D3E008  movt    r4, #0x9201                       
+  91D3E00C  mov     r5, r1                            
+  91D3E010  sub     sp, sp, #0x3c                     
+  91D3E014  mov     r3, #0                            
+  91D3E018  ldr     r1, [r4]                          
+  91D3E01C  mov     r6, r2                            
+  91D3E020  str     lr, [sp, #0x10]                   
+  91D3E024  str     r3, [sp, #0x18]                   
+  91D3E028  str     r3, [sp, #0x1c]                   
+  91D3E02C  str     r1, [sp, #0x34]                   
+  91D3E030  bl      #0x91d37b78                       
+  91D3E034  cmp     r0, #0                            
+  91D3E038  beq     #0x91d3e050                       
+  91D3E03C  movw    r3, #0x1318                       
+  91D3E040  movt    r3, #0x91da                       
+  91D3E044  ldr     r3, [r3, #0x10]                   
+  91D3E048  cmp     r3, #0                            
+  91D3E04C  beq     #0x91d3e0c0                       
+  91D3E050  cmp     r6, #3                            
+  91D3E054  bhi     #0x91d3e080                       
+  91D3E058  movw    r0, #0x470c                       
+  91D3E05C  movt    r0, #0x91d8                       
+  91D3E060  bl      #0x91d42520                       
+  91D3E064  bl      #0x91d14734                       
+  91D3E068  ldr     r2, [sp, #0x34]                   
+  91D3E06C  ldr     r3, [r4]                          
+  91D3E070  cmp     r2, r3                            
+  91D3E074  bne     #0x91d3e620                       
+  91D3E078  add     sp, sp, #0x3c                     
+  91D3E07C  pop     {r4, r5, r6, r7, r8, sb, sl, fp, pc}
+  91D3E080  bl      #0x91d377a8                       
+  91D3E084  cmp     r0, #0                            
+  91D3E088  beq     #0x91d3e0d0                       
+  91D3E08C  ldr     r3, [r5, #0x24]                   
+  91D3E090  cmp     r3, #0                            
+  91D3E094  beq     #0x91d3e0d0                       
+  91D3E098  sub     r1, r3, #1                        
+  91D3E09C  movw    r8, #0x83c                        
+  91D3E0A0  movw    fp, #0x7b98                       
+  91D3E0A4  movt    r8, #0x9201                       
+  91D3E0A8  movt    fp, #0x9200                       
+  91D3E0AC  mov     r2, r1                            
+  91D3E0B0  mov     lr, r3                            
+  91D3E0B4  str     r3, [r8]                          
+  91D3E0B8  str     r1, [fp]                          
+  91D3E0BC  b       #0x91d3e0e8                       
+  91D3E0C0  movw    r0, #0x485c                       
+  91D3E0C4  movt    r0, #0x91d8                       
+  91D3E0C8  bl      #0x91d42520                       
+  91D3E0CC  b       #0x91d3e064                       
+  91D3E0D0  movw    fp, #0x7b98                       
+  91D3E0D4  movw    r8, #0x83c                        
+  91D3E0D8  movt    fp, #0x9200                       
+  91D3E0DC  movt    r8, #0x9201                       
+  91D3E0E0  ldr     r2, [fp]                          
+  91D3E0E4  ldr     lr, [r8]                          
+  91D3E0E8  ldr     r3, [r5, #8]                      
+  91D3E0EC  mvn     r1, r2                            
+  91D3E0F0  ldr     r0, [r5, #0x18]                   
+  91D3E0F4  add     sb, r2, r3                        
+  91D3E0F8  and     sb, r1, sb                        
+  91D3E0FC  cmp     r3, sb                            
+  91D3E100  ldr     r3, [r5, #0x10]                   
+  91D3E104  add     r7, r2, r3                        
+  91D3E108  mvnls   sl, sb                            
+  91D3E10C  and     r7, r7, r1                        
+  91D3E110  movhi   sl, #0                            
+  91D3E114  mvnhi   sb, #0                            
+  91D3E118  add     r2, r2, r0                        
+  91D3E11C  cmp     r3, r7                            
+  91D3E120  and     r3, r2, r1                        
+  91D3E124  mvnhi   r7, #0                            
+  91D3E128  cmp     r0, r3                            
+  91D3E12C  mvnhi   r3, #0                            
+  91D3E130  cmp     sl, lr                            
+  91D3E134  bls     #0x91d3e1bc                       
+  91D3E138  add     sl, sb, lr                        
+  91D3E13C  mvn     r2, r7                            
+  91D3E140  cmp     sl, r2                            
+  91D3E144  bhs     #0x91d3e1bc                       
+  91D3E148  add     sl, r7, sl                        
+  91D3E14C  mvn     r2, r3                            
+  91D3E150  cmp     sl, r2                            
+  91D3E154  bhs     #0x91d3e1bc                       
+  91D3E158  add     sl, r3, sl                        
+  91D3E15C  cmp     sl, r6                            
+  91D3E160  bhi     #0x91d3e1c8                       
+  91D3E164  bl      #0x91d37814                       
+  91D3E168  cmp     r0, #0                            
+  91D3E16C  beq     #0x91d3e358                       
+  91D3E170  movw    r3, #0x1318                       
+  91D3E174  movt    r3, #0x91da                       
+  91D3E178  ldr     r3, [r3, #0x10]                   
+  91D3E17C  cmp     r3, #0                            
+  91D3E180  movne   r2, #0                            
+  91D3E184  strne   r2, [sp, #0x14]                   
+  91D3E188  beq     #0x91d3e398                       
+  91D3E18C  bl      #0x91d3c33c                       
+  91D3E190  bl      #0x91d01320                       
+  91D3E194  ldr     r2, [sp, #0x14]                   
+  91D3E198  ldr     r3, [r8]                          
+  91D3E19C  add     r0, r0, r2                        
+  91D3E1A0  rsb     r2, sl, r0                        
+  91D3E1A4  cmp     r2, r3                            
+  91D3E1A8  bhs     #0x91d3e1d8                       
+  91D3E1AC  movw    r0, #0x474c                       
+  91D3E1B0  movt    r0, #0x91d8                       
+  91D3E1B4  bl      #0x91d42520                       
+  91D3E1B8  b       #0x91d3e064                       
+  91D3E1BC  mvn     sl, #0                            
+  91D3E1C0  cmp     sl, r6                            
+  91D3E1C4  bls     #0x91d3e164                       
+  91D3E1C8  movw    r0, #0x4728                       
+  91D3E1CC  movt    r0, #0x91d8                       
+  91D3E1D0  bl      #0x91d42520                       
+  91D3E1D4  b       #0x91d3e064                       
+  91D3E1D8  bl      #0x91d37814                       
+  91D3E1DC  cmp     r0, #0                            
+  91D3E1E0  bne     #0x91d3e360                       
+  91D3E1E4  movw    r3, #0x7ba0                       
+  91D3E1E8  movt    r3, #0x9200                       
+  91D3E1EC  ldr     r3, [r3]                          
+  91D3E1F0  cmp     r3, #0                            
+  91D3E1F4  beq     #0x91d3e3e0                       
+  91D3E1F8  movw    r6, #0x7ba0                       
+  91D3E1FC  movt    r6, #0x9200                       
+  91D3E200  mov     r0, r6                            
+  91D3E204  bl      #0x91d45798                       
+
+  BL 目标汇总:
+    91D3E030 -> 91D37B78
+    91D3E060 -> 91D42520
+    91D3E064 -> 91D14734
+    91D3E080 -> 91D377A8
+    91D3E0C8 -> 91D42520
+    91D3E164 -> 91D37814
+    91D3E18C -> 91D3C33C
+    91D3E190 -> 91D01320
+    91D3E1B4 -> 91D42520
+    91D3E1D0 -> 91D42520
+    91D3E1D8 -> 91D37814
+    91D3E204 -> 91D45798
+
+==============================================================================
+fastboot "flash:" handler  0x91D3FBD4
+==============================================================================
+  91D3FBD4  push    {r4, r5, r6, r7, lr}              
+  91D3FBD8  movw    r4, #0x57dc                       
+  91D3FBDC  movt    r4, #0x9201                       
+  91D3FBE0  sub     sp, sp, #0xc                      
+  91D3FBE4  mov     r6, r2                            
+  91D3FBE8  mov     r5, r0                            
+  91D3FBEC  ldr     r3, [r4]                          
+  91D3FBF0  mov     r7, r1                            
+  91D3FBF4  str     r3, [sp, #4]                      
+  91D3FBF8  bl      #0x91d377a8                       
+  91D3FBFC  ldr     r2, [sp, #4]                      
+  91D3FC00  ldr     r3, [r4]                          
+  91D3FC04  cmp     r0, #0                            
+  91D3FC08  bne     #0x91d3fc2c                       
+  91D3FC0C  cmp     r2, r3                            
+  91D3FC10  bne     #0x91d3fc4c                       
+  91D3FC14  mov     r0, r5                            
+  91D3FC18  mov     r1, r7                            
+  91D3FC1C  mov     r2, r6                            
+  91D3FC20  add     sp, sp, #0xc                      
+  91D3FC24  pop     {r4, r5, r6, r7, lr}              
+  91D3FC28  b       #0x91d3f838                       
+  91D3FC2C  cmp     r2, r3                            
+  91D3FC30  bne     #0x91d3fc4c                       
+  91D3FC34  mov     r0, r5                            
+  91D3FC38  mov     r1, r7                            
+  91D3FC3C  mov     r2, r6                            
+  91D3FC40  add     sp, sp, #0xc                      
+  91D3FC44  pop     {r4, r5, r6, r7, lr}              
+  91D3FC48  b       #0x91d3f650                       
+  91D3FC4C  bl      #0x91d516c4                       
+  91D3FC50  push    {r4, lr}                          
+  91D3FC54  movw    r4, #0x57dc                       
+  91D3FC58  movt    r4, #0x9201                       
+  91D3FC5C  sub     sp, sp, #8                        
+  91D3FC60  mov     r0, r1                            
+  91D3FC64  mov     r1, r2                            
+  91D3FC68  ldr     r3, [r4]                          
+  91D3FC6C  str     r3, [sp, #4]                      
+  91D3FC70  bl      #0x91d4282c                       
+  91D3FC74  cmp     r0, #0                            
+  91D3FC78  blt     #0x91d3fcc8                       
+  91D3FC7C  movw    r3, #0x1318                       
+  91D3FC80  movt    r3, #0x91da                       
+  91D3FC84  ldr     r2, [r3, #0x10]                   
+  91D3FC88  cmp     r2, #0                            
+  91D3FC8C  beq     #0x91d3fcb4                       
+  91D3FC90  ldr     r2, [sp, #4]                      
+  91D3FC94  ldr     r3, [r4]                          
+  91D3FC98  cmp     r2, r3                            
+  91D3FC9C  bne     #0x91d3fcf8                       
+  91D3FCA0  movw    r0, #0x4ef4                       
+  91D3FCA4  movt    r0, #0x91d8                       
+  91D3FCA8  add     sp, sp, #8                        
+  91D3FCAC  pop     {r4, lr}                          
+  91D3FCB0  b       #0x91d42564                       
+  91D3FCB4  mov     r0, r3                            
+  91D3FCB8  mov     r2, #1                            
+  91D3FCBC  str     r2, [r3, #0x10]                   
+  91D3FCC0  bl      #0x91d3da74                       
+  91D3FCC4  b       #0x91d3fc90                       
+  91D3FCC8  movw    r0, #0x4eb0                       
+  91D3FCCC  movt    r0, #0x91d8                       
+  91D3FCD0  bl      #0x91d51508                       
+  91D3FCD4  ldr     r2, [sp, #4]                      
+  91D3FCD8  ldr     r3, [r4]                          
+  91D3FCDC  cmp     r2, r3                            
+  91D3FCE0  bne     #0x91d3fcf8                       
+  91D3FCE4  movw    r0, #0x4edc                       
+  91D3FCE8  movt    r0, #0x91d8                       
+  91D3FCEC  add     sp, sp, #8                        
+  91D3FCF0  pop     {r4, lr}                          
+  91D3FCF4  b       #0x91d42520                       
+  91D3FCF8  bl      #0x91d516c4                       
+  91D3FCFC  movw    r3, #0x1318                       
+  91D3FD00  movt    r3, #0x91da                       
+  91D3FD04  push    {r4, lr}                          
+  91D3FD08  movw    r4, #0x57dc                       
+  91D3FD0C  movt    r4, #0x9201                       
+  91D3FD10  ldr     r1, [r3, #0x10]                   
+  91D3FD14  sub     sp, sp, #8                        
+  91D3FD18  ldr     r2, [r4]                          
+  91D3FD1C  cmp     r1, #0                            
+  91D3FD20  str     r2, [sp, #4]                      
+  91D3FD24  beq     #0x91d3fd38                       
+  91D3FD28  mov     r0, r3                            
+  91D3FD2C  mov     r2, #0                            
+  91D3FD30  str     r2, [r3, #0x10]                   
+  91D3FD34  bl      #0x91d3da74                       
+  91D3FD38  ldr     r2, [sp, #4]                      
+
+  BL 目标汇总:
+    91D3FBF8 -> 91D377A8
+    91D3FC4C -> 91D516C4
+    91D3FC70 -> 91D4282C
+    91D3FCC0 -> 91D3DA74
+    91D3FCD0 -> 91D51508
+    91D3FCF8 -> 91D516C4
+    91D3FD34 -> 91D3DA74

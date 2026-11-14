@@ -1,0 +1,46 @@
+=== pool entries with value in [0x91D98F60..0x91D98FC8] ===
+  pool@0x91D39CB0 = 0x91D98FBC  <- 0x91D39C14(ldr r4, [pc, #0x94])
+
+=== movw/movt of 0x91D98Fxx bases ===
+
+=== sibling fn 0x91D79890 head ===
+  91D79890  svcvs    #0x6f6261
+  91D79894  andeq    r0, r0, r4, ror r0
+  91D79898  strbvs   r6, [r4, #-0xf6d]!
+  91D7989C  ldrbtvc  r5, [r3], #-0xf6d
+  91D798A0  andeq    r0, r0, r1, lsr r0
+  91D798A4  strbvs   r6, [r4, #-0xf6d]!
+  91D798A8  ldrbtvc  r5, [r3], #-0xf6d
+  91D798AC  andeq    r0, r0, r2, lsr r0
+  91D798B0  rsbslo   r6, r3, #0x6500000
+  91D798B4  andeq    r0, r0, r0
+  91D798B8  svcvs    #0x636572
+  91D798BC  ldmdbvc  r2!, {r1, r2, r4, r5, r6, r8, sl, sp, lr} ^
+  91D798C0  andeq    r0, r0, r0
+  91D798C4  cmnvs    r3, #0x1b4000
+  91D798C8  andeq    r0, r0, r0
+  91D798CC  rsbeq    r7, r4, r3, ror r3
+  91D798D0  subshs   r5, r4, r7, asr #32
+  91D798D4  strbtvs  r6, [r1], #-0x548
+
+=== sibling fn 0x91D3A938 head ===
+  91D3A938  movw     r3, #0x57dc
+  91D3A93C  movt     r3, #0x9201
+  91D3A940  str      lr, [sp, #-4]!
+  91D3A944  sub      sp, sp, #0xc
+  91D3A948  ldr      r2, [r3]
+  91D3A94C  str      r2, [sp, #4]
+  91D3A950  ldr      r2, [sp, #4]
+  91D3A954  ldr      r3, [r3]
+  91D3A958  cmp      r2, r3
+  91D3A95C  bne      #0x91d3a97c
+  91D3A960  movw     r0, #0x3ac8
+  91D3A964  movw     r1, #0x37fc
+  91D3A968  movt     r0, #0x91d8
+  91D3A96C  movt     r1, #0x91d8
+  91D3A970  add      sp, sp, #0xc
+  91D3A974  pop      {lr}
+  91D3A978  b        #0x91d5225c
+  91D3A97C  bl       #0x91d516c4
+  91D3A980  push     {r4, r5, r6, r7, lr}
+  91D3A984  movw     r4, #0x57dc

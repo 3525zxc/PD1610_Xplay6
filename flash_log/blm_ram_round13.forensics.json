@@ -1,0 +1,169 @@
+{
+  "input": "flash_log/blm_ram_round13.bin",
+  "size": 262144,
+  "sha256": "d85913f83e49bf93bd0b129f854bcd878e4720d9f2b4b916f71471f7f66ba6dc",
+  "layout_schema": "blm-layout-v1",
+  "meta": {
+    "generation": 1,
+    "last_bank": 0,
+    "last_fdt_phys": 1107296256,
+    "last_log_phys": 1108344832
+  },
+  "bank_count": 1,
+  "banks": [
+    {
+      "bank_index": 0,
+      "bank_offset": 4096,
+      "generation": 1,
+      "fdt_phys": 1107296256,
+      "log_phys": 1108344832,
+      "ddr_hint": 1073741824,
+      "stages": [
+        {
+          "stage": 1,
+          "name": "START_KERNEL",
+          "seq": 1,
+          "jiffies": 4294892296
+        },
+        {
+          "stage": 2,
+          "name": "BEFORE_SETUP_ARCH",
+          "seq": 2,
+          "jiffies": 4294892296
+        },
+        {
+          "stage": 3,
+          "name": "SETUP_ARCH_ENTER",
+          "seq": 3,
+          "jiffies": 4294892296
+        },
+        {
+          "stage": 4,
+          "name": "FDT_SCAN_DONE",
+          "seq": 4,
+          "jiffies": 4294892296
+        },
+        {
+          "stage": 5,
+          "name": "EARLY_IOREMAP",
+          "seq": 5,
+          "jiffies": 4294892296
+        },
+        {
+          "stage": 6,
+          "name": "PAGING_INIT",
+          "seq": 6,
+          "jiffies": 4294892296
+        },
+        {
+          "stage": 7,
+          "name": "UNFLATTEN_DT",
+          "seq": 7,
+          "jiffies": 4294892296
+        },
+        {
+          "stage": 8,
+          "name": "AFTER_SETUP_ARCH",
+          "seq": 8,
+          "jiffies": 4294892296
+        },
+        {
+          "stage": 9,
+          "name": "CONSOLE_INIT",
+          "seq": 10,
+          "jiffies": 4294892296
+        },
+        {
+          "stage": 10,
+          "name": "CONSOLE_REGISTERED",
+          "seq": 9,
+          "jiffies": 4294892296
+        },
+        {
+          "stage": 11,
+          "name": "REST_INIT",
+          "seq": 11,
+          "jiffies": 4294892296
+        },
+        {
+          "stage": 12,
+          "name": "KERNEL_INIT",
+          "seq": 12,
+          "jiffies": 4294892296
+        }
+      ],
+      "lines": [
+        {
+          "seq": 1,
+          "jiffies": 4294892296,
+          "text": "BLM monitor init"
+        },
+        {
+          "seq": 2,
+          "jiffies": 4294892296,
+          "text": "BLM memblock reserve"
+        }
+      ],
+      "last_stage_id": 12,
+      "last_stage_name": "KERNEL_INIT",
+      "text": "BLM monitor init\nBLM memblock reserve"
+    }
+  ],
+  "analysis": {
+    "sha256": "d85913f83e49bf93bd0b129f854bcd878e4720d9f2b4b916f71471f7f66ba6dc",
+    "meta": {
+      "generation": 1,
+      "last_bank": 0,
+      "last_fdt_phys": 1107296256,
+      "last_log_phys": 1108344832
+    },
+    "bank_count": 1,
+    "banks": [
+      {
+        "bank_index": 0,
+        "generation": 1,
+        "last_stage_id": 12,
+        "last_stage_name": "KERNEL_INIT",
+        "line_count": 2
+      }
+    ],
+    "selected_bank": {
+      "bank_index": 0,
+      "generation": 1,
+      "fdt_phys": "0x42000000",
+      "log_phys": "0x42100000",
+      "ddr_hint": "0x40000000",
+      "last_stage_id": 12,
+      "last_stage_name": "KERNEL_INIT"
+    },
+    "rule_id": "initcalls",
+    "diagnosis": "已跑到 kernel_init/initcalls/rootfs，失败偏向驱动 probe、挂载或 Android ramdisk。",
+    "next_action": "按行槽报错做 stock vs custom 逐项对照；重点看 SCMI、remoteproc、fstab、FBE、vold。",
+    "confidence": "阶段为 [O]，机制为 [H]",
+    "last_lines": [
+      "BLM monitor init",
+      "BLM memblock reserve"
+    ]
+  },
+  "stage_names": {
+    "0": "NONE",
+    "1": "START_KERNEL",
+    "2": "BEFORE_SETUP_ARCH",
+    "3": "SETUP_ARCH_ENTER",
+    "4": "FDT_SCAN_DONE",
+    "5": "EARLY_IOREMAP",
+    "6": "PAGING_INIT",
+    "7": "UNFLATTEN_DT",
+    "8": "AFTER_SETUP_ARCH",
+    "9": "CONSOLE_INIT",
+    "10": "CONSOLE_REGISTERED",
+    "11": "REST_INIT",
+    "12": "KERNEL_INIT",
+    "13": "INITCALLS_DONE",
+    "14": "ROOTFS_READY",
+    "15": "USER_INIT_ATTEMPT",
+    "16": "PANIC_ENTER",
+    "17": "WATCHDOG_PANIC",
+    "18": "BOOT_OK"
+  }
+}

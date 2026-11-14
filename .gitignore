@@ -1,0 +1,25 @@
+# BLM project - GitHub publish tree
+# Large / third-party binary assets are archived separately (encrypted, Baidu Netdisk / GitHub Release)
+/images/
+/build/
+/wsl_rebuild/
+/archive/
+*.img
+*.bin
+*.dtb
+*.vhdx
+*.tar
+*.tar.gz
+*.tgz
+*.vol*
+*.asm
+*.ko
+*.elf
+*.o
+*.a
+*.pyc
+__pycache__/
+stock_Image.bin
+stock_kallsyms*.txt
+blm_ram_round*.bin
+PUBLISH_MANIFEST.json

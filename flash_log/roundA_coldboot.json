@@ -1,0 +1,44 @@
+{
+  "verdict": "PASS",
+  "cycles_requested": 3,
+  "cycles_run": 3,
+  "cycles_passed": 3,
+  "method": "adb reboot; offline->online; poll sys.boot_completed=1 twice",
+  "note": "single reboot per cycle; no partition writes",
+  "cycles": [
+    {
+      "cycle": 1,
+      "started_at": "2026-11-14T21:53:00",
+      "kernel_before": "3.18.120-perf",
+      "went_offline": true,
+      "boot_seconds": 36.8,
+      "boot_completed": "1",
+      "kernel_after": "3.18.120-perf",
+      "uptime": "22:46:26 up 0 min,  0 users,  load average: 3.13, 0.75, 0.25",
+      "result": "PASS"
+    },
+    {
+      "cycle": 2,
+      "started_at": "2026-11-14T21:53:50",
+      "kernel_before": "3.18.120-perf",
+      "went_offline": true,
+      "boot_seconds": 58.1,
+      "boot_completed": "1",
+      "kernel_after": "3.18.120-perf",
+      "uptime": "22:46:29 up 0 min,  0 users,  load average: 4.21, 1.10, 0.37",
+      "result": "PASS"
+    },
+    {
+      "cycle": 3,
+      "started_at": "2026-11-14T21:55:01",
+      "kernel_before": "3.18.120-perf",
+      "went_offline": true,
+      "boot_seconds": 58.2,
+      "boot_completed": "1",
+      "kernel_after": "3.18.120-perf",
+      "uptime": "22:46:28 up 0 min,  0 users,  load average: 4.14, 1.08, 0.36",
+      "result": "PASS"
+    }
+  ],
+  "finished_at": "2026-11-14T21:56:12"
+}

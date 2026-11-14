@@ -1,0 +1,72 @@
+========================================================================
+A. fastboot 相关函数引用来源（找函数指针注册表 / 轮询循环）
+========================================================================
+  0x91D42414 fastboot cmd dispatcher?
+
+  0x91D41E18 OKAY/FAIL writer
+      branch: 0x91D420F8(bl #0x91d41e18), 0x91D42114(bl #0x91d41e18), 0x91D4228C(bl #0x91d41e18), 0x91D42368(bl #0x91d41e18), 0x91D42490(bl #0x91d41e18), 0x91D42514(bl #0x91d41e18), 0x91D4255C(b #0x91d41e18), 0x91D425A0(b #0x91d41e18), 0x91D427E8(bl #0x91d41e18), 0x91D42934(bl #0x91d41e18)
+
+  0x91D425A8 FAIL helper
+      branch: 0x91D42784(bl #0x91d425a8)
+
+  0x91D42740 unknown-cmd path
+
+  0x91D1430C FASTBOOT MODE banner fn
+      branch: 0x91D13498(b #0x91d1430c), 0x91D13554(b #0x91d1430c), 0x91D14788(bl #0x91d1430c)
+
+  0x91D14788 banner caller
+
+  0x91D13498 banner caller b
+
+  0x91D40848 getid?
+      branch: 0x91D14400(bl #0x91d40848)
+
+  0x91D47AC4 string out
+      branch: 0x91D13F1C(bl #0x91d47ac4), 0x91D13F6C(bl #0x91d47ac4), 0x91D13F9C(bl #0x91d47ac4), 0x91D13FC4(bl #0x91d47ac4), 0x91D1400C(bl #0x91d47ac4), 0x91D14058(bl #0x91d47ac4), 0x91D1409C(bl #0x91d47ac4), 0x91D14190(bl #0x91d47ac4), 0x91D141BC(bl #0x91d47ac4), 0x91D14228(bl #0x91d47ac4), 0x91D14258(bl #0x91d47ac4), 0x91D142A4(bl #0x91d47ac4), 0x91D1438C(bl #0x91d47ac4), 0x91D143C4(bl #0x91d47ac4), 0x91D143EC(bl #0x91d47ac4), 0x91D14438(bl #0x91d47ac4), 0x91D144B8(bl #0x91d47ac4), 0x91D14514(bl #0x91d47ac4), 0x91D14570(bl #0x91d47ac4), 0x91D145CC(bl #0x91d47ac4), 0x91D14628(bl #0x91d47ac4), 0x91D14684(bl #0x91d47ac4), 0x91D468C0(bl #0x91d47ac4), 0x91D468E8(bl #0x91d47ac4)
+
+========================================================================
+B. update_cmdline 调用点 与 G 调用点 的函数归属/先后
+========================================================================
+  G@0x91D3C84C             site=0x91D3C84C  函数起点~0x91D3C3F0  函数内 G 调用点: 0x91D3C84C
+  G@0x91D3D764             site=0x91D3D764  函数起点~0x91D3D27C  函数内 G 调用点: 0x91D3D764
+  G@0x91D3E380             site=0x91D3E380  函数起点~0x91D3E000  函数内 G 调用点: 0x91D3E380
+  cmdline@0x91D3CB2C       site=0x91D3CB2C  函数起点~0x91D3C3F0  函数内 G 调用点: 0x91D3C84C
+  cmdline@0x91D3D308       site=0x91D3D308  函数起点~0x91D3D27C  函数内 G 调用点: 0x91D3D764
+  cmdline@0x91D3E5F4       site=0x91D3E5F4  函数起点~0x91D3E000  函数内 G 调用点: 0x91D3E380
+
+========================================================================
+C. usb/dload/fastboot 相关字符串
+========================================================================
+  0x91D77252: 'usb_iface'
+  0x91D78A3C: 'usb20_noc_usb20_clk'
+  0x91D78A46: 'usb20_clk'
+  0x91D78A5E: 'usb20_noc_clk. ret = %d\n'
+  0x91D78A78: 'usb20_master_clk'
+  0x91D78A9A: 'usb20_master_clk. ret = %d\n'
+  0x91D78AB8: 'usb20_mock_utmi_clk'
+  0x91D7A0EC: 'udc_start()\n'
+        movw/movt @0x91D0C3A4
+  0x91D7A0FC: 'udc cannot start before init\n'
+        movw/movt @0x91D0C6B0
+  0x91D7A11C: 'udc has no gadget registered\n'
+        movw/movt @0x91D0C69C
+  0x91D828C6: 'udc.c'
+  0x91D828CC: 'udc'
+  0x91D828E4: 'udc_handle_setup: DEVICE_WRITE : SET_CONFIGURATION malloc fa'
+        movw/movt @0x91D33A10
+  0x91D82964: 'udc_dev'
+  0x91D7969E: 'dload mode...\n'
+  0x91D7EF8A: 'dload mode failed: %x\n'
+  0x91D84682: 'dload mode\n'
+  0x91D8559F: 'fastboot mode...\n'
+  0x91D85712: 'fastboot mode.\n'
+  0x91D873F6: 'fastboot mode, ignore charger loop\n'
+  0x91D7CBB7: 'bootloader?\n'
+  0x91D7CBD6: 'bootloader, you will be able to install custom operating sys'
+  0x91D7CCFC: 'bootloader will also delete all personal data from your phon'
+  0x91D7CDC3: 'bootloader(may void warranty)\n'
+  0x91D7CDF6: 'bootloader and restart phone\n'
+  0x91D7D068: 'bootloader\n'
+  0x91D7D18B: 'bootloader\n\nVisit this link on another device:\n'
+  0x91D873F0: 'enter fastboot mode, ignore charger loop\n'
+        movw/movt @0x91D470A4

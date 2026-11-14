@@ -1,0 +1,5 @@
+input0 qpnp_pon
+input1 qbt1000_key_input
+input2 hbtp_vm
+input3 gpio-keys
+input4 fts

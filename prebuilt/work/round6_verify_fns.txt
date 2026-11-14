@@ -1,0 +1,345 @@
+########################################################################
+# 'Device is unlocked! Skipping verification...'  (0x91D840C4)
+# refs: movw@0x91D3C3A0
+# 引用点 0x91D3C3A0 所在函数起点 ~0x91D3C344
+=== fn@0x91D3C344 (引用 0x91D3C3A0) @0x91D3C344 ===
+  91D3C344  push     {r4, lr}
+  91D3C348  movw     r4, #0x57dc   ; = 0x920157DC
+  91D3C34C  movt     r4, #0x9201
+  91D3C350  ldr      r0, [r3, #0x10]
+  91D3C354  sub      sp, sp, #8
+  91D3C358  ldr      r3, [r4]
+  91D3C35C  cmp      r0, #0
+  91D3C360  str      r3, [sp, #4]
+  91D3C364  bne      #0x91d3c390
+  91D3C368  bl       #0x91d12cfc
+  91D3C36C  bl       #0x91d12594
+  91D3C370  cmp      r0, #2
+  91D3C374  beq      #0x91d3c3c4
+  91D3C378  ldr      r2, [sp, #4]
+  91D3C37C  ldr      r3, [r4]
+  91D3C380  cmp      r2, r3
+  91D3C384  bne      #0x91d3c3ec
+  91D3C388  add      sp, sp, #8
+  91D3C38C  pop      {r4, pc}
+
+
+########################################################################
+# 'ERROR: Image Invalid! signature check failed! ret %d'  (0x91D7F98C)
+# refs: (none)
+
+########################################################################
+# 'ERROR: VB: Image Invalid! signature check failed! ret %d'  (0x91D7F8F0)
+# refs: (none)
+
+########################################################################
+# 'ERROR: Cannot read boot image signature'  (0x91D842C8)
+# refs: movw@0x91D3CE68, movw@0x91D3D85C
+# 引用点 0x91D3CE68 所在函数起点 ~0x91D3C3F0
+=== fn@0x91D3C3F0 (引用 0x91D3CE68) @0x91D3C3F0 ===
+  91D3C3F0  push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+  91D3C3F4  movw     r6, #0x57dc   ; = 0x920157DC
+  91D3C3F8  movt     r6, #0x9201
+  91D3C3FC  sub      sp, sp, #0x64
+  91D3C400  movw     r0, #0x4138   ; = 0x91D84138 = 'bootselect'
+  91D3C404  movt     r0, #0x91d8
+  91D3C408  ldr      r2, [r6]
+  91D3C40C  mov      r3, #0
+  91D3C410  str      lr, [sp, #0x2c]
+  91D3C414  str      r3, [sp, #0x40]
+  91D3C418  str      r3, [sp, #0x44]
+  91D3C41C  str      r2, [sp, #0x5c]
+  91D3C420  bl       #0x91d09c88
+  91D3C424  cmn      r0, #1
+  91D3C428  mov      r4, r0
+  91D3C42C  beq      #0x91d3c444
+  91D3C430  bl       #0x91d09f4c
+  91D3C434  mov      r8, r0
+  91D3C438  mov      sb, r1
+  91D3C43C  orrs     r0, r8, sb
+  91D3C440  bne      #0x91d3c5a8
+  91D3C444  movw     r7, #0x3abc   ; = 0x92013ABC
+  91D3C448  movt     r7, #0x9201
+  91D3C44C  ldr      r3, [r7]
+  91D3C450  cmp      r3, #0
+  91D3C454  bne      #0x91d3c46c
+  91D3C458  movw     r3, #0x2ab8   ; = 0x92012AB8
+  91D3C45C  movt     r3, #0x9201
+  91D3C460  ldr      r4, [r3]
+  91D3C464  cmp      r4, #0
+  91D3C468  beq      #0x91d3cb58
+  91D3C46C  movw     r8, #0x7b90   ; = 0x92007B90
+  91D3C470  movt     r8, #0x9200
+  91D3C474  mov      r3, #0
+  91D3C478  str      r3, [r8]
+  91D3C47C  mov      r0, #0xf000
+  91D3C480  movw     r1, #0x41a0   ; = 0x91DF41A0 = 'ªª'
+  91D3C484  movt     r0, #0x91df
+  91D3C488  movt     r1, #0x91d8
+  91D3C48C  mov      r2, #8
+  91D3C490  bl       #0x91d52e68
+  91D3C494  cmp      r0, #0
+  91D3C498  beq      #0x91d3cae4
+  91D3C49C  ldr      r3, [r7]
+  91D3C4A0  cmp      r3, #0
+  91D3C4A4  bne      #0x91d3cb34
+  91D3C4A8  movw     r1, #0x2ab8   ; = 0x92012AB8
+  91D3C4AC  movt     r1, #0x9201
+  91D3C4B0  movw     r2, #0x412c
+  91D3C4B4  movw     r3, #0x5a8c
+  91D3C4B8  ldr      r4, [r1]
+  91D3C4BC  movt     r2, #0x91d8
+  91D3C4C0  movt     r3, #0x91d8
+  91D3C4C4  cmp      r4, #0
+  91D3C4C8  movne    r4, r2
+  91D3C4CC  moveq    r4, r3
+  91D3C4D0  mov      r0, r4
+  91D3C4D4  bl       #0x91d09c88
+  91D3C4D8  mov      r5, r0
+  91D3C4DC  bl       #0x91d09f4c
+  91D3C4E0  strd     r0, r1, [sp, #0x10]
+  91D3C4E4  orrs     r1, r0, r1
+  91D3C4E8  beq      #0x91d3cdb0
+  91D3C4EC  mov      r0, r5
+  91D3C4F0  movw     r4, #0x5b00
+  91D3C4F4  movw     r5, #0x83c   ; = 0x9200083C
+  91D3C4F8  movt     r4, #0x9200
+  91D3C4FC  movt     r5, #0x9201
+  91D3C500  bl       #0x91d09fc4
+  91D3C504  bl       #0x91d11f00
+  91D3C508  mov      r2, r4
+  91D3C50C  ldr      r3, [r5]
+  91D3C510  ldrd     r0, r1, [sp, #0x10]
+  91D3C514  bl       #0x91d118b8
+  91D3C518  cmp      r0, #0
+  91D3C51C  bne      #0x91d3ce50
+  91D3C520  movw     r1, #0x41a0
+  91D3C524  mov      r0, r4
+  91D3C528  movt     r1, #0x91d8
+  91D3C52C  mov      r2, #8
+  91D3C530  bl       #0x91d52e68
+  91D3C534  subs     sb, r0, #0
+  91D3C538  bne      #0x91d3c57c
+  91D3C53C  ldr      r3, [r4, #0x24]
+  91D3C540  cmp      r3, #0
+  91D3C544  beq      #0x91d3c660
+  91D3C548  ldr      r2, [r5]
+  91D3C54C  cmp      r3, r2
+  91D3C550  beq      #0x91d3c660
+  91D3C554  cmp      r3, #0x1000
+  91D3C558  bhi      #0x91d3ce78
+  91D3C55C  sub      r2, r3, #1
+  91D3C560  movw     r0, #0x7b98   ; = 0x92007B98
+  91D3C564  movt     r0, #0x9200
+  91D3C568  str      r3, [r5]
+  91D3C56C  str      r0, [sp, #0x28]
+  91D3C570  mov      r3, r2
+  91D3C574  str      r2, [r0]
+  91D3C578  b        #0x91d3c670
+  91D3C57C  movw     r0, #0x41f4   ; = 0x91D841F4 = 'ERROR: Invalid boot image header\n'
+  91D3C580  movt     r0, #0x91d8
+  91D3C584  bl       #0x91d51508
+  91D3C588  mov      sb, #4
+  91D3C58C  ldr      r2, [sp, #0x5c]
+  91D3C590  mov      r0, sb
+  91D3C594  ldr      r3, [r6]
+  91D3C598  cmp      r2, r3
+  91D3C59C  bne      #0x91d3ce8c
+  91D3C5A0  add      sp, sp, #0x64
+  91D3C5A4  pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc}
+
+# 引用点 0x91D3D85C 所在函数起点 ~0x91D3D27C
+=== fn@0x91D3D27C (引用 0x91D3D85C) @0x91D3D27C ===
+  91D3D27C  push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+  91D3D280  movw     r4, #0x57dc   ; = 0x920157DC
+  91D3D284  movt     r4, #0x9201
+  91D3D288  sub      sp, sp, #0x34
+  91D3D28C  mov      r8, lr
+  91D3D290  ldr      r3, [r4]
+  91D3D294  str      r3, [sp, #0x2c]
+  91D3D298  bl       #0x91d377a8
+  91D3D29C  cmp      r0, #0
+  91D3D2A0  beq      #0x91d3d328
+  91D3D2A4  mov      r0, #0xf000
+  91D3D2A8  movw     r1, #0x41a0   ; = 0x91DF41A0 = 'ªª'
+  91D3D2AC  movt     r0, #0x91df
+  91D3D2B0  movt     r1, #0x91d8
+  91D3D2B4  mov      r2, #8
+  91D3D2B8  bl       #0x91d52e68
+  91D3D2BC  cmp      r0, #0
+  91D3D2C0  moveq    r5, #0xf000
+  91D3D2C4  movteq   r5, #0x91df
+  91D3D2C8  bne      #0x91d3d76c
+  91D3D2CC  add      r2, r5, #0x40
+  91D3D2D0  add      r3, r5, #0x260
+  91D3D2D4  str      r2, [sp, #0x24]
+  91D3D2D8  str      r3, [sp, #0x28]
+  91D3D2DC  ldr      r7, [r5, #0xc]
+  91D3D2E0  ldr      r6, [r5, #0x20]
+  91D3D2E4  bl       #0x91d00770
+  91D3D2E8  ldr      ip, [r5, #0x14]
+  91D3D2EC  add      r2, sp, #0x24
+  91D3D2F0  mov      r1, r6
+  91D3D2F4  str      ip, [sp]
+  91D3D2F8  ldr      ip, [r5, #0x10]
+  91D3D2FC  str      ip, [sp, #4]
+  91D3D300  mov      r3, r0
+  91D3D304  mov      r0, r7
+  91D3D308  bl       #0x91d3bcc0
+  91D3D30C  mov      r0, #0
+  91D3D310  ldr      r2, [sp, #0x2c]
+  91D3D314  ldr      r3, [r4]
+  91D3D318  cmp      r2, r3
+  91D3D31C  bne      #0x91d3d86c
+  91D3D320  add      sp, sp, #0x34
+  91D3D324  pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc}
+
+
+########################################################################
+# ' rebooting bootloader'  (0x91D84EF4)
+# refs: movw@0x91D3FCA4
+# 引用点 0x91D3FCA4 所在函数起点 ~0x91D3FC50
+=== fn@0x91D3FC50 (引用 0x91D3FCA4) @0x91D3FC50 ===
+  91D3FC50  push     {r4, lr}
+  91D3FC54  movw     r4, #0x57dc   ; = 0x920157DC
+  91D3FC58  movt     r4, #0x9201
+  91D3FC5C  sub      sp, sp, #8
+  91D3FC60  mov      r0, r1
+  91D3FC64  mov      r1, r2
+  91D3FC68  ldr      r3, [r4]
+  91D3FC6C  str      r3, [sp, #4]
+  91D3FC70  bl       #0x91d4282c
+  91D3FC74  cmp      r0, #0
+  91D3FC78  blt      #0x91d3fcc8
+  91D3FC7C  movw     r3, #0x1318   ; = 0x91DA1318 = 'ANDROID-BOOT!'
+  91D3FC80  movt     r3, #0x91da
+  91D3FC84  ldr      r2, [r3, #0x10]
+  91D3FC88  cmp      r2, #0
+  91D3FC8C  beq      #0x91d3fcb4
+  91D3FC90  ldr      r2, [sp, #4]
+  91D3FC94  ldr      r3, [r4]
+  91D3FC98  cmp      r2, r3
+  91D3FC9C  bne      #0x91d3fcf8
+  91D3FCA0  movw     r0, #0x4ef4   ; = 0x91D84EF4 = ' rebooting bootloader'
+  91D3FCA4  movt     r0, #0x91d8
+  91D3FCA8  add      sp, sp, #8
+  91D3FCAC  pop      {r4, lr}
+  91D3FCB0  b        #0x91d42564
+  91D3FCB4  mov      r0, r3
+  91D3FCB8  mov      r2, #1
+  91D3FCBC  str      r2, [r3, #0x10]
+  91D3FCC0  bl       #0x91d3da74
+  91D3FCC4  b        #0x91d3fc90
+  91D3FCC8  movw     r0, #0x4eb0   ; = 0x91D84EB0 = 'fastboot unlock check Signature fail...\n'
+  91D3FCCC  movt     r0, #0x91d8
+  91D3FCD0  bl       #0x91d51508
+  91D3FCD4  ldr      r2, [sp, #4]
+  91D3FCD8  ldr      r3, [r4]
+  91D3FCDC  cmp      r2, r3
+  91D3FCE0  bne      #0x91d3fcf8
+  91D3FCE4  movw     r0, #0x4edc   ; = 0x91D84EDC = ' check Signature Fail'
+  91D3FCE8  movt     r0, #0x91d8
+  91D3FCEC  add      sp, sp, #8
+  91D3FCF0  pop      {r4, lr}
+  91D3FCF4  b        #0x91d42520
+  91D3FCF8  bl       #0x91d516c4
+  91D3FCFC  movw     r3, #0x1318   ; = 0x91DA1318 = 'ANDROID-BOOT!'
+  91D3FD00  movt     r3, #0x91da
+  91D3FD04  push     {r4, lr}
+  91D3FD08  movw     r4, #0x57dc   ; = 0x920157DC
+  91D3FD0C  movt     r4, #0x9201
+  91D3FD10  ldr      r1, [r3, #0x10]
+  91D3FD14  sub      sp, sp, #8
+  91D3FD18  ldr      r2, [r4]
+  91D3FD1C  cmp      r1, #0
+  91D3FD20  str      r2, [sp, #4]
+  91D3FD24  beq      #0x91d3fd38
+  91D3FD28  mov      r0, r3
+  91D3FD2C  mov      r2, #0
+  91D3FD30  str      r2, [r3, #0x10]
+  91D3FD34  bl       #0x91d3da74
+  91D3FD38  ldr      r2, [sp, #4]
+  91D3FD3C  ldr      r3, [r4]
+  91D3FD40  cmp      r2, r3
+  91D3FD44  bne      #0x91d3fd5c
+  91D3FD48  movw     r0, #0x286c   ; = 0x91D8286C
+  91D3FD4C  movt     r0, #0x91d8
+  91D3FD50  add      sp, sp, #8
+  91D3FD54  pop      {r4, lr}
+  91D3FD58  b        #0x91d42564
+  91D3FD5C  bl       #0x91d516c4
+  91D3FD60  movw     r3, #0x3abc   ; = 0x92013ABC
+  91D3FD64  movt     r3, #0x9201
+  91D3FD68  push     {r4, r5, r6, lr}
+  91D3FD6C  movw     r5, #0x57dc   ; = 0x920157DC
+  91D3FD70  movt     r5, #0x9201
+  91D3FD74  ldr      r6, [r3]
+  91D3FD78  sub      sp, sp, #8
+  91D3FD7C  mov      r4, r0
+  91D3FD80  ldr      r3, [r5]
+  91D3FD84  cmp      r6, #0
+  91D3FD88  str      r3, [sp, #4]
+  91D3FD8C  bne      #0x91d3fe68
+  91D3FD90  movw     r0, #0x5a8c   ; = 0x91D85A8C = 'boot'
+  91D3FD94  movt     r0, #0x91d8
+  91D3FD98  bl       #0x91d09c88
+  91D3FD9C  bl       #0x91d09f4c
+  91D3FDA0  orrs     r3, r0, r1
+  91D3FDA4  beq      #0x91d3fec0
+  91D3FDA8  movw     r3, #0x83c   ; = 0x9201083C
+  91D3FDAC  movt     r3, #0x9201
+  91D3FDB0  movw     r2, #0x5b00   ; = 0x92005B00
+  91D3FDB4  movt     r2, #0x9200
+  91D3FDB8  ldr      r3, [r3]
+  91D3FDBC  bl       #0x91d118b8
+  91D3FDC0  subs     r6, r0, #0
+  91D3FDC4  bne      #0x91d3fed4
+  91D3FDC8  movw     r0, #0x5b00
+  91D3FDCC  movw     r1, #0x41a0   ; = 0x920041A0
+  91D3FDD0  movt     r0, #0x9200
+  91D3FDD4  movt     r1, #0x91d8
+  91D3FDD8  mov      r2, #8
+  91D3FDDC  bl       #0x91d52e68
+  91D3FDE0  cmp      r0, #0
+  91D3FDE4  bne      #0x91d3feac
+  91D3FDE8  movw     r0, #0x4f3c
+  91D3FDEC  ldr      r1, [pc, #0x110]
+  91D3FDF0  movt     r0, #0x91d8
+  91D3FDF4  bl       #0x91d51508
+  91D3FDF8  cmp      r4, #0
+  91D3FDFC  beq      #0x91d3fe74
+  91D3FE00  movw     r1, #0x4f50
+  91D3FE04  ldr      r0, [pc, #0xf8]
+  91D3FE08  movt     r1, #0x91d8
+  91D3FE0C  bl       #0x91d535fc
+  91D3FE10  subs     r6, r0, #0
+  91D3FE14  beq      #0x91d3fe44
+  91D3FE18  movw     r0, #0x4f50   ; = 0x91D84F50 = 'fingerprint.abbr='
+  91D3FE1C  movt     r0, #0x91d8
+  91D3FE20  bl       #0x91d5323c
+  91D3FE24  ldrb     r3, [r6, r0]
+  91D3FE28  add      r2, r6, r0
+  91D3FE2C  cmp      r3, #0x20
+  91D3FE30  beq      #0x91d3fe44
+  91D3FE34  strb     r3, [r4], #1
+  91D3FE38  ldrb     r3, [r2, #1]!
+  91D3FE3C  cmp      r3, #0x20
+  91D3FE40  bne      #0x91d3fe34
+  91D3FE44  mov      r0, r4
+  91D3FE48  mov      r3, #0
+  91D3FE4C  strb     r3, [r4]
+  91D3FE50  ldr      r2, [sp, #4]
+  91D3FE54  ldr      r3, [r5]
+  91D3FE58  cmp      r2, r3
+  91D3FE5C  bne      #0x91d3ff00
+  91D3FE60  add      sp, sp, #8
+  91D3FE64  pop      {r4, r5, r6, pc}
+
+
+########################################################################
+# 'Device tampered: %s'  (0x91D8393D)
+# refs: (none)
+
+########################################################################
+# 'Device unlocked: %s'  (0x91D83955)
+# refs: (none)

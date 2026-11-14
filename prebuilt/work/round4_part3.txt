@@ -1,0 +1,189 @@
+str 0x91D83E90: ' androidboot.alarmboot=true'
+str 0x91D83EC8: ' androidboot.authorized_kernel=true'
+str 0x91D83D08: '%s return %d!'
+str 0x91D85778: 'update_cmdline'
+str 0x91D856B8: 'Display Init: Start\n'
+str 0x91D856D0: 'Display Init: Done\n'
+
+pool@0x91D415CC = 0xEB00403C
+  as VA string: ''
+
+=== 0x91D40974 (called first in tail)  0x91D40974..0x91D409B0 ===
+  91D40974  push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+  91D40978  sub      sp, sp, #0x64
+  91D4097C  movw     r1, #0x57dc
+  91D40980  movt     r1, #0x9201
+  91D40984  str      r1, [sp, #0xc]
+  91D40988  movw     r0, #0x5288
+  91D4098C  ldr      r2, [sp, #0xc]
+  91D40990  movt     r0, #0x91d8
+  91D40994  movw     r1, #0xff70
+  91D40998  movt     r1, #0x91d3
+  91D4099C  movw     sl, #0x1318
+  91D409A0  movt     sl, #0x91da
+  91D409A4  ldr      r3, [r2]
+  91D409A8  str      r3, [sp, #0x5c]
+  91D409AC  bl       #0x91d41d3c
+
+=== 0x91D0A010 (tail 2nd call)  0x91D0A010..0x91D0A070 ===
+  91D0A010  movw     r3, #0x57dc
+  91D0A014  movt     r3, #0x9201
+  91D0A018  str      lr, [sp, #-4]!
+  91D0A01C  sub      sp, sp, #0xc
+  91D0A020  ldr      r2, [r3]
+  91D0A024  str      r2, [sp, #4]
+  91D0A028  ldr      r2, [sp, #4]
+  91D0A02C  ldr      r3, [r3]
+  91D0A030  cmp      r2, r3
+  91D0A034  bne      #0x91d0a040
+  91D0A038  add      sp, sp, #0xc
+  91D0A03C  pop      {pc}
+  91D0A040  bl       #0x91d516c4
+  91D0A044  movw     r3, #0x57dc
+  91D0A048  movt     r3, #0x9201
+  91D0A04C  movw     r2, #0x2718
+  91D0A050  movt     r2, #0x9200
+  91D0A054  ldr      r1, [r3]
+  91D0A058  str      lr, [sp, #-4]!
+  91D0A05C  sub      sp, sp, #0xc
+  91D0A060  ldr      r0, [r2]
+  91D0A064  str      r1, [sp, #4]
+  91D0A068  adds     r0, r0, #0
+  91D0A06C  ldr      r2, [sp, #4]
+
+=== 0x91D0206C (tail 3rd call, pooled arg)  0x91D0206C..0x91D020D0 ===
+  91D0206C  push     {r4, r5, lr}
+  91D02070  movw     r4, #0x57dc
+  91D02074  movt     r4, #0x9201
+  91D02078  sub      sp, sp, #0x164
+  91D0207C  ldr      r3, [r4]
+  91D02080  str      r3, [sp, #0x15c]
+  91D02084  bl       #0x91d49610
+  91D02088  mov      r0, sp
+  91D0208C  bl       #0x91d49590
+  91D02090  mov      r1, sp
+  91D02094  mov      r2, #0xac
+  91D02098  add      r0, sp, #0xb0
+  91D0209C  bl       #0x91d52c48
+  91D020A0  add      r0, sp, #0xb0
+  91D020A4  movw     r1, #0x75cc
+  91D020A8  movt     r1, #0x91d7
+  91D020AC  bl       #0x91d53038
+  91D020B0  cmp      r0, #0
+  91D020B4  beq      #0x91d020d0
+  91D020B8  movw     r1, #0x75d4
+  91D020BC  add      r0, sp, #0xb0
+  91D020C0  movt     r1, #0x91d7
+  91D020C4  bl       #0x91d53038
+  91D020C8  cmp      r0, #0
+  91D020CC  bne      #0x91d020e8
+
+=== refs to 0x91D40FCC ===
+  (none)
+
+  push{..lr} candidates in 0x91D40800..FCC: 0x91D40974
+
+=== G 0x91D39D40..0x91D39E14 (write flag branch)  0x91D39D40..0x91D39E14 ===
+  91D39D40  cmp      r3, #0
+  91D39D44  strb     r2, [sp, #8]
+  91D39D48  movne    r3, #2
+  91D39D4C  moveq    r3, #1
+  91D39D50  add      r0, sp, #8
+  91D39D54  mov      r4, #0
+  91D39D58  strb     r3, [sp, #9]
+  91D39D5C  str      r4, [sp, #0xc]
+  91D39D60  str      r4, [sp, #0x10]
+  91D39D64  str      r4, [sp, #0x14]
+  91D39D68  str      r4, [sp, #0x18]
+  91D39D6C  bl       #0x91d44cc8
+  91D39D70  bl       #0x91d131e8
+  91D39D74  cmp      r0, #2
+  91D39D78  beq      #0x91d39de4
+  91D39D7C  cmp      r0, #3
+  91D39D80  beq      #0x91d39dcc
+  91D39D84  ldr      r2, [sp, #0x1c]
+  91D39D88  ldr      r3, [r6]
+  91D39D8C  cmp      r2, r3
+  91D39D90  bne      #0x91d39e14
+  91D39D94  add      sp, sp, #0x24
+  91D39D98  pop      {r4, r5, r6, r7, pc}
+  91D39D9C  ldr      r0, [r5]
+  91D39DA0  movw     r2, #0x7dac
+  91D39DA4  movt     r2, #0x9200
+  91D39DA8  mov      r1, #1
+  91D39DAC  adds     r0, r0, #0
+  91D39DB0  mov      r3, r1
+  91D39DB4  str      r1, [r2]
+  91D39DB8  mov      r2, #0
+  91D39DBC  movne    r0, #1
+  91D39DC0  str      r2, [r4, #0x14]
+  91D39DC4  strb     r0, [sp, #8]
+  91D39DC8  b        #0x91d39d50
+  91D39DCC  mov      r0, #2
+  91D39DD0  bl       #0x91d147e0
+  91D39DD4  movw     r0, #0x7530
+  91D39DD8  bl       #0x91d18db8
+  91D39DDC  bl       #0x91d3545c
+  91D39DE0  b        #0x91d39d84
+  91D39DE4  mov      r0, r4
+  91D39DE8  bl       #0x91d147e0
+  91D39DEC  bl       #0x91d13dcc
+  91D39DF0  b        #0x91d39d84
+  91D39DF4  str      r1, [sp, #4]
+  91D39DF8  bl       #0x91d0aed4
+  91D39DFC  ldr      r1, [sp, #4]
+  91D39E00  cmp      r0, #0
+  91D39E04  bne      #0x91d39cf4
+  91D39E08  movw     r2, #0x3808
+  91D39E0C  movt     r2, #0x91d8
+  91D39E10  b        #0x91d39d18
+
+=== fastboot-related strings & their code refs ===
+  str VA 0x91D85A88: 'fastboot'
+  str VA 0x91D873F0: 'enter fastboot mode, ignore charger loop\n'
+
+=== 0x91D42C2C head  0x91D42C2C..0x91D42C70 ===
+  91D42C2C  push     {r4, r5, r6, r7, r8, sb, sl, lr}
+  91D42C30  movw     r7, #0x57dc
+  91D42C34  movt     r7, #0x9201
+  91D42C38  sub      sp, sp, #0x20
+  91D42C3C  add      r4, sp, #0xc
+  91D42C40  movw     r2, #0x160c
+  91D42C44  ldr      ip, [r7]
+  91D42C48  movt     r2, #0x9203
+  91D42C4C  movw     r3, #0x2860
+  91D42C50  movt     r3, #0x9201
+  91D42C54  mov      r8, lr
+  91D42C58  str      r0, [r2]
+  91D42C5C  str      ip, [sp, #0x1c]
+  91D42C60  movw     r6, #0x1418
+  91D42C64  str      r1, [r3]
+  91D42C68  movt     r6, #0x91da
+  91D42C6C  bl       #0x91d377e0
+
+=== 0x91D012E4 head  0x91D012E4..0x91D01310 ===
+  91D012E4  movw     r3, #0x57dc
+  91D012E8  movt     r3, #0x9201
+  91D012EC  str      lr, [sp, #-4]!
+  91D012F0  sub      sp, sp, #0xc
+  91D012F4  ldr      r2, [r3]
+  91D012F8  mov      r0, #0
+  91D012FC  movt     r0, #0x9250
+  91D01300  str      r2, [sp, #4]
+  91D01304  ldr      r2, [sp, #4]
+  91D01308  ldr      r3, [r3]
+  91D0130C  cmp      r2, r3
+
+=== 0x91D01320 head  0x91D01320..0x91D01350 ===
+  91D01320  movw     r3, #0x57dc
+  91D01324  movt     r3, #0x9201
+  91D01328  str      lr, [sp, #-4]!
+  91D0132C  sub      sp, sp, #0xc
+  91D01330  ldr      r2, [r3]
+  91D01334  mov      r0, #0x20000000
+  91D01338  str      r2, [sp, #4]
+  91D0133C  ldr      r2, [sp, #4]
+  91D01340  ldr      r3, [r3]
+  91D01344  cmp      r2, r3
+  91D01348  bne      #0x91d01354
+  91D0134C  add      sp, sp, #0xc

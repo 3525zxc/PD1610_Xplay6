@@ -1,0 +1,158 @@
+# Round-5 离线闭合：返回码分类修正 + 状态非零路径 + fastboot USB 入口 + flag 时序
+
+日期：2026-11-11 ｜ 对象：aboot 8.19.16（emmc_appsboot.mbn，V=0x91D00000，O=0x8000）
+性质：纯离线反汇编，零设备写入，无任何镜像刷写。
+脚本：`scripts\round5_task1_task2.py`、`round5_task3_array_fastboot.py`、`round5_task4_usb_timing.py`、`round5_part5_usb_loop.py`、`round5_part6_refs_timing.py`、`round5_part7_udc.py`、`round5_part8_loops.py`
+原始输出：`work\round5_task1_task2.txt` … `round5_task8.txt`
+
+---
+
+## 〇、Round-4 文档勘误（最重要）
+
+Round-4 证据文件（`ROUND4_FLAG_BEQ_DATAFLOW.txt`）把 `TST`/`BEQ` 的分支方向写反了，本轮已修正该行并加注。
+
+错误写法（Round-4）：「ret ∈ {4,5,6,9} → 退出；ret ∈ {7,8} → 继续」
+正确（Round-5，已用断言自动校验）：
+- `TST r3,#0x27` 在按位与结果**为零**时置 Z=1，`BEQ` 在 Z=1 时跳转 ⇒ **`(1<<(ret-4)) & 0x27 == 0` 才退出**
+- 掩码 0x27 = 0b100111 = bit0/1/2/5 ⇒ 命中掩码（继续）的是 k=ret-4 ∈ {0,1,2,5} ⇒ **ret ∈ {4,5,6,9} 进入状态检查**
+- 不命中掩码（退出）的是 k ∈ {3,4} ⇒ **ret ∈ {7,8} 直接退出到 0x91D4141C**
+- `ret-4 > 5`（无符号）⇒ ret<4 或 ret>9 ⇒ BHI 直接退出
+
+自动校验（`round5_task1_task2.py` 内置 ASSERT，PASS）：
+```
+ret | ret-4 | >5? | 1<<(ret-4) | &0x27 | Z | 路径
+  4 |      0 | False| 0x1       | 0x1  | 0 | CONTINUE -> 状态检查 [0x92002738]
+  5 |      1 | False| 0x2       | 0x2  | 0 | CONTINUE -> 状态检查
+  6 |      2 | False| 0x4       | 0x4  | 0 | CONTINUE -> 状态检查
+  7 |      3 | False| 0x8       | 0x0  | 1 | EXIT(0x91D4141C) via TST;BEQ
+  8 |      4 | False| 0x10      | 0x0  | 1 | EXIT(0x91D4141C) via TST;BEQ
+  9 |      5 | False| 0x20      | 0x20 | 0 | CONTINUE -> 状态检查
+⇒ 进入状态检查: [4,5,6,9]；TST;BEQ 退出: [7,8]；BHI 退出: 其余
+```
+注：Round-3 的原始记录「返回值分类 {4,5,6,9} → 检查 [0x92002738]」本来就是对的，是 Round-4 文档引入的回归。
+
+## 一、任务二：状态非零路径的三个函数（全量读写已枚举）
+
+### 1.1 状态数组邻域的读写方向（`round5_task1_task2.txt` TASK2b）
+
+| 地址 | 角色 | 读写证据 |
+|---|---|---|
+| 0x9200272C | 数组元素[0]，多处**索引读**（`ldr rX,[0x9200272C + idx*4]`） | 只读（6 处物化全部为索引读） |
+| 0x92002730 | 元素[1] | 只读（pool@0x91D0B204 ← 0x91D0B18C `ldr sl,[pc,#0x70]`） |
+| 0x92002734 | 元素[2] | **写**：0x91D0A640 `str r1,[r3]`；读：0x91D0A768 / 0x91D0A8AC / 0x91D0AC94 |
+| **0x92002738** | **元素[3] = getter 返回的目标** | **只读，且全二进制仅 1 处引用**（0x91D0AEE8 `movw r2,#0x2738` → 0x91D0AEF4 `ldr r0,[r2]`）⇒ **零写入者**（A 层结论再次得到独立确认） |
+| 0x9200273C | 元素[4]（紧邻，不同变量） | **写**：0x91D0AD64 内 `moveq/streq` 对（0x91D0AE2C/0x91D0AE30，`r0` 由 0x91D0ADE8 物化为 0x9200273C）；读：0x91D0A9FC / 0x91D0AC50 / 0x91D0ACF8 / 0x91D0ADFC |
+| 0x92002740 | 数组之外 | 写：0x91D0C254；读：0x91D0BBE4 / 0x91D0BDFC |
+
+### 1.2 三个函数的语义（round5_task1_task2.txt 全量反汇编 + 读写归集）
+
+**`0x91D0A4E4(r0 = r4)`** — 状态「消费者/复位器」
+- 读：`[0x920157DC]`(canary)、`ldr r3,[0x9200272C + r5*4]`（r5 = 传入的 r4，作为**数组索引**）、`ldrd r2,r3,[r0,#0x40]`（以数组元素值为偏移的 0x98 步长结构体字段 +0x40）
+- 写：**无任何全局写入**（只写栈与 canary）
+- 调用：`0x91D08938`（辅助）
+- ⇒ 它**只读状态数组**，本身不改写 `0x92002738`
+
+**`0x91D0AD64()`** — 状态推进器
+- 读：`[0x920157DC]`、`ldr r1,[0x9200272C + r0*4]`（按 0x91D0A740 返回值索引）、`ldr ip,[0x9200273C]`
+- 写：**`streq r3,[r0]` → `0x9200273C = 1`**（条件：0x91D0AE0C 的 `cmp ip,#0` + `moveq`/`streq` 对）；`strd sl,fp,[r1,#0x40]`（结构体位域写入）
+- 调用：`0x91D08938`、`0x91D0A740`（返回索引/状态码）、`0x91D0ACA8`、`0x91D3537C`、`0x91D5163C`（打印）
+- 返回 r0 = `0x91D0A740` 的返回值（记为 r6）
+
+**`0x91D0A894(r0)`** — 状态查询器
+- 读：`[0x92002734]`（元素[2]，存 sb）、`[0x9200273C]`、以及 0x91D9DD7C 索引表
+- 写：`0x91D0A9F0 str r3,[r1]` → 写 0x91D9DD7C 索引表（非状态数组）
+- 调用：`0x91D088F8`/`0x91D08938`/`0x91D535FC`/`0x91D5323C`/`0x91D53388`/`0x91D0A1CC`/`0x91D0A0DC`
+- ⇒ 同样**不写 `0x92002738`**
+
+### 1.3 状态≠0 时的实际控制流（评审问题①的答案）
+
+```
+0x91D412C8  bl 0x91D0AED4        ; state = [0x92002738]
+0x91D412CC  cmp r0,#0
+0x91D412D0  beq 0x91D4141C      ; state==0 → 退出（fastboot 错误收尾）
+0x91D412D4  mov r0, r4
+0x91D412D8  bl 0x91D0A4E4(r4)    ; 只读状态/结构，不改状态数组
+0x91D412DC  bl 0x91D0AED4        ; 再读 state
+0x91D412E0  cmp r0,#0
+0x91D412E4  beq 0x91D412AC      ; state 变 0 → 回循环头（重跑 boot 主函数 = 重试）
+0x91D412E8  bl 0x91D0AD64        ; 推进状态；写 0x9200273C；返回码 r4
+0x91D412F0  bl 0x91D0A894(r4)    ; 查询（不改状态数组）
+0x91D412F4  cmn r4,#1
+0x91D412F8  bne 0x91D412AC      ; r4 != -1 → 回循环头（重试）
+0x91D412FC  b  0x91D411B8       ; r4 == -1 → fastboot 收尾（无 ERROR 打印）
+```
+回答：
+- **回到循环头（重试）**：state≠0 且（重读 state 变 0）**或**（`0x91D0AD64` 返回 ≠ -1）。重试即重跑 `0x91D3C3F0`（G 再次验签）。
+- **进入 fastboot 收尾**：`0x91D0AD64` 返回 -1 → `0x91D411B8`（fastboot_init + 显示 + 背光，**不打印 ERROR 串**，ERROR 串只在 `0x91D4141C` 那条路径打印）。
+- **关键点**：这条重试路径以 `0x92002738 ≠ 0` 为前提，而该地址**零写入者** ⇒ 在默认配置下不可达；状态≠0 只可能来自未排除的运行期间接写入（B 层）。
+
+## 二、任务三：fastboot 最终 USB 入口（部分闭合，如实标注）
+
+### 2.1 已确认
+- `fastboot_init` = `0x91D40974`：连续调用 `0x91D41D3C`（=fastboot_register，形态：`malloc 0x10` + `str name,[+4]` + 存 handler）注册 `'oem device-name'`(0x91D85288)、`'trust'`、`'getid'` 等命令；**唯一调用者 `0x91D411B8`**（aboot_init 的 fastboot 收尾）。
+- **fastboot 协议层确实存在**：
+  - 命令分发器 `0x91D42650`（`push {r7,fp,lr}` 起）：memset 0x40 字节缓冲 → `bl 0x91D36854` 读 64 字节 → `ldr r3,[0x92031600]; blx r3`（**经函数指针读 USB**）→ 遍历命令链表（`ldr sb,[sb]` + `0x91D52E68` strncmp 比较）→ 命中则调用 handler；未命中 → `'unknown command or device is lock'`(0x91D859CC) → `0x91D425A8` 发 `'FAIL'`(0x91D85948)/`'OKAY'`(0x91D85940，经 `0x91D41E18`)
+  - **UDC 层**：`udc_start` = `0x91D0C388`（`'udc_start()\n'`，检查 `[0x92002828]`/`[0x92002808]` 后分配 0x12 字节 UDC 描述符并注册）；`udc_handle_setup` = `0x91D332D8`（解析 bmRequestType/bRequest：`0x103`/`0x104`/`0x201`/`0x8006`/`0x8100`/`0x8200` 等标准 USB 请求，字符串 `'udc_handle_setup: DEVICE_WRITE : SET_CONFIGURATION malloc fa'`）
+
+### 2.2 未能静态闭合（如实标注为待验证）
+`0x91D42650`（fastboot 分发器）、`0x91D332D8`（udc_handle_setup）、`0x91D0C388`（udc_start）、`0x91D39B80`（模块调用器 `blx [entry+8]`）**在整个 mbn 中没有任何绝对地址引用**：
+- literal pool 扫描：无
+- movw+movt 物化（含配对寄存器校验）：无
+- `add rX, pc, #imm` / `adr` 计算：无
+- Thumb 奇地址变体（+1）：无
+- 全文件原始 4 字节搜索（含 .data/.rodata/第二 LOAD 段）：无
+- 分支（bl/b/blx）：无
+⇒ 上层接线要么是运行期计算地址，要么该路径在本 build 未接入。**因此**：
+> fastboot 初始化及命令注册路径已静态闭合；**最终 USB fastboot 命令处理循环的入口与运行状态尚未确认**（候选函数已定位但无静态引用证据）。无 USB 连接时设备停驻位置无法静态判定，标记为**待验证**。
+
+（第二 LOAD 段 file 0x1000 → VA 0x91D99000 / 6568 B 已整段转储：除背光结构与模块表外为大块高熵数据，非代码段。）
+
+## 三、任务四：flag 活读点的时序（评审问题④的答案）
+
+flag 读点#1 `0x91D3AD40` 位于函数 `0x91D3AB94`（唯一调用者 `0x91D3BD58`），该函数属于 `0x91D3BCC0`，后者有三个调用点：`0x91D3CB2C`、`0x91D3D308`、`0x91D3E5F4`。
+
+G 的三个调用点：`0x91D3C84C`、`0x91D3D764`、`0x91D3E380`。按函数归属与地址次序：
+
+| 路径 | 函数 | G 调用点 | update_cmdline 调用点 | 同一函数内先后 | 读到的 flag 含义 |
+|---|---|---|---|---|---|
+| ① | 0x91D3C3F0（boot 主函数） | 0x91D3C84C | 0x91D3CB2C | cmdline **在 G 之后** | 本次 G 失败后的 flag（若 G 失败则=1） |
+| ② | 0x91D3D27C | 0x91D3D764 | 0x91D3D308 | cmdline **在 G 之前** | **上一次 G 失败残留的 flag**（flag 无清零写） |
+| ③ | 0x91D3E000 | 0x91D3E380 | 0x91D3E5F4 | cmdline **在 G 之后** | 同路径① |
+
+结论：
+- flag 读点#1 的执行时序**既有「本次验签之后」也有「本次验签之前」**两类；路径②会读到**历史残留**（因为 flag 首次置 1 后无清零写，跨调用跨重试残留）。
+- 但两条分支最终都汇合到 `0x91D3AD4C`（flag==0 直接过去；flag≠0 → `0x91D3B710` 打印 `"%s return %d!"`(`'update_cmdline'`) 与 cmdline 中 `' androidboot.authorized_kernel=true'` 的 strstr 结果后 `b 0x91D3AD4C`）⇒ **无论时序如何，均不构成装载阻断**。
+- 表述收紧为：「flag 无阻断性消费者；读点#1 属诊断用途，且在路径②中可能读到历史残留值」。
+
+## 四、manifest 命名修正（评审文档细节项）
+
+`work\boot_images_manifest_ABCD.json` 已加固：
+- 两条记录独立且字段互斥：`D` = `boot_81_D_footerless.img`（size 58,729,728，**等长清零签名尾部**，`variable=zeroed-tail (equal length)`，`is_equal_length_variant_of_D=true`）；`D-trunc` = `boot_81_D_footerless_truncated.img`（size 58,724,352，**物理截短**，`variable=truncation`，`name_precise` 明示「与 D 是不同实验变量，不得写作 D 类」）
+- 新增顶层 `naming_rule`：报告必须使用精确标签「D(等长清零签名尾部)」「D-trunc(截短版)」，**禁止统称「D 类无签名镜像」**。
+
+## 五、Round-3/4/5 合并后的主结论表
+
+| 研究问题 | 当前结论 | 状态 |
+|---|---|---|
+| 8.19.16 G 验签失败是否触发致命 ASSERT | 否，G 失败路径静态返回 | 已确认 |
+| G 的三个调用点是否检查 G 返回值 | 当前证据显示均未直接消费 | 已确认（静态） |
+| `verify_failure_flag` 是否存在 | 存在，失败路径写入（1 写 2 读，无清零写） | 已确认 |
+| flag 是否存在阻断性消费者 | 目前未发现（读#2 死；读#1 仅诊断且两分支汇合） | 已确认（静态） |
+| 状态数组初始值 | 正常 .bss 初始化后为零 | 已确认 |
+| 状态数组运行期是否可能改变 | 尚未排除（间接/计算地址/DMA 写） | **未闭合** |
+| 返回码 7、8 的处理 | 直接走 fastboot 错误收尾（`TST;BEQ`） | 已确认（Round-5 修正） |
+| 返回码 4、5、6、9 的处理 | 进入全局状态检查 | 已确认（Round-5 修正） |
+| 返回码 <4 或 >9 | `BHI` 直接退出 | 已确认 |
+| 默认状态为零时是否存在重试 | 当前静态路径显示不进入重试分支 | 已确认（静态，受 B 层限制） |
+| 状态≠0 时的重试机制 | `0x91D0A4E4`→重读状态==0 或 `0x91D0AD64` 返回≠-1 → 回循环头重跑 boot 主函数；`0x91D0AD64` 返回 -1 → `0x91D411B8` fastboot 收尾 | 已确认（静态） |
+| fastboot 初始化及命令注册 | 已确认（`0x91D40974`，唯一调用者 `0x91D411B8`） | 已确认 |
+| fastboot 协议/UDC 层存在性 | 已确认（分发器 `0x91D42650`、`udc_start 0x91D0C388`、`udc_handle_setup 0x91D332D8`） | 已确认 |
+| USB fastboot 最终命令循环入口与运行状态 | 候选函数无任何静态引用 ⇒ **静态未闭合** | **待验证** |
+| 验签失败后是否继续装载 | 不会经 G 返回值或已确认 flag 路径被阻断；后续装载仍受镜像解析/加载器/其它启动条件影响 | 表述已收紧 |
+| 未签名 boot 是否实际进入 kernel | 未测试 | 未执行 |
+
+## 六、残余边界
+- 状态数组/flag 的运行期间接写入（含 DMA、计算基址、指针别名）未排除。
+- `0x91D42650` 等四个函数的调用者可能是运行期计算地址，静态不可见。
+- `0x91D0A894` 中 0x91D9DD7C 索引表含义未逐项还原。
+- 本轮未刷写任何镜像，未触碰设备。

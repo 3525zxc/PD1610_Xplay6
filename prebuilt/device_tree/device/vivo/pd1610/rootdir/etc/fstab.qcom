@@ -1,0 +1,30 @@
+# Android fstab file.  PD1610 / vivo Xplay6 / msm8996
+#
+# 非 Treble 布局：没有 vendor 分区，/vendor 是 /system/vendor 的软链。
+# 这份文件要同时装到两个位置（device.mk 里已配）：
+#   /fstab.qcom                    ← ramdisk 根，first stage / mount_all --early 读这里
+#   /system/vendor/etc/fstab.qcom  ← 原厂 init.target.rc 的
+#                                    "mount_all /vendor/etc/fstab.qcom" 读这里
+# 两份必须是同一份内容，否则 /data 的加密标志会打架（一个 encryptable、
+# 一个 forceencrypt），表现为开机一直停在数据解密密码页。
+#
+# 与原厂 blobs/vendor/etc/fstab.qcom 的三处有意差异：
+#   1. /data 由 forceencrypt=footer 改成 encryptable=footer（首启不做强制加密）
+#   2. 去掉 quota（3.18 内核要额外开 CONFIG_QUOTA，首启先不引入变量）
+#   3. 补回原厂注释掉的 /system 行 —— POSIX 版 init 需要 fs_mgr 挂它
+#
+# <src>                                        <mnt_point>    <type>  <mnt_flags and options>                                                    <fs_mgr_flags>
+/dev/block/bootdevice/by-name/system           /system        ext4    ro,barrier=1                                                                  wait
+/dev/block/bootdevice/by-name/userdata         /data          ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc,discard,errors=panic,journal_checksum  wait,resize,encryptable=footer
+/dev/block/bootdevice/by-name/cache            /cache         ext4    noatime,nosuid,nodev,barrier=1                                                wait
+/dev/block/bootdevice/by-name/dsp              /dsp           ext4    ro,nosuid,nodev,barrier=1                                                     wait
+/dev/block/bootdevice/by-name/modem            /firmware      vfat    ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0     wait
+/dev/block/bootdevice/by-name/bluetooth        /bt_firmware   vfat    ro,shortname=lower,uid=1002,gid=3002,dmask=227,fmask=337,context=u:object_r:bt_firmware_file:s0  wait
+/dev/block/bootdevice/by-name/misc             /misc          emmc    defaults                                                                      defaults
+/dev/block/bootdevice/by-name/apps             /apps          ext4    ro,barrier=1                                                                  wait
+/dev/block/bootdevice/by-name/oem              /oem           ext4    ro,barrier=1                                                                  wait
+
+# 可移动存储（原厂同款 vold 条目，路径来自 msm8996 的 sdhci / dwc3 节点）
+/devices/soc/74a4900.sdhci/mmc_host*           /storage/sdcard1   vfat  nosuid,nodev                                                           wait,voldmanaged=sdcard1:auto
+/devices/soc/6a00000.ssusb/6a00000.dwc3/*sdg*  auto               auto  defaults                                                                 voldmanaged=sda:auto
+/devices/soc/6a00000.ssusb/6a00000.dwc3/*sdh*  auto               auto  defaults                                                                 voldmanaged=sdb:auto

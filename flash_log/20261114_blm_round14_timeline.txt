@@ -1,0 +1,52 @@
+﻿14:04:23.750 | === ROUND14 INITCALL TRACE KERNEL BOOT TEST ===
+14:04:23.869 | candidate_sha256=5400e85dd225d0537bd7d5c7b90e8ade4c473b684932fdc12c40f5b21a50354b
+14:04:23.869 | PREFLIGHT=SAFE_TO_FLASH 17/17 end_phys=0x41e09000 margin=0x1f7000
+14:04:23.908 | pre_adb=List of devices attached /  /
+14:04:23.973 | pre_kernel=adb.exe : adb.exe: device '5fccbfeb' not found / 所在位置 行:1 字符: 988 / + ... 'pre_kernel=' + (Flat ((& $adb -s $serial shell uname -r 2>&1 | Out-S ... / +                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ /     + CategoryInfo          : NotSpecified: (adb.exe: device '5fccbfeb' not found:String) [], RemoteException /     + FullyQualifiedErrorId : NativeCommandError /   /
+14:04:23.975 | STEP1 adb reboot bootloader
+14:07:11.661 | getvar_probe=fastboot.exe : < waiting for 5fccbfeb> / 所在位置 行:1 字符: 1279 / + ... if (-not $ready) { $g = (& $fb -s $serial getvar product 2>&1 | Out-S ... / +                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ /     + CategoryInfo          : NotSpecified: (< waiting for 5fccbfeb>:String) [], RemoteException /     + FullyQualifiedErrorId : NativeCommandError /   / product: QC_REFERENCE_PHONE / Finished. Total time: 0.001s /
+14:07:11.692 | STEP1 fastboot=5fccbfeb	 fastboot /
+14:07:11.692 | STEP2 flash trace candidate
+14:07:13.713 | flash_output=fastboot.exe : Sending 'boot' (57113 KB)                          OKAY [  1.502s] / 所在位置 行:1 字符: 1597 / + ... race candidate'; $f = (& $fb -s $serial flash boot $cand 2>&1 | Out-S ... / +                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ /     + CategoryInfo          : NotSpecified: (Sending 'boot' ...OKAY [  1.502s]:String) [], RemoteException /     + FullyQualifiedErrorId : NativeCommandError /   / Writing 'boot'                                     OKAY [  0.388s] / Finished. Total time: 1.991s /
+14:07:13.713 | flash=OKAY
+14:07:13.742 | reboot_output=fastboot.exe : Rebooting                                          OKAY [  0.002s] / 所在位置 行:1 字符: 1787 / + ...  exit 3 }; W 'flash=OKAY'; $r = (& $fb -s $serial reboot 2>&1 | Out-S ... / +                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ /     + CategoryInfo          : NotSpecified: (Rebooting      ...OKAY [  0.002s]:String) [], RemoteException /     + FullyQualifiedErrorId : NativeCommandError /   / Finished. Total time: 0.002s /
+14:07:13.743 | === FLASH DONE, OBSERVATION NEXT ===
+14:07:27.106 | STEP3 observe
+14:07:27.821 | t=0s fastboot=[] adb=[List of devices attached /  /] com9008=0
+14:07:33.387 | t=5s fastboot=[] adb=[List of devices attached /  /] com9008=0
+14:07:38.920 | t=10s fastboot=[] adb=[List of devices attached /  /] com9008=0
+14:07:44.471 | t=15s fastboot=[] adb=[List of devices attached /  /] com9008=0
+14:07:49.984 | t=20s fastboot=[] adb=[List of devices attached /  /] com9008=0
+14:07:55.512 | t=25s fastboot=[] adb=[List of devices attached /  /] com9008=0
+14:08:01.039 | t=30s fastboot=[] adb=[List of devices attached /  /] com9008=0
+14:08:06.572 | t=35s fastboot=[] adb=[List of devices attached /  /] com9008=0
+14:08:12.102 | t=40s fastboot=[] adb=[List of devices attached /  /] com9008=0
+14:08:17.634 | t=45s fastboot=[] adb=[List of devices attached /  /] com9008=0
+14:08:23.155 | t=50s fastboot=[] adb=[List of devices attached /  /] com9008=0
+14:08:28.675 | t=55s fastboot=[] adb=[List of devices attached /  /] com9008=0
+14:08:34.191 | t=60s fastboot=[] adb=[List of devices attached /  /] com9008=5
+14:08:34.193 | OBSERVE_RESULT com9008=5 adb_seen=False candidate_kernel=False
+14:08:45.484 | power_tool_py_compile_rc=0
+14:08:45.495 | STEP4 DUAL PEEK (NO RESET): FDT head then BLM log
+14:08:48.670 | fdt_peek=SAHARA_UPLOAD OK / PEEK_BLOCK 1/1 addr=0x42000000 got=65536 rc=OK / PEEK_DONE out=D:\xplay6\evidence\kernel_re\out\stage2\bootloop_monitor\flash_log\fdt_round14.bin bytes=65536 nonzero=31504 sha256=918d5b3d8e7caa94e6d5ba087a93fb958c9e1ad22e15b571d0be3c7e4a0715e0 head=d00dfeed000643a5000000380005b53c failed_blocks=0 /
+14:08:54.869 | blm_peek=PEEK_BLOCK 1/4 addr=0x42100000 got=65536 rc=OK / PEEK_BLOCK 2/4 addr=0x42110000 got=65536 rc=OK / PEEK_BLOCK 3/4 addr=0x42120000 got=65536 rc=OK / PEEK_BLOCK 4/4 addr=0x42130000 got=65536 rc=OK / PEEK_DONE out=D:\xplay6\evidence\kernel_re\out\stage2\bootloop_monitor\flash_log\blm_ram_round14.bin bytes=262144 nonzero=93794 sha256=4698dae6edf8ab55e42b38d78c440667067e06b6667a788e8b0505c953a08ee3 head=314154454d4d4c420100000000000000 failed_blocks=0 /
+14:08:54.920 | fdt_round14.bin_bytes=65536 sha256=918d5b3d8e7caa94e6d5ba087a93fb958c9e1ad22e15b571d0be3c7e4a0715e0
+14:08:54.920 | blm_ram_round14.bin_bytes=262144 sha256=4698dae6edf8ab55e42b38d78c440667067e06b6667a788e8b0505c953a08ee3
+14:09:20.514 | STEP5 POWER -> FASTBOOT
+14:09:20.795 | power_fastboot=POWER_CMD mode=fastboot rc=OK ack=True nak=True /  value="NAK" /> / </data> / ------------------------------------------------------------------------------------------- /  / 14:09:20: DEBUG: Response was 'NAK' / 14:09:20: INFO: ============================================================== / 14:09:20: INFO: Files used and their paths / 14:09:20: INFO:   1 'D:\xplay6\evidence\kernel_re\out\stage2\bootloop_monitor\edl_probe/port_trace.txt' / 14:09:20: INFO:   2 'D:\xplay6\evidence\kernel_re\out\stage2\bootloop_monitor\edl_probe\power_cmd.xml' / 14:09:20: INFO:      _             (done) / 14:09:20: INFO:     | |                  / 14:09:20: INFO:   __| | ___  _ __   ___  / 14:09:20: INFO:  / _` |/ _ \| '_ \ / _ \ / 14:09:20: INFO: | (_| | (_) | | | |  __/ / 14:09:20: INFO:  \__,_|\___/|_| |_|\___| / 14:09:20: INFO: {All Finished Successfully} /  / 14:09:20: INFO: FILE ACCESS SLOW!!     0.00 B in  0.015 seconds (    0.00 Bps) --- Overall to target  0.047 seconds (0.00 Bps) /
+14:10:03.467 | power_fastboot_did_not_yield_fastboot; sending reset and waiting (manual fastboot may be needed)
+14:10:03.683 | power_reset=POWER_CMD mode=reset rc=OK ack=True nak=False / -------------------------------------------------------------------------------------- /  / 14:10:03: DEBUG: Response was 'ACK' / 14:10:03: DEBUG: Got the ACK / 14:10:03: INFO: ============================================================== / 14:10:03: INFO: Files used and their paths / 14:10:03: INFO:   1 'D:\xplay6\evidence\kernel_re\out\stage2\bootloop_monitor\edl_probe/port_trace.txt' / 14:10:03: INFO:   2 'D:\xplay6\evidence\kernel_re\out\stage2\bootloop_monitor\edl_probe\power_cmd.xml' / 14:10:03: INFO:      _             (done) / 14:10:03: INFO:     | |                  / 14:10:03: INFO:   __| | ___  _ __   ___  / 14:10:03: INFO:  / _` |/ _ \| '_ \ / _ \ / 14:10:03: INFO: | (_| | (_) | | | |  __/ / 14:10:03: INFO:  \__,_|\___/|_| |_|\___| / 14:10:03: INFO: {All Finished Successfully} /  / 14:10:03: INFO: FILE ACCESS SLOW!!     0.00 B in  0.015 seconds (    0.00 Bps) --- Overall to target  0.047 seconds (0.00 Bps) /
+14:12:09.425 | ROLLBACK_NOT_EXECUTED: no fastboot - manual fastboot needed
+14:13:47.825 | === ROLLBACK RETRY (user entered fastboot manually) ===
+14:13:47.942 | rollback_sha256=929fda9985478078f0614a9c3709af69fe3b1c9c8badc50e783261f91ab241ae
+14:13:47.975 | fastboot_devices=5fccbfeb	 fastboot
+14:13:50.039 | rollback_flash_output=fastboot.exe : Sending 'boot' (57113 KB)                          OKAY [  1.522s] / 所在位置 行:1 字符: 1004 / + ... OOT'; exit 2 }; $rf = (& $fb -s $serial flash boot $roll 2>&1 | Out-S ... / +                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ /     + CategoryInfo          : NotSpecified: (Sending 'boot' ...OKAY [  1.522s]:String) [], RemoteException /     + FullyQualifiedErrorId : NativeCommandError /   / Writing 'boot'                                     OKAY [  0.410s] / Finished. Total time: 2.036s /
+14:13:50.040 | rollback_flash=OKAY
+14:13:50.087 | rollback_reboot_output=fastboot.exe : Rebooting                                          OKAY [  0.009s] / 所在位置 行:1 字符: 1222 / + ...  W 'rollback_flash=OKAY'; $rr = (& $fb -s $serial reboot 2>&1 | Out-S ... / +                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ /     + CategoryInfo          : NotSpecified: (Rebooting      ...OKAY [  0.009s]:String) [], RemoteException /     + FullyQualifiedErrorId : NativeCommandError /   / Finished. Total time: 0.009s /
+14:14:40.126 | rollback_adb_up t=0s
+14:14:40.239 | rollback_uname=Linux localhost 3.18.71-perf-g8a8c60dd #1 SMP PREEMPT Wed Nov 7 16:08:09 CST 2018 aarch64 /
+14:14:40.309 | rollback_kernel_release=3.18.71-perf-g8a8c60dd /
+14:14:40.381 | rollback_fingerprint=vivo/lineage_pd1610/pd1610:9/PQ3A.190801.002/builder11112246:userdebug/test-keys /
+14:14:40.448 | rollback_uptime=22:46:41 up 0 min,  0 users,  load average: 2.77, 0.72, 0.24 /
+14:14:40.449 | ROLLBACK_VERIFIED
+14:14:40.449 | === ROUND14 END ===

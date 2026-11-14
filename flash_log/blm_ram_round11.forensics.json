@@ -1,0 +1,154 @@
+{
+  "input": "flash_log/blm_ram_round11.bin",
+  "size": 262144,
+  "sha256": "8fd368a729e8b6315690f12259717e20067c367c74a8a1a662afdb312af295b2",
+  "layout_schema": "blm-layout-v1",
+  "meta": {
+    "generation": 4,
+    "last_bank": 0,
+    "last_fdt_phys": 1107296256,
+    "last_log_phys": 1108344832
+  },
+  "bank_count": 2,
+  "banks": [
+    {
+      "bank_index": 0,
+      "bank_offset": 4096,
+      "generation": 4,
+      "fdt_phys": 1107296256,
+      "log_phys": 1108344832,
+      "ddr_hint": 1073741824,
+      "stages": [
+        {
+          "stage": 1,
+          "name": "START_KERNEL",
+          "seq": 1,
+          "jiffies": 4294892296
+        },
+        {
+          "stage": 2,
+          "name": "BEFORE_SETUP_ARCH",
+          "seq": 2,
+          "jiffies": 4294892296
+        },
+        {
+          "stage": 3,
+          "name": "SETUP_ARCH_ENTER",
+          "seq": 3,
+          "jiffies": 4294892296
+        }
+      ],
+      "lines": [
+        {
+          "seq": 1,
+          "jiffies": 4294892296,
+          "text": "BLM monitor init"
+        }
+      ],
+      "last_stage_id": 3,
+      "last_stage_name": "SETUP_ARCH_ENTER",
+      "text": "BLM monitor init"
+    },
+    {
+      "bank_index": 1,
+      "bank_offset": 131072,
+      "generation": 3,
+      "fdt_phys": 1107296256,
+      "log_phys": 1108344832,
+      "ddr_hint": 1073741824,
+      "stages": [
+        {
+          "stage": 1,
+          "name": "START_KERNEL",
+          "seq": 1,
+          "jiffies": 4294892296
+        },
+        {
+          "stage": 2,
+          "name": "BEFORE_SETUP_ARCH",
+          "seq": 2,
+          "jiffies": 4294892296
+        },
+        {
+          "stage": 3,
+          "name": "SETUP_ARCH_ENTER",
+          "seq": 3,
+          "jiffies": 4294892296
+        }
+      ],
+      "lines": [
+        {
+          "seq": 1,
+          "jiffies": 4294892296,
+          "text": "BLM monitor init"
+        }
+      ],
+      "last_stage_id": 3,
+      "last_stage_name": "SETUP_ARCH_ENTER",
+      "text": "BLM monitor init"
+    }
+  ],
+  "analysis": {
+    "sha256": "8fd368a729e8b6315690f12259717e20067c367c74a8a1a662afdb312af295b2",
+    "meta": {
+      "generation": 4,
+      "last_bank": 0,
+      "last_fdt_phys": 1107296256,
+      "last_log_phys": 1108344832
+    },
+    "bank_count": 2,
+    "banks": [
+      {
+        "bank_index": 0,
+        "generation": 4,
+        "last_stage_id": 3,
+        "last_stage_name": "SETUP_ARCH_ENTER",
+        "line_count": 1
+      },
+      {
+        "bank_index": 1,
+        "generation": 3,
+        "last_stage_id": 3,
+        "last_stage_name": "SETUP_ARCH_ENTER",
+        "line_count": 1
+      }
+    ],
+    "selected_bank": {
+      "bank_index": 0,
+      "generation": 4,
+      "fdt_phys": "0x42000000",
+      "log_phys": "0x42100000",
+      "ddr_hint": "0x40000000",
+      "last_stage_id": 3,
+      "last_stage_name": "SETUP_ARCH_ENTER"
+    },
+    "rule_id": "fdt_scan",
+    "diagnosis": "失败落在 setup_arch 前段：DTB 扫描、保留内存、early_ioremap。",
+    "next_action": "检查 idx79 DTB totalsize、reserved-memory 节点冲突、DTB 链是否被截断、新增保留区 reg 是否落在 FDT 2 MiB 窗口。",
+    "confidence": "阶段为 [O]，根因为 [H]",
+    "last_lines": [
+      "BLM monitor init"
+    ]
+  },
+  "stage_names": {
+    "0": "NONE",
+    "1": "START_KERNEL",
+    "2": "BEFORE_SETUP_ARCH",
+    "3": "SETUP_ARCH_ENTER",
+    "4": "FDT_SCAN_DONE",
+    "5": "EARLY_IOREMAP",
+    "6": "PAGING_INIT",
+    "7": "UNFLATTEN_DT",
+    "8": "AFTER_SETUP_ARCH",
+    "9": "CONSOLE_INIT",
+    "10": "CONSOLE_REGISTERED",
+    "11": "REST_INIT",
+    "12": "KERNEL_INIT",
+    "13": "INITCALLS_DONE",
+    "14": "ROOTFS_READY",
+    "15": "USER_INIT_ATTEMPT",
+    "16": "PANIC_ENTER",
+    "17": "WATCHDOG_PANIC",
+    "18": "BOOT_OK"
+  }
+}

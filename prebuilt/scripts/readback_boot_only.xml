@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+<!-- PD1610 boot 分区单独读回（只读校验，不写入） -->
+<data>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="rb_boot_LUN4.bin" label="boot" num_partition_sectors="24576" physical_partition_number="4" start_sector="47370"/>
+</data>

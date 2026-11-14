@@ -1,0 +1,64 @@
+PD1610 Android 8.1 做包素材与移植要点（离线提取，2026-11-10 23:0x）
+======================================================================
+来源   : D:\16\PD1610_81\backup\81_system_LUN4.bin （真机回读，raw ext4 3072 MB）
+工具   : D:\16\PD1610_81\scripts\ext4_extract.py （纯 Python 只读 ext4，无外部依赖）
+产物   : 本目录 90 个文件 + MANIFEST.txt（路径/大小/sha256）
+DTB 配套: D:\16\PD1610_81\evidence\dtb_81_baseline\
+
+1. 挂载 / fstab —— 最关键，两处都要看
+----------------------------------------------------------------------
+A) DTB 内的 early fstab（见 dtb_81_baseline\fstab_nodes.txt）
+   /firmware/android/fstab/system   fsmgr_flags = "wait,verify"   status = "ok"
+   /firmware/android/fstab/vendor   fsmgr_flags = "wait"          status = "disabled"
+B) /vendor/etc/fstab.qcom（2,879 B，本目录 vendor__etc__fstab.qcom）
+   #/dev/block/.../system  /system  ext4  ro,...  wait,verify   <<< 该行被注释
+   /apps       wait
+   /oem        wait,verify
+   /data       wait,resize,forceencrypt=footer,quota      （FDE 全盘加密）
+   /cache /dsp /firmware(modem) /bt_firmware /misc /sdcard1 /USB OTG
+=> system 挂载由 DTB 提供，文件里这份只管其它分区；vendor 节点 disabled = 非 Treble。
+=> 做包必改：把 DTB 中 system 节点 fsmgr_flags 的 "verify" 去掉并重新打包 boot；
+   若动 oem 也要处理它的 verify；若要免加密，去掉 forceencrypt=footer 并清 data。
+=> 内核侧：CONFIG_DM_VERITY=y、CONFIG_DM_VERITY_FEC=y；
+   CONFIG_EXT4_ENCRYPTION / CONFIG_FS_ENCRYPTION 未设置（无 FBE，只有 FDE）。
+
+2. build.prop（本目录 build.prop，12,374 B）
+----------------------------------------------------------------------
+ro.build.version.sdk=27 / release=8.1.0 / security_patch=2018-09-01
+ro.build.fingerprint=vivo/PD1610/PD1610:8.1.0/OPM1.171019.026/compil11071557:user/release-keys
+ro.vivo.os.build.display.id=Funtouch OS_4.0
+ro.board.platform=msm8996 / ro.vivo.hardware.version=PD1610MD
+设备实测 ro.vivo.oem.name = PD1610_FULL_SC
+
+3. VINTF / HAL 清单（4 份，均在 system 分区内）
+----------------------------------------------------------------------
+/manifest.xml                      2,946 B   11 HAL   framework / HIDL
+/vendor/manifest.xml              21,609 B   73 HAL   vendor HAL 全清单
+/compatibility_matrix.xml         74,747 B   45 HAL
+/vendor/compatibility_matrix.xml   1,886 B    7 HAL
+=> vendor 是 system 内的目录（16 项），不是独立 vendor 分区；
+   用 GSI / 类原生时须让 HAL 集合与 compatibility_matrix 匹配。
+
+4. init 与权限
+----------------------------------------------------------------------
+/etc/init/*.rc 38 个（已全部提取）：vold, servicemanager, hwservicemanager,
+surfaceflinger, netd, installd, keystore, gatekeeperd, logd, mediaserver,
+cameraserver, audioserver, bootanim, wificond, uncrypt, vdc, tombstoned ...
+/etc/permissions/*.xml 40 个：platform.xml、privapp-permissions-*、qti 权限
+/vendor/ueventd.rc 亦已提取。
+
+5. 内核 config（复用已验证提取 C:\qfilx\compare\kcfg\pd1610_81916_config.txt）
+----------------------------------------------------------------------
+4,616 行 / 1,410 个 CONFIG_=y；ARM64、4K pages、VA_BITS_39
+CONFIG_IKCONFIG=y + IKCONFIG_PROC=y（可用 /proc/config.gz 复核）
+CONFIG_MODULE_SIG_FORCE=y / SIG_ALL / SHA512  <<< 自编译内核模块需自带密钥或关闭强制签名
+CONFIG_DM_VERITY=y / DM_VERITY_FEC=y；无 FS_ENCRYPTION / EXT4_ENCRYPTION
+与 TB8703（LOS17.1）的差异表：kconfig_diff_vs_TB8703.txt
+
+6. 目录与完整性
+----------------------------------------------------------------------
+/ 24 项、/etc 97、/vendor 16、/vendor/etc 76、/etc/init 38、/etc/permissions 40
+全部 linear 目录（htree=False），无漏项；文件逐 inode/extent 读取。
+/boot 分区 DTB 基线另见 dtb_81_baseline\。
+
+边界：全程离线只读，未对设备做任何写入；门槛实验仍为零写入。

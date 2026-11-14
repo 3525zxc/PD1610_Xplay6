@@ -1,0 +1,265 @@
+========================================================================
+TASK1  自动校验：bl 0x91D3C3F0 返回值 ret 的分类
+  指令：sub r0,r0,#4 | cmp r0,#5 | bhi EXIT | lsl r3,r5(=1),r0 | tst r3,#0x27 | beq EXIT
+========================================================================
+  ret | ret-4 | >5? | 1<<(ret-4) | &0x27 | Z | 路径
+    0 | 4294967292 | True | -         | -    | - | EXIT(0x91D4141C) via BHI
+    1 | 4294967293 | True | -         | -    | - | EXIT(0x91D4141C) via BHI
+    2 | 4294967294 | True | -         | -    | - | EXIT(0x91D4141C) via BHI
+    3 | 4294967295 | True | -         | -    | - | EXIT(0x91D4141C) via BHI
+    4 |      0 | False | 0x1       | 0x1  | 0 | CONTINUE -> 状态检查 [0x92002738]
+    5 |      1 | False | 0x2       | 0x2  | 0 | CONTINUE -> 状态检查 [0x92002738]
+    6 |      2 | False | 0x4       | 0x4  | 0 | CONTINUE -> 状态检查 [0x92002738]
+    7 |      3 | False | 0x8       | 0x0  | 1 | EXIT(0x91D4141C) via TST;BEQ
+    8 |      4 | False | 0x10      | 0x0  | 1 | EXIT(0x91D4141C) via TST;BEQ
+    9 |      5 | False | 0x20      | 0x20 | 0 | CONTINUE -> 状态检查 [0x92002738]
+   10 |      6 | True | -         | -    | - | EXIT(0x91D4141C) via BHI
+   11 |      7 | True | -         | -    | - | EXIT(0x91D4141C) via BHI
+   12 |      8 | True | -         | -    | - | EXIT(0x91D4141C) via BHI
+
+  ⇒ 进入状态检查的 ret : [4, 5, 6, 9]
+  ⇒ TST;BEQ 退出的 ret  : [7, 8]
+  ⇒ BHI 直接退出的 ret  : [0, 1, 2, 3, 10, 11, 12]
+  ASSERT PASS ✓  ret∈{4,5,6,9}→状态检查；ret∈{7,8}→EXIT；ret<4 或 ret>9→BHI EXIT
+
+=== 0x91D0A4E4 @0x91D0A4E4 ===
+  91D0A4E4  push     {r4, r5, r6, r7, lr}
+  91D0A4E8  movw     r4, #0x57dc   ; r4 = 0x920157DC
+  91D0A4EC  movt     r4, #0x9201
+  91D0A4F0  sub      sp, sp, #0xc
+  91D0A4F4  mov      r5, r0
+  91D0A4F8  mvn      r6, #0
+  91D0A4FC  ldr      r3, [r4]
+  91D0A500  mvn      r7, #0x7f0000
+  91D0A504  str      r3, [sp, #4]
+  91D0A508  bl       #0x91d08938
+  91D0A50C  movw     r3, #0x272c   ; r3 = 0x9200272C
+  91D0A510  movt     r3, #0x9200
+  91D0A514  mov      r2, #0x98
+  91D0A518  ldr      ip, [sp, #4]
+  91D0A51C  ldr      r3, [r3, r5, lsl #2]
+  91D0A520  mov      r5, #0x800000
+  91D0A524  ldr      r1, [r4]
+  91D0A528  mov      r4, #0
+  91D0A52C  cmp      ip, r1
+  91D0A530  mla      r0, r2, r3, r0
+  91D0A534  ldrd     r2, r3, [r0, #0x40]
+  91D0A538  and      r2, r2, r6
+  91D0A53C  and      r3, r3, r7
+  91D0A540  orr      r4, r4, r2
+  91D0A544  orr      r5, r5, r3
+  91D0A548  strd     r4, r5, [r0, #0x40]
+  91D0A54C  bne      #0x91d0a558
+  91D0A550  add      sp, sp, #0xc
+  91D0A554  pop      {r4, r5, r6, r7, pc}
+  -- writes --
+  -- reads  --
+     91D0A4FC ldr r3, [r4]  <= 0x920157DC
+     91D0A51C ldr r3, [r3, r5, lsl #2]  <= 0x9200272C
+     91D0A524 ldr r1, [r4]  <= 0x920157DC
+  -- calls  --
+     91D0A508 bl #0x91d08938
+
+=== 0x91D0AD64 @0x91D0AD64 ===
+  91D0AD64  push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+  91D0AD68  movw     r4, #0x57dc   ; r4 = 0x920157DC
+  91D0AD6C  movt     r4, #0x9201
+  91D0AD70  sub      sp, sp, #0x24
+  91D0AD74  mov      sb, lr
+  91D0AD78  ldr      r3, [r4]
+  91D0AD7C  str      r3, [sp, #0x1c]
+  91D0AD80  bl       #0x91d08938
+  91D0AD84  mov      r5, r0
+  91D0AD88  bl       #0x91d0a740
+  91D0AD8C  cmn      r0, #1
+  91D0AD90  mov      r6, r0
+  91D0AD94  beq      #0x91d0ae34
+  91D0AD98  movw     r7, #0x272c   ; r7 = 0x9200272C
+  91D0AD9C  movt     r7, #0x9200
+  91D0ADA0  mov      r8, #0x98
+  91D0ADA4  mov      r2, #0
+  91D0ADA8  ldr      r1, [r7, r0, lsl #2]
+  91D0ADAC  mov      r3, #0x400000
+  91D0ADB0  mla      r1, r8, r1, r5
+  91D0ADB4  ldrd     sl, fp, [r1, #0x40]
+  91D0ADB8  and      r2, r2, sl
+  91D0ADBC  and      r3, r3, fp
+  91D0ADC0  strd     sl, fp, [sp, #8]
+  91D0ADC4  orrs     fp, r2, r3
+  91D0ADC8  bne      #0x91d0ae34
+  91D0ADCC  ldrd     sl, fp, [sp, #8]
+  91D0ADD0  mov      r3, #0x380000
+  91D0ADD4  and      r3, r3, fp
+  91D0ADD8  mov      fp, #0
+  91D0ADDC  lsr      sl, r3, #0x13
+  91D0ADE0  orrs     ip, sl, fp
+  91D0ADE4  beq      #0x91d0ae50
+  91D0ADE8  movw     r0, #0x273c   ; r0 = 0x9200273C
+  91D0ADEC  movt     r0, #0x9200
+  91D0ADF0  subs     r8, sl, #1
+  91D0ADF4  str      fp, [sp]
+  91D0ADF8  lsl      r3, r8, #0x13
+  91D0ADFC  ldr      ip, [r0]
+  91D0AE00  str      r3, [sp, #4]
+  91D0AE04  mvn      r8, #0
+  91D0AE08  ldrd     r2, r3, [sp, #8]
+  91D0AE0C  cmp      ip, #0
+  91D0AE10  mvn      sb, #0x380000
+  91D0AE14  and      r8, r8, r2
+  91D0AE18  and      sb, sb, r3
+  91D0AE1C  ldrd     r2, r3, [sp]
+  91D0AE20  orr      r3, r3, sb
+  91D0AE24  orr      r2, r2, r8
+  91D0AE28  strd     r2, r3, [r1, #0x40]
+  91D0AE2C  moveq    r3, #1
+  91D0AE30  streq    r3, [r0]
+  91D0AE34  ldr      r2, [sp, #0x1c]
+  91D0AE38  mov      r0, r6
+  91D0AE3C  ldr      r3, [r4]
+  91D0AE40  cmp      r2, r3
+  91D0AE44  bne      #0x91d0aed0
+  91D0AE48  add      sp, sp, #0x24
+  91D0AE4C  pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc}
+  -- writes --
+     91D0AE30 streq r3, [r0]  => 0x9200273C
+  -- reads  --
+     91D0AD78 ldr r3, [r4]  <= 0x920157DC
+     91D0ADA8 ldr r1, [r7, r0, lsl #2]  <= 0x9200272C
+     91D0ADFC ldr ip, [r0]  <= 0x9200273C
+     91D0AE3C ldr r3, [r4]  <= 0x920157DC
+  -- calls  --
+     91D0AD80 bl #0x91d08938
+     91D0AD88 bl #0x91d0a740
+
+=== 0x91D0A894 @0x91D0A894 ===
+  91D0A894  movw     r3, #0x2734   ; r3 = 0x92002734
+  91D0A898  movt     r3, #0x9200
+  91D0A89C  push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+  91D0A8A0  movw     r1, #0x57dc
+  91D0A8A4  sub      sp, sp, #0x3c
+  91D0A8A8  movt     r1, #0x9201
+  91D0A8AC  ldr      sb, [r3]
+  91D0A8B0  str      r3, [sp, #0x28]
+  91D0A8B4  ldr      r3, [r1]
+  91D0A8B8  cmp      sb, r0
+  91D0A8BC  str      r1, [sp, #0x24]
+  91D0A8C0  str      r0, [sp, #8]
+  91D0A8C4  str      r3, [sp, #0x34]
+  91D0A8C8  beq      #0x91d0a9f4
+  91D0A8CC  cmn      r0, #1
+  91D0A8D0  beq      #0x91d0a9e8
+  91D0A8D4  bl       #0x91d088f8
+  91D0A8D8  mov      r6, r0
+  91D0A8DC  bl       #0x91d08938
+  91D0A8E0  cmp      r6, #0
+  91D0A8E4  str      r0, [sp, #0x20]
+  91D0A8E8  beq      #0x91d0a9e0
+  91D0A8EC  ldr      r3, [sp, #0x20]
+  91D0A8F0  movw     r7, #0xdd7c   ; r7 = 0x91D9DD7C
+  91D0A8F4  movt     r7, #0x91d9
+  91D0A8F8  add      r3, r3, #0xe0
+  91D0A8FC  str      r3, [sp, #0x1c]
+  91D0A900  mov      r3, #1
+  91D0A904  str      r3, [sp, #0x14]
+  91D0A908  ldr      r3, [sp, #8]
+  91D0A90C  ldr      r5, [r7, r3, lsl #2]
+  91D0A910  ldr      r3, [sp, #0x1c]
+  91D0A914  mov      r1, r5
+  91D0A918  sub      r4, r3, #0x98
+  91D0A91C  ldr      r3, [sp, #0x14]
+  91D0A920  mov      r0, r4
+  91D0A924  sub      r3, r3, #1
+  91D0A928  str      r3, [sp, #0x18]
+  91D0A92C  bl       #0x91d535fc
+  91D0A930  cmp      r0, #0
+  91D0A934  beq      #0x91d0aa24
+  91D0A938  ldr      r3, [sp, #0x14]
+  91D0A93C  cmp      r6, r3
+  91D0A940  bls      #0x91d0a9e0
+  91D0A944  ldr      r8, [sp, #0x1c]
+  91D0A948  mov      sl, r3
+  91D0A94C  mov      r0, r4
+  91D0A950  bl       #0x91d5323c
+  91D0A954  mov      fp, r0
+  91D0A958  mov      r0, r5
+  91D0A95C  bl       #0x91d5323c
+  91D0A960  mov      r1, r4
+  91D0A964  rsb      r2, r0, fp
+  91D0A968  mov      r0, r8
+  91D0A96C  bl       #0x91d53388
+  91D0A970  cmp      r0, #0
+  91D0A974  bne      #0x91d0a9ac
+  91D0A978  mov      r0, r8
+  91D0A97C  ldr      r1, [r7, sb, lsl #2]
+  91D0A980  bl       #0x91d535fc
+  91D0A984  cmp      r0, #0
+  91D0A988  beq      #0x91d0a9ac
+  91D0A98C  mov      r1, sl
+  91D0A990  ldr      r0, [sp, #0x20]
+  91D0A994  ldr      r2, [sp, #0x18]
+  91D0A998  bl       #0x91d0a1cc
+  91D0A99C  ldr      r3, [sp, #8]
+  91D0A9A0  movw     r1, #0xdd7c   ; r1 = 0x91D9DD7C
+  91D0A9A4  movt     r1, #0x91d9
+  91D0A9A8  ldr      r5, [r1, r3, lsl #2]
+  91D0A9AC  add      sl, sl, #1
+  91D0A9B0  add      r8, r8, #0x98
+  91D0A9B4  cmp      r6, sl
+  91D0A9B8  bhi      #0x91d0a94c
+  91D0A9BC  ldr      r3, [sp, #0x1c]
+  91D0A9C0  add      r3, r3, #0x98
+  91D0A9C4  str      r3, [sp, #0x1c]
+  91D0A9C8  ldr      r3, [sp, #0x14]
+  91D0A9CC  add      r3, r3, #1
+  91D0A9D0  str      r3, [sp, #0x14]
+  91D0A9D4  b        #0x91d0a910
+  91D0A9D8  cmp      r6, r3
+  91D0A9DC  bhi      #0x91d0a9bc
+  91D0A9E0  ldr      r0, [sp, #8]
+  91D0A9E4  bl       #0x91d0a0dc
+  91D0A9E8  ldr      r3, [sp, #8]
+  91D0A9EC  ldr      r1, [sp, #0x28]
+  91D0A9F0  str      r3, [r1]
+  91D0A9F4  movw     r3, #0x273c   ; r3 = 0x9200273C
+  91D0A9F8  movt     r3, #0x9200
+  91D0A9FC  ldr      r3, [r3]
+  91D0AA00  cmp      r3, #0
+  91D0AA04  bne      #0x91d0aad0
+  91D0AA08  ldr      r1, [sp, #0x24]
+  91D0AA0C  ldr      r2, [sp, #0x34]
+  91D0AA10  ldr      r3, [r1]
+  91D0AA14  cmp      r2, r3
+  91D0AA18  bne      #0x91d0ac10
+  91D0AA1C  add      sp, sp, #0x3c
+  91D0AA20  pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc}
+  -- writes --
+     91D0A9F0 str r3, [r1]  => 0x91D9DD7C
+  -- reads  --
+     91D0A8AC ldr sb, [r3]  <= 0x92002734
+     91D0A90C ldr r5, [r7, r3, lsl #2]  <= 0x91D9DD7C
+     91D0A97C ldr r1, [r7, sb, lsl #2]  <= 0x91D9DD7C
+     91D0A9A8 ldr r5, [r1, r3, lsl #2]  <= 0x91D9DD7C
+     91D0A9FC ldr r3, [r3]  <= 0x9200273C
+     91D0AA10 ldr r3, [r1]  <= 0x91D9DD7C
+  -- calls  --
+     91D0A8D4 bl #0x91d088f8
+     91D0A8DC bl #0x91d08938
+     91D0A92C bl #0x91d535fc
+     91D0A950 bl #0x91d5323c
+     91D0A95C bl #0x91d5323c
+     91D0A96C bl #0x91d53388
+     91D0A980 bl #0x91d535fc
+     91D0A998 bl #0x91d0a1cc
+     91D0A9E4 bl #0x91d0a0dc
+
+========================================================================
+TASK2b  0x9200272C..0x92002744 邻域所有直接读写（literal pool + movw/movt）
+========================================================================
+  0x9200272C : movw/movt @0x91D0A50C r3, #0x272c | movw/movt @0x91D0A584 r3, #0x272c | movw/movt @0x91D0A668 ip, #0x272c | movw/movt @0x91D0A78C ip, #0x272c | movw/movt @0x91D0ACD8 r3, #0x272c | movw/movt @0x91D0AD98 r7, #0x272c
+  0x92002730 : pool@0x91D0B204 <- 0x91D0B18C ldr sl, [pc, #0x70]
+  0x92002734 : movw/movt @0x91D0A624 r3, #0x2734 | movw/movt @0x91D0A750 sb, #0x2734 | movw/movt @0x91D0A894 r3, #0x2734 | movw/movt @0x91D0AC8C r3, #0x2734
+  0x92002738 : movw/movt @0x91D0AEE8 r2, #0x2738
+  0x9200273C : movw/movt @0x91D0A9F4 r3, #0x273c | movw/movt @0x91D0AC48 r1, #0x273c | movw/movt @0x91D0ACE0 ip, #0x273c | movw/movt @0x91D0ADE8 r0, #0x273c
+  0x92002740 : movw/movt @0x91D0BBD8 r3, #0x2740 | movw/movt @0x91D0BDF0 r3, #0x2740 | movw/movt @0x91D0C244 r3, #0x2740
+  0x92002744 : (无直接引用)
+  0x92002748 : (无直接引用)

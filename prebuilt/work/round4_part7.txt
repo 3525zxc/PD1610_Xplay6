@@ -1,0 +1,136 @@
+=== words 0x91D98F80..0x91D99020 ===
+  0x91D98F80: 0x6001051D
+  0x91D98F84: 0x00040510
+  0x91D98F88: 0x03010518
+  0x91D98F8C: 0x00310514
+  0x91D98F90: 0x3001051C
+  0x91D98F94: 0x000D0512
+  0x91D98F98: 0x0C01051A
+  0x91D98F9C: 0x00C10516
+  0x91D98FA0: 0x00000540
+  0x91D98FA4: 0x2E322E31
+  0x91D98FA8: 0x00000038
+  0x91D98FAC: 0x91D79890 (code VA)
+  0x91D98FB0: 0x91D3A938 (code VA)
+  0x91D98FB4: 0x91D40FCC <== holds 0x91D40FCC (code VA)
+  0x91D98FB8: 0x00000000
+  0x91D98FBC: 0x91D87520 (code VA)
+  0x91D98FC0: 0x91D46E7C (code VA)
+  0x91D98FC4: 0x91D47028 (code VA)
+  0x91D98FC8: 0x00000000
+  0x91D98FCC: 0x91D87538 (code VA)
+  0x91D98FD0: 0x91D47614 (code VA)
+  0x91D98FD4: 0x00000000
+  0x91D98FD8: 0x00000000
+  0x91D98FDC: 0x7FFDD898
+  0x91D98FE0: 0x80ACB0B0
+  0x91D98FE4: 0x7FFDD908
+  0x91D98FE8: 0x8004AFB0
+  0x91D98FEC: 0x7FFDDD98
+  0x91D98FF0: 0x80B107AF
+  0x91D98FF4: 0x7FFDE194
+  0x91D98FF8: 0x00000001
+  0x91D98FFC: 0x00000000
+  0x91D99000: 0xC0390002
+  0x91D99004: 0xFFFF5051
+  0x91D99008: 0x00000008
+  0x91D9900C: 0x91D99000 (code VA)
+  0x91D99010: 0x00000000
+  0x91D99014: 0xC0390003
+  0x91D99018: 0xFFA5A5F0
+  0x91D9901C: 0xC0390003
+
+=== movw/movt materializing 0x91D9xxxx (0x8F00..0x9100) ===
+  91D0189C movw/movt -> 0x91D99000
+  91D02848 movw/movt -> 0x91D99028
+  91D02ED4 movw/movt -> 0x91D99024
+  91D031D4 movw/movt -> 0x91D990E4
+  91D0367C movw/movt -> 0x91D9904C
+  91D39BD4 movw/movt -> 0x91D98FDC
+  91D74F38 movw/movt -> 0x91D98F24
+
+=== 0x91D415D8..0x91D41640  0x91D415D8..0x91D41640 ===
+  91D415D8  movw     r3, #0x57dc
+  91D415DC  movt     r3, #0x9201
+  91D415E0  str      lr, [sp, #-4]!
+  91D415E4  sub      sp, sp, #0xc
+  91D415E8  ldr      r1, [r3]
+  91D415EC  movw     r2, #0x83c
+  91D415F0  movt     r2, #0x9201
+  91D415F4  str      r1, [sp, #4]
+  91D415F8  ldr      r0, [r2]
+  91D415FC  ldr      r2, [sp, #4]
+  91D41600  ldr      r3, [r3]
+  91D41604  cmp      r2, r3
+  91D41608  bne      #0x91d41614
+  91D4160C  add      sp, sp, #0xc
+  91D41610  pop      {pc}
+  91D41614  bl       #0x91d516c4
+  91D41618  movw     r3, #0x57dc
+  91D4161C  movt     r3, #0x9201
+  91D41620  push     {r4, lr}
+  91D41624  sub      sp, sp, #8
+  91D41628  ldr      r4, [r3]
+  91D4162C  movw     ip, #0x1610
+  91D41630  movt     ip, #0x9203
+  91D41634  str      r1, [r0, #4]
+  91D41638  str      r4, [sp, #4]
+  91D4163C  str      r2, [ip]
+
+=== 0x91D440C4..0x91D44100 (caller A)  0x91D440C4..0x91D44100 ===
+  91D440C4  bl       #0x91d415d8
+  91D440C8  cmp      fp, #7
+  91D440CC  movhi    r3, #0
+  91D440D0  movls    r3, #1
+  91D440D4  cmp      fp, r0
+  91D440D8  orrhs    r3, r3, #1
+  91D440DC  mov      r8, r0
+  91D440E0  cmp      r3, #0
+  91D440E4  bne      #0x91d4421c
+  91D440E8  mov      r0, #0x80
+  91D440EC  mov      r1, r8
+  91D440F0  bl       #0x91d52a94
+  91D440F4  subs     sl, r0, #0
+  91D440F8  beq      #0x91d44270
+  91D440FC  bl       #0x91d415d8
+
+=== 0x91D440FC..0x91D44140 (caller B)  0x91D440FC..0x91D44140 ===
+  91D440FC  bl       #0x91d415d8
+  91D44100  cmp      r8, #0
+  91D44104  beq      #0x91d44208
+  91D44108  bl       #0x91d377a8
+  91D4410C  cmp      r0, #0
+  91D44110  beq      #0x91d44230
+  91D44114  movw     r0, #0x98c4
+  91D44118  movt     r0, #0x91d7
+  91D4411C  bl       #0x91d09c88
+  91D44120  cmn      r0, #1
+  91D44124  mov      r6, r0
+  91D44128  beq      #0x91d44258
+  91D4412C  bl       #0x91d09f4c
+  91D44130  strd     r0, r1, [sp]
+  91D44134  mov      r0, r6
+  91D44138  bl       #0x91d09ed4
+  91D4413C  mov      r4, r0
+
+=== 0x91D44080..0x91D440C8 (before caller A)  0x91D44080..0x91D440C8 ===
+  91D44080  bl       #0x91d51508
+  91D44084  mvn      r0, #0
+  91D44088  b        #0x91d43f38
+  91D4408C  movw     r0, #0x6de0
+  91D44090  movt     r0, #0x91d8
+  91D44094  bl       #0x91d51508
+  91D44098  mvn      r0, #0
+  91D4409C  b        #0x91d43f38
+  91D440A0  bl       #0x91d516c4
+  91D440A4  push     {r4, r5, r6, r8, sb, sl, fp, lr}
+  91D440A8  movw     sb, #0x57dc
+  91D440AC  movt     sb, #0x9201
+  91D440B0  sub      sp, sp, #0x18
+  91D440B4  mov      fp, r1
+  91D440B8  ldr      r3, [sb]
+  91D440BC  str      r0, [sp, #0xc]
+  91D440C0  str      r3, [sp, #0x14]
+  91D440C4  bl       #0x91d415d8
+
+raw @0x91D85A80: b'getid\x00\x00\x00fastboot\x00\x00\x00\x00Google\x00\x00Android\x00memory allocation error \n\x00\x00\x00partition %s doe'

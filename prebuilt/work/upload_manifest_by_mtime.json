@@ -1,0 +1,141 @@
+{
+  "count": 17,
+  "files": [
+    {
+      "mtime": "2026-11-10 09:08",
+      "stamp": "20261110-0908",
+      "name": "PD1610_哈希输入闭合与BootSignature标准格式_20261110-0908.md",
+      "size": 18116,
+      "src": "C:/Users/Tse/WorkBuddy/寒霜刷机\\PD1610_哈希输入闭合与BootSignature标准格式.md",
+      "dst": "D:/16/PD1610_81/work/upload_by_mtime\\PD1610_哈希输入闭合与BootSignature标准格式_20261110-0908.md"
+    },
+    {
+      "mtime": "2026-11-10 09:47",
+      "stamp": "20261110-0947",
+      "name": "PD1619_跨机型验签架构对照_20261110-0947.md",
+      "size": 15225,
+      "src": "C:/Users/Tse/WorkBuddy/寒霜刷机\\PD1619_跨机型验签架构对照.md",
+      "dst": "D:/16/PD1610_81/work/upload_by_mtime\\PD1619_跨机型验签架构对照_20261110-0947.md"
+    },
+    {
+      "mtime": "2026-11-10 09:47",
+      "stamp": "20261110-0947",
+      "name": "Xplay6_PD1516A_同平台固件对照_20261110-0947.md",
+      "size": 16139,
+      "src": "C:/Users/Tse/WorkBuddy/寒霜刷机\\Xplay6_PD1516A_同平台固件对照.md",
+      "dst": "D:/16/PD1610_81/work/upload_by_mtime\\Xplay6_PD1516A_同平台固件对照_20261110-0947.md"
+    },
+    {
+      "mtime": "2026-11-10 11:23",
+      "stamp": "20261110-1123",
+      "name": "PD1616B_X9s_官方与修补boot字节级对照_20261110-1123.md",
+      "size": 16631,
+      "src": "C:/Users/Tse/WorkBuddy/寒霜刷机\\PD1616B_X9s_官方与修补boot字节级对照.md",
+      "dst": "D:/16/PD1610_81/work/upload_by_mtime\\PD1616B_X9s_官方与修补boot字节级对照_20261110-1123.md"
+    },
+    {
+      "mtime": "2026-11-10 13:09",
+      "stamp": "20261110-1309",
+      "name": "PD1610_内存态临时Root工具链_发现记录_20261110-1309.md",
+      "size": 5299,
+      "src": "C:/Users/Tse/WorkBuddy/寒霜刷机\\PD1610_内存态临时Root工具链_发现记录.md",
+      "dst": "D:/16/PD1610_81/work/upload_by_mtime\\PD1610_内存态临时Root工具链_发现记录_20261110-1309.md"
+    },
+    {
+      "mtime": "2026-11-10 13:29",
+      "stamp": "20261110-1329",
+      "name": "PD1610_案例截图判读_20261110_20261110-1329.md",
+      "size": 11469,
+      "src": "C:/Users/Tse/WorkBuddy/寒霜刷机\\PD1610_案例截图判读_20261110.md",
+      "dst": "D:/16/PD1610_81/work/upload_by_mtime\\PD1610_案例截图判读_20261110_20261110-1329.md"
+    },
+    {
+      "mtime": "2026-11-10 13:44",
+      "stamp": "20261110-1344",
+      "name": "TB8703_LOS171_3.18内核参考价值评估_20261110-1344.md",
+      "size": 6539,
+      "src": "C:/Users/Tse/WorkBuddy/寒霜刷机\\TB8703_LOS171_3.18内核参考价值评估.md",
+      "dst": "D:/16/PD1610_81/work/upload_by_mtime\\TB8703_LOS171_3.18内核参考价值评估_20261110-1344.md"
+    },
+    {
+      "mtime": "2026-11-10 14:34",
+      "stamp": "20261110-1434",
+      "name": "PD1610_解锁跳过验签分支P0静态闭合_补充记录_20261110-1434.md",
+      "size": 61208,
+      "src": "C:/Users/Tse/WorkBuddy/寒霜刷机\\PD1610_解锁跳过验签分支P0静态闭合_补充记录.md",
+      "dst": "D:/16/PD1610_81/work/upload_by_mtime\\PD1610_解锁跳过验签分支P0静态闭合_补充记录_20261110-1434.md"
+    },
+    {
+      "mtime": "2026-11-10 14:37",
+      "stamp": "20261110-1437",
+      "name": "PD1610_原厂DTS反编译与关键节点_20261110-1437.md",
+      "size": 7036,
+      "src": "C:/Users/Tse/WorkBuddy/寒霜刷机\\PD1610_原厂DTS反编译与关键节点.md",
+      "dst": "D:/16/PD1610_81/work/upload_by_mtime\\PD1610_原厂DTS反编译与关键节点_20261110-1437.md"
+    },
+    {
+      "mtime": "2026-11-10 14:58",
+      "stamp": "20261110-1458",
+      "name": "小白研究vivo_20261110-1458.md",
+      "size": 25733,
+      "src": "C:/Users/Tse/WorkBuddy/寒霜刷机\\小白研究vivo.md",
+      "dst": "D:/16/PD1610_81/work/upload_by_mtime\\小白研究vivo_20261110-1458.md"
+    },
+    {
+      "mtime": "2026-11-10 15:02",
+      "stamp": "20261110-1502",
+      "name": "PD1610_内核与设备树_跨版本跨机型对照_20261110-1502.md",
+      "size": 21343,
+      "src": "C:/Users/Tse/WorkBuddy/寒霜刷机\\PD1610_内核与设备树_跨版本跨机型对照.md",
+      "dst": "D:/16/PD1610_81/work/upload_by_mtime\\PD1610_内核与设备树_跨版本跨机型对照_20261110-1502.md"
+    },
+    {
+      "mtime": "2026-11-10 16:52",
+      "stamp": "20261110-1652",
+      "name": "H1_操作手册_20261110-1652.md",
+      "size": 8837,
+      "src": "C:/Users/Tse/WorkBuddy/寒霜刷机\\PD1610_H1_测试包\\H1_操作手册.md",
+      "dst": "D:/16/PD1610_81/work/upload_by_mtime\\H1_操作手册_20261110-1652.md"
+    },
+    {
+      "mtime": "2026-11-11 00:02",
+      "stamp": "20261111-0002",
+      "name": "PD1619_PORTING_NOTES_20261111-0002.md",
+      "size": 66104,
+      "src": "D:/16/PD1610_81\\refs\\PD1619_PORTING_NOTES.md",
+      "dst": "D:/16/PD1610_81/work/upload_by_mtime\\PD1619_PORTING_NOTES_20261111-0002.md"
+    },
+    {
+      "mtime": "2026-11-11 00:02",
+      "stamp": "20261111-0002",
+      "name": "README_20261111-0002.md",
+      "size": 815,
+      "src": "D:/16/PD1610_81\\refs\\README.md",
+      "dst": "D:/16/PD1610_81/work/upload_by_mtime\\README_20261111-0002.md"
+    },
+    {
+      "mtime": "2026-11-11 00:06",
+      "stamp": "20261111-0006",
+      "name": "GPL_AND_PORTING_ROADMAP_20261111-0006.md",
+      "size": 14758,
+      "src": "D:/16/PD1610_81\\evidence\\GPL_AND_PORTING_ROADMAP.md",
+      "dst": "D:/16/PD1610_81/work/upload_by_mtime\\GPL_AND_PORTING_ROADMAP_20261111-0006.md"
+    },
+    {
+      "mtime": "2026-11-11 00:07",
+      "stamp": "20261111-0007",
+      "name": "2026-11-10_20261111-0007.md",
+      "size": 137956,
+      "src": "C:/Users/Tse/WorkBuddy/寒霜刷机\\.workbuddy\\memory\\2026-11-10.md",
+      "dst": "D:/16/PD1610_81/work/upload_by_mtime\\2026-11-10_20261111-0007.md"
+    },
+    {
+      "mtime": "2026-11-11 00:07",
+      "stamp": "20261111-0007",
+      "name": "MEMORY_20261111-0007.md",
+      "size": 10060,
+      "src": "C:/Users/Tse/WorkBuddy/寒霜刷机\\.workbuddy\\memory\\MEMORY.md",
+      "dst": "D:/16/PD1610_81/work/upload_by_mtime\\MEMORY_20261111-0007.md"
+    }
+  ]
+}

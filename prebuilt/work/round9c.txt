@@ -1,0 +1,70 @@
+==============================================================================
+全部 BL / B 调用者统计（PD1610 aboot 8.19.16）
+==============================================================================
+
+  解锁门控 0x91D3C33C
+    BL  : 2  ['0x91D3C748', '0x91D3E18C']
+    B   : 0  []
+    ptr : 0  []
+      caller 0x91D3C748 → 所在函数 0x91D3C3F0
+      caller 0x91D3E18C → 所在函数 0x91D3E000
+
+  验签 0x91D12DD0
+    BL  : 2  ['0x91D39D1C', '0x91D4507C']
+    B   : 0  []
+    ptr : 0  []
+      caller 0x91D39D1C → 所在函数 0x91D39CB4
+      caller 0x91D4507C → 所在函数 0x91D44CC8
+
+  外层 G 0x91D39CB4
+    BL  : 3  ['0x91D3C84C', '0x91D3D764', '0x91D3E380']
+    B   : 0  []
+    ptr : 0  []
+      caller 0x91D3C84C → 所在函数 0x91D3C3F0
+      caller 0x91D3D764 → 所在函数 0x91D3D27C
+      caller 0x91D3E380 → 所在函数 0x91D3E000
+
+  getter恒1 0x91D37814
+    BL  : 8  ['0x91D00E04', '0x91D3AD2C', '0x91D3C7E8', '0x91D3D5C0', '0x91D3D660', '0x91D3E164', '0x91D3E1D8', '0x91D412A0']
+    B   : 0  []
+    ptr : 0  []
+      caller 0x91D00E04 → 所在函数 0x91D00D9C
+      caller 0x91D3AD2C → 所在函数 0x91D3AB94
+      caller 0x91D3C7E8 → 所在函数 0x91D3C3F0
+      caller 0x91D3D5C0 → 所在函数 0x91D3D27C
+      caller 0x91D3D660 → 所在函数 0x91D3D27C
+      caller 0x91D3E164 → 所在函数 0x91D3E000
+      caller 0x91D3E1D8 → 所在函数 0x91D3E000
+      caller 0x91D412A0 → 所在函数 0x91D40FCC
+
+  检查A 0x91D37B78
+    BL  : 3  ['0x91D3ADF4', '0x91D3C0A4', '0x91D3E030']
+    B   : 0  []
+    ptr : 0  []
+      caller 0x91D3ADF4 → 所在函数 0x91D3AB94
+      caller 0x91D3C0A4 → 所在函数 0x91D3BCC0
+      caller 0x91D3E030 → 所在函数 0x91D3E000
+
+  检查B 0x91D377A8
+    BL  : 19  ['0x91D00AE4', '0x91D14464', '0x91D3AC28', '0x91D3D298', '0x91D3D898', '0x91D3DA94', '0x91D3DD58', '0x91D3E080', '0x91D3E9A0', '0x91D3FBF8', '0x91D40808', '0x91D40BB4', '0x91D40CE8', '0x91D40DD0', '0x91D40FF0', '0x91D41260', '0x91D41294', '0x91D43E90', '0x91D44108']
+    B   : 0  []
+    ptr : 0  []
+      caller 0x91D00AE4 → 所在函数 0x91D00AC8
+      caller 0x91D14464 → 所在函数 0x91D1430C
+      caller 0x91D3AC28 → 所在函数 0x91D3AB94
+      caller 0x91D3D298 → 所在函数 0x91D3D27C
+      caller 0x91D3D898 → 所在函数 0x91D3D870
+      caller 0x91D3DA94 → 所在函数 0x91D3DA74
+      caller 0x91D3DD58 → 所在函数 0x91D3DD38
+      caller 0x91D3E080 → 所在函数 0x91D3E000
+      caller 0x91D3E9A0 → 所在函数 0x91D3E970
+      caller 0x91D3FBF8 → 所在函数 0x91D3FBD4
+      caller 0x91D40808 → 所在函数 0x91D407F0
+      caller 0x91D40BB4 → 所在函数 0x91D40974
+      caller 0x91D40CE8 → 所在函数 0x91D40974
+      caller 0x91D40DD0 → 所在函数 0x91D40974
+      caller 0x91D40FF0 → 所在函数 0x91D40FCC
+      caller 0x91D41260 → 所在函数 0x91D40FCC
+      caller 0x91D41294 → 所在函数 0x91D40FCC
+      caller 0x91D43E90 → 所在函数 0x91D43E48
+      caller 0x91D44108 → 所在函数 0x91D440A4

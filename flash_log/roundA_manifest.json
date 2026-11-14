@@ -1,0 +1,64 @@
+{
+  "tag": "roundA",
+  "captured_at": "2026-11-14T21:49:24",
+  "adb": "D:/xplay6/tools/platform-tools/adb.exe",
+  "files": {
+    "roundA_input_devices.txt": {
+      "bytes": 1247,
+      "sha256": "c4ef075eeceb3c5417efe18b47e51e8c7e3c95e8504c8f8318efc1278fa6b8bf"
+    },
+    "roundA_i2c_bindings.txt": {
+      "bytes": 1027,
+      "sha256": "81f5e5b8d33ce18c58358d66a1d8e213b71e1ea8c0141816fb33fa87a70eda88"
+    },
+    "roundA_props.txt": {
+      "bytes": 19414,
+      "sha256": "9008e4dfee15c9eba8211e71cdc3cbf6262836e554c75889b74a606f4f09284c"
+    },
+    "roundA_dmesg.txt": {
+      "bytes": 199902,
+      "sha256": "105b18a88c8464eaf1d9852c68807d88339e89aa8352599afa63059159f492d5"
+    },
+    "roundA_getevent_i.txt": {
+      "bytes": 3712,
+      "sha256": "b7c6c0e56fbc6dbdb6e0d2247b618bff0c10ef6d999ac1cc2e6e411a521eee20"
+    },
+    "roundA_uname.txt": {
+      "bytes": 171,
+      "sha256": "935555c6278068858d65caea9cce6c9436ff588eabcc4303d7ab946be5197140"
+    },
+    "roundA_interrupts.txt": {
+      "bytes": 15046,
+      "sha256": "8f0698c3d335634c05ea118be304677cd5ccfc1a25139195e7b727ab089a6a1e"
+    },
+    "roundA_lsmod.txt": {
+      "bytes": 38,
+      "sha256": "f727cc07a801eea18e103ccfd9a55980d8a4231c4e88e8933b3afe1b4c299cb2"
+    },
+    "roundA_input_names.txt": {
+      "bytes": 84,
+      "sha256": "b2b9645152f769a9eb32b5b6c6271a4b8f7eeac196a4c41fceebdc004d28d611"
+    },
+    "roundA_dev_input.txt": {
+      "bytes": 454,
+      "sha256": "a4562bbfaff0f8558f25bb1b7c0c70b7b01bd8f4e59444aea32410ed8c3c7344"
+    },
+    "roundA_firmware_loads.txt": {
+      "bytes": 10102,
+      "sha256": "35344eb90867fb073375a36ba4e1923db803fb0e28af069cc17c8cbeb6bc2731"
+    },
+    "roundA_i2c_drivers.txt": {
+      "bytes": 4823,
+      "sha256": "c65e3d07a2dbe844d17c1b34a6f20a5cf5ebe9e23789e773c755c8641e7a07bb"
+    }
+  },
+  "devices": "List of devices attached\n5fccbfeb               device product:pd1610 model:vivo_Xplay6 device:pd1610 transport_id:3",
+  "kernel": "3.18.120-perf",
+  "boot_completed": "1",
+  "boot_image": {
+    "path": "D:\\xplay6\\evidence\\kernel_re\\out\\stage2\\bootloop_monitor\\images\\boot_los16_blm_ftsirq_20261114192500.img",
+    "sha256": "5f164490032dd866ae673734d0913dfdc6e629700ab3f331f6c8ef3db3ce638d",
+    "bytes": 58483968
+  },
+  "preflight": "D:\\xplay6\\evidence\\kernel_re\\out\\stage2\\bootloop_monitor\\images\\boot_los16_blm_ftsirq_20261114192500.preflight.json"
+}

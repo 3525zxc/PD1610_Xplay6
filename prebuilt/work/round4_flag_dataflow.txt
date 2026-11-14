@@ -1,0 +1,367 @@
+=== loop core  0x91D412AC..0x91D41300 (raw bytes + flag-source) ===
+  91D412AC  4fecffeb  bl       #0x91d3c3f0                  ; (BL: LR only, no NZCV)
+  91D412B0  040040e2  sub      r0, r0, #4                
+  91D412B4  050050e3  cmp      r0, #5                       ; <<< sets NZCV
+  91D412B8  5700008a  bhi      #0x91d4141c                  ; branch tests: cmp r0, #5 (set @0x91D412B4)
+  91D412BC  1530a0e1  lsl      r3, r5, r0                
+  91D412C0  270013e3  tst      r3, #0x27                    ; <<< sets NZCV
+  91D412C4  5400000a  beq      #0x91d4141c                  ; branch tests: tst r3, #0x27 (set @0x91D412C0)
+  91D412C8  0127ffeb  bl       #0x91d0aed4                  ; (BL: LR only, no NZCV)
+  91D412CC  000050e3  cmp      r0, #0                       ; <<< sets NZCV
+  91D412D0  5100000a  beq      #0x91d4141c                  ; branch tests: cmp r0, #0 (set @0x91D412CC)
+  91D412D4  0400a0e1  mov      r0, r4                    
+  91D412D8  8124ffeb  bl       #0x91d0a4e4                  ; (BL: LR only, no NZCV)
+  91D412DC  fc26ffeb  bl       #0x91d0aed4                  ; (BL: LR only, no NZCV)
+  91D412E0  000050e3  cmp      r0, #0                       ; <<< sets NZCV
+  91D412E4  f0ffff0a  beq      #0x91d412ac                  ; branch tests: cmp r0, #0 (set @0x91D412E0)
+  91D412E8  9d26ffeb  bl       #0x91d0ad64                  ; (BL: LR only, no NZCV)
+  91D412EC  0040a0e1  mov      r4, r0                    
+  91D412F0  6725ffeb  bl       #0x91d0a894                  ; (BL: LR only, no NZCV)
+  91D412F4  010074e3  cmn      r4, #1                       ; <<< sets NZCV
+  91D412F8  ebffff1a  bne      #0x91d412ac                  ; branch tests: cmn r4, #1 (set @0x91D412F4)
+  91D412FC  adffffea  b        #0x91d411b8                  ; branch tests: cmn r4, #1 (set @0x91D412F4)
+
+=== pre-loop entry  0x91D41294..0x91D412B0 (raw bytes + flag-source) ===
+  91D41294  43d9ffeb  bl       #0x91d377a8                  ; (BL: LR only, no NZCV)
+  91D41298  000050e3  cmp      r0, #0                       ; <<< sets NZCV
+  91D4129C  5c00000a  beq      #0x91d41414                  ; branch tests: cmp r0, #0 (set @0x91D41298)
+  91D412A0  5bd9ffeb  bl       #0x91d37814                  ; (BL: LR only, no NZCV)
+  91D412A4  0150a0e3  mov      r5, #1                    
+  91D412A8  0b0000ea  b        #0x91d412dc                  ; branch tests: cmp r0, #0 (set @0x91D41298)
+  91D412AC  4fecffeb  bl       #0x91d3c3f0                  ; (BL: LR only, no NZCV)
+
+=== 0x91D0AED4 full function ..0x91D0AF10, NZCV audit ===
+  91D0AED4  dc3705e3  movw     r3, #0x57dc                 
+  91D0AED8  013249e3  movt     r3, #0x9201                 
+  91D0AEDC  04e02de5  str      lr, [sp, #-4]!              
+  91D0AEE0  0cd04de2  sub      sp, sp, #0xc                
+  91D0AEE4  001093e5  ldr      r1, [r3]                    
+  91D0AEE8  382702e3  movw     r2, #0x2738                 
+  91D0AEEC  002249e3  movt     r2, #0x9200                 
+  91D0AEF0  04108de5  str      r1, [sp, #4]                
+  91D0AEF4  000092e5  ldr      r0, [r2]                    
+  91D0AEF8  04209de5  ldr      r2, [sp, #4]                
+  91D0AEFC  003093e5  ldr      r3, [r3]                    
+  91D0AF00  030052e1  cmp      r2, r3                         ; <<< sets NZCV
+  91D0AF04  0100001a  bne      #0x91d0af10                 
+  91D0AF08  0cd08de2  add      sp, sp, #0xc                
+  91D0AF0C  04f09de4  pop      {pc}                           ; <<< RETURN (flag state here = caller BEQ source if no CMP follows)
+
+=== support fn 0x91D0A4E4  0x91D0A4E4..0x91D0A540 (raw bytes + flag-source) ===
+  91D0A4E4  f0402de9  push     {r4, r5, r6, r7, lr}      
+  91D0A4E8  dc4705e3  movw     r4, #0x57dc               
+  91D0A4EC  014249e3  movt     r4, #0x9201               
+  91D0A4F0  0cd04de2  sub      sp, sp, #0xc              
+  91D0A4F4  0050a0e1  mov      r5, r0                    
+  91D0A4F8  0060e0e3  mvn      r6, #0                    
+  91D0A4FC  003094e5  ldr      r3, [r4]                  
+  91D0A500  7f78e0e3  mvn      r7, #0x7f0000             
+  91D0A504  04308de5  str      r3, [sp, #4]              
+  91D0A508  0af9ffeb  bl       #0x91d08938                  ; (BL: LR only, no NZCV)
+  91D0A50C  2c3702e3  movw     r3, #0x272c               
+  91D0A510  003249e3  movt     r3, #0x9200               
+  91D0A514  9820a0e3  mov      r2, #0x98                 
+  91D0A518  04c09de5  ldr      ip, [sp, #4]              
+  91D0A51C  053193e7  ldr      r3, [r3, r5, lsl #2]      
+  91D0A520  0255a0e3  mov      r5, #0x800000             
+  91D0A524  001094e5  ldr      r1, [r4]                  
+  91D0A528  0040a0e3  mov      r4, #0                    
+  91D0A52C  01005ce1  cmp      ip, r1                       ; <<< sets NZCV
+  91D0A530  920320e0  mla      r0, r2, r3, r0            
+  91D0A534  d024c0e1  ldrd     r2, r3, [r0, #0x40]       
+  91D0A538  062002e0  and      r2, r2, r6                
+  91D0A53C  073003e0  and      r3, r3, r7                
+
+=== support fn 0x91D0AD64  0x91D0AD64..0x91D0AED4 (raw bytes + flag-source) ===
+  91D0AD64  f04f2de9  push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+  91D0AD68  dc4705e3  movw     r4, #0x57dc               
+  91D0AD6C  014249e3  movt     r4, #0x9201               
+  91D0AD70  24d04de2  sub      sp, sp, #0x24             
+  91D0AD74  0e90a0e1  mov      sb, lr                    
+  91D0AD78  003094e5  ldr      r3, [r4]                  
+  91D0AD7C  1c308de5  str      r3, [sp, #0x1c]           
+  91D0AD80  ecf6ffeb  bl       #0x91d08938                  ; (BL: LR only, no NZCV)
+  91D0AD84  0050a0e1  mov      r5, r0                    
+  91D0AD88  6cfeffeb  bl       #0x91d0a740                  ; (BL: LR only, no NZCV)
+  91D0AD8C  010070e3  cmn      r0, #1                       ; <<< sets NZCV
+  91D0AD90  0060a0e1  mov      r6, r0                    
+  91D0AD94  2600000a  beq      #0x91d0ae34                  ; branch tests: cmn r0, #1 (set @0x91D0AD8C)
+  91D0AD98  2c7702e3  movw     r7, #0x272c               
+  91D0AD9C  007249e3  movt     r7, #0x9200               
+  91D0ADA0  9880a0e3  mov      r8, #0x98                 
+  91D0ADA4  0020a0e3  mov      r2, #0                    
+  91D0ADA8  001197e7  ldr      r1, [r7, r0, lsl #2]      
+  91D0ADAC  0135a0e3  mov      r3, #0x400000             
+  91D0ADB0  985121e0  mla      r1, r8, r1, r5            
+  91D0ADB4  d0a4c1e1  ldrd     sl, fp, [r1, #0x40]       
+  91D0ADB8  0a2002e0  and      r2, r2, sl                
+  91D0ADBC  0b3003e0  and      r3, r3, fp                
+  91D0ADC0  f8a0cde1  strd     sl, fp, [sp, #8]          
+  91D0ADC4  03b092e1  orrs     fp, r2, r3                   ; <<< sets NZCV
+  91D0ADC8  1900001a  bne      #0x91d0ae34                  ; branch tests: orrs fp, r2, r3 (set @0x91D0ADC4)
+  91D0ADCC  d8a0cde1  ldrd     sl, fp, [sp, #8]          
+  91D0ADD0  0e37a0e3  mov      r3, #0x380000             
+  91D0ADD4  0b3003e0  and      r3, r3, fp                
+  91D0ADD8  00b0a0e3  mov      fp, #0                    
+  91D0ADDC  a3a9a0e1  lsr      sl, r3, #0x13             
+  91D0ADE0  0bc09ae1  orrs     ip, sl, fp                   ; <<< sets NZCV
+  91D0ADE4  1900000a  beq      #0x91d0ae50                  ; branch tests: orrs ip, sl, fp (set @0x91D0ADE0)
+  91D0ADE8  3c0702e3  movw     r0, #0x273c               
+  91D0ADEC  000249e3  movt     r0, #0x9200               
+  91D0ADF0  01805ae2  subs     r8, sl, #1                   ; <<< sets NZCV
+  91D0ADF4  00b08de5  str      fp, [sp]                  
+  91D0ADF8  8839a0e1  lsl      r3, r8, #0x13             
+  91D0ADFC  00c090e5  ldr      ip, [r0]                  
+  91D0AE00  04308de5  str      r3, [sp, #4]              
+  91D0AE04  0080e0e3  mvn      r8, #0                    
+  91D0AE08  d820cde1  ldrd     r2, r3, [sp, #8]          
+  91D0AE0C  00005ce3  cmp      ip, #0                       ; <<< sets NZCV
+  91D0AE10  0e97e0e3  mvn      sb, #0x380000             
+  91D0AE14  028008e0  and      r8, r8, r2                
+  91D0AE18  039009e0  and      sb, sb, r3                
+  91D0AE1C  d020cde1  ldrd     r2, r3, [sp]              
+  91D0AE20  093083e1  orr      r3, r3, sb                
+  91D0AE24  082082e1  orr      r2, r2, r8                
+  91D0AE28  f024c1e1  strd     r2, r3, [r1, #0x40]       
+  91D0AE2C  0130a003  moveq    r3, #1                    
+  91D0AE30  00308005  streq    r3, [r0]                  
+  91D0AE34  1c209de5  ldr      r2, [sp, #0x1c]           
+  91D0AE38  0600a0e1  mov      r0, r6                    
+  91D0AE3C  003094e5  ldr      r3, [r4]                  
+  91D0AE40  030052e1  cmp      r2, r3                       ; <<< sets NZCV
+  91D0AE44  2100001a  bne      #0x91d0aed0                  ; branch tests: cmp r2, r3 (set @0x91D0AE40)
+  91D0AE48  24d08de2  add      sp, sp, #0x24             
+  91D0AE4C  f08fbde8  pop      {r4, r5, r6, r7, r8, sb, sl, fp, pc}
+  91D0AE50  a3fdffeb  bl       #0x91d0a4e4                  ; (BL: LR only, no NZCV)
+  91D0AE54  001097e5  ldr      r1, [r7]                  
+  91D0AE58  0235a0e3  mov      r3, #0x800000             
+  91D0AE5C  985121e0  mla      r1, r8, r1, r5            
+  91D0AE60  d004c1e1  ldrd     r0, r1, [r1, #0x40]       
+  91D0AE64  031001e0  and      r1, r1, r3                
+  91D0AE68  0b30a0e1  mov      r3, fp                    
+  91D0AE6C  a12ba0e1  lsr      r2, r1, #0x17             
+  91D0AE70  03c092e1  orrs     ip, r2, r3                   ; <<< sets NZCV
+  91D0AE74  0b10a001  moveq    r1, fp                    
+  91D0AE78  0900000a  beq      #0x91d0aea4                  ; branch tests: orrs ip, r2, r3 (set @0x91D0AE70)
+  91D0AE7C  041097e5  ldr      r1, [r7, #4]              
+  91D0AE80  0235a0e3  mov      r3, #0x800000             
+  91D0AE84  985125e0  mla      r5, r8, r1, r5            
+  91D0AE88  d004c5e1  ldrd     r0, r1, [r5, #0x40]       
+  91D0AE8C  031001e0  and      r1, r1, r3                
+  91D0AE90  0b30a0e1  mov      r3, fp                    
+  91D0AE94  a12ba0e1  lsr      r2, r1, #0x17             
+  91D0AE98  035092e1  orrs     r5, r2, r3                   ; <<< sets NZCV
+  91D0AE9C  0110a003  moveq    r1, #1                    
+  91D0AEA0  0400001a  bne      #0x91d0aeb8                  ; branch tests: orrs r5, r2, r3 (set @0x91D0AE98)
+  91D0AEA4  0600a0e1  mov      r0, r6                    
+  91D0AEA8  7effffeb  bl       #0x91d0aca8                  ; (BL: LR only, no NZCV)
+  91D0AEAC  0000a0e3  mov      r0, #0                    
+  91D0AEB0  31a900eb  bl       #0x91d3537c                  ; (BL: LR only, no NZCV)
+  91D0AEB4  deffffea  b        #0x91d0ae34                  ; branch tests: orrs r5, r2, r3 (set @0x91D0AE98)
+  91D0AEB8  0900a0e1  mov      r0, sb                    
+  91D0AEBC  f81f09e3  movw     r1, #0x9ff8               
+  91D0AEC0  d71149e3  movt     r1, #0x91d7               
+  91D0AEC4  dc1901eb  bl       #0x91d5163c                  ; (BL: LR only, no NZCV)
+  91D0AEC8  0b10a0e1  mov      r1, fp                    
+  91D0AECC  f4ffffea  b        #0x91d0aea4                  ; branch tests: orrs r5, r2, r3 (set @0x91D0AE98)
+  91D0AED0  fb1901eb  bl       #0x91d516c4                  ; (BL: LR only, no NZCV)
+
+=== support fn 0x91D0A894  0x91D0A894..0x91D0A910 (raw bytes + flag-source) ===
+  91D0A894  343702e3  movw     r3, #0x2734               
+  91D0A898  003249e3  movt     r3, #0x9200               
+  91D0A89C  f04f2de9  push     {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+  91D0A8A0  dc1705e3  movw     r1, #0x57dc               
+  91D0A8A4  3cd04de2  sub      sp, sp, #0x3c             
+  91D0A8A8  011249e3  movt     r1, #0x9201               
+  91D0A8AC  009093e5  ldr      sb, [r3]                  
+  91D0A8B0  28308de5  str      r3, [sp, #0x28]           
+  91D0A8B4  003091e5  ldr      r3, [r1]                  
+  91D0A8B8  000059e1  cmp      sb, r0                       ; <<< sets NZCV
+  91D0A8BC  24108de5  str      r1, [sp, #0x24]           
+  91D0A8C0  08008de5  str      r0, [sp, #8]              
+  91D0A8C4  34308de5  str      r3, [sp, #0x34]           
+  91D0A8C8  4900000a  beq      #0x91d0a9f4                  ; branch tests: cmp sb, r0 (set @0x91D0A8B8)
+  91D0A8CC  010070e3  cmn      r0, #1                       ; <<< sets NZCV
+  91D0A8D0  4400000a  beq      #0x91d0a9e8                  ; branch tests: cmn r0, #1 (set @0x91D0A8CC)
+  91D0A8D4  07f8ffeb  bl       #0x91d088f8                  ; (BL: LR only, no NZCV)
+  91D0A8D8  0060a0e1  mov      r6, r0                    
+  91D0A8DC  15f8ffeb  bl       #0x91d08938                  ; (BL: LR only, no NZCV)
+  91D0A8E0  000056e3  cmp      r6, #0                       ; <<< sets NZCV
+  91D0A8E4  20008de5  str      r0, [sp, #0x20]           
+  91D0A8E8  3c00000a  beq      #0x91d0a9e0                  ; branch tests: cmp r6, #0 (set @0x91D0A8E0)
+  91D0A8EC  20309de5  ldr      r3, [sp, #0x20]           
+  91D0A8F0  7c7d0de3  movw     r7, #0xdd7c               
+  91D0A8F4  d97149e3  movt     r7, #0x91d9               
+  91D0A8F8  e03083e2  add      r3, r3, #0xe0             
+  91D0A8FC  1c308de5  str      r3, [sp, #0x1c]           
+  91D0A900  0130a0e3  mov      r3, #1                    
+  91D0A904  14308de5  str      r3, [sp, #0x14]           
+  91D0A908  08309de5  ldr      r3, [sp, #8]              
+  91D0A90C  035197e7  ldr      r5, [r7, r3, lsl #2]      
+
+=== prologue scan backward from 0x91D412AC ===
+  candidate function start: 0x91D40FCC  push {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+    r5-def: 91D41148  mov r5, r0
+    r5-def: 91D412A4  mov r5, #1
+
+=== exit path 0x91D4141C..0x91D41480 ===
+  91D4141C  e40605e3  movw     r0, #0x56e4
+  91D41420  d80149e3  movt     r0, #0x91d8
+  91D41424  374000eb  bl       #0x91d51508
+  91D41428  62ffffea  b        #0x91d411b8
+  91D4142C  b07d07e3  movw     r7, #0x7db0
+  91D41430  007249e3  movt     r7, #0x9200
+  91D41434  0130a0e3  mov      r3, #1
+  91D41438  003087e5  str      r3, [r7]
+  91D4143C  31ffffea  b        #0x91d41108
+  91D41440  843b07e3  movw     r3, #0x7b84
+  91D41444  003249e3  movt     r3, #0x9200
+  91D41448  0510a0e1  mov      r1, r5
+  91D4144C  400605e3  movw     r0, #0x5640
+  91D41450  d80149e3  movt     r0, #0x91d8
+  91D41454  0120a0e3  mov      r2, #1
+  91D41458  002083e5  str      r2, [r3]
+  91D4145C  294000eb  bl       #0x91d51508
+  91D41460  51ffffea  b        #0x91d411ac
+  91D41464  b5fdfeeb  bl       #0x91d00b40
+  91D41468  000050e3  cmp      r0, #0
+  91D4146C  7effff0a  beq      #0x91d4126c
+  91D41470  980605e3  movw     r0, #0x5698
+  91D41474  d80149e3  movt     r0, #0x91d8
+  91D41478  224000eb  bl       #0x91d51508
+  91D4147C  7affffea  b        #0x91d4126c
+
+=== "Reverting to fastboot" string search ===
+  file off 0x08D705  VA(if in PT_LOAD) 0x91D85705  ctx: b'do normal boot. Reverting to fastboot mode.\n\x00\x00\x00sbl\x00sdi\x00xbl\x00hyp\x00pmic\x00\x00\x00\x00green\x00\x00\x00orange\x00\x00y'
+
+  pool entries holding VA 0x91D85705:
+
+=== G caller1 0x91D3C84C -0x20..+0x60  0x91D3C82C..0x91D3C8AC (raw bytes + flag-source) ===
+  91D3C82C  d001cde1  ldrd     r0, r1, [sp, #0x10]       
+  91D3C830  0b0090e0  adds     r0, r0, fp                   ; <<< sets NZCV
+  91D3C834  0010a1e2  adc      r1, r1, #0                
+  91D3C838  1e54ffeb  bl       #0x91d118b8                  ; (BL: LR only, no NZCV)
+  91D3C83C  000050e3  cmp      r0, #0                       ; <<< sets NZCV
+  91D3C840  8701001a  bne      #0x91d3ce64                  ; branch tests: cmp r0, #0 (set @0x91D3C83C)
+  91D3C844  0a00a0e1  mov      r0, sl                    
+  91D3C848  0b10a0e1  mov      r1, fp                    
+  91D3C84C  18f5ffeb  bl       #0x91d39cb4                  ; (BL: LR only, no NZCV)
+  91D3C850  641f00eb  bl       #0x91d445e8                  ; (BL: LR only, no NZCV)
+  91D3C854  000050e3  cmp      r0, #0                       ; <<< sets NZCV
+  91D3C858  0400000a  beq      #0x91d3c870                  ; branch tests: cmp r0, #0 (set @0x91D3C854)
+  91D3C85C  ac3d07e3  movw     r3, #0x7dac               
+  91D3C860  003249e3  movt     r3, #0x9200               
+  91D3C864  003093e5  ldr      r3, [r3]                  
+  91D3C868  000053e3  cmp      r3, #0                       ; <<< sets NZCV
+  91D3C86C  46ffff1a  bne      #0x91d3c58c                  ; branch tests: cmp r3, #0 (set @0x91D3C868)
+  91D3C870  5c5affeb  bl       #0x91d131e8                  ; (BL: LR only, no NZCV)
+  91D3C874  010050e3  cmp      r0, #1                       ; <<< sets NZCV
+  91D3C878  2001000a  beq      #0x91d3cd00                  ; branch tests: cmp r0, #1 (set @0x91D3C874)
+  91D3C87C  a3ecffeb  bl       #0x91d37b10                  ; (BL: LR only, no NZCV)
+  91D3C880  020050e3  cmp      r0, #2                       ; <<< sets NZCV
+  91D3C884  3601000a  beq      #0x91d3cd64                  ; branch tests: cmp r0, #2 (set @0x91D3C880)
+  91D3C888  000095e5  ldr      r0, [r5]                  
+  91D3C88C  3c3800e3  movw     r3, #0x83c                
+  91D3C890  081094e5  ldr      r1, [r4, #8]              
+  91D3C894  013249e3  movt     r3, #0x9201               
+  91D3C898  00008ae0  add      r0, sl, r0                
+  91D3C89C  0c308de5  str      r3, [sp, #0xc]            
+  91D3C8A0  d2e400eb  bl       #0x91d75bf0                  ; (BL: LR only, no NZCV)
+  91D3C8A4  009b05e3  movw     sb, #0x5b00               
+  91D3C8A8  0c309de5  ldr      r3, [sp, #0xc]            
+
+=== G caller2 0x91D3D764 -0x20..+0x60  0x91D3D744..0x91D3D7C4 (raw bytes + flag-source) ===
+  91D3D744  14009de5  ldr      r0, [sp, #0x14]           
+  91D3D748  0a308ce0  add      r3, ip, sl                
+  91D3D74C  00e08de5  str      lr, [sp]                  
+  91D3D750  3680ffeb  bl       #0x91d1d830                  ; (BL: LR only, no NZCV)
+  91D3D754  000050e3  cmp      r0, #0                       ; <<< sets NZCV
+  91D3D758  3e00001a  bne      #0x91d3d858                  ; branch tests: cmp r0, #0 (set @0x91D3D754)
+  91D3D75C  0a10a0e1  mov      r1, sl                    
+  91D3D760  18009de5  ldr      r0, [sp, #0x18]           
+  91D3D764  52f1ffeb  bl       #0x91d39cb4                  ; (BL: LR only, no NZCV)
+  91D3D768  9cffffea  b        #0x91d3d5e0                  ; branch tests: cmp r0, #0 (set @0x91D3D754)
+  91D3D76C  f40104e3  movw     r0, #0x41f4               
+  91D3D770  d80149e3  movt     r0, #0x91d8               
+  91D3D774  634f00eb  bl       #0x91d51508                  ; (BL: LR only, no NZCV)
+  91D3D778  0000e0e3  mvn      r0, #0                    
+  91D3D77C  e3feffea  b        #0x91d3d310                  ; branch tests: cmp r0, #0 (set @0x91D3D754)
+  91D3D780  740504e3  movw     r0, #0x4574               
+  91D3D784  e42703e3  movw     r2, #0x37e4               
+  91D3D788  d80149e3  movt     r0, #0x91d8               
+  91D3D78C  d82149e3  movt     r2, #0x91d8               
+  91D3D790  f91700e3  movw     r1, #0x7f9                
+  91D3D794  5b4f00eb  bl       #0x91d51508                  ; (BL: LR only, no NZCV)
+  91D3D798  0000e0e3  mvn      r0, #0                    
+  91D3D79C  dbfeffea  b        #0x91d3d310                  ; branch tests: cmp r0, #0 (set @0x91D3D754)
+  91D3D7A0  b00504e3  movw     r0, #0x45b0               
+  91D3D7A4  d80149e3  movt     r0, #0x91d8               
+  91D3D7A8  564f00eb  bl       #0x91d51508                  ; (BL: LR only, no NZCV)
+  91D3D7AC  0000e0e3  mvn      r0, #0                    
+  91D3D7B0  d6feffea  b        #0x91d3d310                  ; branch tests: cmp r0, #0 (set @0x91D3D754)
+  91D3D7B4  a80204e3  movw     r0, #0x42a8               
+  91D3D7B8  d80149e3  movt     r0, #0x91d8               
+  91D3D7BC  514f00eb  bl       #0x91d51508                  ; (BL: LR only, no NZCV)
+  91D3D7C0  0000e0e3  mvn      r0, #0                    
+
+=== G caller3 0x91D3E380 -0x20..+0x60  0x91D3E360..0x91D3E3E0 (raw bytes + flag-source) ===
+  91D3E360  183301e3  movw     r3, #0x1318               
+  91D3E364  da3149e3  movt     r3, #0x91da               
+  91D3E368  103093e5  ldr      r3, [r3, #0x10]           
+  91D3E36C  000053e3  cmp      r3, #0                       ; <<< sets NZCV
+  91D3E370  9bffff1a  bne      #0x91d3e1e4                  ; branch tests: cmp r3, #0 (set @0x91D3E36C)
+  91D3E374  14309de5  ldr      r3, [sp, #0x14]           
+  91D3E378  0500a0e1  mov      r0, r5                    
+  91D3E37C  0a1063e0  rsb      r1, r3, sl                
+  91D3E380  4beeffeb  bl       #0x91d39cb4                  ; (BL: LR only, no NZCV)
+  91D3E384  9bffffea  b        #0x91d3e1f8                  ; branch tests: cmp r3, #0 (set @0x91D3E36C)
+  91D3E388  e00704e3  movw     r0, #0x47e0               
+  91D3E38C  d80149e3  movt     r0, #0x91d8               
+  91D3E390  5c4c00eb  bl       #0x91d51508                  ; (BL: LR only, no NZCV)
+  91D3E394  32ffffea  b        #0x91d3e064                  ; branch tests: cmp r3, #0 (set @0x91D3E36C)
+  91D3E398  0a0085e0  add      r0, r5, sl                
+  91D3E39C  06106ae0  rsb      r1, sl, r6                
+  91D3E3A0  fd4fffeb  bl       #0x91d1239c                  ; (BL: LR only, no NZCV)
+  91D3E3A4  0030e0e1  mvn      r3, r0                    
+  91D3E3A8  03005ae1  cmp      sl, r3                       ; <<< sets NZCV
+  91D3E3AC  00a08a30  addlo    sl, sl, r0                
+  91D3E3B0  14008de5  str      r0, [sp, #0x14]           
+  91D3E3B4  00a0e023  mvnhs    sl, #0                    
+  91D3E3B8  06005ae1  cmp      sl, r6                       ; <<< sets NZCV
+  91D3E3BC  72ffff9a  bls      #0x91d3e18c                  ; branch tests: cmp sl, r6 (set @0x91D3E3B8)
+  91D3E3C0  80ffffea  b        #0x91d3e1c8                  ; branch tests: cmp sl, r6 (set @0x91D3E3B8)
+  91D3E3C4  880704e3  movw     r0, #0x4788               
+  91D3E3C8  d80149e3  movt     r0, #0x91d8               
+  91D3E3CC  4d4c00eb  bl       #0x91d51508                  ; (BL: LR only, no NZCV)
+  91D3E3D0  b00704e3  movw     r0, #0x47b0               
+  91D3E3D4  d80149e3  movt     r0, #0x91d8               
+  91D3E3D8  4a4c00eb  bl       #0x91d51508                  ; (BL: LR only, no NZCV)
+  91D3E3DC  20ffffea  b        #0x91d3e064                  ; branch tests: cmp sl, r6 (set @0x91D3E3B8)
+
+=== round2 read point 0x91D3AD40 -0x30..+0x30  0x91D3AD10..0x91D3AD70 (raw bytes + flag-source) ===
+  91D3AD10  3600000a  beq      #0x91d3adf0                  ; branch tests: ???STALE (set @0x00000000)
+  91D3AD14  901e03e3  movw     r1, #0x3e90               
+  91D3AD18  0400a0e1  mov      r0, r4                    
+  91D3AD1C  d81149e3  movt     r1, #0x91d8               
+  91D3AD20  16ffffeb  bl       #0x91d3a980                  ; (BL: LR only, no NZCV)
+  91D3AD24  002050e2  subs     r2, r0, #0                   ; <<< sets NZCV
+  91D3AD28  8e02001a  bne      #0x91d3b768                  ; branch tests: subs r2, r0, #0 (set @0x91D3AD24)
+  91D3AD2C  b8f2ffeb  bl       #0x91d37814                  ; (BL: LR only, no NZCV)
+  91D3AD30  000050e3  cmp      r0, #0                       ; <<< sets NZCV
+  91D3AD34  0400000a  beq      #0x91d3ad4c                  ; branch tests: cmp r0, #0 (set @0x91D3AD30)
+  91D3AD38  ac3d07e3  movw     r3, #0x7dac               
+  91D3AD3C  003249e3  movt     r3, #0x9200               
+  91D3AD40  003093e5  ldr      r3, [r3]                  
+  91D3AD44  000053e3  cmp      r3, #0                       ; <<< sets NZCV
+  91D3AD48  7002001a  bne      #0x91d3b710                  ; branch tests: cmp r3, #0 (set @0x91D3AD44)
+  91D3AD4C  4f17ffeb  bl       #0x91d00a90                  ; (BL: LR only, no NZCV)
+  91D3AD50  0b0050e3  cmp      r0, #0xb                     ; <<< sets NZCV
+  91D3AD54  00f19f97  ldrls    pc, [pc, r0, lsl #2]      
+  91D3AD58  600000ea  b        #0x91d3aee0                  ; branch tests: cmp r0, #0xb (set @0x91D3AD50)
+  91D3AD5C  8caed391  bicsls   sl, r3, ip, lsl #29          ; branch tests: cmp r0, #0xb (set @0x91D3AD50)
+  91D3AD60  a4b6d391  bicsls   fp, r3, r4, lsr #13          ; branch tests: cmp r0, #0xb (set @0x91D3AD50)
+
+=== all references to 0x92007DAC (literal pool + movw/movt) ===
+  movw/movt @0x91D39DA0 (r2)
+  movw/movt @0x91D3AD38 (r3)
+  movw/movt @0x91D3C85C (r3)

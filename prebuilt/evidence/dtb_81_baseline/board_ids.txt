@@ -1,0 +1,8 @@
+model        = vivo MSM 8996 v3 + PMI8996 PD1610
+compatible    = "qcom,msm8996-cdp", "qcom,msm8996", "qcom,cdp"
+qcom,msm-id   = <0xf6 0x30001>
+qcom,board-id = <0x1 0xa 0x1000001 0x0>
+qcom,pmic-id  = <0x20009 0x10013 0x0 0x0>
+interrupt-parent = <0x1>
+#address-cells = <0x2>
+#size-cells   = <0x2>
