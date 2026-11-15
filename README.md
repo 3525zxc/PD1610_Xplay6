@@ -56,6 +56,33 @@ WSL 重建集与 sys13 `system.img` 都在**百度网盘冷备分卷**（约 973
 本仓库是纯文本文档层，恢复步骤见 `offline/12_ai_handoff_index.md` §2 与
 `archive/RESTORE.md`（后者在分卷内）。
 
+## 百度网盘冷备索引（2026-11-15）
+
+二进制、原始工程与可刷镜像不上 GitHub，放在百度网盘私有目录
+**`PD1610_Xplay6/`**（约 75 GiB / 7073 文件，14 个分类）。
+
+- 分享链接：<https://pan.baidu.com/s/5OL1VH3h9Pn_uOQllg29MSQ>
+  （若页面要求提取码，请向维护者索取；分享链接可能随设置失效）
+- 目录结构与逐文件清单：云端 `00_必读_恢复说明/上传清单.md` 与 `UPLOAD_CHECKLIST.csv`
+- 恢复入口：云端 `00_必读_恢复说明/RESTORE.md`、`12_ai_handoff_index.md`
+
+| 分类 | 内容 |
+|---|---|
+| `00`–`06` 必传 6.7 GiB | 恢复说明与校验文件、`01` 两卷冷备（973 MiB，zstd tar，权威副本）、原厂发布包、sys13 基线、9008 工具、固件、WSL 最小重建集 |
+| `07`–`09` 可选 | GitHub 文本层冗余、48 分区 dump、官方 OTA |
+| `10` / `11` 全量分卷 | `D:\16\PD1610_81` 40 GiB（22 卷）、`kernel_re` 11 GiB（6 卷），1.9 GiB tar 分卷 |
+| `12` / `13` 原貌 | 自编译工程原始全量、其它资料与工具 |
+
+**校验**：把 `00` 的 `SHA256SUMS`、`manifest.json` 与 `01` 两个分卷下载到同一目录，
+跑 `sha256sum -c SHA256SUMS`（必须 3/3 OK），再按 `RESTORE.md` 重组解压。
+`10_`/`11_` 各自目录内也有 `SHA256SUMS` 与 `RESTORE.txt`（`cat *.part* > xxx.tar`）。
+
+> ⚠️ `10_prebuilt工程_全量分卷/` 内含原厂 OTA 解包出的 `imei.der` / `donuts_key`
+> 设备密钥材料，**该子目录不应公开分享**。若分享链接覆盖整个 `PD1610_Xplay6/`，
+> 请改为只分享 `00`–`09`，或在云端把 `10_` 移出分享范围。
+> 另：`03_prebuilt_续修基线/sys13_system.img` 是已修通 WiFi 的已知良好基线，
+> 与 `02_原厂回滚与发布包/images/system.img` 不是同一版本，别混用。
+
 ## 许可证
 
 自研工具 MIT；文档 CC-BY-4.0；内核补丁沿用上游 LineageOS msm8996 3.18 的
@@ -112,6 +139,33 @@ Boot images, DTB binaries, firmware blobs, RAM dumps and the WSL build
 environment are in a separate private cold-storage archive (about 973 MiB,
 2 volumes, zstd tar). This repo is the text-only documentation layer;
 see `offline/12_ai_handoff_index.md` section 2 for the restore procedure.
+
+### Baidu Netdisk cold storage (2026-11-15)
+
+Binary assets, original project trees and flashable images are not on GitHub.
+They live in the private Baidu Netdisk folder **`PD1610_Xplay6/`** (~75 GiB,
+7073 files, 14 categories).
+
+- Share link: <https://pan.baidu.com/s/5OL1VH3h9Pn_uOQllg29MSQ>
+  (an extraction code may be required; ask the maintainer. Links can expire.)
+- Layout and per-file manifest: `00_必读_恢复说明/上传清单.md` and `UPLOAD_CHECKLIST.csv`
+- Restore entry points: `00_必读_恢复说明/RESTORE.md`, `12_ai_handoff_index.md`
+
+| Groups | Contents |
+|---|---|
+| `00`–`06` (required, 6.7 GiB) | restore notes/checksums, `01` two cold-storage volumes (973 MiB, zstd tar, authoritative copy), stock release package, sys13 baseline, 9008 tools, firmware, minimal WSL rebuild set |
+| `07`–`09` (optional) | redundant GitHub text tree, 48 partition dumps, official OTA packages |
+| `10` / `11` | full `D:\16\PD1610_81` 40 GiB (22 volumes) and `kernel_re` 11 GiB (6 volumes), 1.9 GiB tar volumes |
+| `12` / `13` | raw self-compiled project tree, misc resources and tools |
+
+**Verify after download**: put `SHA256SUMS`, `manifest.json` and the two `01`
+volumes in one directory, run `sha256sum -c SHA256SUMS` (3/3 OK required), then
+follow `RESTORE.md`. `10_`/`11_` carry their own `SHA256SUMS` + `RESTORE.txt`.
+
+> `10_prebuilt工程_全量分卷/` contains device key material (`imei.der`,
+> `donuts_key`) from the stock OTA. Do not share that subfolder publicly.
+> `03_.../sys13_system.img` is the known-good WiFi-fixed baseline and is NOT
+> the same image as `02_.../images/system.img`.
 
 ### Licensing
 

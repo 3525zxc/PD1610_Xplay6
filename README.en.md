@@ -46,6 +46,33 @@ environment are in a separate private cold-storage archive (about 973 MiB,
 2 volumes, zstd tar). This repo is the text-only documentation layer;
 see `offline/12_ai_handoff_index.md` section 2 for the restore procedure.
 
+## Baidu Netdisk cold storage (2026-11-15)
+
+Binary assets, original project trees and flashable images are not on GitHub.
+They live in the private Baidu Netdisk folder **`PD1610_Xplay6/`** (~75 GiB,
+7073 files, 14 categories).
+
+- Share link: <https://pan.baidu.com/s/5OL1VH3h9Pn_uOQllg29MSQ>
+  (an extraction code may be required; ask the maintainer. Links can expire.)
+- Layout and per-file manifest: `00_必读_恢复说明/上传清单.md` and `UPLOAD_CHECKLIST.csv`
+- Restore entry points: `00_必读_恢复说明/RESTORE.md`, `12_ai_handoff_index.md`
+
+| Groups | Contents |
+|---|---|
+| `00`–`06` (required, 6.7 GiB) | restore notes/checksums, `01` two cold-storage volumes (973 MiB, zstd tar, authoritative copy), stock release package, sys13 baseline, 9008 tools, firmware, minimal WSL rebuild set |
+| `07`–`09` (optional) | redundant GitHub text tree, 48 partition dumps, official OTA packages |
+| `10` / `11` | full `D:\16\PD1610_81` 40 GiB (22 volumes) and `kernel_re` 11 GiB (6 volumes), 1.9 GiB tar volumes |
+| `12` / `13` | raw self-compiled project tree, misc resources and tools |
+
+**Verify after download**: put `SHA256SUMS`, `manifest.json` and the two `01`
+volumes in one directory, run `sha256sum -c SHA256SUMS` (3/3 OK required), then
+follow `RESTORE.md`. `10_`/`11_` carry their own `SHA256SUMS` + `RESTORE.txt`.
+
+> `10_prebuilt工程_全量分卷/` contains device key material (`imei.der`,
+> `donuts_key`) from the stock OTA. Do not share that subfolder publicly.
+> `03_.../sys13_system.img` is the known-good WiFi-fixed baseline and is NOT
+> the same image as `02_.../images/system.img`.
+
 ## Licensing
 
 Self-written tools: MIT. Documentation: CC-BY-4.0. Kernel patches follow
