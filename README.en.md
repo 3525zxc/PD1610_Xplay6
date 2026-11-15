@@ -16,6 +16,82 @@ experiment round to pick up. Workflow manual:
 prebuilt upload/continuation checklist:
 [`offline/14_prebuilt_upload_checklist.md`](offline/14_prebuilt_upload_checklist.md).
 
+## Project status & changelog
+
+> Summary for the front page. Per-round evidence: `ROUND*.md`, `offline/`,
+> `flash_log/`. Resource map: `offline/12_ai_handoff_index.md` section 9;
+> working manual: `offline/13_continuation_playbook.md`.
+
+**Three separate lines of work (do not merge them)**
+
+| Line | When | Original tree | Output |
+|---|---|---|---|
+| Phase 1: signature / unlock | Nov 8-12 | `C:/Users/Tse/WorkBuddy/寒霜刷机` | aboot verification & boot state machine, boot hash datapath, cross-device comparison, stock DTS decompilation, temp-root / unlock tooling; text layer -> `prebuilt_c/` |
+| Prebuilt route | Nov 10-12 | `D:/16/PD1610_81` | LOS16 built from stock prebuilt kernel + vendor blobs + borrowed PD1619 device tree; WiFi fixed; flashable ROM zip |
+| Self-compiled kernel forensics | Nov 14-15 | this repo | `3.18.120-perf` + BLM / 9008 observation chain, bootloop root cause, touch driver rebuilt from source, completion meter 50/50 |
+
+vivo never released 3.18 kernel sources for PD1610/PD1619, so the prebuilt route
+does not compile a kernel; the self-compiled route uses the upstream LineageOS
+msm8996 3.18 tree. Images from the two routes are not interchangeable.
+
+**Timeline**
+
+| Date | Stage | Result |
+|---|---|---|
+| Nov 8-12 | Phase 1 research | signature / unlock / device-tree forensics, 30+ reports, `20261112.zip` bundle |
+| Nov 10-12 | Prebuilt route | LOS16 built, WiFi fixed after four causal fixes (sys13 `system.img` sha `686de5de...`), `PD1610_LOS16_20261112_UNOFFICIAL.zip` produced (935,087,013 B) |
+| Nov 14 AM | Round 10-13 | BLM / 9008 `peek` chain; root cause = BSS clear range overwrote the DTB at `0x42000000`; shrinking debug config restored `d00dfeed` |
+| Nov 14 PM | Round 14-19 | fixed-slot evidence overturned the `usb_bam` claim -> `qpnp_vibrator_init` first SPMI read -> `FDT_NOP` bypass -> SPMI stub + restored node, `#5` reached `sys.boot_completed=1` |
+| Nov 14 evening | Round 20-26 | touch went from "no driver" to a working event chain (`CONFIG_TOUCHSCREEN_ST_FTS`, DT props, pinctrl, `IRQF_ONESHOT`, regulators); nav-key bind succeeded but probe incomplete; last candidate bootlooped and was rolled back |
+| Nov 14 night | 6 offline studies + A round | 8-gate completion meter, 332-firmware inventory, stock/custom `do_msm_restart` disassembly diff; A round 3/3 cold boots, 1266 touch events after resume, all `UNVERIFIED` removed -> strict 50/50 |
+| Nov 15 | Archive & handoff | bilingual README, 16-category / 76 GiB netdisk cold storage, minimal WSL rebuild set, phase-1 records and ROM package added, AI index section 9 |
+
+**Attribution changes (the easiest way to go wrong)**
+
+- Round 14/15 blamed `usb_bam`; **Round 16 fixed-slot evidence overturned it**.
+  The real stall was `qpnp_vibrator_init` -> the first `spmi_ext_register_readl()`.
+- Round 18 (`FDT_NOP` bypass) only reached userspace; Round 19's SPMI stub plus
+  restoring the node produced a full desktop.
+- Touch was not a probe deferral: the driver was **not compiled in at all**
+  (no `fts_driver_init` in `System.map`).
+- `adb reboot bootloader` is not a missing config switch: stock `do_msm_restart`
+  is 1492 B vs 740 B in our build, with BBK-private calls such as
+  `set_dload_mode_bbk` / `set_aee_system_restarting` / `deassert_ps_hold`.
+  [H1] aboot reads a private flag; not verified on hardware.
+
+**Completion-meter evolution**
+
+`20/88` (6 UNVERIFIED) -> static `40/63` -> A round **strict `50/50`**, with a
+`65/65` post-resume control that only proves touch can work (not `touch_cold`).
+The official number is **50**. The 68-point interval was an evidence gap, not
+68% of the code being unwritten. The `hal` gate needs
+`--hal-ignore init.svc.vivo-fingerprint-sh` (that service is `disabled`+`oneshot`,
+so `stopped` is normal).
+
+**Nov 15, 2026 documentation & resource updates**
+
+- README is now Chinese-first with an in-page English switch plus standalone
+  `README.en.md`; added a Baidu Netdisk cold-storage index.
+- Added `prebuilt_c/` (97 phase-1 texts); netdisk gained
+  `14_寒霜刷机_C盘工作目录/` (84 files, private only) and
+  `15_LOS16_ROM刷机包/` (ROM zip + `SHA256SUMS`).
+- **Corrected a stale claim**: "no ROM zip / 5 open TODOs" -> "ROM shipped /
+  4 open TODOs".
+- `offline/12_ai_handoff_index.md` gained section 9; docs 13/14 synced; netdisk
+  is now 16 categories / 76 GiB.
+- Archive volumes `01` stay at the 01:34 build (repacking would change 973 MiB
+  already uploading); their bundled index is older - use this repo / netdisk `00`.
+
+**Current state & remaining work**
+
+- Device: stock `3.18.71-perf-g8a8c60dd` / LOS16 / `sys.boot_completed=1` / not in fastboot.
+- Four gates still FAIL: `touch_cold`, `nav_keys`, `input_parity` 5/9, `i2c_parity` 4/9.
+- Longest tail: `goodixfp` fingerprint (zero related symbols in our build; needs
+  disassembly-based reconstruction, 5-15 workdays, no guarantee).
+- This is a **handoff snapshot (B0'), not a finished Tier-3 port**. Resume from
+  round B in `offline/05_experiment_queue.md`, following the single-variable loop
+  in `offline/13_continuation_playbook.md`.
+
 ## Verified status (2026-11-14)
 
 - Tier-3 completion meter: **50/50 strict**, `UNVERIFIED = 0`
