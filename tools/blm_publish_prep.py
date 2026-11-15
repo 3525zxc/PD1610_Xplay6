@@ -151,13 +151,33 @@ RAM-log monitor (BLM) and Qualcomm 9008 Firehose `peek` to observe failures.
 The same repository also ships the text results of the older **prebuilt**
 route (stock kernel + vendor blobs + borrowed PD1619 device tree -> LOS16 ROM).
 
-**Start here:** [`offline/12_ai_handoff_index.md`](offline/12_ai_handoff_index.md)
-is a standalone index written for a resuming AI: what is stored where, which
-files to fetch from cold storage, how to rebuild the WSL toolchain, and which
-experiment round to pick up. Workflow manual:
-[`offline/13_continuation_playbook.md`](offline/13_continuation_playbook.md);
-prebuilt upload/continuation checklist:
-[`offline/14_prebuilt_upload_checklist.md`](offline/14_prebuilt_upload_checklist.md).
+**Start here - pick your route first.** This repository holds **two different
+lines of work**; decide which one you are continuing before opening any report:
+
+```
+Route A - continue the PREBUILT ROM (fix camera / WiFi / sepolicy / packaging)
+  prebuilt/evidence/_log_append4.md ...... WiFi fix chain, 4 open TODOs, corrected misjudgements
+  prebuilt/release/.../patches/ ......... final sys13 source changes (diff before editing)
+  prebuilt/refs/PD1619_PORTING_NOTES.md . 1042-line porting note
+  offline/14_prebuilt_upload_checklist.md  upload checklist and continuation notes
+  netdisk 03_/sys13_system.img .......... known-good WiFi-fixed baseline
+  netdisk 15_/*.zip ..................... flashable LOS16 ROM
+  netdisk 02_/images/boot.img ........... rollback baseline
+
+Route B - continue the SELF-COMPILED 3.18.120 kernel (finish Tier-3 gates)
+  offline/12_ai_handoff_index.md ........ resource map; paste as-is to an AI
+  offline/13_continuation_playbook.md ... single-variable loop, 8-step SOP
+  offline/05_experiment_queue.md ........ experiment queue A-D (claims / criteria)
+  offline/08_roundA_result.md ........... A-round evidence result
+  ROUND10-19*.md + flash_log/ .......... per-round evidence and raw logs
+  fixtures/ + tools/ .................... adapted drivers, BLM, preflight/coverage scripts
+  netdisk 01_/ .......................... authoritative cold-storage volumes
+
+Shared entry: netdisk 00_必读_恢复说明/ (RESTORE, SHA256SUMS, checklists, indexes).
+`prebuilt/` and netdisk 02/03/15 use the stock prebuilt kernel; `ROUND*` and
+`flash_log/` are the self-compiled line. Their images are not interchangeable.
+```
+
 
 ## Project status & changelog
 
@@ -235,6 +255,82 @@ so `stopped` is normal).
   round B in `offline/05_experiment_queue.md`, following the single-variable loop
   in `offline/13_continuation_playbook.md`.
 
+## Glossary: A round / experiment queue / completion meter
+
+**Experiment queue** = `offline/05_experiment_queue.md`, a claim-driven TODO
+table. Four gates still fail, so each planned experiment fixes a claim, its
+precondition, a numeric criterion, the gate it affects and a failure branch;
+every round must end with a coverage-tool run.
+
+```
+Experiment queue
+  A  reproduce the b6d5debb bootloop, read BLM fixed slots over 9008   (original claim, NOT executed)
+  B  add IRQF_ONESHOT -> nav keys + cold-boot touch                     (split into single variables first)
+  C  restore two tasha jack input devices
+  D  verify the BBK private restart flag behind adb reboot bootloader
+  long tail (not queued): goodixfp fingerprint - zero symbols, 5-15 days, no guarantee
+  exit criteria: 3 clean cold boots / input 9/9 / I2C >=8/9 / 30s touch / full evidence / 17-17 + rollback
+```
+
+**A round result** = `offline/08_roundA_result.md`. There are **two "A rounds"**:
+the queue's original A (bootloop reproduction, not done) and the A actually
+executed on Nov 14 21:45-22:04, which fixed nothing - it flashed the known-good
+`#9` baseline, captured full evidence and rolled back to stock, in order to
+close the `UNVERIFIED` gap.
+
+```
+Executed A round
+  flash 5f164490 (#9) -> 3.18.120-perf #9 reaches the desktop
+  blm_round_capture.py -> 12 snapshots (199 KB dmesg, sha256 manifest)
+  blm_coldboot_verify.py -> 3/3 cold boots PASS (36.8 / 58.1 / 58.2 s)
+  touch: 35s cold window 0 events; after resume 1266 events, IRQ 87 -> 474
+  nav keys: no vivo_virtual_key, 0 key events -> FAIL
+  score 20/88 -> static 40/63 -> strict 50/50 (UNVERIFIED=0); 65/65 control only
+  fixed a HAL gate false positive; added two capture tools
+  rolled back to stock 929fda99... and verified
+```
+
+**Completion meter** = `tools/blm_tier3_coverage.py`: 8 weighted gates -
+boot(20), touch_cold(15), nav_keys(8), input_parity(12), i2c_parity(15),
+hal(10), firmware_inventory(5), reproducible(15). The denominator is the
+device list enumerated on the stock system, and each item needs three proofs
+(device node + driver binding + real events). `UNVERIFIED` means "evidence not
+captured", not "work not done": the early 68-point interval was an evidence gap.
+
+## Round lineage: ROUND1-9 vs ROUND10-26
+
+Three independent ROUND numbering schemes appear in this project:
+
+```
+(1) Signature / unlock state machine, Nov 8-12 (C-drive + prebuilt/evidence)
+      ROUND3_LOOP_LIFECYCLE.txt, ROUND4_FLAG_BEQ_DATAFLOW.txt,
+      ROUND5_RETVAL_CLASSIFICATION_AND_STATE_PATH.txt,
+      aboot_verification_analysis.md, boot_state_machine_analysis.md,
+      original DTS, xplay6_unlock/ tooling
+
+(2) Offline RE + multi-model review ROUND1-9, Nov 12-13 (kernel_re/out/)
+      these numbers count review briefings sent to GPT/Claude, NOT flashes
+      round3/  aboot decompress trace, ARM64 Image memory audit, address overlap,
+               config diff attribution, DTB selector disassembly
+      round4/  aboot handoff, early MMU evidence, FDT chain, BOOT_ONLY feasibility,
+               Unicorn replay, memory_lifecycle_and_observability.md
+      ROUND3_REVIEW_LANDING.md, ROUND4..9_FOLLOWUP_FOR_GPT.md, BRIEF_*_BATTLE.md,
+      multimodel_capture/ (18 files), STAGE1..30*.md (yet another numbering),
+      MASTER_FINDINGS.md, MASTER_HANDOFF_20261113.md, COMPILABLE_SOURCE_PROGRESS.md,
+      h6/ROUND5_BOOT_ONLY_DELIVERY.md
+
+(3) BLM on-device forensics ROUND10-26, Nov 14 (this tree)
+      ROUND10-13  BLM / 9008 chain, all-zero FDT root cause, config shrink
+      ROUND14-17  usb_bam claim overturned -> qpnp_vibrator_init -> first SPMI read
+      ROUND18-19  FDT_NOP bypass -> SPMI stub + restored node -> sys.boot_completed=1
+      ROUND20-26  touch driver rebuilt from source, nav keys, reboot path, rollback
+      A round     not a ROUND: it is queue letter A (evidence narrowing)
+```
+
+The first report here is called ROUND10 because it continued the numbering of
+(2); it is not "the tenth flash". ROUND1-9 material lives in `prebuilt_c/`,
+netdisk `11_逆向证据_全量分卷/`, `14_寒霜刷机_C盘工作目录/` and `prebuilt/evidence/`.
+
 ## Verified status (2026-11-14)
 
 - Tier-3 completion meter: **50/50 strict**, `UNVERIFIED = 0`
@@ -287,6 +383,47 @@ They live in the private Baidu Netdisk folder **`PD1610_Xplay6/`** (~76 GiB,
 | `12` / `13` | raw self-compiled project tree, misc resources and tools |
 | `14` / `15` | full phase-1 C-drive workspace (4.9 MiB), flashable LOS16 ROM zip (935 MB) + checksum |
 
+### File-by-file tree (what each item is for)
+
+The full 7260-row manifest is `00_必读_恢复说明/UPLOAD_CHECKLIST.csv`.
+The trees below explain the files you will actually open.
+
+```
+PD1610_Xplay6/                         16 categories / 76 GiB
+  00_必读_恢复说明/                    restore entry (17 files)
+     RESTORE.md ..................... reassemble -> zstd -> tar extraction
+     SHA256SUMS / manifest.json ..... 3-line checksum + 2121 file hashes
+     上传清单.md / UPLOAD_CHECKLIST.csv ... summary and per-file manifest
+     12_ai_handoff_index.md ......... AI resource map (section 9 = current state)
+     13_continuation_playbook.md .... single-variable loop and SOP
+     14_prebuilt_upload_checklist.md  prebuilt TODOs and must-keep files
+     11_wsl_rebuild_guide.md ........ minimal WSL rebuild
+     百度网盘索引_草稿.md / 增量补传清单 / 操作卡 ... indexes and upload steps
+  01_全量冷备分卷/                    part01 900 MiB + part02 72.5 MiB (both required)
+  02_原厂回滚与发布包/                images/boot.img rollback, recovery, system,
+                                     patches/ (7 final source changes), tools/, flash_all.*
+  03_prebuilt_续修基线/               sys13_system.img (WiFi fixed), prebuilt_kernel,
+                                     vendor_blobs/_vendor.tar, modules/, compat_libs/
+  04_9008与刷机工具/                  qfil/ (QFIL, QSaharaServer, fh_loader, firehose .elf),
+                                     platform-tools/, firehose_scripts/
+  05_固件blob/                        332-file inventory CSV, 76 pulled blobs zip,
+                                     FAT16 /firmware image, extraction notes
+  06_WSL重建集/                       src/kernel-src.tar, config/kout-shrink.tar,
+                                     .config + System.map, toolchain tar, scripts/, env/
+  07_GitHub发布树_冗余/               offline copy of the public text tree
+  08_分区dump_可选/                    48 raw partition dumps (8.4 GiB)
+  09_原厂OTA_可选/                     official OTA zips and signed firmware
+  10_prebuilt工程_全量分卷/            22 x 1.9 GiB tar volumes of D:/16/PD1610_81
+  11_逆向证据_全量分卷/                6 tar volumes of kernel_re (ROUND1-9 evidence)
+  12_自编译工程原始全量/               raw bootloop_monitor tree
+  13_其它资料与工具/                   misc D:/16 material, dist, local git repo
+  14_寒霜刷机_C盘工作目录/              phase-1 workspace: signature/aboot studies,
+                                     original DTS/DTB, pd1610_rom/ device tree,
+                                     xplay6_unlock/ tooling, H1 test pack,
+                                     20261112.zip log bundle, .workbuddy/memory/ (private)
+  15_LOS16_ROM刷机包/                 flashable ROM zip + SHA256SUMS + flashing notes
+```
+
 **Verify after download**: put `SHA256SUMS`, `manifest.json` and the two `01`
 volumes in one directory, run `sha256sum -c SHA256SUMS` (3/3 OK required), then
 follow `RESTORE.md`. `10_`/`11_` carry their own `SHA256SUMS` + `RESTORE.txt`.
@@ -315,16 +452,47 @@ vivo Xplay6（MSM8996 / LineageOS 16）自编译 `3.18.120` 内核的完整取�
 本仓库同时收录较早的 **prebuilt 路线** 文本成果（原厂内核 + vendor blobs +
 借用 PD1619 设备树编译 LOS16 ROM），两条路线一并交接。
 
-## 从这里开始
+## 从这里开始（先选路线，再翻文件）
 
-| 文档 | 回答什么 |
-|---|---|
-| [`offline/12_ai_handoff_index.md`](offline/12_ai_handoff_index.md) | **资源在哪**：三处存放分工、网盘分卷清单、WSL 最小重建集、给接手 AI 的开场白。整份贴给 AI 即可恢复上下文 |
-| [`offline/13_continuation_playbook.md`](offline/13_continuation_playbook.md) | **活怎么干**：单变量 6 铁律、人机分工、8 步 SOP、7 层定位法、提示词模板、坑速查 |
-| [`offline/14_prebuilt_upload_checklist.md`](offline/14_prebuilt_upload_checklist.md) | **prebuilt 续修**：上传必要清单、5 项未解 TODO、sys13 已知良好基线 |
+本仓库同时放着**两条不同路线**的成果。先判断你要做哪件事，别一上来就翻报告：
 
-A 轮结果见 [`offline/08_roundA_result.md`](offline/08_roundA_result.md)，
-实验队列见 [`offline/05_experiment_queue.md`](offline/05_experiment_queue.md)。
+```
+README.md（你在这里）
+│
+├─【路线 A】prebuilt 路线续修 —— 想修 ROM 的相机 / WiFi / sepolicy / 打包
+│   │  目标：把 LOS16 ROM 做成可发布的日常包
+│   │  内核：原厂 prebuilt 3.18.71，不自己编内核
+│   │
+│   ├─ prebuilt/evidence/_log_append4.md ........ WiFi 修复 4 条因果链、4 项 TODO、3 条误判纠正
+│   ├─ prebuilt/release/.../patches/ ........... sys13 最终版 7 个源码改动（改 bug 前必须先 diff）
+│   ├─ prebuilt/refs/PD1619_PORTING_NOTES.md ... 1042 行移植笔记（设备树怎么借来的）
+│   ├─ offline/14_prebuilt_upload_checklist.md . 上传必要清单 + 续修差异（刷 system 不刷 boot）
+│   ├─ 网盘 03_prebuilt_续修基线/sys13_system.img  WiFi 修通的基线（sha 686de5de…）
+│   ├─ 网盘 15_LOS16_ROM刷机包/*.zip .......... 可刷 ROM（935 MB，sha 97c3137e…）
+│   └─ 网盘 02_原厂回滚与发布包/images/boot.img  回滚基线（sha 929fda99…）
+│
+└─【路线 B】自编译 3.18.120 内核继续修 —— 想达到完整第 3 档
+    │  目标：补完 4 个 FAIL 门（触摸冷启动 / 导航键 / input / I2C）
+    │  现状：设备已回滚原厂，刷候选前须按约定手动进 fastboot
+    │
+    ├─ offline/12_ai_handoff_index.md .......... 【先读】资源地图，整份贴给 AI 即可恢复上下文
+    ├─ offline/13_continuation_playbook.md ..... 【再读】单变量 6 铁律、人机分工、8 步 SOP、7 层定位法
+    ├─ offline/05_experiment_queue.md .......... 实验队列 A–D：每轮 claim / 判据 / 采集清单
+    ├─ offline/08_roundA_result.md ............. A 轮实测：3/3 冷启动、50/50、已回滚
+    ├─ offline/07_handoff_baseline.md .......... B0′ 可交接基准与发布边界
+    ├─ ROUND10–19*.md + flash_log/round*.txt ... 前 26 轮实机结论与原始日志
+    ├─ fixtures/ + tools/ ..................... 驱动适配源码、BLM、预检 / 覆盖率 / 归档脚本
+    └─ 网盘 01_全量冷备分卷/ ................. 二进制与完整工程（恢复主副本）
+
+两条路线共用的钥匙
+├─ 网盘 00_必读_恢复说明/ .................... RESTORE / SHA256SUMS / 清单 / 索引 / 操作卡
+└─ offline/12_ai_handoff_index.md §9 ......... 当前准确状态（16 类 / 76 GiB / 两条路线产物）
+```
+
+**一句话分清**：`prebuilt/` 与网盘 `02`/`03`/`15` 是「原厂内核 + 现成 ROM」；
+`ROUND*`、`flash_log/`、`fixtures/`、`offline/05–08` 是「自己编内核 + 取证」。
+两条线的镜像不能混用，`03_/sys13_system.img` 与 `02_/images/system.img` 也不是同一个文件。
+
 
 ## 仓库内容
 
@@ -396,6 +564,97 @@ vivo 从未发布 PD1610/PD1619 的 3.18 内核源码，所以 prebuilt 路线**
 - 最大长尾：`goodixfp` 指纹（自编译内核里相关符号 0 个，需反汇编重建，5–15 工作日且不保证成功）。
 - 这是**可交接快照 B0′，不是完成的第 3 档移植**。接续实验从 `offline/05_experiment_queue.md` 的 B 轮开始，先按 `13_continuation_playbook.md` 的单变量循环走。
 
+## 名词解释：A 轮 / 实验队列 / 完成度（小白先看这里）
+
+这些词在仓库里反复出现，先讲清楚它们指什么、别去哪找。
+
+**「实验队列」= `offline/05_experiment_queue.md`**，一张待办实验表。
+自编译内核还有 4 个验收门没过，所以把「接下来要验证的假设」排成 A–D 四轮，
+每轮写死五件事：claim（假设）→ 前置条件 → 量化判据 → 影响哪个 gate → 失败分支；
+每轮结束必须跑一次覆盖率工具，否则不算完成。
+
+```
+实验队列（A–D，claim-driven）
+│
+├─ A 复现 b6d5debb… 的 bootloop，进 9008 读 BLM 固定槽
+│     判据：last_stage=12 KERNEL_INIT 且最后 initcall 落在 cyttsp_button_init 附近 ⇒ 真卡死
+│     注意：这是队列里「原 A 轮」，实际没做；已执行的 A 轮是下面的证据收窄
+├─ B 补 irqflags |= IRQF_ONESHOT → 3-0028 probe 完成、虚拟键三键可用、冷启动 30s 有触摸
+│     实际入口：先拆单变量验 touch_cold（跳过自动固件更新 / 中断触发方式）
+├─ C 恢复两个 tasha jack input 设备（对比两边 ASoC 注册日志）
+├─ D 验证 adb reboot bootloader 的 BBK 私有写入标志（源自 01_reboot_root_cause.md 的 H1）
+│
+├─ 长尾（不进队列）：goodixfp 指纹 —— 自编译内核相关符号 0 个，需反汇编重建，
+│                     估计 5–15 工作日且不保证成功，建议单独立里程碑
+└─ 收尾判据：3 次冷启动 / input 9/9 / I2C ≥8/9 / 冷启动 30s 触摸 / 证据齐全 / 17-17 + 回滚
+```
+
+**「A 轮结果」= `offline/08_roundA_result.md`**，注意有**两个 A 轮**：
+- 队列定义的**原 A 轮**：重刷 `b6d5debb…` 复现 bootloop、进 9008 读固定槽 —— **未做**，仍需单独一轮。
+- **实际执行的 A 轮**（11-14 21:45–22:04）：用户说「先走完 1 小时的 A」，改成
+  **不修任何东西**，只刷已知可用的 `#9` 基线 → 抓全量证据 → 回滚原厂。
+
+```
+实际 A 轮做了什么
+│
+├─ 刷入 5f164490…（#9 可用基线）→ 3.18.120-perf #9 进桌面
+├─ blm_round_capture.py 抓 12 类静态快照（含 199 KB 完整 dmesg、带 sha256 manifest）
+├─ blm_coldboot_verify.py → 3/3 冷启动 PASS（36.8 / 58.1 / 58.2 s）
+├─ 触摸：冷启动 35 s 窗口 0 事件；锁屏唤醒后 25 s 窗口 1266 行、IRQ 87→474
+├─ 导航键：vivo_virtual_key 计数 0、按键窗口 0 行 ⇒ FAIL
+├─ 完成度 20/88 → 静态 40/63 → 严格 50/50（UNVERIFIED 全消）；唤醒后 65/65 仅作对照
+├─ 修工具口径 bug（hal 门把 oneshot 服务误判 FAIL）+ 新增两个采集工具
+└─ 回滚原厂 929fda99… 并验证：3.18.71 / BOOT=1 / 9 个 input 设备全在
+```
+
+**「完成度」= `tools/blm_tier3_coverage.py` 的 8 门加权评分**：
+boot(20) / touch_cold(15) / nav_keys(8) / input_parity(12) / i2c_parity(15) /
+hal(10) / firmware_inventory(5) / reproducible(15)。
+分母取**原厂实机枚举到的设备清单**，每项只认三证（设备节点 + 驱动绑定 + 真实事件），
+没留证据记 `UNVERIFIED` 而不是算通过。所以早期 `20/88` 的 68 点区间
+是「证据没留齐」，不是「68% 代码没写」；A 轮靠补齐快照把区间收窄到 0。
+
+## 轮次总览：ROUND1–9 与 ROUND10–26（三套编号别混）
+
+仓库里出现三套「ROUND」，它们**不是同一串实验**，编号体系各自独立：
+
+```
+项目轮次全图
+│
+├─ ① 验签 / 解锁状态机（11-08 → 11-12，C 盘「寒霜刷机」+ D 盘 evidence）
+│   ├─ ROUND3_LOOP_LIFECYCLE.txt ............... aboot 验签循环生命周期
+│   ├─ ROUND4_FLAG_BEQ_DATAFLOW.txt ............ flag 分支 / BEQ 数据流
+│   ├─ ROUND5_RETVAL_CLASSIFICATION_AND_STATE_PATH.txt  返回值分类与状态路径
+│   ├─ aboot_verification_analysis.md .......... 验签反汇编（现收在 prebuilt_c/）
+│   ├─ boot_state_machine_analysis.md .......... 启动状态机
+│   ├─ PD1610_原厂设备树_81916.dts ............. 原厂设备树反编译
+│   └─ xplay6_unlock/ .......................... 9008 解锁 / 读回工具链
+│
+├─ ② 离线逆向 + 多模型评审 ROUND1–9（11-12 → 11-13，kernel_re/out/）
+│   │   这里的 ROUND 是「第几轮送出去给 GPT / Claude 评审的简报」，不是刷机次数
+│   ├─ round3/ ....... aboot 解压轨迹、ARM64 Image 内存审计、boot 地址区间重叠、
+│   │                 config diff 归因、cpu_do_switch_mm 审计、DTB selector 反汇编
+│   ├─ round4/ ....... aboot handoff、早期 MMU 证据、FDT 链解析、BOOT_ONLY 可行性、
+│   │                 Unicorn 解压重放、memory_lifecycle_and_observability.md
+│   ├─ ROUND3_REVIEW_LANDING.md、ROUND4..9_FOLLOWUP_FOR_GPT.md ... 逐轮送审简报
+│   ├─ BRIEF_*_BATTLE.md、multimodel_capture/（18 份）... 多模型对抗评审与回复存档
+│   ├─ STAGE1..30*.md .... 反编译阶段编号（又一套，别与 ROUND 混淆）
+│   ├─ MASTER_FINDINGS.md / MASTER_HANDOFF_20261113.md / COMPILABLE_SOURCE_PROGRESS.md
+│   └─ h6/ROUND5_BOOT_ONLY_DELIVERY.md、ROUND5_FLASH_RESULT.md ... boot-only 实机验证准备
+│
+└─ ③ BLM 实机取证 ROUND10–26（11-14，本工程 stage2/bootloop_monitor/）
+    ├─ ROUND10–13 ... BLM / 9008 通道、FDT 全零根因、裁剪、推进到 KERNEL_INIT
+    ├─ ROUND14–17 ... usb_bam 误判 → 固定槽推翻 → qpnp_vibrator_init → 第一次 SPMI 读
+    ├─ ROUND18–19 ... FDT_NOP 绕过进用户态 → SPMI stub + 恢复节点 → sys.boot_completed=1
+    ├─ ROUND20–26 ... 触摸驱动源码重建、导航键、reboot 通道排查、bootloop 回滚
+    └─ A 轮 ......... 不是 ROUND，是「实验队列」的第 A 轮（证据收窄）
+```
+
+**为什么第一份报告就叫 ROUND10**：它接着 ② 的评审轮次编号往后排，不是「第 10 次刷机」。
+ROUND1–9 的成果不在本仓库的 `ROUND*.md` 里，而在
+`prebuilt_c/`（第一阶段文本）、网盘 `11_逆向证据_全量分卷/`（`kernel_re` 全量 tar）、
+`14_寒霜刷机_C盘工作目录/`（C 盘原貌）与 `prebuilt/evidence/`（验签状态机 txt）。
+
 ## 已验证状态（2026-11-14）
 
 - 第 3 档完成度 **严格口径 50/50，`UNVERIFIED = 0`**
@@ -443,6 +702,107 @@ WSL 重建集与 sys13 `system.img` 都在**百度网盘冷备分卷**（约 973
 | `10` / `11` 全量分卷 | `D:\\16\\PD1610_81` 40 GiB（22 卷）、`kernel_re` 11 GiB（6 卷），1.9 GiB tar 分卷 |
 | `12` / `13` 原貌 | 自编译工程原始全量、其它资料与工具 |
 | `14` / `15` 追加 | C 盘 `寒霜刷机` 工作目录全量（4.9 MiB）、LOS16 可刷 ROM zip（935 MB）与校验 |
+
+### 分类内文件逐个说明（树状索引）
+
+> 下面是「点开每个文件夹会看到什么、每个文件干什么」。完整 7260 行的逐文件清单在
+> `00_必读_恢复说明/UPLOAD_CHECKLIST.csv`（含本地源路径、字节数、分类、必传标记）。
+
+```
+PD1610_Xplay6/                                   ← 云端根目录（16 类 / 76 GiB）
+│
+├─ 00_必读_恢复说明/          【先看这里】17 个文件，恢复与核对的入口
+│   ├─ RESTORE.md .................. 分卷重组 → zstd 解压 → tar 提取的完整命令
+│   ├─ SHA256SUMS .................. 两卷 + manifest.json 的 3 行哈希，下载后先跑 sha256sum -c
+│   ├─ manifest.json ............... 2121 个文件的路径 / 大小 / sha256，恢复后逐个核对
+│   ├─ 上传清单.md ................. 16 类的文件数 / 体积 / 用途汇总表
+│   ├─ UPLOAD_CHECKLIST.csv ........ 逐文件清单（本地源、字节数、必传标记）
+│   ├─ 12_ai_handoff_index.md ...... 给接手 AI 的资源地图，§9 是当前准确状态
+│   ├─ 13_continuation_playbook.md . 单变量 6 铁律 / 8 步 SOP / 7 层定位法 / 提示词模板
+│   ├─ 14_prebuilt_upload_checklist.md  prebuilt 的 4 项 TODO 与续修必要文件
+│   ├─ 11_wsl_rebuild_guide.md ...... WSL 环境最小重建 SOP 与清理清单
+│   ├─ 07_handoff_baseline.md ....... B0′ 可交接基准 / 发布边界
+│   ├─ 百度网盘索引_草稿.md ........ 云端目录 + 分享链接 + 16 类 + 校验（已定稿）
+│   ├─ 增量补传清单_20261115.md ..... 本次新增 / 修改文件，核对云端是否同步完
+│   ├─ 百度网盘上传操作卡.md、逐步上传操作卡_20261115.md ... 客户端点法与两条线上传步骤
+│   ├─ PD1610_DESKTOP_UPLOAD.md ..... GitHub Desktop 推送步骤
+│   └─ baidu_upload_prep.py / baidu_upload_expand.py ... 生成本地上传树与分卷的脚本
+│
+├─ 01_全量冷备分卷/          【恢复主副本】2 个文件，973 MiB
+│   ├─ blm_full.tar.zst.part01 ...... 900 MiB，4.06 GiB 工程压缩后的第一段
+│   └─ blm_full.tar.zst.part02 ...... 72.5 MiB，第二段；缺一不可、不能改名
+│
+├─ 02_原厂回滚与发布包/      【路线 A】42 文件 / 1.9 GiB
+│   ├─ images/boot.img .............. 回滚基线 sha 929fda99…（58,483,968 B）
+│   ├─ images/recovery.img .......... 原厂 recovery
+│   ├─ images/system.img ............ 发布包版本（1.85 GiB），≠ 03_ 的 sys13
+│   ├─ patches/ ..................... sys13 最终版 7 个源码改动（device/vendor/system/…）
+│   │   ├─ compat_libs/ ............. 兼容库
+│   │   └─ device/ 与 vendor/ ....... 设备树与 vendor 改动（改 bug 前先 diff）
+│   ├─ tools/ ....................... adb / fastboot（Windows + Linux）与依赖 DLL
+│   ├─ flash_all.bat / flash_all.sh . 一键刷机脚本
+│   ├─ flash_first_time.bat、verify.bat ... 首次刷机与校验
+│   └─ sha256sums.txt ............... 发布包内各镜像哈希
+│
+├─ 03_prebuilt_续修基线/     【路线 A 修 bug 用】26 文件 / 2.3 GiB
+│   ├─ sys13_system.img ............. WiFi 已修通的已知良好基线（sha 686de5de…）
+│   ├─ prebuilt_kernel .............. 原厂 prebuilt 内核（54 MiB，prebuilt 路线不编内核）
+│   ├─ vendor_blobs/_vendor.tar ..... 设备端 vendor 权威归档（471 MiB / 1824 文件）
+│   ├─ vendor_blobs/modules/ ........ 13 个 .ko（含 wlan.ko）
+│   └─ compat_libs/lib、lib64/ ...... 相机 / HAL 依赖排查用兼容库
+│
+├─ 04_9008与刷机工具/        【救砖通道】102 文件 / 32 MiB
+│   ├─ qfil/ ........................ QFIL / QSaharaServer / fh_loader + 4 个 firehose .elf
+│   ├─ platform-tools/ .............. adb.exe / fastboot.exe
+│   └─ firehose_scripts/ ............ 本项目 9008 peek 脚本与 programmer
+│
+├─ 05_固件blob/              【固件依赖】4 文件 / 101 MiB
+│   ├─ 03_firmware_inventory.csv .... 332 个固件的路径 / 大小 / 子系统分类
+│   ├─ firmware_partial_76.zip ...... 已从设备拉到的 76 个散装 blob（约 5.5 MiB）
+│   ├─ firmware_partition_FAT16.img . /firmware 分区 FAT16 原始镜像（含其余 256 个文件）
+│   └─ 固件说明.md .................. 缺哪些、怎么用 mtools/7-Zip 提取、st_fts.bin 缺失说明
+│
+├─ 06_WSL重建集/             【重建编译环境】40 文件 / 1.6 GiB
+│   ├─ src/kernel-src.tar ........... 打过补丁的内核源码树（790 MiB）
+│   ├─ config/kout-shrink.tar ....... 当前构建输出（755 MiB）
+│   ├─ config/.config、System.map ... 配置与符号表
+│   ├─ toolchain/aarch64-linux-android-4.9.tar ... 交叉工具链（101 MiB）
+│   ├─ scripts/ ..................... 打补丁 / 编译 / 出镜像 / 预检脚本
+│   ├─ env/environment.txt .......... apt 包全表、wsl.conf、硬编码路径说明
+│   └─ SHA256SUMS ................... 本目录校验
+│
+├─ 07_GitHub发布树_冗余/     GitHub 公开仓库同一份文本层（离线冗余，1100+ 文件）
+├─ 08_分区dump_可选/         48 个分区原始 dump（8.4 GiB，含 aboot/modem/devinfo）
+├─ 09_原厂OTA_可选/          vivo 官方 OTA zip 与签名固件（4.1 GiB，含 NON-HLOS.bin）
+│
+├─ 10_prebuilt工程_全量分卷/  D:/16/PD1610_81 原貌（22 卷 / 40 GiB）
+│   ├─ PD1610_81_full.tar.part001..022 ... 1.9 GiB 一卷，cat 合并后 tar -xf
+│   ├─ SHA256SUMS / RESTORE.txt ..... 校验与恢复命令
+│   └─ _PACK_DONE ................... 分卷全部生成完毕的标记
+├─ 11_逆向证据_全量分卷/      kernel_re 原貌（6 卷 / 11 GiB，含上面 ROUND1–9 全部证据）
+│
+├─ 12_自编译工程原始全量/    bootloop_monitor 工程根原貌（4324 文件 / 5.1 GiB）
+├─ 13_其它资料与工具/        D:/16 其它资料、dist、github 本地仓库、tools、根目录文档
+│
+├─ 14_寒霜刷机_C盘工作目录/  【第一阶段原貌】84 文件 / 4.9 MiB，仅私有
+│   ├─ aboot_*.md、boot_*.md ........ 验签 / 启动状态机 / hash 数据流分析
+│   ├─ PD1610_原厂设备树_81916.dts/.dtb、1151_6.0.1.dts ... 原厂设备树
+│   ├─ pd1610_rom/ .................. ROM 设备树源码（BoardConfig.mk / device.mk / build.sh /
+│   │                                  proprietary-files.txt / extract-files.sh / *.mk）
+│   ├─ xplay6_unlock/ ............... 解锁 / 读回 Python 工具 + 4 个 firehose programmer
+│   ├─ PD1610_H1_测试包/ ............ H1 操作手册、readback XML、chain manifest
+│   ├─ 20261112.zip ................. 28 份整理日志（文本副本已进 GitHub prebuilt_c/）
+│   ├─ GPT回复_*.md、小白研究vivo.md . 多模型评审与科普
+│   ├─ .workbuddy/memory/ ........... 会话日志（**仅私有，不进 GitHub**）
+│   └─ README_目录说明.md ........... 本目录各文件作用
+│
+└─ 15_LOS16_ROM刷机包/       【可刷 ROM】3 文件 / 892 MiB
+    ├─ PD1610_LOS16_20261112_UNOFFICIAL.zip ... 935,087,013 B，sha 97c3137e…
+    ├─ SHA256SUMS .................... sha256sum -c 校验
+    └─ README_刷机与校验.md ......... 来源、prebuilt 路线说明、4 项 TODO、回滚基线
+```
+
+只读了文本层、想直接找某个文件：用 `00_必读_恢复说明/UPLOAD_CHECKLIST.csv` 按文件名搜索。
 
 **校验**：把 `00` 的 `SHA256SUMS`、`manifest.json` 与 `01` 两个分卷下载到同一目录，
 跑 `sha256sum -c SHA256SUMS`（必须 3/3 OK），再按 `RESTORE.md` 重组解压。

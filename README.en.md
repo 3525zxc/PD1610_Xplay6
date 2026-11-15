@@ -8,13 +8,33 @@ RAM-log monitor (BLM) and Qualcomm 9008 Firehose `peek` to observe failures.
 The same repository also ships the text results of the older **prebuilt**
 route (stock kernel + vendor blobs + borrowed PD1619 device tree -> LOS16 ROM).
 
-**Start here:** [`offline/12_ai_handoff_index.md`](offline/12_ai_handoff_index.md)
-is a standalone index written for a resuming AI: what is stored where, which
-files to fetch from cold storage, how to rebuild the WSL toolchain, and which
-experiment round to pick up. Workflow manual:
-[`offline/13_continuation_playbook.md`](offline/13_continuation_playbook.md);
-prebuilt upload/continuation checklist:
-[`offline/14_prebuilt_upload_checklist.md`](offline/14_prebuilt_upload_checklist.md).
+**Start here - pick your route first.** This repository holds **two different
+lines of work**; decide which one you are continuing before opening any report:
+
+```
+Route A - continue the PREBUILT ROM (fix camera / WiFi / sepolicy / packaging)
+  prebuilt/evidence/_log_append4.md ...... WiFi fix chain, 4 open TODOs, corrected misjudgements
+  prebuilt/release/.../patches/ ......... final sys13 source changes (diff before editing)
+  prebuilt/refs/PD1619_PORTING_NOTES.md . 1042-line porting note
+  offline/14_prebuilt_upload_checklist.md  upload checklist and continuation notes
+  netdisk 03_/sys13_system.img .......... known-good WiFi-fixed baseline
+  netdisk 15_/*.zip ..................... flashable LOS16 ROM
+  netdisk 02_/images/boot.img ........... rollback baseline
+
+Route B - continue the SELF-COMPILED 3.18.120 kernel (finish Tier-3 gates)
+  offline/12_ai_handoff_index.md ........ resource map; paste as-is to an AI
+  offline/13_continuation_playbook.md ... single-variable loop, 8-step SOP
+  offline/05_experiment_queue.md ........ experiment queue A-D (claims / criteria)
+  offline/08_roundA_result.md ........... A-round evidence result
+  ROUND10-19*.md + flash_log/ .......... per-round evidence and raw logs
+  fixtures/ + tools/ .................... adapted drivers, BLM, preflight/coverage scripts
+  netdisk 01_/ .......................... authoritative cold-storage volumes
+
+Shared entry: netdisk 00_必读_恢复说明/ (RESTORE, SHA256SUMS, checklists, indexes).
+`prebuilt/` and netdisk 02/03/15 use the stock prebuilt kernel; `ROUND*` and
+`flash_log/` are the self-compiled line. Their images are not interchangeable.
+```
+
 
 ## Project status & changelog
 
@@ -92,6 +112,82 @@ so `stopped` is normal).
   round B in `offline/05_experiment_queue.md`, following the single-variable loop
   in `offline/13_continuation_playbook.md`.
 
+## Glossary: A round / experiment queue / completion meter
+
+**Experiment queue** = `offline/05_experiment_queue.md`, a claim-driven TODO
+table. Four gates still fail, so each planned experiment fixes a claim, its
+precondition, a numeric criterion, the gate it affects and a failure branch;
+every round must end with a coverage-tool run.
+
+```
+Experiment queue
+  A  reproduce the b6d5debb bootloop, read BLM fixed slots over 9008   (original claim, NOT executed)
+  B  add IRQF_ONESHOT -> nav keys + cold-boot touch                     (split into single variables first)
+  C  restore two tasha jack input devices
+  D  verify the BBK private restart flag behind adb reboot bootloader
+  long tail (not queued): goodixfp fingerprint - zero symbols, 5-15 days, no guarantee
+  exit criteria: 3 clean cold boots / input 9/9 / I2C >=8/9 / 30s touch / full evidence / 17-17 + rollback
+```
+
+**A round result** = `offline/08_roundA_result.md`. There are **two "A rounds"**:
+the queue's original A (bootloop reproduction, not done) and the A actually
+executed on Nov 14 21:45-22:04, which fixed nothing - it flashed the known-good
+`#9` baseline, captured full evidence and rolled back to stock, in order to
+close the `UNVERIFIED` gap.
+
+```
+Executed A round
+  flash 5f164490 (#9) -> 3.18.120-perf #9 reaches the desktop
+  blm_round_capture.py -> 12 snapshots (199 KB dmesg, sha256 manifest)
+  blm_coldboot_verify.py -> 3/3 cold boots PASS (36.8 / 58.1 / 58.2 s)
+  touch: 35s cold window 0 events; after resume 1266 events, IRQ 87 -> 474
+  nav keys: no vivo_virtual_key, 0 key events -> FAIL
+  score 20/88 -> static 40/63 -> strict 50/50 (UNVERIFIED=0); 65/65 control only
+  fixed a HAL gate false positive; added two capture tools
+  rolled back to stock 929fda99... and verified
+```
+
+**Completion meter** = `tools/blm_tier3_coverage.py`: 8 weighted gates -
+boot(20), touch_cold(15), nav_keys(8), input_parity(12), i2c_parity(15),
+hal(10), firmware_inventory(5), reproducible(15). The denominator is the
+device list enumerated on the stock system, and each item needs three proofs
+(device node + driver binding + real events). `UNVERIFIED` means "evidence not
+captured", not "work not done": the early 68-point interval was an evidence gap.
+
+## Round lineage: ROUND1-9 vs ROUND10-26
+
+Three independent ROUND numbering schemes appear in this project:
+
+```
+(1) Signature / unlock state machine, Nov 8-12 (C-drive + prebuilt/evidence)
+      ROUND3_LOOP_LIFECYCLE.txt, ROUND4_FLAG_BEQ_DATAFLOW.txt,
+      ROUND5_RETVAL_CLASSIFICATION_AND_STATE_PATH.txt,
+      aboot_verification_analysis.md, boot_state_machine_analysis.md,
+      original DTS, xplay6_unlock/ tooling
+
+(2) Offline RE + multi-model review ROUND1-9, Nov 12-13 (kernel_re/out/)
+      these numbers count review briefings sent to GPT/Claude, NOT flashes
+      round3/  aboot decompress trace, ARM64 Image memory audit, address overlap,
+               config diff attribution, DTB selector disassembly
+      round4/  aboot handoff, early MMU evidence, FDT chain, BOOT_ONLY feasibility,
+               Unicorn replay, memory_lifecycle_and_observability.md
+      ROUND3_REVIEW_LANDING.md, ROUND4..9_FOLLOWUP_FOR_GPT.md, BRIEF_*_BATTLE.md,
+      multimodel_capture/ (18 files), STAGE1..30*.md (yet another numbering),
+      MASTER_FINDINGS.md, MASTER_HANDOFF_20261113.md, COMPILABLE_SOURCE_PROGRESS.md,
+      h6/ROUND5_BOOT_ONLY_DELIVERY.md
+
+(3) BLM on-device forensics ROUND10-26, Nov 14 (this tree)
+      ROUND10-13  BLM / 9008 chain, all-zero FDT root cause, config shrink
+      ROUND14-17  usb_bam claim overturned -> qpnp_vibrator_init -> first SPMI read
+      ROUND18-19  FDT_NOP bypass -> SPMI stub + restored node -> sys.boot_completed=1
+      ROUND20-26  touch driver rebuilt from source, nav keys, reboot path, rollback
+      A round     not a ROUND: it is queue letter A (evidence narrowing)
+```
+
+The first report here is called ROUND10 because it continued the numbering of
+(2); it is not "the tenth flash". ROUND1-9 material lives in `prebuilt_c/`,
+netdisk `11_逆向证据_全量分卷/`, `14_寒霜刷机_C盘工作目录/` and `prebuilt/evidence/`.
+
 ## Verified status (2026-11-14)
 
 - Tier-3 completion meter: **50/50 strict**, `UNVERIFIED = 0`
@@ -143,6 +239,47 @@ They live in the private Baidu Netdisk folder **`PD1610_Xplay6/`** (~76 GiB,
 | `10` / `11` | full `D:\16\PD1610_81` 40 GiB (22 volumes) and `kernel_re` 11 GiB (6 volumes), 1.9 GiB tar volumes |
 | `12` / `13` | raw self-compiled project tree, misc resources and tools |
 | `14` / `15` | full phase-1 C-drive workspace (4.9 MiB), flashable LOS16 ROM zip (935 MB) + checksum |
+
+### File-by-file tree (what each item is for)
+
+The full 7260-row manifest is `00_必读_恢复说明/UPLOAD_CHECKLIST.csv`.
+The trees below explain the files you will actually open.
+
+```
+PD1610_Xplay6/                         16 categories / 76 GiB
+  00_必读_恢复说明/                    restore entry (17 files)
+     RESTORE.md ..................... reassemble -> zstd -> tar extraction
+     SHA256SUMS / manifest.json ..... 3-line checksum + 2121 file hashes
+     上传清单.md / UPLOAD_CHECKLIST.csv ... summary and per-file manifest
+     12_ai_handoff_index.md ......... AI resource map (section 9 = current state)
+     13_continuation_playbook.md .... single-variable loop and SOP
+     14_prebuilt_upload_checklist.md  prebuilt TODOs and must-keep files
+     11_wsl_rebuild_guide.md ........ minimal WSL rebuild
+     百度网盘索引_草稿.md / 增量补传清单 / 操作卡 ... indexes and upload steps
+  01_全量冷备分卷/                    part01 900 MiB + part02 72.5 MiB (both required)
+  02_原厂回滚与发布包/                images/boot.img rollback, recovery, system,
+                                     patches/ (7 final source changes), tools/, flash_all.*
+  03_prebuilt_续修基线/               sys13_system.img (WiFi fixed), prebuilt_kernel,
+                                     vendor_blobs/_vendor.tar, modules/, compat_libs/
+  04_9008与刷机工具/                  qfil/ (QFIL, QSaharaServer, fh_loader, firehose .elf),
+                                     platform-tools/, firehose_scripts/
+  05_固件blob/                        332-file inventory CSV, 76 pulled blobs zip,
+                                     FAT16 /firmware image, extraction notes
+  06_WSL重建集/                       src/kernel-src.tar, config/kout-shrink.tar,
+                                     .config + System.map, toolchain tar, scripts/, env/
+  07_GitHub发布树_冗余/               offline copy of the public text tree
+  08_分区dump_可选/                    48 raw partition dumps (8.4 GiB)
+  09_原厂OTA_可选/                     official OTA zips and signed firmware
+  10_prebuilt工程_全量分卷/            22 x 1.9 GiB tar volumes of D:/16/PD1610_81
+  11_逆向证据_全量分卷/                6 tar volumes of kernel_re (ROUND1-9 evidence)
+  12_自编译工程原始全量/               raw bootloop_monitor tree
+  13_其它资料与工具/                   misc D:/16 material, dist, local git repo
+  14_寒霜刷机_C盘工作目录/              phase-1 workspace: signature/aboot studies,
+                                     original DTS/DTB, pd1610_rom/ device tree,
+                                     xplay6_unlock/ tooling, H1 test pack,
+                                     20261112.zip log bundle, .workbuddy/memory/ (private)
+  15_LOS16_ROM刷机包/                 flashable ROM zip + SHA256SUMS + flashing notes
+```
 
 **Verify after download**: put `SHA256SUMS`, `manifest.json` and the two `01`
 volumes in one directory, run `sha256sum -c SHA256SUMS` (3/3 OK required), then
