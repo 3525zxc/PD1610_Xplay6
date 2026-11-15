@@ -23,6 +23,7 @@ lines of work**; decide which one you are continuing before opening any report:
 
 ```
 Route A - continue the PREBUILT ROM (fix camera / WiFi / sepolicy / packaging)
+  GitHub Releases (Pre-release) ......... LOS16 flashable ROM zip + SHA256SUMS (tag `los16-prebuilt-sys13-20261112`)
   prebuilt/evidence/_log_append4.md ...... WiFi fix chain, 4 open TODOs, corrected misjudgements
   prebuilt/release/.../patches/ ......... final sys13 source changes (diff before editing)
   prebuilt/refs/PD1619_PORTING_NOTES.md . 1042-line porting note
@@ -45,6 +46,8 @@ Beginner on-ramp: docs/BEGINNER_GUIDE_EN.md (plain-language guide with copy-past
 `prebuilt/` and netdisk 02/03/15 use the stock prebuilt kernel; `ROUND*` and
 `flash_log/` are the self-compiled line. Their images are not interchangeable.
 ```
+
+**ROM download**: [GitHub Releases / los16-prebuilt-sys13-20261112](https://github.com/3525zxc/PD1610_Xplay6/releases/tag/los16-prebuilt-sys13-20261112) (Pre-release development snapshot: `PD1610_LOS16_20261112_UNOFFICIAL.zip` 892 MiB + `SHA256SUMS`). Full notes and known issues are on that page and archived in `docs/RELEASE_NOTES_LOS16.md`.
 
 
 ## Project status & changelog

@@ -166,6 +166,7 @@ lines of work**; decide which one you are continuing before opening any report:
 
 ```
 Route A - continue the PREBUILT ROM (fix camera / WiFi / sepolicy / packaging)
+  GitHub Releases (Pre-release) ......... LOS16 flashable ROM zip + SHA256SUMS (tag `los16-prebuilt-sys13-20261112`)
   prebuilt/evidence/_log_append4.md ...... WiFi fix chain, 4 open TODOs, corrected misjudgements
   prebuilt/release/.../patches/ ......... final sys13 source changes (diff before editing)
   prebuilt/refs/PD1619_PORTING_NOTES.md . 1042-line porting note
@@ -188,6 +189,8 @@ Beginner on-ramp: docs/BEGINNER_GUIDE_EN.md (plain-language guide with copy-past
 `prebuilt/` and netdisk 02/03/15 use the stock prebuilt kernel; `ROUND*` and
 `flash_log/` are the self-compiled line. Their images are not interchangeable.
 ```
+
+**ROM download**: [GitHub Releases / los16-prebuilt-sys13-20261112](https://github.com/3525zxc/PD1610_Xplay6/releases/tag/los16-prebuilt-sys13-20261112) (Pre-release development snapshot: `PD1610_LOS16_20261112_UNOFFICIAL.zip` 892 MiB + `SHA256SUMS`). Full notes and known issues are on that page and archived in `docs/RELEASE_NOTES_LOS16.md`.
 
 
 ## Project status & changelog
@@ -540,6 +543,7 @@ README.md（你在这里）
 │   │  目标：把 LOS16 ROM 做成可发布的日常包
 │   │  内核：原厂 prebuilt 3.18.71，不自己编内核
 │   │
+│   ├─ GitHub Releases（Pre-release） .......... LOS16 可刷 ROM zip + SHA256SUMS（tag `los16-prebuilt-sys13-20261112`）
 │   ├─ prebuilt/evidence/_log_append4.md ........ WiFi 修复 4 条因果链、4 项 TODO、3 条误判纠正
 │   ├─ prebuilt/release/.../patches/ ........... sys13 最终版 7 个源码改动（改 bug 前必须先 diff）
 │   ├─ prebuilt/refs/PD1619_PORTING_NOTES.md ... 1042 行移植笔记（设备树怎么借来的）
@@ -583,6 +587,8 @@ README.md（你在这里）
 | `prebuilt_c/` | 第一阶段（C 盘 `寒霜刷机`）验签 / 解锁 / 原厂 DTS / ROM 设备树 / `20261112` 日志包，约 80 份文本 |
 | `docs/` | 零基础接续手册中英双版：人机分工、AI 开场白、逐轮剧本、黑话对照、保命清单 |
 | `AGENTS.md` | 给接手 AI 的硬规则（Codex 在仓库根启动即自动读取） |
+
+**ROM 直接下载**：[GitHub Releases / los16-prebuilt-sys13-20261112](https://github.com/3525zxc/PD1610_Xplay6/releases/tag/los16-prebuilt-sys13-20261112)（Pre-release 开发快照，`PD1610_LOS16_20261112_UNOFFICIAL.zip` 892 MiB + `SHA256SUMS`；描述与已知问题见该页，留档在 `docs/RELEASE_NOTES_LOS16.md`）。
 
 ## 项目进展与更新记录
 
