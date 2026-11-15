@@ -1,0 +1,31 @@
+# PD1610 8.19.16 启动链组件清单（生成于 2026-11-10）
+# 用途：H1 实验的写入源与回滚比对基线
+
+FILE                           SIZE  SHA256
+emmc_appsboot.mbn           3173696  fe535256b3e90cb6d4c3fd2f9b7ea734d87366b5af90d22acd1befde24c15c64
+xbl.elf                     1830152  8f6d322a715c37334439229a762e1288feefe28baed775e96eed9cb8e208ded8
+tz.mbn                      1736704  bf45ed305c938b23fbc92c1161f9fae5691e60ecb8f94e2baea5040b108f6d37
+keymaster.mbn                357264  1a2325877f843c8621bd99bf4b9e5509ef4e553745f831f6d519070cd5baecb0
+cmnlib.mbn                   209592  36966a0a627e8323c3c27c782d4e58f60b7e46acd72d6e38fca743678ba6db66
+cmnlib64.mbn                 260392  c91999909017d6c3b2382b359579a5925306548382933e94a6bb16d1ca58cf03
+hyp.mbn                      267864  e6d766643ec186b6c7ec1fde3e3756d2d64c79a7699572f750da7963e4eeacca
+pmic.elf                      42944  441402e561d1a4603220e8accf25455d9066a4d26a9ce221d86b831ab9f6ce17
+devcfg.mbn                    53528  82f9fb7968a92e134e0d8ecc89ba8e3da545b3486234d827c8da87f9c70d7565
+rpm.mbn                      229452  e296ba0d8b79fdb4b299bb8197a2126b58f92e07e20a0bf17ee220f1eabccb45
+
+# 对照：现有 7.13.15 aboot（16MB 分区 dump）
+aboot_7.13.15(16M dump)     16777216  b4d75a9b399a8d28b8bd7ff7c68994beadab708ed3d23d4c399095788efc3c5f
+
+# 对照：1.15.1 官方 aboot
+aboot_1.15.1.mbn            4015920  09990c24f63c5b6fb6ab32af65ad180fce8350d640f8a67b74ef35eb0d06e3c8
+
+# ── 2026-11-10 17:00 设备实测补充（关键修正）──
+# 存储类型: UFS（ro.boot.bootdevice = 624000.ufshc）→ 必须用 prog_ufs_firehose_8996_ddr.elf + --memoryname=ufs
+# 逻辑扇区: 4096 B（GPT 实测）
+# firehose  : C:/qfilx/prog_ufs_firehose_8996_ddr.elf  474,944 B  sha256 7c12841e82ba105eb130362821fa962e88b6197cc0ce485636c0955cd0394fb0
+# 设备实况  : PD1610_D_1.15.1 / 6.0.1 / MXB48T / 内核 3.18.20-perf-gb6998a3 (2016-12-02)
+#            verifiedbootstate=green  veritymode=enforcing  securebootkey=beta(keyver 2)
+#            ro.secure=1  ro.debuggable=0  ro.vivo.massproduction=no 无 su
+# 运行时 DTB: model "Qualcomm Technologies, Inc. MSM 8996 v3 + PMI8996 CDP"
+#            compatible "qcom,msm8996-cdp qcom,msm8996 qcom,cdp"
+#            → 与 1.15.1 boot.img 第 43 份 DTB 完全一致（实证 vivo 未改 model 名）

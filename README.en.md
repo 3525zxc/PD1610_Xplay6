@@ -36,8 +36,11 @@ prebuilt upload/continuation checklist:
 - Round 14/15 blamed `usb_bam`; **Round 16 fixed-slot evidence overturned
   that**. The real stall was `qpnp_vibrator_init` -> first SPMI read.
   Do not continue from the old conclusion.
-- The prebuilt route has 5 open TODOs (camera, libcurl, diagnostic-code
-  cleanup, sepolicy/configstore, no ROM zip); see `prebuilt/evidence/_log_append4.md`.
+- The prebuilt route **did ship a flashable ROM** `PD1610_LOS16_20261112_UNOFFICIAL.zip`
+  (935,087,013 B, sha256 `97c3137e...`, in netdisk `15_LOS16_ROM刷机包/`).
+  4 issues remain open (camera, libcurl, diagnostic-code cleanup before release,
+  sepolicy/configstore); see `prebuilt/evidence/_log_append4.md`.
+  Phase-1 signature/unlock/device-tree research is in `prebuilt_c/`.
 
 ## What this repository does not contain
 
@@ -63,6 +66,7 @@ They live in the private Baidu Netdisk folder **`PD1610_Xplay6/`** (~75 GiB,
 | `07`–`09` (optional) | redundant GitHub text tree, 48 partition dumps, official OTA packages |
 | `10` / `11` | full `D:\16\PD1610_81` 40 GiB (22 volumes) and `kernel_re` 11 GiB (6 volumes), 1.9 GiB tar volumes |
 | `12` / `13` | raw self-compiled project tree, misc resources and tools |
+| `14` / `15` | full phase-1 C-drive workspace (4.9 MiB), flashable LOS16 ROM zip (935 MB) + checksum |
 
 **Verify after download**: put `SHA256SUMS`, `manifest.json` and the two `01`
 volumes in one directory, run `sha256sum -c SHA256SUMS` (3/3 OK required), then

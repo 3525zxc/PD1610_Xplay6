@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<!-- PD1610 启动链只读回读（GPT 解析生成，2026-11-10）-->
+<!-- 用法见同目录 run_readback.bat -->
+<data>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="backup_devcfg_LUN0.bin" label="devcfg" num_partition_sectors="32" physical_partition_number="0" start_sector="74120" start_byte_hex="0x12188000"/>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="backup_devcfgbak_LUN0.bin" label="devcfgbak" num_partition_sectors="32" physical_partition_number="0" start_sector="74152" start_byte_hex="0x121a8000"/>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="backup_xbl_LUN1.bin" label="xbl" num_partition_sectors="1013" physical_partition_number="1" start_sector="6" start_byte_hex="0x6000"/>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="backup_xblbak_LUN2.bin" label="xblbak" num_partition_sectors="1013" physical_partition_number="2" start_sector="6" start_byte_hex="0x6000"/>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="backup_aboot_LUN4.bin" label="aboot" num_partition_sectors="4096" physical_partition_number="4" start_sector="39178" start_byte_hex="0x990a000"/>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="backup_abootbak_LUN4.bin" label="abootbak" num_partition_sectors="4096" physical_partition_number="4" start_sector="43274" start_byte_hex="0xa90a000"/>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="backup_tz_LUN4.bin" label="tz" num_partition_sectors="512" physical_partition_number="4" start_sector="262" start_byte_hex="0x106000"/>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="backup_tzbak_LUN4.bin" label="tzbak" num_partition_sectors="512" physical_partition_number="4" start_sector="774" start_byte_hex="0x306000"/>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="backup_hyp_LUN4.bin" label="hyp" num_partition_sectors="128" physical_partition_number="4" start_sector="1286" start_byte_hex="0x506000"/>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="backup_hypbak_LUN4.bin" label="hypbak" num_partition_sectors="128" physical_partition_number="4" start_sector="1414" start_byte_hex="0x586000"/>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="backup_pmic_LUN4.bin" label="pmic" num_partition_sectors="128" physical_partition_number="4" start_sector="2058" start_byte_hex="0x80a000"/>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="backup_pmicbak_LUN4.bin" label="pmicbak" num_partition_sectors="128" physical_partition_number="4" start_sector="2186" start_byte_hex="0x88a000"/>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="backup_rpm_LUN4.bin" label="rpm" num_partition_sectors="128" physical_partition_number="4" start_sector="6" start_byte_hex="0x6000"/>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="backup_rpmbak_LUN4.bin" label="rpmbak" num_partition_sectors="128" physical_partition_number="4" start_sector="134" start_byte_hex="0x86000"/>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="backup_keymaster_LUN4.bin" label="keymaster" num_partition_sectors="128" physical_partition_number="4" start_sector="899339" start_byte_hex="0xdb90b000"/>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="backup_cmnlib_LUN4.bin" label="cmnlib" num_partition_sectors="64" physical_partition_number="4" start_sector="899595" start_byte_hex="0xdba0b000"/>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="backup_cmnlib64_LUN4.bin" label="cmnlib64" num_partition_sectors="64" physical_partition_number="4" start_sector="899723" start_byte_hex="0xdba8b000"/>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="backup_devinfo_LUN4.bin" label="devinfo" num_partition_sectors="1" physical_partition_number="4" start_sector="882954" start_byte_hex="0xd790a000"/>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="backup_sec_LUN4.bin" label="sec" num_partition_sectors="4" physical_partition_number="4" start_sector="2054" start_byte_hex="0x806000"/>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="backup_mdtp_LUN4.bin" label="mdtp" num_partition_sectors="8192" physical_partition_number="4" start_sector="30986" start_byte_hex="0x790a000"/>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="backup_boot_LUN4.bin" label="boot" num_partition_sectors="24576" physical_partition_number="4" start_sector="47370" start_byte_hex="0xb90a000"/>
+  <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="backup_recovery_LUN4.bin" label="recovery" num_partition_sectors="24576" physical_partition_number="4" start_sector="858378" start_byte_hex="0xd190a000"/>
+</data>

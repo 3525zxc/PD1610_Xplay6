@@ -1,0 +1,127 @@
+
+19:45:24: INFO: FH_LOADER WAS CALLED EXACTLY LIKE THIS
+************************************************
+D:\16\Qualcomm_Flash_Image_Loader_v2.0.3.5\fh_loader.exe --port=\\.\COM5 --memoryname=ufs --sendxml=C:\qfilx\aboot\r_test.xml --noprompt --zlpawarehost=1 
+************************************************
+
+19:45:24: DEBUG: Binary build date: Oct 31 2016 @ 22:51:02
+
+19:45:24: DEBUG: Build Version: 16.10.31.22.51.02
+
+19:45:24: INFO: Current working dir (cwd): c:\Users\Tse\WorkBuddy\寒霜刷机\
+19:45:24: INFO: Showing network mappings to allow debugging
+19:45:24: DEBUG: 会记录新的网络连接。
+
+19:45:24: DEBUG: 
+
+19:45:24: DEBUG: 列表是空的。
+
+19:45:24: DEBUG: 
+
+19:45:24: INFO: 
+
+
+
+19:45:24: INFO: Trying to store 'C:\qfilx\aboot\r_test.xml' in string table
+19:45:24: DEBUG: ==================================================================================
+19:45:24: DEBUG: ==================================================================================
+19:45:24: INFO: Looking for file 'C:\qfilx\aboot\r_test.xml'
+19:45:24: DEBUG: 2. Calling fopen('C:\qfilx\aboot\r_test.xml') with AccessMode='rb'
+19:45:24: DEBUG: Trying get filesize, calling fseek()
+19:45:24: DEBUG: Found 'C:\qfilx\aboot\r_test.xml' (208 bytes)
+19:45:24: DEBUG: 2. Calling fopen('C:\qfilx\aboot\r_test.xml') with AccessMode='r'
+19:45:24: DEBUG: Trying get filesize, calling fseek()
+19:45:24: DEBUG: User set ZLPAWAREHOST to 1
+
+19:45:24: INFO: User wants to talk to port '\\.\COM5'
+19:45:24: DEBUG: port_fd=0x234
+
+19:45:24: INFO: Took       0.00000000 seconds to open port
+19:45:24: INFO: Sorting TAGS to ensure order is <configure>,<erase>, others, <patch>,<power>
+19:45:24: INFO: If  you don't want this, use --dontsorttags
+
+19:45:24: INFO: Sending <configure>
+19:45:24: DEBUG: CHANNEL DATA (P0000) (H00202) (    227 bytes) - HOST TO TARGET -->
+===========================================================================================================
+<?xml version="1.0" encoding="UTF-8" ?>
+<data>
+<configure MemoryName="ufs" Verbose="0" AlwaysValidate="0" MaxDigestTableSizeInBytes="8192" MaxPayloadSizeToTargetInBytes="1048576" ZlpAwareHost="1" SkipStorageInit="0" />
+</data>
+
+============================================================================================================
+
+19:45:24: DEBUG: CharsInBuffer=0 Trying to read from USB 8192 bytes
+19:45:24: DEBUG: CHANNEL DATA (471 bytes) <-- TARGET to HOST
+19:45:24: DEBUG: CharsInBuffer = 471
+19:45:24: DEBUG: printBuffer:5260 PRETTYPRINT Buffer is 471 bytes
+
+19:45:24: DEBUG: printBuffer:5337 3C 3F 78 6D 6C 20 76 65 72 73 69 6F 6E 3D 22 31 <?xml version="1
+19:45:24: DEBUG: printBuffer:5337 2E 30 22 20 65 6E 63 6F 64 69 6E 67 3D 22 55 54 .0" encoding="UT
+19:45:24: DEBUG: printBuffer:5337 46 2D 38 22 20 3F 3E 0A 3C 64 61 74 61 3E 0A 3C F-8" ?>.<data>.<
+19:45:24: DEBUG: printBuffer:5337 6C 6F 67 20 76 61 6C 75 65 3D 22 43 61 6C 6C 69 log value="Calli
+19:45:24: DEBUG: printBuffer:5337 6E 67 20 75 73 62 5F 61 6C 5F 62 75 6C 6B 5F 73 ng usb_al_bulk_s
+19:45:24: DEBUG: printBuffer:5337 65 74 5F 7A 6C 70 5F 6D 6F 64 65 28 54 52 55 45 et_zlp_mode(TRUE
+19:45:24: DEBUG: printBuffer:5337 29 20 73 69 6E 63 65 20 5A 6C 70 41 77 61 72 65 ) since ZlpAware
+19:45:24: DEBUG: printBuffer:5337 48 6F 73 74 3D 27 31 27 22 2F 3E 0A 3C 2F 64 61 Host='1'"/>.</da
+19:45:24: DEBUG: printBuffer:5337 74 61 3E 3C 3F 78 6D 6C 20 76 65 72 73 69 6F 6E ta><?xml version
+19:45:24: DEBUG: printBuffer:5337 3D 22 31 2E 30 22 20 65 6E 63 6F 64 69 6E 67 3D ="1.0" encoding=
+19:45:24: DEBUG: printBuffer:5337 22 55 54 46 2D 38 22 20 3F 3E 0A 3C 64 61 74 61 "UTF-8" ?>.<data
+19:45:24: DEBUG: printBuffer:5337 3E 0A 3C 72 65 73 70 6F 6E 73 65 20 76 61 6C 75 >.<response valu
+19:45:24: DEBUG: printBuffer:5337 65 3D 22 41 43 4B 22 20 4D 69 6E 56 65 72 73 69 e="ACK" MinVersi
+19:45:24: DEBUG: printBuffer:5337 6F 6E 53 75 70 70 6F 72 74 65 64 3D 22 31 22 20 onSupported="1" 
+19:45:24: DEBUG: printBuffer:5337 4D 65 6D 6F 72 79 4E 61 6D 65 3D 22 55 46 53 22 MemoryName="UFS"
+19:45:24: DEBUG: printBuffer:5337 20 4D 61 78 50 61 79 6C 6F 61 64 53 69 7A 65 46  MaxPayloadSizeF
+19:45:24: DEBUG: printBuffer:5337 72 6F 6D 54 61 72 67 65 74 49 6E 42 79 74 65 73 romTargetInBytes
+19:45:24: DEBUG: printBuffer:5337 3D 22 34 30 39 36 22 20 4D 61 78 50 61 79 6C 6F ="4096" MaxPaylo
+19:45:24: DEBUG: printBuffer:5337 61 64 53 69 7A 65 54 6F 54 61 72 67 65 74 49 6E adSizeToTargetIn
+19:45:24: DEBUG: printBuffer:5337 42 79 74 65 73 3D 22 31 30 34 38 35 37 36 22 20 Bytes="1048576" 
+19:45:24: DEBUG: printBuffer:5337 4D 61 78 50 61 79 6C 6F 61 64 53 69 7A 65 54 6F MaxPayloadSizeTo
+19:45:24: DEBUG: printBuffer:5337 54 61 72 67 65 74 49 6E 42 79 74 65 73 53 75 70 TargetInBytesSup
+19:45:24: DEBUG: printBuffer:5337 70 6F 72 74 65 64 3D 22 31 30 34 38 35 37 36 22 ported="1048576"
+19:45:24: DEBUG: printBuffer:5337 20 4D 61 78 58 4D 4C 53 69 7A 65 49 6E 42 79 74  MaxXMLSizeInByt
+19:45:24: DEBUG: printBuffer:5337 65 73 3D 22 34 30 39 36 22 20 56 65 72 73 69 6F es="4096" Versio
+19:45:24: DEBUG: printBuffer:5337 6E 3D 22 31 22 20 54 61 72 67 65 74 4E 61 6D 65 n="1" TargetName
+19:45:24: DEBUG: printBuffer:5337 3D 22 4D 53 4D 38 39 39 36 22 20 44 61 74 65 54 ="MSM8996" DateT
+19:45:24: DEBUG: printBuffer:5337 69 6D 65 3D 22 4A 61 6E 20 31 38 20 32 30 31 37 ime="Jan 18 2017
+19:45:24: DEBUG: printBuffer:5337 20 2D 20 30 31 3A 30 39 3A 32 38 22 20 2F 3E 0A  - 01:09:28" />.
+19:45:24: DEBUG: printBuffer:5337 3C 2F 64 61 74 61 3E                            </data>
+19:45:24: DEBUG: printBuffer:5350 
+
+
+19:45:24: DEBUG: XML FILE (131 bytes): CharsInBuffer=471-131=340
+-------------------------------------------------------------------------------------------
+<?xml version="1.0" encoding="UTF-8" ?>
+<data>
+<log value="Calling usb_al_bulk_set_zlp_mode(TRUE) since ZlpAwareHost='1'"/>
+</data>
+-------------------------------------------------------------------------------------------
+
+19:45:24: INFO: TARGET SAID: 'Calling usb_al_bulk_set_zlp_mode(TRUE) since ZlpAwareHost='1''
+19:45:24: DEBUG: XML FILE (340 bytes): CharsInBuffer=340-340=0
+-------------------------------------------------------------------------------------------
+<?xml version="1.0" encoding="UTF-8" ?>
+<data>
+<response value="ACK" MinVersionSupported="1" MemoryName="UFS" MaxPayloadSizeFromTargetInBytes="4096" MaxPayloadSizeToTargetInBytes="1048576" MaxPayloadSizeToTargetInBytesSupported="1048576" MaxXMLSizeInBytes="4096" Version="1" TargetName="MSM8996" DateTime="Jan 18 2017 - 01:09:28" />
+</data>
+-------------------------------------------------------------------------------------------
+
+19:45:24: DEBUG: Response was 'ACK'
+19:45:24: INFO: fh.attrs.MaxPayloadSizeToTargetInBytes = 1048576
+19:45:24: INFO: fh.attrs.MaxPayloadSizeToTargetInBytesSupported = 1048576
+19:45:24: DEBUG: Got the ACK for the <configure>
+19:45:24: INFO: In handleRead('C:\qfilx\aboot\chk_test.bin')
+19:45:24: DEBUG: ==================================================================================
+19:45:24: DEBUG: ==================================================================================
+19:45:24: INFO: Looking for file 'C:\qfilx\aboot\chk_test.bin'
+19:45:24: DEBUG: 2. Calling fopen('C:\qfilx\aboot\chk_test.bin') with AccessMode='rb'
+
+
+	 _____                    
+	|  ___|                   
+	| |__ _ __ _ __ ___  _ __ 
+	|  __| '__| '__/ _ \| '__|
+	| |__| |  | | | (_) | |   
+	\____/_|  |_|  \___/|_|  
+
+
+19:45:24: {ERROR: ReturnFileHandle:8271 Could not access 'C:\qfilx\aboot\chk_test.bin' with acess mode 'rb'

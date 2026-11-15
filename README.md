@@ -28,6 +28,7 @@ A 轮结果见 [`offline/08_roundA_result.md`](offline/08_roundA_result.md)，
 | `flash_log/` | 每轮实机 dmesg / input / I2C 绑定 / 冷启动台账 / 覆盖率 JSON |
 | `fixtures/`、`tools/`、`tests/` | 驱动源码适配副本、BLM 与归档/度量脚本、门禁自测 |
 | `prebuilt/` | prebuilt 路线 829 份文本：1042 行移植笔记、WiFi 修复全程、sys13 最终版 `patches/` |
+| `prebuilt_c/` | 第一阶段（C 盘 `寒霜刷机`）验签 / 解锁 / 原厂 DTS / ROM 设备树 / `20261112` 日志包，约 80 份文本 |
 
 ## 已验证状态（2026-11-14）
 
@@ -46,8 +47,11 @@ A 轮结果见 [`offline/08_roundA_result.md`](offline/08_roundA_result.md)，
 - 最后一版导航键候选 `b6d5debb…` 报 bootloop 并已回滚，**卡点未隔离**。
 - **归因演进必须注意**：Round14/15 判 `usb_bam`，被 Round16 固定槽证据推翻；
   真正卡点是 `qpnp_vibrator_init` → 第一次 SPMI 读。别从旧结论接着做。
-- prebuilt 路线尚留 5 项 TODO（相机 0 设备、缺 `libcurl.so`、清诊断代码须重编、
-  sepolicy/configstore、无 ROM zip），见 `prebuilt/evidence/_log_append4.md`。
+- prebuilt 路线**已产出可刷 ROM** `PD1610_LOS16_20261112_UNOFFICIAL.zip`
+  （935,087,013 B，sha256 `97c3137e…`，在百度网盘 `15_LOS16_ROM刷机包/`）；
+  仍留 4 项 TODO（相机 0 设备、缺 `libcurl.so`、发布前清诊断代码须重编、
+  sepolicy/configstore），见 `prebuilt/evidence/_log_append4.md`。
+  第一阶段验签 / 解锁 / 设备树研究见 `prebuilt_c/`。
 
 ## 本仓库不包含的内容
 
@@ -72,6 +76,7 @@ WSL 重建集与 sys13 `system.img` 都在**百度网盘冷备分卷**（约 973
 | `07`–`09` 可选 | GitHub 文本层冗余、48 分区 dump、官方 OTA |
 | `10` / `11` 全量分卷 | `D:\16\PD1610_81` 40 GiB（22 卷）、`kernel_re` 11 GiB（6 卷），1.9 GiB tar 分卷 |
 | `12` / `13` 原貌 | 自编译工程原始全量、其它资料与工具 |
+| `14` / `15` 追加 | C 盘 `寒霜刷机` 工作目录全量（4.9 MiB）、LOS16 可刷 ROM zip（935 MB）与校验 |
 
 **校验**：把 `00` 的 `SHA256SUMS`、`manifest.json` 与 `01` 两个分卷下载到同一目录，
 跑 `sha256sum -c SHA256SUMS`（必须 3/3 OK），再按 `RESTORE.md` 重组解压。
@@ -130,8 +135,11 @@ prebuilt upload/continuation checklist:
 - Round 14/15 blamed `usb_bam`; **Round 16 fixed-slot evidence overturned
   that**. The real stall was `qpnp_vibrator_init` -> first SPMI read.
   Do not continue from the old conclusion.
-- The prebuilt route has 5 open TODOs (camera, libcurl, diagnostic-code
-  cleanup, sepolicy/configstore, no ROM zip); see `prebuilt/evidence/_log_append4.md`.
+- The prebuilt route **did ship a flashable ROM** `PD1610_LOS16_20261112_UNOFFICIAL.zip`
+  (935,087,013 B, sha256 `97c3137e...`, in netdisk `15_LOS16_ROM刷机包/`).
+  4 issues remain open (camera, libcurl, diagnostic-code cleanup before release,
+  sepolicy/configstore); see `prebuilt/evidence/_log_append4.md`.
+  Phase-1 signature/unlock/device-tree research is in `prebuilt_c/`.
 
 ### What this repository does not contain
 
@@ -157,6 +165,7 @@ They live in the private Baidu Netdisk folder **`PD1610_Xplay6/`** (~75 GiB,
 | `07`–`09` (optional) | redundant GitHub text tree, 48 partition dumps, official OTA packages |
 | `10` / `11` | full `D:\16\PD1610_81` 40 GiB (22 volumes) and `kernel_re` 11 GiB (6 volumes), 1.9 GiB tar volumes |
 | `12` / `13` | raw self-compiled project tree, misc resources and tools |
+| `14` / `15` | full phase-1 C-drive workspace (4.9 MiB), flashable LOS16 ROM zip (935 MB) + checksum |
 
 **Verify after download**: put `SHA256SUMS`, `manifest.json` and the two `01`
 volumes in one directory, run `sha256sum -c SHA256SUMS` (3/3 OK required), then
