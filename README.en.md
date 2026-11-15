@@ -8,6 +8,16 @@ RAM-log monitor (BLM) and Qualcomm 9008 Firehose `peek` to observe failures.
 The same repository also ships the text results of the older **prebuilt**
 route (stock kernel + vendor blobs + borrowed PD1619 device tree -> LOS16 ROM).
 
+> **Two reading tracks, the same facts.** Pick either one; no data, hash or
+> criterion is simplified or removed.
+> - **Technical track**: the route tree below, changelog, glossary, round
+>   lineage, per-file netdisk index, reports and raw evidence - all unchanged.
+> - **Plain-language track**: jump to "**Plain-language track**" further down
+>   this page, or read `docs/BEGINNER_GUIDE_EN.md` in full. It retells the same
+>   files and the same workflow in everyday language, with copy-paste AI prompts.
+> - Both tracks point at the same files and conclusions. `AGENTS.md` holds the
+>   hard rules for the AI and is shared by both.
+
 **Start here - pick your route first.** This repository holds **two different
 lines of work**; decide which one you are continuing before opening any report:
 
@@ -31,6 +41,7 @@ Route B - continue the SELF-COMPILED 3.18.120 kernel (finish Tier-3 gates)
   netdisk 01_/ .......................... authoritative cold-storage volumes
 
 Shared entry: netdisk 00_必读_恢复说明/ (RESTORE, SHA256SUMS, checklists, indexes).
+Beginner on-ramp: docs/BEGINNER_GUIDE_EN.md (plain-language guide with copy-paste AI prompts).
 `prebuilt/` and netdisk 02/03/15 use the stock prebuilt kernel; `ROUND*` and
 `flash_log/` are the self-compiled line. Their images are not interchangeable.
 ```
@@ -153,6 +164,62 @@ hal(10), firmware_inventory(5), reproducible(15). The denominator is the
 device list enumerated on the stock system, and each item needs three proofs
 (device node + driver binding + real events). `UNVERIFIED` means "evidence not
 captured", not "work not done": the early 68-point interval was an evidence gap.
+
+## Plain-language track: continuing if you only know how to flash
+
+> This section runs **in parallel with the technical sections above**, which
+> stay unchanged. It restates the same facts in everyday language. No coding or
+> kernel knowledge is required: all 26 earlier rounds were run as "human
+> handles the phone, AI handles code and evidence".
+
+**Technical track ↔ plain-language track** (same files, two wordings)
+
+| Technical (above) | Plain-language version |
+|---|---|
+| Start here: two-route tree | this section + `docs/BEGINNER_GUIDE_EN.md` §0.2 |
+| Glossary: A round / queue / meter | "Three-step start" below + guide §5 jargon table |
+| Round lineage ROUND1-9 / 10-26 | guide §0.3 current state + §10 reading order |
+| Verified status 50/50, 4 FAILs | guide §0.3 / §9 FAQ |
+| Baidu Netdisk index (file-by-file tree) | guide §2 "what to download" + §5 |
+| `offline/13` 8-step SOP | guide §4 round script (AI says / you do / you reply) |
+| `offline/05` experiment queue A-D | guide §8 zero-risk first round |
+| `fixtures/` `tools/` source and scripts | guide §1 "the AI does the rest" |
+| `AGENTS.md` hard rules for the AI | guide §3 opening prompt makes it read that file |
+
+
+```
+You (flashing is enough)            AI (Codex / WorkBuddy)
+├─ restore repo + netdisk files     ├─ read logs, diff source, edit code
+├─ enter fastboot when asked ──────> ├─ compile, build boot.img, preflight
+├─ tap screen / press nav keys ────> ├─ flash, capture evidence, PASS/FAIL
+├─ report "works / does not work"   └─ roll back to stock and verify
+└─ decide continue / pause / rollback
+```
+
+**Three-step start (round one should be zero-risk)**
+
+1. Download netdisk `00` `01` `02` `04`; have the AI run
+   `sha256sum -c SHA256SUMS` and require **3/3 OK**.
+2. Open the repo root with Codex or WorkBuddy (`AGENTS.md` is read
+   automatically), then paste the opening prompt from
+   `docs/BEGINNER_GUIDE_EN.md` section 3 verbatim.
+3. Explicitly require **no compile, no flash, no partition writes** in round
+   one: status check, baseline capture, one plain-language state report.
+   Only then follow `offline/05_experiment_queue.md` into real rounds.
+
+| What you need | Where |
+|---|---|
+| First message to the AI (copy-paste) | `docs/BEGINNER_GUIDE_EN.md` §3 |
+| Round script: AI says / you do / you reply | §4 |
+| Jargon translator (fastboot, dmesg, preflight, single variable) | §5 |
+| When to stop, how to roll back, 8 things never to do | §6 |
+| How to tell if the AI is fabricating results | §7 |
+| Zero-risk first round | §8 |
+| Hard rules the AI must follow | `AGENTS.md` (repo root) |
+| Full methodology | `offline/13_continuation_playbook.md` |
+
+> Chinese version: `docs/BEGINNER_GUIDE_CN.md`. Never mix the two routes'
+> images: `03_/sys13_system.img` (WiFi-fixed) is not `02_/images/system.img`.
 
 ## Round lineage: ROUND1-9 vs ROUND10-26
 
