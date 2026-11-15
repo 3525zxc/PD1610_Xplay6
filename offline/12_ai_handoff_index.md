@@ -1,5 +1,12 @@
 # ⑫ 给接手 AI 的资源索引（贴这份就够）
 
+> **⚠️ 2026-11-15 状态覆盖提示（接手前先读）**
+> 下面 §1–§8 是 2026-11-14 的快照，部分数字已过期。当前准确状态一律以 **§9** 为准。
+> 关键变化：网盘已扩为 **16 类 / 76 GiB / 7258 文件**（云端目录 `PD1610_Xplay6/`）；
+> GitHub 仓库 https://github.com/3525zxc/PD1610_Xplay6 已 push，新增 `prebuilt_c/` 第一阶段研究文本；
+> prebuilt 路线**已产出可刷 ROM** `PD1610_LOS16_20261112_UNOFFICIAL.zip`（935,087,013 B）；
+> 未解 TODO 是 **4 项**，不是 5 项。
+
 日期 2026-11-14 23:00。用途：项目文件已从本机清空，未来恢复时**把本文件整份贴给 AI**，它就知道该让你从百度网盘取哪些文件、按什么顺序放回去、以及从哪一步继续。本文件设计为「不依赖任何其他上下文」可独立阅读。
 
 ---
@@ -94,7 +101,7 @@ prebuilt_extract/
 
 **上传分工**：`prebuilt_verbatim/` 或 `prebuilt_sanitized/` 是 **828 文件 / 13.56 MiB**（含 sys13 最终版补丁源码），直接推 GitHub（可并入主仓库的 `prebuilt/` 子目录或独立仓库）；上表 #1/#4/#5 的二进制**只走百度网盘**，`prebuilt_extract/manifest.json` 里列了原路径与体积，不会复制进提炼包。提炼包本身已在全量分卷里，不用单独再传。
 
-**以后要修 prebuilt 的 bug**：完整清单与建议在 `offline/14_prebuilt_upload_checklist.md`。最关键是两份别丢 —— `release/.../patches/`（sys13 最终版 7 个源码改动）和 `out/system.img`（sha `686de5de…`，WiFi 修通的已知良好基线）。未解 TODO 有 5 项（相机 0 设备、libcurl、诊断代码清理、sepolicy/configstore、ROM zip 未产出），全文在 `evidence/_log_append4.md`。
+**以后要修 prebuilt 的 bug**：完整清单与建议在 `offline/14_prebuilt_upload_checklist.md`。最关键是两份别丢 —— `release/.../patches/`（sys13 最终版 7 个源码改动）和 `out/system.img`（sha `686de5de…`，WiFi 修通的已知良好基线）。未解 TODO 有 4 项（相机 0 设备、libcurl、诊断代码清理、sepolicy/configstore）；ROM zip 已产出，见 §9 与 `offline/14_prebuilt_upload_checklist.md`，全文在 `evidence/_log_append4.md`。
 
 补一条：`fixtures/pd1610_81916_vivo.dtb`（400 KiB，原厂 DTB 二进制）和 `offline/stock_Image.bin`（26 MiB，原厂内核镜像）**已在分卷里**了，不用单独传。
 
@@ -196,3 +203,63 @@ WSL 重建集在 wsl_rebuild/，重建 SOP 在 offline/11_wsl_rebuild_guide.md�
 - 公开仓库 `publish/` 为 **verbatim 全量细节**（按用户决定不脱敏），含设备序列号等唯一信息；`publish_sanitized/` 是可替换的脱敏版，若日后需要改用，直接把它当作仓库根即可。
 - 分卷**未加密**（未指定密码）。加密版可用 `python tools/blm_archive.py --root <工程根> --password <密码>` 重跑；密码不会写进归档，务必另行保存。
 - 体积与哈希以 `archive/manifest.json` / `SHA256SUMS` 为准，本文件里的数字是 2026-11-14 的快照。
+
+---
+
+## 9. 当前准确状态（2026-11-15，以此为准）
+
+### 9.1 三处存放
+
+| 位置 | 内容 | 规模 |
+|---|---|---|
+| GitHub 公开仓库 | https://github.com/3525zxc/PD1610_Xplay6 | README 中英双版（含网盘索引）、自编译工程文本 1045、`prebuilt/` 829、`prebuilt_c/` 97；共 1145 tracked，无二进制 |
+| 百度网盘（冷备） | 云端 `PD1610_Xplay6/`，本地源 `D:/xplay6/baidu_upload` | **16 类 / 76 GiB / 7258 文件** |
+| 本机 | `D:/xplay6`、`D:/16`、`C:/Users/Tse/WorkBuddy/寒霜刷机`、WSL `D:/WSL/PD1610/ext4.vhdx` | 尚未清空 |
+
+分享链接：https://pan.baidu.com/s/5OL1VH3h9Pn_uOQllg29MSQ（如要求提取码，向维护者索取）。
+
+### 9.2 网盘 16 类（按编号，全部已生成）
+
+`00` 恢复说明与校验文件 · `01` 全量冷备两分卷 · `02` 原厂回滚发布包 ·
+`03` prebuilt 续修基线（sys13） · `04` 9008 与刷机工具 · `05` 固件 blob 与 FAT16 分区镜像 ·
+`06` WSL 最小重建集 · `07` GitHub 文本层冗余 · `08` 48 个分区 dump ·
+`09` 官方 OTA · `10` `D:/16/PD1610_81` 全量 tar（22 卷 / 40 GiB） ·
+`11` `kernel_re` 全量 tar（6 卷 / 11 GiB） · `12` 自编译工程原貌 · `13` 其它资料 ·
+`14` **C 盘第一阶段工作目录全量（83 文件 / 4.9 MiB，含 `.workbuddy/memory/` 会话日志与 `20261112.zip`）** ·
+`15` **LOS16 可刷 ROM 包**（zip + `SHA256SUMS` + 刷机说明）。
+
+逐类文件数/体积见云端 `00_必读_恢复说明/上传清单.md` 与 `UPLOAD_CHECKLIST.csv`。
+
+### 9.3 两条路线的产物，别搞混
+
+- **prebuilt 路线**：原厂 prebuilt 3.18.71 内核 + vendor blobs + 借 PD1619 设备树 → LOS16 ROM。
+  **已产出可刷 zip** `PD1610_LOS16_20261112_UNOFFICIAL.zip`，935,087,013 B，
+  sha256 `97c3137e5498c1ac28cdde328da45c3660076b47a5e6a13846089688c2126288`（网盘 `15_`）。
+  WiFi 已修通（sys13 `system.img` sha `686de5de…`）。仍留 4 项 TODO：相机 0 设备、
+  缺 `libcurl.so`、发布前清诊断代码须**同时重编 boot + system**、sepolicy/configstore。
+- **自编译路线**：`3.18.120-perf` + BLM/9008 取证 → 严格完成度 **50/50**、`UNVERIFIED=0`；
+  仍 FAIL 四门：`touch_cold`、`nav_keys`、`input_parity` 5/9、`i2c_parity` 4/9。
+  设备已回滚原厂 `3.18.71`，不在 fastboot。
+
+### 9.4 第一阶段（C 盘）记录
+
+`C:/Users/Tse/WorkBuddy/寒霜刷机` = 验签 / 解锁 / boot 数据流研究 30+ 份、原厂 DTS/DTB、
+`pd1610_rom/` 设备树源码、`xplay6_unlock/` 工具链、`PD1610_H1_测试包/`、`20261112.zip`（28 份整理日志）。
+
+- GitHub 文本层：`prebuilt_c/`（97 份，**不含 `.workbuddy/memory/` 会话日志**）。
+- 网盘：`14_寒霜刷机_C盘工作目录/`（84 文件全量，含会话日志，仅私有）。
+- D 盘 `migrated_from_C/workspace/` 有 76 个副本（在 `10_` 分卷内），但 memory 与 zip 只在 `14_`。
+
+### 9.5 归档分卷版本说明
+
+`01_全量冷备分卷/` 生成于 2026-11-15 01:34，内容 4.06 GiB / 2121 文件 → zstd 972.6 MiB，
+两卷 + `manifest.json` + `SHA256SUMS`（3/3 OK）。**该分卷生成于本次增量之前**，
+所以里面的 `offline/12_ai_handoff_index.md`、本文件 §9、`prebuilt_c/`、16 类结构都还是旧版。
+恢复时以 **GitHub 仓库 / 网盘 `00_必读_恢复说明/` 的最新文档**为准；
+待上传全部完成并校验通过后，可重跑 `tools/blm_archive.py` 使分卷同步（会改变两卷哈希，需重传）。
+
+### 9.6 未纳入
+
+`D:/WSL/PD1610/ext4.vhdx`（176.88 GiB）：单文件超网盘上限、本地剩余空间不足以切片。
+`06_WSL重建集/` 的 1.6 GiB 最小集足够重建编译环境；以后要原样恢复需先腾出 180 GiB 再按 4 GiB 切分。
+

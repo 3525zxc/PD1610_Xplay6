@@ -267,3 +267,6 @@ preflight.json 的 verdict ③ dmesg 里支撑结论的原始行（带时间戳�
 - 本手册写于设备回滚原厂、工程已归档之后；**本机文件尚未清空**。
 - 清空前置条件见 `offline/12_ai_handoff_index.md` §8：网盘上传并校验完成、GitHub push 完成、人明确确认具体路径。
 - 所有命令路径基于当前工程布局；若恢复时换了盘符或目录，需同步改 `ROOT`/`SRC`/`OUT`/`TC` 与脚本内 `/mnt/d/...` 常量。
+
+> **2026-11-15 补充**：第一阶段（C 盘）验签 / 解锁 / 设备树研究的文本层在 GitHub `prebuilt_c/`，全量在网盘 `14_寒霜刷机_C盘工作目录/`。prebuilt 路线的可刷 ROM zip 在网盘 `15_LOS16_ROM刷机包/`，`offline/12_ai_handoff_index.md` §9 是当前准确状态入口。
+
