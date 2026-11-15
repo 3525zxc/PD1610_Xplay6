@@ -19,7 +19,7 @@
 | 2 | `xtwifi-inet-agent` 缺 `libcurl.so` | XTRA 辅助下载，非致命 | 从 8.1 抽库 + vendor mk 拷贝规则 |
 | 3 | **发布前清诊断代码** | `init.cpp` PD1610 DIAG、`init.qcom.rc` kmsg 标记、`PD_WD_SECONDS 100000`、`init.rc` 的 `pd1610-crypto-fix`、`printk 7 7 7 7` | 最终版源码 + 构建脚本；清完须**重编 boot + system 并复测首启** |
 | 4 | sepolicy 仍 permissive | `configstore-hal-1-0` 被 seccomp 拦 `getdents64`，每 5 s SIGSYS 重启 | avc denial 日志、seccomp policy、device 树 sepolicy 目录 |
-| 5 | 未产出可刷 ROM zip / TWRP 包 | — | 发布包脚本、签名/footer 工具 |
+| 5 | **已于 2026-11-15 更正：ROM zip 已产出** `PD1610_LOS16_20261112_UNOFFICIAL.zip`（935,087,013 B / sha `97c3137e…`，网盘 `15_`）；仍缺发布前清诊断代码后的重打包与 TWRP 卡刷验证 | — | 发布包脚本、签名/footer 工具 |
 
 **三条已纠正的误判，别再走回头路**（`evidence/_log_append3.md` / `_log_append4.md`）：
 1. 「设备卡死 / 内核 panic」是误判 —— 流式 logcat + 每 2 s dmesg 证明设备一直活着，只是点 WiFi 开关后 USB/adbd 断开一阵。

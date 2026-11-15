@@ -63,7 +63,7 @@ WSL 重建集与 sys13 `system.img` 都在**百度网盘冷备分卷**（约 973
 ## 百度网盘冷备索引（2026-11-15）
 
 二进制、原始工程与可刷镜像不上 GitHub，放在百度网盘私有目录
-**`PD1610_Xplay6/`**（约 75 GiB / 7073 文件，14 个分类）。
+**`PD1610_Xplay6/`**（约 76 GiB / 约 7160 文件，16 个分类）。
 
 - 分享链接：<https://pan.baidu.com/s/5OL1VH3h9Pn_uOQllg29MSQ>
   （若页面要求提取码，请向维护者索取；分享链接可能随设置失效）
@@ -151,8 +151,8 @@ see `offline/12_ai_handoff_index.md` section 2 for the restore procedure.
 ### Baidu Netdisk cold storage (2026-11-15)
 
 Binary assets, original project trees and flashable images are not on GitHub.
-They live in the private Baidu Netdisk folder **`PD1610_Xplay6/`** (~75 GiB,
-7073 files, 14 categories).
+They live in the private Baidu Netdisk folder **`PD1610_Xplay6/`** (~76 GiB,
+~7160 files, 16 categories).
 
 - Share link: <https://pan.baidu.com/s/5OL1VH3h9Pn_uOQllg29MSQ>
   (an extraction code may be required; ask the maintainer. Links can expire.)
