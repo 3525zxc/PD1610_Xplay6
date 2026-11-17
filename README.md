@@ -6,8 +6,10 @@
 vivo Xplay6（MSM8996 / LineageOS 16）自编译 `3.18.120` 内核的完整取证记录：
 从 bootloop 一路定位到能进桌面、触摸可用。手段是自写的 RAM 日志监测模块
 （BLM）+ 高通 9008 Firehose `peek` 读取物理内存，把黑盒启动失败变成可复现的证据链。
-本仓库同时收录较早的 **prebuilt 路线** 文本成果（原厂内核 + vendor blobs +
-借用 PD1619 设备树编译 LOS16 ROM），两条路线一并交接。
+本仓库同时收录 **prebuilt 路线**（原厂内核 + vendor blobs + 借用 PD1619
+设备树编译 LOS16 ROM）的完整文本成果：11-16 → 11-17 已把 ROM 从"能亮屏"推进到
+**日常可用**——相机、按键、音频、耳机、HIFI、自动校时、TWRP 全部实机验证通过，
+详见 `docs/CHANGELOG_PREBUILT_20261116-1117.md`。两条路线一并交接。
 
 > **两种读法，同一份事实**（任选其一；数据、哈希、判据都不删减、不改写）
 > - **专业版**：直接看下面的「从这里开始」路线树 → 项目进展与归因 → 名词解释 →
@@ -26,18 +28,20 @@ vivo Xplay6（MSM8996 / LineageOS 16）自编译 `3.18.120` 内核的完整取�
 ```
 README.md（你在这里）
 │
-├─【路线 A】prebuilt 路线续修 —— 想修 ROM 的相机 / WiFi / sepolicy / 打包
-│   │  目标：把 LOS16 ROM 做成可发布的日常包
+├─【路线 A】prebuilt 路线续修 —— 相机 / 按键 / Recovery / 音频 / HIFI / 校时，已日常可用
+│   │  目标：LOS16 日常主力机（11-17 已达成：相机 0→3、外放+耳机有声、HIFI 可调、9h 自动校时）
 │   │  内核：原厂 prebuilt 3.18.71，不自己编内核
 │   │
+│   ├─ docs/CHANGELOG_PREBUILT_20261116-1117.md .. 【先读】11-16 17:36 → 11-17 14:00 完成度日志
 │   ├─ GitHub Releases（Pre-release） .......... LOS16 可刷 ROM zip + SHA256SUMS（tag `los16-prebuilt-sys13-20261112`）
-│   ├─ prebuilt/evidence/_log_append4.md ........ WiFi 修复 4 条因果链、4 项 TODO、3 条误判纠正
+│   ├─ prebuilt/evidence/_log_append4.md ........ WiFi 修复 4 条因果链、3 条误判纠正（4 项 TODO 状态见 CHANGELOG）
 │   ├─ prebuilt/release/.../patches/ ........... sys13 最终版 7 个源码改动（改 bug 前必须先 diff）
 │   ├─ prebuilt/refs/PD1619_PORTING_NOTES.md ... 1042 行移植笔记（设备树怎么借来的）
 │   ├─ offline/14_prebuilt_upload_checklist.md . 上传必要清单 + 续修差异（刷 system 不刷 boot）
 │   ├─ 网盘 03_prebuilt_续修基线/sys13_system.img  WiFi 修通的基线（sha 686de5de…）
 │   ├─ 网盘 15_LOS16_ROM刷机包/*.zip .......... 可刷 ROM（935 MB，sha 97c3137e…）
-│   └─ 网盘 02_原厂回滚与发布包/images/boot.img  回滚基线（sha 929fda99…）
+│   ├─ 网盘 02_原厂回滚与发布包/images/boot.img  回滚基线（sha 929fda99…）
+│   └─ 注：音频修复 Magisk 模块 + HIFI APP 的 zip/apk 见 CHANGELOG §二（产物在本机 hifi_port/deliver/）
 │
 └─【路线 B】自编译 3.18.120 内核继续修 —— 想达到完整第 3 档
     │  目标：补完 4 个 FAIL 门（触摸冷启动 / 导航键 / input / I2C）
@@ -72,6 +76,7 @@ README.md（你在这里）
 | `fixtures/`、`tools/`、`tests/` | 驱动源码适配副本、BLM 与归档/度量脚本、门禁自测 |
 | `prebuilt/` | prebuilt 路线 829 份文本：1042 行移植笔记、WiFi 修复全程、sys13 最终版 `patches/` |
 | `prebuilt_c/` | 第一阶段（C 盘 `寒霜刷机`）验签 / 解锁 / 原厂 DTS / ROM 设备树 / `20261112` 日志包，约 80 份文本 |
+| `docs/CHANGELOG_PREBUILT_20261116-1117.md` | 【新增】prebuilt 路线完成度日志：相机 0→3、按键、TWRP、音频三重根因、HIFI APP、校时、两版分发模块，16 项带哈希与实机判据 |
 | `docs/` | 零基础接续手册中英双版：人机分工、AI 开场白、逐轮剧本、黑话对照、保命清单 |
 | `AGENTS.md` | 给接手 AI 的硬规则（Codex 在仓库根启动即自动读取） |
 
@@ -87,7 +92,7 @@ README.md（你在这里）
 | 线 | 时间 | 原始目录 | 产物 |
 |---|---|---|---|
 | 第一阶段：验签 / 解锁 | 11-08 → 11-12 | `C:/Users/Tse/WorkBuddy/寒霜刷机` | aboot 验签与启动状态机、boot hash 数据流、跨机型对照、原厂 DTS 反编译、临时 root / 解锁工具链；文本层 → `prebuilt_c/` |
-| prebuilt 路线 | 11-10 → 11-12 | `D:/16/PD1610_81` | 原厂 prebuilt 内核 + vendor blobs + 借 PD1619 设备树编译 LOS16；WiFi 修通；可刷 ROM zip |
+| prebuilt 路线 | 11-10 → 11-17 | `D:/16/PD1610_81` | 原厂 prebuilt 内核 + vendor blobs + 借 PD1619 设备树编译 LOS16；WiFi 修通、可刷 ROM zip；11-16/17 补完相机 0→3、轻触 home、按键自定义、Magisk、TWRP 中文 recovery、音频（外放+耳机）、HIFI APP、自动校时；日常可用 |
 | 自编译内核取证 | 11-14 → 11-15 | 本仓库 | `3.18.120-perf` + BLM / 9008 观察通道、bootloop 根因、触摸驱动源码重建、完成度 50/50 |
 
 vivo 从未发布 PD1610/PD1619 的 3.18 内核源码，所以 prebuilt 路线**不编译内核**；
@@ -98,12 +103,14 @@ vivo 从未发布 PD1610/PD1619 的 3.18 内核源码，所以 prebuilt 路线**
 | 日期 | 阶段 | 关键结果 |
 |---|---|---|
 | 11-08 → 11-12 | 第一阶段研究 | 验签 / 解锁 / 设备树取证，30+ 份报告；`20261112.zip` 整理包 |
-| 11-10 → 11-12 | prebuilt 路线 | LOS16 ROM 编译，WiFi 4 条因果链修复（sys13 `system.img` sha `686de5de…`），产出 `PD1610_LOS16_20261112_UNOFFICIAL.zip`（935,087,013 B） |
+| 11-10 → 11-12 | prebuilt 路线（第一阶段） | LOS16 ROM 编译，WiFi 4 条因果链修复（sys13 `system.img` sha `686de5de…`），产出 `PD1610_LOS16_20261112_UNOFFICIAL.zip`（935,087,013 B） |
 | 11-14 上午 | Round10–13 | BLM / 9008 `peek` 观察通道；查到 FDT 全零根因 = 自编译内核 BSS 清零区覆盖 `0x42000000` 的 DTB；裁剪调试配置后恢复 `d00dfeed` |
 | 11-14 下午 | Round14–19 | 固定槽推翻 `usb_bam` 误判 → 定位 `qpnp_vibrator_init` 第一次 SPMI 读 → `FDT_NOP` 绕过 → SPMI stub + 恢复节点，`#5` 首次 `sys.boot_completed=1` |
 | 11-14 傍晚 | Round20–26 | 触摸从「无驱动」推进到「事件链打通」：`CONFIG_TOUCHSCREEN_ST_FTS`、DT 属性、pinctrl、`IRQF_ONESHOT`、`vdd_ana`/`vcc_i2c`；导航键绑定成功但 probe 未完；最后一版报 bootloop 已回滚 |
 | 11-14 夜 | 离线 6 项 + A 轮 | 8 门完成度定义、332 固件清单、原厂/自编译 `do_msm_restart` 反汇编差分；A 轮 3/3 冷启动、唤醒后 1266 行触摸事件，`UNVERIFIED` 全消 → 严格 50/50 |
 | 11-15 | 归档与交接 | 双版 README、16 类 / 76 GiB 网盘冷备、WSL 最小重建集、第一阶段记录与 ROM 包补全、AI 索引 §9 |
+| 11-16 下午 → 21:55 | prebuilt 路线（日常化） | 相机 0→3（缺 7 份 camera XML）、轻触 home（goodixfp key 253 → HOME）、菜单键多任务、Magisk 内核补丁（DER 签名块必须补）、TWRP 混合方案（PD1610 kernel + gemini ramdisk，md5 `c184d6a6…`）、vendor 挂载修复、1.4G 分发包 |
+| 11-17 上午 → 14:00 | prebuilt 路线（音频与分发） | 浏览器黑屏真因 = `/data` 脏数据（双清即好）；音频三重根因全修（缺 `libaudioroute.so` / HAL 读 `mixer_paths_tasha.xml` / HIFI 供电未开）；耳机桥接 + 状态栏图标；单 Magisk 模块 `audio_pd1610`；HIFI APP v1.1-glass；9h 自动校时；两版分发 zip |
 
 ### 归因演进（最容易走错的地方）
 
@@ -130,8 +137,41 @@ vivo 从未发布 PD1610/PD1619 的 3.18 内核源码，所以 prebuilt 路线**
 - `offline/12_ai_handoff_index.md` 新增 §9 当前准确状态，13/14 号文档同步；网盘扩为 16 类 / 76 GiB。
 - 归档 `01` 两卷保持 01:34 版本（避免改动已上传的 973 MiB 分卷），其内的索引是旧版，以本仓库 / 网盘 `00` 目录为准。
 
+### 2026-11-16 → 11-17 prebuilt 路线完成度（日常可用）
+
+> 完整逐项证据、哈希与实机判据见 `docs/CHANGELOG_PREBUILT_20261116-1117.md`（16 项，11-16 17:36 → 11-17 14:00）。
+> 这一批全部跑在 **prebuilt 原厂内核 3.18.71** 上，**没有刷自编译 3.18.120**。
+
+| # | 工作项 | 状态 | 判据 / 关键哈希 |
+|---|---|---|---|
+| 1 | 相机 0 设备 → 3 设备 | ✅ | 缺 7 份 `/system/etc/camera/*.xml`，补入后 `num_cameras=3`、imx362/s5k3p3 subdev 正常；system.img sha `566c6b59…` |
+| 2 | 轻触 home 失效 | ✅ | 真因 goodixfp key 253 被 AOSP framework 丢弃；新建 `goodixfp.kl` 映射 253→HOME；system.img sha `3f0f2fbf…` |
+| 3 | 菜单键短按 = 多任务 | ✅ | lineage-sdk overlay `config_deviceHardwareKeys=7`；system.img sha `8e6fb286…` |
+| 4 | 基线采集 | ✅ 只读 | `evidence/baseline_1116_1930/`；崩溃 0、传感器在线、SELinux 133 条 denied（permissive 放行，未收敛） |
+| 5 | Magisk（旧机） | ✅ | vivo `prepare_bprm_creds` 拦 `su` 的两处分支补丁（只改分支不动入口）；**任何 repack 丢 DER 签名块就卡 logo**，`fix_boot_sig.py` 补回；成品 sha `5de27cc…` |
+| 6 | LOS recovery 签名 | ✅ | recovery 签名块与 boot 不同（DER `30820500` L@+0x3FC），`fix_recovery_sig.py`；sha `dec1d17d…`（后被 TWRP 替换，留作回退） |
+| 7 | TWRP | ✅ | 5 版自编全闪屏 → 混合方案：PD1610 kernel+DTB + 小米5 gemini TWRP 3.7.0 ramdisk + 中文；GUI/触摸/root/挂载全过 |
+| 8 | vendor 挂载失败 | ✅ | gemini fstab 的 `/vendor` 指向小米5 `cust`，删两行；最终 TWRP md5 `c184d6a6…`、sha256 `d626bff7…` |
+| 9 | 分发包 | ✅ | `PD1610_Xplay6_LOS16_Pack_20261116`（11 文件 / 1.4G zip，md5 `4ee2b276…`），含解锁工具 / Recovery / ROM / Magisk / 教程 |
+| 10 | 浏览器黑屏 | ✅ | 真因 `/data` 里 WebView 新旧 dex 混用，非 Android9 兼容问题；TWRP 双清 + 重刷即好 |
+| 11 | 音频外放 + 耳机 | ✅ | 三重根因：缺 `libaudioroute.so`、HAL 实读 `mixer_paths_tasha.xml`（板级 119329 B，md5 `b9edc980…`）、`hifi_3v3`/`hifi_4v8` 未使能；耳机靠轮询 HPH Type + `AudioSystem` 桥接，状态栏图标正常 |
+| 12 | 单 Magisk 模块整合 | ✅ | 只留 `audio_pd1610`（作者 Amino），改前多个音频模块删除；重启自启动验证过 |
+| 13 | HIFI 参数 APP | ✅ | `com.pd1610.hifictl`，真参数 `enable_hifi=1/0`（`hifi-playback` 实测无效）；DSD 结论：由流格式触发，非参数开关 |
+| 14 | 自动网络校时 | ✅ | 改 `ntp_server` 不触发同步；切 `auto_time 0→1` 立即生效；模块内 `timed.sh`+`NtpProbe.dex` 每 9h 纠偏（偏差绝对值 >5s） |
+| 15 | HIFI APP 玻璃态 UI | ✅ / 🗑 | v1.1-glass 已实机验证三页（24935 B，dex sha `d8813d6c…`）；评估 AndroidLiquidGlass 库需 API 31/33，Android 9 上不可 100% 还原；GLES 折射版实测闪退已废弃回滚 |
+| 16 | 两版分发模块 zip | ✅ | `audio_pd1610_校时版.zip`（sha `4c53c281…`）/ `audio_pd1610_纯音频版.zip`（sha `2b7debbd…`），CRC OK、文件在 zip 根目录 |
+
+**prebuilt 路线 4 项旧 TODO 的现状**：相机 0 设备 ✅ 已修（#1）；`libcurl.so` / 清诊断代码须重编 / sepolicy+configstore ⚠️ 本轮未处理，均不影响日常使用（见 CHANGELOG §三"未做/遗留"）。
+发布边界：可分发的是 **11-16 分发包 + 11-17 两版音频模块 + HIFI APP**；vivo 原厂 boot.img、DTB、固件 blob 仍只在百度网盘冷备，不进 GitHub。
+
 ### 当前状态与剩余工作
 
+**prebuilt 路线（11-17 14:00，日常主力机）**
+- 旧机 `5fccbfeb`：LOS16 + 原厂 prebuilt 内核 + Magisk23；相机 3 设备、外放/耳机/状态栏图标、HIFI APP、浏览器、轻触 home 全部正常；boot = do_mount_check 补丁版 sha `169ad246…`；SELinux Permissive。
+- 新机 `2ea753b7`：stock 8.19.16 参照机，已验证解锁链路，本轮未动。
+- 遗留（不影响使用）：SELinux 133 条 denied 未收敛到 Enforcing、基带插卡/GPS 未实测、`libcurl.so` / 清诊断代码重编 / sepolicy+configstore（后三项是 11-12 旧 TODO）。
+
+**自编译路线（B0′ 快照，非完成态）**
 - 设备：原厂 `3.18.71-perf-g8a8c60dd` / LOS16 / `sys.boot_completed=1` / 不在 fastboot。
 - 仍 FAIL 四门：`touch_cold`、`nav_keys`、`input_parity` 5/9、`i2c_parity` 4/9。
 - 最大长尾：`goodixfp` 指纹（自编译内核里相关符号 0 个，需反汇编重建，5–15 工作日且不保证成功）。
@@ -300,9 +340,10 @@ ROUND1–9 的成果不在本仓库的 `ROUND*.md` 里，而在
   真正卡点是 `qpnp_vibrator_init` → 第一次 SPMI 读。别从旧结论接着做。
 - prebuilt 路线**已产出可刷 ROM** `PD1610_LOS16_20261112_UNOFFICIAL.zip`
   （935,087,013 B，sha256 `97c3137e…`，在百度网盘 `15_LOS16_ROM刷机包/`）；
-  仍留 4 项 TODO（相机 0 设备、缺 `libcurl.so`、发布前清诊断代码须重编、
-  sepolicy/configstore），见 `prebuilt/evidence/_log_append4.md`。
-  第一阶段验签 / 解锁 / 设备树研究见 `prebuilt_c/`。
+  11-16/17 又补完相机、按键、TWRP、音频、HIFI、校时（16 项见
+  `docs/CHANGELOG_PREBUILT_20261116-1117.md`）。**旧 TODO 中相机 0 设备已修**；
+  仍 Open：`libcurl.so`、发布前清诊断代码须重编、sepolicy/configstore（均不影响日常使用），
+  见 `prebuilt/evidence/_log_append4.md`。第一阶段验签 / 解锁 / 设备树研究见 `prebuilt_c/`。
 
 ## 本仓库不包含的内容
 
@@ -456,8 +497,11 @@ GPL-2.0 并保留版权头。
 vivo Xplay6 (MSM8996, LineageOS 16) self-compiled `3.18.120` kernel:
 from bootloop to a bootable desktop with working touch, using a custom
 RAM-log monitor (BLM) and Qualcomm 9008 Firehose `peek` to observe failures.
-The same repository also ships the text results of the older **prebuilt**
-route (stock kernel + vendor blobs + borrowed PD1619 device tree -> LOS16 ROM).
+The same repository also ships the full text record of the **prebuilt** route
+(stock kernel + vendor blobs + borrowed PD1619 device tree -> LOS16 ROM). On
+Nov 16-17 it was brought from "it boots" to **daily-driver usable**: camera,
+buttons, audio, headset, HiFi and auto time-sync all verified on hardware - see
+`docs/CHANGELOG_PREBUILT_20261116-1117.md`. Both routes are handed off together.
 
 > **Two reading tracks, the same facts.** Pick either one; no data, hash or
 > criterion is simplified or removed.
@@ -473,15 +517,20 @@ route (stock kernel + vendor blobs + borrowed PD1619 device tree -> LOS16 ROM).
 lines of work**; decide which one you are continuing before opening any report:
 
 ```
-Route A - continue the PREBUILT ROM (fix camera / WiFi / sepolicy / packaging)
+Route A - PREBUILT route - camera / buttons / recovery / audio / HiFi / time-sync, now daily-usable
+  Goal: LOS16 as a daily driver (reached 11-17: camera 0->3, speaker+headset audio,
+        adjustable HiFi, 9-hour auto time sync)
+  Kernel: stock prebuilt 3.18.71; no self-compiled kernel
+  docs/CHANGELOG_PREBUILT_20261116-1117.md .. 【READ FIRST】11-16 17:36 -> 11-17 14:00 completion log
   GitHub Releases (Pre-release) ......... LOS16 flashable ROM zip + SHA256SUMS (tag `los16-prebuilt-sys13-20261112`)
-  prebuilt/evidence/_log_append4.md ...... WiFi fix chain, 4 open TODOs, corrected misjudgements
+  prebuilt/evidence/_log_append4.md ...... WiFi fix chain, 3 corrected misjudgements (old 4 TODOs: status in CHANGELOG)
   prebuilt/release/.../patches/ ......... final sys13 source changes (diff before editing)
   prebuilt/refs/PD1619_PORTING_NOTES.md . 1042-line porting note
   offline/14_prebuilt_upload_checklist.md  upload checklist and continuation notes
   netdisk 03_/sys13_system.img .......... known-good WiFi-fixed baseline
   netdisk 15_/*.zip ..................... flashable LOS16 ROM
   netdisk 02_/images/boot.img ........... rollback baseline
+  note: audio Magisk module + HiFi APP zip/apk are listed in CHANGELOG section 2 (local hifi_port/deliver/)
 
 Route B - continue the SELF-COMPILED 3.18.120 kernel (finish Tier-3 gates)
   offline/12_ai_handoff_index.md ........ resource map; paste as-is to an AI
@@ -512,7 +561,7 @@ Beginner on-ramp: docs/BEGINNER_GUIDE_EN.md (plain-language guide with copy-past
 | Line | When | Original tree | Output |
 |---|---|---|---|
 | Phase 1: signature / unlock | Nov 8-12 | `C:/Users/Tse/WorkBuddy/寒霜刷机` | aboot verification & boot state machine, boot hash datapath, cross-device comparison, stock DTS decompilation, temp-root / unlock tooling; text layer -> `prebuilt_c/` |
-| Prebuilt route | Nov 10-12 | `D:/16/PD1610_81` | LOS16 built from stock prebuilt kernel + vendor blobs + borrowed PD1619 device tree; WiFi fixed; flashable ROM zip |
+| Prebuilt route | Nov 10-17 | `D:/16/PD1610_81` | LOS16 built from stock prebuilt kernel + vendor blobs + borrowed PD1619 device tree; WiFi fixed; flashable ROM zip; 11-16/17 added camera 0->3, tap-home, key remap, Magisk, TWRP Chinese recovery, audio (speaker+headset), HiFi APP, auto time-sync; now daily-usable |
 | Self-compiled kernel forensics | Nov 14-15 | this repo | `3.18.120-perf` + BLM / 9008 observation chain, bootloop root cause, touch driver rebuilt from source, completion meter 50/50 |
 
 vivo never released 3.18 kernel sources for PD1610/PD1619, so the prebuilt route
@@ -524,12 +573,14 @@ msm8996 3.18 tree. Images from the two routes are not interchangeable.
 | Date | Stage | Result |
 |---|---|---|
 | Nov 8-12 | Phase 1 research | signature / unlock / device-tree forensics, 30+ reports, `20261112.zip` bundle |
-| Nov 10-12 | Prebuilt route | LOS16 built, WiFi fixed after four causal fixes (sys13 `system.img` sha `686de5de...`), `PD1610_LOS16_20261112_UNOFFICIAL.zip` produced (935,087,013 B) |
+| Nov 10-12 | Prebuilt route (phase 1) | LOS16 built, WiFi fixed after four causal fixes (sys13 `system.img` sha `686de5de...`), `PD1610_LOS16_20261112_UNOFFICIAL.zip` produced (935,087,013 B) |
 | Nov 14 AM | Round 10-13 | BLM / 9008 `peek` chain; root cause = BSS clear range overwrote the DTB at `0x42000000`; shrinking debug config restored `d00dfeed` |
 | Nov 14 PM | Round 14-19 | fixed-slot evidence overturned the `usb_bam` claim -> `qpnp_vibrator_init` first SPMI read -> `FDT_NOP` bypass -> SPMI stub + restored node, `#5` reached `sys.boot_completed=1` |
 | Nov 14 evening | Round 20-26 | touch went from "no driver" to a working event chain (`CONFIG_TOUCHSCREEN_ST_FTS`, DT props, pinctrl, `IRQF_ONESHOT`, regulators); nav-key bind succeeded but probe incomplete; last candidate bootlooped and was rolled back |
 | Nov 14 night | 6 offline studies + A round | 8-gate completion meter, 332-firmware inventory, stock/custom `do_msm_restart` disassembly diff; A round 3/3 cold boots, 1266 touch events after resume, all `UNVERIFIED` removed -> strict 50/50 |
 | Nov 15 | Archive & handoff | bilingual README, 16-category / 76 GiB netdisk cold storage, minimal WSL rebuild set, phase-1 records and ROM package added, AI index section 9 |
+| Nov 16 PM-21:55 | Prebuilt route (daily-driver) | camera 0->3 (7 missing camera XMLs), tap-home (goodixfp key 253 -> HOME), menu key = recents, Magisk kernel patch (DER signature block must be restored), TWRP hybrid (PD1610 kernel + gemini 3.7.0 ramdisk + Chinese), vendor mount fix, 1.4 GB dist pack |
+| Nov 17 AM-14:00 | Prebuilt route (audio & dist) | browser black screen root cause = stale `/data` WebView dex (wipe fixes it); three audio root causes fixed (missing `libaudioroute.so` / HAL reads `mixer_paths_tasha.xml` / HIFI rails off); headset bridge + status-bar icon; single `audio_pd1610` module; HiFi APP v1.1-glass; 9h auto time-sync; two distribution zip variants |
 
 **Attribution changes (the easiest way to go wrong)**
 
@@ -567,15 +618,45 @@ so `stopped` is normal).
 - Archive volumes `01` stay at the 01:34 build (repacking would change 973 MiB
   already uploading); their bundled index is older - use this repo / netdisk `00`.
 
+**Nov 16-17, 2026 prebuilt route completion (daily-usable)**
+
+> Full per-item evidence, hashes and hardware criteria:
+> `docs/CHANGELOG_PREBUILT_20261116-1117.md` (16 items, 11-16 17:36 -> 11-17 14:00).
+> All of this ran on the **stock prebuilt 3.18.71 kernel** - no self-compiled 3.18.120 was flashed.
+
+| # | Item | Status | Criterion / key hash |
+|---|---|---|---|
+| 1 | Camera 0 -> 3 devices | DONE | 7 missing `/system/etc/camera/*.xml` restored; `num_cameras=3`, imx362/s5k3p3 subdevs OK; system.img sha `566c6b59...` |
+| 2 | Tap-home dead | DONE | Real cause: goodixfp key 253 dropped by AOSP framework; new `goodixfp.kl` maps 253->HOME; system.img sha `3f0f2fbf...` |
+| 3 | Menu key short-press = recents | DONE | lineage-sdk overlay `config_deviceHardwareKeys=7`; system.img sha `8e6fb286...` |
+| 4 | Baseline capture | DONE (read-only) | `evidence/baseline_1116_1930/`; 0 crashes, sensors online, 133 SELinux denials (permissive, not tightened) |
+| 5 | Magisk (old device) | DONE | vivo `prepare_bprm_creds` blocks `su`; two branch-only patches (entry untouched); **any repack loses the DER signature block and sticks at logo**, restored via `fix_boot_sig.py`; sha `5de27cc...` |
+| 6 | LOS recovery signature | DONE | recovery sig block differs from boot (DER `30820500` L@+0x3FC), `fix_recovery_sig.py`; sha `dec1d17d...` (kept as fallback, later replaced by TWRP) |
+| 7 | TWRP | DONE | 5 self-built versions all flicker-loop -> hybrid: PD1610 kernel+DTB + Xiaomi Mi5 gemini TWRP 3.7.0 ramdisk + Chinese; GUI/touch/root/mount all pass |
+| 8 | vendor mount failure | DONE | gemini fstab pointed `/vendor` to Mi5 `cust`; removed two lines; final TWRP md5 `c184d6a6...`, sha256 `d626bff7...` |
+| 9 | Distribution pack | DONE | `PD1610_Xplay6_LOS16_Pack_20261116` (11 files / 1.4 GB zip, md5 `4ee2b276...`), unlock tools / recovery / ROM / Magisk / guide |
+| 10 | Browser black screen | DONE | Real cause: stale WebView dex mix in `/data`, not Android 9 incompatibility; TWRP wipe + reflash fixes it |
+| 11 | Speaker + headset audio | DONE | Three root causes: missing `libaudioroute.so`, HAL actually reads `mixer_paths_tasha.xml` (board 119329 B, md5 `b9edc980...`), `hifi_3v3`/`hifi_4v8` rails off; headset via HPH-Type polling + `AudioSystem` bridge, status-bar icon OK |
+| 12 | Single Magisk module | DONE | only `audio_pd1610` (author Amino), older audio modules removed; reboot autostart verified |
+| 13 | HiFi parameter APP | DONE | `com.pd1610.hifictl`; real key `enable_hifi=1/0` (`hifi-playback` verified ineffective); DSD is triggered by stream format, not a parameter |
+| 14 | Automatic time sync | DONE | changing `ntp_server` does not trigger sync; toggling `auto_time 0->1` does; module `timed.sh`+`NtpProbe.dex` corrects every 9h when absolute offset exceeds 5s |
+| 15 | HiFi APP glass UI | DONE / DISCARDED | v1.1-glass verified on all 3 pages (24935 B, dex sha `d8813d6c...`); AndroidLiquidGlass needs API 31/33, not fully reproducible on Android 9; GLES refraction version crashed and was rolled back |
+| 16 | Two distribution module zips | DONE | `audio_pd1610_校时版.zip` (sha `4c53c281...`) / `audio_pd1610_纯音频版.zip` (sha `2b7debbd...`), CRC OK, files at zip root |
+
+**Status of the 4 old prebuilt TODOs**: camera 0-device DONE (#1); `libcurl.so`, diagnostic-code cleanup before release, sepolicy/configstore - NOT touched this round, none affect daily use (see CHANGELOG section 3 "remaining"). Release boundary: distributable = **11-16 dist pack + 11-17 two audio modules + HiFi APP**; stock boot.img, DTB and firmware blobs stay in Baidu Netdisk only, never on GitHub.
+
 **Current state & remaining work**
 
+**Prebuilt route (11-17 14:00, daily driver)**
+- Old device `5fccbfeb`: LOS16 + stock prebuilt kernel + Magisk23; camera 3 devices, speaker/headset/status-bar icon, HiFi APP, browser, tap-home all OK; boot = do_mount_check patched sha `169ad246...`; SELinux permissive.
+- New device `2ea753b7`: stock 8.19.16 reference, unlock chain verified, untouched this round.
+- Remaining (non-blocking): 133 SELinux denials not tightened to Enforcing, baseband SIM/GPS untested, `libcurl.so` / diagnostic cleanup / sepolicy+configstore (the last three are 11-12 TODOs).
+
+**Self-compiled route (B0' snapshot, not complete)**
 - Device: stock `3.18.71-perf-g8a8c60dd` / LOS16 / `sys.boot_completed=1` / not in fastboot.
 - Four gates still FAIL: `touch_cold`, `nav_keys`, `input_parity` 5/9, `i2c_parity` 4/9.
-- Longest tail: `goodixfp` fingerprint (zero related symbols in our build; needs
-  disassembly-based reconstruction, 5-15 workdays, no guarantee).
-- This is a **handoff snapshot (B0'), not a finished Tier-3 port**. Resume from
-  round B in `offline/05_experiment_queue.md`, following the single-variable loop
-  in `offline/13_continuation_playbook.md`.
+- Longest tail: `goodixfp` fingerprint (zero related symbols in our build; needs disassembly-based reconstruction, 5-15 workdays, no guarantee).
+- This is a **handoff snapshot (B0'), not a finished Tier-3 port**. Resume from round B in `offline/05_experiment_queue.md`, following the single-variable loop in `offline/13_continuation_playbook.md`.
 
 ### Glossary: A round / experiment queue / completion meter
 
@@ -730,10 +811,13 @@ netdisk `11_逆向证据_全量分卷/`, `14_寒霜刷机_C盘工作目录/` and
   that**. The real stall was `qpnp_vibrator_init` -> first SPMI read.
   Do not continue from the old conclusion.
 - The prebuilt route **did ship a flashable ROM** `PD1610_LOS16_20261112_UNOFFICIAL.zip`
-  (935,087,013 B, sha256 `97c3137e...`, in netdisk `15_LOS16_ROM刷机包/`).
-  4 issues remain open (camera, libcurl, diagnostic-code cleanup before release,
-  sepolicy/configstore); see `prebuilt/evidence/_log_append4.md`.
-  Phase-1 signature/unlock/device-tree research is in `prebuilt_c/`.
+  (935,087,013 B, sha256 `97c3137e...`, in netdisk `15_LOS16_ROM刷机包/`), then
+  gained camera / buttons / TWRP / audio / HiFi / time-sync on Nov 16-17
+  (16 items in `docs/CHANGELOG_PREBUILT_20261116-1117.md`). **Old TODO "camera 0
+  devices" is now fixed**; still open: `libcurl.so`, diagnostic-code cleanup
+  before release, sepolicy/configstore (none block daily use). See
+  `prebuilt/evidence/_log_append4.md`. Phase-1 signature / unlock / device-tree
+  research is in `prebuilt_c/`.
 
 ### What this repository does not contain
 
