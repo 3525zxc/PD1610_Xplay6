@@ -3,6 +3,26 @@
 
 > 语言 / Language：**简体中文（默认）** · [English ↓](#english) · [英文独立文件](README.en.md)
 
+### 实机截图（2026-11-18 · PD1610 / LOS16）
+
+<table align="center">
+  <tr>
+    <td align="center"><img src="screenshots/Screenshot_20261118-223541_Trebuchet.png" width="175" alt="01"><br><sub>01 桌面</sub></td>
+    <td align="center"><img src="screenshots/Screenshot_20261118-223608_.png" width="175" alt="02"><br><sub>02 关于手机</sub></td>
+    <td align="center"><img src="screenshots/Screenshot_20261118-223617_.png" width="175" alt="03"><br><sub>03 Android 版本</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="screenshots/Screenshot_20261118-223638_.png" width="175" alt="04"><br><sub>04 LineageOS</sub></td>
+    <td align="center"><img src="screenshots/Screenshot_20261118-223647_Trebuchet.png" width="175" alt="05"><br><sub>05 应用抽屉</sub></td>
+    <td align="center"><img src="screenshots/Screenshot_20261118-223657_Magisk.png" width="175" alt="06"><br><sub>06 Magisk</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="screenshots/Screenshot_20261118-223723_Magisk.png" width="175" alt="07"><br><sub>07 Magisk 设置</sub></td>
+    <td align="center"><img src="screenshots/Screenshot_20261118-223743_Scene4.png" width="175" alt="08"><br><sub>08 Scene4</sub></td>
+    <td align="center"><img src="screenshots/Screenshot_20261118-223822_Poweramp.png" width="175" alt="09"><br><sub>09 Poweramp</sub></td>
+  </tr>
+</table>
+
 vivo Xplay6（MSM8996 / LineageOS 16）自编译 `3.18.120` 内核的完整取证记录：
 从 bootloop 一路定位到能进桌面、触摸可用。手段是自写的 RAM 日志监测模块
 （BLM）+ 高通 9008 Firehose `peek` 读取物理内存，把黑盒启动失败变成可复现的证据链。

@@ -2,6 +2,26 @@
 
 > Languages: [简体中文](README.md) (default) | **English**
 
+### Device screenshots (2026-11-18, in capture order)
+
+<table align="center">
+  <tr>
+    <td align="center"><img src="screenshots/Screenshot_20261118-223541_Trebuchet.png" width="175" alt="01"><br><sub>01 Home</sub></td>
+    <td align="center"><img src="screenshots/Screenshot_20261118-223608_.png" width="175" alt="02"><br><sub>02 About phone</sub></td>
+    <td align="center"><img src="screenshots/Screenshot_20261118-223617_.png" width="175" alt="03"><br><sub>03 Android version</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="screenshots/Screenshot_20261118-223638_.png" width="175" alt="04"><br><sub>04 LineageOS</sub></td>
+    <td align="center"><img src="screenshots/Screenshot_20261118-223647_Trebuchet.png" width="175" alt="05"><br><sub>05 App drawer</sub></td>
+    <td align="center"><img src="screenshots/Screenshot_20261118-223657_Magisk.png" width="175" alt="06"><br><sub>06 Magisk</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="screenshots/Screenshot_20261118-223723_Magisk.png" width="175" alt="07"><br><sub>07 Magisk settings</sub></td>
+    <td align="center"><img src="screenshots/Screenshot_20261118-223743_Scene4.png" width="175" alt="08"><br><sub>08 Scene4</sub></td>
+    <td align="center"><img src="screenshots/Screenshot_20261118-223822_Poweramp.png" width="175" alt="09"><br><sub>09 Poweramp</sub></td>
+  </tr>
+</table>
+
 vivo Xplay6 (MSM8996, LineageOS 16) self-compiled `3.18.120` kernel:
 from bootloop to a bootable desktop with working touch, using a custom
 RAM-log monitor (BLM) and Qualcomm 9008 Firehose `peek` to observe failures.
